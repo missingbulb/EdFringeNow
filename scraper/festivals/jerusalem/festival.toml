@@ -18,6 +18,7 @@ kind = "comedy"
 subtypes = ["comedy-standup"]
 default_genre = "comedy"
 site = "https://comedy-festival.co.il"
+wikidata = "Q139791344"
 
 [ticketing]
 model = "per-event-seller"
@@ -29,6 +30,7 @@ format = "block"
 # ordinal: not published anywhere we could cite, so absent (null), never guessed.
 first = "2026-10-18"
 last = "2026-10-22"
+sources = ["comedy-festival-site", "nominatim", "venues-research"]
 
 [[source]]
 id = "comedy-festival-site"

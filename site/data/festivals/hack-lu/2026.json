@@ -1,0 +1,2450 @@
+{
+ "v": 1,
+ "festival": {
+  "id": "hack-lu",
+  "edition": "2026",
+  "ordinal": 20,
+  "name": "hack.lu",
+  "nameLocal": null,
+  "city": "Luxembourg",
+  "country": "LU",
+  "lat": 49.6116,
+  "lng": 6.1319,
+  "timezone": "Europe/Luxembourg",
+  "lang": "en",
+  "dir": "ltr",
+  "kind": "academic",
+  "defaultGenre": "talk",
+  "site": "https://hack.lu",
+  "firstDate": "2026-10-20",
+  "lastDate": "2026-10-23",
+  "ticketing": {
+   "model": "festival-pass",
+   "url": "https://pretix.eu/circl/2026.hack.lu/",
+   "notes": "One conference ticket, sold on pretix, covers every talk and workshop; the info page links the shop."
+  }
+ },
+ "categories": [
+  {
+   "id": "6926-topic-hacklu",
+   "name": "topic: hack.lu"
+  }
+ ],
+ "venues": [
+  {
+   "id": "parc-hotel",
+   "name": "Alvisse Parc Hotel",
+   "address": "120 Route d'Echternach, 1453 Luxembourg",
+   "lat": 49.6395242,
+   "lng": 6.1538168,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {
+     "id": "echternach-diekirch",
+     "name": "Echternach & Diekirch",
+     "capacity": 30,
+     "layout": null
+    },
+    {
+     "id": "europe",
+     "name": "Europe",
+     "capacity": 750,
+     "layout": null
+    },
+    {
+     "id": "fitness-room",
+     "name": "Fitness room",
+     "capacity": 20,
+     "layout": null
+    },
+    {
+     "id": "hollenfels",
+     "name": "Hollenfels",
+     "capacity": 100,
+     "layout": null
+    },
+    {
+     "id": "schengen-1-2",
+     "name": "Schengen 1 & 2",
+     "capacity": 100,
+     "layout": null
+    },
+    {
+     "id": "vianden-wiltz",
+     "name": "Vianden & Wiltz",
+     "capacity": 60,
+     "layout": null
+    }
+   ],
+   "accessibility": null,
+   "notes": "The conference hotel in Luxembourg-Dommeldange, where hack.lu has been held every year (2026.hack.lu/info). The rooms and their seat counts are the schedule's own.",
+   "refs": [
+    "https://2026.hack.lu/info/"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "7EVXHD",
+   "title": "The Panopticon Paradox: Cybersecurity in the Digital Age of AI-Accelerated Mass Surveillance",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/7EVXHD/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "AI has industrialized both cyberattack and defense, while the same monitoring tools meant to protect us, risk becoming part of a permanent surveillance apparatus. The Panopticon Paradox argues that point solutions cannot defeat a threat landscape whose attack surface grows combinatorially. Instead, it proposes novel human-centric, analog-based, mathematically designed, privacy-preserving, immune-system-inspired cyber defenses built around correlated signals, adaptive architecture, zero trust for machines, and computation on encrypted data. This keynote is a call to build cyber shields that also protect human agency and liberty, without quietly becoming part of the Panopticon themselves. Mr. Drake will draw from his background in military intelligence and electronic warfare, as a former senior executive in national security, and experience in advanced information systems and technology, as well as systems and software development.\n\nSpeakers: Thomas Drake",
+   "durationMin": 60,
+   "imageUrl": "https://pretalx.com/media/hack-lu-2026/submissions/7EVXHD/image_wAHYgfN.webp"
+  },
+  {
+   "id": "JA8RSF",
+   "title": "Inside the Stalkerware Factory: Reversing C2 Protocols and Building Mock Servers for Three Commercial Stalkerware Families",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/JA8RSF/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Commercial stalkerware—apps marketed as \"parental control\" or \"employee monitoring\" tools—are a primary digital weapon in intimate partner violence (IPV). Despite their prevalence, their internals remain under-documented: most research focuses on detection or prevalence studies, while the actual C2 protocols, crypto implementations, and evasion techniques stay in vendor black boxes.\n \nWe selected three major commercial stalkerware families that offer a free trial period (typically one week), giving us a legitimate window to obtain fresh APKs, register test devices against the real C2 infrastructure, and observe the full infection lifecycle—from installation wizard to live data exfiltration—before diving into static and dynamic reverse engineering with JADX, Frida, and Corellium:\n \n- **Hoverwatch / Snoopza** (Refog Inc.): a single codebase compiled into two brands via Gradle build variants. We decrypted all DES/ECB-obfuscated strings (hardcoded key: 8 bytes derived from `\"val\"` + padding), extracted six C2 domains seeded in-binary, discovered a `\"refog\"` attribution canary hidden in the HTTP client's static initializer, identified YouTube Kids deliberately concealed via encryption among 100+ surveillance targets, reverse-engineered the full multipart exfiltration protocol, built a functional mock C2 server (FastAPI), and demonstrated live data exfiltration on Corellium. We also uncovered a cross-install device fingerprinting mechanism persisting the Android ID on shared storage (`/sdcard/dev_<model>`) to track devices across reinstalls—a post-uninstall forensic IOC.\n- **Mobile Tracker Free**: a two-stage infection chain (dropper + payload) with 60+ Firebase Cloud Messaging commands, WebRTC live video/audio/screen streaming, a remote file explorer, three camera capture services, a Device Admin-based anti-uninstall, and a secret dialer code (`*1234*`) for hidden access. The payload masquerades as \"Wi-Fi Service\" and supports remote device wipe.\n- **iKeyMonitor**: REST + WebSocket (XML-encapsulated) dual C2 channels, RTMP screen mirroring with hardcoded signing secrets, Triple DES authentication with embedded keys, and distinctive `uoload` typos in four API endpoints serving as accidental network fingerprints. The app impersonates Samsung system packages and uses ProcessPhoenix for crash-resilient persistence.\nFor each family, we produced: (1) a complete C2 protocol specification, (2) a working mock C2 server enabling dynamic analysis without connecting to the real infrastructure, (3) network IOCs (domains, User-Agents, endpoint patterns) with ready-to-deploy Suricata signatures, (4) host-based IOCs (package names, filesystem artifacts, SharedPreferences keys), and (5) forensic triage checklists for CSIRT teams and victim-support organizations.\n \nKey cross-cutting findings include: universal absence of certificate pinning (enabling trivial MITM for analysis and victim protection), symmetric crypto with hardcoded keys (DES, 3DES), deliberately hidden surveillance of children's apps, and remote kill switches that let operators destroy evidence before forensic acquisition.\n \nAll mock C2 servers and IOCs will be released as open-source tools\n\nSpeakers: Sébastien Larinier",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "M9973K",
+   "title": "MAGIC Tricks for Microsoft 365 Incident Response: Hands-on AiTM Phishing and Business Email Compromise Investigations",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/M9973K/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Business Email Compromise is rarely just a mailbox problem anymore. In recent Microsoft 365 incident response cases, we increasingly see adversary-in-the-middle phishing, stolen session cookies, suspicious sign-ins, inbox rule abuse, OAuth-related activity, mailbox access, and follow-on fraud attempts as parts of the same investigation.\n\nSince 2024, our incident response team has handled a growing number of BEC and AiTM phishing cases. In many of them, we ran into the same operational problem: collecting the right Microsoft 365 evidence quickly, consistently, and in a format that allows actual analysis rather than another round of manual spreadsheet work.\n\nThis experience led us to build and release **MAGIC**, Microsoft Azure Graph Information Crawler, an open-source Python toolset for collecting incident-response-relevant data from Microsoft 365 environments through Microsoft Graph and preparing it for analysis in tools such as Timesketch or OpenSearch.\n\nIn this two-hour hands-on training, participants will investigate a realistic Microsoft 365 BEC scenario. They will learn which evidence matters, how to collect it with MAGIC, how to structure an investigation timeline, and how to reason about AiTM phishing activity using sign-ins, message traces, mailbox artefacts, and enrichment data. The workshop is not meant as a pure tool demo. It is a practical investigation workflow shaped by real incident response work.\n\nSpeakers: Sven Ulke, Alexander Gödeke, Martin Glück",
+   "durationMin": 120,
+   "imageUrl": null
+  },
+  {
+   "id": "NRJZFT",
+   "title": "Flow Intelligence: Using NetFlow and nfdump for Network Visibility and Forensics",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/NRJZFT/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Understanding what happens inside your network is essential for defending it. During an incident, you must be able to quickly identify malicious activity, trace its origin, and assess the impact. NetFlow is one of the most powerful sources of visibility for this task — yet it is often misunderstood or underused and its value underrated, even though most network devices can export it at no additional cost.\n\nThis workshop introduces the fundamentals of **NetFlow** and shows how to collect, process, and analyse flow data using the open‑source **nfdump** toolkit. Participants will learn how to deploy exporters and collectors, interpret flow records, and apply practical techniques for incident response, threat hunting, and network forensics.\n\nSpeakers: Peter Haag",
+   "durationMin": 120,
+   "imageUrl": null
+  },
+  {
+   "id": "XWSZDC",
+   "title": "Accelerate your reverse engineering process using SightHouse",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/XWSZDC/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Reverse engineers frequently encounter firmware or large binaries containing a mixture of proprietary code and numerous third-party libraries. Identifying which components belong to external libraries is a recurring and time-consuming challenge that can significantly slow down analysis.\n\nThis workshop introduces [SightHouse](https://github.com/quarkslab/sighthouse), an open-source project designed to help reverse engineers automatically detect third-party functions within binaries. SightHouse leverages similarity detection techniques built on top of Ghidra’s BSIM engine, which uses Ghidra’s P-Code intermediate representation to enable cross-architecture function similarity analysis. By identifying reused code, researchers can quickly isolate proprietary logic and focus their efforts where it matters most.\n\nThe workshop will begin with a short introduction to the challenges of third-party code identification and the similarity detection techniques used in modern reverse engineering workflows. Participants will then be introduced to SightHouse, its architecture, and how it integrates with existing reverse engineering tools.\n\nFollowing this introduction, participants will apply SightHouse on a real-world reverse engineering target, learning how to detect and filter third-party libraries in practice.\n\nIn the final part of the workshop, participants will explore how SightHouse can be extended. They will learn how to create their own workers, enabling them to add new data sources, automate signature extraction, and contribute to expanding the system’s capabilities.\n\nBy the end of the session, participants will understand how to integrate automated function identification into their reverse engineering workflows and how to customize SightHouse to fit their own research needs.\n\nSpeakers: Sami Babigeon",
+   "durationMin": 90,
+   "imageUrl": "https://pretalx.com/media/hack-lu-2026/submissions/XWSZDC/image_JJwGliK.webp"
+  },
+  {
+   "id": "LYVXLS",
+   "title": "SPOT - Spear-Phishing Overwatching Tool",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/LYVXLS/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Nowadays, the detection of generic mass-scale phishing attacks is quite effective.  Techniques that leverage indicators of compromise (IOCs) collection and sharing tools, such as MISP (the Open Source Threat Intelligence Sharing Platform), are well established and give good results in the field. However, detection of targeted attack attempts aka spear-phishing, is much more challenging because the attackers exploit contextual information about the targets they aim for.\nBy using up-to-date, relevant and precise information about the inner operations of the targeted company, attackers can make their deception far more effective.\nSPOT makes use of state-of-the-art natural language processing (NLP) techniques based on machine learning (ML) and large language models (LLMs) in particular to try to detect and prevent spear-phishing attack attempts.\n\nSpeakers: Mathieu Fourcroy, Pauline Bourmeau (Cookie), William Robinet",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "GV9NJC",
+   "title": "What's wrong with OT Security? Case study on how easily things break in Your hands when you try to squeeze them.",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/GV9NJC/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Presentation will showcase missing elements from OT Security, that would be inacceptable in IT Security in 2026, based on multiple CVE-2026-XXXXX (not disclosed yet, should be published till the conference!)\n\nSpeakers: Krzysztof Chudzik",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "NJFAF3",
+   "title": "When Responsible Disclosure Becomes a Criminal Investigation: Uncovering CVE-2025-43928 in Law Enforcement Surveillance Systems",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/NJFAF3/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "In late 2024, we discovered a critical path traversal vulnerability (CVE-2025-43928) affecting Media Relay Service (MRS), a software platform used worldwide in surveillance and reconnaissance systems manufactured by Infodraw. The affected ecosystem includes mobile video surveillance solutions, police body cameras, covert observation equipment, and drone-based reconnaissance platforms operated by law enforcement agencies and governmental organizations - including the Unité Spéciale de la Police in Luxembourg.\n\nThe vulnerability allowed unauthenticated attackers to access arbitrary files on affected Windows and Linux systems and, under certain circumstances, delete files remotely. Through internet-wide scanning and coordinated vulnerability disclosure efforts, vulnerable systems were identified across multiple countries, including systems attributed to specialized police units and operational surveillance teams.\n\nThis presentation will cover the technical analysis of the vulnerability, the methodology used to identify exposed systems, challenges encountered during responsible disclosure when the vendor remained unresponsive, and the coordination with national CERTs and affected operators. The talk will further discuss how a successful disclosure process ultimately resulted in a criminal investigation (in Luxembourg) against the reporting researcher, despite the affected system being secured following notification.\n\nUsing this case study, we will examine the growing tension between cybersecurity research, public-interest vulnerability disclosure, law enforcement operations, and outdated computer crime legislation. The presentation aims to provide practical lessons for vulnerability researchers, CERT teams, and policymakers while highlighting the need for legal certainty for security research in Europe.\n\nMore information:\nEnglish: https://mint-secure.de/path-traversal-vulnerability-in-surveillance-software/\nGerman: https://mint-secure.de/ermittlungsverfahren-nach-meldung-von-it-sicherheitsluecken-in-observationssystemen/\nGerman: https://mint-secure.de/path-traversal-sicherheitsluecke-aufklaerungsgeraete/\n\nSpeakers: Tim Philipp Schäfers (TPS)",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "9VHABU",
+   "title": "Ctrl Alt Compete",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/9VHABU/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "In a series of technical missions that blend cybersecurity, problem-solving and practical IT skills. Participants will decode ciphers, unlock a smart lock and more.\nThis interactive workshop turns learning into a competitive experience in a fun and engaging way.\n\nSpeakers: Stijn Tomme",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "9UHM7W",
+   "title": "Hunting requires a bit of luck",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/9UHM7W/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Behind the facade of modern Content Delivery Networks (CDNs) like Cloudflare, malicious threat actors frequently hide their true infrastructure to evade network-level scanning, block automated detection, and hinder attribution. Yet, even the most calculated psychological operations are prone to human error, and sometimes, effective threat hunting just requires a bit of luck. This presentation walks through a high-stakes, real-world investigation into an aggressive disinformation and smear campaign targeting the international press freedom organization Reporters Without Borders (RSF). \n\nWe demonstrate how standard Cyber Threat Intelligence (CTI) workflows combined with targeted Open Source Intelligence (OSINT) and a stroke of operational serendipity can completely tear down a CDN-backed defense.\n\nThrough a collaborative effort, two threat analysts (one from RSF Nicolas DIAZ and the other one  Felix Aimé) successfully unmasked the origin web server of a malicious cybersquatted domain used to denigrate the NGO. Bypassing Cloudflare’s proxy allowed the team to map out the adversary’s broader digital footprint, leading directly to the technical attribution of (at least) one French communication agency. Attendees will gain a deep technical understanding of infrastructure tracking methodologies and witness how contemporary domestic influence operations, such as those executed by Progressif Media, are increasingly borrowing leaf-by-leaf from the psychological warfare and TTP manuals of notorious actors like the Wagner Group.\n\nSpeakers: Nicolas DIAZ, Félix Aimé",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "7GDMQM",
+   "title": "Detection Engineering with Sigma",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/7GDMQM/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Sigma is an open and generic format to share log detection signatures. In this hands-on workshop we learn what Sigma is and how to write good Sigma rules including correlations by developing some for existing threats. Furthermore, we will explore the advantages and shortcomings of developing rules with LLMs and how results can be improved by usage of the Sigma MCP server.\n\nSpeakers: Thomas Patzke",
+   "durationMin": 180,
+   "imageUrl": null
+  },
+  {
+   "id": "ZNYRZC",
+   "title": "In bed with Qubes OS, hands-on workshop",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/ZNYRZC/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "During this session, we'll explore various aspects of Qubes OS through demonstrations, hands-on labs, and exercises using pre-installed virtualized instances available to attendees.\n\nParticipants will leave with practical and operational knowledge that will enable them, maybe, to switch to Qubes OS as their main operating system.\n\nExperienced users are also welcome to join and share their perspectives, along with tips and tricks of their own.\n\nSpeakers: William Robinet",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "AYDERH",
+   "title": "MAD data science for practical C2 detection - the workshop",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/AYDERH/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Are you tired of single-threaded, unoptimized, PoC code that does not scale in real-world scenarios? Models that were trained on a few megabytes of data? Do you have a C2 beaconing problem on your network? Well, look no further! This workshop can fit so much data science for C2 detection! *slaps roof of a pile of code*\n\nSpeakers: David Szili, Eva Szilagyi",
+   "durationMin": 180,
+   "imageUrl": null
+  },
+  {
+   "id": "ZG7W3T",
+   "title": "Glucose in the Air: Wireless Medical IoT Without a Trust Anchor",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/ZG7W3T/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Continuous glucose monitors (CGMs) stream health information over Bluetooth Low Energy from body-worn sensors to smartphones and the vendors’ clouds. Millions of people depend on this communication system every day. However, existing CGM regulations tend to focus on medical-device compliance and operational requirements, while their security posture as connected medical IoT devices is often not fully evaluated.\n\nOver a two-month research effort, we conducted a comparative security assessment of four commercial continuous glucose monitoring (CGM) sensors, covering wireless pairing mechanisms, mobile applications, embedded interfaces, and portions of the supporting cloud infrastructure. Across multiple vendors, we identified recurring architectural weaknesses affecting user device trust, communication security, sensor management functionality, and backend authorization controls.\n\nGuided by a detailed threat model, we analyzed both the design and implementation decisions behind these platforms. In this talk, we will demonstrate how attackers in close proximity can abuse weaknesses in device pairing and trust establishment to impersonate trusted devices, why protocol obscurity at the wireless layer fails as a security boundary, and what manufacturers must change to build secure CGM ecosystems.\n\nAttendees will leave with a clear understanding of the relevant threat scenarios, the technical flaws introduced during the design and manufacturing of these devices, and the broader implications such weaknesses have in today’s always-connected society. The talk will also highlight how insecure wireless connectivity, weak trust assumptions, and poor security engineering practices can directly impact the safety, privacy, and reliability of modern medical ecosystems.\n\nSpeakers: Mohamed Ouad, Bartek Górkiewicz",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "MJMFB9",
+   "title": "The Good, the Bug and the Ugly - Dissecting a USB n-Day in the Linux Kernel",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/MJMFB9/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "It remains a booming business to sell exploitation of 0-days to governmental law-enforcement agencies, mainly to catch bad guys. Sometimes, however, these capabilities are not-so-lawfully misused against other actors, such as activists.\nBuilding on a report of Amnesty International's Security Lab, we investigate one such misuse that utilized several 0-days in the USB-stack of an Android phone's Linux kernel, connect the dots between device logs, CVE entries and Kernel source code, and create a working and portable exploit for affected Linux Kernels ourselves.\n\nSpeakers: Ferdinand Jarisch, Moritz Buhl",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "NZBYRK",
+   "title": "Turning the Tables: Command & no Control",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/NZBYRK/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Command & Control, or C2, is used at some point in all intrusions in order for the threat actor to communicate with victim hosts and control them. \n\nThis talk explores how defenders can turn adversary C2 implementations against them by finding mistakes in cryptography, protocol design, infrastructure hygiene, and operational security. Through real-world case studies, we will walk through malware that used blockchain-based C2 with weak encryption, allowing historic commands to be recovered from public on-chain data, and a separate campaign where expired attacker infrastructure enabled sinkholing, victim telemetry collection, and safe reimplementation of server-side C2 behavior for analysis.\n\nRather than treating C2 as a black box, this talk shows how reverse engineering, infrastructure hunting, emulation, and creative defensive thinking can provide intelligence collection opportunities.\n\nSpeakers: Ben",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "F7XYB8",
+   "title": "From Text to Terrain: Automated Geolocation Analysis of Dark Web Data",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/F7XYB8/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "How to turn noisy dark web text into actionable geospatial intelligence - fast, lightweight and at scale?\n\nThis talk introduces a lightweight NLP pipeline that can be combined with CIRCL's AIL Framework to uncover hidden geographic patterns in unstructured dark web data. Combining fastopic filtering techniques, created at this year's hackathon.lu, with RueBERTA, a RoBERTa model trained on weakly labeled data, the system extracts and parses location-related entities ranging from cities and POIs to full addresses. It can even catch your secret PO-Box!\nThe result: an interactive map that transforms chaotic underground text into intuitive, explorable geographic insights.\n\nSpeakers: Laura Bernardy",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "SFYCE3",
+   "title": "From .onion to Structured Data: A Hands-On RansomLook Workshop",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/SFYCE3/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Ransomware leak sites are a noisy, hostile and short-lived source of intelligence: onion services that go down without warning, layouts that change overnight, and increasingly, anti-bot challenges designed to keep collectors out. RansomLook is an open-source platform that has been tracking these sites for 4 years, turning scattered extortion pages into structured, searchable and pivotable data used by CERTs, researchers and threat intel teams.\n\nThis hands-on workshop takes you from the outside in. We start with a tour of the platform and the kind of pivoting it enables, then move to the collection layer: how a scraper is configured, what breaks in practice, how to write an init script that gets you past a CAPTCHA-protected leak site, and how to write a parser that turns a raw page into victim records the platform can ingest.\n\nSpeakers: Olivier Ferrand",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "G8UAWE",
+   "title": "The Bot Census: A Year Inside Malware's Telegram Ecosystem",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/G8UAWE/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Over the past year, I collected thousands of Telegram bot tokens from VirusTotal and used them to study how threat actors abuse Telegram. This talk presents insights gathered from this unique dataset and examines how the role of Telegram within the malware ecosystem is changing over time. It also discusses the practical challenges of collecting, validating, and monitoring malicious Telegram bots at scale.\n\nSpeakers: Manuel Boll",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "P89X7V",
+   "title": "Coruna: a journey in a iOS analyst life studying the anatomy of an exploit kit",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/P89X7V/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "March 2026 marked a turning point in the iOS threat landscape. Coruna and DarkSword became the first widely observed mass-exploitation campaigns targeting iOS devices at scale : a shared exploit kit used by multiple threat actors, shattering the assumption that iOS exploitation would remain the exclusive domain of nation-state tools like Pegasus or Predator.\nThis talk dissects Coruna (a campaign targeting cryptocurrency communities) following its full chain from browser fingerprinting and memory primitives through PAC bypass, code execution, privilege escalation, and implant delivery. Beyond the technical analysis, it offers an honest account of the analyst's journey: a low-cost observation setup using mitmproxy and a Raspberry Pi, the forensic artifacts that made the analysis possible, and a frank discussion of where LLM-assisted analysis accelerates work and where it produces dangerously confident wrong answers.\nThe talk also covers practical detection and infrastructure tracking using tools like Censys and URLScan.io.\n\nSpeakers: Roussille Benoît, David Durvaux",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "VFM3HR",
+   "title": "Surveilling Politicians, Unmasking Influencers, Fake Likes and Dying Together",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/VFM3HR/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "This talk takes you inside the technical and creative process behind projects that have made international headlines by exploiting publicly accessible infrastructure.\n\"The Flemish Scrollers\" runs real time computer vision on government livestreams to detect and publicly tag politicians scrolling their phones during parliamentary sessions. \"The Follower\" combines open CCTV feeds with AI to match Instagram posts to the exact surveillance footage of the moment they were taken, proving how traceable our curated online lives really are. \"Die With Me\" is a chat app that only works when your phone battery drops below 5 percent, a viral experiment in digital scarcity.\nIn the the talk we have a live demo: a custom Python tool manufacturing fake likes on a post in real time on stage, showing how cheap and trivial it is to break the trust system social media is built on.\nThis is surveillance research from outside the security industry. No corporate constraints, no responsible disclosure timelines.\n\nSpeakers: Dries Depoorter",
+   "durationMin": 30,
+   "imageUrl": "https://pretalx.com/media/hack-lu-2026/submissions/VFM3HR/image_drpsJJ7.webp"
+  },
+  {
+   "id": "CPL3TK",
+   "title": "yoga for geeks",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/CPL3TK/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Get your day started with a nice intensive yoga session\n\nSpeakers: Georges Kesseler",
+   "durationMin": 50,
+   "imageUrl": "https://pretalx.com/media/hack-lu-2026/submissions/CPL3TK/image_TzB52Xb.webp"
+  },
+  {
+   "id": "AZCTKT",
+   "title": "Tracking Information Leakers",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/AZCTKT/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "**Information leakage often involves multiple actors and sources, typically requiring only simple \"hacking\" techniques (if any) rather than advanced technical abilities. This makes other aspects, such as the process of corroborating information, a critical component of the analysis.**\n\nSpeakers: Csaba Barta",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "QENAUY",
+   "title": "From Call for Failures to Slop Control: Agentic Engineering for Security Tooling",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/QENAUY/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "In mid-2025, \"vibe coding\" was easy (and justified) to dismiss: impressive demos, questionable code (slop), horrendous security assumptions and a lot of overconfidence. I've talked about my own failures with it at last year's hack.lu call for failures, this is meant as a follow-up to that. Since then, the agentic engineering landscape has changed dramatically, coding agents have become more capable, but the more important change is methodological: developers have started to learn how to scope, constrain, review, and reuse agent workflows in ways that resemble engineering rather than just aimlessly prompting.\n\nThis talk presents field notes from several months of applying agentic engineering to real security tooling work, especially around MISP and adjacent projects. It focuses on what changed since the early vibe-coding experiments, which misconceptions still hold us back, and which procedures made the difference between more efficient engineering and becoming a slop factory.\n\nWe will look at practical lessons around task scoping, risk-tiering, context management, reusable /skills, PRD-driven workflows, review loops, test generation, adversarial self-audits, and high-risk areas such as access control, API behavior, and performance-sensitive refactors. The goal is not to blindly flood everyone with AI-generated code and consider it trustworthy by default, but to show how security-conscious engineers can use agents without abandoning engineering judgment.\n\nAttendees will leave with a realistic playbook for using AI agents in security software development: what to delegate, what to avoid, how to structure context, how to review outputs, and how to maintain - or improve on - the level of quality we were accustomed to in the before-times.\n\nSpeakers: Andras Iklody",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "JXBXGK",
+   "title": "Hostile Tools Aren't a Badge of Honour: UX for Security Engineers",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/JXBXGK/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Why is poor user experience (UX) in security tools so common? From expensive enterprise systems to home-grown vibe coded disposable applications to CLI tools, it's rare to find security tools where data and controls are laid out the same way our brain works. As security analysts, we often don't have the design vocabulary to explain *why* something isn't working the way we'd like, but on an emotional level there's something we know is not quite right.\n\nWhy is that? In this talk, we'll look at why UX is often undervalued in security tooling, but that it doesn't have to be this way. We'll also discuss some foundational design concepts and patterns to help everyone improve the way you think about user experience in your own projects.\n\nSpeakers: Chris Horsley",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "ZLPNRA",
+   "title": "Zero-Knowledge cracking of a 1983 Apple II Hardware Copy Protection",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/ZLPNRA/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "I have cracked HUNDREDS of copy-protected games and other software in my youth, but all of it was on the IBM PC x86 platform. When a fellow retro-computing collector found a hardware-dongle copy-protected historic Hebrew software for the Apple IIe from 1983, I jumped on the opportunity even though I knew absolutely NOTHING about the computer, its architecture, or operating system. In this talk I'll walk you through my learning process and figuring out things as I go, on my journey to find the copy protection and crack it.\n\nSpeakers: Inbar Raz",
+   "durationMin": 30,
+   "imageUrl": "https://pretalx.com/media/hack-lu-2026/submissions/ZLPNRA/image_kNKjKDt.webp"
+  },
+  {
+   "id": "U3NNWP",
+   "title": "BSimVis: Scaling Binary Similarity and Clustering with Ghidra",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/U3NNWP/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "When analyzing malware campaigns, firmware variants, or large binary datasets, analysts often face a wall of files. Reviewing these binaries one by one is inefficient, and reverse engineers end up wasting countless hours analyzing the exact same shared library functions or reused code across different files.\n\nEnter **BSimVis**, an open-source platform that uses Ghidra's BSim capabilities to let you analyze entire collections of binaries at once. In this 30-minute session, we will demonstrate how BSimVis shifts the paradigm from single-file analysis to bulk visualization and triage. By indexing BSim feature vectors, decompiled code, and metadata into a Kvrocks backend, BSimVis automatically correlates identical and similar functions across your dataset.\n\nSpeakers: Thomas Caillet",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "N7VZN8",
+   "title": "Voltage Glitching Basics with the Pico Glitcher",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/N7VZN8/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "In the present era, where embedded systems are increasingly deployed in security-critical environments, securing microcontrollers against physical attacks is important. This training course provides an introduction to fault-injection techniques, with a particular emphasis on voltage glitching as a method for attacking protected microcontrollers. In a hands-on session, participants will acquire practical experience in how hardware vulnerabilities can be exploited by fault-injection techniques.\n\nSpeakers: Dr. Matthias Kesenheimer",
+   "durationMin": 120,
+   "imageUrl": "https://pretalx.com/media/hack-lu-2026/submissions/N7VZN8/image_cYhWi4f.webp"
+  },
+  {
+   "id": "C3XZZY",
+   "title": "Internet Background Radiation: Exploiting the Void",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/C3XZZY/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Network telescopes capture vast amounts of unsolicited Internet traffic, much of which is often dismissed as background noise. In reality, this traffic contains valuable information about Internet-wide scanning, botnet activity, exploitation attempts, misconfigurations, data leaks, DDoS activity, and more.\n\nThe workshop will introduce the approaches used by CIRCL and NASK/CERT.PL to extract useful information from network telescope, while also leaving ample time for independent experimentation. Participants will leave with a practical understanding of how to turn seemingly meaningless packets into observations of large-scale Internet phenomena and actionable threat intelligence.\n\nSpeakers: Paweł Pawliński, Jan Adamski, Jakub Koman, Paul JUNG",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "YE8JXP",
+   "title": "Applied Transformer NLP for Cybersecurity",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/YE8JXP/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "A hands-on two-hour workshop covering applied transformer-based NLP for cybersecurity using the HuggingFace Transformers library. Participants build a complete threat intelligence pipeline from scratch — entity extraction, classification, summarization, and semantic ATT&CK mapping — using only open-source models running locally.\n\nSpeakers: Pauline Bourmeau (Cookie)",
+   "durationMin": 120,
+   "imageUrl": null
+  },
+  {
+   "id": "FC8EFA",
+   "title": "Code-level security analysis: what about the attacker?",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/FC8EFA/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Program analysis techniques have made tremendous progress in the past decades, and while their initial application fields were mostly safety-critical systems, they are now routinely used in security-related evaluations. Yet, somehow, the typical design of program analyzers and their associated techniques did not change that much, and they are still rooted in safety. In this talk, I will argue that fully embracing a security-oriented view of program analysis opens new interesting (and fun!) challenges. I will especially focus on how to take the attacker into account in code-level security analysis, and describe several recent advances in this direction, with applications to hardware/software attacks and vulnerability priorization.\n\nSpeakers: Sebastien Bardin",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "TNYBGW",
+   "title": "Global Telemetry to Local Remediation: Operationalizing Threat Intelligence for the Underserved",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/TNYBGW/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Across the world many organizations that communities depend on every day— such as schools, libraries, shelters, healthcare providers, local media and NGOs etc —operate with limited cybersecurity resources. Yet when they are hit by a cyber incident, the consequences are very real: services become unavailable, sensitive data is exposed, public trust is damaged, and recovery often falls on a handful of people already stretched thin.\n\nFor years, the **Shadowserver Foundation** has helped defenders around the world identify and remediate threats through free daily intelligence feeds, victim notifications, vulnerability reporting, and Internet-scale measurements. Working through **National CSIRTs,** trusted partners, and directly with organizations, **Shadowserver** provides visibility into compromised systems, exposed services, vulnerable assets, and emerging threats that would otherwise go unnoticed.\n\nBut visibility by itself does not reduce risk.\n\nMany organizations receive notifications or intelligence yet struggle to understand where to start, what matters most, or how to translate external signals into practical security improvements. **National** **CSIRTs** and cybersecurity authorities play a critical role, but community organizations often remain at the edge of the ecosystem, with limited capacity to operationalize the information they receive.\n\nSpeakers: Sebastian Wagner, Jon Flaherty",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "WNYDFF",
+   "title": "Unintended Computations",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/WNYDFF/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "A printer language, a Jira rule, and Unicode transliteration are rarely treated as execution environments. Yet ordinary features can compose into something much more powerful than their intended role suggests.\n\nThis talk asks a simple question: **what can this system compute?**\n\nWe start with a network printer playing chess, then make the question systematic. A universal two-counter machine is assembled from ordinary text utilities, then rebuilt in Jira automation. Finally, universal computation emerges from Unicode transliteration rules.\n\nAcross these examples, the same pattern appears: **state, conditional choice, and feedback**. Together they can create an unexpected programmable substrate even when no individual component looks like an interpreter.\n\nBut computational power alone is not a vulnerability. The security questions come next: **who can steer the computation, what operational bounds constrain it, what authority does it inherit, and what trust boundaries can it cross?**\n\nThe result is a practical method for finding unexpected execution surfaces hidden inside ordinary systems and their composition.\n\nSpeakers: Nicolas Seriot",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "YAUCQT",
+   "title": "BTR Reforged: Weaponizing Defender's Remediation Driver as a Kernel Operation Primitive",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/YAUCQT/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "What if a trusted security component could be repurposed into an attacker-controlled kernel primitive? What if a signed Microsoft remediation driver could be instructed to execute arbitrary file and registry operations from Ring 0—without exploits, vulnerabilities, or memory corruption?\n\nIn this talk, we present the first full reverse engineering of the Windows Defender Boot-Time Removal driver (BTR.sys) and its proprietary transaction format. We dissect its encrypted configuration mechanism, integrity validation logic, and execution pipeline, and demonstrate how this legitimate remediation component can be transformed into a universal kernel operation engine. We introduce BTR_CLI, a research tool that constructs valid encrypted transactions and safely exercises the driver’s functionality to demonstrate its capabilities.\n\nFurthermore, we demonstrate how the BTR_CLI can be used as an EDR/AV bypass technique, disarming security solutions while using a trusted Windows built-in, Microsoft-signed driver, thus not relying on typical BYOVD techniques.\n\nOur research reveals how trusted security infrastructure can unintentionally expose powerful primitives, what this means for defenders, and how similar patterns may exist in other signed remediation components. This talk blends reverse engineering, kernel internals, and detection engineering into a practical case study of when defensive technology becomes offensive capability.\n\nSpeakers: Jiří Vinopal",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "ZV9EFP",
+   "title": "HHAMMERRing the Noise: AI-Agentic Threat Hunting with Suricata and the Power of EVE Metadata",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/ZV9EFP/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "### **HHAMMERRing the Noise: AI-Agentic Threat Hunting with Suricata and the Power of EVE Metadata**\n\nThis workshop introduces **HHAMMERR**, a specialized threat hunting framework designed for modern detection engineering: **Hypothesis, Hunt, Analyze, Modulate, Manage, Enhance, Refine, and Repeat**. Built on the philosophy of \"hunt manually once, automate forever,\" the session demonstrates how to move beyond traditional query-based methods into cost-effective, high-accuracy AI integration.\n\nUsing **Suricata**—the industry-standard open-source network analysis engine—as the primary data source, attendees will explore how to leverage its rich protocol, flow, and anomaly logs for deep network visibility. The workshop bridges the gap between traditional SIEM-based hunting and **Agentic AI**, focusing on building precise \"AI Skills\" rather than simply processing massive datasets.\n\n**Key Takeaways:**\n* **Methodology:** Implementation of the HHAMMERR cycle to standardize hunting workflows.\n* **Optimization:** Techniques for building Agentic AI tools that prioritize data sovereignty, performance, and low token costs.\n* **Practical Application:** Hands-on malware hunt scenarios designed to provide immediate, actionable value for blue teams.\n\nMoving past the hype of generative AI, this session provides a pragmatic roadmap for defenders to illuminate perimeter blind spots and automate complex detection tasks using the Claude AI plugin ecosystem and Suricata's network security data.\n\nSpeakers: Peter Manev, Eric Leblond",
+   "durationMin": 120,
+   "imageUrl": null
+  },
+  {
+   "id": "3JKMYU",
+   "title": "Poisoned at the Source: Hacking the Software Supply Chain in Your CI/CD Pipeline",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/3JKMYU/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Last year's CI/CD attacks didn't come through the front door, they came pre-installed. In 2025, the Shai-Hulud worm tainted 500+ npm packages, the chalk/debug compromise hit packages with 2.6 billion weekly downloads, and axios was backdoored in a 3-hour window. In this hands-on workshop you'll become the attacker: build a malicious npm/PyPI package, poison a pipeline, exfiltrate secretss. Then switch hats and run the incident response, tracing the blast radius and learning the defenses that actually stop these attacks.\n\nSpeakers: Daniel Schwendner",
+   "durationMin": 180,
+   "imageUrl": null
+  },
+  {
+   "id": "RVNACX",
+   "title": "Web forensics with Lookyloo and Lacus",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/RVNACX/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Websites are complex, they change all the time, it is extremely tedious to reproduce the load of one URL, especially when the malicious actors don't want you to probe their infrastructure.\n\nDuring this workshop, we will look at techniques used by malicious actors to trick unsuspecting users, find phishing campaigns, and see a lot of slop.\n\nSpeakers: Raphaël Vinot",
+   "durationMin": 180,
+   "imageUrl": null
+  },
+  {
+   "id": "F9XSN9",
+   "title": "CVE-2025-54068 : Deep dive into Livewire, from weak typing to pre-authenticated remote command execution",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/F9XSN9/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "CVE-2025-54068 exposed a critical vulnerability in Livewire, a popular full-stack framework for Laravel, enabling pre-authenticated remote command execution (RCE) by exploiting PHP’s weak typing and Livewire’s hydration mechanism. According to GitHub, Livewire was downloaded more than 85 million times, making it one of the most used Laravel dependency ever.\n\nTraditionally, Livewire protects its state with a checksum signed by the application’s APP_KEY. However, this vulnerability allowed attackers to bypass the APP_KEY requirement entirely by smuggling synthesizers through the updates mechanism, effectively breaking the state synchronization between server and browser.\n\nThe root cause lies in Livewire’s component property update hydration process, where recursive calls and improper context preservation enabled malicious payload injection. Exploitation required only the target application’s URL, making it accessible to unauthenticated attackers. The vulnerability affected Livewire versions from 3.0.0-beta.1 up to 3.6.3, and was patched in version 3.6.4.\n\nThis talk will detail the technical chain from weak typing to RCE, demonstrate the exploit process, discuss the hardening measures implemented by Livewire to prevent similar issues in the future and more especially, show the consequences being the publication of the associated proof of concept during the end of last year.\n\nSpeakers: Rémi Matasse",
+   "durationMin": 30,
+   "imageUrl": "https://pretalx.com/media/hack-lu-2026/submissions/F9XSN9/image_H480ge0.webp"
+  },
+  {
+   "id": "SND8RY",
+   "title": "1000 Ways to Die: The Convergence of IT/OT in Hospitals",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/SND8RY/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Hospitals are a perfect example of a complex System of Systems. Their infrastructure is like a small city, with multiple, independent, operationally distinct systems that interact to deliver healthcare services to users at the end of the day. No single system controls the whole, instead, clinical services emerge from the coordinated behavior of clinical, administrative, and logistical subsystems.\nThis also mean multiple single points of failure. And the convergence of IT and OT in this small cities we call hospitals is ramping up their cascading risk profiles. In this talk, we will explore 1000 ways do die, from delayed surgeries caused by a ransomware attack on the scheduling software to patient evacuation from HVAC systems, from infusion pumps being manipulated to target kills to medical data exfiltration to some country in Asia, from backup generator damage to DICOM clinical image manipulation.\nWe will marathon through many different scenarios, protocols and technologies, highlights as much as possible about the challenges hospitals face in this world where everything seems connected, online and at the reach of a button.\n\nSpeakers: Pedro Umbelino",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "DLUE7G",
+   "title": "Automating the Reverse Engineering of CAN Bus Protocols with Physics-driven Traffic Analysis",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/DLUE7G/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Most automotive security research still relies on manual or semi-automated processes to reverse-engineer CAN bus protocols and reveal how vehicle data such as speed, acceleration, or throttle position is encoded. We present a novel, fully automated approach that instantly identifies the bits corresponding to physical vehicle features, even on previously unseen models, by analyzing physics-based relationships reflected in raw CAN traffic. Our method accelerates reverse engineering from hours or days to mere minutes. We explore the impact of such fully-automated passive reverse engineering not only for vehicles but also for other CPS/OT environements.\n\nSpeakers: Eric Wagner, Matteo Frigo",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "Y7TRDZ",
+   "title": "Analyzing Android Phones at Scale",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/Y7TRDZ/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Mobile devices have become the primary targets for highly sophisticated, targeted spyware and state-sponsored surveillance, yet validating a suspected compromise remains an adversarial challenge across all sectors. Whether in a corporate enterprise, an investigative newsroom, or a human rights organization, tracking mobile malware forces an impossible binary choice: accept the existential risk of data exfiltration, or initiate traditional forensics. For individual users, journalists, and corporate Incident Response (IR) teams alike, standard forensic methods are deeply destructive, and breaks critical software access. Because specialized forensic workstations are complex and cost-prohibitive, high-risk individuals and organizations often remain completely blind to ongoing breaches.\n\nThis talk introduces **[IsMyPhonePwned]([url](https://ismyphonepwned.com/))**, an open-source, non-destructive mobile forensic framework designed to democratize device auditing. It allows anyone to scan for Indicators of Compromise (IoCs) and malware infections directly from a standard web browser over a USB connection. By leveraging WebAssembly and a high-performance stack written entirely in Rust, our framework enables client-side extraction, log parsing, and industry-standard Sigma rule evaluation without rooting, zero software installation, and zero device downtime. We will demonstrate how organizations and individual citizens can bypass complex, destructive investigative bottlenecks and perform rapid, privacy-preserving mobile triage at scale: [https://ismyphonepwned.com/](https://ismyphonepwned.com/)\n\nSpeakers: Anthony",
+   "durationMin": 30,
+   "imageUrl": "https://pretalx.com/media/hack-lu-2026/submissions/Y7TRDZ/image_PCdD0ay.webp"
+  },
+  {
+   "id": "ZZ8HRQ",
+   "title": "Soldering Workshop - Learn by doing",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/ZZ8HRQ/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "As part of our stand/village at hack.lu 2026, syn2cat would like to offer the opportunity for participants to learn how to do soldering (or sharpen their skills)\nFirst timers as well as experienced participants are welcome!\nThis is mainly hands-on preceded with safety measures and short introduction to soldering techniques.\n\nSpeakers: Bernard Sadaka",
+   "durationMin": 90,
+   "imageUrl": "https://pretalx.com/media/hack-lu-2026/submissions/ZZ8HRQ/image_fDtJj2Y.webp"
+  },
+  {
+   "id": "EPWMGF",
+   "title": "Bolting on security is the best we can [generally] do, so grab a wrench",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/EPWMGF/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "We all know the adage that security should be built-in, not bolted on. This would work great if our threat models perfectly reflected reality, and adversaries never adapted. Sadly, the real-world doesn't fit into a neat specification and design document, and adversaries alter their tactics. When looking at cyber-security as a dynamic game, defenders must adapt to survive--bolting on security is the only way to circumvent new attacks or stymie adversaries.\n\nRegardless of how much faith you put into the fear-mongering AI hype machine, we've all seen the world we work in shift, and designing for easier updates, changes, and enhancement without impacting UX is the way forward. My entire career has been spent adding in security after-the-fact, so join me as I:\n- Explore the reasons security is hard and cannot be solved\n- Highlight wins where security has been added after the fact\n- Look at how designing for future security augmentation helps our future selves bolt-on security more quickly\n- A few areas where security can be designed in, and how lumping those areas with general cyber-security harms their outcomes\n\nSpeakers: Jacob Torrey",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "KQCEEC",
+   "title": "Cloak and Filter: Weaponizing the GPU and Windows Cloud Filter for File-less Execution and Privilege Escalation",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/KQCEEC/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Security solutions have long since established absolute control over disk I/O and user-land memory. Every step you take, you generate telemetry. To survive, attackers need to operate where EDRs and other solutions cannot see. However, most attack surfaces include touching the disk or RAM, triggering monitored disk writes or creating suspicious memory allocations. \n\nThis talk introduces a novel attack surface that bypasses this barrier by weaponizing the Windows Cloud Filter and its API (CFAPI). Although CFAPI was originally designed for cloud storage providers, we abuse it to bridge the gap from untouchable memory space of the GPU directly to the attacking Cloud Provider.\n\nWe will demonstrate how our 0-byte file placeholders can achieve PE while not triggering a single event on a fully patched Windows 11 machine. Compute Shaders will decrypt the payload entirely on the GPU, completely bypassing traditional monitoring.\n\nAttendees will learn how to conduct low-level attack surface research, observing all the steps we went through. The obstacles of our research journey will be noted so the audience will learn from our mistakes. The undocumented structures and flows of the attack surface will be shown and dissected. Attendees will walk away from this talk with enough knowledge and ideas to continue where this research left off.\n\nSpeakers: David Shandalov",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "V7HSZA",
+   "title": "ESC17: Using ADCS to Attack HTTPS-Enabled WSUS Clients",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/V7HSZA/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "The Active Directory Certificate Service (ADCS) has been studied extensively, which lead to an entire category of privilege escalation techniques: the ESC attacks.\nWe combined known research about attacks on ADCS and the Windows Server Update Service (WSUS) to compromise Windows machines in supposedly \"secure\" environments.\nAs this technique can be generalized, we decided to introduce the new escalation number ESC17.\n\nSpeakers: Alexander Neff",
+   "durationMin": 30,
+   "imageUrl": "https://pretalx.com/media/hack-lu-2026/submissions/V7HSZA/image_MzDAPkO.webp"
+  },
+  {
+   "id": "3D9FXD",
+   "title": "GoaTracer: A Hybrid Dynamic Analysis Platform",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/3D9FXD/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Modern malware increasingly relies on packing, process injection, self-modifying code, and anti-analysis techniques that challenge traditional dynamic analysis platforms. Existing approaches often force analysts to choose between fine-grained execution visibility and stealth, while many advanced solutions remain proprietary, difficult to reproduce, or poorly suited for extracting reusable low-level execution traces for research and reverse purposes.\n\nIn this paper, we present GoaTracer, an open-source dynamic binary analysis platform for Windows that combines in-guest binary instrumentation with hypervisor-level virtual machine introspection. This hybrid architecture provides instruction-level visibility while limiting the observable footprint exposed to the analyzed program, improving resistance against common anti-analysis and anti-debugging mechanisms.\n\nBeyond execution tracing, GoaTracer is designed as a low-level analysis foundation from which higher-level semantic information can be reconstructed automatically. The platform introduces a wave-based execution model that isolates dynamically generated execution stages and enables the reconstruction of unpacked binaries, shellcodes, control-flow graphs, call graphs, and behavioral artifacts associated with malware activity. GoaTracer also captures system interactions with parameters and maps observed behaviors to MITRE ATT&CK and Malware Behavior Catalog (MBC) techniques.\n\nWe describe the architecture and implementation of GoaTracer and demonstrate its practical capabilities through the analysis of the ClaimLoader malware, showing how the platform reconstructs multi-stage execution flows, extracts intermediate payloads, and reveals behaviors that remain difficult to observe with conventional dynamic analysis systems.\n\nSpeakers: Pierre MARTY, Fabrice Sabatier, ROYER",
+   "durationMin": 30,
+   "imageUrl": "https://pretalx.com/media/hack-lu-2026/submissions/3D9FXD/image_4ofGhlY.webp"
+  },
+  {
+   "id": "LBXYZA",
+   "title": "Screen Time Sabotage: A Teenager’s Guide to Outsmarting Parental Controls",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/LBXYZA/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "**Parental controls, the final boss for teenagers, and in this presentation I will present some possible ways to defeat it.**\n\nSpeakers: Nándor Barta",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "DBBS3T",
+   "title": "Kernel Primitives to Code Execution on Windows 11 VBS/HVCI/kCET (SSDT/SSDT Shadow hooks)",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/DBBS3T/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "This session presents a modern Windows 11 exploit chain for achieving kernel code execution on systems with VBS, HVCI, and kCET enabled, using SSDT and Shadow SSDT hook-based techniques.\n\nBeginning with a recap on Windows Kernel structures and components, then diving into vulnerable kernel driver behavior and vulnerability hunting, we will show how to identify and abuse kernel read/write primitives, reasoning about mitigation, and transform primitives into reliable kernel code execution.\n\nSpeakers: Juan Sacco",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "LGBYFD",
+   "title": "Satellites in the Sandbox: Hands-On Component Collusion and Aerospace C2 Evasion",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/LGBYFD/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "As space infrastructure adopts Commercial Off-The-Shelf (COTS) hardware, satellite supply chains present critical blind spots. Traditional security reviews focus on monolithic flight software, missing malicious peripheral components that activate only in orbit. This session examines attack surface inside NASA’s open-source Core Flight Software (cFS) framework. We demonstrate Component Collusion - evasion vector assigned to the SPARTA matrix (ID: DE-0012), showing how malware logic can be fragmented across benign COTS applications. By routing covert coordination through hidden OS file interfaces (FIFOs) rather than the monitored cFS Software Bus, this threat evades telemetry baselines and flight-readiness reviews. The talk includes a live demonstration of dynamic GNSS triggers, covert telemetry exfiltration over simulated RF links, and targeted detection strategies for satellite frameworks.\n\nSpeakers: Munara",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "TK3D8T",
+   "title": "SVGosploit - When Steganography Meets Vector Graphics",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/TK3D8T/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "\"A good exploit is one that is delivered in style\". 10 years ago, I created and presented, at Hack.LU, a practical exploit delivery mechanism using steganography and polyglots involving JPEG images. With SVGosploit, I present a practical solution for embedding undetectable malicious content within SVG files. This talk explores the internals of SVG files, candidate locations for data hiding, density of data that can be hidden and tools to demonstrate in-browser extraction of steganographic content.\n\nWhile the world is focussing on bug hunting at scale, techniques that fly below the radar and stay hidden in plain sight equally contribute to a larger impact in the whole offensive cybersecurity theatre.\n\nSpeakers: Saumil Shah",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "FG8XGE",
+   "title": "Practical Maldoc Analysis Workshop: The Unusual Suspects",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/FG8XGE/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "In last year’s workshop, “Practical Maldoc Analysis Workshop”, Didier focused on the usual suspects: PDF, Office and RTF.\nIn this follow-up workshop, we will focus on “The Unusual Suspects”: document file formats that you don’t encounter frequently when analyzing malicious documents.\n\nSpeakers: Didier Stevens",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "UYKNCQ",
+   "title": "Bad out of Hell - FAT File System",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/UYKNCQ/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "This training is about how to hide data on storage media, by abusing the file systems 'defect cluster' mechanism.\n\nSpeakers: Michael Hamm",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "LQ8B3S",
+   "title": "iOS analysis using the Sysdiagnose analysis framework workshop - beginners session",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/LQ8B3S/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Are you, or your organisation, concerned about potential compromise on your iPhone, iPad, or Apple Watch? This workshop equips you with the knowledge and tools to identify red flags on your iOS device. We delve into the world of sysdiagnose and explore methods to verify potential breaches.\n\nThis is the starter workshop, we invite you to also join the second deeper dive session with deeper analysis.\n\nSpeakers: Christophe Vandeplas, David Durvaux",
+   "durationMin": 120,
+   "imageUrl": "https://pretalx.com/media/hack-lu-2026/submissions/LQ8B3S/image_OZH8XIm.webp"
+  },
+  {
+   "id": "SY7C9F",
+   "title": "The Human Side of Incident Response Failures: Why Mature SOCs Still Break Under Pressure",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/SY7C9F/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Modern SOCs are built on mature tooling, automation, and structured response processes, yet incidents still fail to be handled effectively in real environments. The issue is often not technical gaps, but human and operational factors that shape decision-making under pressure.\n\nThis talk explores how escalation delays, unclear ownership, cognitive overload, and communication breakdowns influence the outcome of DFIR investigations. It shows how these factors can alter the direction of an incident from the very first SOC alert, especially in phishing-driven intrusions, where speed and clarity are critical.\n\nThe focus is on how operational realities, rather than technical limitations, impact incident response accuracy and consistency.\n\nSpeakers: Meera Tamboli",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "BZU839",
+   "title": "Signal processing and math for malware RnD for fun and profit",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/BZU839/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Modern AV and EDR platforms treat malware as data: they compute Shannon entropy, match byte patterns, and blacklist known cryptographic primitives. AES resembles AES. XOR is XOR.\nThe statistical fingerprint is always there - until you stop looking at the payload as data and start looking at it as a signal.\n\nThis presentation shows how Digital Signal Processing (DSP), particularly the Discrete Fourier Transform (DFT) and DFT-like math algorithms, with a phase shifted mathematical key, converts shellcode bytes into a buffer of complex floating point frequency coefficients. The output is mathematically indistinguishable from sensor noise or audio noise. No byte patterns: No signature of high entropy . There is no recognizable structure until the matching key is used at runtime by the Inverse DFT.\n\nThe delivery mechanism completely bypasses the network layer. The payload is encoded into audio tones and played through a speaker using FSK. A victim machine demodulates the tones with the Goertzel algorithm of a standard microphone, rebuilds the shellcode and executes it. The covert channel is physics. Like acoustic weapon. There is no socket. There is no pipe. There is no network alert.\n\nWe present a working, open-source PoC for Linux and Windows covering two threat models:\nshellcode delivery (attacker -> speaker -> air -> victim mic -> execute) and data exfiltration (victim -> speaker -> air -> attacker mic -> stolen data). All source code will be released after session.\n\nSpeakers: cocomelonc",
+   "durationMin": 30,
+   "imageUrl": "https://pretalx.com/media/hack-lu-2026/submissions/BZU839/image_KxZkShd.webp"
+  },
+  {
+   "id": "BX8WPS",
+   "title": "Polling is the Vulnerability: A Case for Event-Driven Cloud Detection",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/BX8WPS/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Attackers don’t need zero-days in the cloud—they exploit detection delays. SIEM-based pipelines create blind spots through latency and complexity. This paper shows why the problem is architectural and presents OpenCDR, an event-driven system enabling near real-time response and eliminating detection gaps.\n\nSpeakers: Santi Abastante",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "M9YUZX",
+   "title": "Six Degrees of RACF SPECIAL - Mainframe Attack Paths",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/M9YUZX/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Enterprise identity security has been transformed by graph-based attack path modeling. BloodHound changed how attackers and defenders think about Active Directory, revealing privilege escalation paths that static access reviews consistently missed. That shift never reached the mainframe.\nRACF, IBM's security subsystem for z/OS, controls access to some of the most sensitive workloads in existence such as core banking, payment processing, government records, and insurance systems. Yet mainframe authorization is still primarily analyzed through flat reports and manual access list reviews, approaches that are blind to multi-step privilege escalation across users, groups, datasets, surrogate permissions, and system authorities.\nRACFHound applies attack path modeling to RACF by transforming authorization data into an identity graph and integrating it into BloodHound via the OpenGraph framework. This talk demonstrates how privilege escalation paths through RACF can be systematically discovered using the same techniques now standard in Active Directory security. The mainframe becomes a first-class citizen in modern identity security analysis, and the attack paths hiding in plain sight in every large enterprise finally become visible.\n\nSpeakers: Jonathan Prince",
+   "durationMin": 30,
+   "imageUrl": "https://pretalx.com/media/hack-lu-2026/submissions/M9YUZX/image_oj8iKc8.webp"
+  },
+  {
+   "id": "9ZB3WZ",
+   "title": "Mastering Bash for Hackers: Extreme Command-Line Power",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/9ZB3WZ/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Bash isn’t just an interface to your daily laptop - it’s a weapon. In this hands-on training, we’ll push bash beyond its typical use, leveraging it for hacking, data processing, automation, and real-world security applications. Whether you’re crafting exploits, analyzing massive datasets, or automating reconnaissance, this session will equip you with the skills to turn bash into your ultimate hacking tool.\n\nTo take part in the training, please bring your own laptop.\n\nSpeakers: Kirils Solovjovs",
+   "durationMin": 180,
+   "imageUrl": null
+  },
+  {
+   "id": "APY7TM",
+   "title": "iOS analysis using the Sysdiagnose analysis framework workshop - advanced session",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/APY7TM/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "This is the second part, or deep dive, of the Sysdiagnose Analysis Framework Workshop.\n\nWe will continue on the topics discussed in the first workshop, but here the focus is on diving DEEP in lots of the data that is present in the sysdiagnose archive. \nPlease ONLY attend this workshop if you either attended previous year's session or attended the beginners session, or already used the sysdiagnose analysis framework before.\n\nSpeakers: Christophe Vandeplas, David Durvaux",
+   "durationMin": 120,
+   "imageUrl": "https://pretalx.com/media/hack-lu-2026/submissions/APY7TM/image_vNdCPXl.webp"
+  },
+  {
+   "id": "PBNZDU",
+   "title": "Windows Kernel Exploitation",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/PBNZDU/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Windows Kernel Exploitation Workshop: is a hard-core practical, training focused on advanced Windows kernel exploitation techniques, including post-exploitation techniques, data-only payloads (gadgets), table hijacking of SSDT, Shadow, GDT and IDT, free space memory allocattion and VBS enclaves.\n\nThis workshop is meant for enthusiasts, malware developers/analysts, reverse engineers and exploit developers alike.\n\nSpeakers: Juan Sacco",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "3ZRHJS",
+   "title": "Project Rudzik - LLM assisted vulnerability hunting in open source projects",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/3ZRHJS/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Securing core open source projects is important for obvious reasons.\nAI / LLMs are another potential option in our toolset to help with this.\nIn this research I tested different prompts, approaches and versions of LLMs to aid in my code reviewing process. This research led to a significant list of vulnerability findings.\n\nSpeakers: Jeroen Pinoy",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "WRTWTK",
+   "title": "C2 Evolution From the Past to Tomorrow",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/WRTWTK/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Since malware evolved with time, they established communications with a server to work smoothly. Most of them always used the gold old “client/server” model. Before diving into the malware ecosystem, I'll explain why threat actors just reused communications channels that we have for thousands of years. Their goal remains the same except that, today, bits and bytes are used.\nThat’s the basics of a botnet where we have “bots” waiting for commands from their master. I’ll provide a recap of the C2 protocols from the past to today and... tomorrow? To show you common tactics used by attackers to interact with the infected computers.\n\nSpeakers: Xavier Mertens",
+   "durationMin": 30,
+   "imageUrl": "https://pretalx.com/media/hack-lu-2026/submissions/WRTWTK/image_CXTfnoS.webp"
+  },
+  {
+   "id": "HXDLNG",
+   "title": "Diving into Firmware Cartography with Pyrrha 2.0",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/HXDLNG/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Firmware analysis means navigating thousands of binaries, kernel modules, and shared libraries whose interactions are rarely documented. Without dedicated tooling, understanding the system before auditing it costs hours. Pyrrha is an open-source firmware cartography ecosystem that automates this orientation work at three levels of detail: a dependency graph of inter-binary relationships (who imports what from whom), a firmware-wide call graph connecting every function call across all binaries, and decompiled source code annotated with those cross-binary call edges. All results land in queryable graph databases that can be explored and searched visually.\n\nSpeakers: Eloïse Brocas",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "SKB7U8",
+   "title": "A Generalized Fingerprinting Framework for Deriving Searchable Features to Identify Publicly Exposed Infrastructure",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/SKB7U8/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Scanning of internet-exposed infrastructure has become a core methodology in\nnetwork security research, vulnerability assessment, and threat intelligence.\nThreat intelligence analysts and researchers routinely scan the public internet to identify\nexposed services, characterize device types, and infer software versions in\norder to assess security posture and systemic risk. When a new vulnerability is disclosed,\nnational security teams face the task of identifying the hosts that run the vulnerable version.\nHere, time and reliability are key, because vulnerable infrastructure has to be found before\nattackers find it. Under NIS2, which significantly expands the number and\ndiversity of organizations under supervision, this task has become even more\nimportant.\n\nTherefore, this talk presents parts of the results of a master thesis performed at the request\nof and in close collaboration with the National Cyber Security Centre (NCSC-NL).\nIt gives insights into a proposed methodology that guides threat intelligence\nanalysts to a fast and reliable search engine query, in this case Censys, in\norder to identify vulnerable infrastructure. We present part of the methodology,\nwhich is modeled as a decision tree whose leaves result either in an effective query\nor in the conclusion that no suitable query can be derived. Alongside it, we present\nthe comprehensive feature table, in which features across domains were aggregated to\ndepict the most promising fingerprinting features. Certificates, exposed HTML code,\nand even TTL values of OT devices can all be used as fingerprinting features to identify a specific\nvulnerable product. Finally, we present parts of the prototype: a CLI-based\ntool that allows researchers and experts to automatically identify suitable\nfeatures and the resulting query.\n\nSpeakers: Bilal, Bob van der Kamp",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "ALBEKT",
+   "title": "ai-connector: how to connect your local LLM to MISP - a new standard AI MISP module",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/ALBEKT/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "LLMs are great for specific tasks in understanding (unstructured or even semi-structured) CTI reports.\nHowever, very often one can not simply send out corporate CTI infos to the large public AI frontier models. Regulation, security and privacy concerns mandate local models.\n\nLuckily, now some local LLM models are fully capable of understanding CTI Reports, understanding MISP EventReports, MISP events and they can even suggest the proper MISP tagging.\n\nThe new MISP \"ai-connector\" ([https://github.com/MISP/ai-connector](https://github.com/MISP/ai-connector)) is available and suitable for everyone who is capable for running a local ollama, vllm, LMStudio or similar. It gets even better: models such as qwen3.8 are extremely good at image as well as NLP tasks. The \"ai-connector\" module was written, tested and benchmarked against models such as qwen3.8 and is now part of the MISP eco-system.\n\nIn this workshop, participants will learn how to install it, configure it and make MISP \"local-AI ready\".\n\nSpeakers: Aaron Kaplan",
+   "durationMin": 90,
+   "imageUrl": "https://pretalx.com/media/hack-lu-2026/submissions/ALBEKT/image_CMbZ6Gl.webp"
+  },
+  {
+   "id": "JXKW89",
+   "title": "HOPLITE: From Previously Unanalysed Data to Automated Intelligence",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/JXKW89/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "This workshop will present multiple HOPLITE components designed to support the collection, analysis and interpretation of open-source information for investigative and security-related use cases.\n\nThe session will focus on how HOPLITE combines automated analysis, including AI-based methods, with existing tools and platforms to help identify relevant content, detect potential threats and reduce the amount of information requiring manual assessment. One of the technologies considered within this ecosystem is the Analysis Information Leak (AIL) platform, which HOPLITE extends with additional analytical capabilities.\n\nSpeakers: Aurelien Thirion, David Curran",
+   "durationMin": 120,
+   "imageUrl": null
+  },
+  {
+   "id": "FAGXJE",
+   "title": "Operation IXIM: Preventing a botnet of millions of PopCorn Time users",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/FAGXJE/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "PopCorn Time was once one of the most popular BitTorrent streaming clients in the world. While the software has been abandoned for years, one of the forked versions (Time4Popcorn) has an update mechanism that never stopped running. During routine threat hunting, we discovered that millions of systems worldwide still have the updater process running in the background, connecting to domains that were no longer registered.\n\nIntrigued, we registered one of these domains and were shocked to discover the number of requests that started pouring in every second. Over several months, we observed millions of unique hardware IDs across various platforms.\nAfter taking a closer look at the closed-source updater binaries, we confirmed the worst: the update mechanism is horribly insecure. Anyone who registered the right domain could instantly compromise millions of machines, including systems on government, military, and corporate networks. This vulnerability was assigned CVE-2026-30612.\n\nSince taking over all domains was not viable, we were faced with an unprecedented decision: do nothing and leave millions at risk or take matters into our own hands. Join our talk to find out what we did and why.\n\nSpeakers: Niels Teusink",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "EH8W3V",
+   "title": "My crimeware digital garden",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/EH8W3V/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "A digital garden is a living collection of notes, reflections, and half-formed ideas that grow and connect over time. After more than twenty years spent reverse engineering, tracking, and disrupting botnets, mine has become a map of what endures in crimeware; the patterns that survive every reinvention of the threat landscape. In this talk I walk through the core ideas at the center of my crimeware digital garden.\n\nEach concept presented is illustrated with recent, hands-on cases. Financial motivation still shapes almost every design decision attackers make. Detection evasion explains a lot of convoluted functionalities analysts need to dig through. This includes sandbox awareness, software packing, and tricks against static detection engines. On the defender's side, concrete actions can be taken to protect users and organizations, from technical protection, to takedowns and litigations. \n\nThe recurring lesson surfaced in organizing this knowledge is that there is rarely magic here; just malware developers, and operators, with their objectives. Keeping objectives and techniques in focus is what makes analysis tractable, whether you are doing the work yourself or guiding agents to help.\n\nSpeakers: Pierre-Marc Bureau",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "C87GLP",
+   "title": "Bad Bears, Careless Kittens: State-Sponsored Espionage Exposed",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/C87GLP/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Nation-state operators are often treated as disciplined, sophisticated, and untouchable. But sometimes, their own infrastructure tells a different story.\n\nIn this talk, we examine two active espionage campaigns linked to Russia’s GRU and Iran’s MOIS where exposed command-and-control infrastructure revealed source code, operator logs, tooling, and evidence of live operations. By turning the adversaries’ own mistakes against them, we show how defenders can move beyond indicators and gain rare insight into how state-backed campaigns actually function.\n\nThis is a story about C2, OPSEC failures, and what happens when the hackers accidentally expose themselves.\n\nSpeakers: Ben",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "BDL8U3",
+   "title": "Khmer Shadow: Uncovering a Targeted Cyber Espionage Campaign Against Cambodian Military Intelligence",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/BDL8U3/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Acronis Threat Research Unit uncovered a new APT group, tracked as Khmer Shadow, behind two targeted cyber espionage campaigns against high-value Cambodian government institutions. One campaign confirmed spearphishing of named personnel within the Information Collection Bureau (ICB) of Cambodia's Ministry of National Defence, the country's primary military intelligence organ, a rare instance of a threat actor directly targeting a Southeast Asian military intelligence bureau.\n\nAssessed with moderate confidence as Chinese state-sponsored, the actor used precision lures built around a fabricated Chinese development and investment persona, with decoy documents referencing real named contacts inside the targeted bureaus, indicating prior reconnaissance and intelligence-driven targeting consistent with Chinese collection priorities in Southeast Asia.\n\nBoth campaigns delivered a custom loader we have named NightForge, which executes a multi-stage infection chain culminating in a Havoc C2 agent. NightForge reflects significant engineering investment: it neutralizes host security tooling before execution and stores an encrypted payload under a machine-specific filename within a legitimately themed staging directory to frustrate detection and cross-victim correlation.\n\nSpeakers: Subhajeet Singha",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "7EPHAP",
+   "title": "Enhanced Web Fuzzing - Improving your wordlists with tooling and methodology",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/7EPHAP/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "URL fuzzing is a critical step in penetration testing, yet its effectiveness often hinges on the quality of wordlists. Publicly available lists frequently suffer from missing critical entries, poor sorting, lack of modularity, and irrelevant content, leading to inefficient scans and missed vulnerabilities.\n\nThis talk introduces a methodology for building better wordlists, along with a tool, Dicozorus, designed to support this process by providing a robust system for generating, managing, and curating high-quality fuzzing wordlists.\n\nDicozorus relies on a database that stores entries with rich metadata (severity, type, category, tags, references), enabling the creation of tailored wordlists based on context such as scope, network performance, or stealth requirements. Used internally for over five years, it has significantly improved wordlist quality and revealed numerous critical vulnerabilities absent from popular lists.\n\nDicozorus provides both a curated compilation of entries for immediate use as well as the ability for professionals to maintain custom, effective datasets.\n\nThe tool will be made publicly available on Synacktiv’s GitHub repository ahead of the conference.\n\nSpeakers: Vincent Herbulot",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "VDJLGT",
+   "title": "Unmasking the Facade: Stealthy EtherRAT Distribution via Impersonated Administrative Tools on GitHub",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/VDJLGT/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "In early 2026, Atos Threat Research Center (TRC) identified a sophisticated, high-resilience malicious campaign distributing malware **EtherRAT**. This operation specifically targets high-privilege IT professionals - enterprise administrators, DevOps engineers and security analysts - who hold broad credentials within corporate environments. The attackers leverage a combination of Search Engine Optimization (SEO) poisoning, impersonated administrative tools and a decentralized Command-and-Control (C2) mechanism utilizing the Ethereum blockchain to maintain persistence and bypass traditional security trust models.\n\nSpeakers: Wojciech Bohatyrewicz, Piotr Bienias",
+   "durationMin": 30,
+   "imageUrl": "https://pretalx.com/media/hack-lu-2026/submissions/VDJLGT/image_08llTcn.webp"
+  },
+  {
+   "id": "9MPPUE",
+   "title": "Detecting Linux rootkits: Know where to look in user-space",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/9MPPUE/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Linux rootkits rely on a handful of techniques to hide malicious code. There's nothing magic that can't be overcome, we just have to know from what angle to look.\n\nSpeakers: Hilko Bengen",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "W8Y8XG",
+   "title": "When Victims Become Infrastructure: Inside Ink Dragon’s Victim-Based Relay Network",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/W8Y8XG/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Some of the most effective malicious traffic is the traffic no one thinks to question. In the Ink Dragon campaign, what appeared to be routine cross-border government connectivity was in fact the first visible layer of a hidden relay network. \n\nIn this talk, we present Ink Dragon, a China-nexus espionage cluster that has targeted government and telecommunications entities in Southeast Asia and is now expanding into Europe. Rather than deploying new infrastructure, the actor turned its victims into infrastructure - chaining compromised systems into a multi-hop relay network that routed commands and exfiltrated data across organizational and national boundaries while blending into trusted inter-government communication flows.\n\nWe detail how investigating a single compromised environment led us to uncover this relay network and map a campaign far larger than any individual victim could see. By pivoting from a compromised endpoint to the upstream relays feeding it and then tracing back downstream to other victims behind those same relays, we correlated activity across environments that appeared entirely unrelated, revealing dozens of previously unknown compromised systems while the operation was still active.\n\nThis investigation required fusing incident response, reverse engineering, and threat intelligence to connect what initially looked like isolated intrusions into a single coordinated operation. We provide technical deep dives into key components of the actor's arsenal, and show how analysis of these tools helped us link activity across victims and trace the relay network to its full extent. Ink Dragon is a case study in how modern espionage campaigns are designed to remain invisible at the single-organization level and what it takes to break that design.\n\nSpeakers: Israel Gubi, Eli Smadja",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "733LSM",
+   "title": "MISP Workbench: Hands-on threat intel platform workshop",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/733LSM/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "A hands-on workshop introducing MISP Workbench, a modern threat intelligence platform built for MISP compatibility. Participants will explore its self-contained architecture for ingesting, correlating, and analysing threat data — no full MISP instance required.\n\nSpeakers: Luciano Righetti",
+   "durationMin": 90,
+   "imageUrl": "https://pretalx.com/media/hack-lu-2026/submissions/733LSM/image_n9ma3Ih.webp"
+  },
+  {
+   "id": "CDYLBV",
+   "title": "Satellites in the Sandbox: Hands-On Component Collusion and Aerospace C2 Evasion",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/CDYLBV/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "As space infrastructure increasingly relies on Commercial Off-The-Shelf (COTS) hardware, the satellite supply chain has become a premier target for sophisticated adversaries. Traditional security reviews focus heavily on monolithic flight software, leaving a massive blind spot: malicious peripheral components that bypass initial testing to strike only when in orbit.\nIn this 90-minute hands-on workshop, we break out of traditional IT networks and dive straight into the aerospace ecosystem. We will explore the \"SpyChain\" attack surface—examining how supply chain malware can hide in auxiliary satellite modules, remain dormant using dynamic GNSS/GPS triggers, and evade telemetry baselines via multi-component evasion. \nAttendees will get their hands dirty in a virtualized aerospace environment utilizing NASA’s open-source Core Flight Software (cFS) framework. Participants will play the role of both threat actor and defender: analyzing hidden file channels (FIFO pipes) used for component collusion, executing covert telemetry data exfiltration over simulated radio links, and testing the limits of aerospace threat matrices like SPARTA.\n\nSpeakers: Munara",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "9J3VMU",
+   "title": "Flowintel v4.0 - MISP can you hear me ?",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/9J3VMU/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Flowintel is a case management platform designed for security analysts, with a particular focus on teams using MISP. Create cases, manage tasks, work seamlessly with MISP objects, enrich or create new MISP events, and share threat intelligence with the community—all with fewer steps. Because sharing your indicators shouldn't be a pain.\n\nThis workshop will present the new direction Flowintel is taking, with a particular emphasis on its enhanced integration with MISP and the improvements made to streamline threat intelligence workflows.\n\nSpeakers: Cruciani David",
+   "durationMin": 90,
+   "imageUrl": "https://pretalx.com/media/hack-lu-2026/submissions/9J3VMU/image_3xXkGe2.webp"
+  },
+  {
+   "id": "ENEZXG",
+   "title": "Trauma-Informed Perspectives on Social Engineering: Beyond Cognitive Bias and Digital Literacy",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/ENEZXG/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Social engineering is commonly understood through frameworks emphasizing cognitive bias, persuasion techniques, and the deficits of digital literacy. This talk introduces a trauma-informed perspective on social engineering victimization, arguing that some forms of online manipulation exploit not only cognitive shortcuts but also patterns of social cognition shaped by adversity, victimization, and interpersonal trauma. Drawing on research from trauma psychology, cyberpsychology, and victimization studies, the talk examines how processes related to trust, ambiguity, emotional regulation, and threat perception may become relevant in contexts such as romance fraud, phishing, impersonation scams, and disinformation campaigns. The presentation also discusses the possible interplay between offline and online victimization experiences as well as the limitations of models that frame digital victimization primarily as a consequence of insufficient awareness or digital literacy.\n\nSpeakers: Olga Bogolyubova",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "DFSDYM",
+   "title": "Last night a DJ erased my drive - A musical journey through cybersecurity, chaos, and control",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/DFSDYM/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "As Joni Mitchell famously sang “Don't it always seem to go, that you don't know what you've got till it's gone.” \n\nLike how an envelope generator in electronic music shapes a sound's character over time, this talk is concerned with the shape and characteristics of cybersecurity and is all about what music teaches us about attacks, timing, and resilience. \n\nMusic and cybersecurity have much in common since they are about identity and community. Both require a trigger to set off a series of events. Music can be creative or destructive.\n\nSpeakers: Mathew Caplan",
+   "durationMin": 30,
+   "imageUrl": "https://pretalx.com/media/hack-lu-2026/submissions/DFSDYM/image_nG0lRto.webp"
+  },
+  {
+   "id": "3YMTRV",
+   "title": "From the Rebellious Cities: Anatomy of a State-Aligned Espionage Campaign",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/3YMTRV/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "When protesters take to the streets, someone is always watching. CRESCENTHARVEST is a cyberespionage campaign that weaponizes Iran's ongoing civil unrest, targeting Farsi-speaking supporters of the protest movement with carefully crafted lures. Victims receive what appears to be a frontline dispatch from inside Iran: protest footage, images from the streets, and a Farsi report from \"the rebellious cities.\" Hidden inside are two files that, once clicked, compromise the victim's machine through an attack chain so seamlessly crafted that they never suspect a thing.\n \nWhat unfolds beneath the surface is a sophisticated operation where trust is the exploit and sympathy is the attack vector. This paper peels back the layers of a campaign designed to blend in, stay hidden, and steal everything, tracing the full attack chain, the implant's capabilities, and the infrastructure fingerprints that tie it to a state-aligned actor with a long history of hunting its own people.\n\nSpeakers: Eliad Kimhy",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "J9HKFX",
+   "title": "OpenTIDE Workshop – Build Your Own Operational DetectionOps Platform in 90 Minutes",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/J9HKFX/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "Threat-informed detection engineering is often difficult to operationalise: security teams must transform cyber threat intelligence into actionable detections while managing tooling complexity, detection coverage, and operational workflows.\n\nThis hands-on workshop builds on the talk “OpenTIDE – Threat-Informed Detection Engineering Made Easy” and guides participants through deploying their own operational [OpenTIDE](https://github.com/OpenTideHQ) platform using GitHub or GitLab. Participants will configure documentation pipelines, explore Detection-as-Code workflows, and learn how OpenTIDE JSON Schemas integrate with IDEs such as VS Code or Kiro to simplify YAML authoring through validation and auto-completion when describing threat vectors, defining detection objectives or implementing and deploying detection rule custom queries tuned from Sigma or any available sources.\n\nThe workshop also includes a demonstration of the full Managed Detection Rule lifecycle using a staging Splunk Enterprise Security environment.\n\nParticipants will leave with a working OpenTIDE deployment and the practical foundations required to start building threat-informed DetectionOps capabilities in their own organisations.\n\nSpeakers: Remi Seguy",
+   "durationMin": 90,
+   "imageUrl": "https://pretalx.com/media/hack-lu-2026/submissions/J9HKFX/image_qWUizg5.webp"
+  },
+  {
+   "id": "GTHNAM",
+   "title": "LTECruiser: An Extremely low cost LTE Experimentation Framework",
+   "titleLocal": null,
+   "url": "https://pretalx.com/hack-lu-2026/talk/GTHNAM/",
+   "genre": "talk",
+   "categories": [
+    "6926-topic-hacklu"
+   ],
+   "blurb": "LTECruiser turns a 14€ LTE USB dongle into a firmware experimentation platform for cellular protocols and baseband security research. In this talk, we show how the ML307A, an inexpensive USB LTE Cat. 1 modem sold for IoT use by ASR Microelectronics, can be repurposed into a practical research platform through public firmware artifacts, an exposed diagnostic port, existing vendor tools and AT command interfaces.\nStarting from the ELF firmware with debugging data available on GitHub, we document the internal code structure of the LTE modem by analyzing its boot phase and the related paths for handling received/transmitted data from the layer 1 co-processor, we then build a cross-platform userspace framework for Linux and Windows to communicate with the modem through AT commands, dump memory, patch live firmware and inject custom ARM32 code at runtime. We then use these primitives to explore the baseband code and demonstrate how this ultra low cost device can be pushed far beyond its intended role, showing the implementation of a LTE sniffer through firmware patching in a controlled environment. The result is an extremely cheap, widely available and practical platform for LTE security research based on commodity off-the-shelf (COTS) hardware.\n\nSpeakers: Edoardo Mantovani",
+   "durationMin": 30,
+   "imageUrl": null
+  }
+ ],
+ "performances": [
+  {
+   "id": "7EVXHD/2026-10-20T09:00",
+   "eventId": "7EVXHD",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-20",
+   "start": "09:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "JA8RSF/2026-10-20T10:15",
+   "eventId": "JA8RSF",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-20",
+   "start": "10:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "M9973K/2026-10-20T10:15",
+   "eventId": "M9973K",
+   "venueId": "parc-hotel",
+   "roomId": "hollenfels",
+   "date": "2026-10-20",
+   "start": "10:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "NRJZFT/2026-10-20T10:15",
+   "eventId": "NRJZFT",
+   "venueId": "parc-hotel",
+   "roomId": "schengen-1-2",
+   "date": "2026-10-20",
+   "start": "10:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "XWSZDC/2026-10-20T10:15",
+   "eventId": "XWSZDC",
+   "venueId": "parc-hotel",
+   "roomId": "vianden-wiltz",
+   "date": "2026-10-20",
+   "start": "10:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "LYVXLS/2026-10-20T10:45",
+   "eventId": "LYVXLS",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-20",
+   "start": "10:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "GV9NJC/2026-10-20T11:15",
+   "eventId": "GV9NJC",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-20",
+   "start": "11:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "NJFAF3/2026-10-20T11:45",
+   "eventId": "NJFAF3",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-20",
+   "start": "11:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "9VHABU/2026-10-20T14:15",
+   "eventId": "9VHABU",
+   "venueId": "parc-hotel",
+   "roomId": "echternach-diekirch",
+   "date": "2026-10-20",
+   "start": "14:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "9UHM7W/2026-10-20T14:15",
+   "eventId": "9UHM7W",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-20",
+   "start": "14:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "7GDMQM/2026-10-20T14:15",
+   "eventId": "7GDMQM",
+   "venueId": "parc-hotel",
+   "roomId": "hollenfels",
+   "date": "2026-10-20",
+   "start": "14:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "ZNYRZC/2026-10-20T14:15",
+   "eventId": "ZNYRZC",
+   "venueId": "parc-hotel",
+   "roomId": "schengen-1-2",
+   "date": "2026-10-20",
+   "start": "14:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "AYDERH/2026-10-20T14:15",
+   "eventId": "AYDERH",
+   "venueId": "parc-hotel",
+   "roomId": "vianden-wiltz",
+   "date": "2026-10-20",
+   "start": "14:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "ZG7W3T/2026-10-20T14:45",
+   "eventId": "ZG7W3T",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-20",
+   "start": "14:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "MJMFB9/2026-10-20T15:15",
+   "eventId": "MJMFB9",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-20",
+   "start": "15:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "NZBYRK/2026-10-20T15:45",
+   "eventId": "NZBYRK",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-20",
+   "start": "15:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "9VHABU/2026-10-20T16:30",
+   "eventId": "9VHABU",
+   "venueId": "parc-hotel",
+   "roomId": "echternach-diekirch",
+   "date": "2026-10-20",
+   "start": "16:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "F7XYB8/2026-10-20T16:30",
+   "eventId": "F7XYB8",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-20",
+   "start": "16:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "SFYCE3/2026-10-20T16:30",
+   "eventId": "SFYCE3",
+   "venueId": "parc-hotel",
+   "roomId": "schengen-1-2",
+   "date": "2026-10-20",
+   "start": "16:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "G8UAWE/2026-10-20T17:00",
+   "eventId": "G8UAWE",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-20",
+   "start": "17:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "P89X7V/2026-10-20T17:30",
+   "eventId": "P89X7V",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-20",
+   "start": "17:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "VFM3HR/2026-10-20T18:00",
+   "eventId": "VFM3HR",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-20",
+   "start": "18:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "CPL3TK/2026-10-20T18:30",
+   "eventId": "CPL3TK",
+   "venueId": "parc-hotel",
+   "roomId": "fitness-room",
+   "date": "2026-10-20",
+   "start": "18:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "AZCTKT/2026-10-21T08:00",
+   "eventId": "AZCTKT",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-21",
+   "start": "08:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "CPL3TK/2026-10-21T08:00",
+   "eventId": "CPL3TK",
+   "venueId": "parc-hotel",
+   "roomId": "fitness-room",
+   "date": "2026-10-21",
+   "start": "08:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "QENAUY/2026-10-21T08:30",
+   "eventId": "QENAUY",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-21",
+   "start": "08:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "JXBXGK/2026-10-21T09:00",
+   "eventId": "JXBXGK",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-21",
+   "start": "09:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "ZLPNRA/2026-10-21T09:30",
+   "eventId": "ZLPNRA",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-21",
+   "start": "09:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "9VHABU/2026-10-21T10:15",
+   "eventId": "9VHABU",
+   "venueId": "parc-hotel",
+   "roomId": "echternach-diekirch",
+   "date": "2026-10-21",
+   "start": "10:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "U3NNWP/2026-10-21T10:15",
+   "eventId": "U3NNWP",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-21",
+   "start": "10:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "N7VZN8/2026-10-21T10:15",
+   "eventId": "N7VZN8",
+   "venueId": "parc-hotel",
+   "roomId": "hollenfels",
+   "date": "2026-10-21",
+   "start": "10:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "C3XZZY/2026-10-21T10:15",
+   "eventId": "C3XZZY",
+   "venueId": "parc-hotel",
+   "roomId": "schengen-1-2",
+   "date": "2026-10-21",
+   "start": "10:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "YE8JXP/2026-10-21T10:15",
+   "eventId": "YE8JXP",
+   "venueId": "parc-hotel",
+   "roomId": "vianden-wiltz",
+   "date": "2026-10-21",
+   "start": "10:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "FC8EFA/2026-10-21T10:45",
+   "eventId": "FC8EFA",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-21",
+   "start": "10:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "TNYBGW/2026-10-21T11:15",
+   "eventId": "TNYBGW",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-21",
+   "start": "11:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "WNYDFF/2026-10-21T11:45",
+   "eventId": "WNYDFF",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-21",
+   "start": "11:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "9VHABU/2026-10-21T14:15",
+   "eventId": "9VHABU",
+   "venueId": "parc-hotel",
+   "roomId": "echternach-diekirch",
+   "date": "2026-10-21",
+   "start": "14:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "YAUCQT/2026-10-21T14:15",
+   "eventId": "YAUCQT",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-21",
+   "start": "14:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "ZV9EFP/2026-10-21T14:15",
+   "eventId": "ZV9EFP",
+   "venueId": "parc-hotel",
+   "roomId": "hollenfels",
+   "date": "2026-10-21",
+   "start": "14:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "3JKMYU/2026-10-21T14:15",
+   "eventId": "3JKMYU",
+   "venueId": "parc-hotel",
+   "roomId": "schengen-1-2",
+   "date": "2026-10-21",
+   "start": "14:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "RVNACX/2026-10-21T14:15",
+   "eventId": "RVNACX",
+   "venueId": "parc-hotel",
+   "roomId": "vianden-wiltz",
+   "date": "2026-10-21",
+   "start": "14:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "F9XSN9/2026-10-21T14:45",
+   "eventId": "F9XSN9",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-21",
+   "start": "14:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "SND8RY/2026-10-21T15:15",
+   "eventId": "SND8RY",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-21",
+   "start": "15:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "DLUE7G/2026-10-21T15:45",
+   "eventId": "DLUE7G",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-21",
+   "start": "15:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "9VHABU/2026-10-21T16:30",
+   "eventId": "9VHABU",
+   "venueId": "parc-hotel",
+   "roomId": "echternach-diekirch",
+   "date": "2026-10-21",
+   "start": "16:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "Y7TRDZ/2026-10-21T16:30",
+   "eventId": "Y7TRDZ",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-21",
+   "start": "16:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "ZZ8HRQ/2026-10-21T16:30",
+   "eventId": "ZZ8HRQ",
+   "venueId": "parc-hotel",
+   "roomId": "hollenfels",
+   "date": "2026-10-21",
+   "start": "16:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "EPWMGF/2026-10-21T17:00",
+   "eventId": "EPWMGF",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-21",
+   "start": "17:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "KQCEEC/2026-10-21T17:30",
+   "eventId": "KQCEEC",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-21",
+   "start": "17:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "V7HSZA/2026-10-21T18:00",
+   "eventId": "V7HSZA",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-21",
+   "start": "18:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "3D9FXD/2026-10-22T08:00",
+   "eventId": "3D9FXD",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-22",
+   "start": "08:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "LBXYZA/2026-10-22T08:30",
+   "eventId": "LBXYZA",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-22",
+   "start": "08:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "DBBS3T/2026-10-22T09:00",
+   "eventId": "DBBS3T",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-22",
+   "start": "09:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "LGBYFD/2026-10-22T09:30",
+   "eventId": "LGBYFD",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-22",
+   "start": "09:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "9VHABU/2026-10-22T10:15",
+   "eventId": "9VHABU",
+   "venueId": "parc-hotel",
+   "roomId": "echternach-diekirch",
+   "date": "2026-10-22",
+   "start": "10:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "TK3D8T/2026-10-22T10:15",
+   "eventId": "TK3D8T",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-22",
+   "start": "10:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "FG8XGE/2026-10-22T10:15",
+   "eventId": "FG8XGE",
+   "venueId": "parc-hotel",
+   "roomId": "hollenfels",
+   "date": "2026-10-22",
+   "start": "10:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "UYKNCQ/2026-10-22T10:15",
+   "eventId": "UYKNCQ",
+   "venueId": "parc-hotel",
+   "roomId": "schengen-1-2",
+   "date": "2026-10-22",
+   "start": "10:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "LQ8B3S/2026-10-22T10:15",
+   "eventId": "LQ8B3S",
+   "venueId": "parc-hotel",
+   "roomId": "vianden-wiltz",
+   "date": "2026-10-22",
+   "start": "10:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "SY7C9F/2026-10-22T10:45",
+   "eventId": "SY7C9F",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-22",
+   "start": "10:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "BZU839/2026-10-22T11:15",
+   "eventId": "BZU839",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-22",
+   "start": "11:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "BX8WPS/2026-10-22T11:45",
+   "eventId": "BX8WPS",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-22",
+   "start": "11:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "9VHABU/2026-10-22T14:15",
+   "eventId": "9VHABU",
+   "venueId": "parc-hotel",
+   "roomId": "echternach-diekirch",
+   "date": "2026-10-22",
+   "start": "14:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "M9YUZX/2026-10-22T14:15",
+   "eventId": "M9YUZX",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-22",
+   "start": "14:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "9ZB3WZ/2026-10-22T14:15",
+   "eventId": "9ZB3WZ",
+   "venueId": "parc-hotel",
+   "roomId": "hollenfels",
+   "date": "2026-10-22",
+   "start": "14:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "APY7TM/2026-10-22T14:15",
+   "eventId": "APY7TM",
+   "venueId": "parc-hotel",
+   "roomId": "schengen-1-2",
+   "date": "2026-10-22",
+   "start": "14:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "PBNZDU/2026-10-22T14:15",
+   "eventId": "PBNZDU",
+   "venueId": "parc-hotel",
+   "roomId": "vianden-wiltz",
+   "date": "2026-10-22",
+   "start": "14:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "3ZRHJS/2026-10-22T14:45",
+   "eventId": "3ZRHJS",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-22",
+   "start": "14:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "WRTWTK/2026-10-22T15:15",
+   "eventId": "WRTWTK",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-22",
+   "start": "15:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "HXDLNG/2026-10-22T15:45",
+   "eventId": "HXDLNG",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-22",
+   "start": "15:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "9VHABU/2026-10-22T16:30",
+   "eventId": "9VHABU",
+   "venueId": "parc-hotel",
+   "roomId": "echternach-diekirch",
+   "date": "2026-10-22",
+   "start": "16:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "SKB7U8/2026-10-22T16:30",
+   "eventId": "SKB7U8",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-22",
+   "start": "16:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "ALBEKT/2026-10-22T16:30",
+   "eventId": "ALBEKT",
+   "venueId": "parc-hotel",
+   "roomId": "schengen-1-2",
+   "date": "2026-10-22",
+   "start": "16:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "JXKW89/2026-10-22T16:30",
+   "eventId": "JXKW89",
+   "venueId": "parc-hotel",
+   "roomId": "vianden-wiltz",
+   "date": "2026-10-22",
+   "start": "16:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "FAGXJE/2026-10-22T17:00",
+   "eventId": "FAGXJE",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-22",
+   "start": "17:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "EH8W3V/2026-10-22T17:30",
+   "eventId": "EH8W3V",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-22",
+   "start": "17:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "C87GLP/2026-10-22T18:00",
+   "eventId": "C87GLP",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-22",
+   "start": "18:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "BDL8U3/2026-10-23T08:00",
+   "eventId": "BDL8U3",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-23",
+   "start": "08:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "7EPHAP/2026-10-23T08:30",
+   "eventId": "7EPHAP",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-23",
+   "start": "08:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "VDJLGT/2026-10-23T09:00",
+   "eventId": "VDJLGT",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-23",
+   "start": "09:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "9MPPUE/2026-10-23T09:30",
+   "eventId": "9MPPUE",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-23",
+   "start": "09:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "9VHABU/2026-10-23T10:15",
+   "eventId": "9VHABU",
+   "venueId": "parc-hotel",
+   "roomId": "echternach-diekirch",
+   "date": "2026-10-23",
+   "start": "10:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "W8Y8XG/2026-10-23T10:15",
+   "eventId": "W8Y8XG",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-23",
+   "start": "10:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "733LSM/2026-10-23T10:15",
+   "eventId": "733LSM",
+   "venueId": "parc-hotel",
+   "roomId": "hollenfels",
+   "date": "2026-10-23",
+   "start": "10:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "CDYLBV/2026-10-23T10:15",
+   "eventId": "CDYLBV",
+   "venueId": "parc-hotel",
+   "roomId": "schengen-1-2",
+   "date": "2026-10-23",
+   "start": "10:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "9J3VMU/2026-10-23T10:15",
+   "eventId": "9J3VMU",
+   "venueId": "parc-hotel",
+   "roomId": "vianden-wiltz",
+   "date": "2026-10-23",
+   "start": "10:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "ENEZXG/2026-10-23T10:45",
+   "eventId": "ENEZXG",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-23",
+   "start": "10:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "DFSDYM/2026-10-23T11:15",
+   "eventId": "DFSDYM",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-23",
+   "start": "11:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "3YMTRV/2026-10-23T11:45",
+   "eventId": "3YMTRV",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-23",
+   "start": "11:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "9VHABU/2026-10-23T13:45",
+   "eventId": "9VHABU",
+   "venueId": "parc-hotel",
+   "roomId": "echternach-diekirch",
+   "date": "2026-10-23",
+   "start": "13:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "J9HKFX/2026-10-23T13:45",
+   "eventId": "J9HKFX",
+   "venueId": "parc-hotel",
+   "roomId": "vianden-wiltz",
+   "date": "2026-10-23",
+   "start": "13:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "GTHNAM/2026-10-23T14:15",
+   "eventId": "GTHNAM",
+   "venueId": "parc-hotel",
+   "roomId": "europe",
+   "date": "2026-10-23",
+   "start": "14:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  }
+ ],
+ "sources": {
+  "festival": [
+   "festival.toml"
+  ],
+  "venues": [
+   "pretalx",
+   "venues-research"
+  ],
+  "events": [
+   "pretalx"
+  ],
+  "performances": [
+   "pretalx"
+  ],
+  "availability": [],
+  "prices": []
+ },
+ "provenance": {
+  "sources": {
+   "venues-research": {
+    "kind": "curated",
+    "path": "scraper/festivals/hack_lu/curated/venues.json"
+   },
+   "pretalx": {
+    "kind": "fetched",
+    "path": "data/festivals/hack-lu/2026/pretalx",
+    "fetchedAt": "2026-10-02T18:34:13Z",
+    "fetcher": "scraper/festivals/hack_lu/sources/pretalx/fetch.py",
+    "fetcherVersion": 1
+   }
+  },
+  "absent": [],
+  "fields": {
+   "categories.name": [
+    "pretalx"
+   ],
+   "events.blurb": [
+    "pretalx"
+   ],
+   "events.categories": [
+    "pretalx"
+   ],
+   "events.durationMin": [
+    "pretalx"
+   ],
+   "events.imageUrl": [
+    "pretalx"
+   ],
+   "events.title": [
+    "pretalx"
+   ],
+   "events.url": [
+    "pretalx"
+   ],
+   "performances.date": [
+    "pretalx"
+   ],
+   "performances.eventId": [
+    "pretalx"
+   ],
+   "performances.roomId": [
+    "pretalx"
+   ],
+   "performances.start": [
+    "pretalx"
+   ],
+   "performances.ticketUrl": [
+    "pretalx"
+   ],
+   "performances.venueId": [
+    "pretalx"
+   ],
+   "venues.address": [
+    "venues-research"
+   ],
+   "venues.lat": [
+    "venues-research"
+   ],
+   "venues.lng": [
+    "venues-research"
+   ],
+   "venues.name": [
+    "venues-research"
+   ],
+   "venues.notes": [
+    "venues-research"
+   ],
+   "venues.refs": [
+    "venues-research"
+   ],
+   "venues.rooms": [
+    "pretalx"
+   ]
+  },
+  "skipped": {}
+ }
+}

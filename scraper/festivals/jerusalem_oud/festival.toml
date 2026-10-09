@@ -20,6 +20,7 @@ kind = "music"
 subtypes = ["music-oud", "music-world"]
 default_genre = "music"
 site = "https://www.confederationhouse.org/page_18014"
+wikidata = "Q6185156"
 
 # Each concert page prints its own ticket price, so prices are per performance.
 [ticketing]
@@ -37,6 +38,7 @@ format = "block"
 # edition, so it stays absent (null).
 first = "2026-11-05"
 last = "2026-11-12"
+sources = ["confederation-house", "venues-research"]
 
 [[source]]
 id = "confederation-house"

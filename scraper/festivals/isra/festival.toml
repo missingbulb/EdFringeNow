@@ -78,6 +78,7 @@ format = "block"
 # ordinal: the site never numbers the conference, so it stays absent (null).
 first = "2026-10-18"
 last = "2026-10-20"
+sources = ["eventact-agenda", "venues-research"]
 
 [[source]]
 id = "eventact-agenda"

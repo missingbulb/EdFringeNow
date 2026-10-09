@@ -1,0 +1,239 @@
+{
+ "nearM": 2500,
+ "anchors": [
+  {
+   "festival": "ais-conference",
+   "venue": "ramat-gan-academic-college",
+   "lat": 32.06367,
+   "lng": 34.83219
+  }
+ ],
+ "places": [
+  {
+   "id": "node/10161946945",
+   "lat": 32.074284,
+   "lng": 34.823219,
+   "tags": {
+    "name": "Chapo Burger",
+    "name:en": "Chapo Burger",
+    "amenity": "restaurant",
+    "cuisine": "burger",
+    "opening_hours": "Su 14:00-04:00, Mo-Th, Sa 12:00-04:00, Fr 18:00-04:00",
+    "addr:housenumber": "55",
+    "addr:street": "עוזיאל"
+   }
+  },
+  {
+   "id": "node/11428462557",
+   "lat": 32.071771,
+   "lng": 34.828472,
+   "tags": {
+    "name": "אושי אושי",
+    "name:en": "Oshi Oshi",
+    "amenity": "restaurant",
+    "cuisine": "sushi"
+   }
+  },
+  {
+   "id": "node/11428462560",
+   "lat": 32.071442,
+   "lng": 34.828466,
+   "tags": {
+    "name": "Pizza Hut",
+    "amenity": "restaurant",
+    "cuisine": "pizza"
+   }
+  },
+  {
+   "id": "node/12071342256",
+   "lat": 32.076989,
+   "lng": 34.813597,
+   "tags": {
+    "name": "Luciana",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "addr:housenumber": "109",
+    "addr:street": "כצנלסון"
+   }
+  },
+  {
+   "id": "node/12301597873",
+   "lat": 32.078846,
+   "lng": 34.838771,
+   "tags": {
+    "name": "אולמי רויאל",
+    "name:en": "Royal Hall",
+    "amenity": "restaurant",
+    "addr:housenumber": "31",
+    "addr:street": "שלמה המלך"
+   }
+  },
+  {
+   "id": "node/1310662759",
+   "lat": 32.074734,
+   "lng": 34.809392,
+   "tags": {
+    "name": "קפה זליק",
+    "name:en": "Cafe Zelik",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/13525891904",
+   "lat": 32.079089,
+   "lng": 34.838884,
+   "tags": {
+    "name": "אולמי הוד והדר",
+    "amenity": "restaurant",
+    "addr:housenumber": "31",
+    "addr:street": "שלמה המלך"
+   }
+  },
+  {
+   "id": "node/4960182224",
+   "lat": 32.045994,
+   "lng": 34.841892,
+   "tags": {
+    "name": "אפרופו",
+    "name:en": "Apropo",
+    "tourism": "hotel",
+    "contact:website": "http://www.apropohotel.co.il",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/705604823",
+   "lat": 32.079292,
+   "lng": 34.814963,
+   "tags": {
+    "name": "רוקסון אורבן",
+    "name:en": "Roxon Urban",
+    "tourism": "hotel",
+    "addr:street": "קריניצי"
+   }
+  },
+  {
+   "id": "node/7371640558",
+   "lat": 32.073904,
+   "lng": 34.837443,
+   "tags": {
+    "name": "אריסטוקרט",
+    "name:en": "Aristocrat",
+    "tourism": "hotel",
+    "stars": "4",
+    "addr:housenumber": "16",
+    "addr:street": "דמשק אליעזר"
+   }
+  },
+  {
+   "id": "node/8302822752",
+   "lat": 32.077341,
+   "lng": 34.813933,
+   "tags": {
+    "name": "Deda",
+    "name:en": "Deda",
+    "amenity": "restaurant",
+    "cuisine": "georgian",
+    "website": "https://www.deda.co.il/",
+    "opening_hours": "Mo-Su 12:00-22:00",
+    "addr:housenumber": "113",
+    "addr:street": "כצנלסון"
+   }
+  },
+  {
+   "id": "node/9029057721",
+   "lat": 32.078188,
+   "lng": 34.825439,
+   "tags": {
+    "name": "ספייסי גריל בר",
+    "name:en": "Spicy Grill Bar",
+    "amenity": "restaurant",
+    "cuisine": "burger"
+   }
+  },
+  {
+   "id": "node/963176443",
+   "lat": 32.05517,
+   "lng": 34.826991,
+   "tags": {
+    "name": "כפר המכביה",
+    "name:en": "Kfar Ha'Maccabiah",
+    "tourism": "hotel",
+    "wikidata": "Q6795120"
+   }
+  },
+  {
+   "id": "way/295849278",
+   "lat": 32.049852,
+   "lng": 34.848352,
+   "tags": {
+    "name": "מלון רפואי שי לב",
+    "name:en": "Medical Hotel Shai Lev",
+    "tourism": "hotel",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/349621023",
+   "lat": 32.055487,
+   "lng": 34.828327,
+   "tags": {
+    "name": "Kfar Ha'Maccabiah Hotel",
+    "name:en": "Kfar Ha'Maccabiah Hotel",
+    "tourism": "hotel",
+    "wikidata": "Q111400006"
+   }
+  },
+  {
+   "id": "way/355297692",
+   "lat": 32.077978,
+   "lng": 34.839863,
+   "tags": {
+    "name": "אולמי קונטיננטל",
+    "amenity": "restaurant",
+    "addr:housenumber": "17",
+    "addr:street": "בן יעקב, הרב"
+   }
+  },
+  {
+   "id": "way/355302125",
+   "lat": 32.073823,
+   "lng": 34.837368,
+   "tags": {
+    "name": "אולמי ויזניץ - צציפרי קלאס",
+    "name:en": "Viznitz Halls & Catering",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "way/355302210",
+   "lat": 32.078749,
+   "lng": 34.838713,
+   "tags": {
+    "name": "ארמונות חן",
+    "name:en": "Armonot Chen",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "way/356596248",
+   "lat": 32.079135,
+   "lng": 34.839257,
+   "tags": {
+    "name": "אולמי היכלי מלכות",
+    "name:en": "Heichalei Malchut Hall & Catering",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "way/695823546",
+   "lat": 32.049338,
+   "lng": 34.823173,
+   "tags": {
+    "name": "Joy garden",
+    "name:en": "Joy garden",
+    "amenity": "restaurant"
+   }
+  }
+ ]
+}

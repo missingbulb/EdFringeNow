@@ -1,0 +1,1629 @@
+{
+ "v": 1,
+ "festival": {
+  "id": "seeei-electricity-energy",
+  "edition": "2026",
+  "ordinal": null,
+  "name": "Electricity & Energy, the SEEEI Annual Convention",
+  "nameLocal": "חשמל ואנרגיה, הכנס השנתי של אגודת מהנדסי החשמל והאלקטרוניקה בישראל",
+  "city": "Eilat",
+  "country": "IL",
+  "lat": 29.5492,
+  "lng": 34.9675,
+  "timezone": "Asia/Jerusalem",
+  "lang": "en",
+  "dir": "ltr",
+  "kind": "academic",
+  "defaultGenre": "talk",
+  "site": "https://www.electricity2026.com/en",
+  "firstDate": "2026-11-10",
+  "lastDate": "2026-11-13",
+  "ticketing": {
+   "model": "festival-pass",
+   "url": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "notes": "Registration through the convention's EventAct form, with hotel packages for full participants; on-site registration at the Herods Palace and Dan Eilat desks costs more. The site's fee page still shows the 2025 convention's text, so no figure is quoted here.",
+   "source": "https://www.electricity2026.com/en/%D7%94%D7%A8%D7%A9%D7%9E%D7%94"
+  }
+ },
+ "categories": [],
+ "venues": [
+  {
+   "id": "dan-eilat",
+   "name": "Dan Eilat",
+   "address": null,
+   "lat": 29.5486649,
+   "lng": 34.9655035,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {
+     "id": "dan-eilat-blue",
+     "name": "Blue",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "dan-eilat-blue-a",
+     "name": "Blue A",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "dan-eilat-blue-b",
+     "name": "Blue B",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "dan-eilat-coral",
+     "name": "Coral",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "dan-eilat-tarshish",
+     "name": "Tarshish",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "dan-eilat-fiesta",
+     "name": "Fiesta",
+     "capacity": null,
+     "layout": null
+    }
+   ],
+   "accessibility": null,
+   "notes": "The second conference hotel, a short walk along the promenade from the Herods hotels; the programme spells one hall both Tarshis and Tarshish, served here as Tarshish.",
+   "refs": [
+    "https://www.openstreetmap.org/way/852999399"
+   ]
+  },
+  {
+   "id": "herods-boutique",
+   "name": "Herods Boutique Eilat",
+   "address": null,
+   "lat": 29.5492432,
+   "lng": 34.9674756,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {
+     "id": "herods-boutique-kings-ab",
+     "name": "Kings AB",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "herods-boutique-kings-c",
+     "name": "Kings C",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "herods-boutique-queens",
+     "name": "Queens",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "herods-boutique-queens-a",
+     "name": "Queens A",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "herods-boutique-queens-c",
+     "name": "Queens C",
+     "capacity": null,
+     "layout": null
+    }
+   ],
+   "accessibility": null,
+   "notes": "The convention's main hotel: the plenaries meet in Kings AB, and the exhibition fills the pavilion and the Kings lobby (the frame programme).",
+   "refs": [
+    "https://www.openstreetmap.org/way/852999384"
+   ]
+  },
+  {
+   "id": "herods-palace",
+   "name": "Herods Palace Eilat",
+   "address": null,
+   "lat": 29.5482215,
+   "lng": 34.9674841,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {
+     "id": "herods-palace-lawrence",
+     "name": "Lawrence",
+     "capacity": null,
+     "layout": null
+    }
+   ],
+   "accessibility": null,
+   "notes": "Next door to Herods Boutique; one of the two on-site registration desks (the registration page).",
+   "refs": [
+    "https://www.openstreetmap.org/way/852999388"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "2026-11-10-1530-workshop-a",
+   "title": "Workshop A: Energy Storage Technologies, Management and Maintenance",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Ido Karbol",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-10-1530-workshop-b",
+   "title": "Workshop B: Equipment Testing in Explosive Atmospheres",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Yosi Shapira",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-10-1530-workshop-c",
+   "title": "Workshop C: Watt the AI?! Turn Your Data On",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Arie Shpigel",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-10-1530-workshop-d",
+   "title": "Workshop D: Air Diffusers Choice: New Approach",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Rafi Aharoni",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-10-1700-plenary-session-1",
+   "title": "Plenary Session 1: The Natural Gas Sector: Future Outlook",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chairman: Adv. Amit Krispin\nThe session will address the tension between domestic demand and exports, between supply and infrastructure, and between energy security and the promotion of competition and efficiency. We will examine whether future supply will be sufficient, what the allocation of resources will look like in the coming years, and whether a dedicated regulatory framework is required for high-capacity consumers. Participants in the discussion include:\nDaniel Padon, Energy Coordinator at the Ministry of Finance’s Budget Department; Chen Bar-Yosef, Director of the Natural Resources Administration at the Ministry of Energy; Igor Aharonovich, VP of Trade at Noga;\nSaar Parag, Deputy CEO and Commercial Director at New-Med Energy; Yaron Ronai, Head of the Fuels Unit at the Israel Electric Corporation",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-10-1700-plenary-session-2",
+   "title": "Plenary Session 2: Energy Efficiency",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chairman: Yoni Malachi\nSmart Meters as an Incentive for Energy Efficiency\nMiki Levy, Head of the Smart Metering Division, Israel Electric Corporation Energy Efficiency at Industrial Sites\nYaakov Mor-Yosef, Chief Electrical Engineer of the Dead Sea Works Energy Efficiency from a Macroeconomic Perspective\nChen Herzog, Chief Economist at BDO\nPanel discussion featuring the speakers",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-10-1930-plenary-session-3",
+   "title": "Plenary Session 3: New Electrical Engineers Generation",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chairman: Moshe Bibi\nEmil Koifman, President of SEEEI; Yariv Gesser, Deputy Director General of the Ministry of Energy; Adv. Doron Arbely,\nChairman of the Israel Electric Corporation: Tal Basechess, Chairman of NOGA – Israel Independent System Operator,\nProf. Jehuda Haddad Rector of Shamoon College of Engineering (SCE)",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-10-2100-1",
+   "title": "Beer evening",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "other",
+   "categories": [],
+   "blurb": null,
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-11-0930-1",
+   "title": "Opening Session and Greetings",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Avraham Rabuchin, Chairman of the Annual Convention, Emil Koifman President of SEEEI;\nAdv. Yossi Dayan, Director General, Ministry of Energy, Eli Lankri, Mayor of Eilat, Adv. Doron Arbely, Chairman of the Israel Electric Corporation, Emanuel Marinko, Chairman SEEEI; Avi Menashe Deputy Chairman SEEEI: Mr. Markus B. Jaeger*, EUREL Chairman Board of Directors, Germany",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-11-1030-plenary-session-4",
+   "title": "Plenary Session 4: Where is the Electricity Sector going?",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chairman: Chairman: Dr. Ilan Suleiman\nAmir Shavit, Chairman of the Israeli Electricity Authority (IEA), Meir Spiegler CEO of the Israel Electric Corporation,\nTal Basechess, Chairman of NOGA – Israel Independent System Operator",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-11-1150-wam1",
+   "title": "WAM1: Safety in an Ara of Technological Innovation",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Yossi Ben Yakar",
+   "durationMin": 100,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-11-1150-wam2",
+   "title": "WAM2: Trends in Data Center Facilities",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Zion Gueta",
+   "durationMin": 100,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-11-1150-wam3",
+   "title": "WAM3: Microgrid & Energy Independence",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Hadas Merzel",
+   "durationMin": 100,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-11-1150-wam4",
+   "title": "WAM4: Advanced Industrial Control",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Tsur Segal",
+   "durationMin": 100,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-11-1150-wam5",
+   "title": "WAM5: Infrastructures & Technologies for Charging",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Dima Yudashkin",
+   "durationMin": 100,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-11-1150-wam6",
+   "title": "WAM6: Electrical Infrastructure, Energy & Supporting Systems",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Prof. Monica Pinchas",
+   "durationMin": 100,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-11-1150-wam-7-1",
+   "title": "WAM 7-1: Fire Safety in Buildings, Updating Standards",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Anatoly Lifshits",
+   "durationMin": 100,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-11-1500-plenary-session-5",
+   "title": "Plenary Session 5: Electrical Mega Projects in Israel",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chairman: Itzik Balmas\nThe Israel Metro Project – Challenges and Opportunities Itamar Ben-Meir, CEO, Urban Transportation Routes (NTA) Power Plants, Storage, and Everything In Between Giora Almogi, CEO, OPC\nThe Energy Challenge of the AI Revolution\nInfrastructure, Generation Capacity, and Barriers to Data Center Development in Israel\nChen Herzog, Chief Economist, BDO\nSystemic Impacts of Mega-Projects on the Electricity Sector Dr. Nurit Gal, Consultant, e-NRGY",
+   "durationMin": 80,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-11-1500-plenary-session-6",
+   "title": "Plenary Session 6: Private Electrical Entrepreneurship as Driver of the Israel Economy",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chairman: Dr. Ilan Suleiman\nOpening Lecture\nCompetition Regulation in the Electricity Sector\nOz Levy, Deputy Director General, Electricity and Regulation Division, Public Utility Authority – Electricity\nPanel discussion featuring the speakers, joined by:\nFormer MK Keren Barak, Chair of the Natural Gas-Fired Electricity Producers Forum, Doron Ezra, CEO, Sorek Power Plant, Ofer Stav, CEO, Doral Israel Adam Ben Yehuda, Head of Project and Infrastructure Finance, Mizrahi Tefahot Bank",
+   "durationMin": 80,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-11-1500-wpm-7",
+   "title": "WPM 7: Challenges in Mega Projects in Electromechanical Systems",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Nissan Cohen Lieon",
+   "durationMin": 80,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-11-1650-wpm1",
+   "title": "WPM1: Electrical & Energy Systems in Medical Centers",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Sammy Eliav",
+   "durationMin": 100,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-11-1650-wpm2",
+   "title": "WPM2: Electrical Installation Inspections",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Yitzhak Bracha",
+   "durationMin": 100,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-11-1650-wpm3",
+   "title": "WPM3: Renewable Energies & Projects",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Nir Zaidfunden",
+   "durationMin": 100,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-11-1650-wpm4",
+   "title": "WPM4: Mass Transportation systems",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Ariel Gutkind",
+   "durationMin": 100,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-11-1650-wpm5",
+   "title": "WPM5: Applied Research in Academia & Industry",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Dr. Irit Juwiler",
+   "durationMin": 100,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-11-1650-wpm6",
+   "title": "WPM6: Regulation in the electricity sector",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Liat Nehemiah",
+   "durationMin": 100,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-11-1650-wpm-7-1",
+   "title": "WPM 7.1: Cooling & Air Conditioning Technologies for Data Centers",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Yuri Klevensky",
+   "durationMin": 100,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-11-2100-1",
+   "title": "Keren Peles show hosts Shiri Maimon",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "music",
+   "categories": [],
+   "blurb": null,
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-12-0930-tam-1",
+   "title": "TAM 1: Insights & Lessons from Large Industry",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Yaakov Mor-Yosef",
+   "durationMin": 100,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-12-0930-tam2",
+   "title": "TAM2: Innovations in Measurement and Regulation",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Haim Kraushar",
+   "durationMin": 100,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-12-0930-tam-3",
+   "title": "TAM 3: Vehicle Charging Management Systems",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Sharona Herchko",
+   "durationMin": 100,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-12-0930-tam-4",
+   "title": "TAM 4: Light, Technology & Human",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Jonathan Houser",
+   "durationMin": 100,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-12-0930-tam-5",
+   "title": "TAM 5: Installation and Supply of Electro-mechanical Equipment",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Yoav Avichai",
+   "durationMin": 100,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-12-0930-tam-6",
+   "title": "TAM 6: בינה מלאכותית (AI) במערכות חשמל",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Prof. Ben Milgrom",
+   "durationMin": 100,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-12-0930-tam-7",
+   "title": "TAM 7: Innovations in Water, & Firefighting Systems",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: David Papish",
+   "durationMin": 100,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-12-1140-plenary-session-7",
+   "title": "Plenary Session 7: Development of a Distribution System",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chairman: Charlie Shriki\nChallenges in the Distribution System Development Plan Eitan Sharabi, Head of Network Engineering Division, Israel Electric Corp. Managing the Distribution System in the Era of Distributed Energy: Challenges and Applications\nDr. Kobi Yahav, Consultant\nPolicy and Regulation in the Distribution Network\nMoshe Shitrit, Head of the Distribution Network Development Division, IEA",
+   "durationMin": 80,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-12-1140-plenary-session-8",
+   "title": "Plenary Session 8: Electric Transportation",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chairman: Dr. Dan Weinstock\nElectric Transportation in Israel, Characteristics and Challenges for the Electricity Grid\nNachum Yehoshua, Head of the Clean Transportation\nDepartment, Sustainable Energy Division of the Ministry of Energy The Impact of the Electric Vehicle Revolution on Transportation Infrastructure\nOrly Stern. CEO Ayalon Highways\nElectric Transportation in Israel: Characteristics and Challenges for the Electricity Grid\nYigal Goldstein, Noga – Electricity System Management\nOpen discussion with lecturers In addition:\nYuval Elazar, CEO of Sonol EVI; Sharon Glazer*, CEO of Afcon Electric Transportation; Tal De-Paz*, CEO of Plago; Nir Moshe, CEO of Gnrgy; Dima Yudeshkin, VP at EVEDGE; Eli Elisha, Head of Distribution Engineering Unit, IEC",
+   "durationMin": 80,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-12-1140-tam-7-1",
+   "title": "TAM 7.1: AI technologies in air conditioning systems",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Jonathan Rinland",
+   "durationMin": 80,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-12-1430-tpm-1",
+   "title": "TPM 1: Power Plant Operation and Maintenance",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Erez Dali",
+   "durationMin": 100,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-12-1430-tpm-2",
+   "title": "TPM 2: Electricity Quality & Reliability",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Zohar Weinbaum",
+   "durationMin": 100,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-12-1430-tpm-3",
+   "title": "TPM 3: Electrical Supply and Backup for DCs",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Tomer Levy",
+   "durationMin": 100,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-12-1430-tpm-4",
+   "title": "TPM 4: Innovations in Renewable Energy",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Prof. Dmitry Baimell",
+   "durationMin": 100,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-12-1430-tpm-5",
+   "title": "TPM 5: Innovation & Ground-Breaking Research",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Gabi Mazooz",
+   "durationMin": 100,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-12-1430-tpm-6",
+   "title": "TPM 6: Innovation & Ground-Breaking Research",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Prof. Yuval Beck",
+   "durationMin": 100,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-12-1430-tpm-7",
+   "title": "TPM 7: Innovations in air conditioning systems",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Dalit Bartal",
+   "durationMin": 100,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-12-1640-plenary-session-9",
+   "title": "Plenary Session 9: Operation & Maintenance of Facilities in Power Plants",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chairman: Yaakov (Yasha) Hain\nTransmission and Transformation System and Development Plans through 2030 Leonid Gitnik, VP Transmission and\nTransformation, IEC\nTransmission System Operation During Crisis Situations\nShiki (Shimon) Fischer, VP Operations, Noga Multi-participant discussion on:\nCrises and system failure scenarios in the electricity sector: Regulation, oversight, lessons learned, and preparedness for future crisis situations",
+   "durationMin": 80,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-12-1640-plenary-session-10",
+   "title": "Plenary Session 10: Renewable Energy and Storage",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chairman: Oded Agmon\nManaging renewable energy and storage within the distribution grid\nDr. Noam Shriki, Head of Smart Technologies Unit, IEC Challenges in establishing renewable energy facilities at high and extra-high voltage levels Choni Kabalo, VP of Enlight\nMarket price forecasts – economic models Michael Ritov, Chief Economist, Iscon\nOpen discussion featuring:\nAlaa Fakhouri, Electricity Authority; Ran Dressler, Planning Administration; Ido Birnberg, Prime Energy; Dorit Hochner, Statutory Affairs Consultant; Kinneret Dahan Granit, Ministry of Energy; Mai Alon, Energy Coordinator, Budget Department, Ministry of Finance",
+   "durationMin": 80,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-12-1640-plenary-session-11",
+   "title": "Plenary Session 11: Innovation and Technology",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chairman: Hertzel Friedman\nNuclear Energy\nProf. Brian Rosen, Chief Scientist, Ministry of Energy\nDisruptive Technologies\nDr. Avi Leon, R&D Manager, Innovation Unit, Israel Electric Corporation (IEC)\nRoom-Temperature Superconductors Dr. Gili Yaniv, VP Development, QDM\nWomen's Panel on Energy Innovation Sharon Hatzor, VP Planning, Policy, and Strategy, Ministry of Energy; Adv. Gili Heisler, Head of Innovation Unit, IEC; Additional\nparticipant – TBD",
+   "durationMin": 80,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-12-1640-tpm-7-1",
+   "title": "TPM 7.1: ASHRAE Israel Chapter",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Ram Havron",
+   "durationMin": 80,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-12-1930-1",
+   "title": "Award Ceremony for Certificates, Lifetime Achievement Honors",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chairman: Emil Koifman, President of SEEEI\nA special lifetime achievement award in the field of electrical and energy engineering will be presented to: Eng. Dudi Hareli. CEO Afcon Holdings ,Eng. Yoni Malachi is the CEO of Mashav-Ardan Systems\nThe title of Honorary Fellow of the Association of Electrical, Electronics and Energy Engineers in Israel will be awarded to: Ilan Burshtein, Dr. Svetlana Bronshtein, Yair Gindes, Evgeny Vainer, Anatoly Lifshits",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-12-2100-1",
+   "title": "Avi Nussbaum's stand-up show",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "comedy",
+   "categories": [],
+   "blurb": null,
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-13-0930-fam-1",
+   "title": "FAM 1: Requirements for connecting distributed generation and its impact on electricity quality",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Abraham Yaniv\nEngineering challenges and dilemmas in integrating distributed energy resources into the grid\nEyal Bizi, Israel Electric Corporation\nדיון בהשתתפות המרצים ובנוסף:\nMoshe Ben-Yair, Public Utility Authority – Electricity, Roni Itzhaki, SMA Solar",
+   "durationMin": 75,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-13-0930-plenary-session-12",
+   "title": "Plenary Session 12: Electricity trading management",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chairman: Igor Aronovich\nThe Trading Model from the Regulator's Perspective Omri David, Head of Regulation Division, Electricity Authority Artificial Intelligence and Applications in the Electricity Trading Model\nDror Bar-Lev, Volue, Germany\nThe Trading Model from the Private Sector Perspective Eli Assulin, CEO, Dorad Israel",
+   "durationMin": 75,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-13-0930-fam-7",
+   "title": "FAM 7: Innovations in Air Conditioning Systems 2",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chair: Janna Margolin",
+   "durationMin": 75,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-13-1100-plenary-session-13",
+   "title": "Plenary Session 13: Open discussion on the topic of: The Present and Future of Server Farms in Israel",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chairman: Dr. Dan Weinstock\nYariv Gesser, Deputy Director General of the Ministry of Energy, Tal Basechess*, Chairman of NOGA, Leonid Gitnik, VP Transmission and Transformation, IEC. Chen Herzog, Chief Economist, BDO, Yonit Goldberg, Manager 11Stream; Dr. Ilan Suleiman, Founder and CEO ISCON, Shimon Katz, Co-CEO of DCX",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-13-1230-1",
+   "title": "Closing Session",
+   "titleLocal": null,
+   "url": "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Chairman: Avraham Rabuchin, Chairman of the \"Electricity and Energy 2026\" Convention\nEmil Koifman President of SEEEI; Emanuel Marinko, Chairman SEEEI;\nRaanan Danon, Deputy Chairman of the Annual Convention, Dr. Ilan Suleiman, Deputy Chairman of the Annual Convention\nGuest Speaker\nHaim Kuznitz, Storyteller\nWhat Happens Abroad Stays Abroad",
+   "durationMin": 90,
+   "imageUrl": null
+  }
+ ],
+ "performances": [
+  {
+   "id": "2026-11-10-1530-workshop-a/2026-11-10/15:30",
+   "eventId": "2026-11-10-1530-workshop-a",
+   "venueId": "herods-boutique",
+   "roomId": "herods-boutique-kings-ab",
+   "date": "2026-11-10",
+   "start": "15:30",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-10-1530-workshop-b/2026-11-10/15:30",
+   "eventId": "2026-11-10-1530-workshop-b",
+   "venueId": "herods-boutique",
+   "roomId": "herods-boutique-kings-c",
+   "date": "2026-11-10",
+   "start": "15:30",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-10-1530-workshop-c/2026-11-10/15:30",
+   "eventId": "2026-11-10-1530-workshop-c",
+   "venueId": "herods-boutique",
+   "roomId": "herods-boutique-queens-a",
+   "date": "2026-11-10",
+   "start": "15:30",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-10-1530-workshop-d/2026-11-10/15:30",
+   "eventId": "2026-11-10-1530-workshop-d",
+   "venueId": "herods-boutique",
+   "roomId": "herods-boutique-queens-c",
+   "date": "2026-11-10",
+   "start": "15:30",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-10-1700-plenary-session-1/2026-11-10/17:00",
+   "eventId": "2026-11-10-1700-plenary-session-1",
+   "venueId": "herods-boutique",
+   "roomId": "herods-boutique-kings-ab",
+   "date": "2026-11-10",
+   "start": "17:00",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-10-1700-plenary-session-2/2026-11-10/17:00",
+   "eventId": "2026-11-10-1700-plenary-session-2",
+   "venueId": "herods-boutique",
+   "roomId": "herods-boutique-kings-c",
+   "date": "2026-11-10",
+   "start": "17:00",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-10-1930-plenary-session-3/2026-11-10/19:30",
+   "eventId": "2026-11-10-1930-plenary-session-3",
+   "venueId": "dan-eilat",
+   "roomId": "dan-eilat-fiesta",
+   "date": "2026-11-10",
+   "start": "19:30",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-10-2100-1/2026-11-10/21:00",
+   "eventId": "2026-11-10-2100-1",
+   "venueId": "dan-eilat",
+   "roomId": "dan-eilat-fiesta",
+   "date": "2026-11-10",
+   "start": "21:00",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-11-0930-1/2026-11-11/09:30",
+   "eventId": "2026-11-11-0930-1",
+   "venueId": "herods-boutique",
+   "roomId": "herods-boutique-kings-ab",
+   "date": "2026-11-11",
+   "start": "09:30",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-11-1030-plenary-session-4/2026-11-11/10:30",
+   "eventId": "2026-11-11-1030-plenary-session-4",
+   "venueId": "herods-boutique",
+   "roomId": "herods-boutique-kings-ab",
+   "date": "2026-11-11",
+   "start": "10:30",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-11-1150-wam1/2026-11-11/11:50",
+   "eventId": "2026-11-11-1150-wam1",
+   "venueId": "herods-boutique",
+   "roomId": "herods-boutique-queens",
+   "date": "2026-11-11",
+   "start": "11:50",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-11-1150-wam2/2026-11-11/11:50",
+   "eventId": "2026-11-11-1150-wam2",
+   "venueId": "herods-boutique",
+   "roomId": "herods-boutique-kings-ab",
+   "date": "2026-11-11",
+   "start": "11:50",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-11-1150-wam3/2026-11-11/11:50",
+   "eventId": "2026-11-11-1150-wam3",
+   "venueId": "herods-boutique",
+   "roomId": "herods-boutique-kings-c",
+   "date": "2026-11-11",
+   "start": "11:50",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-11-1150-wam4/2026-11-11/11:50",
+   "eventId": "2026-11-11-1150-wam4",
+   "venueId": "herods-palace",
+   "roomId": "herods-palace-lawrence",
+   "date": "2026-11-11",
+   "start": "11:50",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-11-1150-wam5/2026-11-11/11:50",
+   "eventId": "2026-11-11-1150-wam5",
+   "venueId": "dan-eilat",
+   "roomId": "dan-eilat-blue-a",
+   "date": "2026-11-11",
+   "start": "11:50",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-11-1150-wam6/2026-11-11/11:50",
+   "eventId": "2026-11-11-1150-wam6",
+   "venueId": "dan-eilat",
+   "roomId": "dan-eilat-coral",
+   "date": "2026-11-11",
+   "start": "11:50",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-11-1150-wam-7-1/2026-11-11/11:50",
+   "eventId": "2026-11-11-1150-wam-7-1",
+   "venueId": "dan-eilat",
+   "roomId": "dan-eilat-blue-b",
+   "date": "2026-11-11",
+   "start": "11:50",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-11-1500-plenary-session-5/2026-11-11/15:00",
+   "eventId": "2026-11-11-1500-plenary-session-5",
+   "venueId": "herods-boutique",
+   "roomId": "herods-boutique-kings-ab",
+   "date": "2026-11-11",
+   "start": "15:00",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-11-1500-plenary-session-6/2026-11-11/15:00",
+   "eventId": "2026-11-11-1500-plenary-session-6",
+   "venueId": "dan-eilat",
+   "roomId": "dan-eilat-blue-a",
+   "date": "2026-11-11",
+   "start": "15:00",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-11-1500-wpm-7/2026-11-11/15:00",
+   "eventId": "2026-11-11-1500-wpm-7",
+   "venueId": "dan-eilat",
+   "roomId": "dan-eilat-blue-b",
+   "date": "2026-11-11",
+   "start": "15:00",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-11-1650-wpm1/2026-11-11/16:50",
+   "eventId": "2026-11-11-1650-wpm1",
+   "venueId": "herods-boutique",
+   "roomId": "herods-boutique-queens",
+   "date": "2026-11-11",
+   "start": "16:50",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-11-1650-wpm2/2026-11-11/16:50",
+   "eventId": "2026-11-11-1650-wpm2",
+   "venueId": "herods-boutique",
+   "roomId": "herods-boutique-kings-c",
+   "date": "2026-11-11",
+   "start": "16:50",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-11-1650-wpm3/2026-11-11/16:50",
+   "eventId": "2026-11-11-1650-wpm3",
+   "venueId": "herods-boutique",
+   "roomId": "herods-boutique-kings-ab",
+   "date": "2026-11-11",
+   "start": "16:50",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-11-1650-wpm4/2026-11-11/16:50",
+   "eventId": "2026-11-11-1650-wpm4",
+   "venueId": "dan-eilat",
+   "roomId": "dan-eilat-blue-a",
+   "date": "2026-11-11",
+   "start": "16:50",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-11-1650-wpm5/2026-11-11/16:50",
+   "eventId": "2026-11-11-1650-wpm5",
+   "venueId": "dan-eilat",
+   "roomId": "dan-eilat-coral",
+   "date": "2026-11-11",
+   "start": "16:50",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-11-1650-wpm6/2026-11-11/16:50",
+   "eventId": "2026-11-11-1650-wpm6",
+   "venueId": "herods-palace",
+   "roomId": "herods-palace-lawrence",
+   "date": "2026-11-11",
+   "start": "16:50",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-11-1650-wpm-7-1/2026-11-11/16:50",
+   "eventId": "2026-11-11-1650-wpm-7-1",
+   "venueId": "dan-eilat",
+   "roomId": "dan-eilat-blue-b",
+   "date": "2026-11-11",
+   "start": "16:50",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-11-2100-1/2026-11-11/21:00",
+   "eventId": "2026-11-11-2100-1",
+   "venueId": null,
+   "roomId": null,
+   "date": "2026-11-11",
+   "start": "21:00",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-0930-tam-1/2026-11-12/09:30",
+   "eventId": "2026-11-12-0930-tam-1",
+   "venueId": "herods-boutique",
+   "roomId": "herods-boutique-queens",
+   "date": "2026-11-12",
+   "start": "09:30",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-0930-tam2/2026-11-12/09:30",
+   "eventId": "2026-11-12-0930-tam2",
+   "venueId": "herods-boutique",
+   "roomId": "herods-boutique-kings-ab",
+   "date": "2026-11-12",
+   "start": "09:30",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-0930-tam-3/2026-11-12/09:30",
+   "eventId": "2026-11-12-0930-tam-3",
+   "venueId": "herods-palace",
+   "roomId": "herods-palace-lawrence",
+   "date": "2026-11-12",
+   "start": "09:30",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-0930-tam-4/2026-11-12/09:30",
+   "eventId": "2026-11-12-0930-tam-4",
+   "venueId": "herods-boutique",
+   "roomId": "herods-boutique-kings-c",
+   "date": "2026-11-12",
+   "start": "09:30",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-0930-tam-5/2026-11-12/09:30",
+   "eventId": "2026-11-12-0930-tam-5",
+   "venueId": "dan-eilat",
+   "roomId": "dan-eilat-tarshish",
+   "date": "2026-11-12",
+   "start": "09:30",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-0930-tam-6/2026-11-12/09:30",
+   "eventId": "2026-11-12-0930-tam-6",
+   "venueId": "dan-eilat",
+   "roomId": "dan-eilat-coral",
+   "date": "2026-11-12",
+   "start": "09:30",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-0930-tam-7/2026-11-12/09:30",
+   "eventId": "2026-11-12-0930-tam-7",
+   "venueId": "dan-eilat",
+   "roomId": "dan-eilat-blue-b",
+   "date": "2026-11-12",
+   "start": "09:30",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-1140-plenary-session-7/2026-11-12/11:40",
+   "eventId": "2026-11-12-1140-plenary-session-7",
+   "venueId": "herods-boutique",
+   "roomId": "herods-boutique-kings-ab",
+   "date": "2026-11-12",
+   "start": "11:40",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-1140-plenary-session-8/2026-11-12/11:40",
+   "eventId": "2026-11-12-1140-plenary-session-8",
+   "venueId": "dan-eilat",
+   "roomId": "dan-eilat-tarshish",
+   "date": "2026-11-12",
+   "start": "11:40",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-1140-tam-7-1/2026-11-12/11:40",
+   "eventId": "2026-11-12-1140-tam-7-1",
+   "venueId": "dan-eilat",
+   "roomId": "dan-eilat-blue-b",
+   "date": "2026-11-12",
+   "start": "11:40",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-1430-tpm-1/2026-11-12/14:30",
+   "eventId": "2026-11-12-1430-tpm-1",
+   "venueId": "herods-boutique",
+   "roomId": "herods-boutique-queens",
+   "date": "2026-11-12",
+   "start": "14:30",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-1430-tpm-2/2026-11-12/14:30",
+   "eventId": "2026-11-12-1430-tpm-2",
+   "venueId": "herods-boutique",
+   "roomId": "herods-boutique-kings-ab",
+   "date": "2026-11-12",
+   "start": "14:30",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-1430-tpm-3/2026-11-12/14:30",
+   "eventId": "2026-11-12-1430-tpm-3",
+   "venueId": "herods-palace",
+   "roomId": "herods-palace-lawrence",
+   "date": "2026-11-12",
+   "start": "14:30",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-1430-tpm-4/2026-11-12/14:30",
+   "eventId": "2026-11-12-1430-tpm-4",
+   "venueId": "herods-boutique",
+   "roomId": "herods-boutique-kings-c",
+   "date": "2026-11-12",
+   "start": "14:30",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-1430-tpm-5/2026-11-12/14:30",
+   "eventId": "2026-11-12-1430-tpm-5",
+   "venueId": "dan-eilat",
+   "roomId": "dan-eilat-tarshish",
+   "date": "2026-11-12",
+   "start": "14:30",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-1430-tpm-6/2026-11-12/14:30",
+   "eventId": "2026-11-12-1430-tpm-6",
+   "venueId": "dan-eilat",
+   "roomId": "dan-eilat-coral",
+   "date": "2026-11-12",
+   "start": "14:30",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-1430-tpm-7/2026-11-12/14:30",
+   "eventId": "2026-11-12-1430-tpm-7",
+   "venueId": "dan-eilat",
+   "roomId": "dan-eilat-blue-b",
+   "date": "2026-11-12",
+   "start": "14:30",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-1640-plenary-session-9/2026-11-12/16:40",
+   "eventId": "2026-11-12-1640-plenary-session-9",
+   "venueId": "herods-boutique",
+   "roomId": "herods-boutique-kings-ab",
+   "date": "2026-11-12",
+   "start": "16:40",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-1640-plenary-session-10/2026-11-12/16:40",
+   "eventId": "2026-11-12-1640-plenary-session-10",
+   "venueId": "dan-eilat",
+   "roomId": "dan-eilat-tarshish",
+   "date": "2026-11-12",
+   "start": "16:40",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-1640-plenary-session-11/2026-11-12/16:40",
+   "eventId": "2026-11-12-1640-plenary-session-11",
+   "venueId": "herods-palace",
+   "roomId": "herods-palace-lawrence",
+   "date": "2026-11-12",
+   "start": "16:40",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-1640-tpm-7-1/2026-11-12/16:40",
+   "eventId": "2026-11-12-1640-tpm-7-1",
+   "venueId": "dan-eilat",
+   "roomId": "dan-eilat-coral",
+   "date": "2026-11-12",
+   "start": "16:40",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-1930-1/2026-11-12/19:30",
+   "eventId": "2026-11-12-1930-1",
+   "venueId": "dan-eilat",
+   "roomId": "dan-eilat-blue",
+   "date": "2026-11-12",
+   "start": "19:30",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-2100-1/2026-11-12/21:00",
+   "eventId": "2026-11-12-2100-1",
+   "venueId": "dan-eilat",
+   "roomId": "dan-eilat-blue",
+   "date": "2026-11-12",
+   "start": "21:00",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-13-0930-fam-1/2026-11-13/09:30",
+   "eventId": "2026-11-13-0930-fam-1",
+   "venueId": "dan-eilat",
+   "roomId": "dan-eilat-tarshish",
+   "date": "2026-11-13",
+   "start": "09:30",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-13-0930-plenary-session-12/2026-11-13/09:30",
+   "eventId": "2026-11-13-0930-plenary-session-12",
+   "venueId": "dan-eilat",
+   "roomId": "dan-eilat-blue-b",
+   "date": "2026-11-13",
+   "start": "09:30",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-13-0930-fam-7/2026-11-13/09:30",
+   "eventId": "2026-11-13-0930-fam-7",
+   "venueId": "dan-eilat",
+   "roomId": "dan-eilat-coral",
+   "date": "2026-11-13",
+   "start": "09:30",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-13-1100-plenary-session-13/2026-11-13/11:00",
+   "eventId": "2026-11-13-1100-plenary-session-13",
+   "venueId": "dan-eilat",
+   "roomId": "dan-eilat-tarshish",
+   "date": "2026-11-13",
+   "start": "11:00",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-13-1230-1/2026-11-13/12:30",
+   "eventId": "2026-11-13-1230-1",
+   "venueId": "dan-eilat",
+   "roomId": "dan-eilat-tarshish",
+   "date": "2026-11-13",
+   "start": "12:30",
+   "ticketUrl": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  }
+ ],
+ "sources": {
+  "festival": [
+   "festival.toml"
+  ],
+  "venues": [
+   "venues-research"
+  ],
+  "events": [
+   "programme-pdf"
+  ],
+  "performances": [
+   "programme-pdf"
+  ],
+  "availability": [],
+  "prices": []
+ },
+ "provenance": {
+  "sources": {
+   "programme-pdf": {
+    "kind": "fetched",
+    "path": "data/festivals/seeei-electricity-energy/2026/programme-pdf",
+    "fetchedAt": "2026-10-02T18:46:03Z",
+    "fetcher": "scraper/festivals/seeei/sources/programme-pdf/fetch.py",
+    "fetcherVersion": 1
+   },
+   "venues-research": {
+    "kind": "curated",
+    "path": "scraper/festivals/seeei/curated/venues.json"
+   }
+  },
+  "absent": [],
+  "fields": {
+   "events.blurb": [
+    "programme-pdf"
+   ],
+   "events.categories": [
+    "programme-pdf"
+   ],
+   "events.durationMin": [
+    "programme-pdf"
+   ],
+   "events.genre": [
+    "programme-pdf"
+   ],
+   "events.imageUrl": [
+    "programme-pdf"
+   ],
+   "events.title": [
+    "programme-pdf"
+   ],
+   "events.titleLocal": [
+    "programme-pdf"
+   ],
+   "events.url": [
+    "programme-pdf"
+   ],
+   "performances.date": [
+    "programme-pdf"
+   ],
+   "performances.eventId": [
+    "programme-pdf"
+   ],
+   "performances.free": [
+    "programme-pdf"
+   ],
+   "performances.roomId": [
+    "programme-pdf"
+   ],
+   "performances.start": [
+    "programme-pdf"
+   ],
+   "performances.ticketUrl": [
+    "programme-pdf"
+   ],
+   "performances.venueId": [
+    "programme-pdf"
+   ],
+   "venues.accessibility": [
+    "venues-research"
+   ],
+   "venues.address": [
+    "venues-research"
+   ],
+   "venues.capacity": [
+    "venues-research"
+   ],
+   "venues.lat": [
+    "venues-research"
+   ],
+   "venues.layout": [
+    "venues-research"
+   ],
+   "venues.lng": [
+    "venues-research"
+   ],
+   "venues.name": [
+    "venues-research"
+   ],
+   "venues.notes": [
+    "venues-research"
+   ],
+   "venues.refs": [
+    "venues-research"
+   ],
+   "venues.rooms": [
+    "venues-research"
+   ]
+  },
+  "skipped": {
+   "programme-pdf": [
+    "2026-11-10 14:00 Opening of Registration (logistics)",
+    "2026-11-10 18:30 Evening break (logistics)",
+    "2026-11-11 08:00 Exhibition (Pavilion & Kings Lobby – Herods Boutique, Blue Lobby – Dan Hotel) (logistics)",
+    "2026-11-11 08:00 Registration (8:00 AM – 6:30 PM) (logistics)",
+    "2026-11-11 11:30 Coffee Break and Mingle Time (logistics)",
+    "2026-11-11 13:30 Lunch (Dining Room Herods Boutique and Dan Eilat) (logistics)",
+    "2026-11-11 16:20 Coffee Break and Mingle Time (logistics)",
+    "2026-11-11 18:30 Dinner -at the hotels participants are staying (logistics)",
+    "2026-11-12 11:10 Coffee Break and Mingle Time (logistics)",
+    "2026-11-12 13:00 Lunch (Dining Room Herods Boutique and Dan Eilat) (logistics)",
+    "2026-11-12 16:10 Coffee Break and Mingle Time (logistics)",
+    "2026-11-12 18:00 Dinner -at the hotels participants are staying (logistics)",
+    "2026-11-13 10:45 Coffee break at the Dan Hotel (logistics)",
+    "2026-11-13 14:00 Light lunch (logistics)"
+   ]
+  }
+ }
+}

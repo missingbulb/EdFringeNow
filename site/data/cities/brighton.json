@@ -12,6 +12,7 @@
   {
    "id": "osm:way/338139685",
    "name": "Royal Pavilion",
+   "nameEn": null,
    "kind": "attraction",
    "lat": 50.822393,
    "lng": -0.137625,
@@ -30,6 +31,7 @@
   {
    "id": "osm:way/3451897",
    "name": "Brighton Pier",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 50.816812,
    "lng": -0.137042,
@@ -48,6 +50,7 @@
   {
    "id": "osm:way/96651243",
    "name": "West Pier",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 50.819001,
    "lng": -0.152003,
@@ -66,6 +69,7 @@
   {
    "id": "osm:way/232461283",
    "name": "Brighton Toy and Model Museum",
+   "nameEn": null,
    "kind": "museum",
    "lat": 50.828706,
    "lng": -0.140946,
@@ -84,6 +88,7 @@
   {
    "id": "osm:way/607374756",
    "name": "Woodingdean Water Well",
+   "nameEn": null,
    "kind": "attraction",
    "lat": 50.834654,
    "lng": -0.081822,
@@ -102,6 +107,7 @@
   {
    "id": "osm:relation/6168019",
    "name": "Volks Electric Railway",
+   "nameEn": null,
    "kind": "attraction",
    "lat": 50.816707,
    "lng": -0.121882,
@@ -120,6 +126,7 @@
   {
    "id": "osm:way/104520966",
    "name": "Brighton Museum & Art Gallery",
+   "nameEn": null,
    "kind": "museum",
    "lat": 50.823443,
    "lng": -0.137839,
@@ -163,6 +170,7 @@
   {
    "id": "osm:node/559471342",
    "name": "Booth Museum of Natural History",
+   "nameEn": null,
    "kind": "museum",
    "lat": 50.837089,
    "lng": -0.153052,
@@ -181,6 +189,7 @@
   {
    "id": "osm:way/1365280107",
    "name": "Hove War Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 50.826831,
    "lng": -0.168684,
@@ -199,6 +208,7 @@
   {
    "id": "osm:node/2282612239",
    "name": "Jubilee Clock Tower",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 50.8237,
    "lng": -0.143604,
@@ -217,6 +227,7 @@
   {
    "id": "osm:node/90634730",
    "name": "Sea Life Centre",
+   "nameEn": null,
    "kind": "zoo",
    "lat": 50.819597,
    "lng": -0.135973,
@@ -235,6 +246,7 @@
   {
    "id": "osm:way/562347564",
    "name": "Brighton War Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 50.82138,
    "lng": -0.136961,
@@ -253,6 +265,7 @@
   {
    "id": "osm:way/111607316",
    "name": "British Engineerium",
+   "nameEn": null,
    "kind": "museum",
    "lat": 50.844355,
    "lng": -0.175553,
@@ -271,6 +284,7 @@
   {
    "id": "osm:way/237087421",
    "name": "Hove Museum",
+   "nameEn": null,
    "kind": "museum",
    "lat": 50.829706,
    "lng": -0.181178,
@@ -317,6 +331,7 @@
   {
    "id": "osm:way/4164779",
    "name": "Palmeira Square",
+   "nameEn": null,
    "kind": "park",
    "lat": 50.825806,
    "lng": -0.163602,
@@ -335,6 +350,7 @@
   {
    "id": "osm:way/3809718",
    "name": "Regency Square",
+   "nameEn": null,
    "kind": "park",
    "lat": 50.822459,
    "lng": -0.150426,
@@ -353,6 +369,7 @@
   {
    "id": "osm:way/5021742",
    "name": "Stanmer Park",
+   "nameEn": null,
    "kind": "park",
    "lat": 50.866498,
    "lng": -0.097288,
@@ -371,6 +388,7 @@
   {
    "id": "osm:node/90615739",
    "name": "Brighton Fishing Museum",
+   "nameEn": null,
    "kind": "museum",
    "lat": 50.819949,
    "lng": -0.142045,
@@ -408,6 +426,7 @@
   {
    "id": "osm:way/162572146",
    "name": "Hollingbury Hill Fort",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 50.855346,
    "lng": -0.123146,
@@ -426,6 +445,7 @@
   {
    "id": "osm:way/150255646",
    "name": "Ladies Mile Local Nature Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": 50.867783,
    "lng": -0.131067,
@@ -444,6 +464,7 @@
   {
    "id": "osm:node/21429524",
    "name": "Pepper Pot",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 50.827287,
    "lng": -0.124812,
@@ -462,6 +483,7 @@
   {
    "id": "osm:node/6614845889",
    "name": "Queen Victoria",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 50.823772,
    "lng": -0.1366,
@@ -480,6 +502,7 @@
   {
    "id": "osm:node/24343327",
    "name": "Queen Victoria Statue",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 50.82463,
    "lng": -0.169259,
@@ -498,6 +521,7 @@
   {
    "id": "osm:node/1510317776",
    "name": "South African War Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 50.821819,
    "lng": -0.150706,
@@ -516,6 +540,7 @@
   {
    "id": "osm:relation/2049042",
    "name": "Withdean Woods",
+   "nameEn": null,
    "kind": "park",
    "lat": 50.85669,
    "lng": -0.159738,
@@ -534,6 +559,7 @@
   {
    "id": "osm:way/4164782",
    "name": "Adelaide Crescent",
+   "nameEn": null,
    "kind": "park",
    "lat": 50.824469,
    "lng": -0.164145,
@@ -552,6 +578,7 @@
   {
    "id": "osm:way/338140802",
    "name": "George IV",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 50.823392,
    "lng": -0.136844,
@@ -570,6 +597,7 @@
   {
    "id": "osm:way/4400078",
    "name": "Hove Park",
+   "nameEn": null,
    "kind": "park",
    "lat": 50.842693,
    "lng": -0.173149,
@@ -588,6 +616,7 @@
   {
    "id": "osm:way/5021004",
    "name": "Moulsecoomb Wild Park",
+   "nameEn": null,
    "kind": "park",
    "lat": 50.85357,
    "lng": -0.112764,
@@ -606,6 +635,7 @@
   {
    "id": "osm:way/3991960",
    "name": "Old Steine Gardens",
+   "nameEn": null,
    "kind": "park",
    "lat": 50.820684,
    "lng": -0.137411,
@@ -624,6 +654,7 @@
   {
    "id": "osm:way/96656343",
    "name": "Peace Statue",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 50.822509,
    "lng": -0.156927,
@@ -642,6 +673,7 @@
   {
    "id": "osm:way/3996497",
    "name": "Preston Park",
+   "nameEn": null,
    "kind": "park",
    "lat": 50.840243,
    "lng": -0.146876,
@@ -660,6 +692,7 @@
   {
    "id": "osm:way/4321540",
    "name": "Queen's Park",
+   "nameEn": null,
    "kind": "park",
    "lat": 50.824772,
    "lng": -0.125618,
@@ -678,6 +711,7 @@
   {
    "id": "osm:way/4000213",
    "name": "St Ann's Well Gardens",
+   "nameEn": null,
    "kind": "park",
    "lat": 50.829698,
    "lng": -0.155669,
@@ -696,6 +730,7 @@
   {
    "id": "osm:way/4040699",
    "name": "The Level",
+   "nameEn": null,
    "kind": "park",
    "lat": 50.830487,
    "lng": -0.132761,
@@ -714,6 +749,7 @@
   {
    "id": "osm:way/516865069",
    "name": "West Blatchington Windmill",
+   "nameEn": null,
    "kind": "museum",
    "lat": 50.846584,
    "lng": -0.185151,
@@ -750,6 +786,7 @@
   {
    "id": "osm:way/878885045",
    "name": "Whitehawk Hill Local Nature Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": 50.829767,
    "lng": -0.109192,
@@ -768,6 +805,7 @@
   {
    "id": "osm:way/559477925",
    "name": "19a",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 50.840686,
    "lng": -0.131681,
@@ -804,6 +842,7 @@
   {
    "id": "osm:node/13676286793",
    "name": "Department Flea Market",
+   "nameEn": null,
    "kind": "market",
    "lat": 50.831484,
    "lng": -0.176193,
@@ -822,6 +861,7 @@
   {
    "id": "osm:way/1185788909",
    "name": "Egremont Gate",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 50.823615,
    "lng": -0.128278,
@@ -840,6 +880,7 @@
   {
    "id": "osm:way/137526152",
    "name": "Fabrica",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 50.822752,
    "lng": -0.142009,
@@ -858,6 +899,7 @@
   {
    "id": "osm:node/11447332744",
    "name": "Florence Road Market",
+   "nameEn": null,
    "kind": "market",
    "lat": 50.838084,
    "lng": -0.135795,
@@ -889,6 +931,7 @@
   {
    "id": "osm:node/4319037890",
    "name": "Gallery40",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 50.827042,
    "lng": -0.139849,
@@ -907,6 +950,7 @@
   {
    "id": "osm:node/735081861",
    "name": "Helm",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 50.825467,
    "lng": -0.138271,
@@ -955,6 +999,7 @@
   {
    "id": "osm:node/10926461949",
    "name": "Hollingdean Wholefoods",
+   "nameEn": null,
    "kind": "market",
    "lat": 50.840748,
    "lng": -0.131679,
@@ -991,6 +1036,7 @@
   {
    "id": "osm:way/1286164915",
    "name": "Kiplings Gardens",
+   "nameEn": null,
    "kind": "garden",
    "lat": 50.807121,
    "lng": -0.058862,
@@ -1009,6 +1055,7 @@
   {
    "id": "osm:node/6567793522",
    "name": "Labyrinth",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 50.82178,
    "lng": -0.139222,
@@ -1027,6 +1074,7 @@
   {
    "id": "osm:node/14134762874",
    "name": "Liberatuon Art Gallery",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 50.821717,
    "lng": -0.14041,
@@ -1045,6 +1093,7 @@
   {
    "id": "osm:node/12546579959",
    "name": "Old Police Cells Museum",
+   "nameEn": null,
    "kind": "museum",
    "lat": 50.820783,
    "lng": -0.140199,
@@ -1063,6 +1112,7 @@
   {
    "id": "osm:node/13831971636",
    "name": "Paraquatics",
+   "nameEn": null,
    "kind": "zoo",
    "lat": 50.833855,
    "lng": -0.190739,
@@ -1081,6 +1131,7 @@
   {
    "id": "osm:node/26241484",
    "name": "Park Street Gate",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 50.823204,
    "lng": -0.12678,
@@ -1099,6 +1150,7 @@
   {
    "id": "osm:way/181524079",
    "name": "Phileas Foggs World of Adventures",
+   "nameEn": null,
    "kind": "attraction",
    "lat": 50.867988,
    "lng": -0.122313,
@@ -1117,6 +1169,7 @@
   {
    "id": "osm:way/948986833",
    "name": "Phoenix Art Space",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 50.828812,
    "lng": -0.133788,
@@ -1135,6 +1188,7 @@
   {
    "id": "osm:node/6610830092",
    "name": "Pier Viewpoint",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": 50.814713,
    "lng": -0.137653,
@@ -1153,6 +1207,7 @@
   {
    "id": "osm:way/178538465",
    "name": "Preston Manor",
+   "nameEn": null,
    "kind": "museum",
    "lat": 50.842577,
    "lng": -0.150243,
@@ -1171,6 +1226,7 @@
   {
    "id": "osm:node/13120919625",
    "name": "Rottingdean Museum",
+   "nameEn": null,
    "kind": "museum",
    "lat": 50.805822,
    "lng": -0.057359,
@@ -1217,6 +1273,7 @@
   {
    "id": "osm:node/5310273056",
    "name": "Rottingdean War Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 50.806521,
    "lng": -0.058243,
@@ -1235,6 +1292,7 @@
   {
    "id": "osm:node/8596837920",
    "name": "Safe",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 50.817384,
    "lng": -0.117241,
@@ -1253,6 +1311,7 @@
   {
    "id": "osm:way/965366311",
    "name": "Secret Garden",
+   "nameEn": null,
    "kind": "garden",
    "lat": 50.817545,
    "lng": -0.108203,
@@ -1271,6 +1330,7 @@
   {
    "id": "osm:node/1747683834",
    "name": "Snoopers Paradise",
+   "nameEn": null,
    "kind": "market",
    "lat": 50.826288,
    "lng": -0.138701,
@@ -1307,6 +1367,7 @@
   {
    "id": "osm:way/1172868955",
    "name": "Stanmer Craft Museum",
+   "nameEn": null,
    "kind": "museum",
    "lat": 50.869307,
    "lng": -0.103497,
@@ -1325,6 +1386,7 @@
   {
    "id": "osm:node/7822137422",
    "name": "Starling Studio",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 50.8417,
    "lng": -0.141456,
@@ -1343,6 +1405,7 @@
   {
    "id": "osm:node/6717873385",
    "name": "The Lookout",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": 50.82361,
    "lng": -0.115181,
@@ -1361,6 +1424,7 @@
   {
    "id": "osm:way/42130315",
    "name": "The Open Market",
+   "nameEn": null,
    "kind": "market",
    "lat": 50.831463,
    "lng": -0.135149,
@@ -1420,6 +1484,7 @@
   {
    "id": "osm:node/5581301821",
    "name": "Tom's Place",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": 50.824364,
    "lng": -0.116165,
@@ -1438,6 +1503,7 @@
   {
    "id": "osm:way/1102280728",
    "name": "Upper Gardner Street Saturday Market",
+   "nameEn": null,
    "kind": "market",
    "lat": 50.826358,
    "lng": -0.139197,
@@ -1469,6 +1535,7 @@
   {
    "id": "osm:way/1156572631",
    "name": "Upside Down House",
+   "nameEn": null,
    "kind": "attraction",
    "lat": 50.82153,
    "lng": -0.152116,
@@ -1485,6 +1552,500 @@
    "hours": null
   }
  ],
+ "near": "venues",
+ "stay": [
+  {
+   "id": "osm:node/6731735937",
+   "name": "Cappadocia Guest House",
+   "nameEn": null,
+   "kind": "guest_house",
+   "stars": null,
+   "cuisine": null,
+   "lat": 50.825653,
+   "lng": -0.139662,
+   "address": "29-30 North Road, BN1 1YB",
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 40,
+   "venuesNear": 74
+  },
+  {
+   "id": "osm:way/96343939",
+   "name": "DoubleTree by Hilton Brighton Metropole",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": 4.0,
+   "cuisine": null,
+   "lat": 50.821838,
+   "lng": -0.148737,
+   "address": "Kings Road, BN1 2FU",
+   "website": "https://www.hilton.com/en/hotels/bshmedi-doubletree-brighton-metropole/?SEO_id=OTHR-EMEA-DI-BSHMEDI",
+   "wikidata": "Q120750783",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 60,
+   "venuesNear": 58
+  },
+  {
+   "id": "osm:relation/1851640",
+   "name": "Premier Inn Brighton City Centre",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 50.823394,
+   "lng": -0.141132,
+   "address": "144 North Street, BN1 1RE",
+   "website": "https://www.premierinn.com/gb/en/hotels/england/east-sussex/brighton/brighton-city-centre-north-street.html",
+   "wikidata": null,
+   "openingHours": "24/7",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "00:00",
+       "24:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 87,
+   "venuesNear": 70
+  },
+  {
+   "id": "osm:way/228842967",
+   "name": "A&O Hostel Brighton",
+   "nameEn": null,
+   "kind": "hostel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 50.820177,
+   "lng": -0.138053,
+   "address": "41-42 Old Steine, BN1 1NH",
+   "website": "https://www.aohostels.com/en/brighton/brighton-palace-pier/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 14,
+   "venuesNear": 58
+  },
+  {
+   "id": "osm:way/171790939",
+   "name": "Q Square",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 50.824681,
+   "lng": -0.144032,
+   "address": "11 Queen Square, BN1 3FD",
+   "website": "https://supercityuk.com/locations/brighton/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 26,
+   "venuesNear": 72
+  },
+  {
+   "id": "osm:way/137725593",
+   "name": "Royal Pavillion Townhouse",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 50.822745,
+   "lng": -0.151013,
+   "address": "12 Regency Square",
+   "website": "http://www.rpthotel.co.uk/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 46,
+   "venuesNear": 56
+  },
+  {
+   "id": "osm:way/137396825",
+   "name": "Travelodge",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 50.82147,
+   "lng": -0.14487,
+   "address": "12-14 West Street, BN1 2RE",
+   "website": "https://www.travelodge.co.uk/hotels/356/Brighton-Seafront-hotel",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 47,
+   "venuesNear": 64
+  },
+  {
+   "id": "osm:way/242185753",
+   "name": "The Old Ship Hotel",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 50.820397,
+   "lng": -0.142018,
+   "address": "31-38 Kings Road, BN1 1NR",
+   "website": null,
+   "wikidata": "Q25171964",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 47,
+   "venuesNear": 59
+  }
+ ],
+ "eat": [
+  {
+   "id": "osm:node/13300965501",
+   "name": "Happy Maki",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "japanese",
+    "sushi",
+    "poke"
+   ],
+   "lat": 50.82473,
+   "lng": -0.139518,
+   "address": "49 Gardner Street, BN1 1UN",
+   "website": "https://www.happymaki.co.uk/",
+   "wikidata": null,
+   "openingHours": "Mo-Su 12:00-20:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "20:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 35,
+   "venuesNear": 74
+  },
+  {
+   "id": "osm:node/6511570903",
+   "name": "Goemon Ramen Bar",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "ramen"
+   ],
+   "lat": 50.824684,
+   "lng": -0.139534,
+   "address": "50 Gardner Street, BN1 1UN",
+   "website": "https://goemonramen.com/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 40,
+   "venuesNear": 74
+  },
+  {
+   "id": "osm:node/6511570899",
+   "name": "Lavash",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "middle_eastern"
+   ],
+   "lat": 50.8246,
+   "lng": -0.139567,
+   "address": "52 Gardner Street, BN1 1UN",
+   "website": "https://www.lavash-website.co.uk/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 50,
+   "venuesNear": 74
+  },
+  {
+   "id": "osm:node/12870015769",
+   "name": "Caccia and Tails",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": null,
+   "lat": 50.824902,
+   "lng": -0.13943,
+   "address": "44-46 Gardner Street, BN1 1UN",
+   "website": "https://cacciaandtails.com/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 15,
+   "venuesNear": 74
+  },
+  {
+   "id": "osm:node/1115993985",
+   "name": "Bella Italia",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "italian"
+   ],
+   "lat": 50.821039,
+   "lng": -0.140158,
+   "address": "24 Market Street, BN1 1HH",
+   "website": "https://www.bellaitalia.co.uk/restaurants/brighton/market-street",
+   "wikidata": "Q26661860",
+   "openingHours": "Mo-Th 11:00-22:00; Fr-Sa 11:00-23:00; Su 11:00-22:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "22:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "23:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "22:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 42,
+   "venuesNear": 65
+  },
+  {
+   "id": "osm:node/6203841997",
+   "name": "Tonkotsu",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "ramen"
+   ],
+   "lat": 50.823725,
+   "lng": -0.139515,
+   "address": "20 New Road, BN1 1UF",
+   "website": "https://tonkotsu.co.uk/locations/brighton/",
+   "wikidata": null,
+   "openingHours": "12:00-22:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "12:00",
+       "22:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 17,
+   "venuesNear": 71
+  },
+  {
+   "id": "osm:node/12074952052",
+   "name": "Mowgli Street Food",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "indian"
+   ],
+   "lat": 50.822331,
+   "lng": -0.142665,
+   "address": "12-14 Dukes Lane, BN1 1BG",
+   "website": "https://www.mowglistreetfood.com/restaurants/brighton/",
+   "wikidata": null,
+   "openingHours": "Su-Th 11:30-20:00; Fr-Sa 11:30-22:30",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "su",
+      "mo",
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "20:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "22:30"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 26,
+   "venuesNear": 71
+  },
+  {
+   "id": "osm:node/6203841998",
+   "name": "Pinocchio",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "pizza",
+    "italian"
+   ],
+   "lat": 50.823828,
+   "lng": -0.139466,
+   "address": "22 New Road, BN1 1UF",
+   "website": "https://www.pinocchio.co.uk/",
+   "wikidata": null,
+   "openingHours": "Mo-Su 11:30-22:30",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "22:30"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 27,
+   "venuesNear": 71
+  }
+ ],
+ "trips": [
+  {
+   "name": "Rottingdean",
+   "page": "Rottingdean",
+   "url": "https://en.wikivoyage.org/wiki/Rottingdean",
+   "description": "In the east of Brighton, with memories of Kipling, Burne-Jones and several other artists.",
+   "lat": 50.815,
+   "lng": -0.065,
+   "km": 5
+  },
+  {
+   "name": "Lewes",
+   "page": "Lewes",
+   "url": "https://en.wikivoyage.org/wiki/Lewes",
+   "description": "This gorgeous medieval town has a castle, as well as Glyndebourne Opera House, a famous opera house, set in beautiful grounds where opera-goers eat gourmet picnics at intervals which can be brought in or ordered from their own catering service. from Brighton and 20 minutes away by train.",
+   "lat": 50.875627,
+   "lng": 0.017855,
+   "km": 12
+  },
+  {
+   "name": "Worthing",
+   "page": "Worthing",
+   "url": "https://en.wikivoyage.org/wiki/Worthing",
+   "description": "There is no reason you wouldn't want to visit this lovely town. Short journey via train from Brighton Station.",
+   "lat": 50.81,
+   "lng": -0.374,
+   "km": 17
+  },
+  {
+   "name": "London",
+   "page": "London",
+   "url": "https://en.wikivoyage.org/wiki/London",
+   "description": "An hour away via train or 2 hours via coach.",
+   "lat": 51.5086,
+   "lng": -0.1264,
+   "km": 76
+  },
+  {
+   "name": "Dieppe",
+   "page": "Dieppe",
+   "url": "https://en.wikivoyage.org/wiki/Dieppe",
+   "description": "France – by ferry from Newhaven Harbour, about east of Brighton. Services are three daily and take around four hours. The service is operated by DFDS",
+   "lat": 49.9222,
+   "lng": 1.0786,
+   "km": 132
+  }
+ ],
+ "guide": {
+  "page": "Brighton",
+  "url": "https://en.wikivoyage.org/wiki/Brighton"
+ },
+ "licences": {
+  "osm": {
+   "name": "ODbL",
+   "url": "https://opendatacommons.org/licenses/odbl/",
+   "attribution": "© OpenStreetMap contributors",
+   "credit": "https://www.openstreetmap.org/copyright"
+  },
+  "wikidata": {
+   "name": "CC0",
+   "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "attribution": "Wikidata"
+  },
+  "wikivoyage": {
+   "name": "CC BY-SA 4.0",
+   "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "attribution": "Wikivoyage contributors"
+  }
+ },
  "provenance": {
   "osm": {
    "fetchedAt": "2026-09-25T14:05:56Z",
@@ -1492,9 +2053,19 @@
    "fetcherVersion": 1
   },
   "wikidata": {
-   "fetchedAt": "2026-09-25T14:06:07Z",
+   "fetchedAt": "2026-10-02T18:21:06Z",
    "fetcher": "scraper/cities/fetch.py",
-   "fetcherVersion": 1
+   "fetcherVersion": 2
+  },
+  "amenities": {
+   "fetchedAt": "2026-10-02T18:41:09Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikivoyage": {
+   "fetchedAt": "2026-10-02T18:12:55Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
   }
  }
 }

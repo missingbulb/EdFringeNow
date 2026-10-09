@@ -1,0 +1,303 @@
+{
+ "places": [
+  {
+   "id": "node/13190843206",
+   "lat": 47.226251,
+   "lng": 8.814563,
+   "tags": {
+    "name": "Galerie zum Schwanen",
+    "tourism": "gallery",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2492113644",
+   "lat": 47.227964,
+   "lng": 8.817755,
+   "tags": {
+    "name": "Stadtmuseum Rapperswil-Jona",
+    "tourism": "museum",
+    "opening_hours": "We-Fr 14:00-17:00; Sa,Su 11:00-17:00",
+    "website": "https://stadtmuseum-rapperswil-jona.ch/",
+    "wikidata": "Q2327693",
+    "wikipedia": "de:Stadtmuseum Rapperswil-Jona",
+    "fee": "yes",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/268134047",
+   "lat": 47.227037,
+   "lng": 8.814186,
+   "tags": {
+    "name": "Lindenhof",
+    "tourism": "viewpoint",
+    "wikidata": "Q14541553",
+    "wikipedia": "de:Lindenhof (Rapperswil)",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/2953670478",
+   "lat": 47.235964,
+   "lng": 8.820614,
+   "tags": {
+    "name": "Centum Prata",
+    "tourism": "attraction",
+    "historic": "archaeological_site",
+    "wikidata": "Q8987384",
+    "wikipedia": "de:Centum Prata"
+   }
+  },
+  {
+   "id": "node/4192195372",
+   "lat": 47.227351,
+   "lng": 8.815194,
+   "tags": {
+    "name": "Polnische Freiheitssäule",
+    "historic": "memorial",
+    "wikidata": "Q16058392",
+    "wikipedia": "pl:Kolumna Barska"
+   }
+  },
+  {
+   "id": "node/4192210341",
+   "lat": 47.227248,
+   "lng": 8.815622,
+   "tags": {
+    "name": "Polenmuseum",
+    "tourism": "museum",
+    "opening_hours": "Apr-Oct: Mo-Su 13:00-17:00; Mar,Nov,Dec: Sa,Su 13:00-17:00",
+    "website": "https://polenmuseum.ch/",
+    "wikidata": "Q689839",
+    "wikipedia": "pl:Muzeum Polskie w Rapperswilu"
+   }
+  },
+  {
+   "id": "node/4718661989",
+   "lat": 47.223199,
+   "lng": 8.820745,
+   "tags": {
+    "name": "Streichelzoo",
+    "tourism": "zoo",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/5684399662",
+   "lat": 47.246492,
+   "lng": 8.804151,
+   "tags": {
+    "name": "Schwösterrain/Balm",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/5684401070",
+   "lat": 47.242096,
+   "lng": 8.812054,
+   "tags": {
+    "name": "Aeffenrain",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/5684403399",
+   "lat": 47.241438,
+   "lng": 8.817764,
+   "tags": {
+    "name": "Paradies",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/5684417987",
+   "lat": 47.241629,
+   "lng": 8.827247,
+   "tags": {
+    "name": "Frohberg",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/5684420264",
+   "lat": 47.246169,
+   "lng": 8.823432,
+   "tags": {
+    "name": "Schrännen",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/5684427945",
+   "lat": 47.247664,
+   "lng": 8.815311,
+   "tags": {
+    "name": "oberer Rüssel",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/5684433752",
+   "lat": 47.23312,
+   "lng": 8.845604,
+   "tags": {
+    "name": "Johannisberg",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/5684437599",
+   "lat": 47.232269,
+   "lng": 8.851468,
+   "tags": {
+    "name": "Hummelberg",
+    "tourism": "viewpoint",
+    "historic": "wayside_cross"
+   }
+  },
+  {
+   "id": "node/59139772",
+   "lat": 47.226787,
+   "lng": 8.813764,
+   "tags": {
+    "name": "Schlossgarten",
+    "tourism": "viewpoint",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/9633146790",
+   "lat": 47.224705,
+   "lng": 8.814595,
+   "tags": {
+    "name": "Foto-Spot Rapperswil-Jona",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "relation/17175264",
+   "lat": 47.227325,
+   "lng": 8.815634,
+   "tags": {
+    "name": "Schloss Rapperswil",
+    "historic": "castle",
+    "building": "yes",
+    "website": "https://www.schlossrapperswil.com/",
+    "wikidata": "Q1354897",
+    "wikipedia": "de:Schloss Rapperswil",
+    "addr:street": "Lindenhügel",
+    "addr:postcode": "8640",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/193167471",
+   "lat": 47.226363,
+   "lng": 8.813728,
+   "tags": {
+    "name": "Curti-Haus",
+    "tourism": "attraction",
+    "building": "yes",
+    "wikidata": "Q14544694",
+    "wikipedia": "de:Curti-Haus",
+    "addr:housenumber": "1",
+    "addr:postcode": "8640"
+   }
+  },
+  {
+   "id": "way/194103794",
+   "lat": 47.226678,
+   "lng": 8.813276,
+   "tags": {
+    "name": "Rosengarten beim Kapuzinerkloster",
+    "tourism": "viewpoint",
+    "leisure": "garden"
+   }
+  },
+  {
+   "id": "way/203451072",
+   "lat": 47.226334,
+   "lng": 8.816347,
+   "tags": {
+    "name": "Rathaus",
+    "tourism": "attraction",
+    "building": "yes",
+    "wikidata": "Q1728856",
+    "wikipedia": "de:Rathaus (Rapperswil)",
+    "addr:housenumber": "1",
+    "addr:postcode": "8640"
+   }
+  },
+  {
+   "id": "way/206126916",
+   "lat": 47.227825,
+   "lng": 8.826592,
+   "tags": {
+    "name": "Kunst(Zeug)Haus",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "We 14:00-20:00; Th 14:00-17:00; Fr-Su 11:00-17:00; PH off",
+    "website": "https://www.kunstzeughaus.ch/",
+    "wikidata": "Q14541537",
+    "wikipedia": "de:Altes Zeughaus (Rapperswil)",
+    "addr:housenumber": "1",
+    "addr:street": "Schönbodenstrasse",
+    "addr:postcode": "8640",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/235764676",
+   "lat": 47.235135,
+   "lng": 8.830267,
+   "tags": {
+    "name": "Schloss Meienberg",
+    "historic": "castle",
+    "building": "yes",
+    "wikidata": "Q14541554",
+    "wikipedia": "de:Schloss Meienberg",
+    "addr:housenumber": "36",
+    "addr:street": "Meienbergstrasse",
+    "addr:postcode": "8645"
+   }
+  },
+  {
+   "id": "way/26262225",
+   "lat": 47.226726,
+   "lng": 8.816379,
+   "tags": {
+    "name": "Hauptplatz",
+    "tourism": "attraction",
+    "wikidata": "Q14544294",
+    "wikipedia": "de:Hauptplatz (Rapperswil)"
+   }
+  },
+  {
+   "id": "way/26572316",
+   "lat": 47.223237,
+   "lng": 8.822277,
+   "tags": {
+    "name": "Knie's Kinderzoo",
+    "tourism": "zoo",
+    "website": "https://www.knieskinderzoo.ch/",
+    "wikidata": "Q688446",
+    "wikipedia": "de:Knies Kinderzoo",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/85404900",
+   "lat": 47.227673,
+   "lng": 8.818989,
+   "tags": {
+    "name": "Duftrosengarten für Sehbehinderte und Invalide",
+    "tourism": "attraction",
+    "leisure": "park",
+    "website": "https://www.rapperswil-jona.ch/Rosengaerten.1324.0.html",
+    "wikidata": "Q19668360",
+    "wheelchair": "yes"
+   }
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "about": "Hand research for the venues the festival's Eventive box office lists without an address the geocoder can place, keyed by the box office's venue id. Each pin is the OpenStreetMap feature named in its basis.",
+ "researchedAt": "2026-10-02",
+ "venues": {
+  "6aa99726170f9b1e5e61a9ab": {
+   "name": "Regal Dania Pointe",
+   "address": {
+    "value": "Sunset Drive, Dania Pointe, Dania Beach, FL 33004",
+    "source": "https://www.openstreetmap.org/node/13078228076"
+   },
+   "coordinates": {
+    "lat": 26.0522603,
+    "lng": -80.1609331,
+    "basis": "OpenStreetMap's Regal Cinemas at Dania Pointe (node 13078228076)"
+   }
+  }
+ }
+}

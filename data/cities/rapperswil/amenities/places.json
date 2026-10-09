@@ -1,0 +1,863 @@
+{
+ "nearM": 2000,
+ "anchors": [
+  {
+   "festival": "swiss-python-summit",
+   "venue": "ost-campus",
+   "lat": 47.22309,
+   "lng": 8.81648
+  }
+ ],
+ "places": [
+  {
+   "id": "node/10180533872",
+   "lat": 47.22864,
+   "lng": 8.839169,
+   "tags": {
+    "name": "Restaurant Porthof",
+    "amenity": "restaurant",
+    "website": "https://www.restaurant-porthof.ch",
+    "opening_hours": "Su-Fr 09:00-17:00",
+    "addr:housenumber": "8a",
+    "addr:street": "Porthofstrasse",
+    "addr:postcode": "8645"
+   }
+  },
+  {
+   "id": "node/10574300609",
+   "lat": 47.229214,
+   "lng": 8.832688,
+   "tags": {
+    "name": "Familientreff",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/11684743776",
+   "lat": 47.227004,
+   "lng": 8.816769,
+   "tags": {
+    "name": "House of Spice",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://www.house-of-spice.com",
+    "opening_hours": "Mo-Th,Su 11:00-14:00,17:00-22:00; Fr,Sa 11:00-14:00,17:00-23:00",
+    "addr:housenumber": "4",
+    "addr:street": "Kluggasse",
+    "addr:postcode": "8640"
+   }
+  },
+  {
+   "id": "node/12205267240",
+   "lat": 47.2262,
+   "lng": 8.815169,
+   "tags": {
+    "name": "Paia Poké",
+    "amenity": "restaurant",
+    "website": "https://www.paiapoke.ch",
+    "opening_hours": "Mo-Fr 11:30-14:30, Mo-Th 18:00-21:00, Fr 18:00-22:00, Sa 12:00-22:00, Su 12:00-20:00",
+    "addr:housenumber": "15",
+    "addr:street": "Marktgasse",
+    "addr:postcode": "8640"
+   }
+  },
+  {
+   "id": "node/12320517378",
+   "lat": 47.227312,
+   "lng": 8.815686,
+   "tags": {
+    "name": "Schloss Rapperswil Gastro",
+    "amenity": "restaurant",
+    "website": "https://www.schlossrapperswil.com/",
+    "addr:street": "Lindenhügel",
+    "addr:postcode": "8640",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12504220176",
+   "lat": 47.229035,
+   "lng": 8.830942,
+   "tags": {
+    "name": "Nino Pizza",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www.ninopizza.ch/",
+    "opening_hours": "Mo, We, Th 11:00-13:30, 17:00-22:00; Fr, Sa 11:00-13:30, 17:00-22:30",
+    "addr:housenumber": "104",
+    "addr:street": "Alte Jonastrasse",
+    "addr:postcode": "8640"
+   }
+  },
+  {
+   "id": "node/12877090651",
+   "lat": 47.226123,
+   "lng": 8.814063,
+   "tags": {
+    "name": "Cou Cou",
+    "amenity": "restaurant",
+    "cuisine": "mediterranean",
+    "website": "https://www.coucou-restaurant.ch/",
+    "opening_hours": "Mo-Sa 11:00-23:00; Su 11:00-22:00",
+    "addr:housenumber": "1",
+    "addr:street": "Quaistrasse",
+    "addr:postcode": "8640"
+   }
+  },
+  {
+   "id": "node/13055830638",
+   "lat": 47.218335,
+   "lng": 8.836412,
+   "tags": {
+    "name": "Jugendherberge Rapperswil-Jona",
+    "name:en": "Rapperswil-Jona Youth Hostel",
+    "tourism": "hostel",
+    "website": "https://www.youthhostel.ch/de/hostels/rapperswil-jona/",
+    "opening_hours": "Mar-Oct: Mo-Fr 07:30-10:00,17:00-22:00",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/13140380178",
+   "lat": 47.231178,
+   "lng": 8.835246,
+   "tags": {
+    "name": "Vita Restaurant",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/13190843207",
+   "lat": 47.226168,
+   "lng": 8.813918,
+   "tags": {
+    "name": "Hotel Schwanen",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/13190848664",
+   "lat": 47.225621,
+   "lng": 8.816152,
+   "tags": {
+    "name": "Hotel Hirschen",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/13190851610",
+   "lat": 47.22611,
+   "lng": 8.814194,
+   "tags": {
+    "name": "Tia Rita",
+    "amenity": "restaurant",
+    "cuisine": "steak_house"
+   }
+  },
+  {
+   "id": "node/1355269691",
+   "lat": 47.227123,
+   "lng": 8.816389,
+   "tags": {
+    "name": "La Fuente",
+    "amenity": "restaurant",
+    "cuisine": "spanish",
+    "website": "https://www.restaurante-lafuente.ch/",
+    "opening_hours": "Tu-Sa 11:30-14:00, Tu-Fr 18:00-23:00",
+    "addr:housenumber": "9",
+    "addr:postcode": "8640",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1355269696",
+   "lat": 47.226054,
+   "lng": 8.814737,
+   "tags": {
+    "name": "La Scala",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.lascala.ch/",
+    "opening_hours": "Mo-Fr 11:00-14:00, 17:00-24:00; Sa-Su 11:00-24:00",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1355269772",
+   "lat": 47.22636,
+   "lng": 8.816371,
+   "tags": {
+    "name": "Rathaus",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "website": "https://rathaus-rapperswil.ch/",
+    "opening_hours": "Mo-Sa 11:00-23:00; Su 11:00-15:00; PH off",
+    "addr:housenumber": "1",
+    "addr:street": "Rathausplatz",
+    "addr:postcode": "8640"
+   }
+  },
+  {
+   "id": "node/1355269782",
+   "lat": 47.224921,
+   "lng": 8.816493,
+   "tags": {
+    "name": "Dao",
+    "amenity": "restaurant",
+    "website": "https://daodao.ch",
+    "opening_hours": "Mo-Su 11:00-22:00; PH",
+    "addr:housenumber": "2",
+    "addr:postcode": "8640"
+   }
+  },
+  {
+   "id": "node/1355269787",
+   "lat": 47.226069,
+   "lng": 8.81463,
+   "tags": {
+    "name": "Steinbock",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "website": "https://www.seerestaurant-steinbock.ch/",
+    "opening_hours": "Tu-Sa 11:00-14:30, 17:00-23:30, Su 11:00-22:00"
+   }
+  },
+  {
+   "id": "node/1355269805",
+   "lat": 47.225702,
+   "lng": 8.815354,
+   "tags": {
+    "name": "10' dieci",
+    "amenity": "restaurant",
+    "cuisine": "pizza;italian",
+    "website": "https://www.dieci.ch/de/restaurant-rapperswil",
+    "opening_hours": "09:00+",
+    "addr:postcode": "8640",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1356639371",
+   "lat": 47.226282,
+   "lng": 8.815772,
+   "tags": {
+    "name": "Bären",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "website": "https://www.baerenrapperswil.ch/",
+    "opening_hours": "Mo off; Tu-Th 17:00-24:00; Fr 17:00-01:00; Sa 15:00-01:00; Su 17:00-23:00",
+    "addr:housenumber": "9",
+    "addr:street": "Marktgasse",
+    "addr:postcode": "8640",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/1356639376",
+   "lat": 47.226075,
+   "lng": 8.817278,
+   "tags": {
+    "name": "Mi Terra Vinoteca Argentina",
+    "amenity": "restaurant",
+    "cuisine": "argentinian",
+    "website": "https://www.mitierra.ch/kontakt/",
+    "opening_hours": "We-Fr 15:00-19:00; Sa 10:00-18:00",
+    "addr:housenumber": "7",
+    "addr:street": "Alpenstrasse",
+    "addr:postcode": "8640",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1369664259",
+   "lat": 47.225575,
+   "lng": 8.816353,
+   "tags": {
+    "name": "Shizuka Sushi",
+    "amenity": "restaurant",
+    "cuisine": "japanese;tibetan",
+    "website": "https://www.shizukasushi.ch/",
+    "opening_hours": "Mo off, Tu-Su 11:30-14:00,17:30-22:00",
+    "addr:housenumber": "2",
+    "addr:street": "Fischmarktstrasse",
+    "addr:postcode": "8640",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/13758802094",
+   "lat": 47.226693,
+   "lng": 8.815978,
+   "tags": {
+    "name": "Rössli",
+    "amenity": "restaurant",
+    "website": "https://banoo-roessli.ch/",
+    "opening_hours": "Tu-Sa 11:30-14:00, Tu-Sa 17:30-22:00, Su 11:30-19:30",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/14107005222",
+   "lat": 47.226048,
+   "lng": 8.81486,
+   "tags": {
+    "name": "Bacino",
+    "amenity": "restaurant",
+    "cuisine": "pizza;italian",
+    "website": "https://www.ristorante-bacino.ch/",
+    "opening_hours": "Mo-Su 11:30-23:30",
+    "addr:housenumber": "21",
+    "addr:street": "Marktgasse",
+    "addr:postcode": "8640"
+   }
+  },
+  {
+   "id": "node/1647465053",
+   "lat": 47.228572,
+   "lng": 8.819724,
+   "tags": {
+    "name": "Steiner",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "website": "https://www.steiner-beck.ch/filialen/rapperswil/",
+    "opening_hours": "Mo-Su 07:00-18:30",
+    "addr:housenumber": "1",
+    "addr:postcode": "8640",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1647465056",
+   "lat": 47.227906,
+   "lng": 8.818867,
+   "tags": {
+    "name": "Istanbul Kebap",
+    "amenity": "restaurant",
+    "cuisine": "kebab",
+    "opening_hours": "Mo 11:30-13:00; Tu-Fr 11:30-14:00,17:30-22:00; Sa,Su 11:30-22:00"
+   }
+  },
+  {
+   "id": "node/1780175315",
+   "lat": 47.229777,
+   "lng": 8.836384,
+   "tags": {
+    "name": "LO! im Kreuz",
+    "tourism": "hotel",
+    "amenity": "restaurant",
+    "website": "https://www.loasia.ch/",
+    "opening_hours": "Mo-Th 11:00-13:30, 17:00-21:30; Fr 11:00-13:30, 17:00-22:00; Sa 11:00-14:00, 17:00-22:00; Su 12:00-14:00, 17:00-21:30",
+    "addr:housenumber": "30",
+    "addr:street": "St. Gallerstrasse",
+    "addr:postcode": "8645"
+   }
+  },
+  {
+   "id": "node/2134077438",
+   "lat": 47.227857,
+   "lng": 8.818413,
+   "tags": {
+    "name": "§11",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "website": "https://www.restaurant-paragraph11.ch/",
+    "opening_hours": "Mo-Sa 11:00-24:00",
+    "addr:housenumber": "31a",
+    "addr:street": "Halsgasse",
+    "addr:postcode": "8640"
+   }
+  },
+  {
+   "id": "node/2352063586",
+   "lat": 47.231776,
+   "lng": 8.837619,
+   "tags": {
+    "name": "Kris Grill",
+    "amenity": "restaurant",
+    "cuisine": "barbecue",
+    "opening_hours": "Tu-Fr 11:00-13:30,17:00-21:30; Sa,Su 11:00-21:30",
+    "addr:housenumber": "5",
+    "addr:street": "Molkereistrasse",
+    "addr:postcode": "8645"
+   }
+  },
+  {
+   "id": "node/2414277528",
+   "lat": 47.226264,
+   "lng": 8.81704,
+   "tags": {
+    "name": "Rossini",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.rossinirapperswil.ch/",
+    "opening_hours": "Mo-Fr,Su 10:00-22:00; Sa 10:00-23:00",
+    "addr:housenumber": "2",
+    "addr:street": "Rathausstrasse",
+    "addr:postcode": "8640"
+   }
+  },
+  {
+   "id": "node/3124088099",
+   "lat": 47.228808,
+   "lng": 8.824939,
+   "tags": {
+    "name": "Kreuzli",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "website": "https://restaurant-kreuzli.ch/",
+    "opening_hours": "Mo-Fr 11:00-14:00, 18:00-23:30"
+   }
+  },
+  {
+   "id": "node/3124090851",
+   "lat": 47.227944,
+   "lng": 8.825346,
+   "tags": {
+    "name": "Zeughaus Grill",
+    "amenity": "restaurant",
+    "website": "https://www.zeughausgrill.ch/",
+    "opening_hours": "Mo-Su 10:00-14:00,17:00-23:00"
+   }
+  },
+  {
+   "id": "node/3124182769",
+   "lat": 47.225871,
+   "lng": 8.818801,
+   "tags": {
+    "name": "Art of Food - South Indian Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://www.house-of-spice.ch",
+    "opening_hours": "Tu-Fr 11:00-14:00,17:00-21:00; Sa 12:00-22:00; PH off",
+    "addr:housenumber": "22",
+    "addr:street": "Untere Bahnhofstrasse",
+    "addr:postcode": "8640"
+   }
+  },
+  {
+   "id": "node/3416370382",
+   "lat": 47.225635,
+   "lng": 8.816846,
+   "tags": {
+    "name": "Hotel Speer",
+    "tourism": "hotel",
+    "stars": "4",
+    "website": "https://sorellhotels.com/de/speer/rapperswil",
+    "addr:housenumber": "5",
+    "addr:street": "Untere Bahnhofstrasse",
+    "addr:postcode": "8640",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3546389697",
+   "lat": 47.228428,
+   "lng": 8.819562,
+   "tags": {
+    "name": "H-Downtown",
+    "amenity": "restaurant",
+    "cuisine": "thai"
+   }
+  },
+  {
+   "id": "node/4258333600",
+   "lat": 47.228089,
+   "lng": 8.819204,
+   "tags": {
+    "name": "Quellenhof",
+    "amenity": "restaurant",
+    "website": "https://www.quellenhofrapperswil.ch/",
+    "opening_hours": "Mo,Tu off; We-Sa 10:00-14:30,17:30-23:00; Su,PH 10:00-14:30,17:30-22:00"
+   }
+  },
+  {
+   "id": "node/4280011858",
+   "lat": 47.226727,
+   "lng": 8.816216,
+   "tags": {
+    "name": "Banoo Im Rössli",
+    "amenity": "restaurant",
+    "website": "http://www.roessli-rapperswil.ch/",
+    "opening_hours": "Tu-Sa 11:30-14:00,17:30-22:00; Su 11:30-19:30",
+    "addr:housenumber": "5",
+    "addr:postcode": "8640",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/4280011859",
+   "lat": 47.226769,
+   "lng": 8.816519,
+   "tags": {
+    "name": "Hotel & Restaurant JAKOB",
+    "tourism": "hotel",
+    "amenity": "restaurant",
+    "website": "https://www.jakob-rapperswil.ch/",
+    "wikidata": "Q112013470"
+   }
+  },
+  {
+   "id": "node/4508725395",
+   "lat": 47.225568,
+   "lng": 8.816902,
+   "tags": {
+    "name": "Sayori euro asia sushi bar",
+    "amenity": "restaurant",
+    "cuisine": "asian;sushi",
+    "website": "https://www.sayori.ch/sayori/rapperswil/",
+    "opening_hours": "Mo-Su 10:00-23:00",
+    "addr:housenumber": "5",
+    "addr:street": "Untere Bahnhofstrasse",
+    "addr:postcode": "8640"
+   }
+  },
+  {
+   "id": "node/4855447078",
+   "lat": 47.227298,
+   "lng": 8.820572,
+   "tags": {
+    "name": "Zhi Wei",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "http://www.restaurant-zhiwei.ch/",
+    "opening_hours": "Mo-Sa 11:00-14:00,17:00-22:00",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4861893202",
+   "lat": 47.224736,
+   "lng": 8.833281,
+   "tags": {
+    "name": "Yushu",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "website": "https://www.yushu.ch/",
+    "opening_hours": "Mo 17:00-21:00; Tu off; We 17:00-21:00; Th-Fr 11:30-13:30, 17:00-21:30; Sa 12:00-14:00, 17:00-21:30; Su 12:00-21:00; PH off",
+    "addr:housenumber": "6",
+    "addr:street": "Eichwiesstrasse",
+    "addr:postcode": "8645",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/5089604805",
+   "lat": 47.225744,
+   "lng": 8.819254,
+   "tags": {
+    "name": "Aung Kyaw",
+    "amenity": "restaurant",
+    "cuisine": "indian;asian;nepalese",
+    "opening_hours": "Mo-Fr 10:30-19:00; Sa 10:00-18:00",
+    "addr:housenumber": "16",
+    "addr:street": "Untere Bahnhofstrasse",
+    "addr:postcode": "8640"
+   }
+  },
+  {
+   "id": "node/5451426114",
+   "lat": 47.22833,
+   "lng": 8.818985,
+   "tags": {
+    "name": "Thai Orchid",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "website": "https://www.thaiorchid.ch/",
+    "opening_hours": "Tu-Fr 11:30-15:00,17:30-23:30; Sa-Su 17:30-23:30",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/5609073221",
+   "lat": 47.226633,
+   "lng": 8.816179,
+   "tags": {
+    "name": "Restaurant Falkenburg",
+    "amenity": "restaurant",
+    "website": "https://www.falkenburg-rapperswil.ch/",
+    "opening_hours": "Tu-Sa 10:30-15:00,17:30-23:30; Su \"by request\"",
+    "addr:housenumber": "4",
+    "addr:postcode": "8640",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/572108100",
+   "lat": 47.227652,
+   "lng": 8.825688,
+   "tags": {
+    "name": "Bottega Club & Lounge",
+    "amenity": "restaurant",
+    "website": "https://www.bottega-club.ch/",
+    "opening_hours": "Mo-Th 17:00-02:00; Fr-Sa 17:00-03:00",
+    "addr:housenumber": "72",
+    "addr:street": "Neue Jonastrasse",
+    "addr:postcode": "8640",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/5951998252",
+   "lat": 47.22619,
+   "lng": 8.815963,
+   "tags": {
+    "name": "Pilgerherberge Rapperswil",
+    "tourism": "hotel",
+    "website": "https://www.pilgerherberge.ch/",
+    "addr:housenumber": "5",
+    "addr:street": "Seestrasse",
+    "addr:postcode": "8640"
+   }
+  },
+  {
+   "id": "node/6019702272",
+   "lat": 47.226943,
+   "lng": 8.816476,
+   "tags": {
+    "name": "Frauenhof",
+    "amenity": "restaurant",
+    "website": "https://www.frauenhof.net/",
+    "opening_hours": "We,Th 11:00-22:30; Fr 10:00-23:00; Sa 11:00-23:00; Su 11:00-18:00",
+    "addr:housenumber": "2",
+    "addr:street": "Kluggasse",
+    "addr:postcode": "8640"
+   }
+  },
+  {
+   "id": "node/6019760513",
+   "lat": 47.225649,
+   "lng": 8.816367,
+   "tags": {
+    "name": "Marco's Pasta Bar",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.marcospastabar.com/",
+    "opening_hours": "Tu-Su 11:30-14:00,17:30-24:00",
+    "addr:housenumber": "4",
+    "addr:street": "Fischmarktstrasse",
+    "addr:postcode": "8640"
+   }
+  },
+  {
+   "id": "node/6465360917",
+   "lat": 47.228028,
+   "lng": 8.819078,
+   "tags": {
+    "name": "Siculus",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www.siculus.ch/",
+    "opening_hours": "Mo 11:30-14:00,17:00-22:00; Tu-We off; Th-Fr 11:30-14:00; Sa-Su 11:30-22:00; PH off",
+    "addr:housenumber": "32",
+    "addr:street": "Halsgasse",
+    "addr:postcode": "8640"
+   }
+  },
+  {
+   "id": "node/7711383105",
+   "lat": 47.229233,
+   "lng": 8.820784,
+   "tags": {
+    "name": "Migros Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "international",
+    "website": "https://filialen.migros.ch/de/migros-restaurant-rapperswil-sonnenhof",
+    "opening_hours": "Mo-Sa 08:00-15:00; PH off",
+    "addr:housenumber": "4",
+    "addr:street": "Zürcherstrasse",
+    "addr:postcode": "8640"
+   }
+  },
+  {
+   "id": "node/8903595425",
+   "lat": 47.226144,
+   "lng": 8.819738,
+   "tags": {
+    "name": "Lennox",
+    "amenity": "restaurant",
+    "cuisine": "international",
+    "website": "https://lennox-restaurant.ch",
+    "opening_hours": "Mo-Th 11:30-22:00; Fr 11:30-24:00; Sa 10:00-24:00; Su 10:00-21:00",
+    "addr:housenumber": "7",
+    "addr:street": "Tiefenaustrasse",
+    "addr:postcode": "8640",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/9633494699",
+   "lat": 47.227561,
+   "lng": 8.825084,
+   "tags": {
+    "name": "Moxy Rapperswil",
+    "tourism": "hotel",
+    "website": "https://www.marriott.com/en-us/hotels/zrhox-moxy-rapperswil/overview/",
+    "addr:housenumber": "66",
+    "addr:street": "Neue Jonastrasse",
+    "addr:postcode": "8640"
+   }
+  },
+  {
+   "id": "way/1117540744",
+   "lat": 47.227562,
+   "lng": 8.82503,
+   "tags": {
+    "name": "Moxy Rapperswil",
+    "tourism": "hotel",
+    "website": "https://www.marriott.com/en-us/hotels/zrhox-moxy-rapperswil/overview/?scid=f2ae0541-1279-4f24-b197-a979c79310b0",
+    "addr:housenumber": "66",
+    "addr:street": "Neue Jonastrasse",
+    "addr:postcode": "8640"
+   }
+  },
+  {
+   "id": "way/192104355",
+   "lat": 47.214275,
+   "lng": 8.805443,
+   "tags": {
+    "name": "Hotel Rössli",
+    "tourism": "hotel",
+    "website": "https://www.hotel-restaurant-roessli.ch/",
+    "addr:housenumber": "137",
+    "addr:street": "Hurdnerstrasse",
+    "addr:postcode": "8640"
+   }
+  },
+  {
+   "id": "way/192104364",
+   "lat": 47.213942,
+   "lng": 8.805421,
+   "tags": {
+    "name": "Rössli Pavillon",
+    "amenity": "restaurant",
+    "website": "https://www.hotel-restaurant-roessli.ch/",
+    "opening_hours": "Mo-Su 11:00-14:00,17:00-22:00",
+    "addr:street": "Hurdnerstrasse",
+    "addr:postcode": "8640"
+   }
+  },
+  {
+   "id": "way/206104176",
+   "lat": 47.21743,
+   "lng": 8.833117,
+   "tags": {
+    "name": "Seegarte-Chäller",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "website": "https://www.seegartenkeller.ch/Startseite/",
+    "opening_hours": "Oct-Mar We, Sa 13:00-19:00; Su 09:30-19:00; Apr-Sep We, Fr 13:00-19:00; Sa-Su 09:30-19:00",
+    "addr:housenumber": "170",
+    "addr:street": "Busskirchstrasse",
+    "addr:postcode": "8645"
+   }
+  },
+  {
+   "id": "way/206104217",
+   "lat": 47.223567,
+   "lng": 8.82017,
+   "tags": {
+    "name": "Da Eleonora",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://tcrapperswil.ch/restaurant",
+    "opening_hours": "Mar 16-Nov 15 Mo-Su 10:00-22:00+ \"Verlängerung max. bis 24:00; Durchgehend warme Küche; (Bei schlechtem Wetter fragt ihr betr. Randzeiten sicherheitshalber nach)\"; Nov 16-Mar 15 closed \"Auf Anfrage für Anlässe zur Verfügung.\"",
+    "addr:housenumber": "34",
+    "addr:street": "Oberseestrasse",
+    "addr:postcode": "8640",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/289189699",
+   "lat": 47.222796,
+   "lng": 8.823035,
+   "tags": {
+    "name": "Himmapan Lodge",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "website": "https://www.himmapan.ch/",
+    "opening_hours": "Mar-Jan Tu-Fr 11:30-14:00,18:30-24:00; Feb Tu-Fr 18:30-24:00; Sa 18:30-24:00; Nov-Feb Su 17:00-24:00; Mar-Oct Su 18:00-24:00",
+    "addr:postcode": "8640"
+   }
+  },
+  {
+   "id": "way/302302762",
+   "lat": 47.229096,
+   "lng": 8.824494,
+   "tags": {
+    "name": "mundartbeiz",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "website": "https://www.mundartbeiz.ch/",
+    "opening_hours": "Tu-Sa 08:30-23:00",
+    "addr:housenumber": "33",
+    "addr:street": "Alte Jonastrasse",
+    "addr:postcode": "8640"
+   }
+  },
+  {
+   "id": "way/453076660",
+   "lat": 47.214303,
+   "lng": 8.804522,
+   "tags": {
+    "name": "Hotel Rössli",
+    "tourism": "hotel",
+    "website": "https://www.hotel-restaurant-roessli.ch/",
+    "addr:housenumber": "127",
+    "addr:street": "Hurdnerstrasse",
+    "addr:postcode": "8640"
+   }
+  },
+  {
+   "id": "way/459556980",
+   "lat": 47.223139,
+   "lng": 8.818701,
+   "tags": {
+    "name": "OST RJ Forschungsbar",
+    "amenity": "restaurant",
+    "website": "https://gastro.migros.ch/de/genossenschaften/ostschweiz/gemeinschaftsgastronomie/restaurant-ost-rapperswil.",
+    "opening_hours": "Mo-Fr 11:00-14:00",
+    "addr:housenumber": "10",
+    "addr:street": "Oberseestrasse",
+    "addr:postcode": "8640",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/71503681",
+   "lat": 47.224019,
+   "lng": 8.822305,
+   "tags": {
+    "name": "Tiergarten",
+    "amenity": "restaurant",
+    "website": "https://www.knieskinderzoo.ch",
+    "opening_hours": "Su 09:00-18:00",
+    "addr:housenumber": "36",
+    "addr:street": "Oberseestrasse",
+    "addr:postcode": "8640"
+   }
+  },
+  {
+   "id": "way/71503689",
+   "lat": 47.223259,
+   "lng": 8.822321,
+   "tags": {
+    "name": "Wintergarten",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "way/903050685",
+   "lat": 47.22301,
+   "lng": 8.816413,
+   "tags": {
+    "name": "Mensa OST Campus Rapperswil Jona",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "website": "https://gastro.migros.ch/de/genossenschaften/ostschweiz/gemeinschaftsgastronomie/restaurant-ost-rapperswil.",
+    "opening_hours": "Mo-Fr 08:30-13:30; PH off",
+    "wheelchair": "yes"
+   }
+  }
+ ]
+}

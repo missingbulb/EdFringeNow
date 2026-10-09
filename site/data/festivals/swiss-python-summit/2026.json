@@ -1,0 +1,734 @@
+{
+ "v": 1,
+ "festival": {
+  "id": "swiss-python-summit",
+  "edition": "2026",
+  "ordinal": null,
+  "name": "Swiss Python Summit",
+  "nameLocal": null,
+  "city": "Rapperswil",
+  "country": "CH",
+  "lat": 47.2267,
+  "lng": 8.8184,
+  "timezone": "Europe/Zurich",
+  "lang": "en",
+  "dir": "ltr",
+  "kind": "academic",
+  "defaultGenre": "talk",
+  "site": "https://www.python-summit.ch",
+  "firstDate": "2026-10-22",
+  "lastDate": "2026-10-23",
+  "ticketing": {
+   "model": "festival-pass",
+   "url": "https://www.python-summit.ch/register/",
+   "notes": "One ticket per conference day or both, from the summit's registration page."
+  }
+ },
+ "categories": [
+  {
+   "id": "6907-day-1-python-the-programming-language-you-love",
+   "name": "Day 1 - Python, the programming language you love"
+  },
+  {
+   "id": "6908-day-2-data-science-more",
+   "name": "Day 2 - Data Science & More"
+  }
+ ],
+ "venues": [
+  {
+   "id": "ost-campus",
+   "name": "OST Campus Rapperswil",
+   "address": "Oberseestrasse 10, 8640 Rapperswil-Jona",
+   "lat": 47.2230879,
+   "lng": 8.8164773,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {
+     "id": "aula-4-101",
+     "name": "Aula 4.101",
+     "capacity": 500,
+     "layout": null
+    }
+   ],
+   "accessibility": null,
+   "notes": "The eastern Switzerland university of applied sciences' campus beside Rapperswil station; the summit is in the Aula of building 4, upstairs (python-summit.ch/venue).",
+   "refs": [
+    "https://www.python-summit.ch/venue/"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "SPNFWJ",
+   "title": "Welcome - Day 1",
+   "titleLocal": null,
+   "url": "https://talks.python-summit.ch/swiss-python-summit-2026/talk/SPNFWJ/",
+   "genre": "talk",
+   "categories": [
+    "6907-day-1-python-the-programming-language-you-love"
+   ],
+   "blurb": "A welcome message and useful information from the organisers.\n\nYou will also find useful information on our website [www.python-summit.ch/venue](https://www.python-summit.ch/venue/). Or feel free to ask any member of staff if you have a question.",
+   "durationMin": 5,
+   "imageUrl": null
+  },
+  {
+   "id": "TLBGRU",
+   "title": "Your Code Is Slower Than Expected - Hidden Performance Traps",
+   "titleLocal": null,
+   "url": "https://talks.python-summit.ch/swiss-python-summit-2026/talk/TLBGRU/",
+   "genre": "talk",
+   "categories": [
+    "6907-day-1-python-the-programming-language-you-love"
+   ],
+   "blurb": "Python makes it easy to write clean and expressive code — but it also makes it easy to write code that is unexpectedly slow.\n\nIn this talk, we’ll look at everyday Python patterns that seem harmless but can have serious performance implications. Why is x in list sometimes dramatically slower than expected? What’s the real difference between append(), +=, and +? And when does a simple data structure choice turn an O(n) solution into O(n²)?\n\nInstead of focusing on micro-optimizations, we’ll go one level deeper: how Python’s core data structures (lists, sets, dictionaries) actually work under the hood — and how that directly impacts runtime behavior.\n\nYou’ll leave with a practical mental model and a small set of rules of thumb that help you write code that is not just correct and readable, but also efficient — without premature optimization.\n\nSpeakers: Michael Inden",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "XNHXFL",
+   "title": "Eliminate hidden exceptions via railway-oriented programming",
+   "titleLocal": null,
+   "url": "https://talks.python-summit.ch/swiss-python-summit-2026/talk/XNHXFL/",
+   "genre": "talk",
+   "categories": [
+    "6907-day-1-python-the-programming-language-you-love"
+   ],
+   "blurb": "Python’s dynamic nature makes it easy to miss hidden exceptions and implicit control flow, leading to bugs that static type checkers such as `mypy`, `pyrefly`, `pyright`, or `ty` cannot catch. Railway-oriented programming (ROP) addresses this by making all domain outcomes explicit in function signatures, using a `Result` type instead of exceptions. This talk introduces ROP in Python, showing how it enables type-safe control flow that static analyzers can verify.\n\nWe will compare three open-source libraries: `Expression` by Dag Brattli, `returns` by Nikita Sobolev (Drylabs), and `trcks` by the speaker, each offering different approaches to ROP. Special focus will be given to `trcks`, which uniquely supports both object-oriented (method chaining) and functional (pipeline composition) styles while being designed for maximum type safety and interoperability.\n\nAttendees will learn when and how to use ROP in both synchronous and asynchronous code, how to choose the right library, and when ROP is not the best fit. By the end, you will know how to write Python code that is safer, more predictable, and easier to maintain without sacrificing expressiveness. Attendees should be familiar with type annotations and static type checking in Python. A basic understanding of object-oriented programming and of functional programming can be helpful but is not strictly required.\n\nSpeakers: Christoph Gietl",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "FM9WWJ",
+   "title": "How to make Django insecure",
+   "titleLocal": null,
+   "url": "https://talks.python-summit.ch/swiss-python-summit-2026/talk/FM9WWJ/",
+   "genre": "talk",
+   "categories": [
+    "6907-day-1-python-the-programming-language-you-love"
+   ],
+   "blurb": "Django is one of the most security-conscious web frameworks in any language. SQL injection, cross-site scripting, CSRF, password hashing — Django handles all of it out of the box, often before you even know the attack exists. But what does Django actually *do*? And what happens when you — accidentally or on purpose — turn those protections off?\n\nThis talk walks through the OWASP by doing everything wrong first. For each vulnerability, I'll show you the insecure version — the f-string in a raw SQL query, the `|safe` on user input, the `@csrf_exempt` on a money transfer, the `DEBUG = True` in production — and then open Django's source code to show you exactly how the framework prevents it. Not as a black box, but line by line: how the ORM keeps parameters separate from SQL, how the template engine escapes every variable, how the CSRF middleware validates tokens, and why Django hashes your passwords 870,000 times.\n\nBy the end you'll know where Django protects you, where it can't, and what one management command to run before every deployment.\n\nSpeakers: Gaweng Tan",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "JHJ3XY",
+   "title": "Sentinel Values in Python: Why None Is Not Enough",
+   "titleLocal": null,
+   "url": "https://talks.python-summit.ch/swiss-python-summit-2026/talk/JHJ3XY/",
+   "genre": "talk",
+   "categories": [
+    "6907-day-1-python-the-programming-language-you-love"
+   ],
+   "blurb": "Every Python developer has used `None` as a default but what happens when `None` is also a valid value? This talk explores sentinel values as a first-class concept in Python. We'll uncover why `None` is semantically overloaded, how built-in sentinels like `NotImplemented` and `...` (Ellipsis) quietly power Python's object model, and what happens when you try to create your own. The central challenge: Python's type system has no good answer for sentinel values. We'll walk through why `Optional`, `Literal`, and custom classes all fall short, look at real-world workarounds including Pydantic's experimental MISSING, and discuss what PEP 661's deferral means for your code today. You'll leave with a clear mental model and practical guidance for handling absence in typed Python.\n\nSpeakers: Florian Wilhelm",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "UQXR9U",
+   "title": "Securing the Supply Chain of your Python app",
+   "titleLocal": null,
+   "url": "https://talks.python-summit.ch/swiss-python-summit-2026/talk/UQXR9U/",
+   "genre": "talk",
+   "categories": [
+    "6907-day-1-python-the-programming-language-you-love"
+   ],
+   "blurb": "After Log4Shell and the \"GitHub Actions\" based attacks, the most significant security vulnerabilities of the past few years, controlling the software supply chain is top of mind for every security-conscious development team. We realize that embedding open-source libraries in our applications has substantial security risks. Still, no major software artifact can be built without OSS components these days. \nIn this session, we will use the recommendations of the most popular supply chain frameworks to explore a series of practical software development and system architecture best practices you can follow to secure your Python builds, sources, and dependencies.\nWe will look at how you can protect your application from two classes of risks: internal and external. The former focuses on insider threats and compromised accounts, and the latter concentrates on open-source libraries embedded in your software projects.\n\nSpeakers: Federico Fregosi",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "AJYKX3",
+   "title": "Pulumi: The Joy of Infrastructure as (Python) Code",
+   "titleLocal": null,
+   "url": "https://talks.python-summit.ch/swiss-python-summit-2026/talk/AJYKX3/",
+   "genre": "talk",
+   "categories": [
+    "6907-day-1-python-the-programming-language-you-love"
+   ],
+   "blurb": "We don't need to use Python only for developing applications and pipelines, we can also use it to maintain our infrastructure. Pulumi allows us to describe our infrastructure as a Python program. As this gives us access to Python's flexibility, readability, power, and joy, it has quickly become my favourite way to manage infrastructure, no matter if for a small team's ML application or for a multinational company's analytics platform. Let me share this joy with you!\n\nIn this talk I will show you how Pulumi works and what it does better than other IaC tools: Among others, I will talk about custom resources and resource grouping, state versioning and understanding your infrastructure deployment as a program to be run.\n\nCaution: This talk may lead to strong feelings of \"why haven't we always done it like this?\"\n\nSpeakers: Jonas Böer",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "WJCKGM",
+   "title": "Profiling Python: From cProfile to Sampling",
+   "titleLocal": null,
+   "url": "https://talks.python-summit.ch/swiss-python-summit-2026/talk/WJCKGM/",
+   "genre": "talk",
+   "categories": [
+    "6907-day-1-python-the-programming-language-you-love"
+   ],
+   "blurb": "Python developers have long faced a frustrating tradeoff: the more precisely you measured performance, the more you risked changing it.\n\nTraditional profilers like `profile` and `cProfile` trace every function call, providing exact call counts and instrumented timings at the cost of significant overhead.\n\nThe ecosystem fought back. Tools like `py-spy` and `austin` embraced statistical sampling, attaching to running processes and gathering useful insights with minimal impact. Yet statistical sampling remained outside the Python standard library.\n\nPython 3.15 changes that.\n\nThe new `profiling.sampling` module, also known as Tachyon, brings statistical profiling into the standard library, building on years of community experimentation.\n\nIn this talk, we'll compare tracing and sampling profilers, exploring how each approach works, where it struggles, and how sampled stacks become flame graphs.\n\nBy profiling the same code with different tools, we'll see how each profiler reveals a different picture of performance — and why choosing the right tool matters.\n\n## Problem Statement\n\nMost Python developers reach for `cProfile` because it's built in, often without realizing its limitations or knowing modern alternatives exist. Sampling profilers have been available for years, but many developers have not encountered them. This talk closes that gap.\n\n## Attendees will leave knowing\n\n- Deterministic vs statistical profiling and why it matters\n- When `cProfile` helps — and when it can mislead\n- How and when to use Python 3.15's `profiling.sampling`\n- How to choose the right profiler for the job\n\nSpeakers: Farid Mirzayev",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "UJZ39Q",
+   "title": "Packaging FOSS Python applications and libraries for Debian",
+   "titleLocal": null,
+   "url": "https://talks.python-summit.ch/swiss-python-summit-2026/talk/UJZ39Q/",
+   "genre": "talk",
+   "categories": [
+    "6907-day-1-python-the-programming-language-you-love"
+   ],
+   "blurb": "# Packaging FOSS Python applications and libraries for Debian\n\nDebian Linux is deployed on millions of desktops and servers worldwide, renowned for 30 years for its stability and the quality of software packages installable from its archives. Over 1,400 volunteer contributors from around the world serve Debian users and the free software community by maintaining more than 60,000 well-behaved, consistent, secure and up-to-date packages, including Python applications and libraries.\n\nSystem administrators, software integrators, and scientists can be considerably more certain of the provenance, reliability, and intercompatibility of Python packages from the Debian archives than uploads to PyPi.org, especially at a time where these aspects are coming under greater scrutiny in Europe. For the Python developer, packaging your work for Debian, and therefore satisfying the stringent quality assurance criteria, is a great responsibility, but also a rewarding opportunity to gain more users in higher-integrity contexts, improve your coding practices, and engage with a community of free software experts.\n\nThis talk will present case studies of the \"Debianisation\" of a Python library (pyroaring) and application (Apache BuildStream 2.7.0) recently undertaken by the speaker in their first major FOSS contribution, covering from first principles:\n- Preparing upstream sources and Debian-specific metadata and build instructions in compliance with Debian Policy and Free Software Guidelines, both for pure Python libraries and those with Cython extensions and Sphinx documentation\n- Guiding a new package through the Debian quality assurance processes (including version control, integration testing, reproducibility, and migration) so it can be included in a release\n- Responsibilities of a Debian package maintainer to their users, upstreams, and reverse-dependencies in handling bugs and updates\n- Sources of help when contributing to a project as mature as Debian for the first time\n\nSpeakers: Theodore Tucker",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "SGYKVR",
+   "title": "Lightning Talks - Day 1",
+   "titleLocal": null,
+   "url": "https://talks.python-summit.ch/swiss-python-summit-2026/talk/SGYKVR/",
+   "genre": "talk",
+   "categories": [
+    "6907-day-1-python-the-programming-language-you-love"
+   ],
+   "blurb": "Our Lightning Talks are open to everyone 😊\n\nHow it works:\n– You can register directly at the conference. First come, first served.\n– Any proposal is welcome, as long as your talk has something to do with Python and respects our [Code of Conduct](https://www.python-summit.ch/coc/). We reserve the right to reject talks.\n– Talk time is strictly limited to 5 minutes.\n– To keep turnaround times short, you will not be able to plug in your own device. We will provide a laptop with all slides. Please submit your slides as PDF via email at least 60 minutes before Lightning Talks start. \n– By registering, you accept that your talk may be recorded, published and streamed live (audio & video) under [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/deed.en).",
+   "durationMin": 45,
+   "imageUrl": null
+  },
+  {
+   "id": "8SBVVY",
+   "title": "Closing - Day 1",
+   "titleLocal": null,
+   "url": "https://talks.python-summit.ch/swiss-python-summit-2026/talk/8SBVVY/",
+   "genre": "talk",
+   "categories": [
+    "6907-day-1-python-the-programming-language-you-love"
+   ],
+   "blurb": "A thank you from the organisers. We hope you enjoyed your day!\n                                       \n(It won't take long, we promise! After that long day, everyone is looking forward to the buffet!)",
+   "durationMin": 5,
+   "imageUrl": null
+  },
+  {
+   "id": "SH7MD8",
+   "title": "Welcome - Day 2",
+   "titleLocal": null,
+   "url": "https://talks.python-summit.ch/swiss-python-summit-2026/talk/SH7MD8/",
+   "genre": "talk",
+   "categories": [
+    "6908-day-2-data-science-more"
+   ],
+   "blurb": "A welcome message and useful information from the organisers.\n\nYou will also find useful information on our website [www.python-summit.ch/venue](https://www.python-summit.ch/venue/). Or feel free to ask any member of staff if you have a question.",
+   "durationMin": 5,
+   "imageUrl": null
+  },
+  {
+   "id": "AQXG8Q",
+   "title": "Before you open that OSS issue: evidence-first triage",
+   "titleLocal": null,
+   "url": "https://talks.python-summit.ch/swiss-python-summit-2026/talk/AQXG8Q/",
+   "genre": "talk",
+   "categories": [
+    "6908-day-2-data-science-more"
+   ],
+   "blurb": "You found a gap in a library you use. Should you open an issue, write an RFC, or spend a month on a pull request? Most teams answer this in a one-off chat with an LLM, get a confident two-sentence verdict, and only later discover the closed duplicate issue or the adjacent API that already solves the problem.\n\nThis talk is a case study, not a product pitch. I walk through how we evaluated whether reviving PyTorch's prototype torch.masked module was worth a multi-month upstream contribution. The decision changed once we gathered evidence: old and closed GitHub issues, maintainer activity on the code path, and alternatives such as NestedTensor and FlexAttention. The useful output was not \"yes\" or \"no\" - it was a short, cited brief that a teammate could verify in ten minutes.\n\nFrom that workflow I distill a repeatable method any Python team can use before writing a spec: what to retrieve (issues, merged PRs, module git history, ecosystem docs), what not to trust (verdict-first LLM answers, unvalidated \"library X already does this\"), and how to structure the result so humans keep the final call.\n\nI briefly show the shape of a Python CLI we are building to automate retrieval and synthesis with mandatory citations - Typer, httpx, GitHub API, local indexing - but the talk stands alone: you leave with a checklist you can run tomorrow with ripgrep, gh, and a markdown template.\n\nAudience: contributors, maintainers tired of duplicate feature requests, and teams choosing where to invest OSS effort. Intermediate level; no PyTorch expertise required (since the Data Science Day is only tomorrow).\n\nSpeakers: Pavel Sulimov, Sergey Eremeykin",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "D9BNSD",
+   "title": "Too Complicated to Model? Missing Female Athletes Data",
+   "titleLocal": null,
+   "url": "https://talks.python-summit.ch/swiss-python-summit-2026/talk/D9BNSD/",
+   "genre": "talk",
+   "categories": [
+    "6908-day-2-data-science-more"
+   ],
+   "blurb": "Sports science and performance analytics have historically been built on datasets that underrepresent female athletes. In many cases, when data showed structured variability linked to biological cycles, this was treated as a complication rather than something to incorporate into modelling. As a result, female athletes were often excluded from analysis frameworks that could not easily handle this type of variation.\n\nAs an amateur athlete and data analyst myself, I see this very clearly in practice. Many training guidelines, performance models, and recovery assumptions that are widely used today are still largely based on male dominated datasets. Female athletes are not only underrepresented in the data, but the way their performance varies over time is often not properly captured in the models themselves. This leads to a situation where the structure of female athletic performance is simplified, averaged out, or ignored, rather than being understood as part of the signal.\n\nIn this talk, I explore this problem through different modelling approaches in Python, comparing standard methods with approaches that explicitly account for structured variability, such as cyclical representations and Generalized Additive Models (GAMs). The focus is on how modelling choices shape what is considered signal versus noise in athlete performance data.\n\nRecent research directions already point toward more inclusive modelling approaches in sports science, including cycle aware performance analysis, individualized training response models, and frameworks that better account for physiological variation in female athletes. These approaches aim to improve training and nutrition recommendations and reduce blind spots that arise when female athletes are not properly represented in the data.\n\nThe key question is no longer whether this structure exists, but how we choose to model it and what becomes possible when we do.\n\nSpeakers: Hilal Işık",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "M7KSUB",
+   "title": "Beyond the Hype: Building a Python Game to Teach AI Concepts",
+   "titleLocal": null,
+   "url": "https://talks.python-summit.ch/swiss-python-summit-2026/talk/M7KSUB/",
+   "genre": "talk",
+   "categories": [
+    "6908-day-2-data-science-more"
+   ],
+   "blurb": "Everyone talks about LLMs, RAG, and AI agents — but who truly understands them? Marketing promises magic while documentation assumes expertise. Recent research from Gartner reveals the consequences: only 8% of HR leaders believe their managers possess adequate AI competency, while companies that restructure work around AI achieve revenue goals twice as often as those who merely train employees. The problem isn't lack of information; it's the lack of genuine understanding through experience.\n\nWe took a different approach. Instead of slides or tutorials, we built \"AI Factory\" — an educational platform in the form of an escape room game where players learn by doing. Craft prompts under budget pressure. Watch guardrails fail in real-time. Break your own RAG pipeline. Each mistake teaches more than any documentation ever could.\n\nThe entire platform is built in Python — Streamlit for the frontend, FastAPI for the backend — which shaped both what was easy and what surprised us. In this talk, we'll share what we discovered while building and testing this game with real users: why failure-driven learning outperforms tutorials, how game mechanics create memorable \"aha moments,\" and the surprising concepts that clicked only through play.\n\nSpeakers: Vadim Vlasov, Eric Glaser",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "3F9QQD",
+   "title": "Is Your Data Lying? Bayesian Data Credibility",
+   "titleLocal": null,
+   "url": "https://talks.python-summit.ch/swiss-python-summit-2026/talk/3F9QQD/",
+   "genre": "talk",
+   "categories": [
+    "6908-day-2-data-science-more"
+   ],
+   "blurb": "Datasets are often treated as ground truth, even though they rarely are. Labels can be noisy, measurements can be imprecise, user segments can be under-recorded, and dashboards can hide uncertainty behind clean-looking numbers. Teams then often build models, metrics, and decisions on top of data whose reliability we have never actually measured.\n\nThis talk shows how Bayesian modelling can make data credibility explicit. Using simple, realistic examples, we will model uncertainty in labels, measurements, and sampling bias; distinguish signal from noise; and identify parts of a dataset that should not be trusted at face value. The goal is to employ Bayesian statistics as a practical tool for asking: where is this dataset solid, where is it fragile, and where might it be misleading us?\n\nAttendees will leave with a practical framework for measuring data trustworthiness, and concrete examples of how Bayesian methods can make uncertainty visible before it starts to contaminate models, dashboards, or business decisions.\n\nSpeakers: Vince Nelidov",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "T9DXZE",
+   "title": "Keeping data private in real-time pipelines",
+   "titleLocal": null,
+   "url": "https://talks.python-summit.ch/swiss-python-summit-2026/talk/T9DXZE/",
+   "genre": "talk",
+   "categories": [
+    "6908-day-2-data-science-more"
+   ],
+   "blurb": "We all love real-time data — clicks, payments, rides, messages — but most of it comes with a catch: it contains personal information we’re not supposed to leak, such as names, emails, locations, or even small clues that can identify someone. The challenge: how do we keep streaming data useful and safe at the same time?\n\nIn this talk, we’ll explore practical ways to protect privacy in streaming systems using Apache Kafka, Apache Flink, and Apache Iceberg. We’ll cover:\n- simple tricks like masking and tokenizing PII;\n- why “anonymous” data often isn’t anonymous (the re-identification problem);\n- techniques like bucketing, k-anonymity, and adding noise;\n- how to balance privacy with data utility (too much hiding makes data useless).\n\nAlong the way, we’ll look at real-world stories: from public data leaks to surprising deanonymization attacks, and show live demos of pipelines that anonymize data before it’s written to storage.\nIf you’ve ever wondered how to build privacy-aware pipelines, this talk will give you practical patterns you can use right away.\n\nSpeakers: Olena Kutsenko",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "RCWDMG",
+   "title": "No more model training? TabPFN v3 vs. tuned trees.",
+   "titleLocal": null,
+   "url": "https://talks.python-summit.ch/swiss-python-summit-2026/talk/RCWDMG/",
+   "genre": "talk",
+   "categories": [
+    "6908-day-2-data-science-more"
+   ],
+   "blurb": "What if you never had to train or tune a model again? That is the pitch behind\ntabular foundation models: state-of-the-art predictions with no training, no\nhyperparameter search, no feature engineering. Just call .fit() and .predict().\nThe headliner, TabPFN, whose earlier version was published in Nature, now adds\nclaims aimed straight at the gradient-boosted trees most of us reach for by\ndefault. TabPFN v3 promises to ingest raw text natively, scale toward a million\nrows, support multi-class classification natively and offer a\n\"thinking mode\" for extra quality. Too good to be true? I put it on trial.\n\nThis talk walks through a systematic, reproducible Python benchmark that puts\nTabPFN, exactly as it ships, up against a best-effort, Optuna-tuned pipeline of\nXGBoost, LightGBM, and CatBoost on the messy public Steam Dataset 2025:\nnumerics, booleans, categoricals, date-times, free-text, embeddings, skewed\ndistributions, NaNs. The case spans three tasks: binary sentiment classification,\nmulti-class publisher prediction, and Metacritic-score regression.\n\nWe stress-test each vendor claim one at a time: raw text versus sentence\nembeddings versus no text, out-of-the-box versus cleaned data, default versus\nthinking mode, small samples up to large, few to many classes.\n\nBut the real takeaway is the method: how to benchmark a hyped claim fairly, why\nthe metric you pick can quietly decide the winner, and the data-leakage traps you\nmust defuse before you trust a single result.\n\nThe honest answer to \"Too good to be true?\" is: \"it depends\". And knowing what\nit depends on is the point. You'll leave with a feel for when a tabular\nfoundation model earns its keep, when a tuned tree still wins, and how to put\nthe next \"no training required\" promise on trial yourself.\n\nSpeakers: Dominik Traxl",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "KJJUPP",
+   "title": "From Open Weights to Trusted Models",
+   "titleLocal": null,
+   "url": "https://talks.python-summit.ch/swiss-python-summit-2026/talk/KJJUPP/",
+   "genre": "talk",
+   "categories": [
+    "6908-day-2-data-science-more"
+   ],
+   "blurb": "APIs of frontier models are the fast way to ship, but rarely the cheapest place to stay. Open weights are a real alternative: you pay for compute instead of per-token rent, the model runs on your own machines so the data never leaves, residency and governance are yours to set.\n\nThe open question is whether an open-weight model is actually good enough for your use case, and which one. A leaderboard won't tell you. It measures someone else's tasks, not yours, and an agent that runs over many turns and calls tools can score well on a benchmark and still fail the real job.\n\nThis talk is about answering that for yourself, with two open-source Python tools: Inspect, the UK AI Security Institute's evaluation framework, and Petri, Anthropic's auditor built on top of it. Between them they let you judge an open-weight agent on your own traffic and on the failures you'd never think to collect, so you can put a number on the open-versus-frontier trade-off and decide on evidence.\n\n**Takeaways**\n\nBy the end you'll be able to decide whether an open-weight model is good enough to replace a frontier API for your use case, and which one. You'll be able to:\n\n- Build an evaluation from your own traffic, then let Petri's auditor extend it, so you test the cases you've seen and the ones you haven't.\n- Score candidates against your current model on real agent work, across many turns and tool calls, not on a single tidy reply.\n- Turn the result into a decision: a number on the quality-versus-cost, latency.\n\nSpeakers: Emmanuel Okedele",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "UT3EWL",
+   "title": "Did we break up? Auditing Instagram data with Python",
+   "titleLocal": null,
+   "url": "https://talks.python-summit.ch/swiss-python-summit-2026/talk/UT3EWL/",
+   "genre": "talk",
+   "categories": [
+    "6908-day-2-data-science-more"
+   ],
+   "blurb": "Instagram logs every interaction: likes, messages, stories viewed, searches, and follower changes. Even if you post nothing, your activity leaves a digital footprint.\n\nIn this talk, we will explore how to access and analyze the personal data Instagram collects about you. We will use Python, with libraries like pandas or polars, to clean and structure the information downloaded directly from the platform's privacy portal.\n\nNext, we will build an interactive dashboard using Dash to visualize behavioral patterns over time. We will apply time-series anomaly detection techniques (such as rolling z-score, IsolationForest, or DBSCAN) and supervised classifiers (RandomForestClassifier, LogisticRegression) to identify potentially significant shifts in your digital activity—like a breakup.\n\nFinally, we will reflect on the economic value of this data, the inferences platforms can make about our personal lives, and briefly discuss the European AI Act's relevance to privacy protection.\n\nSpeakers: Almudena Barreiro Carrillo",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "GGXRCA",
+   "title": "Lightning Talks - Day 2",
+   "titleLocal": null,
+   "url": "https://talks.python-summit.ch/swiss-python-summit-2026/talk/GGXRCA/",
+   "genre": "talk",
+   "categories": [
+    "6908-day-2-data-science-more"
+   ],
+   "blurb": "Our Lightning Talks are open to everyone 😊\n\nHow it works:\n– You can register directly at the conference. First come, first served.\n– Any proposal is welcome, as long as your talk has something to do with Python and respects our [Code of Conduct](https://www.python-summit.ch/coc/). We reserve the right to reject talks.\n– Talk time is strictly limited to 5 minutes.\n– To keep turnaround times short, you will not be able to plug in your own device. We will provide a laptop with all slides. Please submit your slides as PDF via email at least 60 minutes before Lightning Talks start. \n– By registering, you accept that your talk may be recorded, published and streamed live (audio & video) under [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/deed.en).",
+   "durationMin": 45,
+   "imageUrl": null
+  },
+  {
+   "id": "CZ3QKS",
+   "title": "Closing - Day 2",
+   "titleLocal": null,
+   "url": "https://talks.python-summit.ch/swiss-python-summit-2026/talk/CZ3QKS/",
+   "genre": "talk",
+   "categories": [
+    "6908-day-2-data-science-more"
+   ],
+   "blurb": "A thank you from the organisers. We hope you enjoyed your day!\n                                       \n(It won't take long, we promise! After that long day, everyone is looking forward to the buffet!)",
+   "durationMin": 5,
+   "imageUrl": null
+  }
+ ],
+ "performances": [
+  {
+   "id": "SPNFWJ/2026-10-22T09:00",
+   "eventId": "SPNFWJ",
+   "venueId": "ost-campus",
+   "roomId": "aula-4-101",
+   "date": "2026-10-22",
+   "start": "09:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "TLBGRU/2026-10-22T09:10",
+   "eventId": "TLBGRU",
+   "venueId": "ost-campus",
+   "roomId": "aula-4-101",
+   "date": "2026-10-22",
+   "start": "09:10",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "XNHXFL/2026-10-22T09:45",
+   "eventId": "XNHXFL",
+   "venueId": "ost-campus",
+   "roomId": "aula-4-101",
+   "date": "2026-10-22",
+   "start": "09:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "FM9WWJ/2026-10-22T10:20",
+   "eventId": "FM9WWJ",
+   "venueId": "ost-campus",
+   "roomId": "aula-4-101",
+   "date": "2026-10-22",
+   "start": "10:20",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "JHJ3XY/2026-10-22T11:30",
+   "eventId": "JHJ3XY",
+   "venueId": "ost-campus",
+   "roomId": "aula-4-101",
+   "date": "2026-10-22",
+   "start": "11:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "UQXR9U/2026-10-22T12:05",
+   "eventId": "UQXR9U",
+   "venueId": "ost-campus",
+   "roomId": "aula-4-101",
+   "date": "2026-10-22",
+   "start": "12:05",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "AJYKX3/2026-10-22T13:55",
+   "eventId": "AJYKX3",
+   "venueId": "ost-campus",
+   "roomId": "aula-4-101",
+   "date": "2026-10-22",
+   "start": "13:55",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "WJCKGM/2026-10-22T14:30",
+   "eventId": "WJCKGM",
+   "venueId": "ost-campus",
+   "roomId": "aula-4-101",
+   "date": "2026-10-22",
+   "start": "14:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "UJZ39Q/2026-10-22T15:40",
+   "eventId": "UJZ39Q",
+   "venueId": "ost-campus",
+   "roomId": "aula-4-101",
+   "date": "2026-10-22",
+   "start": "15:40",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "SGYKVR/2026-10-22T16:15",
+   "eventId": "SGYKVR",
+   "venueId": "ost-campus",
+   "roomId": "aula-4-101",
+   "date": "2026-10-22",
+   "start": "16:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "8SBVVY/2026-10-22T17:05",
+   "eventId": "8SBVVY",
+   "venueId": "ost-campus",
+   "roomId": "aula-4-101",
+   "date": "2026-10-22",
+   "start": "17:05",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "SH7MD8/2026-10-23T09:00",
+   "eventId": "SH7MD8",
+   "venueId": "ost-campus",
+   "roomId": "aula-4-101",
+   "date": "2026-10-23",
+   "start": "09:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "AQXG8Q/2026-10-23T09:10",
+   "eventId": "AQXG8Q",
+   "venueId": "ost-campus",
+   "roomId": "aula-4-101",
+   "date": "2026-10-23",
+   "start": "09:10",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "D9BNSD/2026-10-23T09:45",
+   "eventId": "D9BNSD",
+   "venueId": "ost-campus",
+   "roomId": "aula-4-101",
+   "date": "2026-10-23",
+   "start": "09:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "M7KSUB/2026-10-23T10:20",
+   "eventId": "M7KSUB",
+   "venueId": "ost-campus",
+   "roomId": "aula-4-101",
+   "date": "2026-10-23",
+   "start": "10:20",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "3F9QQD/2026-10-23T11:30",
+   "eventId": "3F9QQD",
+   "venueId": "ost-campus",
+   "roomId": "aula-4-101",
+   "date": "2026-10-23",
+   "start": "11:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "T9DXZE/2026-10-23T12:05",
+   "eventId": "T9DXZE",
+   "venueId": "ost-campus",
+   "roomId": "aula-4-101",
+   "date": "2026-10-23",
+   "start": "12:05",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "RCWDMG/2026-10-23T13:55",
+   "eventId": "RCWDMG",
+   "venueId": "ost-campus",
+   "roomId": "aula-4-101",
+   "date": "2026-10-23",
+   "start": "13:55",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "KJJUPP/2026-10-23T14:30",
+   "eventId": "KJJUPP",
+   "venueId": "ost-campus",
+   "roomId": "aula-4-101",
+   "date": "2026-10-23",
+   "start": "14:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "UT3EWL/2026-10-23T15:40",
+   "eventId": "UT3EWL",
+   "venueId": "ost-campus",
+   "roomId": "aula-4-101",
+   "date": "2026-10-23",
+   "start": "15:40",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "GGXRCA/2026-10-23T16:15",
+   "eventId": "GGXRCA",
+   "venueId": "ost-campus",
+   "roomId": "aula-4-101",
+   "date": "2026-10-23",
+   "start": "16:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "CZ3QKS/2026-10-23T17:05",
+   "eventId": "CZ3QKS",
+   "venueId": "ost-campus",
+   "roomId": "aula-4-101",
+   "date": "2026-10-23",
+   "start": "17:05",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  }
+ ],
+ "sources": {
+  "festival": [
+   "festival.toml"
+  ],
+  "venues": [
+   "pretalx",
+   "venues-research"
+  ],
+  "events": [
+   "pretalx"
+  ],
+  "performances": [
+   "pretalx"
+  ],
+  "availability": [],
+  "prices": []
+ },
+ "provenance": {
+  "sources": {
+   "venues-research": {
+    "kind": "curated",
+    "path": "scraper/festivals/swiss_python_summit/curated/venues.json"
+   },
+   "pretalx": {
+    "kind": "fetched",
+    "path": "data/festivals/swiss-python-summit/2026/pretalx",
+    "fetchedAt": "2026-10-02T18:34:15Z",
+    "fetcher": "scraper/festivals/swiss_python_summit/sources/pretalx/fetch.py",
+    "fetcherVersion": 1
+   }
+  },
+  "absent": [],
+  "fields": {
+   "categories.name": [
+    "pretalx"
+   ],
+   "events.blurb": [
+    "pretalx"
+   ],
+   "events.categories": [
+    "pretalx"
+   ],
+   "events.durationMin": [
+    "pretalx"
+   ],
+   "events.imageUrl": [
+    "pretalx"
+   ],
+   "events.title": [
+    "pretalx"
+   ],
+   "events.url": [
+    "pretalx"
+   ],
+   "performances.date": [
+    "pretalx"
+   ],
+   "performances.eventId": [
+    "pretalx"
+   ],
+   "performances.roomId": [
+    "pretalx"
+   ],
+   "performances.start": [
+    "pretalx"
+   ],
+   "performances.ticketUrl": [
+    "pretalx"
+   ],
+   "performances.venueId": [
+    "pretalx"
+   ],
+   "venues.address": [
+    "venues-research"
+   ],
+   "venues.lat": [
+    "venues-research"
+   ],
+   "venues.lng": [
+    "venues-research"
+   ],
+   "venues.name": [
+    "venues-research"
+   ],
+   "venues.notes": [
+    "venues-research"
+   ],
+   "venues.refs": [
+    "venues-research"
+   ],
+   "venues.rooms": [
+    "pretalx"
+   ]
+  },
+  "skipped": {}
+ }
+}

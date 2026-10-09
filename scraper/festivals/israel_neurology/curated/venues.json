@@ -1,0 +1,20 @@
+{
+ "about": "Hand-curated venue research for the Israel Neurological Association conference, keyed by the code its congress-site adapter gives the venue, with the halls the programme names. Every figure is {value, source}, or null when nobody could cite it; coordinates carry the basis they rest on and their source.",
+ "researchedAt": "2026-10-02",
+ "venues": {
+  "expo-tel-aviv": {
+   "name": "Expo Tel Aviv",
+   "address": {"value": "Rokach Blvd 101, Tel Aviv-Yafo", "source": "https://israelneurocongress.com/"},
+   "coordinates": {"lat": 32.1054141, "lng": 34.8084224, "basis": "the fairground's OpenStreetMap outline (way 355090046)", "source": "https://www.openstreetmap.org/way/355090046"},
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {"id": "hall-a3", "name": "Hall A3", "capacity": null, "layout": null},
+    {"id": "hall-a4", "name": "Hall A4", "capacity": null, "layout": null},
+    {"id": "hall-a5", "name": "Hall A5", "capacity": null, "layout": null}
+   ],
+   "accessibility": null,
+   "notes": "The site names the venue and its address but not the pavilion; plenaries and shared sessions fill Halls A3 and A4 together (the programme)."
+  }
+ }
+}

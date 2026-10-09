@@ -1,0 +1,1375 @@
+{
+ "nearM": 1000,
+ "anchors": [
+  {
+   "festival": "marxismnl-conference",
+   "venue": "iire",
+   "lat": 52.3653,
+   "lng": 4.93646
+  },
+  {
+   "festival": "marxismnl-conference",
+   "venue": "iish",
+   "lat": 52.369,
+   "lng": 4.93938
+  }
+ ],
+ "places": [
+  {
+   "id": "node/10282764465",
+   "lat": 52.371956,
+   "lng": 4.92652,
+   "tags": {
+    "name": "Roest",
+    "amenity": "restaurant",
+    "website": "https://roest-amsterdam.nl",
+    "opening_hours": "Mo-We 17:00-01:00; Th-Su 12:00-01:00",
+    "addr:housenumber": "1",
+    "addr:street": "Jacob Bontiusplaats",
+    "addr:postcode": "1018LG",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/1043896615",
+   "lat": 52.360674,
+   "lng": 4.928515,
+   "tags": {
+    "name": "Lalla Rookh",
+    "amenity": "restaurant",
+    "cuisine": "surinamese",
+    "addr:housenumber": "290",
+    "addr:street": "Wijttenbachstraat",
+    "addr:postcode": "1093JK",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/10969865077",
+   "lat": 52.363858,
+   "lng": 4.934233,
+   "tags": {
+    "name": "Bar Ristorante Gallizia",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://gallizia.nl/galliziabar/",
+    "opening_hours": "We-Su 17:00-24:00+",
+    "addr:housenumber": "67",
+    "addr:street": "Javastraat",
+    "addr:postcode": "1094HA"
+   }
+  },
+  {
+   "id": "node/10969882562",
+   "lat": 52.363254,
+   "lng": 4.935931,
+   "tags": {
+    "name": "Eatmosfera",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.eatmosfera.nl/",
+    "opening_hours": "Mo-Su 17:00-22:00",
+    "addr:housenumber": "47",
+    "addr:street": "Sumatrastraat",
+    "addr:postcode": "1094LN"
+   }
+  },
+  {
+   "id": "node/10997739808",
+   "lat": 52.377355,
+   "lng": 4.936293,
+   "tags": {
+    "name": "Chengdu",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "website": "https://chengdu.nu/",
+    "addr:housenumber": "2",
+    "addr:street": "Bogortuin",
+    "addr:postcode": "1019PG"
+   }
+  },
+  {
+   "id": "node/11118495837",
+   "lat": 52.372454,
+   "lng": 4.938763,
+   "tags": {
+    "name": "esra",
+    "amenity": "restaurant",
+    "website": "https://www.esra.amsterdam/",
+    "opening_hours": "Th-Sa 18:00+",
+    "addr:housenumber": "35-37",
+    "addr:street": "C. van Eesterenlaan"
+   }
+  },
+  {
+   "id": "node/12437544847",
+   "lat": 52.363641,
+   "lng": 4.931968,
+   "tags": {
+    "name": "Saeed's Curry House",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://www.saeedscurryhouse-amsterdam.nl/",
+    "opening_hours": "Mo-Sa 10:00-18:00; Su 11:00-18:00"
+   }
+  },
+  {
+   "id": "node/12585818046",
+   "lat": 52.363883,
+   "lng": 4.936608,
+   "tags": {
+    "name": "Ocakbaşı Çınar",
+    "amenity": "restaurant",
+    "cuisine": "turkish",
+    "website": "https://ocakbasicinar.nl/",
+    "opening_hours": "Tu-Su 17:00-01:00",
+    "addr:housenumber": "111-H",
+    "addr:street": "Javastraat",
+    "addr:postcode": "1094HC"
+   }
+  },
+  {
+   "id": "node/12645282289",
+   "lat": 52.3654,
+   "lng": 4.926276,
+   "tags": {
+    "name": "Dapper Tutto",
+    "amenity": "restaurant",
+    "opening_hours": "We-Sa 18:00-23:00; Su 18:00-22:30"
+   }
+  },
+  {
+   "id": "node/12685222758",
+   "lat": 52.363489,
+   "lng": 4.932939,
+   "tags": {
+    "name": "Couscous Bar",
+    "amenity": "restaurant",
+    "website": "https://couscousbar.nl",
+    "opening_hours": "Mo-Su 12:00-21:00"
+   }
+  },
+  {
+   "id": "node/12692932057",
+   "lat": 52.363607,
+   "lng": 4.936316,
+   "tags": {
+    "name": "Çinar",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Sa 10:00-20:00"
+   }
+  },
+  {
+   "id": "node/12692932058",
+   "lat": 52.363614,
+   "lng": 4.936844,
+   "tags": {
+    "name": "Sushi Only",
+    "amenity": "restaurant",
+    "cuisine": "sushi"
+   }
+  },
+  {
+   "id": "node/12693209408",
+   "lat": 52.363863,
+   "lng": 4.934469,
+   "tags": {
+    "name": "Indonesia Indah",
+    "amenity": "restaurant",
+    "cuisine": "indonesian",
+    "addr:housenumber": "73",
+    "addr:street": "Javastraat"
+   }
+  },
+  {
+   "id": "node/12697016384",
+   "lat": 52.363589,
+   "lng": 4.935173,
+   "tags": {
+    "name": "Mirchi",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://mirchirestaurant.nl",
+    "opening_hours": "Mo-Su 14:00-22:00"
+   }
+  },
+  {
+   "id": "node/12699472543",
+   "lat": 52.363585,
+   "lng": 4.934698,
+   "tags": {
+    "name": "Sushito",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Su 11:30-21:30"
+   }
+  },
+  {
+   "id": "node/12700142659",
+   "lat": 52.36352,
+   "lng": 4.933463,
+   "tags": {
+    "name": "Le French Café",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/12702995694",
+   "lat": 52.362618,
+   "lng": 4.926388,
+   "tags": {
+    "name": "Toko Jai Mata",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/12713870203",
+   "lat": 52.362517,
+   "lng": 4.936459,
+   "tags": {
+    "name": "Happy Thai take away kitchen",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/12714029657",
+   "lat": 52.362051,
+   "lng": 4.939868,
+   "tags": {
+    "name": "Barakah",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/12752672215",
+   "lat": 52.363034,
+   "lng": 4.926778,
+   "tags": {
+    "name": "Eethuis A Kong",
+    "amenity": "restaurant",
+    "cuisine": "chinese"
+   }
+  },
+  {
+   "id": "node/1306195371",
+   "lat": 52.36976,
+   "lng": 4.936885,
+   "tags": {
+    "name": "Sham",
+    "amenity": "restaurant",
+    "cuisine": "syrian",
+    "website": "http://www.restaurantsham.nl/oost/",
+    "opening_hours": "Su-Th 10:00-22:00; Fr,Sa 10:00-23:00",
+    "addr:housenumber": "1",
+    "addr:street": "Borneosteiger"
+   }
+  },
+  {
+   "id": "node/1335963238",
+   "lat": 52.359135,
+   "lng": 4.926318,
+   "tags": {
+    "name": "The Manor Amsterdam",
+    "tourism": "hotel",
+    "stars": "4",
+    "website": "https://www.themanorhotelamsterdam.com",
+    "wikidata": "Q111410202",
+    "addr:housenumber": "89",
+    "addr:street": "Linnaeusstraat",
+    "addr:postcode": "1093EK",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1550824348",
+   "lat": 52.360026,
+   "lng": 4.925973,
+   "tags": {
+    "name": "Sranang Makmur",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "addr:housenumber": "10",
+    "addr:street": "Wijttenbachstraat",
+    "addr:postcode": "1093HR"
+   }
+  },
+  {
+   "id": "node/1550842307",
+   "lat": 52.361565,
+   "lng": 4.936095,
+   "tags": {
+    "name": "Master Fisher",
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "opening_hours": "Mo-Su 10:00-20:30",
+    "addr:housenumber": "98",
+    "addr:street": "Sumatrastraat",
+    "addr:postcode": "1094NJ",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1556462429",
+   "lat": 52.377159,
+   "lng": 4.940056,
+   "tags": {
+    "name": "De Kompaszaal",
+    "amenity": "restaurant",
+    "cuisine": "international",
+    "website": "https://www.kompaszaal.nl/",
+    "addr:housenumber": "311",
+    "addr:street": "KNSM-laan",
+    "addr:postcode": "1019LE",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1556479637",
+   "lat": 52.374007,
+   "lng": 4.936309,
+   "tags": {
+    "name": "De Nieuwe KHL",
+    "amenity": "restaurant",
+    "cuisine": "international",
+    "website": "https://denieuwekhl.nl/",
+    "opening_hours": "Mo-Su 15:00-00:00",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1556484511",
+   "lat": 52.365906,
+   "lng": 4.933495,
+   "tags": {
+    "name": "Het Pompstation",
+    "amenity": "restaurant",
+    "website": "https://pompstation.nu",
+    "opening_hours": "Tu-Sa 18:00-22:30",
+    "addr:housenumber": "52",
+    "addr:street": "Zeeburgerdijk",
+    "addr:postcode": "1094AE",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/1556487107",
+   "lat": 52.371967,
+   "lng": 4.931395,
+   "tags": {
+    "name": "VRR",
+    "amenity": "restaurant",
+    "website": "https://vrr.rest",
+    "opening_hours": "Tu-Sa 18:00-24:00; Su,Mo off",
+    "addr:housenumber": "471",
+    "addr:street": "Conradstraat",
+    "addr:postcode": "1018NE",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1566951808",
+   "lat": 52.376516,
+   "lng": 4.941527,
+   "tags": {
+    "name": "Les Zazous",
+    "amenity": "restaurant",
+    "cuisine": "french",
+    "website": "https://leszazous.nl/",
+    "opening_hours": "Mo,We-Su 12:00-15:00,17:30-21:00",
+    "addr:housenumber": "59",
+    "addr:street": "Piraeusplein",
+    "addr:postcode": "1019NM",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/1578739479",
+   "lat": 52.359534,
+   "lng": 4.925324,
+   "tags": {
+    "name": "Poké Perfect",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Su 11:30-21:00"
+   }
+  },
+  {
+   "id": "node/1595364823",
+   "lat": 52.363579,
+   "lng": 4.940391,
+   "tags": {
+    "name": "Wilde Zwijnen",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/1883145123",
+   "lat": 52.371078,
+   "lng": 4.929054,
+   "tags": {
+    "name": "David's Boat",
+    "tourism": "hotel",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1890385348",
+   "lat": 52.374151,
+   "lng": 4.934739,
+   "tags": {
+    "name": "Lloyd Hotel",
+    "amenity": "restaurant",
+    "wikidata": "Q2433228",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/2013949592",
+   "lat": 52.361035,
+   "lng": 4.930056,
+   "tags": {
+    "name": "Mi-Gudu",
+    "amenity": "restaurant",
+    "addr:housenumber": "390",
+    "addr:street": "Wijttenbachstraat",
+    "addr:postcode": "1093JK",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2013949595",
+   "lat": 52.360047,
+   "lng": 4.926087,
+   "tags": {
+    "name": "Sranang Makmur",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "addr:housenumber": "14",
+    "addr:street": "Wijttenbachstraat",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/2348138319",
+   "lat": 52.363876,
+   "lng": 4.936517,
+   "tags": {
+    "name": "Nour",
+    "amenity": "restaurant",
+    "cuisine": "kebab;arab",
+    "addr:housenumber": "109-H",
+    "addr:street": "Javastraat",
+    "addr:postcode": "1094HC",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2348150436",
+   "lat": 52.363524,
+   "lng": 4.935842,
+   "tags": {
+    "name": "Mesken",
+    "amenity": "restaurant",
+    "cuisine": "turkish",
+    "website": "https://restaurantmesken.nl/",
+    "opening_hours": "Mo-Fr 12:00-01:00, Sa,Su 09:00-03:00",
+    "addr:housenumber": "37",
+    "addr:street": "Sumatrastraat",
+    "addr:postcode": "1094LN",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2348168280",
+   "lat": 52.364129,
+   "lng": 4.935181,
+   "tags": {
+    "name": "The Meets",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "website": "https://www.themeets.nl/",
+    "opening_hours": "Tu-Sa 17:30-22:00+",
+    "addr:housenumber": "28-H",
+    "addr:street": "Sumatrastraat",
+    "addr:postcode": "1094ND",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/2348193876",
+   "lat": 52.363813,
+   "lng": 4.933442,
+   "tags": {
+    "name": "Ricardo's",
+    "amenity": "restaurant",
+    "cuisine": "surinamese",
+    "website": "https://www.eetricardos.nl/",
+    "opening_hours": "Tu-Su 12:00-21:00",
+    "addr:housenumber": "47-H",
+    "addr:street": "Javastraat",
+    "addr:postcode": "1094HA"
+   }
+  },
+  {
+   "id": "node/2348208261",
+   "lat": 52.363694,
+   "lng": 4.932515,
+   "tags": {
+    "name": "Yemen Seafood Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "website": "https://yemenrestaurant.nl",
+    "opening_hours": "Mo-Su 13:00-23:00",
+    "addr:housenumber": "23-H",
+    "addr:street": "Javastraat",
+    "addr:postcode": "1094GZ"
+   }
+  },
+  {
+   "id": "node/2348245283",
+   "lat": 52.363245,
+   "lng": 4.929385,
+   "tags": {
+    "name": "Mi Lobie",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "opening_hours": "We-Mo 12:00-21:00",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/2348245291",
+   "lat": 52.363485,
+   "lng": 4.932859,
+   "tags": {
+    "name": "Yemen",
+    "amenity": "restaurant",
+    "cuisine": "middle_eastern",
+    "website": "https://yemenrestaurant.nl",
+    "opening_hours": "Mo-Su 13:00-23:00",
+    "addr:housenumber": "28-H",
+    "addr:street": "Javastraat",
+    "addr:postcode": "1094HH"
+   }
+  },
+  {
+   "id": "node/2348278277",
+   "lat": 52.360996,
+   "lng": 4.928305,
+   "tags": {
+    "name": "Selam Afrika",
+    "amenity": "restaurant",
+    "cuisine": "ethiopian",
+    "addr:housenumber": "96",
+    "addr:street": "Dapperstraat",
+    "addr:postcode": "1093BZ"
+   }
+  },
+  {
+   "id": "node/2348278293",
+   "lat": 52.362167,
+   "lng": 4.927258,
+   "tags": {
+    "name": "Eethuis Brasa",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Sa 11:30-20:30",
+    "addr:housenumber": "36",
+    "addr:street": "Dapperplein",
+    "addr:postcode": "1093GS"
+   }
+  },
+  {
+   "id": "node/2357174265",
+   "lat": 52.361931,
+   "lng": 4.924839,
+   "tags": {
+    "name": "Roopram Roti",
+    "amenity": "restaurant",
+    "cuisine": "surinamese",
+    "website": "https://www.roopramroti.nl/",
+    "opening_hours": "Tu-Su 14:00-21:00",
+    "addr:housenumber": "4-H",
+    "addr:street": "Eerste Van Swindenstraat",
+    "addr:postcode": "1093GC",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2357186489",
+   "lat": 52.362472,
+   "lng": 4.92734,
+   "tags": {
+    "name": "Pita Queen",
+    "amenity": "restaurant",
+    "cuisine": "pita",
+    "website": "https://www.pitaqueen.nl/",
+    "addr:housenumber": "68",
+    "addr:street": "Eerste Van Swindenstraat",
+    "addr:postcode": "1093GG"
+   }
+  },
+  {
+   "id": "node/2364927896",
+   "lat": 52.363643,
+   "lng": 4.926666,
+   "tags": {
+    "name": "Kumo Ramen",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "opening_hours": "Mo,We,Th 17:00-22:00; Fr-Su 15:00-22:00"
+   }
+  },
+  {
+   "id": "node/2364927911",
+   "lat": 52.36047,
+   "lng": 4.925431,
+   "tags": {
+    "name": "De Tros",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/2364931824",
+   "lat": 52.364074,
+   "lng": 4.926958,
+   "tags": {
+    "name": "Ciro 1939",
+    "amenity": "restaurant",
+    "cuisine": "italian"
+   }
+  },
+  {
+   "id": "node/2364940139",
+   "lat": 52.365334,
+   "lng": 4.926218,
+   "tags": {
+    "name": "Café Wu",
+    "amenity": "restaurant",
+    "opening_hours": "Tu-Sa 18:00-24:00+"
+   }
+  },
+  {
+   "id": "node/2366149832",
+   "lat": 52.362426,
+   "lng": 4.928175,
+   "tags": {
+    "name": "Vanni",
+    "amenity": "restaurant",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2420278547",
+   "lat": 52.360501,
+   "lng": 4.940418,
+   "tags": {
+    "name": "Fook Sing",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/2420278553",
+   "lat": 52.36192,
+   "lng": 4.940163,
+   "tags": {
+    "name": "My_Etles Uyghur Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "uyghur",
+    "opening_hours": "We-Mo 12:00-22:00",
+    "addr:housenumber": "513",
+    "addr:street": "Insulindeweg"
+   }
+  },
+  {
+   "id": "node/2426599349",
+   "lat": 52.362487,
+   "lng": 4.934857,
+   "tags": {
+    "name": "Drovers dog",
+    "amenity": "restaurant",
+    "website": "http://drovers-dog.com/",
+    "opening_hours": "We-Fr 10:00-16:00; Sa,Su 10:00-17:00",
+    "addr:housenumber": "62",
+    "addr:street": "Eerste Atjehstraat",
+    "addr:postcode": "1094KP",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/2452217939",
+   "lat": 52.376983,
+   "lng": 4.943363,
+   "tags": {
+    "name": "Paon Bali",
+    "amenity": "restaurant",
+    "opening_hours": "We-Sa 17:30-20:30",
+    "addr:housenumber": "84",
+    "addr:street": "Levantplein",
+    "addr:postcode": "1019MB"
+   }
+  },
+  {
+   "id": "node/251150887",
+   "lat": 52.363178,
+   "lng": 4.929061,
+   "tags": {
+    "name": "Sweet Asia",
+    "amenity": "restaurant",
+    "opening_hours": "Mo,Tu,Th-Sa 12:30-21:30; Su 13:00-21:30",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/2743100662",
+   "lat": 52.36986,
+   "lng": 4.929312,
+   "tags": {
+    "name": "The Pizza Vagabond",
+    "amenity": "restaurant",
+    "cuisine": "italian;pizza",
+    "website": "https://thepizzavagabond.com",
+    "opening_hours": "Tu-Th 17:00-22:00; Fr,Sa 12:00-22:00; Su 13:00-22:00",
+    "addr:housenumber": "106-H",
+    "addr:street": "Czaar Peterstraat",
+    "addr:postcode": "1018PS"
+   }
+  },
+  {
+   "id": "node/2743194030",
+   "lat": 52.371199,
+   "lng": 4.930959,
+   "tags": {
+    "name": "Amsterdam City Farm",
+    "amenity": "restaurant",
+    "website": "https://www.amsterdamcityfarm.com/restaurant",
+    "opening_hours": "Tu-Sa 18:00-22:30",
+    "addr:housenumber": "171E",
+    "addr:street": "Czaar Peterstraat",
+    "addr:postcode": "1018PJ"
+   }
+  },
+  {
+   "id": "node/2743194450",
+   "lat": 52.367913,
+   "lng": 4.925377,
+   "tags": {
+    "name": "Pizza Project Bar",
+    "amenity": "restaurant",
+    "cuisine": "italian_pizza",
+    "website": "https://pizzaproject.nl",
+    "opening_hours": "We, Th 17:00-21:30; Fr 17:00-22:00; Sa 13:00-22:00; Su 13:00-21:00",
+    "addr:housenumber": "185",
+    "addr:street": "Oostenburgergracht",
+    "addr:postcode": "1018ND",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/2743194721",
+   "lat": 52.368625,
+   "lng": 4.926513,
+   "tags": {
+    "name": "Restaurant Fyr",
+    "amenity": "restaurant",
+    "website": "https://www.restaurantfyr.nl/",
+    "opening_hours": "Tu-Sa 18:00-22:00; Fr-Sa 12:00-15:00,18:00-22:00",
+    "addr:housenumber": "21",
+    "addr:street": "Czaar Peterstraat",
+    "addr:postcode": "1018NW",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2743279705",
+   "lat": 52.366795,
+   "lng": 4.925137,
+   "tags": {
+    "name": "Al Dente Pasta Lab",
+    "amenity": "restaurant",
+    "addr:housenumber": "2-2",
+    "addr:street": "Zeeburgerstraat",
+    "addr:postcode": "1018AG"
+   }
+  },
+  {
+   "id": "node/2809504866",
+   "lat": 52.363248,
+   "lng": 4.939815,
+   "tags": {
+    "name": "Franggo",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/2816348370",
+   "lat": 52.374627,
+   "lng": 4.934639,
+   "tags": {
+    "name": "Taparia",
+    "amenity": "restaurant",
+    "cuisine": "spanish",
+    "addr:housenumber": "999",
+    "addr:street": "Oostelijke Handelskade",
+    "addr:postcode": "1019BW"
+   }
+  },
+  {
+   "id": "node/2826144988",
+   "lat": 52.361924,
+   "lng": 4.922824,
+   "tags": {
+    "name": "Hotel V",
+    "tourism": "hotel",
+    "website": "https://hotelv.com/nl/stay/oosterpark",
+    "addr:housenumber": "2C",
+    "addr:street": "Linnaeusstraat",
+    "addr:postcode": "1092CK"
+   }
+  },
+  {
+   "id": "node/2826846625",
+   "lat": 52.364178,
+   "lng": 4.926325,
+   "tags": {
+    "name": "Dapper",
+    "amenity": "restaurant",
+    "opening_hours": "We,Th 17:00-23:00, Fr 12:00-01:00, Sa 12:00-24:00, Su 16:00-21:00",
+    "addr:housenumber": "26",
+    "addr:street": "Dapperstraat",
+    "addr:postcode": "1093BW"
+   }
+  },
+  {
+   "id": "node/2826849939",
+   "lat": 52.361872,
+   "lng": 4.92462,
+   "tags": {
+    "name": "Kim's So",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "website": "https://linnaeusstraat.kimsso.nl/",
+    "opening_hours": "Mo-Th 17:00-22:00; Fr 17:00-22:30; Sa 13:00-22:30; Su 13:00-22:00",
+    "addr:housenumber": "35F",
+    "addr:street": "Linnaeusstraat",
+    "addr:postcode": "1093EE"
+   }
+  },
+  {
+   "id": "node/2826851200",
+   "lat": 52.362246,
+   "lng": 4.926278,
+   "tags": {
+    "name": "Nefis Etli Ekmek",
+    "amenity": "restaurant",
+    "cuisine": "turkish",
+    "website": "https://www.nefisetliekmek-amsterdam.nl",
+    "opening_hours": "Mo-Su 12:00-23:00",
+    "addr:housenumber": "40E",
+    "addr:street": "Eerste Van Swindenstraat",
+    "addr:postcode": "1093GE"
+   }
+  },
+  {
+   "id": "node/2826854207",
+   "lat": 52.361958,
+   "lng": 4.924924,
+   "tags": {
+    "name": "I Love Sushi",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "opening_hours": "We,Th,Su,Mo 16:00-21:30; Fr,Sa 16:00-22:00",
+    "addr:housenumber": "6-H",
+    "addr:street": "Eerste Van Swindenstraat",
+    "addr:postcode": "1093GC"
+   }
+  },
+  {
+   "id": "node/2827521116",
+   "lat": 52.365361,
+   "lng": 4.935503,
+   "tags": {
+    "name": "Stayokay Amsterdam Oost",
+    "tourism": "hostel",
+    "website": "https://www.stayokay.com/hostel/amsterdam-zeeburg",
+    "addr:housenumber": "21",
+    "addr:street": "Timorplein",
+    "addr:postcode": "1094CC",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2827528318",
+   "lat": 52.362654,
+   "lng": 4.933444,
+   "tags": {
+    "name": "Marijke's guestroom",
+    "tourism": "hotel",
+    "website": "https://eatbu.nl/marijke-39-s-guestroom-netherlands",
+    "addr:housenumber": "37-H",
+    "addr:street": "Eerste Atjehstraat",
+    "addr:postcode": "1094KB"
+   }
+  },
+  {
+   "id": "node/2827529161",
+   "lat": 52.363534,
+   "lng": 4.933336,
+   "tags": {
+    "name": "SOIL Vegan Cafe",
+    "amenity": "restaurant",
+    "website": "https://www.soilvegancafe.com/",
+    "opening_hours": "Mo 17:00-22:00, Th-Sa 12:00-23:00, Su 12:00-09:00",
+    "addr:housenumber": "40-H",
+    "addr:street": "Javastraat",
+    "addr:postcode": "1094HJ"
+   }
+  },
+  {
+   "id": "node/2827534685",
+   "lat": 52.363817,
+   "lng": 4.933522,
+   "tags": {
+    "name": "Mitts",
+    "amenity": "restaurant",
+    "website": "https://barmitts.nl/",
+    "opening_hours": "Mo-Su 17:00-24:00+",
+    "addr:housenumber": "49",
+    "addr:street": "Javastraat",
+    "addr:postcode": "1094HA"
+   }
+  },
+  {
+   "id": "node/2827535932",
+   "lat": 52.36184,
+   "lng": 4.939388,
+   "tags": {
+    "name": "Vijfnulvijf",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "website": "https://vijfnulvijf.nl",
+    "opening_hours": "Tu-Fr 15:00-23:00; Sa,Su 12:00-23:00",
+    "addr:housenumber": "505",
+    "addr:street": "Insulindeweg",
+    "addr:postcode": "1094MK",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/2827536586",
+   "lat": 52.363577,
+   "lng": 4.933904,
+   "tags": {
+    "name": "Zondag",
+    "amenity": "restaurant",
+    "opening_hours": "Tu-Su 11:00-18:00",
+    "addr:housenumber": "54-H",
+    "addr:street": "Javastraat",
+    "addr:postcode": "1094HK"
+   }
+  },
+  {
+   "id": "node/2827632034",
+   "lat": 52.357639,
+   "lng": 4.930334,
+   "tags": {
+    "name": "Q-factory hotel",
+    "tourism": "hotel",
+    "website": "https://www.q-factory-hotel.nl",
+    "addr:housenumber": "1",
+    "addr:street": "Atlantisplein",
+    "addr:postcode": "1093NE"
+   }
+  },
+  {
+   "id": "node/2827632097",
+   "lat": 52.360013,
+   "lng": 4.925913,
+   "tags": {
+    "name": "Tres Amigos",
+    "amenity": "restaurant",
+    "addr:housenumber": "10-H",
+    "addr:street": "Wijttenbachstraat",
+    "addr:postcode": "1093JB"
+   }
+  },
+  {
+   "id": "node/2827639861",
+   "lat": 52.359752,
+   "lng": 4.925892,
+   "tags": {
+    "name": "Yangon Delight",
+    "amenity": "restaurant",
+    "cuisine": "myanmarese",
+    "website": "https://www.yangondelight.nl/",
+    "addr:housenumber": "83-O",
+    "addr:street": "Linnaeusstraat",
+    "addr:postcode": "1093EK"
+   }
+  },
+  {
+   "id": "node/2830020935",
+   "lat": 52.364923,
+   "lng": 4.940297,
+   "tags": {
+    "name": "Ela Palermo",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www.elapalermo.nl/",
+    "addr:housenumber": "16",
+    "addr:street": "Niasstraat",
+    "addr:postcode": "1095VA"
+   }
+  },
+  {
+   "id": "node/2830024830",
+   "lat": 52.363551,
+   "lng": 4.939924,
+   "tags": {
+    "name": "Badhuis",
+    "amenity": "restaurant",
+    "website": "https://badhuisamsterdam.nl/",
+    "opening_hours": "Mo-We 09:00-24:00, Th 09:00-01:00, Fr,Sa 09:00-03:00",
+    "addr:housenumber": "21",
+    "addr:street": "Javaplein",
+    "addr:postcode": "1095CJ",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/2830049363",
+   "lat": 52.363934,
+   "lng": 4.939965,
+   "tags": {
+    "name": "Spaghetteria Caffè Javaplein",
+    "amenity": "restaurant",
+    "cuisine": "pasta",
+    "website": "https://www.spaghetteria.com/en/locations/amsterdam-caffe-javaplein/",
+    "opening_hours": "Mo-Su,PH 17:00+",
+    "addr:housenumber": "7A",
+    "addr:street": "Javaplein",
+    "addr:postcode": "1095CH"
+   }
+  },
+  {
+   "id": "node/331837646",
+   "lat": 52.374247,
+   "lng": 4.934781,
+   "tags": {
+    "name": "LLoyd Hotel",
+    "tourism": "hotel",
+    "website": "https://thehoxton.com/amsterdam/lloyd/",
+    "wikidata": "Q2433228",
+    "addr:housenumber": "34",
+    "addr:street": "Oostelijke Handelskade",
+    "addr:postcode": "1019BN",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/412512561",
+   "lat": 52.362111,
+   "lng": 4.928314,
+   "tags": {
+    "name": "Nara Nara",
+    "amenity": "restaurant",
+    "cuisine": "middle_eastern",
+    "website": "https://naranara-amsterdam.nl",
+    "opening_hours": "We-Fr 17:30-23:00; Sa-Su 12:00-23:00",
+    "addr:housenumber": "25",
+    "addr:street": "Dapperplein",
+    "addr:postcode": "1093GP"
+   }
+  },
+  {
+   "id": "node/4232359403",
+   "lat": 52.371171,
+   "lng": 4.93148,
+   "tags": {
+    "name": "Counter",
+    "amenity": "restaurant",
+    "opening_hours": "We,Sa 11:00-15:00; Th 11:00-15:00,18:00-23:00; Fr 11:00-15:00,18:00-24:00"
+   }
+  },
+  {
+   "id": "node/4244295087",
+   "lat": 52.371291,
+   "lng": 4.934692,
+   "tags": {
+    "name": "Hampton by Hilton",
+    "tourism": "hotel",
+    "website": "https://www.hilton.com/en/hotels/amshxhx-hampton-amsterdam-centre-east/",
+    "addr:housenumber": "188-196",
+    "addr:street": "Panamalaan",
+    "addr:postcode": "1019AZ"
+   }
+  },
+  {
+   "id": "node/4456923291",
+   "lat": 52.371454,
+   "lng": 4.930998,
+   "tags": {
+    "name": "Barlotta",
+    "amenity": "restaurant",
+    "website": "https://barlotta.nl/home/",
+    "opening_hours": "Tu-Sa 17:00-24:00",
+    "addr:housenumber": "142",
+    "addr:street": "Conradstraat",
+    "addr:postcode": "1018NM"
+   }
+  },
+  {
+   "id": "node/4617940749",
+   "lat": 52.375224,
+   "lng": 4.948666,
+   "tags": {
+    "name": "B&B de Dageraad",
+    "tourism": "guest_house",
+    "website": "http://www.bedbreakfastdedageraad.nl/"
+   }
+  },
+  {
+   "id": "node/5226157001",
+   "lat": 52.369165,
+   "lng": 4.95062,
+   "tags": {
+    "name": "Papa Aswa",
+    "amenity": "restaurant",
+    "cuisine": "surinamese",
+    "website": "https://papaaswa.nl",
+    "opening_hours": "We-Su 17:00-23:00",
+    "addr:housenumber": "44",
+    "addr:street": "Metselstraat",
+    "addr:postcode": "1019VH"
+   }
+  },
+  {
+   "id": "node/5368831961",
+   "lat": 52.371437,
+   "lng": 4.94676,
+   "tags": {
+    "name": "Oceaan",
+    "amenity": "restaurant",
+    "website": "https://oceaan.amsterdam",
+    "opening_hours": "We,Th,Su 12:00-23:00; Fr,Sa 12:00-24:00",
+    "addr:housenumber": "29",
+    "addr:street": "R.J.H. Fortuynplein",
+    "addr:postcode": "1019WL",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/5837034338",
+   "lat": 52.368599,
+   "lng": 4.952248,
+   "tags": {
+    "name": "La Contessa",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.lacontessaamsterdam.nl/",
+    "addr:housenumber": "83A",
+    "addr:street": "Cruquiusweg",
+    "addr:postcode": "1019AT"
+   }
+  },
+  {
+   "id": "node/6331495577",
+   "lat": 52.369178,
+   "lng": 4.94614,
+   "tags": {
+    "name": "the niu fender",
+    "tourism": "hotel",
+    "website": "https://the.niu.de/en/hotels/netherlands/amsterdam/the-niu-fender",
+    "addr:housenumber": "61",
+    "addr:street": "Cruquiusweg",
+    "addr:postcode": "1019AT"
+   }
+  },
+  {
+   "id": "node/6470445696",
+   "lat": 52.363063,
+   "lng": 4.926912,
+   "tags": {
+    "name": "Cosu",
+    "amenity": "restaurant",
+    "addr:housenumber": "66",
+    "addr:street": "Wagenaarstraat"
+   }
+  },
+  {
+   "id": "node/6950727501",
+   "lat": 52.366764,
+   "lng": 4.925208,
+   "tags": {
+    "name": "Burritos Anonymous",
+    "amenity": "restaurant",
+    "website": "https://www.burritos-anonymous.nl/home-2/",
+    "opening_hours": "Mo-Su 12:00-21:30",
+    "addr:housenumber": "4",
+    "addr:street": "Zeeburgerstraat",
+    "addr:postcode": "1018AG",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/732392347",
+   "lat": 52.368637,
+   "lng": 4.934465,
+   "tags": {
+    "name": "Boulevard Cafe",
+    "amenity": "restaurant",
+    "cuisine": "international",
+    "opening_hours": "Tu-Th 12:00-24:00, Fr 12:00-01:00, Sa 14:00-01:00, Su 14:00-24:00",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/734165823",
+   "lat": 52.37132,
+   "lng": 4.9402,
+   "tags": {
+    "name": "Cai & Cai",
+    "amenity": "restaurant",
+    "cuisine": "asian;fusion;sushi;buffet",
+    "website": "https://caicairestaurant.nl",
+    "opening_hours": "Mo-Su 16:00-22:00",
+    "addr:housenumber": "515",
+    "addr:street": "Borneolaan",
+    "addr:postcode": "1019KP"
+   }
+  },
+  {
+   "id": "node/7663543597",
+   "lat": 52.366892,
+   "lng": 4.927211,
+   "tags": {
+    "name": "De Kop van Oost",
+    "amenity": "restaurant",
+    "opening_hours": "Tu-Su 11:30+",
+    "addr:housenumber": "1",
+    "addr:street": "Zeeburgerpad",
+    "addr:postcode": "1018AH"
+   }
+  },
+  {
+   "id": "node/8294599908",
+   "lat": 52.371308,
+   "lng": 4.926994,
+   "tags": {
+    "name": "Papa Zatarra",
+    "amenity": "restaurant",
+    "website": "https://www.papazatarra.com/",
+    "addr:housenumber": "10",
+    "addr:street": "Jacob Bontiusplaats",
+    "addr:postcode": "1018LL",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/8294600848",
+   "lat": 52.373409,
+   "lng": 4.928381,
+   "tags": {
+    "name": "Inntel Hotels Amsterdam Landmark",
+    "tourism": "hotel",
+    "website": "https://www.inntelhotels.nl/amsterdamlandmark/",
+    "addr:housenumber": "600",
+    "addr:street": "VOC-kade",
+    "addr:postcode": "1018LG"
+   }
+  },
+  {
+   "id": "node/8338843317",
+   "lat": 52.363884,
+   "lng": 4.936076,
+   "tags": {
+    "name": "La Fucina",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://lafucina.nl/la-fucina-javastraat/",
+    "opening_hours": "We, Fr-Su 12:00-22:00; Tu 17:00-22:00; Th 12:00-21:30",
+    "addr:housenumber": "99",
+    "addr:street": "Javastraat",
+    "addr:postcode": "1094HC",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/9036306774",
+   "lat": 52.359522,
+   "lng": 4.938207,
+   "tags": {
+    "name": "Elixer",
+    "amenity": "restaurant",
+    "website": "https://www.restaurantelixer.com",
+    "opening_hours": "Tu-Sa 12:00-21:30; Su 12:00-20:30; SH Th-Su 16:00-21:30",
+    "addr:housenumber": "1A",
+    "addr:street": "Batjanstraat",
+    "addr:postcode": "1094RC"
+   }
+  },
+  {
+   "id": "node/9039023317",
+   "lat": 52.359734,
+   "lng": 4.925224,
+   "tags": {
+    "name": "Baires",
+    "amenity": "restaurant",
+    "cuisine": "empanada;argentinian",
+    "website": "https://bairesempanadas.nl/",
+    "opening_hours": "Mo-Su 10:00-20:00",
+    "addr:housenumber": "8-H",
+    "addr:street": "Linnaeusstraat",
+    "addr:postcode": "1092CK"
+   }
+  },
+  {
+   "id": "node/9041249659",
+   "lat": 52.367589,
+   "lng": 4.925897,
+   "tags": {
+    "name": "Spirit",
+    "amenity": "restaurant",
+    "website": "https://www.spiritrestaurants.nl/amsterdam/",
+    "opening_hours": "Mo-Sa 08:00-23:00, Su 09:00-23:00",
+    "addr:housenumber": "2A",
+    "addr:street": "Czaar Peterstraat",
+    "addr:postcode": "1018PR",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/9046120230",
+   "lat": 52.367079,
+   "lng": 4.939258,
+   "tags": {
+    "name": "Cancún",
+    "amenity": "restaurant",
+    "cuisine": "mexican;caribbean",
+    "website": "https://cancunamsterdam.nl",
+    "addr:housenumber": "15",
+    "addr:street": "Veelaan",
+    "addr:postcode": "1019AP"
+   }
+  },
+  {
+   "id": "node/94829656",
+   "lat": 52.360645,
+   "lng": 4.925313,
+   "tags": {
+    "name": "Turbo",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/9790023957",
+   "lat": 52.364685,
+   "lng": 4.92588,
+   "tags": {
+    "name": "Boiboi",
+    "amenity": "restaurant"
+   }
+  }
+ ]
+}

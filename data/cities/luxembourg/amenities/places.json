@@ -1,0 +1,298 @@
+{
+ "nearM": 1500,
+ "anchors": [
+  {
+   "festival": "hack-lu",
+   "venue": "parc-hotel",
+   "lat": 49.63952,
+   "lng": 6.15382
+  }
+ ],
+ "places": [
+  {
+   "id": "node/12631409201",
+   "lat": 49.634037,
+   "lng": 6.169566,
+   "tags": {
+    "name": "Shirafù Kirchberg",
+    "amenity": "restaurant",
+    "cuisine": "japanese;sushi",
+    "website": "https://shirafu-auchan.lu/",
+    "opening_hours": "Mo-Sa 11:30-21:30"
+   }
+  },
+  {
+   "id": "node/2049848251",
+   "lat": 49.627774,
+   "lng": 6.163348,
+   "tags": {
+    "name": "Daimlers",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/2060843258",
+   "lat": 49.628654,
+   "lng": 6.164811,
+   "tags": {
+    "name": "Ela",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "website": "https://www.ela.lu/en/",
+    "opening_hours": "Mo-Th 11:30-14:00,18:00-24:00; Fr-Sa 11:30-14:00,18:00-01:00; Su 11:30-21:00",
+    "addr:housenumber": "37B",
+    "addr:street": "Avenue John F. Kennedy",
+    "addr:postcode": "1855",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2060843262",
+   "lat": 49.628705,
+   "lng": 6.164809,
+   "tags": {
+    "name": "Sens Purs",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/2285239073",
+   "lat": 49.633651,
+   "lng": 6.135095,
+   "tags": {
+    "name": "Sushi Restaurant Sàrl",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "website": "https://www.sushirestaurant.lu/"
+   }
+  },
+  {
+   "id": "node/2285589478",
+   "lat": 49.63466,
+   "lng": 6.137506,
+   "tags": {
+    "name": "Amazonas",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/2285589494",
+   "lat": 49.633686,
+   "lng": 6.137308,
+   "tags": {
+    "name": "Cavalli",
+    "amenity": "restaurant",
+    "cuisine": "pizza"
+   }
+  },
+  {
+   "id": "node/4356511306",
+   "lat": 49.631644,
+   "lng": 6.169651,
+   "tags": {
+    "name": "Restaurant Azur",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Th 11:30-21:30; Fr 11:30-22:30; Sa 11:45-15:00, 18:00-22:30; Su 12:00-23:00",
+    "addr:housenumber": "41B",
+    "addr:street": "Avenue John F. Kennedy",
+    "addr:postcode": "2082"
+   }
+  },
+  {
+   "id": "node/4356699100",
+   "lat": 49.628397,
+   "lng": 6.164294,
+   "tags": {
+    "name": "Kennedy",
+    "amenity": "restaurant",
+    "website": "http://www.kennedy.lu/",
+    "addr:housenumber": "35E",
+    "addr:street": "Avenue John F. Kennedy",
+    "addr:postcode": "1855"
+   }
+  },
+  {
+   "id": "node/621666917",
+   "lat": 49.634081,
+   "lng": 6.169666,
+   "tags": {
+    "name": "Beefbar",
+    "amenity": "restaurant",
+    "cuisine": "steak_house",
+    "opening_hours": "Mo-Sa 12:00-14:30, Mo-Th 20:00-23:00, Fr,Sa 20:00-24:00",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/636015114",
+   "lat": 49.633993,
+   "lng": 6.16949,
+   "tags": {
+    "name": "Lama's Temple",
+    "amenity": "restaurant",
+    "cuisine": "asian"
+   }
+  },
+  {
+   "id": "node/636015121",
+   "lat": 49.633973,
+   "lng": 6.169827,
+   "tags": {
+    "name": "Restaurant Apulia",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/636026372",
+   "lat": 49.632593,
+   "lng": 6.170172,
+   "tags": {
+    "name": "Burger King",
+    "amenity": "restaurant",
+    "cuisine": "burger",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/6435513240",
+   "lat": 49.633216,
+   "lng": 6.17196,
+   "tags": {
+    "name": "Qosqo",
+    "amenity": "restaurant",
+    "cuisine": "latin_american;grill;burger;tapas",
+    "website": "https://qosqo.lu/",
+    "opening_hours": "Mo-Th 11:30-21:30; Fr-Sa 11:30-22:30; Su 11:30-21:30",
+    "addr:housenumber": "45",
+    "addr:street": "Avenue John F. Kennedy",
+    "addr:postcode": "1855"
+   }
+  },
+  {
+   "id": "node/6435513242",
+   "lat": 49.633469,
+   "lng": 6.172398,
+   "tags": {
+    "name": "100 Patates",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Fr,PH 11:30-14:30,18:00-22:30; Sa-Su 11:30-23:00"
+   }
+  },
+  {
+   "id": "node/8088918336",
+   "lat": 49.633217,
+   "lng": 6.138387,
+   "tags": {
+    "name": "Hostellerie du Grünewald",
+    "tourism": "hotel",
+    "contact:website": "https://hdg.lu/",
+    "wikidata": "Q112015653",
+    "addr:housenumber": "10-14",
+    "addr:street": "Route d'Echternach",
+    "addr:postcode": "1453"
+   }
+  },
+  {
+   "id": "node/9580209751",
+   "lat": 49.634528,
+   "lng": 6.137575,
+   "tags": {
+    "name": "Beirão",
+    "amenity": "restaurant",
+    "cuisine": "portuguese",
+    "website": "http://restaurantbeirao.lu/",
+    "opening_hours": "Mo-Su 11:30-14:00, 18:30-22:00"
+   }
+  },
+  {
+   "id": "way/1219808181",
+   "lat": 49.62916,
+   "lng": 6.146698,
+   "tags": {
+    "name": "Brasserie Kirchberg",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "contact:website": "http://www.brasseriekirchberg.lu/",
+    "opening_hours": "Mo-Fr 10:00-24:00,00:00-01:00; PH closed",
+    "addr:housenumber": "193",
+    "addr:street": "Rue de Kirchberg",
+    "addr:postcode": "1858"
+   }
+  },
+  {
+   "id": "way/162076983",
+   "lat": 49.633491,
+   "lng": 6.138026,
+   "tags": {
+    "name": "Akami",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "website": "https://akami.lu",
+    "opening_hours": "Tu-Su 11:00-14:30, 17:30-22:30",
+    "addr:housenumber": "11",
+    "addr:street": "Route d'Echternach",
+    "addr:postcode": "1453"
+   }
+  },
+  {
+   "id": "way/162294038",
+   "lat": 49.627151,
+   "lng": 6.146918,
+   "tags": {
+    "name": "Hôtel Le Lavandin",
+    "tourism": "hotel",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "website": "http://www.lelavandin.lu",
+    "addr:housenumber": "23",
+    "addr:street": "Rue de la Lavande",
+    "addr:postcode": "1923"
+   }
+  },
+  {
+   "id": "way/32394372",
+   "lat": 49.639618,
+   "lng": 6.154271,
+   "tags": {
+    "name": "Parc Hotel Alvisse",
+    "tourism": "hotel",
+    "stars": "4",
+    "website": "https://alvisse-parc-hotel-luxembourg.hotel-ds.com/en/",
+    "addr:housenumber": "120",
+    "addr:street": "Route d'Echternach",
+    "addr:postcode": "1453",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/45245290",
+   "lat": 49.640217,
+   "lng": 6.147727,
+   "tags": {
+    "name": "DoubleTree by Hilton Hotel Luxembourg",
+    "tourism": "hotel",
+    "stars": "4",
+    "website": "https://www.hilton.com/en/hotels/lxmhidi-doubletree-luxembourg/",
+    "wikidata": "Q5764652",
+    "addr:housenumber": "12",
+    "addr:street": "Rue Jean Engling",
+    "addr:postcode": "1466",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/696724292",
+   "lat": 49.639893,
+   "lng": 6.154139,
+   "tags": {
+    "name": "La Veranda",
+    "amenity": "restaurant",
+    "website": "https://www.parc-hotel.lu/en/restaurant-la-veranda/",
+    "opening_hours": "Mo-Su,PH 12:00-14:00,19:00-22:30",
+    "wheelchair": "yes"
+   }
+  }
+ ]
+}

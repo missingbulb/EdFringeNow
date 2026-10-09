@@ -220,6 +220,29 @@ async function routeEdinburghFestivals(page) {
   );
 }
 
+/* Choose a festival on the strip, as a reader does from the keyboard: a
+ * travel picture may sit over its pill, covering it from the pointer. One
+ * sharing its country's pill with a festival that leads it is reached by
+ * narrowing the place menu to that country, then widened back. */
+async function chooseOnStrip(page, festivalId) {
+  const item = `.tl-item[data-festival="${festivalId}"]`;
+  const choose = async () => {
+    await page.focus(item);
+    await page.keyboard.press("Enter");
+  };
+  if (await page.locator(item).count()) {
+    await choose();
+    return;
+  }
+  const country = await page.evaluate(
+    async (id) => (await (await fetch("/data/festivals/index.json")).json()).festivals.find((f) => f.id === id).country,
+    festivalId
+  );
+  await page.selectOption('[data-filter="place"]', country);
+  await choose();
+  await page.selectOption('[data-filter="place"]', "");
+}
+
 /* Say how you are getting here, as a reader does: a picture beside the trip
  * opens the question (or, once answered, the travel card and its "change"),
  * then where you live, then, living elsewhere, how you travel. `home` is
@@ -234,6 +257,26 @@ async function answerTravel(page, { home, way = null }) {
   await page.selectOption("#originCountry", home);
   await page.click('#originCard [data-origin="next"]');
   await page.click(`#originCard [data-origin="${way}"]`);
+  // Off the card, whose fares arrive under where the pointer pressed.
+  await page.mouse.move(0, 0);
+}
+
+/* Press a festival's pill on the year, where a reader would: on the pill,
+ * clear of the trip's end handles, whose lines run across every row. */
+async function pressPill(page, festivalId) {
+  const bar = page.locator(`.tl-item[data-festival="${festivalId}"] .tl-bar`);
+  const box = await bar.boundingBox();
+  const handles = await page.$$eval(".tl-handle", (els) =>
+    els.map((el) => {
+      const r = el.getBoundingClientRect();
+      return { left: r.left, right: r.right };
+    })
+  );
+  const clear = (x) => handles.every((h) => x < h.left - 1 || x > h.right + 1);
+  const spots = [0.5, 0.2, 0.8, 0.08, 0.92].map((f) => box.x + box.width * f);
+  const x = spots.find(clear);
+  if (x === undefined) throw new Error(`${festivalId}'s pill lies wholly under the trip's handles`);
+  await bar.click({ position: { x: x - box.x, y: box.height / 2 } });
 }
 
 /* Move one end of the trip to a day, as a reader does from the keyboard: the
@@ -247,6 +290,66 @@ async function moveTripEnd(page, end, iso) {
   const key = (days > 0) !== rtl ? "ArrowRight" : "ArrowLeft";
   for (let i = 0; i < Math.abs(days); i++) await page.keyboard.press(key);
   await page.waitForFunction(([e, d]) => document.querySelector(`.tl-handle--${e}`)?.dataset.date === d, [end, iso], { timeout: 20000 });
+}
+
+/* The fixtures' year plus two hundred and forty more festivals across the
+ * world, of every type, at dates spread over the whole year and each searched
+ * a different amount: far more than the strip's rows hold. None has a
+ * programme, so nothing else on the page changes. */
+const CROWD_TOWNS = [
+  ["Paris", "FR", 48.9, 2.4],
+  ["Berlin", "DE", 52.5, 13.4],
+  ["Madrid", "ES", 40.4, -3.7],
+  ["Rome", "IT", 41.9, 12.5],
+  ["Amsterdam", "NL", 52.4, 4.9],
+  ["Lisbon", "PT", 38.7, -9.1],
+  ["Dublin", "IE", 53.3, -6.3],
+  ["Vienna", "AT", 48.2, 16.4],
+  ["Austin", "US", 30.3, -97.7],
+  ["Tokyo", "JP", 35.7, 139.7],
+  ["Melbourne", "AU", -37.8, 145],
+  ["Montreal", "CA", 45.5, -73.6],
+];
+const CROWD_KINDS = ["music", "film", "theatre", "dance", "comedy", "art", "fringe", "sports", "academic", "literature"];
+const CROWD_DAYS = [3, 5, 10, 2, 21, 4, 8, 1, 14, 6];
+const isoDay = (t) => new Date(t).toISOString().slice(0, 10);
+
+async function routeCrowdedYear(page) {
+  const registry = JSON.parse(fs.readFileSync(path.join(FIXTURES_DIR, "data", "festivals", "index.json"), "utf8"));
+  for (let i = 0; i < 240; i++) {
+    const [city, country, lat, lng] = CROWD_TOWNS[i % CROWD_TOWNS.length];
+    const first = Date.UTC(2026, 6, 4) + ((i * 37) % 340) * 86400000;
+    registry.festivals.push({
+      id: `crowd-${i}`,
+      name: `${city} Festival ${i + 1}`,
+      nameLocal: null,
+      city,
+      country,
+      lat,
+      lng,
+      timezone: "Europe/Paris",
+      lang: "en",
+      dir: "ltr",
+      kind: CROWD_KINDS[i % CROWD_KINDS.length],
+      defaultGenre: CROWD_KINDS[i % CROWD_KINDS.length],
+      site: "https://example.org",
+      ticketing: { model: "per-event-seller", url: null },
+      popularity: ((i * 53) % 97) * 10 + 5,
+      editions: [
+        {
+          id: "2027",
+          ordinal: null,
+          firstDate: isoDay(first),
+          lastDate: isoDay(first + (CROWD_DAYS[i % CROWD_DAYS.length] - 1) * 86400000),
+          format: "block",
+          dataUrl: null,
+        },
+      ],
+    });
+  }
+  await page.route("**/data/festivals/index.json", (route) =>
+    route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify(registry) })
+  );
 }
 
 // The calendar re-planned across a trip: its first and last column are the
@@ -510,7 +613,14 @@ async function plannerReady(page, festivalId) {
     const pop = document.querySelector("#footerVersion .version-pop");
     return pop && pop.textContent.includes("v0.0.0-spec");
   }, { timeout: 20000 });
+  await cityGuideSettled(page);
   await settle(page);
+}
+
+// The city's drawer loads beside the programme: it has settled once it says
+// whether it is shown, and a capture taken before that could go either way.
+function cityGuideSettled(page) {
+  return page.waitForSelector("#cityGuide[data-state]", { state: "attached", timeout: 20000 });
 }
 
 // The calendar's days, first to last, as ISO dates.
@@ -535,6 +645,7 @@ async function jerusalemReady(page) {
     const pop = document.querySelector("#footerVersion .version-pop");
     return pop && pop.textContent.includes("v0.0.0-spec");
   }, { timeout: 20000 });
+  await cityGuideSettled(page);
   await settle(page);
 }
 
@@ -704,7 +815,10 @@ module.exports = {
   flightsSettled,
   answerTravel,
   moveTripEnd,
+  routeCrowdedYear,
   routeEdinburghFestivals,
+  chooseOnStrip,
+  pressPill,
   calendarDays,
   calendarSpans,
   JERUSALEM,

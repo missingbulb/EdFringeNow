@@ -1,0 +1,131 @@
+{
+ "places": [
+  {
+   "id": "node/1191217932",
+   "lat": 32.884705,
+   "lng": 35.536865,
+   "tags": {
+    "name": "חורבת כור",
+    "name:en": "Horvat Kur",
+    "historic": "ruins",
+    "wikidata": "Q65234568"
+   }
+  },
+  {
+   "id": "node/12312179065",
+   "lat": 32.869946,
+   "lng": 35.539524,
+   "tags": {
+    "name": "Tel Kinarot",
+    "historic": "archaeological_site",
+    "wikidata": "Q5533392"
+   }
+  },
+  {
+   "id": "node/2117626003",
+   "lat": 32.924701,
+   "lng": 35.607759,
+   "tags": {
+    "name": "מצפה שגב",
+    "name:en": "Segev lookout",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/2300388652",
+   "lat": 32.928833,
+   "lng": 35.579848,
+   "tags": {
+    "name": "ח. כרי דשא",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/278473357",
+   "lat": 32.864951,
+   "lng": 35.536474,
+   "tags": {
+    "name": "חורבת מנים",
+    "name:en": "Horbat Minnim",
+    "historic": "archaeological_site",
+    "wikidata": "Q2915281",
+    "wikipedia": "he:חורבת מנים"
+   }
+  },
+  {
+   "id": "node/5649594781",
+   "lat": 32.915924,
+   "lng": 35.596825,
+   "tags": {
+    "name": "מצפה חנה",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/5649594782",
+   "lat": 32.915535,
+   "lng": 35.594994,
+   "tags": {
+    "name": "מצפה רינה",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/6925430685",
+   "lat": 32.880599,
+   "lng": 35.574926,
+   "tags": {
+    "name": "Caphernaum The Town of Jesus",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 08:00-16:30"
+   }
+  },
+  {
+   "id": "node/8914538517",
+   "lat": 32.893417,
+   "lng": 35.618527,
+   "tags": {
+    "name": "בית הבק",
+    "historic": "ruins",
+    "wikidata": "Q61126306",
+    "wikipedia": "he:בית הבק"
+   }
+  },
+  {
+   "id": "relation/12941438",
+   "lat": 32.882156,
+   "lng": 35.628156,
+   "tags": {
+    "name": "שמורת טבע הבטיחה",
+    "name:en": "Betiha Nature Reserve",
+    "leisure": "nature_reserve",
+    "wikidata": "Q16131046"
+   }
+  },
+  {
+   "id": "way/124018117",
+   "lat": 32.881047,
+   "lng": 35.575408,
+   "tags": {
+    "name": "בית הכנסת כפר נחום",
+    "name:en": "Synagogue of Capernaum",
+    "historic": "ruins",
+    "building": "synagogue",
+    "wikidata": "Q2916829",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/551062314",
+   "lat": 32.880689,
+   "lng": 35.575519,
+   "tags": {
+    "name": "כפר נחום",
+    "name:en": "Capernahum",
+    "historic": "archaeological_site",
+    "wikidata": "Q59174",
+    "wikipedia": "he:כפר נחום"
+   }
+  }
+ ]
+}

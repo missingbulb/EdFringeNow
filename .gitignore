@@ -4,22 +4,6 @@
 data/raw_pages/
 data/festivals/.cache/
 
-# Claudinite hook logs (the vendored corpus under .claudinite/shared/ is ordinary tracked content)
-/.claudinite-hooks.log
-/.claudinite-hooks.log.tmp
-
-# (No blanket /.claudinite/* ignore: the session-start hook no longer syncs an
-# untracked corpus there. Both trees under .claudinite/ — the vendored shared/
-# mount and this repo's own local/packs/ — are ordinary tracked content, so
-# ignoring the directory would have hidden the local pack's task folders.)
-
-# The third tree is the exception: session-scoped packs the engine copies in for
-# whoever is at the keyboard. They belong to their own store repo and change with
-# the person, so committing them here would publish one person's rules as the
-# project's. Ignored rather than left untracked, because every session's stop
-# check otherwise asks for exactly that commit.
-/.claudinite/temp/
-
 # Failure artifacts from the executable-requirements comparator (actual/diff
 # renders on a red case) — debugging output, never committed goldens.
 product/requirements/shared/.artifacts/

@@ -1,0 +1,2226 @@
+{
+ "v": 1,
+ "city": {
+  "id": "malmo",
+  "name": "Malmö",
+  "country": "SE",
+  "lat": 55.605,
+  "lng": 13.0038,
+  "timezone": "Europe/Stockholm"
+ },
+ "places": [
+  {
+   "id": "osm:relation/282978",
+   "name": "Malmöhus slott",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 55.604785,
+   "lng": 12.987115,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1810918",
+   "wikipedia": "sv:Malmöhus",
+   "description": "was built between 1526 and 1539 and is the oldest preserved Renaissance castle in the Nordic region. The castle was for five years (1568–1573) the prison of James Hepburn, 4th Earl of Bothwell, third husband of Mary, Queen of Scots.",
+   "image": "Malmöhus slott 2022.jpg",
+   "notability": 23,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/22953383",
+   "name": "Pildammsparken",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 55.590623,
+   "lng": 12.992064,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1579207",
+   "wikipedia": "sv:Pildammsparken",
+   "description": "park",
+   "image": "Vattentornet vid Pildammarna.jpg",
+   "notability": 7,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/10344681",
+   "name": "Beijers park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 55.610485,
+   "lng": 13.050288,
+   "address": null,
+   "website": null,
+   "wikidata": "Q3133813",
+   "wikipedia": "sv:Beijers park",
+   "description": "park in Malmö, Sweden",
+   "image": "Beijerspark2.jpg",
+   "notability": 3,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/681243145",
+   "name": "Ebbas hus",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 55.605371,
+   "lng": 13.005777,
+   "address": "10 Snapperupsgatan, 211 35",
+   "website": null,
+   "wikidata": "Q10478963",
+   "wikipedia": "sv:Ebbas hus",
+   "description": "working life museum in Malmö Municipality, Sweden",
+   "image": "Ebbas hus, Malmö.jpg",
+   "notability": 3,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/28417392",
+   "name": "Folkets park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 55.59348,
+   "lng": 13.013807,
+   "address": null,
+   "website": null,
+   "wikidata": "Q10497373",
+   "wikipedia": null,
+   "description": "park in Malmö, Sweden",
+   "image": "Ros folketspark malmo.jpg",
+   "notability": 3,
+   "highlight": true,
+   "openingHours": "24/7",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "00:00",
+       "24:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/28553117",
+   "name": "Kroksbäcksparken",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 55.57407,
+   "lng": 12.979287,
+   "address": null,
+   "website": null,
+   "wikidata": "Q10549384",
+   "wikipedia": "sv:Kroksbäcksparken",
+   "description": "neighbourhood in Skåne County, Skåne, Sweden",
+   "image": "Kroksbäcksparken, vinter.jpg",
+   "notability": 3,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/12887996",
+   "name": "Kungsparken",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 55.603695,
+   "lng": 12.991494,
+   "address": null,
+   "website": null,
+   "wikidata": "Q59032",
+   "wikipedia": "sv:Kungsparken, Malmö",
+   "description": "Park in Malmö, Sweden",
+   "image": "Malmö Vy af Kungsparken (1890-1900).jpg",
+   "notability": 3,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/11076658",
+   "name": "Bulltofta rekreationsområde",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 55.601458,
+   "lng": 13.077904,
+   "address": null,
+   "website": null,
+   "wikidata": "Q4997067",
+   "wikipedia": null,
+   "description": "park in Malmö, Sweden",
+   "image": "Bulltoftaparken, Motionscentret.jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/41688058",
+   "name": "Cronheimsparken",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 55.590017,
+   "lng": 13.045258,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5187705",
+   "wikipedia": null,
+   "description": "park in Malmö Municipality, Sweden",
+   "image": "Cronhielmsparken, Malmö.jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3786516975",
+   "name": "Fiskehoddorna",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 55.605212,
+   "lng": 12.983794,
+   "address": null,
+   "website": null,
+   "wikidata": "Q10495778",
+   "wikipedia": "sv:Fiskehoddorna",
+   "description": "building in Malmö, Skåne County, Sweden",
+   "image": "Fiskehoddorna, Malmö.jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": "Tu-Sa 06:30-13:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "06:30",
+       "13:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/74990267",
+   "name": "Gerlachs park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 55.608594,
+   "lng": 13.032087,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5550935",
+   "wikipedia": "sv:Gerlachs park",
+   "description": "park in Malmö, Sweden",
+   "image": "Gerlachs park, Malmö.jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/43137702",
+   "name": "Rönneholmsparken",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 55.594949,
+   "lng": 12.975995,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7386690",
+   "wikipedia": null,
+   "description": "park in Malmö, Sweden",
+   "image": null,
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/28461042",
+   "name": "Rörsjöparken",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 55.605077,
+   "lng": 13.017778,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7386697",
+   "wikipedia": "sv:Rörsjöparken",
+   "description": "park in Malmö, Sweden",
+   "image": "Rörsjöparken, Malmö.jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/30053816",
+   "name": "Scaniaparken",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 55.617678,
+   "lng": 12.976788,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7430034",
+   "wikipedia": null,
+   "description": "park in Malmö, Sweden",
+   "image": "Scaniaparken, Malmö.jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/30025167",
+   "name": "Slottsparken",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 55.601464,
+   "lng": 12.988699,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7541449",
+   "wikipedia": "sv:Slottsparken, Malmö",
+   "description": "park in Malmö, Sweden",
+   "image": "Slottsparken Malmö.jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/933496567",
+   "name": "U3",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 55.605103,
+   "lng": 12.982555,
+   "address": null,
+   "website": "https://malmo.se/Uppleva-och-gora/Konst-och-museer/Malmo-Museer/Utstallningar/Aktuella-utstallningar/Fordon-och-farkoster/Ubaten-U3.html",
+   "wikidata": "Q10515204",
+   "wikipedia": "sv:HMS U3",
+   "description": "1942 U1-class submarine",
+   "image": "U 3 in Malmö 01.08.09.JPG",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/19412138",
+   "name": "Daniaparken",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 55.613969,
+   "lng": 12.971692,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5216270",
+   "wikipedia": null,
+   "description": "park in Malmö, Sweden",
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2016689391",
+   "name": "Karl X Gustav",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 55.606143,
+   "lng": 13.000225,
+   "address": null,
+   "website": null,
+   "wikidata": "Q102272988",
+   "wikipedia": "sv:Karl X Gustavs ryttarstaty, Malmö",
+   "description": "statue in Sweden",
+   "image": "Karl X Gustav 13062009 1021.jpg",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9661532906",
+   "name": "Minnessten",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 55.608289,
+   "lng": 13.034093,
+   "address": null,
+   "website": null,
+   "wikidata": "Q18290090",
+   "wikipedia": "sv:Garnisonsplanteringen",
+   "description": null,
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/1179411764",
+   "name": "Människan och Pegasus",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 55.601106,
+   "lng": 12.987098,
+   "address": null,
+   "website": null,
+   "wikidata": "Q10593188",
+   "wikipedia": "sv:Människan och Pegasus",
+   "description": null,
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5349775440",
+   "name": "Oscar Olsson-museet",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 55.582754,
+   "lng": 13.010343,
+   "address": "15 Ystadvägen",
+   "website": "http://www.oomuseet.se/",
+   "wikidata": "Q17487669",
+   "wikipedia": "sv:Oscar Olsson-museet",
+   "description": null,
+   "image": "OO Museet Ehrensvärdsgatan.png",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/12212839191",
+   "name": "SIEGFRIED GUTMANN",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 55.609918,
+   "lng": 12.99788,
+   "address": null,
+   "website": null,
+   "wikidata": "Q65088606",
+   "wikipedia": "de:Liste der Stolpersteine in Schweden",
+   "description": "Wikimedia list article",
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/102924493",
+   "name": "Södra Lommabuktens naturreservat",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 55.647076,
+   "lng": 13.042491,
+   "address": null,
+   "website": "https://www.lansstyrelsen.se/skane/besoksmal/naturreservat/burlov-lomma/sodra-lommabukten.html",
+   "wikidata": "Q10708073",
+   "wikipedia": null,
+   "description": "nature reserve in Skåne, Sweden",
+   "image": "Tågarps Hed.jpg",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3414497893",
+   "name": "Teatermuseet",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 55.60594,
+   "lng": 13.002747,
+   "address": null,
+   "website": null,
+   "wikidata": "Q10576141",
+   "wikipedia": null,
+   "description": "working life museum in Malmö Municipality, Sweden",
+   "image": "Teatermuseet, Malmö.jpg",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": "Th-Su 13:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "13:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:relation/55430",
+   "name": "Ögårdsparken",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 55.575891,
+   "lng": 13.05444,
+   "address": null,
+   "website": null,
+   "wikidata": "Q18335292",
+   "wikipedia": null,
+   "description": "park in Sweden",
+   "image": "Ögårdsparken, Malmö.jpg",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/28809216",
+   "name": "Jesusparken",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 55.590411,
+   "lng": 13.015232,
+   "address": null,
+   "website": null,
+   "wikidata": "Q120504903",
+   "wikipedia": null,
+   "description": null,
+   "image": "Jesusparken.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": "24/7",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "00:00",
+       "24:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/585939134",
+   "name": "Kastanjeplatsen",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 55.577588,
+   "lng": 13.040145,
+   "address": null,
+   "website": null,
+   "wikidata": "Q124696081",
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/622466029",
+   "name": "Limhamns museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 55.589847,
+   "lng": 12.941754,
+   "address": null,
+   "website": null,
+   "wikidata": "Q10562024",
+   "wikipedia": null,
+   "description": null,
+   "image": "Limhamns museum, Malmö.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/680764890",
+   "name": "Länsresidenset Malmö",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 55.60692,
+   "lng": 13.001007,
+   "address": null,
+   "website": null,
+   "wikidata": "Q10651202",
+   "wikipedia": "sv:Residenset i Malmö",
+   "description": "building in Malmö, Malmö Municipality, Skåne County, Sweden",
+   "image": "Residenset, Malmö 2.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/1359716157",
+   "name": "Strandhusens revlars naturreservat",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 55.6568,
+   "lng": 13.036255,
+   "address": null,
+   "website": "https://lomma.se/uppleva-och-gora/idrott-motion-natur-och-friluftsliv/friluftsliv-natur-och-motion/naturomraden-naturreservat/strandhusens-revlar-marint-reservat.html",
+   "wikidata": "Q89320245",
+   "wikipedia": null,
+   "description": null,
+   "image": "Strandhusens revlar 2020-1.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/50139701",
+   "name": "Teknikens och sjöfartens hus",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 55.604833,
+   "lng": 12.982778,
+   "address": null,
+   "website": "https://malmo.se/Uppleva-och-gora/Konst-och-museer/Malmo-museum/",
+   "wikidata": "Q10692063",
+   "wikipedia": "sv:Teknikens och sjöfartens hus",
+   "description": "museum in Malmö, Sweden",
+   "image": "Teknikens och Sjöfartens hus, Malmö, 2013.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": "Tu,We,Fr-Su,PH 11:00-17:00; Th 11:00-19:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "th"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "19:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/11796068841",
+   "name": "Alta Art Space",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 55.599537,
+   "lng": 13.034825,
+   "address": "40 Celsiusgatan",
+   "website": "https://www.altaartspace.org/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4990174637",
+   "name": "Arkana",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 55.593075,
+   "lng": 13.008339,
+   "address": "37 Möllevångsgatan, 214 20",
+   "website": "https://www.instagram.com/ateljearkana/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Sa-Su 13:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "13:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/13727028053",
+   "name": "Ateljé Filip Rahim Hansson",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 55.581951,
+   "lng": 13.022565,
+   "address": "2 Särlagatan, 214 48",
+   "website": "http://filiprahimhansson.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11796068840",
+   "name": "Ateljéföreningen Sulfur",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 55.598506,
+   "lng": 13.031216,
+   "address": "20J Industrigatan",
+   "website": "https://artworks.se/gallerier/ateljefoereningen-sulfur",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/1513013759",
+   "name": "Bore",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 55.611647,
+   "lng": 12.997051,
+   "address": "10 Skeppsbron, 211 20",
+   "website": "https://malmo.se/Uppleva-och-gora/Konst-och-museer/Bore.html",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/12610499383",
+   "name": "Brandmuséet",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 55.602402,
+   "lng": 13.008836,
+   "address": "20 Drottninggatan",
+   "website": "https://brandmuseumrsyd.se/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "\"by appointment only\"",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/12953946097",
+   "name": "Digitaliseum",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 55.615327,
+   "lng": 13.020906,
+   "address": "1 Lodgatan",
+   "website": "https://digitaliseum.org/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "We, Th 17:00-19:00; Sa 12:00-16:00",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:way/1036504155",
+   "name": "Disgusting Food Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 55.600897,
+   "lng": 13.00131,
+   "address": "2 Södra Förstadsgatan, 21120",
+   "website": "https://disgustingfoodmuseum.com",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "We-Su 12:00-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/11991596554",
+   "name": "FRANK",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 55.589029,
+   "lng": 13.00777,
+   "address": "3 Ahlmansgatan",
+   "website": "https://frankart.se",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6797013185",
+   "name": "Form Design Center",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 55.604503,
+   "lng": 12.999206,
+   "address": null,
+   "website": "https://www.formdesigncenter.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Sa 11:00-17:00; Su 12:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/5598146586",
+   "name": "Galleri Ann-Katrin Braf",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 55.595586,
+   "lng": 12.989845,
+   "address": null,
+   "website": "www.ann-katrinbraf.se",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4396374389",
+   "name": "Galleri CC",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 55.595235,
+   "lng": 13.023797,
+   "address": "4 Båstadsgatan, 214 33",
+   "website": "https://gallericc.se/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/282047842",
+   "name": "Galleri Final",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 55.605767,
+   "lng": 13.02127,
+   "address": "31 Kungsgatan",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/12652258009",
+   "name": "Galleri Format",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 55.603043,
+   "lng": 12.998209,
+   "address": "53 Stora Nygatan",
+   "website": "https://galleriformat.nu/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13970154088",
+   "name": "Galleri KOAS",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 55.593935,
+   "lng": 13.0237,
+   "address": "2 Arildsgatan, 214 39",
+   "website": "https://koasmalmo.se/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Fr-Sa 13:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "13:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/6467664469",
+   "name": "Galleri Lohme",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 55.597857,
+   "lng": 12.993424,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11919745733",
+   "name": "Galleri Ping-Pong",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 55.604218,
+   "lng": 13.009277,
+   "address": null,
+   "website": "https://www.galleripingpong.se/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/12271306785",
+   "name": "Junta",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 55.593354,
+   "lng": 13.015663,
+   "address": "18 Falsterbogatan, 21436",
+   "website": "https://www.juntamalmo.se/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13514203268",
+   "name": "Kipi Konsthall",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 55.615562,
+   "lng": 13.020301,
+   "address": "4 Lodgatan, 211 24",
+   "website": "https://kipi.se",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/625921964",
+   "name": "Kretseum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 55.565446,
+   "lng": 12.978072,
+   "address": null,
+   "website": "http://www.kretseum.se/Kretseumhuset",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4895458698",
+   "name": "Malmö Museer Slottsholmen",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 55.604751,
+   "lng": 12.986984,
+   "address": "6 Malmöhusvägen, 211 18",
+   "website": "https://malmo.se/museer",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Th 11:00-19:00; Tu,We,Fr-Su 11:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "th"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "19:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/187072516",
+   "name": "Malmö Saluhall",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 55.607842,
+   "lng": 12.990852,
+   "address": "6 Gibraltargatan, 211 18",
+   "website": "https://www.malmosaluhall.se",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Th 11:00-20:00; Fr,Sa 11:00-21:00; Su 11:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "20:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "21:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/12320276874",
+   "name": "Marknadsbörsen",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 55.589965,
+   "lng": 13.006711,
+   "address": "4 Fricksgatan",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "We 17:00-20:00; Sa 09:00-16:00; Su 10:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we"
+     ],
+     "spans": [
+      [
+       "17:00",
+       "20:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "16:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/35724417",
+   "name": "Moderna Museet",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 55.604632,
+   "lng": 13.009567,
+   "address": "2-4 Ola Billgrens plats",
+   "website": "https://www.modernamuseet.se/malmo/sv/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-We,Fr-Su 11:00-17:00; Th 11:00-19:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "th"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "19:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/4396367887",
+   "name": "Molekyl Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 55.595394,
+   "lng": 13.023898,
+   "address": "4 Båstadsgatan, 214 33",
+   "website": "https://molekylgallery.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/12162144902",
+   "name": "Monopoly Fanclub Sweden",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 55.589777,
+   "lng": 12.983748,
+   "address": "66 Mariedalsvägen, 217 61",
+   "website": "https://monopolyfanclub.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11920288480",
+   "name": "Museispårvägen",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 55.60553,
+   "lng": 12.983198,
+   "address": null,
+   "website": "https://www.mss.se/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/1309301894",
+   "name": "Möllevångstorget",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 55.591598,
+   "lng": 13.008001,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Sa 08:00-15:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "08:00",
+       "15:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/708832835",
+   "name": "Naturum Öresund",
+   "nameEn": null,
+   "kind": "zoo",
+   "lat": 55.598178,
+   "lng": 12.947465,
+   "address": "4 Ribersborgsstigen, 216 13",
+   "website": "https://www.naturumoresund.se/",
+   "wikidata": "Q135333973",
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": "Tu-Fr 12:00-16:30; Sa 11:00-15:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "16:30"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "15:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/211680568",
+   "name": "Per Albin Hanssons födelsehem",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 55.573251,
+   "lng": 12.998219,
+   "address": "91, 93 Per Albin Hanssons väg, 21565",
+   "website": "https://www.peralbinhuset.se/",
+   "wikidata": "Q28934230",
+   "wikipedia": null,
+   "description": "working life museum in Malmö Municipality, Sweden",
+   "image": "Per Albin Hanssons museum.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": "Fr 09:00-12:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "fr"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "12:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/5207987703",
+   "name": "Prison Island",
+   "nameEn": null,
+   "kind": "attraction",
+   "lat": 55.60688,
+   "lng": 13.02004,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13202600550",
+   "name": "REDAN Galleri",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 55.601069,
+   "lng": 13.006505,
+   "address": "9 Amiralsgatan, 211 41",
+   "website": "https://www.redangalleri.se/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11270939077",
+   "name": "Reptilcenter",
+   "nameEn": null,
+   "kind": "zoo",
+   "lat": 55.594418,
+   "lng": 13.013222,
+   "address": "2 Norra Parkgatan, 21422",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Fr 10:00-17:00; Sa,Su 12:00-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/12811873859",
+   "name": "SPARK",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 55.595308,
+   "lng": 13.023832,
+   "address": null,
+   "website": "https://www.sparkmalmo.org/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/622466023",
+   "name": "Soldattorpet",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 55.589754,
+   "lng": 12.94189,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/7760658474",
+   "name": "Studio Gynning",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 55.589435,
+   "lng": 12.938257,
+   "address": "Limhamnsvägen",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  }
+ ],
+ "near": "venues",
+ "stay": [
+  {
+   "id": "osm:way/29784950",
+   "name": "Hotel Scandic Triangeln",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 55.59635,
+   "lng": 13.001395,
+   "address": "2 Triangeln, 21143",
+   "website": "https://www.scandichotels.se/hotell/sverige/malmo/scandic-triangeln",
+   "wikidata": "Q17457554",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 13,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:relation/7872479",
+   "name": "Teaterhotellet",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": 3.0,
+   "cuisine": null,
+   "lat": 55.597538,
+   "lng": 12.996817,
+   "address": "20 Fersens väg",
+   "website": "https://teaterhotellet.se/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 323,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/102209299",
+   "name": "Quality Hotel The Mill",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 55.599565,
+   "lng": 13.007398,
+   "address": "19 Amiralsgatan",
+   "website": "https://www.nordicchoicehotels.com/hotels/sweden/malmo/quality-hotel-the-mill/",
+   "wikidata": "Q111875665",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 506,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/2295943593",
+   "name": "The More Hotel",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 55.594322,
+   "lng": 13.006539,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111875666",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 390,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/3398710390",
+   "name": "Sky Hotel Malmö City",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 55.600992,
+   "lng": 13.004042,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111410186",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 532,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/2293728921",
+   "name": "Elite Hotel Plaza",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 55.603201,
+   "lng": 12.999329,
+   "address": "49 Gustav Adolfs torg, 201 80",
+   "website": "https://www.elite.se/en/hotels/malmo/elite-plaza-hotel-malmo/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 767,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/3393579536",
+   "name": "Scandic Sankt Jörgen",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 55.603517,
+   "lng": 13.001791,
+   "address": "35 Stora Nygatan, 211 37",
+   "website": null,
+   "wikidata": "Q111410183",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 789,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/444865281",
+   "name": "Hotel Noble House",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 55.60362,
+   "lng": 12.999744,
+   "address": "6 Per Weijersgatan, 211 34",
+   "website": "http://www.hotelnoblehouse.se",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 809,
+   "venuesNear": 1
+  }
+ ],
+ "eat": [
+  {
+   "id": "osm:node/3402678115",
+   "name": "Kin Long",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "chinese"
+   ],
+   "lat": 55.596467,
+   "lng": 13.000666,
+   "address": "1 Rådmansgatan",
+   "website": "https://kinlong.se/",
+   "wikidata": null,
+   "openingHours": "Mo-Fr 17:00-24:00, Sa 13:00-24:00, Su 13:00-22:00",
+   "hours": null,
+   "toVenueM": 57,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/3051074384",
+   "name": "Los Arcos",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "mexican"
+   ],
+   "lat": 55.596886,
+   "lng": 13.000007,
+   "address": "3 Östra Rönneholmsvägen, 21147",
+   "website": "https://www.losarcos.se/",
+   "wikidata": null,
+   "openingHours": "Mo-Fr 11:30-15:00,17:00-23:00;Sa 13:00-24:00;Su 17:00-22:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "15:00"
+      ],
+      [
+       "17:00",
+       "23:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "13:00",
+       "24:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "17:00",
+       "22:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 111,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/3402678116",
+   "name": "Kohai",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "sushi"
+   ],
+   "lat": 55.596942,
+   "lng": 13.003987,
+   "address": "10 Föreningsgatan, 21144",
+   "website": "https://www.kohai.se/",
+   "wikidata": null,
+   "openingHours": "Mo-Fr 11:00-21:00; Sa 12:00-21:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "21:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "21:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 163,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/4397748090",
+   "name": "Lera",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "middle_eastern",
+    "syrian"
+   ],
+   "lat": 55.598112,
+   "lng": 13.000939,
+   "address": "23 B Södra Förstadsgatan, 211 43",
+   "website": "https://lera-restaurang.se/",
+   "wikidata": null,
+   "openingHours": "Mo-Th 11:30-21:00; Fr-Sa 11:30-22:00; Su 11:30-21:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "21:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "22:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "21:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 192,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/474727509",
+   "name": "SOHO",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "asian",
+    "cocktails"
+   ],
+   "lat": 55.597992,
+   "lng": 12.999212,
+   "address": "Holmgatan",
+   "website": "https://www.sohomalmo.se/",
+   "wikidata": null,
+   "openingHours": "Mo-Fr 10:00-18:00, Sa 10:00-15:00",
+   "hours": null,
+   "toVenueM": 229,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/3051074424",
+   "name": "Khanh",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "vietnamese"
+   ],
+   "lat": 55.594496,
+   "lng": 13.003391,
+   "address": "3a Friisgatan, 21421",
+   "website": "http://khanh.se/",
+   "wikidata": null,
+   "openingHours": "Mo-Sa 11:00-20:00; Su 12:00-18:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "20:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "18:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 243,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/3385991242",
+   "name": "Delhi",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "indian"
+   ],
+   "lat": 55.59448,
+   "lng": 13.004285,
+   "address": "66 Södra Förstadsgatan, 21420",
+   "website": "https://www.restaurangdelhi.se/",
+   "wikidata": null,
+   "openingHours": "Mo-Fr 11:00-22:00; Sa-Su 13:00-22:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "22:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "13:00",
+       "22:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 275,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/11109485805",
+   "name": "Boru Bowl Bar",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "asian",
+    "beef_bowl",
+    "korean"
+   ],
+   "lat": 55.599151,
+   "lng": 13.000475,
+   "address": "1 Kärleksgatan, 211 45",
+   "website": "http://borubowlbar.com",
+   "wikidata": null,
+   "openingHours": "Mo-Sa 11:00-21:00; Su 11:00-20:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "21:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "20:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 311,
+   "venuesNear": 1
+  }
+ ],
+ "trips": [
+  {
+   "name": "Scania",
+   "page": "Scania",
+   "url": "https://en.wikivoyage.org/wiki/Scania",
+   "description": "Skånetrafiken's Around the Sound (Öresund Runt) ticket is a great way to see the surrounding region of Scania as well as North Zealand, Denmark (including Copenhagen). For 299 kr, you get unlimited train travel and one ferry trip, for two days.",
+   "lat": 55.8,
+   "lng": 13.6167,
+   "km": 44
+  }
+ ],
+ "guide": {
+  "page": "Malmö",
+  "url": "https://en.wikivoyage.org/wiki/Malm%C3%B6"
+ },
+ "licences": {
+  "osm": {
+   "name": "ODbL",
+   "url": "https://opendatacommons.org/licenses/odbl/",
+   "attribution": "© OpenStreetMap contributors",
+   "credit": "https://www.openstreetmap.org/copyright"
+  },
+  "wikidata": {
+   "name": "CC0",
+   "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "attribution": "Wikidata"
+  },
+  "wikivoyage": {
+   "name": "CC BY-SA 4.0",
+   "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "attribution": "Wikivoyage contributors"
+  }
+ },
+ "provenance": {
+  "osm": {
+   "fetchedAt": "2026-10-02T20:04:27Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikidata": {
+   "fetchedAt": "2026-10-02T20:05:01Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "amenities": {
+   "fetchedAt": "2026-10-02T20:05:23Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikivoyage": {
+   "fetchedAt": "2026-10-02T20:05:26Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  }
+ }
+}

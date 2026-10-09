@@ -16,7 +16,12 @@ this source's `adapter` names, mapping the seller's states to on-sale,
 sold-out and unknown.
 """
 
+import os
 import sys
 
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(HERE))))
+import common
+
 if __name__ == "__main__":
-    sys.exit("smarticket: no fetcher yet (see this file's docstring); nothing written")
+    common.not_ready("smarticket: no fetcher yet (see this file's docstring); nothing written")

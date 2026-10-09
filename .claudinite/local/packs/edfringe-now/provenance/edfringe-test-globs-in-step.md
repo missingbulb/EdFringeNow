@@ -8,3 +8,11 @@
 - **Mechanism:** a coded check discovered from the pack's rule folder.
 - **Actor:** @missingbulb (owner).
 - **Model:** claude-opus-5-5
+
+## 2026-10-09 · moved · ported to a Go check for the cn engine
+- **Reason:** cn runs no JavaScript checks, so the Node world rule would stop running once the repo
+  moves off the Node engine.
+- **Mechanism:** a coded Go world check in the pack's checks/ folder, registered through the check
+  SDK under the same id and on_fail; its fixtures are Go tests run by checks/test.sh.
+- **Actor:** @missingbulb (owner).
+- **Model:** claude-opus-5-5

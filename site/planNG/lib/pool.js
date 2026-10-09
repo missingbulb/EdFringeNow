@@ -10,7 +10,7 @@
  * Pure: no DOM, no fetch.
  */
 
-import { inReach } from "../../shared/feasibility.js";
+import { inReach, joinsPool } from "../../shared/feasibility.js";
 
 /** An id made unique across festivals. */
 export const poolId = (festivalId, id) => `${festivalId}/${id}`;
@@ -31,7 +31,7 @@ export function buildPool(parts) {
   const venues = new Map();
   const categories = [];
   for (const { catalogue, reach } of parts) {
-    if (reach.verdict === "out") continue;
+    if (!joinsPool(reach)) continue;
     const fid = catalogue.festival.id;
     const id = (local) => (local == null ? local : poolId(fid, local));
     const used = new Set();

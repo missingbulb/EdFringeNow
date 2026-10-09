@@ -26,7 +26,12 @@ cheap-night flags). Write the three through `common.write_raw` in the site's
 vocabulary, then write the adapter festival.toml names.
 """
 
+import os
 import sys
 
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(HERE))))
+import common
+
 if __name__ == "__main__":
-    sys.exit("micf umbraco-api: no fetcher yet (see this file's docstring); nothing written")
+    common.not_ready("micf umbraco-api: no fetcher yet (see this file's docstring); nothing written")

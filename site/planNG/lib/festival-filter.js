@@ -1,43 +1,97 @@
-/* Which of the registry's festivals the year strip draws, as the three menus
- * above it narrow them: a place, a type and a subtype.
+/* Which of the registry's festivals the year strip draws, as the filters
+ * beside it narrow them: a place, a type and a subtype.
  *
- * A menu's value is "" for "any". A place is a country code ("IL") or a city
- * within one ("IL/Haifa"); a type is the registry's `kind`; a subtype is one
- * of a festival's `subtypes`, which label the festival, never its events.
+ * A filter's value is "" for "any". A place is an area ("@middle-east"), a
+ * country code ("IL") or a city within one ("IL/Haifa"); a type is one of TYPES, each holding one or more of
+ * the registry's `kind`s; a subtype is one of a festival's `subtypes`, which
+ * label the festival, never its events.
  *
  * Pure: no DOM, no fetch.
  */
 
-export const NO_FILTER = Object.freeze({ place: "", kind: "", subtype: "" });
+import { areaOf } from "./areas.js";
 
-/** A place menu's value for a festival's city. */
+export const NO_FILTER = Object.freeze({ place: "", type: "", subtype: "" });
+
+/* The nine types the grid offers, in its order, and the registry kinds each
+ * holds. Every kind the registry allows (scraper/festivals/registry.py's
+ * KINDS) belongs to exactly one. */
+export const TYPES = Object.freeze([
+  { id: "music", kinds: ["music"] },
+  { id: "film", kinds: ["film"] },
+  { id: "theatre", kinds: ["theatre"] },
+  { id: "dance", kinds: ["dance"] },
+  { id: "comedy", kinds: ["comedy"] },
+  { id: "art", kinds: ["art", "literature"] },
+  { id: "mixed", kinds: ["fringe", "multi"] },
+  { id: "sports", kinds: ["sports"] },
+  { id: "academic", kinds: ["academic"] },
+]);
+
+/** The type a registry kind belongs to, or null for a kind no type holds. */
+export function typeOfKind(kind) {
+  const type = TYPES.find((t) => t.kinds.includes(kind));
+  return type ? type.id : null;
+}
+
+/** A place filter's value for a festival's city. */
 export function cityPlace(festival) {
   return `${festival.country}/${festival.city}`;
 }
 
+/** A place filter's value for an area. */
+export function areaPlace(area) {
+  return `@${area}`;
+}
+
+/** What a place filter's value names: its area, and its country and city
+ * where it goes that far. */
+export function placeParts(place) {
+  if (!place) return { area: null, country: null, city: null };
+  if (place.startsWith("@")) return { area: place.slice(1), country: null, city: null };
+  const [country, city = null] = place.split("/");
+  return { area: areaOf(country), country, city };
+}
+
 function matchesPlace(festival, place) {
   if (!place) return true;
+  if (place.startsWith("@")) return areaOf(festival.country) === place.slice(1);
   return place.includes("/") ? cityPlace(festival) === place : festival.country === place;
+}
+
+/** The place one step out from a place: a city's country, a country's area,
+ * an area's "anywhere". An area holding a single festival country is passed
+ * over, since choosing it would offer nothing more than its country does. */
+export function parentPlace(registry, place) {
+  const { area, country, city } = placeParts(place);
+  if (city) return country;
+  if (!country || !area) return "";
+  const countries = new Set(registry.festivals.filter((f) => areaOf(f.country) === area).map((f) => f.country));
+  return countries.size > 1 ? areaPlace(area) : "";
+}
+
+function matchesType(festival, type) {
+  return !type || typeOfKind(festival.kind) === type;
 }
 
 function subtypesOf(festival) {
   return Array.isArray(festival.subtypes) ? festival.subtypes : [];
 }
 
-/** Whether a festival matches every menu. */
+/** Whether a festival matches every filter. */
 export function festivalMatches(festival, filter) {
   return (
     matchesPlace(festival, filter.place) &&
-    (!filter.kind || festival.kind === filter.kind) &&
+    matchesType(festival, filter.type) &&
     (!filter.subtype || subtypesOf(festival).includes(filter.subtype))
   );
 }
 
 /**
- * The registry the strip draws: the festivals the menus keep, and always the
- * one leading the trip, so the reader's trip never loses its festival.
+ * The registry the strip draws: the festivals the filters keep, and always
+ * the one leading the trip, so the reader's trip never loses its festival.
  * @param {{festivals: object[]}} registry
- * @param {{place: string, kind: string, subtype: string}} filter
+ * @param {{place: string, type: string, subtype: string}} filter
  * @param {string|null} keepId the festival leading the trip
  */
 export function filterRegistry(registry, filter, keepId = null) {
@@ -46,25 +100,38 @@ export function filterRegistry(registry, filter, keepId = null) {
 }
 
 /**
- * What each menu can offer, from what the registry holds: every country with
- * its cities, every type, and the subtypes the chosen place and type leave.
- * @returns {{places: {country: string, cities: string[]}[], kinds: string[], subtypes: string[]}}
+ * What each filter can offer, from what the registry holds: every country with
+ * its cities, every type with how many festivals the chosen place holds of it,
+ * and the subtypes the chosen place and type leave.
+ * @returns {{places: {country: string, area: string|null, cities: string[]}[], types: {id: string, count: number}[], subtypes: string[]}}
  */
 export function filterOptions(registry, filter) {
   const countries = new Map();
-  const kinds = new Set();
+  const counts = new Map(TYPES.map((t) => [t.id, 0]));
   const subtypes = new Set();
   for (const f of registry.festivals) {
     if (!countries.has(f.country)) countries.set(f.country, new Set());
     countries.get(f.country).add(f.city);
-    kinds.add(f.kind);
-    if (matchesPlace(f, filter.place) && (!filter.kind || f.kind === filter.kind)) {
+    if (!matchesPlace(f, filter.place)) continue;
+    const type = typeOfKind(f.kind);
+    if (counts.has(type)) counts.set(type, counts.get(type) + 1);
+    if (matchesType(f, filter.type)) {
       for (const s of subtypesOf(f)) subtypes.add(s);
     }
   }
   return {
-    places: [...countries].map(([country, cities]) => ({ country, cities: [...cities].sort() })),
-    kinds: [...kinds].sort(),
+    places: [...countries].map(([country, cities]) => ({ country, area: areaOf(country), cities: [...cities].sort() })),
+    types: TYPES.map((t) => ({ id: t.id, count: counts.get(t.id) })),
     subtypes: [...subtypes].sort(),
   };
+}
+
+/** The filter after one of them changes: a subtype the new place and type no
+ * longer leave is dropped with them. */
+export function withFilter(registry, filter, name, value) {
+  const next = { ...filter, [name]: value };
+  if (name !== "subtype" && next.subtype && !filterOptions(registry, next).subtypes.includes(next.subtype)) {
+    next.subtype = "";
+  }
+  return next;
 }

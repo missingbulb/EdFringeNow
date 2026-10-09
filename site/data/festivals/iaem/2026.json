@@ -1,0 +1,408 @@
+{
+ "v": 1,
+ "festival": {
+  "id": "iaem",
+  "edition": "2026",
+  "ordinal": null,
+  "name": "Israeli Association for Emergency Medicine Annual Scientific Assembly",
+  "nameLocal": "הכנס השנתי של האיגוד הישראלי לרפואה דחופה",
+  "city": "Airport City",
+  "country": "IL",
+  "lat": 31.986,
+  "lng": 34.9162,
+  "timezone": "Asia/Jerusalem",
+  "lang": "en",
+  "dir": "ltr",
+  "kind": "academic",
+  "defaultGenre": "talk",
+  "site": "https://emergencymedicine-2026.forms-wizard.biz/",
+  "firstDate": "2026-10-21",
+  "lastDate": "2026-10-21",
+  "ticketing": {
+   "model": "festival-pass",
+   "url": "https://emergencymedicine-2026.forms-wizard.biz/users/new",
+   "notes": "Registration through the conference site. Late rates (1 Sep - 18 Oct 2026): ₪500 for association members, ₪750 for other specialists, ₪400 for interns, nurses and pensioners, ₪350 for EM nurses, physician assistants, paramedics and reservists, ₪300 for medical students, ₪850 for other guests; ₪50 more on the morning of the conference. Includes refreshments and lunch.",
+   "currency": "ILS",
+   "source": "https://emergencymedicine-2026.forms-wizard.biz/"
+  }
+ },
+ "categories": [],
+ "venues": [
+  {
+   "id": "avenue-airport-city",
+   "name": "Avenue Conference & Events Center",
+   "address": "Hasharon St, Airport City",
+   "lat": 31.9859686,
+   "lng": 34.916174,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {
+     "id": "hall-a",
+     "name": "Hall A",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "hall-b",
+     "name": "Hall B",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "hall-c",
+     "name": "Hall C",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "poster-area-d",
+     "name": "Poster Exhibition Area D",
+     "capacity": null,
+     "layout": null
+    }
+   ],
+   "accessibility": null,
+   "notes": "At the entrance to Airport City, between Ben Gurion Airport and Kfar Truman; the entrance is at the building's south-western corner (the conference site).",
+   "refs": [
+    "https://emergencymedicine-2026.forms-wizard.biz/",
+    "https://www.openstreetmap.org/way/175196857"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "item-16813",
+   "title": "Plenary Session",
+   "titleLocal": "מליאת בוקר",
+   "url": "https://emergencymedicine-2026.forms-wizard.biz/",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderators: Dr. Tzachi Slutsky, Dr. Ariel Bentancur\n09:00 - 09:15 Greetings: Dr. Tzachi Slutsky, Chair of the Israeli Association of Emergency Medicine; Dr. Ariel Bentancur, Conference Chair\n09:15 - 10:00 Calling All Builders: How Emergency Medicine Can Shape Its Own Future with AI: Prof. Adrian Haimovich; Director, Division of Artificial Intelligence, Department of Emergency Medicine, Beth Israel Deaconess Medical Center | Assistant Professor, Emergency Medicine, Harvard Medical School\n10:00 - 10:15 The Israeli Institute for Emergency Medicine Research: an important support tool for academically minded EM physicians: Dr. Noa Shopen, Tel Aviv University and Medical Center; Prof. Pinchas (Pinny) Halpern, Tel Aviv University and Medical Center (Retired).\n10:15-10:30 Bridges and Breakthroughs in Israeli Pediatric Trauma: An update: Dr. Nir Samuel, Pediatric Trauma Service and Emergency Department, Schneider Children’s Medical Center of Israel; Prof. Neta Cohen, Pediatric Trauma Service and Emergency Department, Dana-Dwek Children's Hospital (TAMC)\n10:30 – 10:40 Awarding Certificates of Appreciation",
+   "durationMin": 105,
+   "imageUrl": null
+  },
+  {
+   "id": "item-16818",
+   "title": "Parallel Session: AI And Innovations in Emergency Medicine 1",
+   "titleLocal": "מושבים מקבילים",
+   "url": "https://emergencymedicine-2026.forms-wizard.biz/",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Prof. Shachaf Schiber, Dr. Shaden Salameh",
+   "durationMin": 105,
+   "imageUrl": null
+  },
+  {
+   "id": "item-16817",
+   "title": "Parallel Session: Emergency Medicine Under Fire 1",
+   "titleLocal": "מושבים מקבילים",
+   "url": "https://emergencymedicine-2026.forms-wizard.biz/",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Dr. Eran Tal Or, Dr. Baruch Berzon, Dr. Ofira Azulay Ferster",
+   "durationMin": 105,
+   "imageUrl": null
+  },
+  {
+   "id": "item-16820",
+   "title": "Parallel Session: Clinical Emergency Medicine",
+   "titleLocal": "מושבים מקבילים",
+   "url": "https://emergencymedicine-2026.forms-wizard.biz/",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Prof. Michael Drescher, Dr. Meirav Slotky, Dr. Waseem Mujahed",
+   "durationMin": 105,
+   "imageUrl": null
+  },
+  {
+   "id": "item-17266",
+   "title": "Parallel Session: AI And Innovations in Emergency Medicine2",
+   "titleLocal": "מושבים מקבילים",
+   "url": "https://emergencymedicine-2026.forms-wizard.biz/",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Dr. Daniel Trotsky, Dr. Noa Shopen",
+   "durationMin": 105,
+   "imageUrl": null
+  },
+  {
+   "id": "item-17267",
+   "title": "Parallel Session: Emergency Medicine Under Fire",
+   "titleLocal": "מושבים מקבילים",
+   "url": "https://emergencymedicine-2026.forms-wizard.biz/",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Dr. Avi Benov, Dr. Oren Wacht",
+   "durationMin": 105,
+   "imageUrl": null
+  },
+  {
+   "id": "item-17393",
+   "title": "Parallel Session: Pediatric EM Research Abstracts",
+   "titleLocal": "מושבים מקבילים",
+   "url": "https://emergencymedicine-2026.forms-wizard.biz/",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Dr. Nitai Levi, Dr. Salach Hateeb",
+   "durationMin": 105,
+   "imageUrl": null
+  },
+  {
+   "id": "item-17606",
+   "title": "Poster Presentation",
+   "titleLocal": null,
+   "url": "https://emergencymedicine-2026.forms-wizard.biz/",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Dr. Adi Shilo, Dr. Amir Schachar",
+   "durationMin": 105,
+   "imageUrl": null
+  },
+  {
+   "id": "item-16814",
+   "title": "Forums",
+   "titleLocal": "פורומים",
+   "url": "https://emergencymedicine-2026.forms-wizard.biz/",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "16:00 - 17:00 EM Resident's Forum: Moderators: Dr. Avraham Alpert, and Dr. Tzachi Slutsky; EM Education Vlub, Assuta Ashdod Experience; Dr. Caroline Ohayon Caroline, Samson Assuta Ashdod University Hospital; Dr. Joseph Offenbacher, Hadassah University Medical Center\n16:00 - 17:00 EM Nursing Forum: Moderators: Mr. Amir Moshe RN, Shamir Medical Center; Mr. Ron Tsirkin RN, Barzilai Medical Center; Improving Waiting Times in the Pediatric Emergency Department Through Triage Nurse-Initiated Radiography for Isolated Bone Injury; Nechama Karach\n16:00-17:00 Pediatric Forum: Moderators: Prof. Neta Cohen, Tel Aviv Medical Center; Dr. Ron Jacob, Ha Emek Medical Center; ISPERN: Israeli Pediatric Emergency Research Network",
+   "durationMin": 60,
+   "imageUrl": null
+  }
+ ],
+ "performances": [
+  {
+   "id": "item-16813/2026-10-21/09:00",
+   "eventId": "item-16813",
+   "venueId": "avenue-airport-city",
+   "roomId": "hall-a",
+   "date": "2026-10-21",
+   "start": "09:00",
+   "ticketUrl": "https://emergencymedicine-2026.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "item-16818/2026-10-21/11:15",
+   "eventId": "item-16818",
+   "venueId": "avenue-airport-city",
+   "roomId": "hall-a",
+   "date": "2026-10-21",
+   "start": "11:15",
+   "ticketUrl": "https://emergencymedicine-2026.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "item-16817/2026-10-21/11:15",
+   "eventId": "item-16817",
+   "venueId": "avenue-airport-city",
+   "roomId": "hall-b",
+   "date": "2026-10-21",
+   "start": "11:15",
+   "ticketUrl": "https://emergencymedicine-2026.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "item-16820/2026-10-21/11:15",
+   "eventId": "item-16820",
+   "venueId": "avenue-airport-city",
+   "roomId": "hall-c",
+   "date": "2026-10-21",
+   "start": "11:15",
+   "ticketUrl": "https://emergencymedicine-2026.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "item-17266/2026-10-21/14:00",
+   "eventId": "item-17266",
+   "venueId": "avenue-airport-city",
+   "roomId": "hall-a",
+   "date": "2026-10-21",
+   "start": "14:00",
+   "ticketUrl": "https://emergencymedicine-2026.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "item-17267/2026-10-21/14:00",
+   "eventId": "item-17267",
+   "venueId": "avenue-airport-city",
+   "roomId": "hall-b",
+   "date": "2026-10-21",
+   "start": "14:00",
+   "ticketUrl": "https://emergencymedicine-2026.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "item-17393/2026-10-21/14:00",
+   "eventId": "item-17393",
+   "venueId": "avenue-airport-city",
+   "roomId": "hall-c",
+   "date": "2026-10-21",
+   "start": "14:00",
+   "ticketUrl": "https://emergencymedicine-2026.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "item-17606/2026-10-21/14:00",
+   "eventId": "item-17606",
+   "venueId": "avenue-airport-city",
+   "roomId": "poster-area-d",
+   "date": "2026-10-21",
+   "start": "14:00",
+   "ticketUrl": "https://emergencymedicine-2026.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "item-16814/2026-10-21/16:00",
+   "eventId": "item-16814",
+   "venueId": "avenue-airport-city",
+   "roomId": null,
+   "date": "2026-10-21",
+   "start": "16:00",
+   "ticketUrl": "https://emergencymedicine-2026.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  }
+ ],
+ "sources": {
+  "festival": [
+   "festival.toml"
+  ],
+  "venues": [
+   "venues-research"
+  ],
+  "events": [
+   "forms-wizard"
+  ],
+  "performances": [
+   "forms-wizard"
+  ],
+  "availability": [],
+  "prices": []
+ },
+ "provenance": {
+  "sources": {
+   "forms-wizard": {
+    "kind": "fetched",
+    "path": "data/festivals/iaem/2026/forms-wizard",
+    "fetchedAt": "2026-10-02T18:53:45Z",
+    "fetcher": "scraper/festivals/iaem/sources/forms-wizard/fetch.py",
+    "fetcherVersion": 1
+   },
+   "venues-research": {
+    "kind": "curated",
+    "path": "scraper/festivals/iaem/curated/venues.json"
+   }
+  },
+  "absent": [],
+  "fields": {
+   "events.blurb": [
+    "forms-wizard"
+   ],
+   "events.categories": [
+    "forms-wizard"
+   ],
+   "events.durationMin": [
+    "forms-wizard"
+   ],
+   "events.imageUrl": [
+    "forms-wizard"
+   ],
+   "events.title": [
+    "forms-wizard"
+   ],
+   "events.titleLocal": [
+    "forms-wizard"
+   ],
+   "events.url": [
+    "forms-wizard"
+   ],
+   "performances.date": [
+    "forms-wizard"
+   ],
+   "performances.eventId": [
+    "forms-wizard"
+   ],
+   "performances.free": [
+    "forms-wizard"
+   ],
+   "performances.roomId": [
+    "forms-wizard"
+   ],
+   "performances.start": [
+    "forms-wizard"
+   ],
+   "performances.ticketUrl": [
+    "forms-wizard"
+   ],
+   "performances.venueId": [
+    "forms-wizard"
+   ],
+   "venues.accessibility": [
+    "venues-research"
+   ],
+   "venues.address": [
+    "venues-research"
+   ],
+   "venues.capacity": [
+    "venues-research"
+   ],
+   "venues.lat": [
+    "venues-research"
+   ],
+   "venues.layout": [
+    "venues-research"
+   ],
+   "venues.lng": [
+    "venues-research"
+   ],
+   "venues.name": [
+    "venues-research"
+   ],
+   "venues.notes": [
+    "venues-research"
+   ],
+   "venues.refs": [
+    "venues-research"
+   ],
+   "venues.rooms": [
+    "venues-research"
+   ]
+  },
+  "skipped": {
+   "forms-wizard": [
+    "2026-10-21 08:00 Registration, Refreshments, Visit Exhibits (logistics)",
+    "2026-10-21 10:45 Break, Refreshments, Visit Exhibits (logistics)",
+    "2026-10-21 13:00 Lunch (logistics)",
+    "2026-10-21 15:45 Break, Refreshments, Visit Exhibits (logistics)"
+   ]
+  }
+ }
+}

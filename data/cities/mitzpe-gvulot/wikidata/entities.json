@@ -1,0 +1,36 @@
+{
+ "entities": {
+  "Q102309301": {
+   "sitelinks": 1,
+   "description": "archaeological site in Israel",
+   "image": "הגשר התלוי מעל נחל הבשור.jpg",
+   "instanceOf": [
+    "Q12570"
+   ]
+  },
+  "Q1548392": {
+   "sitelinks": 15,
+   "description": "archaeological site in Southern District, Israel",
+   "image": "Tell el-Farah South.jpg",
+   "instanceOf": [
+    "Q12404340",
+    "Q15661340",
+    "Q839954"
+   ]
+  },
+  "Q16340855": {
+   "sitelinks": 1,
+   "description": null,
+   "image": null,
+   "instanceOf": []
+  },
+  "Q6980263": {
+   "sitelinks": 1,
+   "description": "archaeological site in Negev, Israel",
+   "image": "Flickr - Government Press Office (GPO) - Be'er Shama Mosaic.jpg",
+   "instanceOf": [
+    "Q839954"
+   ]
+  }
+ }
+}

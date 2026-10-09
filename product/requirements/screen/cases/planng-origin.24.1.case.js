@@ -14,6 +14,8 @@ module.exports = {
     await jerusalemReady(page);
     await page.waitForFunction(() => document.querySelector(".tl-orb"), null, { timeout: 20000 });
     await page.click(".tl-way--from");
+    // The picture's tip would otherwise show under a pointer left on it.
+    await page.mouse.move(0, 0);
     await page.waitForSelector('#originCard [data-origin="next"]');
   },
   capture: (page, t) => t.unionClip([".tl-track", "#originCard"]),

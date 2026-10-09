@@ -10,6 +10,7 @@ id = "micf"
 name = "Melbourne International Comedy Festival"
 city = "Melbourne"
 country = "AU"
+region = "Victoria"
 # Melbourne Town Hall, the festival hub; venues carry their own coordinates.
 lat = -37.8150
 lng = 144.9668
@@ -20,6 +21,7 @@ kind = "comedy"
 subtypes = ["comedy-standup"]
 default_genre = "comedy"
 site = "https://www.comedyfestival.com.au"
+wikidata = "Q17012417"
 
 [ticketing]
 model = "central-box-office"
@@ -34,6 +36,7 @@ id = "2027"
 format = "block"
 first = "2027-03-24"
 last = "2027-04-18"
+sources = ["umbraco-api"]
 
 [[source]]
 id = "umbraco-api"

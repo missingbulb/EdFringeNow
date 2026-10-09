@@ -12,6 +12,7 @@
   {
    "id": "osm:way/4301292",
    "name": "Edinburgh Castle",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.948675,
    "lng": -3.200405,
@@ -109,6 +110,7 @@
   {
    "id": "osm:relation/4599",
    "name": "The Scottish Parliament",
+   "nameEn": null,
    "kind": "attraction",
    "lat": 55.951885,
    "lng": -3.175231,
@@ -163,6 +165,7 @@
   {
    "id": "osm:relation/16769442",
    "name": "Palace of Holyroodhouse",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.952703,
    "lng": -3.172066,
@@ -212,6 +215,7 @@
   {
    "id": "osm:way/5182746",
    "name": "National Gallery",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.950881,
    "lng": -3.195617,
@@ -261,6 +265,7 @@
   {
    "id": "osm:way/467226683",
    "name": "National Museum of Scotland",
+   "nameEn": null,
    "kind": "museum",
    "lat": 55.947058,
    "lng": -3.189534,
@@ -338,6 +343,7 @@
   {
    "id": "osm:way/42407060",
    "name": "St Giles' Cathedral",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.949468,
    "lng": -3.19086,
@@ -438,6 +444,7 @@
   {
    "id": "osm:way/41893742",
    "name": "Holyrood Abbey",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.953144,
    "lng": -3.171626,
@@ -456,6 +463,7 @@
   {
    "id": "osm:way/1519743672",
    "name": "Calton Hill",
+   "nameEn": null,
    "kind": "park",
    "lat": 55.955265,
    "lng": -3.182498,
@@ -474,6 +482,7 @@
   {
    "id": "osm:way/99889822",
    "name": "HMY Britannia",
+   "nameEn": null,
    "kind": "museum",
    "lat": 55.982154,
    "lng": -3.177309,
@@ -557,6 +566,7 @@
   {
    "id": "osm:way/5209575",
    "name": "Royal Botanic Garden Edinburgh",
+   "nameEn": null,
    "kind": "garden",
    "lat": 55.965317,
    "lng": -3.208451,
@@ -625,6 +635,7 @@
   {
    "id": "osm:node/505014478",
    "name": "Mons Meg",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.948788,
    "lng": -3.200157,
@@ -714,6 +725,7 @@
   {
    "id": "osm:way/73090302",
    "name": "Scottish National Portrait Gallery",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.955467,
    "lng": -3.193592,
@@ -763,6 +775,7 @@
   {
    "id": "osm:way/39044819",
    "name": "Scott Monument",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.952361,
    "lng": -3.193257,
@@ -800,6 +813,7 @@
   {
    "id": "osm:way/61161239",
    "name": "Craigmillar Castle",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.925707,
    "lng": -3.14062,
@@ -869,6 +883,7 @@
   {
    "id": "osm:way/55751608",
    "name": "Royal Observatory, Edinburgh",
+   "nameEn": null,
    "kind": "attraction",
    "lat": 55.922898,
    "lng": -3.188072,
@@ -887,6 +902,7 @@
   {
    "id": "osm:relation/18609422",
    "name": "Scottish National Gallery of Modern Art",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.951199,
    "lng": -3.226089,
@@ -905,6 +921,7 @@
   {
    "id": "osm:way/225470834",
    "name": "St Mary's Episcopal Cathedral",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.948612,
    "lng": -3.216285,
@@ -953,6 +970,7 @@
   {
    "id": "osm:relation/963806",
    "name": "West Princes Street Gardens",
+   "nameEn": null,
    "kind": "park",
    "lat": 55.94966,
    "lng": -3.200653,
@@ -1077,6 +1095,7 @@
   {
    "id": "osm:way/22412844",
    "name": "National Monument of Scotland",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.954749,
    "lng": -3.18177,
@@ -1095,6 +1114,7 @@
   {
    "id": "osm:way/41663265",
    "name": "Holyrood Park",
+   "nameEn": null,
    "kind": "park",
    "lat": 55.945642,
    "lng": -3.161243,
@@ -1113,6 +1133,7 @@
   {
    "id": "osm:way/287130390",
    "name": "Greyfriars Kirk",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.946636,
    "lng": -3.19228,
@@ -1131,6 +1152,7 @@
   {
    "id": "osm:way/4348244",
    "name": "Bruntsfield Links",
+   "nameEn": null,
    "kind": "park",
    "lat": 55.939191,
    "lng": -3.201047,
@@ -1149,6 +1171,7 @@
   {
    "id": "osm:relation/1669488",
    "name": "Lauriston Castle",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.971202,
    "lng": -3.278438,
@@ -1167,6 +1190,7 @@
   {
    "id": "osm:way/22938944",
    "name": "Modern Two",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.951848,
    "lng": -3.224208,
@@ -1204,6 +1228,7 @@
   {
    "id": "osm:way/62066717",
    "name": "Ross Fountain",
+   "nameEn": null,
    "kind": "attraction",
    "lat": 55.95006,
    "lng": -3.203037,
@@ -1222,6 +1247,7 @@
   {
    "id": "osm:relation/33710",
    "name": "Old College",
+   "nameEn": null,
    "kind": "attraction",
    "lat": 55.947425,
    "lng": -3.187256,
@@ -1259,6 +1285,7 @@
   {
    "id": "osm:way/233760765",
    "name": "The Meadows",
+   "nameEn": null,
    "kind": "park",
    "lat": 55.942351,
    "lng": -3.191727,
@@ -1277,6 +1304,7 @@
   {
    "id": "osm:node/268408103",
    "name": "Camera Obscura & World of Illusions",
+   "nameEn": null,
    "kind": "attraction",
    "lat": 55.949029,
    "lng": -3.195604,
@@ -1306,6 +1334,7 @@
   {
    "id": "osm:way/465938528",
    "name": "Nelson Monument",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.954357,
    "lng": -3.182579,
@@ -1335,6 +1364,7 @@
   {
    "id": "osm:way/78693281",
    "name": "St Andrew Square Garden",
+   "nameEn": null,
    "kind": "garden",
    "lat": 55.954211,
    "lng": -3.193154,
@@ -1364,6 +1394,7 @@
   {
    "id": "osm:node/2914760336",
    "name": "The Scotch Whisky Experience",
+   "nameEn": null,
    "kind": "attraction",
    "lat": 55.948743,
    "lng": -3.195875,
@@ -1382,6 +1413,7 @@
   {
    "id": "osm:node/4618730690",
    "name": "Writers' Museum",
+   "nameEn": null,
    "kind": "museum",
    "lat": 55.949691,
    "lng": -3.193742,
@@ -1419,6 +1451,7 @@
   {
    "id": "osm:way/320974678",
    "name": "Dugald Stewart Monument",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.954517,
    "lng": -3.184433,
@@ -1437,6 +1470,7 @@
   {
    "id": "osm:way/25946269",
    "name": "Dynamic Earth",
+   "nameEn": null,
    "kind": "museum",
    "lat": 55.95053,
    "lng": -3.174412,
@@ -1455,6 +1489,7 @@
   {
    "id": "osm:way/293890858",
    "name": "John Knox House",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.950636,
    "lng": -3.185081,
@@ -1473,6 +1508,7 @@
   {
    "id": "osm:way/259067386",
    "name": "Museum of Edinburgh",
+   "nameEn": null,
    "kind": "museum",
    "lat": 55.951207,
    "lng": -3.179433,
@@ -1526,6 +1562,7 @@
   {
    "id": "osm:way/239888879",
    "name": "Political Martyrs' Monument",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.953369,
    "lng": -3.185792,
@@ -1544,6 +1581,7 @@
   {
    "id": "osm:node/13564998178",
    "name": "The Jellicoe Express -- 1917 - 2017",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.951947,
    "lng": -3.18882,
@@ -1562,6 +1600,7 @@
   {
    "id": "osm:way/4933268",
    "name": "Charlotte Square Gardens",
+   "nameEn": null,
    "kind": "garden",
    "lat": 55.951747,
    "lng": -3.207656,
@@ -1580,6 +1619,7 @@
   {
    "id": "osm:way/4075023",
    "name": "George Square Gardens",
+   "nameEn": null,
    "kind": "garden",
    "lat": 55.943641,
    "lng": -3.188814,
@@ -1641,6 +1681,7 @@
   {
    "id": "osm:node/4618730691",
    "name": "Gladstone's Land",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.949429,
    "lng": -3.193685,
@@ -1659,6 +1700,7 @@
   {
    "id": "osm:node/258016781",
    "name": "Greyfriars Bobby",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.946922,
    "lng": -3.191304,
@@ -1677,6 +1719,7 @@
   {
    "id": "osm:node/2955931322",
    "name": "Museum of Childhood",
+   "nameEn": null,
    "kind": "museum",
    "lat": 55.95033,
    "lng": -3.185507,
@@ -1714,6 +1757,7 @@
   {
    "id": "osm:node/4618730716",
    "name": "Museum on the Mound",
+   "nameEn": null,
    "kind": "museum",
    "lat": 55.950188,
    "lng": -3.193248,
@@ -1768,6 +1812,7 @@
   {
    "id": "osm:way/5182745",
    "name": "Royal Scottish Academy",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.951671,
    "lng": -3.196267,
@@ -1786,6 +1831,7 @@
   {
    "id": "osm:way/511343921",
    "name": "Scottish National War Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.948394,
    "lng": -3.199717,
@@ -1804,6 +1850,7 @@
   {
    "id": "osm:way/90710096",
    "name": "Trinity House",
+   "nameEn": null,
    "kind": "museum",
    "lat": 55.972191,
    "lng": -3.171342,
@@ -1822,6 +1869,7 @@
   {
    "id": "osm:way/62061248",
    "name": "Church of St John the Evangelist",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.950044,
    "lng": -3.206481,
@@ -1840,6 +1888,7 @@
   {
    "id": "osm:way/333902323",
    "name": "Craiglockhart Castle",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.919306,
    "lng": -3.238325,
@@ -1858,6 +1907,7 @@
   {
    "id": "osm:way/70826506",
    "name": "Fruitmarket",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.951257,
    "lng": -3.189699,
@@ -1887,6 +1937,7 @@
   {
    "id": "osm:way/30475890",
    "name": "Liberton Tower",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.914571,
    "lng": -3.177382,
@@ -1905,6 +1956,7 @@
   {
    "id": "osm:node/12223010635",
    "name": "Melville's Monument",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.954217,
    "lng": -3.193153,
@@ -1923,6 +1975,7 @@
   {
    "id": "osm:way/41299975",
    "name": "National War Museum",
+   "nameEn": null,
    "kind": "museum",
    "lat": 55.948786,
    "lng": -3.201664,
@@ -1988,6 +2041,7 @@
   {
    "id": "osm:way/465223757",
    "name": "St Stephen's Church",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.958564,
    "lng": -3.203491,
@@ -2006,6 +2060,7 @@
   {
    "id": "osm:node/291214494",
    "name": "Talbot Rice Gallery",
+   "nameEn": null,
    "kind": "museum",
    "lat": 55.947067,
    "lng": -3.187772,
@@ -2041,6 +2096,7 @@
   {
    "id": "osm:way/41893740",
    "name": "The King's Gallery",
+   "nameEn": null,
    "kind": "museum",
    "lat": 55.952586,
    "lng": -3.173884,
@@ -2059,6 +2115,7 @@
   {
    "id": "osm:way/62061368",
    "name": "The Parish Church of St Cuthbert",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.949626,
    "lng": -3.205121,
@@ -2077,6 +2134,7 @@
   {
    "id": "osm:way/70954995",
    "name": "The People's Story Museum",
+   "nameEn": null,
    "kind": "museum",
    "lat": 55.951481,
    "lng": -3.179935,
@@ -2113,6 +2171,7 @@
   {
    "id": "osm:way/70955023",
    "name": "Trinity Apse",
+   "nameEn": null,
    "kind": "museum",
    "lat": 55.95096,
    "lng": -3.185677,
@@ -2131,6 +2190,7 @@
   {
    "id": "osm:node/2836251939",
    "name": "Witches' Well",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.948882,
    "lng": -3.196423,
@@ -2149,6 +2209,7 @@
   {
    "id": "osm:node/2853530751",
    "name": "Georgian House",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.952488,
    "lng": -3.208214,
@@ -2167,6 +2228,7 @@
   {
    "id": "osm:way/41558984",
    "name": "Holyrood Distillery",
+   "nameEn": null,
    "kind": "attraction",
    "lat": 55.943017,
    "lng": -3.177508,
@@ -2185,6 +2247,7 @@
   {
    "id": "osm:relation/8423665",
    "name": "Leith Links",
+   "nameEn": null,
    "kind": "park",
    "lat": 55.971117,
    "lng": -3.160749,
@@ -2203,6 +2266,7 @@
   {
    "id": "osm:node/10199790844",
    "name": "Madelvic Car Factory",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.980421,
    "lng": -3.232618,
@@ -2221,6 +2285,7 @@
   {
    "id": "osm:way/164545444",
    "name": "Mercat Cross",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.949646,
    "lng": -3.190184,
@@ -2239,6 +2304,7 @@
   {
    "id": "osm:way/324049962",
    "name": "Merchiston Tower",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.93333,
    "lng": -3.213896,
@@ -2257,6 +2323,7 @@
   {
    "id": "osm:way/81243762",
    "name": "New Town Church",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.95407,
    "lng": -3.195864,
@@ -2275,6 +2342,7 @@
   {
    "id": "osm:way/42261848",
    "name": "St Cecilia's Hall",
+   "nameEn": null,
    "kind": "museum",
    "lat": 55.948989,
    "lng": -3.186397,
@@ -2293,6 +2361,7 @@
   {
    "id": "osm:node/2973367148",
    "name": "The Edinburgh Dungeon",
+   "nameEn": null,
    "kind": "attraction",
    "lat": 55.951078,
    "lng": -3.190878,
@@ -2311,6 +2380,7 @@
   {
    "id": "osm:way/28553603",
    "name": "The Robin Chapel",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.931318,
    "lng": -3.130358,
@@ -2329,6 +2399,7 @@
   {
    "id": "osm:node/442615638",
    "name": "Brassfounders Column",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.946024,
    "lng": -3.185398,
@@ -2347,6 +2418,7 @@
   {
    "id": "osm:node/2466426304",
    "name": "David Livingstone Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.952462,
    "lng": -3.192736,
@@ -2365,6 +2437,7 @@
   {
    "id": "osm:way/270192920",
    "name": "Dean Gardens",
+   "nameEn": null,
    "kind": "garden",
    "lat": 55.954302,
    "lng": -3.213646,
@@ -2383,6 +2456,7 @@
   {
    "id": "osm:way/8043028",
    "name": "Dunbar's Close Garden",
+   "nameEn": null,
    "kind": "garden",
    "lat": 55.952155,
    "lng": -3.178943,
@@ -2401,6 +2475,7 @@
   {
    "id": "osm:node/10199734008",
    "name": "HMS Claverhouse",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.980728,
    "lng": -3.223812,
@@ -2419,6 +2494,7 @@
   {
    "id": "osm:way/26626296",
    "name": "Lochend Park",
+   "nameEn": null,
    "kind": "park",
    "lat": 55.960666,
    "lng": -3.15993,
@@ -2437,6 +2513,7 @@
   {
    "id": "osm:way/22415647",
    "name": "London Road Gardens",
+   "nameEn": null,
    "kind": "park",
    "lat": 55.957117,
    "lng": -3.177967,
@@ -2455,6 +2532,7 @@
   {
    "id": "osm:way/57709519",
    "name": "RBGE Inverleith House",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.965004,
    "lng": -3.210154,
@@ -2473,6 +2551,7 @@
   {
    "id": "osm:relation/15334519",
    "name": "Regent Gardens",
+   "nameEn": null,
    "kind": "garden",
    "lat": 55.95525,
    "lng": -3.177116,
@@ -2491,6 +2570,7 @@
   {
    "id": "osm:way/314600289",
    "name": "Scottish American War Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.951048,
    "lng": -3.201038,
@@ -2509,6 +2589,7 @@
   {
    "id": "osm:node/6715804556",
    "name": "The Royal Scots Dragoon Guards Museum",
+   "nameEn": null,
    "kind": "museum",
    "lat": 55.948085,
    "lng": -3.20088,
@@ -2527,6 +2608,7 @@
   {
    "id": "osm:way/446654897",
    "name": "The Royal Scots Regimental Museum",
+   "nameEn": null,
    "kind": "museum",
    "lat": 55.94824,
    "lng": -3.20038,
@@ -2545,6 +2627,7 @@
   {
    "id": "osm:node/4462104374",
    "name": "Wentworth Elm",
+   "nameEn": null,
    "kind": "attraction",
    "lat": 55.952111,
    "lng": -3.170649,
@@ -2563,6 +2646,7 @@
   {
    "id": "osm:node/5337269693",
    "name": "72nd Highlanders Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.94882,
    "lng": -3.19813,
@@ -2581,6 +2665,7 @@
   {
    "id": "osm:node/5337269698",
    "name": "78th Highlanders Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.948961,
    "lng": -3.196917,
@@ -2599,6 +2684,7 @@
   {
    "id": "osm:node/11665348379",
    "name": "A Home for Photography",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.949535,
    "lng": -3.21167,
@@ -2634,6 +2720,7 @@
   {
    "id": "osm:node/10106526105",
    "name": "A-Team",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.980515,
    "lng": -3.178417,
@@ -2652,6 +2739,7 @@
   {
    "id": "osm:way/313680590",
    "name": "Adam Black Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.952168,
    "lng": -3.194415,
@@ -2670,6 +2758,7 @@
   {
    "id": "osm:node/1241883633",
    "name": "Agnes-Moon Art",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.981377,
    "lng": -3.177345,
@@ -2688,6 +2777,7 @@
   {
    "id": "osm:way/309203675",
    "name": "Albert Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.951751,
    "lng": -3.207639,
@@ -2706,6 +2796,7 @@
   {
    "id": "osm:way/314597264",
    "name": "Allan Ramsay Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.951688,
    "lng": -3.197305,
@@ -2724,6 +2815,7 @@
   {
    "id": "osm:node/5025640452",
    "name": "Anatomical Museum",
+   "nameEn": null,
    "kind": "museum",
    "lat": 55.944852,
    "lng": -3.190104,
@@ -2742,6 +2834,7 @@
   {
    "id": "osm:way/103163117",
    "name": "Belford Hostel",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.950927,
    "lng": -3.220523,
@@ -2760,6 +2853,7 @@
   {
    "id": "osm:node/2274485025",
    "name": "Black Watch Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.950126,
    "lng": -3.194538,
@@ -2778,6 +2872,7 @@
   {
    "id": "osm:node/3975619625",
    "name": "Bore Stone",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.931216,
    "lng": -3.209819,
@@ -2796,6 +2891,7 @@
   {
    "id": "osm:way/321129859",
    "name": "Burns Monument",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.953435,
    "lng": -3.178319,
@@ -2814,6 +2910,7 @@
   {
    "id": "osm:node/351117096",
    "name": "Caiy Stane",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.902324,
    "lng": -3.213189,
@@ -2832,6 +2929,7 @@
   {
    "id": "osm:way/308919343",
    "name": "Catherine Sinclair Monument",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.953174,
    "lng": -3.207594,
@@ -2850,6 +2948,7 @@
   {
    "id": "osm:node/2940854453",
    "name": "Charles II of England",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.94923,
    "lng": -3.190517,
@@ -2868,6 +2967,7 @@
   {
    "id": "osm:way/70836441",
    "name": "City Art Centre",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.951019,
    "lng": -3.189191,
@@ -2886,6 +2986,7 @@
   {
    "id": "osm:way/326060905",
    "name": "City Dome",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.955179,
    "lng": -3.1831,
@@ -2904,6 +3005,7 @@
   {
    "id": "osm:node/11503362946",
    "name": "Close",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.955663,
    "lng": -3.202238,
@@ -2938,6 +3040,7 @@
   {
    "id": "osm:node/3249160727",
    "name": "Coburg House Studios",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.976054,
    "lng": -3.174313,
@@ -2970,6 +3073,7 @@
   {
    "id": "osm:node/12552254532",
    "name": "Cockburn Geological Museum",
+   "nameEn": null,
    "kind": "museum",
    "lat": 55.923959,
    "lng": -3.174618,
@@ -2988,6 +3092,7 @@
   {
    "id": "osm:way/867700212",
    "name": "College War Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.930872,
    "lng": -3.216816,
@@ -3006,6 +3111,7 @@
   {
    "id": "osm:node/5337269697",
    "name": "Colonel Mackenzie Statue",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.948921,
    "lng": -3.197396,
@@ -3024,6 +3130,7 @@
   {
    "id": "osm:way/30886822",
    "name": "Corstorphine Hill Tower",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.950991,
    "lng": -3.272356,
@@ -3042,6 +3149,7 @@
   {
    "id": "osm:node/2112878976",
    "name": "David Hume Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.949552,
    "lng": -3.192443,
@@ -3060,6 +3168,7 @@
   {
    "id": "osm:node/2934518744",
    "name": "Dean Ramsay Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.9503,
    "lng": -3.205651,
@@ -3078,6 +3187,7 @@
   {
    "id": "osm:node/499991519",
    "name": "Dovecot Gallery",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.948206,
    "lng": -3.184841,
@@ -3121,6 +3231,7 @@
   {
    "id": "osm:node/708975728",
    "name": "Dr Thomas Chalmers Statue",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.95246,
    "lng": -3.203511,
@@ -3139,6 +3250,7 @@
   {
    "id": "osm:way/287551981",
    "name": "Duke of Wellington Statue",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.953471,
    "lng": -3.189151,
@@ -3157,6 +3269,7 @@
   {
    "id": "osm:node/4437637818",
    "name": "Earl Haig",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.948897,
    "lng": -3.201715,
@@ -3175,6 +3288,7 @@
   {
    "id": "osm:node/574304142",
    "name": "Edinburgh Farmers' Market",
+   "nameEn": null,
    "kind": "market",
    "lat": 55.947763,
    "lng": -3.203553,
@@ -3206,6 +3320,7 @@
   {
    "id": "osm:way/659876969",
    "name": "Edinburgh Printmakers",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.94198,
    "lng": -3.212814,
@@ -3224,6 +3339,7 @@
   {
    "id": "osm:relation/952934",
    "name": "Edinburgh Zoo",
+   "nameEn": null,
    "kind": "zoo",
    "lat": 55.945455,
    "lng": -3.268959,
@@ -3242,6 +3358,7 @@
   {
    "id": "osm:node/3974215891",
    "name": "Embassy",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.9752,
    "lng": -3.179327,
@@ -3260,6 +3377,7 @@
   {
    "id": "osm:node/2934518745",
    "name": "Fifth Duke of Buccleuch Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.949493,
    "lng": -3.191713,
@@ -3278,6 +3396,7 @@
   {
    "id": "osm:node/5337269695",
    "name": "Frederick, Duke of York Statue",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.948885,
    "lng": -3.19785,
@@ -3296,6 +3415,7 @@
   {
    "id": "osm:way/41299992",
    "name": "Gatehouse",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.948518,
    "lng": -3.198655,
@@ -3314,6 +3434,7 @@
   {
    "id": "osm:node/708975731",
    "name": "George IV statue",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.953518,
    "lng": -3.197258,
@@ -3332,6 +3453,7 @@
   {
    "id": "osm:way/671841776",
    "name": "Granton Castle Walled Garden",
+   "nameEn": null,
    "kind": "garden",
    "lat": 55.982028,
    "lng": -3.241544,
@@ -3382,6 +3504,7 @@
   {
    "id": "osm:node/5629281877",
    "name": "Grassmarket Market",
+   "nameEn": null,
    "kind": "market",
    "lat": 55.947498,
    "lng": -3.196027,
@@ -3413,6 +3536,7 @@
   {
    "id": "osm:node/6587070940",
    "name": "Harrison Memorial Arch",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.924806,
    "lng": -3.18177,
@@ -3431,6 +3555,7 @@
   {
    "id": "osm:node/9760074407",
    "name": "Heart Of Midlothian War Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.946285,
    "lng": -3.216497,
@@ -3449,6 +3574,7 @@
   {
    "id": "osm:node/10000355057",
    "name": "Heart of Midlothian Museum",
+   "nameEn": null,
    "kind": "museum",
    "lat": 55.938236,
    "lng": -3.232626,
@@ -3467,6 +3593,7 @@
   {
    "id": "osm:node/10765920705",
    "name": "Hike to Arthurs Seat",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": 55.944633,
    "lng": -3.159285,
@@ -3485,6 +3612,7 @@
   {
    "id": "osm:node/799920963",
    "name": "Hilltop",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": 55.947287,
    "lng": -3.270383,
@@ -3503,6 +3631,7 @@
   {
    "id": "osm:node/10106526101",
    "name": "Image Collective",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.981261,
    "lng": -3.177046,
@@ -3521,6 +3650,7 @@
   {
    "id": "osm:node/5856860528",
    "name": "Ingleby Gallery",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.957844,
    "lng": -3.191354,
@@ -3577,6 +3707,7 @@
   {
    "id": "osm:way/169111780",
    "name": "Inspace",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.944948,
    "lng": -3.186732,
@@ -3595,6 +3726,7 @@
   {
    "id": "osm:node/2934518746",
    "name": "John Knox Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.949636,
    "lng": -3.195078,
@@ -3613,6 +3745,7 @@
   {
    "id": "osm:node/7160189298",
    "name": "John Rattray Statue",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.971975,
    "lng": -3.163259,
@@ -3631,6 +3764,7 @@
   {
    "id": "osm:way/313680591",
    "name": "John Wilson Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.951991,
    "lng": -3.19545,
@@ -3649,6 +3783,7 @@
   {
    "id": "osm:node/3237281852",
    "name": "KB Smile Studio",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.939398,
    "lng": -3.194842,
@@ -3667,6 +3802,7 @@
   {
    "id": "osm:node/5388332449",
    "name": "Leith Market",
+   "nameEn": null,
    "kind": "market",
    "lat": 55.976868,
    "lng": -3.171536,
@@ -3698,6 +3834,7 @@
   {
    "id": "osm:node/2265831081",
    "name": "Masons' Pillars",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.942015,
    "lng": -3.200308,
@@ -3716,6 +3853,7 @@
   {
    "id": "osm:node/5110780767",
    "name": "McEwan Lantern Pillar",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.945338,
    "lng": -3.188262,
@@ -3734,6 +3872,7 @@
   {
    "id": "osm:way/314699624",
    "name": "Memorial to John, Fourth Earl of Hopetoun",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.954456,
    "lng": -3.191655,
@@ -3752,6 +3891,7 @@
   {
    "id": "osm:way/22938984",
    "name": "Modern One",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.950823,
    "lng": -3.227761,
@@ -3789,6 +3929,7 @@
   {
    "id": "osm:node/4625806993",
    "name": "Museum Collections Centre",
+   "nameEn": null,
    "kind": "museum",
    "lat": 55.957698,
    "lng": -3.192734,
@@ -3807,6 +3948,7 @@
   {
    "id": "osm:node/2977624480",
    "name": "Museum of Magic, Fortune-Telling and Witchcraft",
+   "nameEn": null,
    "kind": "museum",
    "lat": 55.950674,
    "lng": -3.185828,
@@ -3825,6 +3967,7 @@
   {
    "id": "osm:node/9422760984",
    "name": "Museum of Scottish Fire Heritage",
+   "nameEn": null,
    "kind": "museum",
    "lat": 55.963784,
    "lng": -3.183836,
@@ -3860,6 +4003,7 @@
   {
    "id": "osm:node/1484679632",
    "name": "North Viewpoint",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": 55.956036,
    "lng": -3.182486,
@@ -3878,6 +4022,7 @@
   {
    "id": "osm:way/98616658",
    "name": "Old Stockbridge Market Entrance",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.957953,
    "lng": -3.207182,
@@ -3896,6 +4041,7 @@
   {
    "id": "osm:node/5002102709",
    "name": "One O'Clock Gun Exhibition",
+   "nameEn": null,
    "kind": "museum",
    "lat": 55.949141,
    "lng": -3.200915,
@@ -3914,6 +4060,7 @@
   {
    "id": "osm:node/3798302141",
    "name": "Photo trail",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": 55.952766,
    "lng": -3.191766,
@@ -3932,6 +4079,7 @@
   {
    "id": "osm:way/819769888",
    "name": "Physic Garden",
+   "nameEn": null,
    "kind": "garden",
    "lat": 55.952997,
    "lng": -3.174188,
@@ -3981,6 +4129,7 @@
   {
    "id": "osm:way/135170177",
    "name": "Playfair Monument",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.954799,
    "lng": -3.183024,
@@ -3999,6 +4148,7 @@
   {
    "id": "osm:node/1145319664",
    "name": "Prince Of Wales Fountain",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.954186,
    "lng": -3.10872,
@@ -4017,6 +4167,7 @@
   {
    "id": "osm:node/1356336502",
    "name": "Prisoners of War Museum",
+   "nameEn": null,
    "kind": "museum",
    "lat": 55.948116,
    "lng": -3.20015,
@@ -4035,6 +4186,7 @@
   {
    "id": "osm:way/1434158740",
    "name": "Queen Victoria",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.970714,
    "lng": -3.17161,
@@ -4053,6 +4205,7 @@
   {
    "id": "osm:way/30994705",
    "name": "Redhall Walled Garden",
+   "nameEn": null,
    "kind": "garden",
    "lat": 55.920394,
    "lng": -3.250585,
@@ -4088,6 +4241,7 @@
   {
    "id": "osm:node/283456724",
    "name": "Rest and Be Thankful",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": 55.947711,
    "lng": -3.263952,
@@ -4106,6 +4260,7 @@
   {
    "id": "osm:node/1784442040",
    "name": "Robert Louis Stevenson Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.95004,
    "lng": -3.202456,
@@ -4124,6 +4279,7 @@
   {
    "id": "osm:node/36581493",
    "name": "Robert Viscount Melville",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.949658,
    "lng": -3.21394,
@@ -4142,6 +4298,7 @@
   {
    "id": "osm:way/397175911",
    "name": "Royal Scots Greys Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.951374,
    "lng": -3.199412,
@@ -4160,6 +4317,7 @@
   {
    "id": "osm:way/87686766",
    "name": "Royal Scots Monument",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.95109,
    "lng": -3.197116,
@@ -4178,6 +4336,7 @@
   {
    "id": "osm:node/2298043778",
    "name": "Saorsa Art Gallery",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.958059,
    "lng": -3.20934,
@@ -4212,6 +4371,7 @@
   {
    "id": "osm:node/12670410517",
    "name": "Scott Lawrie Gallery",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.946127,
    "lng": -3.206505,
@@ -4255,6 +4415,7 @@
   {
    "id": "osm:node/5337269696",
    "name": "Scottish Horse Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.948927,
    "lng": -3.197592,
@@ -4273,6 +4434,7 @@
   {
    "id": "osm:node/1784442037",
    "name": "Scottish Norwegian Training Areas Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.950218,
    "lng": -3.201984,
@@ -4291,6 +4453,7 @@
   {
    "id": "osm:way/322220495",
    "name": "Scottish-American Soldiers Monument",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.953474,
    "lng": -3.186132,
@@ -4309,6 +4472,7 @@
   {
    "id": "osm:way/314600291",
    "name": "Sir James Young Simpson Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.950387,
    "lng": -3.205049,
@@ -4327,6 +4491,7 @@
   {
    "id": "osm:node/259860021",
    "name": "South Viewpoint",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": 55.954119,
    "lng": -3.180849,
@@ -4345,6 +4510,7 @@
   {
    "id": "osm:way/93234798",
    "name": "St Bernard's Well",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.955277,
    "lng": -3.21148,
@@ -4363,6 +4529,7 @@
   {
    "id": "osm:node/2934543737",
    "name": "Stills",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.950677,
    "lng": -3.190214,
@@ -4398,6 +4565,7 @@
   {
    "id": "osm:node/2338447599",
    "name": "Stockbridge Market",
+   "nameEn": null,
    "kind": "market",
    "lat": 55.957629,
    "lng": -3.208443,
@@ -4429,6 +4597,7 @@
   {
    "id": "osm:node/727348494",
    "name": "Studio Bizio",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.959027,
    "lng": -3.210572,
@@ -4465,6 +4634,7 @@
   {
    "id": "osm:node/3072411821",
    "name": "Surgeons' Hall Museums",
+   "nameEn": null,
    "kind": "museum",
    "lat": 55.946767,
    "lng": -3.18468,
@@ -4502,6 +4672,7 @@
   {
    "id": "osm:node/2131101051",
    "name": "The Atelier Gallery",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.9629,
    "lng": -3.2004,
@@ -4550,6 +4721,7 @@
   {
    "id": "osm:node/3152958383",
    "name": "The Conservation Studio",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.970171,
    "lng": -3.170069,
@@ -4568,6 +4740,7 @@
   {
    "id": "osm:way/648755293",
    "name": "The Hillside",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.955132,
    "lng": -3.183478,
@@ -4586,6 +4759,7 @@
   {
    "id": "osm:node/12214701901",
    "name": "The Pitt",
+   "nameEn": null,
    "kind": "market",
    "lat": 55.98309,
    "lng": -3.242743,
@@ -4604,6 +4778,7 @@
   {
    "id": "osm:node/9342385837",
    "name": "The Porty Light Box",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.951465,
    "lng": -3.108744,
@@ -4622,6 +4797,7 @@
   {
    "id": "osm:node/11251068260",
    "name": "The Scottish Gallery",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.956488,
    "lng": -3.199197,
@@ -4640,6 +4816,7 @@
   {
    "id": "osm:node/1241884003",
    "name": "The Spirit of Leithers",
+   "nameEn": null,
    "kind": "museum",
    "lat": 55.980888,
    "lng": -3.178245,
@@ -4658,6 +4835,7 @@
   {
    "id": "osm:node/364446028",
    "name": "The Tower",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.955493,
    "lng": -3.112744,
@@ -4676,6 +4854,7 @@
   {
    "id": "osm:way/314600292",
    "name": "Thomas Guthrie Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.950811,
    "lng": -3.202635,
@@ -4694,6 +4873,7 @@
   {
    "id": "osm:node/10537342908",
    "name": "Trevor Jones Art",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.964656,
    "lng": -3.174342,
@@ -4712,6 +4892,7 @@
   {
    "id": "osm:node/4680041494",
    "name": "Tron Kirk Market",
+   "nameEn": null,
    "kind": "market",
    "lat": 55.949984,
    "lng": -3.187737,
@@ -4741,6 +4922,7 @@
   {
    "id": "osm:node/12207082837",
    "name": "Unlimited Corporation",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.960224,
    "lng": -3.17981,
@@ -4759,6 +4941,7 @@
   {
    "id": "osm:node/9775076217",
    "name": "View over Dean Village",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": 55.953223,
    "lng": -3.214557,
@@ -4777,6 +4960,7 @@
   {
    "id": "osm:node/4327957218",
    "name": "W.H. Playfair Statue",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.947584,
    "lng": -3.188931,
@@ -4795,6 +4979,7 @@
   {
    "id": "osm:node/1982074287",
    "name": "War Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.945911,
    "lng": -3.193054,
@@ -4813,6 +4998,7 @@
   {
    "id": "osm:node/8437613729",
    "name": "Water of Leith Walkway Stedfastgate",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.971689,
    "lng": -3.190494,
@@ -4831,6 +5017,7 @@
   {
    "id": "osm:node/3103808183",
    "name": "Watson Gallery",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.95422,
    "lng": -3.201469,
@@ -4879,6 +5066,7 @@
   {
    "id": "osm:node/4595156763",
    "name": "Wauchope Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.93416,
    "lng": -3.118937,
@@ -4897,6 +5085,7 @@
   {
    "id": "osm:node/538531426",
    "name": "West Bow Well",
+   "nameEn": null,
    "kind": "attraction",
    "lat": 55.947988,
    "lng": -3.194474,
@@ -4915,6 +5104,7 @@
   {
    "id": "osm:node/12085784974",
    "name": "White Space",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.943955,
    "lng": -3.181929,
@@ -4933,6 +5123,7 @@
   {
    "id": "osm:node/3046175814",
    "name": "William Chambers Statue",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.947391,
    "lng": -3.189792,
@@ -4951,6 +5142,7 @@
   {
    "id": "osm:node/3246039646",
    "name": "William Gladstone Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.94854,
    "lng": -3.212283,
@@ -4969,6 +5161,7 @@
   {
    "id": "osm:node/3342159195",
    "name": "William Pitt Statue",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.952983,
    "lng": -3.20039,
@@ -4987,6 +5180,7 @@
   {
    "id": "osm:way/505364483",
    "name": "Wojtek Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 55.950769,
    "lng": -3.202131,
@@ -5005,6 +5199,7 @@
   {
    "id": "osm:node/2333922708",
    "name": "Yaniv Edery Gallery",
+   "nameEn": null,
    "kind": "gallery",
    "lat": 55.956968,
    "lng": -3.187547,
@@ -5021,6 +5216,547 @@
    "hours": null
   }
  ],
+ "near": "venues",
+ "stay": [
+  {
+   "id": "osm:node/1925396114",
+   "name": "Radisson Collection Royal Mile Edinburgh",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 55.949091,
+   "lng": -3.192759,
+   "address": "1 George IV Bridge, EH1 1AD",
+   "website": "https://www.radissoncollection.com/en/royalmile-hotel-edinburgh",
+   "wikidata": null,
+   "openingHours": "closed",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": []
+    }
+   ],
+   "toVenueM": 34,
+   "venuesNear": 184
+  },
+  {
+   "id": "osm:node/1849610106",
+   "name": "Fraser Suites Edinburgh",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 55.95,
+   "lng": -3.191915,
+   "address": "12-26 St Giles' Street, EH1 1PT",
+   "website": "https://edinburgh.frasershospitality.com/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 79,
+   "venuesNear": 184
+  },
+  {
+   "id": "osm:way/292053486",
+   "name": "a&o Hostel",
+   "nameEn": null,
+   "kind": "hostel",
+   "stars": 5.0,
+   "cuisine": null,
+   "lat": 55.949138,
+   "lng": -3.186067,
+   "address": "50 Blackfriars Street, EH1 1NE",
+   "website": "https://www.aohostels.com/en/edinburgh/",
+   "wikidata": "Q111117740",
+   "openingHours": "24/7",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "00:00",
+       "24:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 20,
+   "venuesNear": 159
+  },
+  {
+   "id": "osm:node/913823197",
+   "name": "Radisson Blu Hotel",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": 4.0,
+   "cuisine": null,
+   "lat": 55.95009,
+   "lng": -3.186916,
+   "address": "80 High Street, EH1 1TH",
+   "website": "https://www.radissonhotels.com/en-us/hotels/radisson-blu-edinburgh",
+   "wikidata": "Q111368360",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 37,
+   "venuesNear": 166
+  },
+  {
+   "id": "osm:node/913817590",
+   "name": "Apex Waterloo Place Hotel",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": 4.0,
+   "cuisine": null,
+   "lat": 55.953916,
+   "lng": -3.186947,
+   "address": "23-27 Waterloo Place, EH1 3BG",
+   "website": "https://www.apexhotels.co.uk/destinations/edinburgh/apex-waterloo-place-hotel/",
+   "wikidata": "Q7974245",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 46,
+   "venuesNear": 151
+  },
+  {
+   "id": "osm:node/736217624",
+   "name": "Hilton Edinburgh Carlton",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": 4.0,
+   "cuisine": null,
+   "lat": 55.950751,
+   "lng": -3.187522,
+   "address": "19 North Bridge, EH1 1SD",
+   "website": "https://www.hilton.com/en/hotels/edicahi-hilton-edinburgh-carlton/",
+   "wikidata": "Q17793480",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 73,
+   "venuesNear": 165
+  },
+  {
+   "id": "osm:node/581870354",
+   "name": "Le Monde",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 55.953497,
+   "lng": -3.196094,
+   "address": "16 George Street, EH2 2SL",
+   "website": "https://lemondehotel.co.uk/",
+   "wikidata": "Q111368372",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 0,
+   "venuesNear": 163
+  },
+  {
+   "id": "osm:node/2339288065",
+   "name": "The Scotsman Hotel",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 55.951082,
+   "lng": -3.18853,
+   "address": "20-24 North Bridge, EH1 1TR",
+   "website": "http://www.thescotsmanhotel.co.uk/",
+   "wikidata": "Q7762635",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 4,
+   "venuesNear": 165
+  }
+ ],
+ "eat": [
+  {
+   "id": "osm:node/2112358148",
+   "name": "Whiski Rooms",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": null,
+   "lat": 55.949893,
+   "lng": -3.193576,
+   "address": "7 North Bank Street, EH1 2LP",
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 46,
+   "venuesNear": 184
+  },
+  {
+   "id": "osm:node/2880855625",
+   "name": "August 37",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": null,
+   "lat": 55.950147,
+   "lng": -3.191978,
+   "address": "12-26 St Giles' Street, EH1 1PT",
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 92,
+   "venuesNear": 184
+  },
+  {
+   "id": "osm:node/2114480005",
+   "name": "Le Petit Beefbar Edinburgh",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "beef",
+    "meat"
+   ],
+   "lat": 55.953834,
+   "lng": -3.196742,
+   "address": "21-25 George Street, EH2 2PB",
+   "website": "https://beefbar.com/le-petit-beefbar-edinburgh/",
+   "wikidata": null,
+   "openingHours": "Mo-Th 17:30-22:00; Fr 12:30-15:30,17:30-22:00; Sa-Su 12:30-22:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "17:30",
+       "22:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr"
+     ],
+     "spans": [
+      [
+       "12:30",
+       "15:30"
+      ],
+      [
+       "17:30",
+       "22:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "12:30",
+       "22:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 9,
+   "venuesNear": 153
+  },
+  {
+   "id": "osm:node/3716897863",
+   "name": "Merchants",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "scottish"
+   ],
+   "lat": 55.947558,
+   "lng": -3.191858,
+   "address": "17 Merchant Street, EH1 2QD",
+   "website": "https://www.merchantsrestaurant.co.uk/",
+   "wikidata": null,
+   "openingHours": "Mo-Fr 12:00-14:00, 18:00-22:00; Sa 18:00-22:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "14:00"
+      ],
+      [
+       "18:00",
+       "22:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "18:00",
+       "22:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 12,
+   "venuesNear": 175
+  },
+  {
+   "id": "osm:node/1472180941",
+   "name": "The Witchery",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": null,
+   "lat": 55.948807,
+   "lng": -3.195626,
+   "address": "352 Castlehill, EH1 2NF",
+   "website": "https://www.thewitchery.com/",
+   "wikidata": "Q7775304",
+   "openingHours": "Mo-Su 12:00-23:30",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "23:30"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 16,
+   "venuesNear": 178
+  },
+  {
+   "id": "osm:node/499991674",
+   "name": "Wuzhen of China",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "ch",
+    "chinese"
+   ],
+   "lat": 55.947071,
+   "lng": -3.185744,
+   "address": "6A Nicolson Street, EH8 9DH",
+   "website": "https://wuzhen.co.uk/",
+   "wikidata": null,
+   "openingHours": "Mo-Fr 12:00-22:00; Sa-Su 12:00-23:00; PH off",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "22:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "23:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 17,
+   "venuesNear": 138
+  },
+  {
+   "id": "osm:node/736204952",
+   "name": "Vittoria",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "italian"
+   ],
+   "lat": 55.947766,
+   "lng": -3.191932,
+   "address": "19 George IV Bridge, EH1 1EN",
+   "website": "https://www.vittoriagroup.co.uk/",
+   "wikidata": null,
+   "openingHours": "11:30-23:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "11:30",
+       "23:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 18,
+   "venuesNear": 177
+  },
+  {
+   "id": "osm:node/2345480633",
+   "name": "Ciao Roma",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "italian"
+   ],
+   "lat": 55.947411,
+   "lng": -3.1857,
+   "address": "3-3A Drummond Street, EH8 9TT",
+   "website": "http://www.hispaniola-edinburgh.co.uk/",
+   "wikidata": null,
+   "openingHours": "Mo-Su 12:00-23:30",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "23:30"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 24,
+   "venuesNear": 138
+  }
+ ],
+ "trips": [
+  {
+   "name": "South Queensferry",
+   "page": "South Queensferry",
+   "url": "https://en.wikivoyage.org/wiki/South_Queensferry",
+   "description": "South Queensferry is an old harbour with the iconic Forth Bridge for rail, and two modern road bridges crossing to Fife.",
+   "lat": 55.9891,
+   "lng": -3.3962,
+   "km": 14
+  },
+  {
+   "name": "Dunfermline",
+   "page": "Dunfermline",
+   "url": "https://en.wikivoyage.org/wiki/Dunfermline",
+   "description": "Dunfermline is the ancient royal capital of Scotland, and birthplace of industrialist Andrew Carnegie.",
+   "lat": 56.071389,
+   "lng": -3.461667,
+   "km": 21
+  },
+  {
+   "name": "Gullane",
+   "page": "Gullane",
+   "url": "https://en.wikivoyage.org/wiki/Gullane",
+   "description": "Gullane has an excellent beach, backed by sand-hills and a great golf course. The Museum of Flight is a few miles inland.",
+   "lat": 56.03711,
+   "lng": -2.8265,
+   "km": 24
+  },
+  {
+   "name": "Linlithgow",
+   "page": "Linlithgow",
+   "url": "https://en.wikivoyage.org/wiki/Linlithgow",
+   "description": "Linlithgow has a ruined Palace, abode of Mary, Queen of Scots.",
+   "lat": 55.9791,
+   "lng": -3.6105,
+   "km": 26
+  },
+  {
+   "name": "Culross",
+   "page": "Culross",
+   "url": "https://en.wikivoyage.org/wiki/Culross",
+   "description": "Culross is a gem of a 17th-18th century village to the east of the bridges.",
+   "lat": 56.0554,
+   "lng": -3.6293,
+   "km": 30
+  },
+  {
+   "name": "North Berwick",
+   "page": "North Berwick",
+   "url": "https://en.wikivoyage.org/wiki/North_Berwick",
+   "description": "North Berwick is a fishing village near the sea-bird reserve of Bass Rock and the 14th century Tantallon Castle.",
+   "lat": 56.0582,
+   "lng": -2.717,
+   "km": 32
+  }
+ ],
+ "guide": {
+  "page": "Edinburgh",
+  "url": "https://en.wikivoyage.org/wiki/Edinburgh"
+ },
+ "licences": {
+  "osm": {
+   "name": "ODbL",
+   "url": "https://opendatacommons.org/licenses/odbl/",
+   "attribution": "© OpenStreetMap contributors",
+   "credit": "https://www.openstreetmap.org/copyright"
+  },
+  "wikidata": {
+   "name": "CC0",
+   "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "attribution": "Wikidata"
+  },
+  "wikivoyage": {
+   "name": "CC BY-SA 4.0",
+   "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "attribution": "Wikivoyage contributors"
+  }
+ },
  "provenance": {
   "osm": {
    "fetchedAt": "2026-09-25T14:04:10Z",
@@ -5028,9 +5764,19 @@
    "fetcherVersion": 1
   },
   "wikidata": {
-   "fetchedAt": "2026-09-25T14:04:12Z",
+   "fetchedAt": "2026-10-02T18:21:06Z",
    "fetcher": "scraper/cities/fetch.py",
-   "fetcherVersion": 1
+   "fetcherVersion": 2
+  },
+  "amenities": {
+   "fetchedAt": "2026-10-02T18:36:08Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikivoyage": {
+   "fetchedAt": "2026-10-02T18:12:40Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
   }
  }
 }

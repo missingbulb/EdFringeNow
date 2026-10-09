@@ -1,0 +1,1711 @@
+{
+ "v": 1,
+ "festival": {
+  "id": "icisa",
+  "edition": "2026",
+  "ordinal": null,
+  "name": "ICISA, International Conference of the Israel Society of Anesthesiologists",
+  "nameLocal": "הכנס הבינלאומי של איגוד הרופאים המרדימים",
+  "city": "Tel Aviv",
+  "country": "IL",
+  "lat": 32.0654,
+  "lng": 34.7637,
+  "timezone": "Asia/Jerusalem",
+  "lang": "en",
+  "dir": "ltr",
+  "kind": "academic",
+  "defaultGenre": "talk",
+  "site": "https://www.icisa2026.com/",
+  "firstDate": "2026-11-17",
+  "lastDate": "2026-11-19",
+  "ticketing": {
+   "model": "festival-pass",
+   "url": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "notes": "Registration through the conference's local and international registration forms (forms-wizard.biz); the site publishes payment terms and a cancellation policy, and no session is sold on its own.",
+   "source": "https://www.icisa2026.com/localregistration"
+  }
+ },
+ "categories": [],
+ "venues": [
+  {
+   "id": "david-intercontinental",
+   "name": "The David InterContinental Hotel Tel Aviv",
+   "address": "Kaufmann St 12, Tel Aviv",
+   "lat": 32.0653939,
+   "lng": 34.7636824,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {
+     "id": "hall-a",
+     "name": "Hall A",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "hall-b",
+     "name": "Hall B",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "hall-c",
+     "name": "Hall C",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "hall-d",
+     "name": "Hall D",
+     "capacity": null,
+     "layout": null
+    }
+   ],
+   "accessibility": null,
+   "notes": "On-site parking at the hotel, first come first served, at a discounted daily fee with the conference's parking-card encoder (the venue page).",
+   "refs": [
+    "https://www.icisa2026.com/conferencevenue",
+    "https://www.openstreetmap.org/way/90846147"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "2026-11-17-0730-all-halls",
+   "title": "Breakfast Session",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-17-0830-hall-a",
+   "title": "Symposium - Perioperative Medicine",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Introducing Perioperative Medicine. The Global Alignment — David Story and Idit Matot\nIntroducing Perioperative Medicine. The Global — Alignment - David Story (Virtual) and Idit Matot\nWhy Perioperative Medicine — Joel Symons\nPerioperative Risk Prediction and Prehabilitation — Bernhard Riedel\nPhysiology and Evidence Based Perioperative Medicine — Lorenzo Ball\nUnstoppable Debate: The Integrative Approach is Unnecessary, the Surgeon Decides What's Best CON: Bernard Reidel — PRO: Yoram Klein",
+   "durationMin": 150,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-17-0830-hall-b",
+   "title": "Monitoring - All those Waves",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator: TBA\nMachine Learning in Non Invasive Blood Presure — Maxime Cannesson\nDo We Make a Difference? — Tomer Talmy\nHow are these Lines Related to Anesthesia? Making Sense of EEG — Eilat Kahana",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-17-0830-hall-c",
+   "title": "General / Resuscitation: Critically-ill Patient and Rescusitation",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator: TBA\nThe Challenges of the Critically ill Cirrhotic Patient — Julia Wendon\nWhat are the PeRLS of OR Rescusitation? — Michael O'Connor\nRedefining Severity: The SOFA-2 Score — Do We Need an Update at the Bedside? — Mervyn Singer",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-17-0830-hall-d",
+   "title": "PACU/ICU Nurses",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Session 1\nThe Obstetric Patient in PACU — Aviva Green\nThe Pediatric Patient in PACU — Shir Morgenstern\nThe Obese Patient in PACU — Shai David Kropveld",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-17-0930-hall-b",
+   "title": "Trauma Anaesthesia: Playing Chess with Time",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator: Nadav Sheffy\nPlaying strategic Chess with the Angel of Death: Precision moves in critical Trauma Anesthesia — David Ben Ari\nREBOA in Trauma Patients — Alex Zlotnik\nRevolutionizing Analgesia for Acute Trauma Patients on Admission — Ron Samet\nTraumatic Brain Injury in the Geriatric Population - Do we Need a Different Approach? — Dafna Willner\nDiscussion",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-17-0930-hall-c",
+   "title": "Pediatrics: Tips and Tricks in Pediatric Anesthesia",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator: TBA\nDevelopmental Anaesthesia Neurotoxicity: Old Fear or Ongoing Concern? — Laszlo Vutskits\nPharmacodynamic Monitoring of the Anesthetic State in Children: Precision Medicine or Shiny Gadgets? — David Hoppenstein\nFascial Plane Blocks in Children: Tricks, Traps, and Controversies — Eleana Garini\nThe Opioid-Free Child: Should We Drop the Habit in Pediatric Anesthesia? — David Polaner",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-17-0930-hall-d",
+   "title": "Technicians' Session",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Advanced Monitoring — High Flow Nasal Oxygen — Anna Savastyanova\nLung Separation — Maxim Pugachov\nBrain Monitoring — Ofir Odeser",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-17-1130-all-halls",
+   "title": "Opening Ceremony",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-17-1200-all-halls",
+   "title": "Plenary: Fluids: From Theory to Bedside Practice",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Maurizio Cecconi",
+   "durationMin": 45,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-17-1345-hall-a",
+   "title": "Unstoppable Salon Talks: Women in Anesthesia",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator: Idit Matot\nNavigating Work and Home — Einat Refaeli\nIs There Hope for the Army? — Regina Pikman\nIs the Grass Greener Elsewhere? — Daniela Filipescu\nWomen in Leadership in Anaesthesia — Anne-Marie Camilleri Podesta\nAim for the Moon and Beyond — Idit Matot",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-17-1345-hall-b",
+   "title": "General: Guardians of recovery: Navigating PACU Challenges",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator: Alex Zegerman\nIs He Ready for Discharge? And who Gets to Decide? Rethinking Discharge from PACU — Nadav Sheffy\nPONV - A Little Big Problem — Daniela Ionescu\nTBA\nDiscussion",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-17-1345-hall-c",
+   "title": "Brain: Mind Matters: Perioperative Cognition, Delirium, and Recovery",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator : TBA\nWhy So Much Confusion? The Mechanisms of Perioperative Neurocognitive Disorders — Miles Berger\nCognitive Prehabilitation Before Surgery — Itay Bentov\nPerioperative Cognitive Management — Başak Ceyda MEÇO",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-17-1345-hall-d",
+   "title": "Secretaries Session",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Not According to the Plan, But Exactly According to the Path: About Motherhood, Career, and the Freedom to Start Over — Shelly Gat\nThe Co-Pilot in the Chaos: How I used AI to Fight Resident Burnout — Ian Kurland",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-17-1445-hall-a",
+   "title": "Obstetrics: Unstoppable Salon Talk",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Failed Neuraxial Analgesia and Anesthesia Moderator: Ronald George\nGuasch Emilia\nNasir Hawash\nRuth Landau\nCarolyn Weiniger",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-17-1445-hall-b",
+   "title": "Medical Education: Voice and Visibility in Anaesthesia: Seeing, Speaking, Leading",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Being Seen Without Being Judged: Automating Debriefing in Simulation — Aviva Green\nBringing Psychological Safety to Life: Enabling Speaking Up — Sara Goldhaber Fiebert\nThe Role of the Anaesthesiologist in Global Health: WFSA Priorities, Equity and Advocacy in 2026 — Carolina Haylock-Loor",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-17-1445-hall-c",
+   "title": "General: Last Orders? Farewell",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "moderator: TBA\nSo Long, Farewell, Neostigmine — Zoriana Melnychuk\nCan we Send the Laryngoscope to the Museum? — Vasile Recea\nCricoid Pressure: Holding On or Slipping Away? — Ron Eshel\nNitrous Oxide: Still Laughing, or Leaving the Room? — Ingrid Brodskii",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-17-1445-hall-d",
+   "title": "PACU/ICU Nurses",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Session 2\nDiscomfort in PACU — Shelly Ashkenazy\nPain Management in PACU — Netanel Suissa\nDelirium in PACU — Yossef Kislevich",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-17-1615-hall-a",
+   "title": "Unstoppable Salon Talks: Getting Your Paper Published - Tips from Journal Editors",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator: Ruth Landau\nLaszlo Vutskits\nMaxime Cannesson\nTuran Alparslan",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-17-1615-hall-b",
+   "title": "ICU: Ventilate or Cannulate? ECMO Timing in Viral Pneumonia",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator: Sigal Sviri\nDebate: Mechanical Ventilation Should be Trialed — Before ECMO:\nMechanical Ventilation - Danny Talmor — ECMO - Dekel Stavi\nDiscussion",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-17-1615-hall-c",
+   "title": "What have we Learned From the War?",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator: TBA\nSetting up for Wartime by Managing During Peace Time — Dina Orkin\nMedicine Under the Ground — Avi Weismann\nRecovering from Missile Attack — Shahar Negev",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-17-1615-hall-d",
+   "title": "Pediatrics: There's a limit to everything",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator: TBA\nWhen to Say No to NORA — Dana Karol\nWhen to Stop Life Support in Children — Margaret Ekstein",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-18-0730-all-halls",
+   "title": "ISAACC18 Breakfast Session: Navigating Fellowship Opportunities Abroad: What Israeli Residents and Junior Faculty Need to Know",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-18-0830-hall-a",
+   "title": "AI Symposium: AI in Anaesthesia: From Promise to Practice",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Opening Talk TBA:\nThe AI Assistant in Preoperative Care: — Beyond Mallampati: AI-Powered Airway Assessment and Digital Pre-Anesthetic Evaluation — Lilach Hazan Van Duijn\nAI Based Echo for Preoperative Evaluation — Adi Zarka\nThe AI Assistant at the Bedside: — Integrating AI into Clinical Systems in Perioperative Care and Beyond — David Reich\nAI Ultrasonography Applications and Closed Loop Solutions — Sofia Hernandez Torres & Eric Snider\nUnstoppable Debate: AI Why should I? — Con: Keep AI Out of My OR - Jens Meier — Pro: If I Could Choose My Resident, — I’d Choose AI - Maxime Canneson",
+   "durationMin": 150,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-18-0830-hall-b",
+   "title": "Brain: The Customized Cortex: From Early Detection to Target-Specific Recovery",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator: Alex Zlotnik\nEarly Identification and Treatment of Brain Injury and Cognitive Deterioration — Dana Shahaf-Baron\nModulating APOE Signaling to Reduce Postoperative Delirium and Neuroinflammation- Results from the MARBLE Randomized Controlled Trial — Miles Berger\nAwake Craniotomy: Evidence, Challenges, and Societal Perspectives — Rudin Domi",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-18-0830-hall-c",
+   "title": "Trauma: Clinical Forum: Patient experience-",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator: Regina Pikman · Patient: Yoav Bichovsky\nTBA",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-18-0830-hall-d",
+   "title": "Heart",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator: TBA\nPrecision Cardiac Care: Advanced TEE Education — Mahmood Feroze\nERAS Protocols — Robina Matyal\nDear Cardiology, Do We Still Need You? — Zeev Goldik",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-18-0930-hall-b",
+   "title": "ICU/ Ventilation: From ICU Principles to OR Practice: Lung Protective Ventilation",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator: TBA\nSetting of Protective Mechanical Ventilation - Keep it Simple! — Marcelo de Gamma Abreo\nPerioperative Protective Lung Ventilation — Daniel Talmor\nSedation - Unnoticed Effects of our Treatment — Neta Golomb\nLung Protective Ventilation During Robotic and Laproscopic Surgery — Lorenzo Ball\nDiscussion",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-18-0930-hall-c",
+   "title": "General: Rethinking Anesthesia in Cancer Surgery",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator: Ilona Bobek\nAnesthesia - Can we Effect the Long Term Cancer Outcomes? — Daniela Ionescu\nBiological Aging and Outcomes After Cancer Surgery — Joshua Mincer\nCAR T-cell Therapy: Intensive Care Medicine View — Ilona Bobek\nTransfusion Practices and Outcomes in Hematology Patients — Maurizio Cecconi",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-18-0930-hall-d",
+   "title": "Pain: Stopping the Pain Surge: Chronic Pain Trajectory Modification",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator: Rita Leker\nRewiring the Future: 2026 Breakthroughs in Chronic PostSurgical Pain (CPSP) Prevention — Philippe Richebe\nCryoanalgesia-minimal Invasive Procedure for Chronic Pain Management — Arthur Finkelstein\nPercutaneous Spine Endoscopy - Is There a Limit? — Ovidiu Palea\nKetamine - The Old Drug for New Treatment — Susan Wazwaz",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-18-1130-all-halls",
+   "title": "Plenary: Competency-Based Medical Education: Training for Competence, Not Just Completion",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Anne-Marie Camilleri Podesta",
+   "durationMin": 45,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-18-1215-all-halls",
+   "title": "Best Abstract Session",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-18-1345-hall-a",
+   "title": "Lecture and Symposium",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "The Outcomes Research\nTuran Alparslan\nMarcelo Gama de Abreu\nCarolina Romero Soledad\nBarak Cohen\nEva Rivas",
+   "durationMin": 135,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-18-1345-hall-b",
+   "title": "The Anaesthesiologist Beyond the OR: Burnout, Leadership and Meaning",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator: Roni Hakim\nBurnout Behind the Drapes — Gabriel Gurman\nLeading from the OR: Cultivating Anaesthesia Leadership — Leonid Edelman\nManaging Anesthesia Teams Through the Lens of Happiness: From Plato to Spinoza — Raphaël Derman\nThe Anaesthesiologist of Tomorrow: Redefining the Role for the Decades Ahead — TBA",
+   "durationMin": 75,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-18-1345-hall-c",
+   "title": "Pediatrics: Clinical Forum: My 2 Year Old had a Light Breakfast: Stop or Continue",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Guidelines Update — TBA\nPreoperative Cear Fluid Fasting and Endoscopy-measured Gastric Fluid Volume in Children — Gabriela Ashkenazi\nManaging the Airway in Pediatric Emergencies — Lionel Davis\nAerodigestive Procedures - Sharing is Caring? — David Polaner",
+   "durationMin": 75,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-18-1345-hall-d",
+   "title": "Abstracts Presentation Session",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 135,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-18-1500-hall-b",
+   "title": "General",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "The Heat Is On: Advances in Patient Warming and Hypothermia Prevention · Moderator: TBA\nAnti Hypothermia Devices and Fluid Warmers — Amit Lehavi",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-18-1500-hall-c",
+   "title": "Basic Science: Laboratory Safari",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator: Ruth Shaylor\nMulti Species Physiology — Yishai Kushnir\nAnesthesia Going Wild — Yael Shilo-Benjamini\nFrom Lab to Crib: The Developing Brain — Laszlo Vutskits",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-18-1620-hall-a",
+   "title": "General: Foreseeing the Airway Crisis",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator : TBA\nPrediction and Management of Difficult Airway — Ram Roth\nFrom the Frontlines: Lessons Learned From Two Years of Difficult Airway focus group — Adam Lustig\nUp in the Air: Critiquing Current Evidence in Airway Guidelines — Carolina Soledad Romero",
+   "durationMin": 70,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-18-1620-hall-b",
+   "title": "Ethics: Ethical Challenges",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "The Elephant is Outside the Room: Resource Allocation at the End of Life · Moderator: TBA\nWho's Patient is it Anyway? The Anesthesiologist, the Surgeon and the System in Which we Work — Shai Fein\nPerioperative anesthesia care in patients who have DNR orders — Yehuda Ginosar\nResource Allocation, Safety Systems and Institutional Responsibility at the End of Life — David Reich",
+   "durationMin": 70,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-18-1620-hall-c",
+   "title": "Regional: Clinical Forum",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator: TBA\nRon Samet\nEvgeny Reider\nPhilipp Lirk",
+   "durationMin": 70,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-18-1620-hall-d",
+   "title": "General: Transplant - Another Peak to Conquer",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator: TBA\nRole of Vasoactive Drugs on Mortality and Kidney Injury After Heart Transplantation — Andrea Szelsky\nLung transplant - With or Without Bypass? — Amir Zabida\nPerioperative ECMO in Lung Transplants — Ephraim Fitterman",
+   "durationMin": 70,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-19-0730-all-halls",
+   "title": "ISAACC18 Breakfast Session: Practicing Anesthesiology in Israel: What International Volunteers and Future Olim Need to Know – Hear from Anesthesiologists who Recently Made Aliyah",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-19-0830-hall-a",
+   "title": "Symposium: Crisis and Conflict Medicine: Anesthesia, Trauma and Innovation",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Through the Dirty Lens: Realities of Conflict Medicine — Itay Klobshtok\nAnesthesiologists on the Frontline — Rony Hakim\nLessons from treating Ukrainian War Casualties — Iurii Kuchyn & Kateryna Bielka\nManual Pressure Points: From Case Report to Frontline Experience — Guy Avital\nPain Under Pressure: Prehospital Analgesia in Conflict Settings — Tomer Talmy\nThe Automated Frontline: Solutions for Conflict Medicine — TBA",
+   "durationMin": 120,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-19-0830-hall-b",
+   "title": "Unstoppable Debate: Pain: After 40 Years of Research we Should Give Up Trying to Prevent Chronic Pain After Surgery",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Pro: Accept It. Treat It. — Silviu Brill\nCon: Predict It. Prevent It. — Philippe Richebe",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-19-0830-hall-c",
+   "title": "Geriatrics: Clinical Forum: Beyond Guidelines: Real-World Decisions for Hip Fracture on NOACs",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator: TBA\nNeuraxial Anesthesia and Outcomes in Older Adults - Regional Hope or Clinical Reality? — Inbar Radyan Tamayev\nHow to Achieve Haemodynamic Stabilty in The Frail Patient with Hip Fracture — Gabriella Iohom\nThe Hip Fracture Anticoagulation Dilemma Doing the Least Harm: Ethics of Anesthetic Choice in Hip Fracture Surgery — Shiri Zaarur",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-19-0830-hall-d",
+   "title": "General: Case presentation",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator: TBA\nClinical Forum- The Cirrhotic Tightrope: Hernia Repair on the Transplant Waiting List — TBA",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-19-0930-hall-b",
+   "title": "Anaesthesia at the Edge: Neurons, Networks and Nociception",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator: Aeyal Raz\nNavigating Uncertainty in Research and Clinic: Paradigms, Biases and Normal Science — Misha Perouansky\nHacking Unconsciousness: Single Neurons in Humans Meet Optogenetics and Chemogenetics — Aaron Krom\nAnalgesia Without Compromise: Nociceptive-selective Sodium Channel Block via Local Anestheitc Binding Site — Avi Priel",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-19-0930-hall-c",
+   "title": "Heart: Clinical Forum: Advances in Cardiac Anesthesia",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator :Vladimir Varenkin\nProtecting the Kidneys During Cardiac Surgery: Things that Work and Things that Don't — Jacob Raphael\nManagement of Patients with LVAD for Non-Cardiac Surgery — Stephan Ledot\nRegional Anesthesia in Cardiac Surgery — Karam Azem",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-19-0930-hall-d",
+   "title": "Pain/Regional Anesthesia: Blocks Basics",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator: TBA\nOpioid-Sparing Regional Anesthesia: Simple Blocks, Big Impact (PONV, Recovery, Discharge) — Luis Alberto Rodriguez Linares\nNo Regional Anesthesia Skills? Can You Really Call Yourself a Competent Anesthesiologist? — Philip Wagner\nRebound Pain After my Block Wears Off — Gabriella Iohom",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-19-1100-hall-a",
+   "title": "Heart: Prof. Drenger Memorial Session",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "In Memory: Idit Matot, Eran Leitersdorf\nExtracellular Vesicles in the Pericardial Fluid of Donors and Recipients — Andrea Szelsky\nTVAR - Paradigm Shift in Cardiac Procedures — Ruth Shaylor\nHemodynamic Monitoring in Shock: What’s New in 2026? — Serban Bubenek\nDiscussion",
+   "durationMin": 75,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-19-1100-hall-b",
+   "title": "ICU: Sepsis 2026: Smarter and Targeted Diagnostics & Therapies",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator : TBA\nNovel Diagnostics For Infection and Sepsis - Exciting Times But New Challenges — Mervyn Singer\nLessons from the European Sepsis Care Survey — Daniela Filipescu\nHaemoadsorption in Severe Septic Shock — Yaron Bar-Lavie\nDiscussion",
+   "durationMin": 75,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-19-1100-hall-c",
+   "title": "Obstetrics: Postpartum hemorrhage (PPH)",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Coagulopathy in Postpartum Hemorrhage: Refining Detection and State-of-the-Art Resuscitation — Michaela Farber\nHow We Do It: Rebuilding the Clot in PPH — Alexander Ioscovich\nAre Platelets Important in PPH — Yaakov Beilin\nDiscussion",
+   "durationMin": 75,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-19-1100-hall-d",
+   "title": "Modulating Pain",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Shiri Savir · Neuromodulation 101\nPrevention of Phantom Limb Pain — Philipp Lirk\nPeripheral Nerve Stimulation in Pain Medicine: A Case-Based Approach — Stanislav Aharon\nCrossing Barriers in Interventional Oncology — Ovidiu Palea",
+   "durationMin": 75,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-19-1315-all-halls",
+   "title": "Plenary: TBA",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 45,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-19-1400-all-halls",
+   "title": "ISA General Assembly",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 45,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-19-1500-hall-a",
+   "title": "General Anesthesia: Novel Drugs",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator: TBA\nBeyond the Scale: Weight-Loss Drugs in Anesthesia — Eva Rivas\nDexmedetomidine and Perioperative Outcomes — Turan Alparslan\nSGLT2 and Anesthesia — Ariel Ronen",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-19-1500-hall-b",
+   "title": "Obstetrics: Comorbidity in Pregnancy",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Preeclampsia and Ultrasound: Cutting-Edge Decision-Making at the Point of Care — Michaela Farber\nPain Management for Pregnant Patients with Opioid Use Disorder — Ronald George\nCongenital Heart Conditions in the Pregnant Patient — Jacob Weinstein",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-19-1500-hall-c",
+   "title": "Unstoppable: Rowing Club",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator: TBA\n96 Days at Sea - My Solo Rowing Odyssey — Leo Krivskiy",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-19-1500-hall-d",
+   "title": "Abstracts Presentation Session",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-19-1600-hall-a",
+   "title": "Lungs",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator: TBA\nTubeless Thoracic Procedures: Myth or Reality? — Edmond Cohen\nRib Fixation for Trauma - Orthopedic Surgeons Playing at Thoracic Surgery — Asaf Danziger\nPain Management for Thoracic Surgery — Eitan Manguby",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-19-1600-hall-b",
+   "title": "Blood: Beyond the Protocol: Challenging Transfusion Dogma and Optimizing Patient Blood Management",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator: Ariel Ronen\nPatient Blood Management - Why is it Difficult to Implement? — Daniela Filipescu\nPOC Based Transfusion Algorithms in Cardiac Surgery: Do They Really Improve Outcomes? — Jacob Raphael",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-11-19-1600-hall-c",
+   "title": "Trauma",
+   "titleLocal": null,
+   "url": "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Moderator: Aeyal Raz\nCase forum: A Curious Case of Aquatrauma: General & Special Traumatology, FPV Case Presentation and Discussion — Misha Perouansky",
+   "durationMin": 60,
+   "imageUrl": null
+  }
+ ],
+ "performances": [
+  {
+   "id": "2026-11-17-0730-all-halls/2026-11-17/07:30",
+   "eventId": "2026-11-17-0730-all-halls",
+   "venueId": "david-intercontinental",
+   "roomId": null,
+   "date": "2026-11-17",
+   "start": "07:30",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-17-0830-hall-a/2026-11-17/08:30",
+   "eventId": "2026-11-17-0830-hall-a",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-a",
+   "date": "2026-11-17",
+   "start": "08:30",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-17-0830-hall-b/2026-11-17/08:30",
+   "eventId": "2026-11-17-0830-hall-b",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-b",
+   "date": "2026-11-17",
+   "start": "08:30",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-17-0830-hall-c/2026-11-17/08:30",
+   "eventId": "2026-11-17-0830-hall-c",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-c",
+   "date": "2026-11-17",
+   "start": "08:30",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-17-0830-hall-d/2026-11-17/08:30",
+   "eventId": "2026-11-17-0830-hall-d",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-d",
+   "date": "2026-11-17",
+   "start": "08:30",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-17-0930-hall-b/2026-11-17/09:30",
+   "eventId": "2026-11-17-0930-hall-b",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-b",
+   "date": "2026-11-17",
+   "start": "09:30",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-17-0930-hall-c/2026-11-17/09:30",
+   "eventId": "2026-11-17-0930-hall-c",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-c",
+   "date": "2026-11-17",
+   "start": "09:30",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-17-0930-hall-d/2026-11-17/09:30",
+   "eventId": "2026-11-17-0930-hall-d",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-d",
+   "date": "2026-11-17",
+   "start": "09:30",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-17-1130-all-halls/2026-11-17/11:30",
+   "eventId": "2026-11-17-1130-all-halls",
+   "venueId": "david-intercontinental",
+   "roomId": null,
+   "date": "2026-11-17",
+   "start": "11:30",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-17-1200-all-halls/2026-11-17/12:00",
+   "eventId": "2026-11-17-1200-all-halls",
+   "venueId": "david-intercontinental",
+   "roomId": null,
+   "date": "2026-11-17",
+   "start": "12:00",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-17-1345-hall-a/2026-11-17/13:45",
+   "eventId": "2026-11-17-1345-hall-a",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-a",
+   "date": "2026-11-17",
+   "start": "13:45",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-17-1345-hall-b/2026-11-17/13:45",
+   "eventId": "2026-11-17-1345-hall-b",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-b",
+   "date": "2026-11-17",
+   "start": "13:45",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-17-1345-hall-c/2026-11-17/13:45",
+   "eventId": "2026-11-17-1345-hall-c",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-c",
+   "date": "2026-11-17",
+   "start": "13:45",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-17-1345-hall-d/2026-11-17/13:45",
+   "eventId": "2026-11-17-1345-hall-d",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-d",
+   "date": "2026-11-17",
+   "start": "13:45",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-17-1445-hall-a/2026-11-17/14:45",
+   "eventId": "2026-11-17-1445-hall-a",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-a",
+   "date": "2026-11-17",
+   "start": "14:45",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-17-1445-hall-b/2026-11-17/14:45",
+   "eventId": "2026-11-17-1445-hall-b",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-b",
+   "date": "2026-11-17",
+   "start": "14:45",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-17-1445-hall-c/2026-11-17/14:45",
+   "eventId": "2026-11-17-1445-hall-c",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-c",
+   "date": "2026-11-17",
+   "start": "14:45",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-17-1445-hall-d/2026-11-17/14:45",
+   "eventId": "2026-11-17-1445-hall-d",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-d",
+   "date": "2026-11-17",
+   "start": "14:45",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-17-1615-hall-a/2026-11-17/16:15",
+   "eventId": "2026-11-17-1615-hall-a",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-a",
+   "date": "2026-11-17",
+   "start": "16:15",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-17-1615-hall-b/2026-11-17/16:15",
+   "eventId": "2026-11-17-1615-hall-b",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-b",
+   "date": "2026-11-17",
+   "start": "16:15",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-17-1615-hall-c/2026-11-17/16:15",
+   "eventId": "2026-11-17-1615-hall-c",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-c",
+   "date": "2026-11-17",
+   "start": "16:15",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-17-1615-hall-d/2026-11-17/16:15",
+   "eventId": "2026-11-17-1615-hall-d",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-d",
+   "date": "2026-11-17",
+   "start": "16:15",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-18-0730-all-halls/2026-11-18/07:30",
+   "eventId": "2026-11-18-0730-all-halls",
+   "venueId": "david-intercontinental",
+   "roomId": null,
+   "date": "2026-11-18",
+   "start": "07:30",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-18-0830-hall-a/2026-11-18/08:30",
+   "eventId": "2026-11-18-0830-hall-a",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-a",
+   "date": "2026-11-18",
+   "start": "08:30",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-18-0830-hall-b/2026-11-18/08:30",
+   "eventId": "2026-11-18-0830-hall-b",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-b",
+   "date": "2026-11-18",
+   "start": "08:30",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-18-0830-hall-c/2026-11-18/08:30",
+   "eventId": "2026-11-18-0830-hall-c",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-c",
+   "date": "2026-11-18",
+   "start": "08:30",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-18-0830-hall-d/2026-11-18/08:30",
+   "eventId": "2026-11-18-0830-hall-d",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-d",
+   "date": "2026-11-18",
+   "start": "08:30",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-18-0930-hall-b/2026-11-18/09:30",
+   "eventId": "2026-11-18-0930-hall-b",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-b",
+   "date": "2026-11-18",
+   "start": "09:30",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-18-0930-hall-c/2026-11-18/09:30",
+   "eventId": "2026-11-18-0930-hall-c",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-c",
+   "date": "2026-11-18",
+   "start": "09:30",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-18-0930-hall-d/2026-11-18/09:30",
+   "eventId": "2026-11-18-0930-hall-d",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-d",
+   "date": "2026-11-18",
+   "start": "09:30",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-18-1130-all-halls/2026-11-18/11:30",
+   "eventId": "2026-11-18-1130-all-halls",
+   "venueId": "david-intercontinental",
+   "roomId": null,
+   "date": "2026-11-18",
+   "start": "11:30",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-18-1215-all-halls/2026-11-18/12:15",
+   "eventId": "2026-11-18-1215-all-halls",
+   "venueId": "david-intercontinental",
+   "roomId": null,
+   "date": "2026-11-18",
+   "start": "12:15",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-18-1345-hall-a/2026-11-18/13:45",
+   "eventId": "2026-11-18-1345-hall-a",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-a",
+   "date": "2026-11-18",
+   "start": "13:45",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-18-1345-hall-b/2026-11-18/13:45",
+   "eventId": "2026-11-18-1345-hall-b",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-b",
+   "date": "2026-11-18",
+   "start": "13:45",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-18-1345-hall-c/2026-11-18/13:45",
+   "eventId": "2026-11-18-1345-hall-c",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-c",
+   "date": "2026-11-18",
+   "start": "13:45",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-18-1345-hall-d/2026-11-18/13:45",
+   "eventId": "2026-11-18-1345-hall-d",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-d",
+   "date": "2026-11-18",
+   "start": "13:45",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-18-1500-hall-b/2026-11-18/15:00",
+   "eventId": "2026-11-18-1500-hall-b",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-b",
+   "date": "2026-11-18",
+   "start": "15:00",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-18-1500-hall-c/2026-11-18/15:00",
+   "eventId": "2026-11-18-1500-hall-c",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-c",
+   "date": "2026-11-18",
+   "start": "15:00",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-18-1620-hall-a/2026-11-18/16:20",
+   "eventId": "2026-11-18-1620-hall-a",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-a",
+   "date": "2026-11-18",
+   "start": "16:20",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-18-1620-hall-b/2026-11-18/16:20",
+   "eventId": "2026-11-18-1620-hall-b",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-b",
+   "date": "2026-11-18",
+   "start": "16:20",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-18-1620-hall-c/2026-11-18/16:20",
+   "eventId": "2026-11-18-1620-hall-c",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-c",
+   "date": "2026-11-18",
+   "start": "16:20",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-18-1620-hall-d/2026-11-18/16:20",
+   "eventId": "2026-11-18-1620-hall-d",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-d",
+   "date": "2026-11-18",
+   "start": "16:20",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-19-0730-all-halls/2026-11-19/07:30",
+   "eventId": "2026-11-19-0730-all-halls",
+   "venueId": "david-intercontinental",
+   "roomId": null,
+   "date": "2026-11-19",
+   "start": "07:30",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-19-0830-hall-a/2026-11-19/08:30",
+   "eventId": "2026-11-19-0830-hall-a",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-a",
+   "date": "2026-11-19",
+   "start": "08:30",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-19-0830-hall-b/2026-11-19/08:30",
+   "eventId": "2026-11-19-0830-hall-b",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-b",
+   "date": "2026-11-19",
+   "start": "08:30",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-19-0830-hall-c/2026-11-19/08:30",
+   "eventId": "2026-11-19-0830-hall-c",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-c",
+   "date": "2026-11-19",
+   "start": "08:30",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-19-0830-hall-d/2026-11-19/08:30",
+   "eventId": "2026-11-19-0830-hall-d",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-d",
+   "date": "2026-11-19",
+   "start": "08:30",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-19-0930-hall-b/2026-11-19/09:30",
+   "eventId": "2026-11-19-0930-hall-b",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-b",
+   "date": "2026-11-19",
+   "start": "09:30",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-19-0930-hall-c/2026-11-19/09:30",
+   "eventId": "2026-11-19-0930-hall-c",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-c",
+   "date": "2026-11-19",
+   "start": "09:30",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-19-0930-hall-d/2026-11-19/09:30",
+   "eventId": "2026-11-19-0930-hall-d",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-d",
+   "date": "2026-11-19",
+   "start": "09:30",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-19-1100-hall-a/2026-11-19/11:00",
+   "eventId": "2026-11-19-1100-hall-a",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-a",
+   "date": "2026-11-19",
+   "start": "11:00",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-19-1100-hall-b/2026-11-19/11:00",
+   "eventId": "2026-11-19-1100-hall-b",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-b",
+   "date": "2026-11-19",
+   "start": "11:00",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-19-1100-hall-c/2026-11-19/11:00",
+   "eventId": "2026-11-19-1100-hall-c",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-c",
+   "date": "2026-11-19",
+   "start": "11:00",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-19-1100-hall-d/2026-11-19/11:00",
+   "eventId": "2026-11-19-1100-hall-d",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-d",
+   "date": "2026-11-19",
+   "start": "11:00",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-19-1315-all-halls/2026-11-19/13:15",
+   "eventId": "2026-11-19-1315-all-halls",
+   "venueId": "david-intercontinental",
+   "roomId": null,
+   "date": "2026-11-19",
+   "start": "13:15",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-19-1400-all-halls/2026-11-19/14:00",
+   "eventId": "2026-11-19-1400-all-halls",
+   "venueId": "david-intercontinental",
+   "roomId": null,
+   "date": "2026-11-19",
+   "start": "14:00",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-19-1500-hall-a/2026-11-19/15:00",
+   "eventId": "2026-11-19-1500-hall-a",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-a",
+   "date": "2026-11-19",
+   "start": "15:00",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-19-1500-hall-b/2026-11-19/15:00",
+   "eventId": "2026-11-19-1500-hall-b",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-b",
+   "date": "2026-11-19",
+   "start": "15:00",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-19-1500-hall-c/2026-11-19/15:00",
+   "eventId": "2026-11-19-1500-hall-c",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-c",
+   "date": "2026-11-19",
+   "start": "15:00",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-19-1500-hall-d/2026-11-19/15:00",
+   "eventId": "2026-11-19-1500-hall-d",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-d",
+   "date": "2026-11-19",
+   "start": "15:00",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-19-1600-hall-a/2026-11-19/16:00",
+   "eventId": "2026-11-19-1600-hall-a",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-a",
+   "date": "2026-11-19",
+   "start": "16:00",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-19-1600-hall-b/2026-11-19/16:00",
+   "eventId": "2026-11-19-1600-hall-b",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-b",
+   "date": "2026-11-19",
+   "start": "16:00",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-19-1600-hall-c/2026-11-19/16:00",
+   "eventId": "2026-11-19-1600-hall-c",
+   "venueId": "david-intercontinental",
+   "roomId": "hall-c",
+   "date": "2026-11-19",
+   "start": "16:00",
+   "ticketUrl": "https://icisa2026-reg.forms-wizard.biz/users/new",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  }
+ ],
+ "sources": {
+  "festival": [
+   "festival.toml"
+  ],
+  "venues": [
+   "venues-research"
+  ],
+  "events": [
+   "programme-pdf"
+  ],
+  "performances": [
+   "programme-pdf"
+  ],
+  "availability": [],
+  "prices": []
+ },
+ "provenance": {
+  "sources": {
+   "programme-pdf": {
+    "kind": "fetched",
+    "path": "data/festivals/icisa/2026/programme-pdf",
+    "fetchedAt": "2026-10-02T18:41:58Z",
+    "fetcher": "scraper/festivals/icisa/sources/programme-pdf/fetch.py",
+    "fetcherVersion": 1
+   },
+   "venues-research": {
+    "kind": "curated",
+    "path": "scraper/festivals/icisa/curated/venues.json"
+   }
+  },
+  "absent": [],
+  "fields": {
+   "events.blurb": [
+    "programme-pdf"
+   ],
+   "events.categories": [
+    "programme-pdf"
+   ],
+   "events.durationMin": [
+    "programme-pdf"
+   ],
+   "events.imageUrl": [
+    "programme-pdf"
+   ],
+   "events.title": [
+    "programme-pdf"
+   ],
+   "events.titleLocal": [
+    "programme-pdf"
+   ],
+   "events.url": [
+    "programme-pdf"
+   ],
+   "performances.date": [
+    "programme-pdf"
+   ],
+   "performances.eventId": [
+    "programme-pdf"
+   ],
+   "performances.free": [
+    "programme-pdf"
+   ],
+   "performances.roomId": [
+    "programme-pdf"
+   ],
+   "performances.start": [
+    "programme-pdf"
+   ],
+   "performances.ticketUrl": [
+    "programme-pdf"
+   ],
+   "performances.venueId": [
+    "programme-pdf"
+   ],
+   "venues.accessibility": [
+    "venues-research"
+   ],
+   "venues.address": [
+    "venues-research"
+   ],
+   "venues.capacity": [
+    "venues-research"
+   ],
+   "venues.lat": [
+    "venues-research"
+   ],
+   "venues.layout": [
+    "venues-research"
+   ],
+   "venues.lng": [
+    "venues-research"
+   ],
+   "venues.name": [
+    "venues-research"
+   ],
+   "venues.notes": [
+    "venues-research"
+   ],
+   "venues.refs": [
+    "venues-research"
+   ],
+   "venues.rooms": [
+    "venues-research"
+   ]
+  },
+  "skipped": {
+   "programme-pdf": [
+    "2026-11-17 07:30 Registration, Gathering, Light Breakfast & Exhibition (logistics)",
+    "2026-11-17 11:00 Coffee Break & Exhibition (logistics)",
+    "2026-11-17 12:45 Lunch & Exhibition (logistics)",
+    "2026-11-17 15:45 Coffee Break & Exhibition (logistics)",
+    "2026-11-18 07:30 Registration, Gathering, Light Breakfast & Exhibition (logistics)",
+    "2026-11-18 11:00 Coffee Break & Exhibition (logistics)",
+    "2026-11-18 12:45 Lunch & Exhibition (logistics)",
+    "2026-11-18 16:00 Coffee Break & Exhibition (logistics)",
+    "2026-11-19 07:30 Registration, Gathering, Light Breakfast & Exhibition (logistics)",
+    "2026-11-19 10:30 Coffee Break & Exhibition (logistics)",
+    "2026-11-19 12:15 Lunch & Exhibition (logistics)",
+    "2026-11-19 14:45 Coffee Break & Exhibition (logistics)"
+   ]
+  }
+ }
+}

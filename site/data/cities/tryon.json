@@ -1,0 +1,485 @@
+{
+ "v": 1,
+ "city": {
+  "id": "tryon",
+  "name": "Tryon",
+  "country": "US",
+  "lat": 35.2087,
+  "lng": -82.2387,
+  "timezone": "America/New_York"
+ },
+ "places": [
+  {
+   "id": "osm:way/762018547",
+   "name": "Tryon Historical Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 35.20926,
+   "lng": -82.238527,
+   "address": "26 Maple Street, 28782",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/14084809164",
+   "name": "Upstairs Artspace",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 35.208236,
+   "lng": -82.237402,
+   "address": "49 South Trade Street, 28782",
+   "website": "https://upstairsartspace.org",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "We-Su 12:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "near": "venues",
+ "stay": [
+  {
+   "id": "osm:way/936595077",
+   "name": "1906 Pine Crest Inn",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 35.208503,
+   "lng": -82.233406,
+   "address": "85 Pine Crest Lane, 28782",
+   "website": "https://pinecrestinn.com/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 370,
+   "venuesNear": 9
+  },
+  {
+   "id": "osm:way/354704460",
+   "name": "The Yellow House Landrum",
+   "nameEn": null,
+   "kind": "guest_house",
+   "stars": null,
+   "cuisine": null,
+   "lat": 35.176839,
+   "lng": -82.182918,
+   "address": "508 East Rutherford Street, 29356",
+   "website": "https://yellowhouselandrum.com/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 5883,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:way/732065107",
+   "name": "The Red Horse Inn",
+   "nameEn": null,
+   "kind": "guest_house",
+   "stars": null,
+   "cuisine": null,
+   "lat": 35.098102,
+   "lng": -82.257784,
+   "address": "45 Winstons Chase Court, 29356",
+   "website": "https://www.theredhorseinn.com",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 11924,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:way/761527139",
+   "name": "Mill Farm Inn",
+   "nameEn": null,
+   "kind": "guest_house",
+   "stars": null,
+   "cuisine": null,
+   "lat": 35.224903,
+   "lng": -82.241055,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 499,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/761342389",
+   "name": "Days Inn",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 35.2452,
+   "lng": -82.207825,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 3306,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:way/326846838",
+   "name": "Saluda Mountain Lodge",
+   "nameEn": null,
+   "kind": "motel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 35.251999,
+   "lng": -82.326113,
+   "address": "1793 Holbert Cove Road, 28773",
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 8691,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/9796623125",
+   "name": "The Saluda Inn",
+   "nameEn": null,
+   "kind": "motel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 35.233551,
+   "lng": -82.351303,
+   "address": "229 Greenville Street, 28773",
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 10495,
+   "venuesNear": 0
+  }
+ ],
+ "eat": [
+  {
+   "id": "osm:node/12175843064",
+   "name": "Brooks Tavern",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "bar_and_grill"
+   ],
+   "lat": 35.20879,
+   "lng": -82.237942,
+   "address": "10 Oak Street, 28782",
+   "website": "https://brookstavern.com",
+   "wikidata": null,
+   "openingHours": "Su-Th 11:00-20:00; Fr,Sa 11:00-21:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "su",
+      "mo",
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "20:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "21:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 18,
+   "venuesNear": 9
+  },
+  {
+   "id": "osm:way/762018542",
+   "name": "Blue Moon",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "diner",
+    "ice_cream",
+    "brunch",
+    "coffee_shop"
+   ],
+   "lat": 35.208948,
+   "lng": -82.238159,
+   "address": "10 North Trade Street, 28782",
+   "website": "https://tradestreetdiner.square.site",
+   "wikidata": null,
+   "openingHours": "Th-Tu 09:00-16:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "th",
+      "fr",
+      "sa",
+      "su",
+      "mo",
+      "tu"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "16:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 20,
+   "venuesNear": 9
+  },
+  {
+   "id": "osm:way/762039765",
+   "name": "Side Street Pizza & Pasta",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "pizza",
+    "italian"
+   ],
+   "lat": 35.206616,
+   "lng": -82.237031,
+   "address": "135 South Trade Street, 28782",
+   "website": "https://sidestpizza.com",
+   "wikidata": null,
+   "openingHours": "Mo, Th-Sa 11:00-21:00; Tu-We off; Su 15:00-20:30",
+   "hours": null,
+   "toVenueM": 191,
+   "venuesNear": 9
+  },
+  {
+   "id": "osm:way/1551071756",
+   "name": "Don Bigotes",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "mexican"
+   ],
+   "lat": 35.201158,
+   "lng": -82.236882,
+   "address": "526 South Trade Street, 28782",
+   "website": "https://www.donbigotesrestaurant.com/tryon-nc.html",
+   "wikidata": null,
+   "openingHours": "Mo-Su 11:00-21:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "21:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 359,
+   "venuesNear": 9
+  },
+  {
+   "id": "osm:way/762018545",
+   "name": "Buck's Pizza",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "pizza"
+   ],
+   "lat": 35.209072,
+   "lng": -82.238512,
+   "address": "28 North Trade Street, 28782",
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 22,
+   "venuesNear": 9
+  },
+  {
+   "id": "osm:node/7119863157",
+   "name": "Nana's Kitchen",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": null,
+   "lat": 35.203733,
+   "lng": -82.238227,
+   "address": "354 South Trade Street, 28782",
+   "website": null,
+   "wikidata": null,
+   "openingHours": "Mo-Fr 08:00-14:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "08:00",
+       "14:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 48,
+   "venuesNear": 9
+  },
+  {
+   "id": "osm:node/7119890232",
+   "name": "Huckleberry's",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": null,
+   "lat": 35.209305,
+   "lng": -82.238912,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 56,
+   "venuesNear": 9
+  },
+  {
+   "id": "osm:way/762036625",
+   "name": "Lavender Bistro",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": null,
+   "lat": 35.20946,
+   "lng": -82.23924,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 68,
+   "venuesNear": 9
+  }
+ ],
+ "trips": [
+  {
+   "name": "Great Smoky Mountains National Park",
+   "page": "Great Smoky Mountains National Park",
+   "url": "https://en.wikivoyage.org/wiki/Great_Smoky_Mountains_National_Park",
+   "description": "Nearest gateway is Cherokee.",
+   "lat": 35.60065,
+   "lng": -83.50877,
+   "km": 123
+  },
+  {
+   "name": "Blue Ridge Parkway",
+   "page": "Blue Ridge Parkway",
+   "url": "https://en.wikivoyage.org/wiki/Blue_Ridge_Parkway",
+   "description": "Nearest access is Asheville",
+   "lat": 36.518611,
+   "lng": -80.935833,
+   "km": 187
+  }
+ ],
+ "guide": {
+  "page": "Hendersonville (North Carolina)",
+  "url": "https://en.wikivoyage.org/wiki/Hendersonville_%28North_Carolina%29"
+ },
+ "licences": {
+  "osm": {
+   "name": "ODbL",
+   "url": "https://opendatacommons.org/licenses/odbl/",
+   "attribution": "© OpenStreetMap contributors",
+   "credit": "https://www.openstreetmap.org/copyright"
+  },
+  "wikivoyage": {
+   "name": "CC BY-SA 4.0",
+   "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "attribution": "Wikivoyage contributors"
+  }
+ },
+ "provenance": {
+  "osm": {
+   "fetchedAt": "2026-10-02T20:32:11Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikidata": {
+   "fetchedAt": "2026-10-02T20:32:11Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "amenities": {
+   "fetchedAt": "2026-10-02T20:33:59Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikivoyage": {
+   "fetchedAt": "2026-10-02T20:34:03Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  }
+ }
+}

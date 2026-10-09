@@ -1,0 +1,15 @@
+{
+ "festival": "litquake",
+ "edition": "2026",
+ "source": "sched",
+ "fetchedAt": "2026-10-02T18:26:16Z",
+ "fetcher": "scraper/festivals/litquake/sources/sched/fetch.py",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://litquake2026.sched.com/all.ics"
+ ],
+ "files": [
+  "programme.json"
+ ],
+ "notes": "Sched's public iCalendar export, unauthenticated. One record per session in the edition; dtstart and dtend are UTC (scraper/festivals/platforms/sched.py)."
+}

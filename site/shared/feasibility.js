@@ -4,11 +4,11 @@
  * reader's origin), because distance is the one thing the data always has:
  *
  *   poolReach   the reader is at the focused festival. Which other editions in
- *               the planning period can they also catch? A city a day-trip
- *               away is in, whole. A city further off is in only on the nights
- *               far enough from the focused run to travel between the two — so
- *               an event in Edinburgh during the Jerusalem festival is never
- *               suggested, whatever the data holds.
+ *               the planning period can they also catch? Only one in the same
+ *               country, and the same state where both name one. A city a
+ *               day-trip away is in, whole. A city further off is in only on
+ *               the nights far enough from the focused run to travel between
+ *               the two.
  *   originReach the reader is coming to a festival. Do they live there, come
  *               from elsewhere in the country, or from abroad? That decides
  *               whether a bed, a train or the airport is worth offering.
@@ -58,17 +58,26 @@ const addDays = (iso, n) => {
   return d.toISOString().slice(0, 10);
 };
 
+/* Whether two festivals are in one country, and one state where both name one.
+ * A festival naming no country is in none: there is no saying it is near. */
+export function sameRegion(a, b) {
+  if (!a.country || a.country !== b.country) return false;
+  return !a.region || !b.region || a.region === b.region;
+}
+
 /**
  * How each edition in the period stands against the focused one.
- * @param {object} focus the focused edition: `{festivalId, lat, lng, firstDate, lastDate}`
+ * @param {object} focus the focused edition: `{festivalId, country, region?,
+ *   lat, lng, firstDate, lastDate}`
  * @param {object[]} editions every edition overlapping the period, the focused
  *   one included, in the same shape
  * @param {{from: string, to: string}} period the planning period, inclusive
  * @param {{dayTripKm?: number}} [options] how far a day trip reaches (dayTripKm())
  * @returns {object[]} one entry per edition: `{edition, km, travelDays, verdict,
- *   nights}` — `verdict` is "focus", "day-trip", "partly" (some nights) or
- *   "out"; `nights` is the inclusive ISO date ranges whose performances join
- *   the pool (empty when "out")
+ *   nights}` — `verdict` is "focus", "day-trip", "partly" (some nights),
+ *   "abroad" (another country or state) or "out"; `nights` is the inclusive
+ *   ISO date ranges whose performances join the pool (empty when "abroad" or
+ *   "out")
  */
 export function poolReach(focus, editions, period, { dayTripKm: dayTrip = DAY_TRIP_KM } = {}) {
   return editions.map((edition) => {
@@ -78,6 +87,7 @@ export function poolReach(focus, editions, period, { dayTripKm: dayTrip = DAY_TR
       return { edition, km: 0, travelDays: 0, verdict: "focus", nights: [{ from, to }] };
     }
     const km = distanceKm(focus, edition);
+    if (!sameRegion(focus, edition)) return { edition, km, travelDays: null, verdict: "abroad", nights: [] };
     const days = travelDays(km, dayTrip);
     if (days === 0) return { edition, km, travelDays: 0, verdict: "day-trip", nights: [{ from, to }] };
     // Unknown distance is not "near": with no coordinates there is no way to
@@ -94,6 +104,12 @@ export function poolReach(focus, editions, period, { dayTripKm: dayTrip = DAY_TR
     const verdict = open.length ? "partly" : "out";
     return { edition, km, travelDays: days, verdict, nights: open };
   });
+}
+
+/** Whether an entry from poolReach() brings any nights to the pool — and so
+ * whether its programme is worth downloading at all. */
+export function joinsPool(entry) {
+  return entry.verdict !== "out" && entry.verdict !== "abroad";
 }
 
 /** Whether a performance on `dateISO` is inside one of an entry's night ranges. */

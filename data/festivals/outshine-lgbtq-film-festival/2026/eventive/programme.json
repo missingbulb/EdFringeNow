@@ -1,0 +1,1446 @@
+{
+ "tenant": "outshinefall2026",
+ "site": "https://outshinefall2026.eventive.org",
+ "displayName": "Welcome to the OUTshine LGBTQ+ Film Festival, Fall Edition 🌟 28 Years of Presenting Queer Film in South Florida!",
+ "displayTimezone": "America/New_York",
+ "currency": "usd",
+ "eventBucket": "6aa99726170f9b1e5e61a943",
+ "edition": "2026",
+ "events": [
+  {
+   "id": "6aaae19206142f8c29b04692",
+   "name": "OPENING NIGHT FILM & PARTY: La Bola Negra",
+   "description": "<p><strong style=\"color: rgb(153, 51, 255);\" class=\"ql-size-large\">OPENING NIGHT PARTY AT 14 NORTH DAIQUIRI BAR 🍹</strong></p><p><strong style=\"color: rgb(153, 51, 255);\">TICKET INCLUDES FILM &amp; AFTER PARTY WITH OPEN BAR, DAIQUIRIS, LITE BITES &amp; LIVE ENTERTAINMENT.</strong></p>",
+   "short_description": null,
+   "start_time": "2026-10-15T23:00:00.000Z",
+   "end_time": "2026-10-16T01:00:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9ab",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 7500,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aa9978706effac1272d8686",
+     "name": "La Bola Negra (The Black Ball)",
+     "short_description": "Three gay men living across three generations find their lives linked by love, loss, and an unfinished work by Federico García Lorca that echoes through Spain's queer history.",
+     "description": "<p>Inspired by Federico García Lorca's unfinished novel of the same name and Alberto Conejero's acclaimed play <em>La piedra oscura</em>, <em>La Bola Negra</em> weaves together the lives of three gay men living in 1932, 1937, and 2017. Though separated by decades, their stories are intimately connected through desire, repression, loss, and the enduring search for identity. As each man struggles to live authentically within the constraints of his era, the film traces the legacy of queer history in Spain, revealing how love, memory, and inherited trauma echo across generations. Featuring a bravura performance by Penélope Cruz, this ambitious drama is both a tribute to Lorca's artist</p>",
+     "still_image": "https://static-a.eventive.org/cde6430534111bc3eb1b31d6eebbe911.jpg",
+     "cover_image": "https://static-a.eventive.org/7bca987842e62fa5f60cb3c19d5c4d78.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/25a3dbfd7b1e43a869809eef73d2a2d8.jpg?w=300",
+     "runtime": "155"
+    }
+   ]
+  },
+  {
+   "id": "6aac466c08595e1c71627623",
+   "name": "The Mirror",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-16T23:00:00.000Z",
+   "end_time": "2026-10-17T01:00:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9ac",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aac31560b999be3c3d4e501",
+     "name": "The Mirror",
+     "short_description": "Argentinian filmmaker Marco Berger brings his signature directing style to the screen again.  Unspoken feelings, slight facial expressions with long glances, and the weight of a single kiss all illustrate male sexual fluidity and the desire for intimacy among men.  With a challenging narrative of a film within a film, and nuanced acting - including Berger himself in the lead role - the film confirms that art can mirror queer life.",
+     "description": "<p>Juan, a young film director, invites Mateo, a former actor who left his artistic desires behind for a settled family and work life, to star in his next short film. What begins as a professional collaboration slowly becomes an ambiguous space where creation and desire blur. The film follows two men who accompany their girlfriends to a forest and, left alone, confront a silent tension that leads to an inevitable kiss. As rehearsals unfold, Juan and Mateo unconsciously begin to replicate the same dynamics they are creating for the fiction. The creative process becomes a mirror, exposing fears, frustrations, and unresolved desires. As the line between rehearsal and reality grows increasingly fragile, The Mirror explores the fear of desire, internalized homophobia, and the need to be chosen—on screen and in life. </p>",
+     "still_image": "https://static-a.eventive.org/1789669864919temp-1789669864778-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1789669875121temp-1789669875067-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1790054566295temp-1790054566215-poster.jpg",
+     "runtime": "103"
+    }
+   ]
+  },
+  {
+   "id": "6aac46bd08595e1c71629106",
+   "name": "Tangles",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-16T23:15:00.000Z",
+   "end_time": "2026-10-17T01:15:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9ac",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aa998321780ff3331775aab",
+     "name": "Tangles",
+     "short_description": "A young lesbian artist's life is upended when her mother's Alzheimer's diagnosis forces her to choose between the future she's building with the woman she loves and the family she can't leave behind.",
+     "description": "<p>Sarah has built a vibrant queer life in 1990s San Francisco, where she's thriving as an artist, activist, and falling in love. But when her mother is diagnosed with Alzheimer's disease, she's forced to return to the conservative hometown she thought she'd left behind forever. As Sarah struggles to care for her mother while trying to hold onto her new relationship and sense of self, she discovers that family, memory, and identity are deeply intertwined. Adapted from Sarah Leavitt's acclaimed graphic memoir and featuring an outstanding voice cast led by Julia Louis-Dreyfus, Bryan Cranston, and Wanda Sykes,<em>Tangles</em> is a beautifully animated and deeply moving portrait of lesbian love, caregiving, and finding strength through life's most difficult transitions, while finding humor, hope, and grace amid heartbreak.</p>",
+     "still_image": "https://static-a.eventive.org/9fc250197c2e7672359d017a038a0bbf.jpg",
+     "cover_image": "https://static-a.eventive.org/86b86185df412fbe1fe794fd63aa1c42.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/9b67df85df7ca6b30785e21cf6c5dae6.jpg?w=300",
+     "runtime": "102"
+    }
+   ]
+  },
+  {
+   "id": "6aac46f9564141ace0c0d1b1",
+   "name": "The Last Routine",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-17T01:30:00.000Z",
+   "end_time": "2026-10-17T03:30:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9ac",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aac2fc770104429f2968d6d",
+     "name": "The Last Routine",
+     "short_description": "During the final day of his life, Olympic figure skating champion Ondrej Nepela must confront the personal and political forces that have shaped his identity and threatened his freedom.",
+     "description": "<p>Set over the course of a single pivotal day, The Last Routine chronicles the final 24 hours in the life of legendary Slovak figure skater Ondrej Nepela. Revered as a national hero and celebrated around the world for his athletic brilliance, Nepela privately struggles under the suffocating pressures of life in Communist Czechoslovakia. Longing for personal freedom and the chance to live openly, he finds himself trapped between public expectations and private desires. As state authorities intensify their scrutiny and exploit his vulnerabilities, Ondrej is forced to confront impossible choices about love, identity, and the price of freedom in a society determined to control both. </p>",
+     "still_image": "https://static-a.eventive.org/1789669569012temp-1789669568965-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1789669569250temp-1789669569198-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1789669460088temp-1789669460009-poster.jpg",
+     "runtime": "89"
+    }
+   ]
+  },
+  {
+   "id": "6aac472e346601df5706093c",
+   "name": "OUTSHINE AFTER DARK: The Boy with the Light Blue Eyes",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-17T01:45:00.000Z",
+   "end_time": "2026-10-17T03:45:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9ac",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aac2ce2e3fa7c96184182ae",
+     "name": "The Boy with the Light Blue Eyes",
+     "short_description": "In a superstitious Greek mountain village, a teenager whose unusual blue eyes are believed to bring evil must confront fear, violence, and his own hidden desires when his secret is exposed and his forbidden relationship threatens to change everything.",
+     "description": "<p>In an isolated Greek mountain village ruled by superstition, teenage Petros is forced to hide behind a mask because his unusually light-blue eyes are believed to carry the Evil Eye. When his secret is exposed, fear and suspicion turn against him. As the village closes in, Petros finds refuge in his friendship with Aemon, forcing him to confront the expectations that have kept him hidden and fight for the freedom to live openly. Beautifully shot and steeped in Greek folklore, The Boy with the Light-Blue Eyes is a haunting queer coming-of-age story about difference, desire, superstition, and the courage to reveal who you really are. </p>",
+     "still_image": "https://static-a.eventive.org/4c8bd21d1d7cb027c1a8a127d9fb0e81.jpg",
+     "cover_image": "https://static-a.eventive.org/423a4adeb277b523a8e1180104e8aa5c.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/0b64a3c7c38f57600b969f847bc601ef.jpg?w=300",
+     "runtime": "99"
+    }
+   ]
+  },
+  {
+   "id": "6aac47764a49571c6a2df19e",
+   "name": "Heals",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-17T17:45:00.000Z",
+   "end_time": "2026-10-17T19:45:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9ac",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aab8cdb544f2e2f87b9eaff",
+     "name": "Heals",
+     "short_description": "Asia's most celebrated drag queen confronts family trauma and personal struggles while transforming pain into power through the art of drag.",
+     "description": "<p>Behind the dazzling performances of international drag and RuPaul Drag Race superstar Pangina Heals is Pan Pan Narkprasert, whose childhood was marked by bullying, family trauma, and a longing for acceptance. Emmy Award-winning director Pailin Wedel follows Pangina's extraordinary journey from a lonely queer kid in Thailand to becoming the first Asian drag queen with a Las Vegas residency. Blending electrifying performances with intimate family moments, Heals explores how drag became a powerful act of healing, self-discovery, and resilience. It's an inspiring portrait of a global icon whose greatest transformation happened long before she stepped onto the stage. </p>",
+     "still_image": "https://static-a.eventive.org/1ced71e6cda5e25609dccfb9e88e8780.jpg",
+     "cover_image": "https://static-a.eventive.org/8b2290236b95f56f343deaf93aacd6ec.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/dbdf4ec6ed20ac633f0516424d299bce.jpg?w=300",
+     "runtime": "102"
+    }
+   ]
+  },
+  {
+   "id": "6aac475a65992b667a5664cf",
+   "name": "A Good Child (好孩子)",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-17T18:00:00.000Z",
+   "end_time": "2026-10-17T20:00:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9ac",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aab7f8a188db3ddc2e039b8",
+     "name": "A Good Child (好孩子)",
+     "short_description": "A drag queen's innocent deception becomes an unexpected path to healing when his mother with dementia mistakes him for the daughter she always believed she had, forcing them both to confront the past.",
+     "description": "<p>After years of estrangement from his conservative family, drag queen Jia Hao returns home following his father's death to care for his mother, who is living with dementia. When she mistakes him for a long-lost daughter, Jia Hao impulsively embraces the deception, creating an unexpected opportunity to heal old wounds and rewrite painful memories. As their relationship deepens, long-buried family secrets emerge, forcing Jia Hao to confront the trauma that shaped his life. Inspired by the true story of Singaporean drag performer Sammi Zhen, A Good Child is a touching, humorous, and deeply moving exploration of identity, acceptance, and unconditional love. </p>",
+     "still_image": "https://static-a.eventive.org/6302b028750944f7ef005cb049ac18be.jpg",
+     "cover_image": "https://static-a.eventive.org/1789624557253temp-1789624557084-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1789624557660temp-1789624557458-poster.jpg",
+     "runtime": "105"
+    }
+   ]
+  },
+  {
+   "id": "6aac47c4544f2e2f87ca1659",
+   "name": "I Come Home",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-17T20:30:00.000Z",
+   "end_time": "2026-10-17T22:30:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9ac",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aac1c7273ee16b842814bfe",
+     "name": "I Come Home",
+     "short_description": "An unexpected pregnancy throws a polyamorous throuple into emotional turmoil as they confront family expectations and redefine what commitment, love, and home truly mean during a chaotic family wedding.",
+     "description": "<p>Christine and her longtime partner, Alex, have finally found balance in their polyamorous relationship with their younger partner, Stéphane—until an unexpected pregnancy forces each of them to confront conflicting dreams for the future. As if navigating their evolving relationship weren't complicated enough, the trio heads to the wedding of Christine's sister, where judgmental relatives, overbearing parents, and long-simmering family tensions threaten to expose every crack in their carefully constructed lives. Honest, funny, and emotionally nuanced, I Come Home explores the complexities of modern love, chosen family, and the courage to define relationships on your own terms. </p>",
+     "still_image": "https://static-a.eventive.org/1789664511439temp-1789664511385-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1789664565583temp-1789664565524-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/c454964cd71114a8c1855cd3d52ff35c.jpg?w=300",
+     "runtime": "97"
+    }
+   ]
+  },
+  {
+   "id": "6aac47ef483f87030d9c0d64",
+   "name": "Mineshaft: The Cruising Murders & Welcome To The Tool Shed",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-17T20:45:00.000Z",
+   "end_time": "2026-10-17T22:45:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9ac",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aac2668564141ace0be1c8e",
+     "name": "Mineshaft: The Cruising Murders",
+     "short_description": "A documentary revisits the controversy surrounding Cruising while uncovering the real-life murder that inspired the film, illuminating a transformative era in queer history.",
+     "description": "<p>The release of William Friedkin's controversial 1980 thriller Cruising sparked outrage within the LGBTQ+ community, with activists fearing the film's depiction of gay men would fuel homophobia and violence. Decades later, Mineshaft: The Cruising Murders revisits the film's complex legacy while uncovering the shocking true crime that inspired it—the brutal 1977 murder of journalist Addison Verrill. Through archival footage and interviews with activists, historians, filmmakers, and members of New York's leather community, director Jeffrey Schwarz explores the intersection of queer history, protest, censorship, and cinema, offering a nuanced portrait of a pivotal and often misunderstood moment in LGBTQ+ cultural history.</p>",
+     "still_image": "https://static-a.eventive.org/09788d38f27d344c8406bc663b23d9f3.jpg",
+     "cover_image": "https://static-a.eventive.org/a26ba0639196284860d82167fda8449a.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/c734c307c21ae22fcf946461e5301cff.jpg?w=300",
+     "runtime": "85"
+    },
+    {
+     "id": "6aadef9a392634bb18f4ce8f",
+     "name": "Welcome To The Tool Shed",
+     "short_description": "The documentary takes an in depth, searing dive into the colorful community of queer senior citizens who congregate at the Tool Shed, a long-standing gay bar and sanctuary for queer people in Palm Springs, CA.",
+     "description": "<p>The documentary takes an in depth, searing dive into the colorful community of queer senior citizens who congregate at the Tool Shed, a long-standing gay bar and sanctuary for queer people in Palm Springs, CA. Many of its denizens are the oldest survivors of the AIDS epidemic. This film talks about the warrior mentality and spirit, the fortitude and the humor, and the queer community’s emphasis on chosen family that has seen them through centuries of hate, discrimination, and persecution. The Tool Shed provides an oasis in the dessert for leather loving, sex-positive seniors and their admirers. The film examines the generation who never expected to become senior citizens in the face of the HIV/AIDS epidemic and decades of oppression, who now find themselves trailblazers again as the first openly LGBTQ seniors.</p>",
+     "still_image": "https://static-a.eventive.org/1789784161914temp-1789784161776-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1789784158102temp-1789784158037-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1789784296632temp-1789784296616-poster.jpg",
+     "runtime": "22"
+    }
+   ]
+  },
+  {
+   "id": "6aac5a9e7f4c608245ca5990",
+   "name": "LADIES' SPOTLIGHT FILM & PARTY: Mouse",
+   "description": "<p><strong style=\"color: rgb(153, 51, 255);\">AFTER PARTY AT J.MARKS RESTAURANT 🥂💃</strong></p>",
+   "short_description": null,
+   "start_time": "2026-10-17T23:15:00.000Z",
+   "end_time": "2026-10-18T01:15:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9ac",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 4000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aac26bbb51354e18cc263d5",
+     "name": "Mouse",
+     "short_description": "After her closest friend dies suddenly, a teenage girl becomes part\u0003of an unexpected bond between generations, shaped by grief, love, & the complexities of mothers and daughters.",
+     "description": "<p>It's the summer of 2002, and high school senior Minnie has always lived in the shadow of her charismatic best friend, Callie. When their lifelong friendship unexpectedly unravels, Minnie is forced to navigate the uncertainty of adolescence on her own. Drawn into an unexpected relationship with Callie's elegant mother while forging a connection with a new queer friend, Minnie begins to discover her own identity beyond the expectations of others. Featuring standout performances including Sophie Okonedo and David Hyde Pierce, Mouse is a tender, funny, and beautifully observed coming-of-age story about friendship, first love, grief, and the courage to embrace your authentic self.</p>",
+     "still_image": "https://static-a.eventive.org/a9d6b9e48c06d5cdd10468464bc90010.jpg",
+     "cover_image": "https://static-a.eventive.org/d5b6f270b02796e903b2222662841f78.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/a3cdf9084db1150941620aa14166797a.jpg?w=300",
+     "runtime": "120"
+    }
+   ]
+  },
+  {
+   "id": "6aac4df75b3284f55c472a3f",
+   "name": "MEN'S SPOTLIGHT FILM & PARTY: Flesh and Fuel",
+   "description": "<p><strong style=\"color: rgb(153, 51, 255);\">AFTER PARTY AT J.MARKS RESTAURANT 🥂💃</strong></p>",
+   "short_description": null,
+   "start_time": "2026-10-17T23:30:00.000Z",
+   "end_time": "2026-10-18T01:30:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9ac",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 4000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aab8b7d61d88040a3d4badc",
+     "name": "Flesh and Fuel",
+     "short_description": "A lonely French truck driver finds unexpected love with a Polish colleague, forcing both men to navigate the challenges of distance, work, and the possibility of a future together.",
+     "description": "<p>Étienne spends most of his life behind the wheel of his truck, crossing highways and sleeping in roadside parking lots. Bound to the solitude and relentless demands of life on the road, his romantic encounters are fleeting and anonymous. Everything changes when he meets Bartosz, a Polish truck driver whose warmth and openness awaken feelings Étienne has long kept buried. As their connection deepens across rest stops, video calls, and stolen moments together, the two men struggle to sustain a relationship shaped by distance, economic pressures, and the isolating realities of their profession. Together, they must decide whether love can survive a life always in motion. </p>",
+     "still_image": "https://static-a.eventive.org/1789627551592temp-1789627551365-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1789627552004temp-1789627551784-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1789627552328temp-1789627552168-poster.jpg",
+     "runtime": "91"
+    }
+   ]
+  },
+  {
+   "id": "6aac5b048d7a97d2e70ed872",
+   "name": "Jim Queen and the Quest for Chloroqueer",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-18T01:45:00.000Z",
+   "end_time": "2026-10-18T03:45:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9ac",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aac1d3b544f2e2f87c77485",
+     "name": "Jim Queen and the Quest for Chloroqueer",
+     "short_description": "When a mysterious virus threatens both his identity and the future of queer culture, a fallen gay influencer and his unlikely companion race across Paris in search of a cure.",
+     "description": "<p>In this animated gem, Jim Parfait reigns supreme as the ultimate icon of Paris’s gay nightlife—an influencer, fitness guru, and object of endless desire. But his glamorous world comes crashing down when he contracts Hétérose, a bizarre virus that gradually transforms gay men into heterosexuals. Shunned by his followers and stripped of his status, Jim finds an unlikely ally in Lucien, a shy young admirer struggling to embrace his own identity. Together, they embark on a wildly irreverent quest across Paris in search of a mysterious cure. Along the way, they encounter an eccentric cast of characters while confronting questions of community, identity, self-acceptance, and what it truly means to belong.</p>",
+     "still_image": "https://static-a.eventive.org/c2f7ee21cbdab4a5c6ca7968ff3dd07a.jpg",
+     "cover_image": "https://static-a.eventive.org/21861d03d3a58b545d602cdf09e2b61d.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/d09b342fc8e333b14609d3441b27479d.jpg?w=300",
+     "runtime": "85"
+    }
+   ]
+  },
+  {
+   "id": "6aac5b8899c51a7a440331c8",
+   "name": "Ballroom",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-18T17:00:00.000Z",
+   "end_time": "2026-10-18T19:00:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9ac",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aab827613c2e625b8075ca3",
+     "name": "Ballroom",
+     "short_description": "Through the lives of its participants, this vibrant documentary celebrates ballroom culture as a powerful space of queer resistance, chosen family, and unapologetic self-expression.",
+     "description": "<p>More than dazzling fashion and fierce competition, ballroom is a vibrant community where LGBTQIA+ people—particularly Black and Latinx queer and trans individuals—have long found family, affirmation, and freedom. Acclaimed filmmaker Amandine Gay immerses audiences in this electrifying world, exploring the history, politics, and enduring cultural impact of ballroom through the voices of those who live it every day. Blending spectacular performances with intimate personal stories, Ballroom is a joyful celebration of resilience, identity, and chosen family, honoring a movement that continues to redefine self-expression while inspiring generations around the globe.</p>",
+     "still_image": "https://static-a.eventive.org/1789625312383temp-1789625312328-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1789625312661temp-1789625312599-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1789625415449temp-1789625415261-poster.jpg",
+     "runtime": "150"
+    }
+   ]
+  },
+  {
+   "id": "6aaca61ab82604c6f7578dc6",
+   "name": "It’s Ladies' Night: Ladies' Shorts Program",
+   "description": "<p><span class=\"ql-size-large\" style=\"color: rgb(26, 26, 26);\">From around the world to South Florida enjoy this peek into sapphic shorts sure to tug at your heart strings AND funny bone.</span></p>",
+   "short_description": null,
+   "start_time": "2026-10-18T17:15:00.000Z",
+   "end_time": "2026-10-18T19:15:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9ac",
+   "tags": [],
+   "cover": "https://static-a.eventive.org/1789751424744temp-1789751424626-cover.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aaca3fc001115f149ea4c4b",
+     "name": "Scissors",
+     "short_description": "A slasher with a grudge meets his match when a group of queer friends on a weekend getaway turns his killing spree into a bloody night he never saw coming.",
+     "description": "A slasher with a grudge meets his match when a group of queer friends on a weekend getaway turns his killing spree into a bloody night he never saw coming.",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/99fdcd0ae23feaa2b004f640c855c080.jpg?w=300",
+     "runtime": "12"
+    },
+    {
+     "id": "6aaca41b3bf6d0abf623908d",
+     "name": "I Hate Helen",
+     "short_description": "A teenage girl grapples with her confusing feelings for the classmate she insists she hates.",
+     "description": "<p>Priya hates Helen. She hates her in the canteen. Hates her in science. Especially hates her at swimming. Mostly, Priya hates the way Helen makes her feel. This film is an exploration of the rising tide of lust in teen girls and how confusing that time can be.</p>",
+     "still_image": "https://static-a.eventive.org/82abce16228f9ad4036b14e2cb4de203.jpg",
+     "cover_image": "https://static-a.eventive.org/d840e99fd6c192ac32f7d5b202e5dd8c.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/236c0d7087a79ec5dc7df32ec4bfb529.jpg?w=300",
+     "runtime": "7"
+    },
+    {
+     "id": "6aaca4eb460173a2f41bc437",
+     "name": "Full Fat",
+     "short_description": "Grace and Bels do everything together. They live together, spend every waking moment together, and have even slept together. The only problem? Grace is in love with Bels, and Bels has a new boyfriend. Something has to give.",
+     "description": "<p>Grace and Bels do everything together. They live together, spend every waking moment together, and have even slept together. The only problem? Grace is in love with Bels, and Bels has a new boyfriend. Something has to give.</p>",
+     "still_image": "https://static-a.eventive.org/ceb69e4fd1a5b2cdb22c08934fc4d726.jpg",
+     "cover_image": "https://static-a.eventive.org/9dd00de38e2267a070557e54dde7b6bb.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/355c587b4700978b28958b2619360344.jpg?w=300",
+     "runtime": "9"
+    },
+    {
+     "id": "6aaca44d3bf6d0abf6239446",
+     "name": "Eri",
+     "short_description": "In a world where dairy cows must bear calves to survive, Eri, a Holstein, falls in love with another cow. Her sighs linger through sleepless nights — will they find their way to the one she loves?",
+     "description": "<p>In a world where dairy cows must bear calves to survive, Eri, a Holstein, falls in love with another cow. Her sighs linger through sleepless nights — will they find their way to the one she loves?</p>",
+     "still_image": "https://static-a.eventive.org/1789699295874temp-1789699295618-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1789699252752temp-1789699252531-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1789699255135temp-1789699252978-poster.jpg",
+     "runtime": "12"
+    },
+    {
+     "id": "6aaca51bb9979042f23a1ccc",
+     "name": "An Inclination",
+     "short_description": "Peigí is discovered in a bedroom she shouldn't be in.",
+     "description": "Peigí is discovered in a bedroom she shouldn't be in.",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/627f92a78511c8eed3e3fba9ae9f116c.jpg?w=300",
+     "runtime": "13"
+    },
+    {
+     "id": "6aaca5eda406d1dda0a404d3",
+     "name": "Beyond the Waves: The Ballad of Alba",
+     "short_description": "In 1897 Sinaloa, Mexico, Alba, a mysterious fisherwoman, takes a runaway bride named Aurora aboard her rowboat, embarking on an adventure across the sea to change their fate and, along the way, find themselves intertwined forever.",
+     "description": "On the coasts of Sinaloa, Mexico, in 1897, Alba, a mysterious fisherwoman, takes a peculiar runaway bride named Aurora aboard her rowboat. Together, they embark on an unlikely adventure across the sea to change their fate and, along the way, discover an intense awakening that will intertwine their lives forever.",
+     "still_image": "https://static-a.eventive.org/bd16512c879e032b2c08248e61ab9d58.jpg",
+     "cover_image": "https://static-a.eventive.org/c8a363a6992f5679499fd43ae7328763.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/5a407632651c41f0d76ab26cf4c30c3d.jpg?w=300",
+     "runtime": "30"
+    },
+    {
+     "id": "6ab1bd319373eb09ee3468e7",
+     "name": "Sandy Fannies",
+     "short_description": "A mother and her daughter spend a day naked at the beach, discovering each other's intimate secrets.",
+     "description": "A mother and her daughter spend a day naked at the beach, discovering each other's intimate secrets.",
+     "still_image": "https://static-a.eventive.org/1790033353532temp-1790033353433-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1790033339919temp-1790033339892-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/dd9b7ed5bc422839fdba187702dc434f.jpg?w=300",
+     "runtime": "13"
+    }
+   ]
+  },
+  {
+   "id": "6aac81a60b798e93c99d5758",
+   "name": "Heir to Secrets",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-18T20:15:00.000Z",
+   "end_time": "2026-10-18T22:15:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9ac",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aab8d4b69e86d246e4bc291",
+     "name": "Heir to Secrets",
+     "short_description": "A successful Moroccan surgeon's world is upended when he discovers his long-lost father transitioned decades earlier, sending him on a journey to reconcile family, identity, and the truth.",
+     "description": "<p>Farid is only four years old when his beloved father mysteriously disappears. Raised to believe that his father abandoned the family for another woman, Farid builds a successful life as a respected plastic surgeon, husband, and father. Decades later, a letter from Montréal shatters everything he thought he knew. He learns that his father left Morocco to live authentically as a woman—and that the separation had been orchestrated by his own mother. Determined to uncover the truth, Farid embarks on an emotional journey across continents, confronting buried family secrets, cultural expectations, and his own understanding of identity, acceptance, and unconditional love.</p>",
+     "still_image": "https://static-a.eventive.org/1789627885669temp-1789627885442-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1789627987356temp-1789627987161-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1789627886089temp-1789627885912-poster.jpg",
+     "runtime": "109"
+    }
+   ]
+  },
+  {
+   "id": "6aac9e4091d6e8e6861f9595",
+   "name": "Where The Men Are: Men's Shorts Program",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-18T20:30:00.000Z",
+   "end_time": "2026-10-18T22:30:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9ac",
+   "tags": [],
+   "cover": "https://static-a.eventive.org/1789699947109temp-1789699947078-cover.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aac9b79633a14b0cc677563",
+     "name": "Geronto",
+     "short_description": "GERONTO sheds a light on the often-taboo subject of gerontophilia, and challenges societal boundaries around age and desire.",
+     "description": "<p>Based on true events, GERONTO is a short LGBTQ+ coming-of-age drama about longing, connection, and self-discovery. Set over the course of one night in the late 2000s, the story follows Younger, a man in his 20s, who meets Older, a man in his 60s, at a discreet London pub. What begins as a tender and intimate connection soon fractures under the weight of a painful misunderstanding in a nearby hotel room, forcing both men to confront their deepest fears. GERONTO sheds a light on the often-taboo subject of gerontophilia, and challenges societal boundaries around age and desire. Delicate yet daring, the film offers a quietly radical portrait of queer intimacy across generations. </p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/aeec6b7cea9b829c437163c443804508.jpg?w=300",
+     "runtime": "18"
+    },
+    {
+     "id": "6aac9b65a5287fecc52a213d",
+     "name": "Method Cowboy",
+     "short_description": "When a struggling actor feigns being gay to land the role of a lifetime in an Oscar-bait Cowboy Western, he decides to transform himself for the role, blurring the lines between reality and performance.",
+     "description": "When a struggling actor feigns being gay to land the role of a lifetime in an Oscar-bait Cowboy Western, he decides to transform himself for the role, blurring the lines between reality and performance.",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/c2b0cdd5a04d4b590e71e3e50ab71825.jpg?w=300",
+     "runtime": "14"
+    },
+    {
+     "id": "6aac9b48eb683ecfc12e4f07",
+     "name": "Something Still",
+     "short_description": "A heartbroken man returns to the home he shared with his ex-boyfriend, where visceral memories force him to confront the fissures that led to their parting: when the 'casual threesome' they planned evolved into something more.",
+     "description": "<p>A heartbroken man returns to the home he shared with his ex-boyfriend, where visceral memories force him to confront the fissures that led to their parting: when the 'casual threesome' they planned evolved into something more.</p>",
+     "still_image": "https://static-a.eventive.org/866d881d45d0757c8c987a36ca140e7d.jpg",
+     "cover_image": "https://static-a.eventive.org/5c9c6fa9f011ff87c398901a19dac499.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/555d5b795034b8d2d368407b25502e23.jpg?w=300",
+     "runtime": "19"
+    },
+    {
+     "id": "6aac9b02821eab088069a0e5",
+     "name": "The Man in the Showers (Douches Pour Hommes)",
+     "short_description": null,
+     "description": "<p>Skander is ten. Brought to the local swimming pool by his little sister’s babysitter, he steps into the men’s showers for the first time. There, he encounters a moment that awakens something in him: a first, unexpected erotic shock that will stay with him forever.&nbsp;</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/d443d2741eb78596ea57a39fee52eb7d.jpg?w=300",
+     "runtime": "14"
+    },
+    {
+     "id": "6aac98a2f73cc5bb645e3376",
+     "name": "Yellow Bucket",
+     "short_description": "A gay teenager becomes concerned when he suspects his well-meaning parents may be attempting to influence his younger brother's sexual orientation through unconventional scientific methods.",
+     "description": "When gay teenager Connor and his parents realise they are able to decide the sexuality of Connor's younger brother, the decision causes a breakdown in communication...",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/26242a890311bb57a4b04214cfb84946.jpg?w=300",
+     "runtime": "15"
+    },
+    {
+     "id": "6aac9ac6631559cc4530c45f",
+     "name": "Kiloran Bay",
+     "short_description": "Starring Alan Cumming and Jack Wolfe, Kiloran Bay is a 13-minute musical short set amid the wild beauty of the Scottish Hebrides and the fierce joy of a wedding cèilidh. A moving story of queer joy and self-acceptance, it follows a man returning to his hometown, where he faces the forces that drove him away.",
+     "description": "<p>Starring Alan Cumming and Jack Wolfe, Kiloran Bay is a 13-minute musical short set amid the wild beauty of the Scottish Hebrides and the fierce joy of a wedding cèilidh. A moving story of queer joy and self-acceptance, it follows a man returning to his hometown, where he faces the forces that drove him away.</p>",
+     "still_image": "https://static-a.eventive.org/938fea26b79eccd848675efa14dec642.jpg",
+     "cover_image": "https://static-a.eventive.org/9f04946170a89d2c784e6c0a4132acfa.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/977c65d8ee2ed5cae9568db4357b4c29.jpg?w=300",
+     "runtime": "13"
+    },
+    {
+     "id": "6aac9ae691d6e8e6861ea8fe",
+     "name": "Out of Checklist",
+     "short_description": "Twelve-year-old, hyper-rational David pays an unannounced visit to his father's Prague apartment. Following a coming out and a subsequent divorce, his father lives alone and already has weekend plans. In a pinch, he convinces the only person available – a hook-up from Grindr – to look after David for the weekend. What could possibly go wrong?",
+     "description": "<p>Twelve-year-old, hyper-rational David pays an unannounced visit to his father's Prague apartment. Following a coming out and a subsequent divorce, his father lives alone and already has weekend plans. In a pinch, he convinces the only person available – a hook-up from Grindr – to look after David for the weekend. What could possibly go wrong?</p>",
+     "still_image": "https://static-a.eventive.org/da0c62f9ae7a7d52d3ff008d244b7176.jpg",
+     "cover_image": "https://static-a.eventive.org/a636d951b85a7f08f3038ede78e0dbe3.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/09ae777590270ca322f9739edcc61efd.jpg?w=300",
+     "runtime": "26"
+    }
+   ]
+  },
+  {
+   "id": "6aac821b2d8e0d91ee6f2fe1",
+   "name": "The Arrangement",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-18T23:00:00.000Z",
+   "end_time": "2026-10-19T01:00:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9ac",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aac2a1f5090fa81d75a4723",
+     "name": "The Arrangement",
+     "short_description": "When a maid is forced into a family's devastating deception, an unlikely bond with her employer's wife threatens to unravel the patriarchal world that seeks to control them both.",
+     "description": "<p>France, 1908. Céleste, a young maid in a wealthy bourgeois household, becomes pregnant after enduring the unwanted advances of her employer, André Boisvaillant. To preserve the family's reputation, André's wife, Victoire, devises a shocking plan: she will pretend the child is her own and raise the baby as the family's heir. As the deception unfolds, the two women forge an unexpected and deeply emotional bond that transcends class and circumstance. Their growing connection begins to challenge the patriarchal order André is determined to protect, transforming a story of oppression into one of resilience, solidarity, and female empowerment. </p>",
+     "still_image": "https://static-a.eventive.org/6ac1fce71906bbc49963399a04c6f7b0.jpg",
+     "cover_image": "https://static-a.eventive.org/b3cca0c4d3cba54ab0f3aea847fb87e4.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/1789668014613temp-1789668014285-poster.jpg",
+     "runtime": "103"
+    }
+   ]
+  },
+  {
+   "id": "6aac81e9a5287fecc525436c",
+   "name": "Labrador — Autopsy of Silence",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-18T23:30:00.000Z",
+   "end_time": "2026-10-19T01:30:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9ac",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aac238d61d88040a3e134f8",
+     "name": "Labrador — Autopsy of Silence",
+     "short_description": "When a murder aboard a cargo ship casts suspicion on an Inuk mechanic, he must navigate grief, secrecy, and systemic injustice while protecting the truth about a forbidden love.",
+     "description": "<p>On the final cargo voyage of the season through the icy waters of Northern Canada, the body of ship’s cook Alex is discovered in his cabin, sending shockwaves through the isolated crew. Suspicion quickly falls on Alupa Tulugak, an Inuk mechanic who shared a secret relationship with the victim. Refusing to reveal the truth about their bond, Alupa finds himself trapped within a justice system shaped by prejudice, silence, and colonial power structures. As the investigation unfolds in reverse, buried desires, shifting loyalties, and hidden resentments emerge, transforming a murder mystery into a haunting exploration of grief, identity, and the enduring impact of love and loss.</p>",
+     "still_image": "https://static-a.eventive.org/11364ac55e25bf32729bf59c06203f4a.jpg",
+     "cover_image": "https://static-a.eventive.org/42eaf3f70de837c24845dc8c6c9bbbe2.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/4e592b9298f98c25dc23402ec554280f.jpg?w=300",
+     "runtime": "120"
+    }
+   ]
+  },
+  {
+   "id": "6aac824e15c5fe680dd10436",
+   "name": "Hijamat",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-19T01:30:00.000Z",
+   "end_time": "2026-10-19T03:30:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9ac",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aab92fa161365de1def3aee",
+     "name": "Hijamat",
+     "short_description": "When his younger brother comes out, a devoted family man must choose between loyalty to his traditional Muslim family and protecting the sibling he loves.",
+     "description": "<p>Murad's life is thrown into turmoil when he discovers that his younger brother, Kerem, is gay. Wanting to protect him but caught between his family's deeply rooted religious beliefs and his brother's right to live authentically, Murad finds himself at the center of an escalating conflict. As pressure mounts from his father, a respected imam, and divisions deepen within both family and community, long-buried secrets begin to surface. Blending intimate family drama with themes of migration, faith, and identity, Hijamat explores the emotional cost of prejudice and the courage required to choose love over tradition.</p>",
+     "still_image": "https://static-a.eventive.org/8186b6a15f7a828de6be86e5a1237ee7.jpg",
+     "cover_image": "https://static-a.eventive.org/22b0c7242086c0830864af6eaa18af79.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/626fd39384548b49ae440c6cdfbfa36e.jpg?w=300",
+     "runtime": "104"
+    }
+   ]
+  },
+  {
+   "id": "6aac8271a9680e4418477b15",
+   "name": "COCKTAILS & CINEMA™: Celebrating South Florida Films & Filmmakers: The Old Man And The Parrot, Duke, Brackish & Hogar",
+   "description": "<p>South Florida has a small but mighty filmmaking community with plenty of interesting and compelling films. Some are students, or beginners while others are seasoned veterans of the industry who just happen to call South Florida <strong>HOME.</strong></p>",
+   "short_description": null,
+   "start_time": "2026-10-19T23:00:00.000Z",
+   "end_time": "2026-10-20T01:00:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9b0",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aac31f85b3284f55c43be8e",
+     "name": "The Old Man and the Parrot",
+     "short_description": "An unexpected friendship between a lonely older man and a younger outsider inspires both to confront the past and discover that it's never too late to embrace life.",
+     "description": "<p>After years of living in quiet solitude in Miami, an aging man, a Cuban exile man finds his carefully ordered life unexpectedly disrupted by the arrival of a spirited young stranger and an outspoken parrot. As an unlikely friendship blossoms, long-buried memories and unresolved regrets begin to surface, offering both men the opportunity to confront the past and embrace the possibility of healing. With warmth, humor, and emotional honesty, Gabriel de Varona crafts a touching story about connection across generations, the families we choose, and the courage it takes to live authentically.</p>",
+     "still_image": "https://static-a.eventive.org/796a668c35f5796d3345365175a35d99.jpg",
+     "cover_image": "https://static-a.eventive.org/356b71674c6ea9c7f68e5b6571c72a38.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/d74180f6654d9f3ec34c13bd03cd2c74.jpg?w=300",
+     "runtime": "95"
+    },
+    {
+     "id": "6aac9c3c410438a4f509286a",
+     "name": "Hogar",
+     "short_description": "After his mother uncovers his secret, an anxious teenager must confront the one person who could take everything away: his father.",
+     "description": "<p>After his mother uncovers his secret, an anxious teenager must confront the one person who could take everything away: his father.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": null,
+     "runtime": "15"
+    },
+    {
+     "id": "6aac9d52eb683ecfc12ecd33",
+     "name": "Duke",
+     "short_description": "After ten years in New York, Ted returns to Lima to fulfill a marriage promise and finds that little has truly changed.",
+     "description": "<p>Ted returns to Lima after living in New York to fulfill a family promise to marry Betty. Carlos, the bride's father, manages to seduce Ted, who falls into the trap Carlos has set to prevent the marriage to his daughter. Empty-handed, Ted leaves Lima—and his most loyal friend—behind.</p>",
+     "still_image": "https://static-a.eventive.org/1789697464897temp-1789697464771-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1789697396423temp-1789697396366-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1789697396747temp-1789697396659-poster.jpg",
+     "runtime": "14"
+    },
+    {
+     "id": "6aac9dc465dfd975fdf0b41f",
+     "name": "Brackish",
+     "short_description": "When Ben receives a goodbye text from his best friend, Jordan, he faces a race against time to save him from himself. The day after, the two confront their inner turmoil and buried feelings that may change their friendship forever.",
+     "description": "<p>Ben receives an alarming message from his best friend, Jordan. The monotony of his work day becomes a race against time to save Jordan from himself. At the edge of the ocean, the two confront their inner turmoil and buried feelings, changing their relationship forever.</p>",
+     "still_image": "https://static-a.eventive.org/1789697547097temp-1789697546968-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1789697547389temp-1789697547328-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1789697547753temp-1789697547573-poster.jpg",
+     "runtime": "10"
+    }
+   ]
+  },
+  {
+   "id": "6aac8459a9b28bdef63c4c36",
+   "name": "COCKTAILS & CINEMA™: Loves Company",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-19T23:15:00.000Z",
+   "end_time": "2026-10-20T01:15:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9ac",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aac25e2fd2c4bb92802d4fe",
+     "name": "Loves Company",
+     "short_description": "A fading television celebrity and his obsessive biggest fan form an unlikely bond after a crash strands him in the Florida Everglades, where loneliness, loss, and unexpected friendship collide.",
+     "description": "<p>Blake De Troy, a washed-up television personality mourning the sudden loss of his longtime partner and manager, survives a car crash in the Florida Everglades only to be \"rescued\" by Antoinette, his socially awkward number-one fan. Convinced she has finally found the companionship she's always craved, Antoinette refuses to let Blake leave. As his career crumbles and his options disappear, Blake reluctantly embraces the bizarre arrangement, turning captivity into an opportunity for an unlikely comeback. Featuring standout performances from Jack Plotnick, Rachel Dratch, Bryan Batt, and RuPaul's Drag Race star Lady Camden, <em>Loves Company </em>is an offbeat, heartfelt comedy about grief, obsession, fame, and the unexpected connections that can change our lives. </p>",
+     "still_image": "https://static-a.eventive.org/a55ac4a53a0dc61af58a8204a74a5f62.jpg",
+     "cover_image": "https://static-a.eventive.org/1789666902224temp-1789666902161-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/ff6c3b5c5bb8d86d2aeae14f71190ebd.jpg?w=300",
+     "runtime": "95"
+    }
+   ]
+  },
+  {
+   "id": "6aac84a983e0f7202fd03e70",
+   "name": "COCKTAILS & CINEMA™: Bea Arthur: The Documentary \"I've Done Everything Except Porn\"",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-20T23:00:00.000Z",
+   "end_time": "2026-10-21T01:00:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9b0",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aab845585832c96073cd088",
+     "name": "Bea Arthur: The Documentary",
+     "short_description": "Through a never-before-seen interview and intimate conversations with those who knew her, the life and career of Bea Arthur are revisited, revealing the legendary actress, groundbreaking performer, and devoted LGBTQ+ ally behind some of television and theater’s most unforgettable characters.",
+     "description": "<p>More than a decade after her death, legendary actress Bea Arthur tells her story in her own unmistakable voice. Through a never-before-seen interview, archival material, and conversations with colleagues and friends, the documentary explores the woman behind Maude, The Golden Girls, and her Tony-winning performance in Mame. From her early days in New York theater to her groundbreaking career on stage, screen, and television, the film reveals Arthur as sharp, compassionate, fiercely intelligent, and unapologetically herself. It also celebrates her decades-long advocacy for the LGBTQ+ community and the lasting impact of an icon whose work and outspoken allyship continue to resonate across generations. </p>",
+     "still_image": "https://static-a.eventive.org/1789625643205temp-1789625642660-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1789625643791temp-1789625643475-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1789625645018temp-1789625643974-poster.jpg",
+     "runtime": "90"
+    }
+   ]
+  },
+  {
+   "id": "6aac8518695b1b1e4f8b9b41",
+   "name": "COCKTAILS & CINEMA™: The Drive",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-20T23:15:00.000Z",
+   "end_time": "2026-10-21T01:15:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9ac",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aac2d473515380996e15216",
+     "name": "The Drive",
+     "short_description": "As Florida’s political climate grows increasingly hostile toward LGBTQ+ people, the vibrant community of Wilton Manors faces an uncertain future. Through personal stories, colorful characters, and life along Wilton Drive, The Drive celebrates a resilient queer community determined to protect its home and identity.",
+     "description": "<p>The Drive is a vibrant portrait of the LGBTQ+ community of Wilton Manors, Florida, as it navigates an increasingly hostile political climate. Framed by the 2024 election, the years that follow, and Trump 2.0, the film explores the political, cultural, and personal forces reshaping queer life in one of America’s most visible LGBTQ+ communities. Through intimate stories, community voices, colorful characters, and events along Wilton Drive, The Drive moves beyond politics to celebrate the people who have made Wilton Manors a haven for generations. The result is both a snapshot of a community under pressure and a heartfelt love letter to The Drive—its history, resilience, and uniquely exuberant queer spirit. </p>",
+     "still_image": "https://static-a.eventive.org/1789669007556temp-1789669007242-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1789669007979temp-1789669007788-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1789669008270temp-1789669008151-poster.jpg",
+     "runtime": "87"
+    }
+   ]
+  },
+  {
+   "id": "6aac8549e217f2d9c0406093",
+   "name": "CENTERPIECE FILM & PARTY: No Rest for the Wicked",
+   "description": "<p><strong style=\"color: rgb(153, 51, 255);\">HALLOWEEN THEMED AFTER PARTY ON THE PATIO AT SAVOR CINEMA 🩸</strong></p>",
+   "short_description": null,
+   "start_time": "2026-10-21T23:30:00.000Z",
+   "end_time": "2026-10-22T01:30:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9af",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 4000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aac28894a49571c6a2ab39e",
+     "name": "No Rest for the Wicked",
+     "short_description": "In a remote 19th-century Faroese village, a young fisherman and a visiting whaler risk everything for a forbidden love that awakens terrifying supernatural forces.",
+     "description": "<p>1862. Baldur lives a fisherman’s life on the isolated Faroe Islands far to the north in the Atlantic Ocean. His world is turned upside down when a stranger arrives: Helge, a rugged whaler, who awakens deep emotions within him. A mutual attraction starts to grow. When tragedy strikes, their forbidden passion unleashes natural forces so disturbing that the villagers rally to keep evil at bay. But Baldur and Helge refuse to let their love be buried. They will fight till the end – and after. </p>",
+     "still_image": "https://static-a.eventive.org/1789667683489temp-1789667683111-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1789667683952temp-1789667683714-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/3555d86b3558be8b4bc55bd325ad4070.jpg?w=300",
+     "runtime": "103"
+    }
+   ]
+  },
+  {
+   "id": "6aac8804524f64ce929bebd9",
+   "name": "Downtown",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-22T23:00:00.000Z",
+   "end_time": "2026-10-23T01:00:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9ae",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aab8ad0954220bf84320443",
+     "name": "Downtown",
+     "short_description": "Three friends who came of age in Amsterdam’s vibrant gay nightlife of the 1980s reunite decades later to confront the love, loss, and unspoken truths left in the wake of the AIDS crisis.",
+     "description": "<p>Amsterdam, 1986. The legendary Downtown nightclub pulses with freedom, desire, and possibility, offering a sanctuary for a generation of young gay men. Ronnie commands the DJ booth, while charismatic partygoer Lennart embraces the city’s intoxicating nightlife. Their world shifts when they meet Bas, a radiant young artist whose arrival forges an intense bond among the three friends. But as the AIDS epidemic begins to cast its devastating shadow over the community, their carefree existence is forever altered. Decades later, during the COVID-19 pandemic, an unexpected reunion forces Ronnie, Lennart, and Bas to confront long-buried memories, unresolved emotions, and the enduring impact of love, loss, and survival.</p>",
+     "still_image": "https://static-a.eventive.org/1789627135483temp-1789627135214-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1789627224528temp-1789627224346-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/a540e13abcd63ac68f9e56ddd1501a51.jpg?w=300",
+     "runtime": "98"
+    }
+   ]
+  },
+  {
+   "id": "6aac883732a5ddd037c9360c",
+   "name": "Whispering Trees",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-22T23:15:00.000Z",
+   "end_time": "2026-10-23T01:15:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9ac",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aac32f7e2fa50f77f2e67fc",
+     "name": "Whispering Trees",
+     "short_description": "A reluctant forester falls for a charismatic photographer, only to discover that the man he loves is also the key to the career-defining mission that could drive them apart.",
+     "description": "<p>Yascha Krüger reluctantly leaves his desk job at the Ministry of Forestry to fill in as a ranger in the Bavarian woods, where his first assignment is to persuade the heir of a privately owned forest to sell the land for a new national park. His plans are quickly complicated when he falls for Mats, a charming wildlife photographer who is, unbeknownst to Yascha, the very man he has been sent to convince. As small lies snowball into bigger complications, Yascha must choose between career ambitions and the chance at genuine love. Set against a picturesque forest backdrop, <em>Whispering Trees</em> is a warm, humorous romance celebrating authenticity, acceptance, and following your heart. </p>",
+     "still_image": "https://static-a.eventive.org/1789670304155temp-1789670303648-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1789670304688temp-1789670304370-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1789670305137temp-1789670304867-poster.jpg",
+     "runtime": "89"
+    }
+   ]
+  },
+  {
+   "id": "6aac88594c35151b886e260c",
+   "name": "Another Man (Un Altre Home)",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-23T01:30:00.000Z",
+   "end_time": "2026-10-23T03:30:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9ae",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aab815673ee16b842765189",
+     "name": "Another Man (Un Altre Home)",
+     "short_description": "A man in a long-term relationship finds his carefully ordered life unraveling when a new neighbor awakens desires that challenge his sense of love, commitment, and identity.",
+     "description": "<p>Marc and Eudald have shared a stable relationship for six years, their lives shaped by routine and quiet familiarity. While Marc works from home as a graphic designer, Eudald’s fast-paced lifestyle keeps him constantly on the move, and his growing desire to formalize their future leaves Marc feeling emotionally trapped. When a new neighbor, Carlos, moves into the apartment across the street, Marc becomes unexpectedly captivated. What begins as casual curiosity soon awakens desires and doubts he can no longer ignore. Caught between comfort and longing, Marc is forced to confront his relationship, his past, and the uncertain path his life may take. </p>",
+     "still_image": "https://static-a.eventive.org/3bddb4edc0ef0f4425c9ebd1daa7be10.jpg",
+     "cover_image": "https://static-a.eventive.org/1789624941502temp-1789624941479-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/5d7576074be16f7191fa0b109c4a72f3.jpg?w=300",
+     "runtime": "91"
+    }
+   ]
+  },
+  {
+   "id": "6aac887f687e8724e6a00ae6",
+   "name": "Chica Checa",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-23T01:45:00.000Z",
+   "end_time": "2026-10-23T03:45:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9ac",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aab88ff32b87d4a59ed2f7f",
+     "name": "Chica Checa",
+     "short_description": "A lonely village postwoman and her drag performer son reconnect as buried truths, family bonds, and the courage to embrace one's authentic self reshape both of their lives.",
+     "description": "<p>Widowed village postwoman Zdena leads a lonely existence, caring for her dying mother while longing for a life beyond the expectations of her small Czech village. When her son Lukáš returns home from France to fulfill his grandmother's final wish, long-buried truths begin to surface—including his secret life as the glamorous drag performer Chica Checa. As mother and son navigate grief, acceptance, and the fear of being truly seen, their reunion becomes a touching journey toward understanding. Blending gentle humor with heartfelt emotion, Šimon Holý crafts a warm, life-affirming portrait of family, identity, and the freedom to live authentically.</p>",
+     "still_image": "https://static-a.eventive.org/1789626814941temp-1789626814785-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1789626815240temp-1789626815167-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1789626815706temp-1789626815411-poster.jpg",
+     "runtime": "96"
+    }
+   ]
+  },
+  {
+   "id": "6aac8fc17faf13f1bae81887",
+   "name": "NOCHE CINEMUNDO LADIES' SPOTLIGHT: Love on a Tightrope",
+   "description": "<p><strong style=\"color: rgb(0, 138, 0);\">IN PARTNERSHIP WITH MIAMI FILM FESTIVAL</strong></p>",
+   "short_description": null,
+   "start_time": "2026-10-23T23:00:00.000Z",
+   "end_time": "2026-10-24T01:00:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9ae",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 4000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aac24704e8638b47f4d51f7",
+     "name": "Love on a Tightrope",
+     "short_description": "A legendary trapeze artist and a young poet form an intense emotional and creative bond in 1960s Spain, blurring the line between memory, desire, and what might have been.",
+     "description": "<p>In 1960s Spain, legendary trapecist Pinito del Oro hires young poet Natalia Sosa Ayala to help with her memoirs, sparking a profound emotional bond between them. Through historical events, intimate encounters, and decades of letters, their admiration, affection, and creative passion intertwine. The story moves between memory, desire, and imagination, showing how these two artists influence each other’s quests for freedom, artistic expression, and recognition. Rooted in real moments but told with a dreamlike, imaginative lens, it explores what might have been between them, revealing a tender, evocative tale of connection, longing, and the courage to defy societal constraints. </p>",
+     "still_image": "https://static-a.eventive.org/1789666643368temp-1789666642447-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1789666644172temp-1789666643605-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/a10d4310e095a8ca15afac801317604e.jpg?w=300",
+     "runtime": "116"
+    }
+   ]
+  },
+  {
+   "id": "6aac88b3c0fdc5378f459068",
+   "name": "NOCHE CINEMUNDO MEN'S SPOTLIGHT: Narciso",
+   "description": "<p><strong style=\"color: rgb(0, 138, 0);\">IN PARTNERSHIP WITH MIAMI FILM FESTIVAL</strong></p>",
+   "short_description": null,
+   "start_time": "2026-10-23T23:25:00.000Z",
+   "end_time": "2026-10-24T01:25:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9ae",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 4000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aac27e363ea961b539e7884",
+     "name": "Narciso",
+     "short_description": "The mysterious death of a charismatic rock star in 1959 Paraguay exposes the devastating cost of living openly under a brutal military dictatorship.",
+     "description": "<p>Paraguay, 1959. Returning from Buenos Aires with rock 'n' roll in his veins, the charismatic Narciso quickly becomes a radio sensation and a symbol of freedom in a nation suffocated by the military dictatorship of Alfredo Stroessner. Admired by both men and women, his magnetic presence challenges the country's rigid social order. But after his final performance, Narciso is found dead under mysterious circumstances. As rumors spread and fear silences the truth, his death exposes a society shaped by repression, prejudice, and political control. Inspired by real events, Marcelo Martinessi crafts a haunting portrait of a nation where identity, desire, and dissent carry deadly consequences. </p>",
+     "still_image": "https://static-a.eventive.org/0efa22093a1c0020fe3fb1fd8d7c77a8.jpg",
+     "cover_image": "https://static-a.eventive.org/7d6a19ce8034114eda9d09123e66d74e.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/32564a782971fce37c0e9ae834c14e13.jpg?w=300",
+     "runtime": "101"
+    }
+   ]
+  },
+  {
+   "id": "6aac915dd0884f156ec3a1ef",
+   "name": "OUTSHINE AFTER DARK: Corpus",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-24T01:30:00.000Z",
+   "end_time": "2026-10-24T03:30:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9ae",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aab89f24f9be2ed75a32cb5",
+     "name": "Corpus",
+     "short_description": "A young photographer follows the man he secretly loves to a remote estate, where an alluring invitation becomes a seductive nightmare of terror and survival.",
+     "description": "<p>It's the summer of 1998, and Sayo, a soulful nightlife photographer and small-time drug dealer in New York City, is invited to an exclusive weekend party by his longtime friend—and unrequited love—Vince, a rising movie star. Along with their reckless friend Ross, they escape to a secluded country estate expecting a weekend of excess and celebration. Instead, they encounter three enigmatic women whose seductive charm masks a terrifying agenda. As desire gives way to paranoia and survival, Sayo is drawn into a nightmarish web of psychological manipulation, supernatural horror, and deadly temptation in Corrin Evans' stylish, queer-inflected feature debut.</p>",
+     "still_image": "https://static-a.eventive.org/4c026878993e798906c03c7c1a9b7f74.jpg",
+     "cover_image": "https://static-a.eventive.org/46128f9c59e2c5c25b4615afc9444868.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/c66a935ba8ad58bf748dd23c71ea67e8.jpg?w=300",
+     "runtime": "102"
+    }
+   ]
+  },
+  {
+   "id": "6aac923048f4928cf45b8d0a",
+   "name": "I Am Mario",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-24T20:00:00.000Z",
+   "end_time": "2026-10-24T22:00:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9ae",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aab936d5b3284f55c2f9af7",
+     "name": "I Am Mario",
+     "short_description": "An unexpected pregnancy offers a forty-year-old trans man the chance to fulfill his lifelong dream of becoming a father, forcing him to redefine identity, masculinity, and family.",
+     "description": "<p>At forty, Ángel, a transgender taxi driver, has built a life defined by resilience, independence, and the hope of one day becoming a father. When an unexpected pregnancy turns his world upside down, he is forced to confront questions about identity, masculinity, family, and the body he has worked so hard to make his own. As he navigates the emotional and physical challenges ahead, Ángel discovers that life rarely follows the path we imagine. Patricia Ortega's deeply compassionate drama is an intimate exploration of self-discovery, parenthood, and the transformative power of embracing the unexpected. </p>",
+     "still_image": "https://static-a.eventive.org/5f57f0dc78c6957ac266234da3a23efd.jpg",
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/6edea08ab0e86a207cb10adddef465f7.jpg?w=300",
+     "runtime": "98"
+    }
+   ]
+  },
+  {
+   "id": "6aac9258360250e04923b7a5",
+   "name": "The Fixation",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-24T22:45:00.000Z",
+   "end_time": "2026-10-25T00:45:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9ae",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aac2ea03515380996e192e7",
+     "name": "The Fixation",
+     "short_description": "A photographer reluctantly reunites with his famous former lover for an erotic project, reigniting a toxic relationship consumed by desire, jealousy, and obsession, forcing him to confront a dangerous past while struggling to survive the increasingly volatile assignment.",
+     "description": "<p>Álvaro, an accomplished photographer struggling with debt and his father’s terminal illness, reluctantly accepts an erotic photography assignment designed to recruit VIP clients. But the project takes an unexpected turn when he discovers that its star is Felipe, a famous model with whom he shares a turbulent past. Their reunion reignites a toxic relationship fueled by desire, jealousy, and obsession. As tensions escalate and increasingly dangerous situations surround the project, Álvaro must navigate the blurred lines between passion and madness while fighting to maintain his sanity—and survive. </p>",
+     "still_image": "https://static-a.eventive.org/1789669165971temp-1789669165722-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1789669156774temp-1789669156595-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1789768677120temp-1789768677048-poster.jpg",
+     "runtime": "123"
+    }
+   ]
+  },
+  {
+   "id": "6aac9284dfe389a2b8f80b72",
+   "name": "The Golden Age",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-24T23:00:00.000Z",
+   "end_time": "2026-10-25T01:00:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9ae",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aac2f44161365de1dfada0a",
+     "name": "The Golden Age",
+     "short_description": "A butcher's daughter defies fate as she pursues her dream of becoming a countess, her extraordinary life unfolding alongside the defining events of the 20th century.",
+     "description": "<p>Born at the dawn of the 20th century in her parents' butcher shop, Jeanne Lavaur dreams of becoming a countess. Refusing to let circumstance define her future, she embarks on an extraordinary journey that carries her through the glamour of Paris during the Roaring Twenties, the devastation of two world wars, and adventures stretching as far as Brazil. Alongside the fearless Céleste and the steadfast Guillaume de Barante, Jeanne navigates love, loss, and history itself, determined to forge her own destiny. Blending archival footage with dramatic storytelling, The Golden Age is an ambitious portrait of one woman's remarkable life across six decades. </p>",
+     "still_image": "https://static-a.eventive.org/9305b3b1a12ccfb7d6f20531c5a05397.jpg",
+     "cover_image": "https://static-a.eventive.org/6862af5fc88385fd5f5256b7e9d308c6.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/1789669308399temp-1789669308277-poster.jpg",
+     "runtime": "112"
+    }
+   ]
+  },
+  {
+   "id": "6aac92a47de28aad2f501e69",
+   "name": "Test",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-25T01:30:00.000Z",
+   "end_time": "2026-10-25T03:30:00.000Z",
+   "venue": "6aa99726170f9b1e5e61a9ae",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aac296fc3cdd2ffdafeb23c",
+     "name": "Test",
+     "short_description": "An aspiring bodybuilder from rural Ohio must reconcile faith, family, and ambition when an unexpected queer awakening threatens the carefully constructed life he has always known.",
+     "description": "<p>Eddie Owens dreams of escaping small-town Ohio and earning his professional bodybuilding card. Living under the watchful eye of his deeply religious mother, Joanne, Eddie channels his emotional struggles into an obsessive pursuit of physical perfection. Secretly supporting his ambitions through online sex work, he carefully conceals both his livelihood and his growing questions about his identity. When he begins training with Mike, a charismatic new coach, Eddie experiences an unexpected queer awakening that forces him to confront long-suppressed desires. Torn between faith, family expectations, ambition, and authenticity, Eddie must decide what he is willing to sacrifice in order to live truthfully. </p>",
+     "still_image": "https://static-a.eventive.org/18ea14b27fcad53e71520236e10b1c5b.jpg",
+     "cover_image": "https://static-a.eventive.org/830af19cbfa0f960aa8276dd0030c332.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/7ae3631cd278223933072f7f7471096e.jpg?w=300",
+     "runtime": "113"
+    }
+   ]
+  },
+  {
+   "id": "6aac92c6005e3715ca8cf6e9",
+   "name": "CLOSING NIGHT FILM & PARTY: Before I Do",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-25T22:00:00.000Z",
+   "end_time": "2026-10-26T00:00:00.000Z",
+   "venue": "6aac92f46fa99450679bed7c",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 4000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aab885fc8f436f67ac561ea",
+     "name": "Before I Do",
+     "short_description": "A groom-to-be's bachelor weekend is thrown into disarray when unresolved feelings for his best man resurface, forcing everyone to reconsider what—and who—they're celebrating.",
+     "description": "<p>John Michael is just days away from marrying the man he believes is the love of his life when he reunites with his best man, Alex—who also happens to be his former flame. What begins as a carefree bachelor weekend at a secluded lakeside cabin quickly spirals into romantic chaos as old feelings resurface and long-buried questions refuse to stay hidden. Egged on by a group of mischievous friends determined to play matchmaker, the wedding party finds itself navigating unexpected attractions, second chances, and hilarious complications. With heart, humor, and plenty of awkward moments, Before I Do is a charming romantic comedy about love, timing, and discovering where you truly belong.</p>",
+     "still_image": "https://static-a.eventive.org/3456f785ad80437498c5d0a583d9112d.jpg",
+     "cover_image": "https://static-a.eventive.org/6ec4e78eef3a937e36d37005c4e7773f.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/9bbb8dfadc0643c5dcc98d262a9a216e.jpg?w=300",
+     "runtime": "87"
+    }
+   ]
+  }
+ ],
+ "venues": [
+  {
+   "id": "6aa99726170f9b1e5e61a9ab",
+   "name": "Regal Dania Pointe",
+   "short_name": "Regal Dania Pointe",
+   "address": null,
+   "addressLine": null,
+   "default_capacity": null
+  },
+  {
+   "id": "6aa99726170f9b1e5e61a9ac",
+   "name": "Gateway Theatre Fort Lauderdale",
+   "short_name": "Gateway Theatre",
+   "address": "1820 E Sunrise Blvd.\nFort Lauderdale FL, 33304",
+   "addressLine": "1820 E Sunrise Blvd., Fort Lauderdale FL, 33304",
+   "default_capacity": null
+  },
+  {
+   "id": "6aa99726170f9b1e5e61a9ae",
+   "name": "Silverspot Downtown Miami",
+   "short_name": "Silverspot Miami",
+   "address": "300 SE 3rd St #100, Miami, FL 33131",
+   "addressLine": "300 SE 3rd St #100, Miami, FL 33131",
+   "default_capacity": null
+  },
+  {
+   "id": "6aa99726170f9b1e5e61a9af",
+   "name": "Savor Cinema Fort Lauderdale",
+   "short_name": "Savor Cinema",
+   "address": "503 SE 6th St, Fort Lauderdale, FL 33301",
+   "addressLine": "503 SE 6th St, Fort Lauderdale, FL 33301",
+   "default_capacity": 220
+  },
+  {
+   "id": "6aa99726170f9b1e5e61a9b0",
+   "name": "O Cinema South Beach",
+   "short_name": "O Cinema",
+   "address": "1130 Washington Ave, Miami Beach, FL 33139",
+   "addressLine": "1130 Washington Ave, Miami Beach, FL 33139",
+   "default_capacity": 75
+  },
+  {
+   "id": "6aac92f46fa99450679bed7c",
+   "name": "Little Haiti Cultural Complex",
+   "short_name": "LHCC",
+   "address": "212 NE 59th Terrace, Miami, FL 33137",
+   "addressLine": "212 NE 59th Terrace, Miami, FL 33137",
+   "default_capacity": null
+  }
+ ],
+ "outOfEdition": []
+}

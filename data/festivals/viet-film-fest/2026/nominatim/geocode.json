@@ -1,0 +1,16 @@
+{
+ "results": [
+  {
+   "query": "2002 N Main St, Santa Ana, CA 92706, United States",
+   "matched": "2002 N Main St, Santa Ana, CA 92706, United States",
+   "lat": 33.763371,
+   "lng": -117.868229
+  },
+  {
+   "query": "305 E 4th St #100, Santa Ana, CA 92701",
+   "matched": "305 E 4th St, Santa Ana, CA 92701",
+   "lat": 33.748114,
+   "lng": -117.865252
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "about": "Hand-curated venue research for the IAEM annual assembly, keyed by the code its forms-wizard adapter gives the venue, with the halls and the poster area the agenda names. Every figure is {value, source}, or null when nobody could cite it; coordinates carry the basis they rest on and their source.",
+ "researchedAt": "2026-10-02",
+ "venues": {
+  "avenue-airport-city": {
+   "name": "Avenue Conference & Events Center",
+   "address": {"value": "Hasharon St, Airport City", "source": "https://emergencymedicine-2026.forms-wizard.biz/"},
+   "coordinates": {"lat": 31.9859686, "lng": 34.916174, "basis": "the building's OpenStreetMap outline (way 175196857)", "source": "https://www.openstreetmap.org/way/175196857"},
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {"id": "hall-a", "name": "Hall A", "capacity": null, "layout": null},
+    {"id": "hall-b", "name": "Hall B", "capacity": null, "layout": null},
+    {"id": "hall-c", "name": "Hall C", "capacity": null, "layout": null},
+    {"id": "poster-area-d", "name": "Poster Exhibition Area D", "capacity": null, "layout": null}
+   ],
+   "accessibility": null,
+   "notes": "At the entrance to Airport City, between Ben Gurion Airport and Kfar Truman; the entrance is at the building's south-western corner (the conference site)."
+  }
+ }
+}

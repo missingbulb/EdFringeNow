@@ -18,6 +18,7 @@ kind = "theatre"
 subtypes = ["theatre-alternative"]
 default_genre = "theatre"
 site = "https://accofestival.co.il"
+wikidata = "Q213148"
 
 [ticketing]
 model = "per-event-seller"
@@ -32,6 +33,7 @@ format = "block"
 # municipality's street programme 28-30.9. The edition spans both.
 first = "2026-09-27"
 last = "2026-10-01"
+sources = ["venues-research", "acco-tc", "eventer", "street-programme"]
 
 [[source]]
 id = "venues-research"

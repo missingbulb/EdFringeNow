@@ -1,0 +1,76 @@
+{
+ "results": [
+  {
+   "query": "1 Canning Rise, Singapore 179868",
+   "matched": "1 Canning Rise, Singapore 179868",
+   "lat": 1.293047,
+   "lng": 103.848491
+  },
+  {
+   "query": "1 Esplanade Dr, Singapore 038981",
+   "matched": "1 Esplanade Dr, Singapore 038981",
+   "lat": 1.290984,
+   "lng": 103.854709
+  },
+  {
+   "query": "1 HarbourFront Walk, #02-30 VivoCity, Singapore 098585",
+   "matched": null,
+   "lat": null,
+   "lng": null
+  },
+  {
+   "query": "1 McNally St, Singapore 187940",
+   "matched": "1 McNally St, Singapore 187940",
+   "lat": 1.30292,
+   "lng": 103.851956
+  },
+  {
+   "query": "10 Bayfront Ave, B1-69/70 The Shoppes, Marina bay sands, Singapore 018971",
+   "matched": null,
+   "lat": null,
+   "lng": null
+  },
+  {
+   "query": "10 Bayfront Ave, Singapore 018956",
+   "matched": "10 Bayfront Ave, Singapore 018956",
+   "lat": 1.282641,
+   "lng": 103.860028
+  },
+  {
+   "query": "201 Victoria St, #05-01 Bugis+, Singapore 188067",
+   "matched": "201 Victoria St, Bugis+, Singapore 188067",
+   "lat": 1.299281,
+   "lng": 103.854777
+  },
+  {
+   "query": "6001 Beach Rd, #05-00, Singapore 199589",
+   "matched": "6001 Beach Rd, Singapore 199589",
+   "lat": 1.301885,
+   "lng": 103.864019
+  },
+  {
+   "query": "8 Grange Road, Cineleisure Level 5 & 6, 239695",
+   "matched": null,
+   "lat": null,
+   "lng": null
+  },
+  {
+   "query": "8 Grange Road, Cineleisure Level 5, Level 6 &, 239695",
+   "matched": null,
+   "lat": null,
+   "lng": null
+  },
+  {
+   "query": "93 Stamford Rd, National Museum of Singapore, Singapore 178897",
+   "matched": null,
+   "lat": null,
+   "lng": null
+  },
+  {
+   "query": "Block F Level 1, McNally St, F102, Singapore 187940",
+   "matched": "McNally St, F102, Singapore 187940",
+   "lat": 1.302562,
+   "lng": 103.851063
+  }
+ ]
+}

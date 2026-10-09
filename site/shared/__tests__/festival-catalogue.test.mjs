@@ -68,6 +68,17 @@ test("the Fringe reads through the same adapter as every other festival, off its
   assert.ok(statuses.has("SOLD_OUT") || statuses.has("TICKETS_AVAILABLE"), [...statuses].join(","));
 });
 
+test("a festival's popularity is a non-negative integer when known, and an absent key, never null, when not", () => {
+  const index = readJson("data/festivals/index.json");
+  let known = 0;
+  for (const festival of index.festivals) {
+    if (!("popularity" in festival)) continue;
+    known += 1;
+    assert.ok(Number.isInteger(festival.popularity) && festival.popularity >= 0, `${festival.id}: popularity ${festival.popularity}`);
+  }
+  assert.ok(known >= 10, `the sweep covered the measured festivals (${known})`);
+});
+
 test("availability: only sold-out stops scheduling; unknown is available, free stays free", () => {
   const block = readJson("data/festivals/jerusalem-comedy/2026.json");
   const engineOf = (over) => {

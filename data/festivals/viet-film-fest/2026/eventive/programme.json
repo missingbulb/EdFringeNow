@@ -1,0 +1,1917 @@
+{
+ "tenant": "vietfilmfest2026",
+ "site": "https://vietfilmfest2026.eventive.org",
+ "displayName": "Viet Film Fest 2026",
+ "displayTimezone": "America/Los_Angeles",
+ "currency": "usd",
+ "eventBucket": "6a29d6aa4de75c8c0f789050",
+ "edition": "2026",
+ "events": [
+  {
+   "id": "6a911165e3f794ecd038b417",
+   "name": "When You See Me (HS Students' Day)",
+   "description": "<p><strong>This short film set contains mature themes and strong language. Viewer discretion is advised.</strong></p><p><br></p><p>This short film set – screening for free to high school students during VFF’s opening in-person hours – explores the often incomplete ways in which we view each other, featuring characters whose views towards others are challenged and reformed.</p><p><br></p><p>The opener, <em>Wedding Flowers</em>, tracks a mother-daughter relationship as the proximity of returning home forces a reevaluation of resentment, loneliness, and love. <em>No Barriers</em> follows with the story of a hard-of-hearing girl who decides to learn American Sign Language as an adult after years of isolation from the hearing world. Together, these two films show a paradox of space – exemplifying how closeness can force new understanding of others, or how distance can force new understanding of the self.</p><p><br></p><p>Entering the set’s second half, <em>Dasher</em> depicts a delivery driver on Christmas Eve as a former high school classmate spontaneously joins for the deliveries. Their initial impressions of each other are shallow and droll, but eventually they find unexpected connection in dreams of uncertain futures. The penultimate film, <em>Sea Song</em>, takes a twist on this idea of challenging perspectives as it follows a group of South Vietnamese Naval officers through what may be their last reunion. Through its unique lens of a scarcely-covered topic, the viewers ultimately receive the changed perspective through the veterans’ joy – nevertheless shaped out of trauma.</p><p><br></p><p>In conclusion, <em>Forever is a Delicate Thing</em> features a young boy and his grandfather faced with losing custody as the sudden change forces what may be a final goodbye.</p><p><br></p><p>By <strong>Tai Nguyen</strong></p>",
+   "short_description": null,
+   "start_time": "2026-10-08T16:30:00.000Z",
+   "end_time": "2026-10-08T18:35:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b2",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": true,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1500,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a8e7972e7c329b6363acc70",
+     "name": "Wedding Flowers",
+     "short_description": null,
+     "description": "A begrudgingly adept, family outcast and her overbearing mother struggle to find connection as their Vietnamese American family reunites for a wedding celebration.",
+     "still_image": "https://static-a.eventive.org/7648661e7f7f3a9a9b6087537cf99fab.jpg",
+     "cover_image": "https://static-a.eventive.org/db732ddaa9a81621ab96a5ee070273f8.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/1434ba261e2e20f63ece41815ec2ebfd.jpg?w=300",
+     "runtime": "12"
+    },
+    {
+     "id": "6a8bd8dd32f3db16a2ce279f",
+     "name": "No Barriers (Lắng Nhìn)",
+     "short_description": null,
+     "description": "After years of isolation in the hearing world, a mainstreamed Deaf adult learns sign language for the first time.",
+     "still_image": "https://static-a.eventive.org/1788010410645temp-1788010410616-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788010399828temp-1788010399615-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/10935b4fe141d7b5b0ccb6dc2e1b7634.jpg?w=300",
+     "runtime": "12"
+    },
+    {
+     "id": "6a8fcb0d62cb25450b4357c0",
+     "name": "Thirst for Freedom (Khát Tự Do)",
+     "short_description": null,
+     "description": "<p>An ex-captain for the Army of the Republic of Vietnam relives his experiences spending nearly 13 years in Việt Cộng reeducation camps. He speaks of the pain he endured, the family he was torn from, and the immeasurable loss he faced. Now in America and grateful for the life he has built there, he looks to a hopeful future.</p>",
+     "still_image": "https://static-a.eventive.org/1788013529940temp-1788013529810-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788013530226temp-1788013530178-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1788013530430temp-1788013530416-poster.jpg",
+     "runtime": "7"
+    },
+    {
+     "id": "6a8fcb0d62cb25450b4357b0",
+     "name": "Dasher",
+     "short_description": null,
+     "description": "<p>A down-and-out food delivery driver and a wayward restaurant worker team up for a chaotic\nnight of deliveries on Christmas Eve in Honolulu, Hawai‘i.</p>",
+     "still_image": "https://static-a.eventive.org/1787971859479temp-1787971859331-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787971849611temp-1787971849565-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787971849925temp-1787971849852-poster.jpg",
+     "runtime": "26"
+    },
+    {
+     "id": "6a8e708b09b1fbd1a0057516",
+     "name": "Sea Song",
+     "short_description": null,
+     "description": "The last remaining South Vietnamese naval officers reunite in California for what will likely be the final time, finding solace with the few people who understand the complexities that shape their life histories.",
+     "still_image": "https://static-a.eventive.org/1788012881185temp-1788012881129-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788012859630temp-1788012859605-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/57a5203243e89061ea318d0a0acc544f.jpg?w=300",
+     "runtime": "18"
+    },
+    {
+     "id": "6a8bd1f216df6fa26b2356a9",
+     "name": "Forever Is a Delicate Thing",
+     "short_description": null,
+     "description": "<p>When a visit from the Los Angeles County Department of Child and Family Services interrupts the humble, kindred lifestyle of a Vietnam War immigrant and the grandson in his custody, the two spend their last days together braving what will soon become the broken pieces on which they built their lives.</p>",
+     "still_image": "https://static-a.eventive.org/60c9eaa2387d7f3d07b0f612f90b5cf9.jpg",
+     "cover_image": "https://static-a.eventive.org/258819247684b30e338f8ebe1162714d.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/cef9a9328f767df3da8d0e789110ff12.jpg?w=300",
+     "runtime": "16"
+    }
+   ]
+  },
+  {
+   "id": "6a911165e3f794ecd038b41c",
+   "name": "When You See Me (HS Students' Day)",
+   "description": "<p><strong>This short film set contains mature themes and strong language. Viewer discretion is advised.</strong></p><p><br></p><p>This short film set – screening for free to high school students during VFF’s opening in-person hours – explores the often incomplete ways in which we view each other, featuring characters whose views towards others are challenged and reformed.</p><p><br></p><p>The opener, <em>Wedding Flowers</em>, tracks a mother-daughter relationship as the proximity of returning home forces a reevaluation of resentment, loneliness, and love. <em>No Barriers</em> follows with the story of a hard-of-hearing girl who decides to learn American Sign Language as an adult after years of isolation from the hearing world. Together, these two films show a paradox of space – exemplifying how closeness can force new understanding of others, or how distance can force new understanding of the self.</p><p><br></p><p>Entering the set’s second half, <em>Dasher</em> depicts a delivery driver on Christmas Eve as a former high school classmate spontaneously joins for the deliveries. Their initial impressions of each other are shallow and droll, but eventually they find unexpected connection in dreams of uncertain futures. The penultimate film, <em>Sea Song</em>, takes a twist on this idea of challenging perspectives as it follows a group of South Vietnamese Naval officers through what may be their last reunion. Through its unique lens of a scarcely-covered topic, the viewers ultimately receive the changed perspective through the veterans’ joy – nevertheless shaped out of trauma.</p><p><br></p><p>In conclusion, <em>Forever is a Delicate Thing</em> features a young boy and his grandfather faced with losing custody as the sudden change forces what may be a final goodbye.</p><p><br></p><p>By <strong>Tai Nguyen</strong></p>",
+   "short_description": null,
+   "start_time": "2026-10-08T16:30:00.000Z",
+   "end_time": "2026-10-08T18:35:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b3",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": true,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1500,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a8e7972e7c329b6363acc70",
+     "name": "Wedding Flowers",
+     "short_description": null,
+     "description": "A begrudgingly adept, family outcast and her overbearing mother struggle to find connection as their Vietnamese American family reunites for a wedding celebration.",
+     "still_image": "https://static-a.eventive.org/7648661e7f7f3a9a9b6087537cf99fab.jpg",
+     "cover_image": "https://static-a.eventive.org/db732ddaa9a81621ab96a5ee070273f8.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/1434ba261e2e20f63ece41815ec2ebfd.jpg?w=300",
+     "runtime": "12"
+    },
+    {
+     "id": "6a8bd8dd32f3db16a2ce279f",
+     "name": "No Barriers (Lắng Nhìn)",
+     "short_description": null,
+     "description": "After years of isolation in the hearing world, a mainstreamed Deaf adult learns sign language for the first time.",
+     "still_image": "https://static-a.eventive.org/1788010410645temp-1788010410616-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788010399828temp-1788010399615-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/10935b4fe141d7b5b0ccb6dc2e1b7634.jpg?w=300",
+     "runtime": "12"
+    },
+    {
+     "id": "6a8fcb0d62cb25450b4357c0",
+     "name": "Thirst for Freedom (Khát Tự Do)",
+     "short_description": null,
+     "description": "<p>An ex-captain for the Army of the Republic of Vietnam relives his experiences spending nearly 13 years in Việt Cộng reeducation camps. He speaks of the pain he endured, the family he was torn from, and the immeasurable loss he faced. Now in America and grateful for the life he has built there, he looks to a hopeful future.</p>",
+     "still_image": "https://static-a.eventive.org/1788013529940temp-1788013529810-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788013530226temp-1788013530178-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1788013530430temp-1788013530416-poster.jpg",
+     "runtime": "7"
+    },
+    {
+     "id": "6a8fcb0d62cb25450b4357b0",
+     "name": "Dasher",
+     "short_description": null,
+     "description": "<p>A down-and-out food delivery driver and a wayward restaurant worker team up for a chaotic\nnight of deliveries on Christmas Eve in Honolulu, Hawai‘i.</p>",
+     "still_image": "https://static-a.eventive.org/1787971859479temp-1787971859331-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787971849611temp-1787971849565-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787971849925temp-1787971849852-poster.jpg",
+     "runtime": "26"
+    },
+    {
+     "id": "6a8e708b09b1fbd1a0057516",
+     "name": "Sea Song",
+     "short_description": null,
+     "description": "The last remaining South Vietnamese naval officers reunite in California for what will likely be the final time, finding solace with the few people who understand the complexities that shape their life histories.",
+     "still_image": "https://static-a.eventive.org/1788012881185temp-1788012881129-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788012859630temp-1788012859605-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/57a5203243e89061ea318d0a0acc544f.jpg?w=300",
+     "runtime": "18"
+    },
+    {
+     "id": "6a8bd1f216df6fa26b2356a9",
+     "name": "Forever Is a Delicate Thing",
+     "short_description": null,
+     "description": "<p>When a visit from the Los Angeles County Department of Child and Family Services interrupts the humble, kindred lifestyle of a Vietnam War immigrant and the grandson in his custody, the two spend their last days together braving what will soon become the broken pieces on which they built their lives.</p>",
+     "still_image": "https://static-a.eventive.org/60c9eaa2387d7f3d07b0f612f90b5cf9.jpg",
+     "cover_image": "https://static-a.eventive.org/258819247684b30e338f8ebe1162714d.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/cef9a9328f767df3da8d0e789110ff12.jpg?w=300",
+     "runtime": "16"
+    }
+   ]
+  },
+  {
+   "id": "6a911165e3f794ecd038b421",
+   "name": "When You See Me (HS Students' Day)",
+   "description": "<p><strong>This short film set contains mature themes and strong language. Viewer discretion is advised.</strong></p><p><br></p><p>This short film set – screening for free to high school students during VFF’s opening in-person hours – explores the often incomplete ways in which we view each other, featuring characters whose views towards others are challenged and reformed.</p><p><br></p><p>The opener, <em>Wedding Flowers</em>, tracks a mother-daughter relationship as the proximity of returning home forces a reevaluation of resentment, loneliness, and love. <em>No Barriers</em> follows with the story of a hard-of-hearing girl who decides to learn American Sign Language as an adult after years of isolation from the hearing world. Together, these two films show a paradox of space – exemplifying how closeness can force new understanding of others, or how distance can force new understanding of the self.</p><p><br></p><p>Entering the set’s second half, <em>Dasher</em> depicts a delivery driver on Christmas Eve as a former high school classmate spontaneously joins for the deliveries. Their initial impressions of each other are shallow and droll, but eventually they find unexpected connection in dreams of uncertain futures. The penultimate film, <em>Sea Song</em>, takes a twist on this idea of challenging perspectives as it follows a group of South Vietnamese Naval officers through what may be their last reunion. Through its unique lens of a scarcely-covered topic, the viewers ultimately receive the changed perspective through the veterans’ joy – nevertheless shaped out of trauma.</p><p><br></p><p>In conclusion, <em>Forever is a Delicate Thing</em> features a young boy and his grandfather faced with losing custody as the sudden change forces what may be a final goodbye.</p><p><br></p><p>By <strong>Tai Nguyen</strong></p>",
+   "short_description": null,
+   "start_time": "2026-10-08T19:30:00.000Z",
+   "end_time": "2026-10-08T21:05:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b2",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": true,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1500,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a8e7972e7c329b6363acc70",
+     "name": "Wedding Flowers",
+     "short_description": null,
+     "description": "A begrudgingly adept, family outcast and her overbearing mother struggle to find connection as their Vietnamese American family reunites for a wedding celebration.",
+     "still_image": "https://static-a.eventive.org/7648661e7f7f3a9a9b6087537cf99fab.jpg",
+     "cover_image": "https://static-a.eventive.org/db732ddaa9a81621ab96a5ee070273f8.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/1434ba261e2e20f63ece41815ec2ebfd.jpg?w=300",
+     "runtime": "12"
+    },
+    {
+     "id": "6a8bd8dd32f3db16a2ce279f",
+     "name": "No Barriers (Lắng Nhìn)",
+     "short_description": null,
+     "description": "After years of isolation in the hearing world, a mainstreamed Deaf adult learns sign language for the first time.",
+     "still_image": "https://static-a.eventive.org/1788010410645temp-1788010410616-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788010399828temp-1788010399615-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/10935b4fe141d7b5b0ccb6dc2e1b7634.jpg?w=300",
+     "runtime": "12"
+    },
+    {
+     "id": "6a8fcb0d62cb25450b4357c0",
+     "name": "Thirst for Freedom (Khát Tự Do)",
+     "short_description": null,
+     "description": "<p>An ex-captain for the Army of the Republic of Vietnam relives his experiences spending nearly 13 years in Việt Cộng reeducation camps. He speaks of the pain he endured, the family he was torn from, and the immeasurable loss he faced. Now in America and grateful for the life he has built there, he looks to a hopeful future.</p>",
+     "still_image": "https://static-a.eventive.org/1788013529940temp-1788013529810-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788013530226temp-1788013530178-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1788013530430temp-1788013530416-poster.jpg",
+     "runtime": "7"
+    },
+    {
+     "id": "6a8fcb0d62cb25450b4357b0",
+     "name": "Dasher",
+     "short_description": null,
+     "description": "<p>A down-and-out food delivery driver and a wayward restaurant worker team up for a chaotic\nnight of deliveries on Christmas Eve in Honolulu, Hawai‘i.</p>",
+     "still_image": "https://static-a.eventive.org/1787971859479temp-1787971859331-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787971849611temp-1787971849565-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787971849925temp-1787971849852-poster.jpg",
+     "runtime": "26"
+    },
+    {
+     "id": "6a8e708b09b1fbd1a0057516",
+     "name": "Sea Song",
+     "short_description": null,
+     "description": "The last remaining South Vietnamese naval officers reunite in California for what will likely be the final time, finding solace with the few people who understand the complexities that shape their life histories.",
+     "still_image": "https://static-a.eventive.org/1788012881185temp-1788012881129-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788012859630temp-1788012859605-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/57a5203243e89061ea318d0a0acc544f.jpg?w=300",
+     "runtime": "18"
+    },
+    {
+     "id": "6a8bd1f216df6fa26b2356a9",
+     "name": "Forever Is a Delicate Thing",
+     "short_description": null,
+     "description": "<p>When a visit from the Los Angeles County Department of Child and Family Services interrupts the humble, kindred lifestyle of a Vietnam War immigrant and the grandson in his custody, the two spend their last days together braving what will soon become the broken pieces on which they built their lives.</p>",
+     "still_image": "https://static-a.eventive.org/60c9eaa2387d7f3d07b0f612f90b5cf9.jpg",
+     "cover_image": "https://static-a.eventive.org/258819247684b30e338f8ebe1162714d.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/cef9a9328f767df3da8d0e789110ff12.jpg?w=300",
+     "runtime": "16"
+    }
+   ]
+  },
+  {
+   "id": "6a911165e3f794ecd038b426",
+   "name": "When You See Me (HS Students' Day)",
+   "description": "<p><strong>This short film set contains mature themes and strong language. Viewer discretion is advised.</strong></p><p><br></p><p>This short film set – screening for free to high school students during VFF’s opening in-person hours – explores the often incomplete ways in which we view each other, featuring characters whose views towards others are challenged and reformed.</p><p><br></p><p>The opener, <em>Wedding Flowers</em>, tracks a mother-daughter relationship as the proximity of returning home forces a reevaluation of resentment, loneliness, and love. <em>No Barriers</em> follows with the story of a hard-of-hearing girl who decides to learn American Sign Language as an adult after years of isolation from the hearing world. Together, these two films show a paradox of space – exemplifying how closeness can force new understanding of others, or how distance can force new understanding of the self.</p><p><br></p><p>Entering the set’s second half, <em>Dasher</em> depicts a delivery driver on Christmas Eve as a former high school classmate spontaneously joins for the deliveries. Their initial impressions of each other are shallow and droll, but eventually they find unexpected connection in dreams of uncertain futures. The penultimate film, <em>Sea Song</em>, takes a twist on this idea of challenging perspectives as it follows a group of South Vietnamese Naval officers through what may be their last reunion. Through its unique lens of a scarcely-covered topic, the viewers ultimately receive the changed perspective through the veterans’ joy – nevertheless shaped out of trauma.</p><p><br></p><p>In conclusion, <em>Forever is a Delicate Thing</em> features a young boy and his grandfather faced with losing custody as the sudden change forces what may be a final goodbye.</p><p><br></p><p>By <strong>Tai Nguyen</strong></p>",
+   "short_description": null,
+   "start_time": "2026-10-08T19:30:00.000Z",
+   "end_time": "2026-10-08T21:35:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b3",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1500,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a8e7972e7c329b6363acc70",
+     "name": "Wedding Flowers",
+     "short_description": null,
+     "description": "A begrudgingly adept, family outcast and her overbearing mother struggle to find connection as their Vietnamese American family reunites for a wedding celebration.",
+     "still_image": "https://static-a.eventive.org/7648661e7f7f3a9a9b6087537cf99fab.jpg",
+     "cover_image": "https://static-a.eventive.org/db732ddaa9a81621ab96a5ee070273f8.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/1434ba261e2e20f63ece41815ec2ebfd.jpg?w=300",
+     "runtime": "12"
+    },
+    {
+     "id": "6a8bd8dd32f3db16a2ce279f",
+     "name": "No Barriers (Lắng Nhìn)",
+     "short_description": null,
+     "description": "After years of isolation in the hearing world, a mainstreamed Deaf adult learns sign language for the first time.",
+     "still_image": "https://static-a.eventive.org/1788010410645temp-1788010410616-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788010399828temp-1788010399615-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/10935b4fe141d7b5b0ccb6dc2e1b7634.jpg?w=300",
+     "runtime": "12"
+    },
+    {
+     "id": "6a8fcb0d62cb25450b4357c0",
+     "name": "Thirst for Freedom (Khát Tự Do)",
+     "short_description": null,
+     "description": "<p>An ex-captain for the Army of the Republic of Vietnam relives his experiences spending nearly 13 years in Việt Cộng reeducation camps. He speaks of the pain he endured, the family he was torn from, and the immeasurable loss he faced. Now in America and grateful for the life he has built there, he looks to a hopeful future.</p>",
+     "still_image": "https://static-a.eventive.org/1788013529940temp-1788013529810-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788013530226temp-1788013530178-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1788013530430temp-1788013530416-poster.jpg",
+     "runtime": "7"
+    },
+    {
+     "id": "6a8fcb0d62cb25450b4357b0",
+     "name": "Dasher",
+     "short_description": null,
+     "description": "<p>A down-and-out food delivery driver and a wayward restaurant worker team up for a chaotic\nnight of deliveries on Christmas Eve in Honolulu, Hawai‘i.</p>",
+     "still_image": "https://static-a.eventive.org/1787971859479temp-1787971859331-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787971849611temp-1787971849565-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787971849925temp-1787971849852-poster.jpg",
+     "runtime": "26"
+    },
+    {
+     "id": "6a8e708b09b1fbd1a0057516",
+     "name": "Sea Song",
+     "short_description": null,
+     "description": "The last remaining South Vietnamese naval officers reunite in California for what will likely be the final time, finding solace with the few people who understand the complexities that shape their life histories.",
+     "still_image": "https://static-a.eventive.org/1788012881185temp-1788012881129-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788012859630temp-1788012859605-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/57a5203243e89061ea318d0a0acc544f.jpg?w=300",
+     "runtime": "18"
+    },
+    {
+     "id": "6a8bd1f216df6fa26b2356a9",
+     "name": "Forever Is a Delicate Thing",
+     "short_description": null,
+     "description": "<p>When a visit from the Los Angeles County Department of Child and Family Services interrupts the humble, kindred lifestyle of a Vietnam War immigrant and the grandson in his custody, the two spend their last days together braving what will soon become the broken pieces on which they built their lives.</p>",
+     "still_image": "https://static-a.eventive.org/60c9eaa2387d7f3d07b0f612f90b5cf9.jpg",
+     "cover_image": "https://static-a.eventive.org/258819247684b30e338f8ebe1162714d.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/cef9a9328f767df3da8d0e789110ff12.jpg?w=300",
+     "runtime": "16"
+    }
+   ]
+  },
+  {
+   "id": "6a8e7aa4dcf8428ced5f3ad3",
+   "name": "A Little Dream of Me",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-09T02:00:00.000Z",
+   "end_time": "2026-10-09T05:00:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b2",
+   "tags": [
+    {
+     "id": "6a29d6aa4de75c8c0f7890c3",
+     "name": "Special Screenings"
+    }
+   ],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 2000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a8a4661a63dc2fdc2454da7",
+     "name": "A Little Dream of Me (Cảm ơn người đã thức cùng tôi)",
+     "short_description": "An emotional journey of young people searching for the meaning of their dreams, only to discover that adulthood asks a deeper question: who they want to pursue those dreams with.",
+     "description": "<p><strong>* OPENING NIGHT FILM *</strong></p><p><em>Writer/Director Chung Chí Công will be attendance for Q&amp;A after the screening.</em></p><p><br></p><p>Since the pandemic, Viet Film Fest has seen a small, notable crest of musicals. <em>Saigon in the Rain</em> (VFF 2021), <em>Good Morning and Good Night</em> (VFF 2023), and <em>In the Nguyen Kitchen</em> (VFF 2025) have all been crowd-pleasers – commenting on place, belonging, and dreams through their musical numbers. Here to make its statement among those musicals is <em>A Little Dream of Me</em>, directed and co-written by Chung Chí Công (<em>Good Morning and Good Night</em>, co-writer on VFF 2018’s <em>Summer in Closed Eyes</em>).</p><p><br></p><p>Since she was little, Hoài (V-pop singer Võ Phan Kim Khánh) dreamt of being an actress and a singer. Her deaf and mute father, Nam Nghia (Hữu Châu; who is neither deaf nor mute), is a former movie poster painter, always encouraging his daughter to pursue her artistry. Hoài’s childhood friend-later-romantic interest is Hiếu (Trần Doãn Hoàng), who aims to be a comic book artist or illustrator.</p><p><br></p><p>The plot’s beats will be familiar to anyone who knows their 1930s-50s “let’s put on a show” MGM musicals. But Chung, his cast, and crew – if this and <em>Good Morning and Good Night</em> are any indication – are working in different musical and sociocultural registers. The songs, most of them composed by Phạm Hải Âu and lyrics by Chung, are largely aspirational and reflective of Vietnamese pop music. Is this a defining characteristic of the Vietnamese musical movie?</p><p><br></p><p>To paraphrase the literal translation of the film’s Vietnamese title, thank you for staying awake with us on VFF 2026’s Opening Night.</p><p><br></p><p>By <strong>Eric Nong</strong></p>",
+     "still_image": "https://static-a.eventive.org/1787970802863temp-1787970802717-still.jpg",
+     "cover_image": "https://static-a.eventive.org/bd8e56b3cf440061883fe1675894257c.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/1787970953058temp-1787970952312-poster.jpg",
+     "runtime": "137"
+    }
+   ]
+  },
+  {
+   "id": "6a8e7d5fe8778ba289ea0b9d",
+   "name": "A Little Dream of Me",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-09T02:00:00.000Z",
+   "end_time": "2026-10-09T05:00:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b3",
+   "tags": [
+    {
+     "id": "6a29d6aa4de75c8c0f7890c3",
+     "name": "Special Screenings"
+    }
+   ],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 2000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a8a4661a63dc2fdc2454da7",
+     "name": "A Little Dream of Me (Cảm ơn người đã thức cùng tôi)",
+     "short_description": "An emotional journey of young people searching for the meaning of their dreams, only to discover that adulthood asks a deeper question: who they want to pursue those dreams with.",
+     "description": "<p><strong>* OPENING NIGHT FILM *</strong></p><p><em>Writer/Director Chung Chí Công will be attendance for Q&amp;A after the screening.</em></p><p><br></p><p>Since the pandemic, Viet Film Fest has seen a small, notable crest of musicals. <em>Saigon in the Rain</em> (VFF 2021), <em>Good Morning and Good Night</em> (VFF 2023), and <em>In the Nguyen Kitchen</em> (VFF 2025) have all been crowd-pleasers – commenting on place, belonging, and dreams through their musical numbers. Here to make its statement among those musicals is <em>A Little Dream of Me</em>, directed and co-written by Chung Chí Công (<em>Good Morning and Good Night</em>, co-writer on VFF 2018’s <em>Summer in Closed Eyes</em>).</p><p><br></p><p>Since she was little, Hoài (V-pop singer Võ Phan Kim Khánh) dreamt of being an actress and a singer. Her deaf and mute father, Nam Nghia (Hữu Châu; who is neither deaf nor mute), is a former movie poster painter, always encouraging his daughter to pursue her artistry. Hoài’s childhood friend-later-romantic interest is Hiếu (Trần Doãn Hoàng), who aims to be a comic book artist or illustrator.</p><p><br></p><p>The plot’s beats will be familiar to anyone who knows their 1930s-50s “let’s put on a show” MGM musicals. But Chung, his cast, and crew – if this and <em>Good Morning and Good Night</em> are any indication – are working in different musical and sociocultural registers. The songs, most of them composed by Phạm Hải Âu and lyrics by Chung, are largely aspirational and reflective of Vietnamese pop music. Is this a defining characteristic of the Vietnamese musical movie?</p><p><br></p><p>To paraphrase the literal translation of the film’s Vietnamese title, thank you for staying awake with us on VFF 2026’s Opening Night.</p><p><br></p><p>By <strong>Eric Nong</strong></p>",
+     "still_image": "https://static-a.eventive.org/1787970802863temp-1787970802717-still.jpg",
+     "cover_image": "https://static-a.eventive.org/bd8e56b3cf440061883fe1675894257c.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/1787970953058temp-1787970952312-poster.jpg",
+     "runtime": "137"
+    }
+   ]
+  },
+  {
+   "id": "6a911165e3f794ecd038b42b",
+   "name": "Practice Makes Imperfect",
+   "description": "<p><strong>This short film set contains mature themes and some sexuality. Viewer discretion is advised.</strong></p><p><br></p><p>To put art into the world is to find oneself. Art is something one must keep striving towards. The shorts in this series are a kaleidoscope of the creative processes and how informative they are to one’s relationship with themselves.</p><p><br></p><p>Up first is Lindsay Nyman’s <em>They Call Me the Tattoo Witch</em> as it reveals how healing and fulfilling art can be in making art for others, for community through tattoos. Continuing this illustrative session is <em>Goodbye and Hello to My Dad</em> from Kathleen Hoang, who explores art and mixed media as a way to remember and love those dear to us. Then, Zen’s Echoes of the Phoenix concerns itself with one’s inhibitions about their place in the world along with keeping alive the practice of folk opera. Similarly, <em>Unperforming </em>by Cristian Trout navigates the experience of queer identity through social media and dance.</p><p><br></p><p>As our series adds its final touches to the canvas, Quan Luong’s <em>Portraits</em> is a portrait (no pun intended) on the life of a sketch artist, reiterating the value of art through human connection, especially during a time in which the integrity of art is being challenged by technology (Luong is a past Spotlight Award co-winner for VFF 2022’s Container). To conclude, <em>Entropy</em> grapples with staying true to oneself in the face of one’s art and culture being dismissed and disregarded.</p><p><br></p><p>“Practice Makes Imperfect” is an open discussion on what it means to commit oneself to the arts despite a myriad of social, cultural, and personal challenges.</p><p><br></p><p>By <strong>Katy Nguyen</strong></p>",
+   "short_description": null,
+   "start_time": "2026-10-09T05:00:00.000Z",
+   "end_time": "2026-10-09T07:10:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b3",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a8e75fee54f22e1d41da227",
+     "name": "They Call Me the Tattoo Witch",
+     "short_description": null,
+     "description": "In Hanoi, Vietnam, tattoo artist Tran Ngoc specializes in the rare and challenging art of tattooing over scars. Despite the social stigma surrounding tattoos in Vietnam, Ngoc empowers her clients, including breast cancer survivors and women with self-harm scars, to reclaim their bodies, demonstrating that her work is a profound act of compassion and resilience.",
+     "still_image": "https://static-a.eventive.org/6c99f316ffc38cd72696cf28f97e51a2.jpg",
+     "cover_image": "https://static-a.eventive.org/9a94f2179c31bb9591924ef609de9da9.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/c309b6b48c8778ff7fb7f7d14aad828c.jpg?w=300",
+     "runtime": "14"
+    },
+    {
+     "id": "6a8fcb0d62cb25450b4357b8",
+     "name": "Goodbye and Hello to My Dad",
+     "short_description": null,
+     "description": "<p>Between newspaper shapes and heavy brushstrokes, a recently passed Vietnamese father lingers with his daughter, as time, space, and videocam memories overlay a final quiet reckoning.</p>",
+     "still_image": "https://static-a.eventive.org/1787972920866temp-1787972920748-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787972912719temp-1787972912686-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787972913045temp-1787972912965-poster.jpg",
+     "runtime": "6"
+    },
+    {
+     "id": "6a8fcb0d62cb25450b4357b2",
+     "name": "Echoes of the Phoenix (Túc vọng phượng hoàng)",
+     "short_description": null,
+     "description": "<p>Phuong (60s), is struggling to get by as a hired mourner, was formerly a famous Cai Luong performer. Facing a dead-end, Phuong happens to get her chance at a small, local group of Cai Luong performers that sparks her flame of passion again. Meeting Nguyet - a young, talented woman reminds her of what she could have been, leaving a sour taste in Phuong’s mouth until a bittersweet night confession. On the big night of the performance, everything seems to go well until the scar of her years-ago incident burns on her throat and swallows her whole. Mortification and embarrassment overwhelms Phuong, she leaves\nmid performance. Back to Phuong’s beginning, she agrees to mourn at an old man’s dead wife’s funeral; and the moment he keeps sobbing because of Phuong’s singing is the moment she feels like her passion has always been there inside her, waiting to be rekindled.</p>",
+     "still_image": "https://static-a.eventive.org/1787972073149temp-1787972073010-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787972107579temp-1787972107529-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787972073756temp-1787972073384-poster.jpg",
+     "runtime": "28"
+    },
+    {
+     "id": "6a8fcb0d62cb25450b4357d9",
+     "name": "Unperforming",
+     "short_description": null,
+     "description": "<p>To get the attention of his crush, a gay man competes with a popular personality in his community. As an insidious swarm of marketing and peer pressure drives him to obsess over how he measures up, he struggles to escape thoughts of inadequacy.</p>",
+     "still_image": "https://static-a.eventive.org/1788013701476temp-1788013701421-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788013715973temp-1788013715918-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1788013716294temp-1788013716209-poster.jpg",
+     "runtime": "5"
+    },
+    {
+     "id": "6a8fcb0d62cb25450b4357cb",
+     "name": "Portraits",
+     "short_description": null,
+     "description": "<p>In a world increasingly obsessed with the speed and precision of Artificial Intelligence, a portrait artist offers a quiet and profound reflection on what it means to create. </p>",
+     "still_image": "https://static-a.eventive.org/1788011107168temp-1788011107033-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788011107424temp-1788011107363-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1788011147834temp-1788011147300-poster.jpg",
+     "runtime": "8"
+    },
+    {
+     "id": "6a8fcb0d62cb25450b4357b6",
+     "name": "Entropy",
+     "short_description": null,
+     "description": "<p><em>Entropy</em> has mature themes and nudity. Viewer discretion is advised.</p><p><br></p><p>Mây takes action that cannot be undone and starts bigger chaos rather than balancing the current world of her own. \"Entropy” is not only Polish-Vietnamese culture clash, it showcases a social entropy process that collides and reaches to the core of inconvenient questions that we are about to answer and take responsibility for. Invisible loss can never be retrieved.</p>",
+     "still_image": "https://static-a.eventive.org/1787972365360temp-1787972365235-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787972377259temp-1787972377192-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787972365610temp-1787972365596-poster.jpg",
+     "runtime": "30"
+    }
+   ]
+  },
+  {
+   "id": "6a9263f7aa7b3d2c00ed5679",
+   "name": "Made in Germany",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-09T05:30:00.000Z",
+   "end_time": "2026-10-09T07:10:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b2",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a922c914f1207429ab6e308",
+     "name": "Made in Germany",
+     "short_description": "Forced home to her reserved father's Vietnamese restaurant in East Berlin, a young woman finds that her limited Vietnamese and his limited German leave little room to meet in the middle.",
+     "description": "<p>Young, spunky, and independent Ani (Maria Mai Rohmann) is living her best college-student life when, suddenly, she has to move back home and live with her father, Trung. Distant and reserved Trung lives in a housing development in Hohenschönhausen (a Berlin borough, once part of East Germany) and gets on by with his humble Vietnamese restaurant. With her limited Vietnamese and his limited German, Ani and Trung have yet to see each other eye to eye.</p><p><br></p><p>Đức Ngô Ngọc's pilot to <em>Made in Germany</em> (a ZDF miniseries examining the lives of young second-generation Germans from immigrant backgrounds) reveals the cultural and generational gap between father and daughter as they navigate their daily lives as Vietnamese-Germans through comedy and drama.&nbsp;</p><p><br></p><p>Ani interacts with the German world frequently and comes face-to-face with her culture being appropriated and fetishized. She is too Vietnamese. Meanwhile, at the dinner of a death anniversary, relatives nag and bemoan Trung over his forgetfulness of Vietnamese tradition. He is too German. What can they do when the circumstances and complexity of their diasporic experiences are dismissed?&nbsp;</p><p><br></p><p>This question is especially heightened when Ani has to interpret and report for her father following a health inspector’s racist treatment towards him. Long Đặng-Ngọc and Maria Mai Rohmann give poignant performances as parent and child doing the best they can in a world that casts them aside so easily.&nbsp;</p><p><br></p><p>By <strong>Katy Nguyen</strong></p>",
+     "still_image": "https://static-a.eventive.org/1787965106254temp-1787965106122-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787979130926temp-1787979130864-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787965106500temp-1787965106486-poster.jpg",
+     "runtime": "41"
+    },
+    {
+     "id": "6a8fcb0d62cb25450b4357c5",
+     "name": "Nana",
+     "short_description": null,
+     "description": "<p>Nana has a mind of her own and won't let anyone stop her from living her life as she sees fit: Loud, confident and sassy. Nana isn't afraid of bad grades because her older sister always has her back. But she soon realizes that Lan's unconditional love cannot be taken for granted, that family and safety cannot be taken for granted.</p>",
+     "still_image": "https://static-a.eventive.org/1788009142055temp-1788009141757-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788009160008temp-1788009159839-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1788009160317temp-1788009160222-poster.jpg",
+     "runtime": "11"
+    },
+    {
+     "id": "6a8fcb0d62cb25450b4357c7",
+     "name": "Night Shift",
+     "short_description": null,
+     "description": "<p>A scooter cab driver goes through a night of unexpected events that may cost him his life when his past catches up with him.</p>",
+     "still_image": "https://static-a.eventive.org/1788009669858temp-1788009669586-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788009670581temp-1788009670357-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1788009671419temp-1788009670823-poster.jpg",
+     "runtime": "12"
+    }
+   ]
+  },
+  {
+   "id": "6a90786de66ebd7f3db73d03",
+   "name": "Unerasable! (Diary of a Hidden Fate)",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-09T17:30:00.000Z",
+   "end_time": "2026-10-09T19:20:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b2",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a8fcb0d62cb25450b4357d7",
+     "name": "Unerasable! (Diary of a Hidden Fate)",
+     "short_description": "The life story of a filmmaker opens window onto state violence, in a film that reimagines cinema as a fragile site of exile, survival, memory and resistance.",
+     "description": "<p>A dissident Vietnamese filmmaker, who is now forced to flee his homeland after torture for his participation in the 2018 Vietnam pro-democracy protests, flees to Thailand and eventually Europe. The film, directed by Socrates Saint-Wulstan Drakos (a pseudonym), follows through the director’s earliest memories of filmmaking, his involvement with the protests, and his subsequent torture by the Vietnamese government that forced him to flee. While in Thailand, the Drakos stays for five years, undocumented, learning Thai through post-it notes while in hiding. After securing asylum, instead of safety he faces continual displacement at the hands of the restrictive European bureaucracy.</p><p><br></p><p>The film is strung together as a bricolage-esque diary, interspersed with various other media ranging from Soviet propaganda to colonial archives. This style creates themes of memory and censorship as the Drakos’ identity is both kept hidden and yet fully explored and asserted. Paired with the filmmaker’s story of torture for protest and subsequent flight, the film tells a story of repression and exile—one where even after fleeing from their homeland, they continually face restriction and displacementagainst the bastion of rigid systematic and administrative barriers. This film’s humanity stems from its confrontational politics. Through its non-linear storytelling, it shows the coexistence of hope and fear amongst political dissidence.</p><p><br></p><p>By <strong>Tai Nguyen</strong></p>",
+     "still_image": "https://static-a.eventive.org/1787964392274temp-1787964392098-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787964381445temp-1787964381376-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787964382337temp-1787964381662-poster.jpg",
+     "runtime": "97"
+    }
+   ]
+  },
+  {
+   "id": "6a90786de66ebd7f3db73d08",
+   "name": "Amongst the Disquiet",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-09T18:00:00.000Z",
+   "end_time": "2026-10-09T19:05:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b3",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a8fcb0d62cb25450b4357ac",
+     "name": "Amongst the Disquiet",
+     "short_description": "Made in collaboration with THAO and Marion Hoàng Ngọc Hill, Nguyen's film Amongst the Disquiet, 2024, speaks to the ties that bind within a multigenerational Vietnamese family based in New Orleans. Through interwoven vignettes told through dialogue and songs, the film winds through the challenges, longings, and affections between family members.",
+     "description": "<p><strong>This film contains mature themes and strong language. Viewer discretion is advised.</strong></p><p><br></p><p>Director Tuấn Andrew Nguyễn received the prestigious MacArthur fellow in 2025 for his lifelong interdisciplinary practice giving aesthetic form to histories of war, displacement, resistance, and resilience. He also won the Grand Jury Trống Đồng Award for Best Feature for <em>The Island</em> at VFF 2018.<em> Amongst the Disquiet </em>is his latest feature film that runs in the same vein. The story centers around a multigenerational Vietnamese family in New Orleans, a city that runs on memory and heat as reflected in the film’s mood.</p><p><br></p><p>Trauma that is no stranger to the Vietnamese diaspora seems to follow this family as they navigate through the loss of a sibling by suicide, another who longs to leave for Houston in hopes of success, and memories of their grandfather who was a veteran and a refugee.</p><p><br></p><p><em>Amongst the Disquiet, </em>made in collaboration with THAO and Marion Hoàng Ngọc Hill, immerses you in a cinematic experience beyond traditional filmmaking, using vignettes of dialogue and song to create spaces for the living and the deceased to communicate feelings of hope, ambition, affection, depression, as they all figure out what makes a home.&nbsp;</p><p><br></p><p>By <strong>Jenni Trang Le</strong></p>",
+     "still_image": "https://static-a.eventive.org/1787962530107temp-1787962529858-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787962726957temp-1787962726775-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1788940565446temp-1788940565380-poster.jpg",
+     "runtime": "52"
+    }
+   ]
+  },
+  {
+   "id": "6a911165e3f794ecd038b430",
+   "name": "Don't Forget to Remember Me",
+   "description": "<p><strong>This short film set contains strong language and thematic material including death, grief, and suicide. Viewer discretion is advised.</strong></p><p><br></p><p>The proof of a life lived in full or continuing to do so lies within the memory and act of recollection. The moments we get to sit down and reflect on ourselves can be specific and arbitrary all at once. The more one reminisces, the more they realize how these memories shaped and informed who they are, their personhood. Still, what’s in a memory? What is worth remembering? How and why should one remember? These are the questions in which this series of short films aims to answer.</p><p><br></p><p>To begin our journey down memory lane, <em>Grandma’s Four Color Cards</em> offers us insight on what it means to remember someone and take care of them as the years go by. As we go along, <em>My Sister’s Everlasting Garden</em> and <em>Happy Thoughts</em> reflect and ruminate on life and death, on the present and the future as the heart and mind grow weary of things they cannot control. To transition into the second half of this set, with a more experimental approach, <em>Goodbye and Hello to My Dad</em> is a remembrance and lingering of a loved one. Finally, <em>100 Days</em> and <em>Huong</em> invite us to consider the efforts of grief and memory as they work in tandem to bring us closer to each other better than before.</p><p><br></p><p>“Don’t Forget to Remember Me” shares a deeply personal and thoughtful perspective on why we should remember to reconcile with the past, embrace the present, and look forward to the future.</p><p><br></p><p>By <strong>Katy Nguyen</strong></p>",
+   "short_description": null,
+   "start_time": "2026-10-09T20:00:00.000Z",
+   "end_time": "2026-10-09T22:10:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b2",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a8bd29d20263b1e457de7af",
+     "name": "Grandma's Four Color Cards",
+     "short_description": null,
+     "description": "From her tiny home in Saigon’s bustling District 4, 101-year-old Ngoai runs an underground card game. With her loyal cat and the kindness of her neighbors, she faces poverty with unwavering resilience and quiet strength.",
+     "still_image": "https://static-a.eventive.org/1787973039459temp-1787973039140-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787973039726temp-1787973039683-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787973040093temp-1787973039921-poster.jpg",
+     "runtime": "10"
+    },
+    {
+     "id": "6a8bd8241f936b88cb68d718",
+     "name": "My Sister's Everlasting Garden (Ao sâu nước chiếu bóng hoa cúc vàng)",
+     "short_description": null,
+     "description": "<p>On a damp winter morning, Chi’s family gathers for their elder sister’s funeral after her long battle with breast cancer. Amid incense smoke and the echo of chants, fragments of memory begin to surface - moments of faith, doubt, and tenderness once shared between the two sisters. As the Buddhist ceremony unfolds, the boundary between reminiscence and present begins to blur, drawing Chi into a quiet confrontation with the weight of belief, grief, and continuation. In the stillness that follows, she drifts between body and spirit, where love and loss intertwine - a faint possibility of reconciliation in the wake of death.&nbsp;&nbsp;</p>",
+     "still_image": "https://static-a.eventive.org/1788014735675temp-1788014735553-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788018562142temp-1788018562088-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/37daff5b69f52afa42ba3c3aac773fb7.jpg?w=300",
+     "runtime": "28"
+    },
+    {
+     "id": "6a8fcb0d62cb25450b4357be",
+     "name": "Happy Thoughts",
+     "short_description": null,
+     "description": "<p>Happy Thoughts follows an 18-year-old Vietnamese American, who is already a three-time state speech champion, as he enters his last National tournament with everything on the line. But when unexpected tragedy strikes, his world shatters. Grappling with grief, silence, and the weight of expectation, he must summon the courage to face not just the stage, but his own family’s unspoken pain. What begins as a quest for a final trophy transforms into a raw, urgent fight to find his voice.</p>",
+     "still_image": "https://static-a.eventive.org/1787975214899temp-1787975214764-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787975288207temp-1787975288147-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787975289980temp-1787975288431-poster.jpg",
+     "runtime": "15"
+    },
+    {
+     "id": "6a8fcb0d62cb25450b4357b8",
+     "name": "Goodbye and Hello to My Dad",
+     "short_description": null,
+     "description": "<p>Between newspaper shapes and heavy brushstrokes, a recently passed Vietnamese father lingers with his daughter, as time, space, and videocam memories overlay a final quiet reckoning.</p>",
+     "still_image": "https://static-a.eventive.org/1787972920866temp-1787972920748-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787972912719temp-1787972912686-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787972913045temp-1787972912965-poster.jpg",
+     "runtime": "6"
+    },
+    {
+     "id": "6a8e86d8cf98bb1603a47828",
+     "name": "100 Days",
+     "short_description": "A missing funeral portrait derails Lan's flight to Vietnam for her uncle's 100-day ceremony, turning a morning of packing into a reckoning with the sister who has already moved on.",
+     "description": "<p>On the morning of her departure from Australia, Lan is troubled by a dream of her late uncle. She is returning to Vietnam to complete his 100 days ceremony finalising his journey into the afterlife. While packing she realises the funeral portrait is missing, seeing this as a sign that she can't leave yet.</p><p><br></p><p>What begins as a wandering search through a quiet suburban house spirals into a desperate confrontation with her younger sister, Vi, who is ready to carry on with the day and life in Australia. To Lan, Vi's pragmatism is a betrayal of their roots; to Vi, Lan’s obsession is a refusal to let the living move forward. As tensions boil over, a physical struggle erupts, unearthing Lan’s truest fear: that in leaving for Vietnam, she is losing her sister to a distance beyond geography.</p><p><br></p><p>In the fallout of their fight, the sisters find a fragile middle ground. Lan accepts the inevitability of goodbye while Vi comes to terms with loss. Before parting ways, Vi initiates a small makeshift ceremony for their uncle; a quiet acknowledgement that letting go of the past is not the same as letting go of one another.</p>",
+     "still_image": "https://static-a.eventive.org/1787979049244temp-1787979049125-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787979403264temp-1787979403226-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787726108772temp-1787726108622-poster.jpg",
+     "runtime": "17"
+    },
+    {
+     "id": "6a8bd4c52386a7cb4dd334b7",
+     "name": "Huong",
+     "short_description": null,
+     "description": "HUONG is a daughter’s attempt to understand her mother as a whole person - before she was her mom - after a single phone call split her life in two.",
+     "still_image": "https://static-a.eventive.org/1787975481606temp-1787975481281-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787975481981temp-1787975481822-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/95723066113ecc96103e06d34eed968e.jpg?w=300",
+     "runtime": "17"
+    }
+   ]
+  },
+  {
+   "id": "6a9263f7aa7b3d2c00ed5688",
+   "name": "Hair, Paper, Water...",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-09T20:00:00.000Z",
+   "end_time": "2026-10-09T22:15:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b3",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a8bd1011e3947af36bcd2d4",
+     "name": "Dream of Emptiness",
+     "short_description": null,
+     "description": "Nghiêm has taken care of her grandson, Niên for the majority of his thirteen years of life, just as Niên has taken care of Nghiêm, especially when her memory began to fail her. Returning home after his job as a sand digger, Niên discovers Nghiêm is nowhere to be found...again. When his usual searches turn up nothing, he journeys from their rural village to increasingly foreign urban landscapes, guided (and at one point misguided) by the locals he meets along the way and the belief that Nghiêm could appear at any moment, anywhere.",
+     "still_image": "https://static-a.eventive.org/4c242ff679ef39e413170b68558481e9.jpg",
+     "cover_image": "https://static-a.eventive.org/a25a653e1f0da1e4b525d6ac429af01c.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/260b701abce0a874c9f617dba2ce3cc5.jpg?w=300",
+     "runtime": "26"
+    },
+    {
+     "id": "6a92139a30ed6b28f0e1bc7a",
+     "name": "Hair, Paper, Water...",
+     "short_description": "She was born in a cave, more than 60 years ago. Now she lives in a village, with many children and grandchildren to look after. Sometimes, she dreams of her dead mother calling her home – to the cave.",
+     "description": "<p>The Rục people (a subethnicity of the Chut) were once considered the most mysterious people of Vietnam. Since their “discovery” in 1959 from the deep jungle of the Annamite Mountains (Trường Sơn), generations of Rục have been slowly abandoning their long-standing tradition of cave-sitting and hunter-gathering. Over the last seventy years, they have voluntarily (or forcibly, by the Vietnamese government) assimilated into “civilization” and modern Vietnamese life.&nbsp;</p><p>&nbsp;</p><p>In this meditative, lyrical new work, directors Trương Minh Quý (VFF 2025’s <em>Viet and Nam</em>) and Nicolas Graux revisit Mrs. Cao Thị Hậu, a Rục elder and subject of Quý’s acclaimed documentary <em>The Tree House</em> (2019), to capture her present, day-to-day life. Now a grandmother, Hậu traverses between her rural hometown and the city where her daughter lives to help care for her small grandchildren, occasionally dreaming of returning to her childhood in the cave. The act of oral recitation becomes a necessity for Hậu to pass down her endangered language – and the ancestral memory &amp; wisdom embedded in it – to her next generation. As the film progresses, the film’s perspective shifts, as it reveals itself to be a meditation on the end of a generation, a language, and a culture.</p><p>&nbsp;</p><p>Shot on 16mm with rich textures and layered sound design, the documentary transcends a traditional ethnographic lens with its inventive experimentation with form, positioning itself at a special place where the vocabulary of cinema and that of a vanishing language intersect.</p><p><br></p><p>By <strong>Viet Film Fest Staff</strong></p>",
+     "still_image": "https://static-a.eventive.org/d2619be967006c6cb77a5d1974ef4091.jpg",
+     "cover_image": "https://static-a.eventive.org/78bcc23832a7693d7f8a5db7b739739d.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/97f21a4c4fa3dc07b9fbb7bb6c96360d.jpg?w=300",
+     "runtime": "71"
+    }
+   ]
+  },
+  {
+   "id": "6a90786de66ebd7f3db73d3f",
+   "name": "Antithesis of Gemini",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-09T23:00:00.000Z",
+   "end_time": "2026-10-10T01:30:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b2",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a8a4748003b89d6c31ab4aa",
+     "name": "Antithesis of Gemini",
+     "short_description": "Nhơn, a successful businessman who rose to power through deceit and manipulation, turns to a dark ritual known as “Thai Chiêu Tài” to preserve his fortune — only to awaken haunting memories from the past and the weight of generational trauma.",
+     "description": "<p><em>Writer/Director/Producer Trần Nhân Kiên and actress Minh Ngọc will be in attendance for Q&amp;A after the screening.</em></p><p><br></p><p><strong><em>Antithesis of Gemini</em> has intense violence, mature themes, sexual assault, and nudity. Not intended for younger audiences.</strong></p><p><br></p><p><em>Antithesis of Gemini</em> begins with pageant queen Phong Linh (Tạ Lâm) narrating her unfortunate role in the myth of “the Auspicious Child”. She recounts the two greatest days of her life: the day she won her crown, and the day her husband died; bookending the tragic fairy tale about to unfold.</p><p>&nbsp;</p><p>Immediately after, the film bluntly drops the viewer into Phong Linh’s sexual assault by her own husband, Cao Nhơn (Hồng Thanh), also the benefactor of the pageant. The act is, sadly, transactional: if she bears his child, he’ll fulfill a supernatural prophecy promising fortune and wealth; in exchange, she’ll receive money to help her struggling family. When the couple learns they’re expecting twins, with one stillborn, Cao Nhơn invites his aunties (who harbor a secret and sinister interest in this pregnancy) to save the remaining child through witchcraft.</p><p>&nbsp;</p><p>Through non-linear chapters, the film’s twisty narrative hurtles between past and present: revealing abusive childhoods, reanimated undead, white collar corruption, and supernatural mythos. Director Trần Nhân Kiên conjures a maximalist, phantasmagoric parable unpacking the cost of toxic generational violence and the desperate pursuit of wealth.</p><p><br></p><p>With an unhinged central performance by Hồng Thanh, vibrant production design by Trần Minh Hậu and stylist Thái Hải, and precisely wild editing by Nguyễn Hoàng Hương Thi &amp; Tăng Nhật, <em>Antithesis of Gemini</em> is a loud and bold discovery from the Mekong Delta, tuned for the midnight crowd clamoring for extreme, shocking, “WTF” cinema.</p><p><br></p><p>By <strong>Julian Doan</strong></p>",
+     "still_image": "https://static-a.eventive.org/fd7003dd2f95b48eeb73a508d10ec424.jpg",
+     "cover_image": "https://static-a.eventive.org/9cbf92e6636a2d903529ab228b922536.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/da8125c944e1b54feb6529f644546205.jpg?w=300",
+     "runtime": "104"
+    },
+    {
+     "id": "6a8bd01a44fa0ebb2e432c57",
+     "name": "Do You See Her?",
+     "short_description": null,
+     "description": "Katie questions her sanity as she's being stalked by a terrifying entity—one she can only see when her glasses are off.",
+     "still_image": "https://static-a.eventive.org/1787971987958temp-1787971987786-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787971982081temp-1787971981941-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/6555702007ad332c17507c87cce7f994.jpg?w=300",
+     "runtime": "7"
+    }
+   ]
+  },
+  {
+   "id": "6a90786de66ebd7f3db73d12",
+   "name": "Strangers and Their Babies",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-09T23:30:00.000Z",
+   "end_time": "2026-10-10T01:10:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b3",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a8e727979a52d726d9d6893",
+     "name": "Strangers and Their Babies",
+     "short_description": "Four people of Vietnamese descent retrace their families' flight across open water to Taiwan, uncovering two Penghu Island refugee camps left out of UN records — where 106 babies were born, many without papers.",
+     "description": "<p>Taiwan’s first film accepted to Viet Film Fest is a documentary uncovering a side to the history of Vietnamese Boat People long overshadowed. Building upon his earlier documentary <em>A Camp Unknown</em> (2023), Asio Liu Chihsiung’s <em>Strangers and Their Babies</em> covers the lives of four people of Vietnamese descent as they retrace their respective family’s dangerous journey across open waters from Vietnam to Taiwan. <em>Strangers and Their Babies</em> is a production of Taiwan’s Public Television Service (PTS).</p><p><br></p><p>\tThe film’s four subjects are scattered across the world, having lived most of their lives in the United States or Taiwan. Their sense of belonging and identity is inextricably drawn from their families’ flights from Vietnam – which, for our subjects, casts psychological shadows similar to, but different from, most Boat People’s personal histories. And yet, they are the lucky ones.</p><p><br></p><p>\tWhere places like Bidong Island (Malaysia), Galang Island (Indonesia), and various U.S. military bases across Southeast Asia and Oceania became important names in the history of the Boat People, <em>Strangers and Their Babies</em> examines two camps on Taiwan’s Penghu Islands. Neither were included in United Nations (UN) records. There, 106 babies were born during the refugee crisis, oftentimes without documentation. Combined with some of our subjects’ parents’ reluctance to speak about their experiences as Boat People, it is up to our subjects to uncover the lost chapters of their family’s stories.</p><p><br></p><p>\tBy <strong>Eric Nong</strong></p>",
+     "still_image": "https://static-a.eventive.org/1787963867572temp-1787963867439-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787963867824temp-1787963867779-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/dc97859a1ddd76080db904b70be42a9e.jpg?w=300",
+     "runtime": "89"
+    }
+   ]
+  },
+  {
+   "id": "6a8fcdb2571b5cbc1e2e3820",
+   "name": "Viet Film Fest Trống Đồng Awards Gala",
+   "description": "<p>Join us in an evening of celebrating the achievements of Viet Film Fest 2026 filmmakers at the Trống Đồng Awards Gala at the Bowers Museum, featuring the <strong>Taste of Kei Concepts</strong>, a comedy act by <strong>Theresa (Tree) Vo</strong>, and songs from <strong>Han Holiday</strong>.&nbsp;</p><p><br></p><p>Alongside honors for Best Cinematography, Best Actor, Best Actress, Spotlight Award, and the Grand Jury Trống Đồng Award for Best Short and Best Feature, we are honoring Vietnamese American Actor Dustin Nguyen from 1980s <em>21 Jump Street </em>and<em> </em>Viet Film Fest 2023 Best Feature:<em> The Accidental Getaway Driver </em>with the Inspiration Award. </p><p><br></p><p>Proceeds from the live and silent auction directly support the Vietnamese American Arts &amp; Letters Association (VAALA), the hosting organization of Viet Film Fest.</p>",
+   "short_description": "Join us in an evening of celebrating the achievements of Viet Film Fest 2026 filmmakers!",
+   "start_time": "2026-10-10T02:00:00.000Z",
+   "end_time": "2026-10-10T05:30:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b5",
+   "tags": [
+    {
+     "id": "6a29d6aa4de75c8c0f7890c0",
+     "name": "Special Events"
+    }
+   ],
+   "cover": "https://static-a.eventive.org/1787809304432temp-1787809304365-cover.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 12500,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "6a90786de66ebd7f3db73d17",
+   "name": "The Fatal Dealz",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-10T02:15:00.000Z",
+   "end_time": "2026-10-10T04:15:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b2",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a8e754aebb53729d4b8eeab",
+     "name": "The Fatal Dealz",
+     "short_description": "When a phone scam unexpectedly strikes, Dang Thuc — who once thought he had a stable life — is drawn into a dangerous spiral of money, family, and trust, where every choice comes at a cost not only of wealth, but of the people he loves most.",
+     "description": "<p><strong>This film contains some violence and brief strong language. Viewer discretion is advised.</strong></p><p><br></p><p>Benjamin Franklin once said, “Time is money”. No one understands this aphorism better than Oscar<em> </em>Dương with his feature film, <em>The Fatal Dealz</em>. This thriller follows financial analyst Đăng Thức (Liên Binh Phát) as he struggles to find his footing at work, look after his hospitalized younger sister, and maintain a healthy romantic relationship. Acutely aware of his financial pressures and insecurity, he downloads an app, DEALZ, with ambitions to earn money and awards by completing risky tasks equivalent to the amount desired.</p><p><br></p><p>With each task, the app reveals itself to be a gamble on Thức’s life. The tasks grow increasingly dangerous and even illegal as his loved ones find themselves involved against their own will. The film expresses a nuanced perspective and even concern for the expectations of Vietnamese masculinity as Thức makes difficult decisions with greed and fear sitting on his shoulders.</p><p><br></p><p><em>The Fatal Dealz</em> provides an adrenaline-rush of a moviegoing experience with suspenseful confrontations and the highest of stakes. An exciting venture for Vietnamese cinema into the heist-thriller genre, this feature film makes its US premiere here at the Frida Cinema.&nbsp;</p><p><br></p><p>By <strong>Katy Nguyen</strong></p>",
+     "still_image": "https://static-a.eventive.org/2fd6e5ae2ac7bbc4c983c63f88504345.jpg",
+     "cover_image": "https://static-a.eventive.org/27df30eb965726aa540a7933dea6a8b4.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/dc1e04f5374226b8cef0b7ac4247ecf2.jpg?w=300",
+     "runtime": "113"
+    }
+   ]
+  },
+  {
+   "id": "6a90786de66ebd7f3db73d1c",
+   "name": "She",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-10T02:30:00.000Z",
+   "end_time": "2026-10-10T03:55:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b3",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a8fcb0d62cb25450b4357d3",
+     "name": "She",
+     "short_description": "In northern Vietnam's electronics factories, women who left their children behind to support families that rice farming can no longer sustain testify to lives ground down by punishing work and a hierarchy that places every burden on them.",
+     "description": "<p>Late at night in Vietnam, work still needs to be done. Industrial work, electronic work. At one particular industrial plant, its workforce is typically made up of women ages 18-25. These women are mothers, daughters, and migrants who take these jobs far from home. They hope, with better pay, to support themselves and their families. Parsifal Reparato’s <em>She</em> is an intimate documentary following the lives of these female workers. For their courage and safety, these workers’ identities remain anonymous as they reenact a day’s worth of work.&nbsp;</p><p><br></p><p>At the factory, these women are reduced to nothing but their bodies as they toil away for hours on their feet. Meanwhile, the inspectors intimidate the workers, watching their every move. In a work environment with such hyper-surveillance, these women are connected by the exploitation they face every day. Their frustrations, longings, and goals are laid bare when we follow these workers into their homes, visits to the hospital, and even brief video calls with their children. These women must constantly remind themselves of the reasons they are in this position to keep going. Still, their endurance and resolve to do so are challenged in an open discussion amongst the workers during their break.</p><p><br></p><p><em>She</em> is a documentary that looks beyond the convenience of the phone in one’s hand. It reveals the reality of the unrecognized labor of which assembles said phone.</p><p><br></p><p>By <strong>Katy Nguyen</strong></p>",
+     "still_image": "https://static-a.eventive.org/1787966206856temp-1787966206809-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787966147968temp-1787966147914-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787966207436temp-1787966207063-poster.jpg",
+     "runtime": "77"
+    }
+   ]
+  },
+  {
+   "id": "6a9263f7aa7b3d2c00ed568d",
+   "name": "Best Short Film Nominees",
+   "description": "<p><strong>This short film set contains bloody imagery, nudity, strong language, and mature themes. Not intended for younger audiences.</strong></p><p><br></p><p>This set of films includes the nominees for the Grand Jury Trống Đồng Award for Best Short at Viet Film Fest 2026. Together, they invoke the richness of Vietnamese and Vietnamese diasporic storytelling, and its tendency to illuminate oft-ignored, marginalized perspectives.</p><p><br></p><p>As the set opens with <em>No Barriers</em>, we find a deaf adult looking to rise above her societal isolation in a hearing world, searching for connection and understanding on her own terms. Platonic love and laughter triumph. Not so much in<em> Ripe</em> (<em>Chín</em>) and <em>Entropy</em> (<em>Entropia</em>), which follow the opener. These two introduce young women who must navigate social expectations alongside what they believe love to be. In <em>Ripe</em>, the protagonist reconsiders an arranged marriage she had previously spurned; in <em>Entropy</em>, an aspiring professional classical pianist grapples with the cultural norms of her diaspora and her homeland (“love doesn’t always win,” one of the film’s characters intones).</p><p><br></p><p>Between <em>Ripe</em> and <em>Entropy</em> is the animated short, <em>Water Girl</em> (<em>Fille d’eau</em>) – a dialogue-free remembrance of lost love amid freedive fishing, juxtaposing the bright sands and dark ocean floor across the passage of time. Closing out this year’s set are <em>The Dream is a Snail</em> (<em>Giấc mơ là ốc sên</em>) and <em>Huong</em>. The former, a dark absurdist comedy of economic stratification and class desperation, stands in stark contrast to the latter – a personal documentary uncovering a love story forgotten by all, save one.</p><p><br></p><p>Through Vietnamese and Vietnamese diasporic voices, these films uncover personal truths both heartbreaking and life-affirming.</p><p><br></p><p>By <strong>Eric Nong</strong></p>",
+   "short_description": null,
+   "start_time": "2026-10-10T16:00:00.000Z",
+   "end_time": "2026-10-10T18:30:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b2",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a8bd8dd32f3db16a2ce279f",
+     "name": "No Barriers (Lắng Nhìn)",
+     "short_description": null,
+     "description": "After years of isolation in the hearing world, a mainstreamed Deaf adult learns sign language for the first time.",
+     "still_image": "https://static-a.eventive.org/1788010410645temp-1788010410616-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788010399828temp-1788010399615-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/10935b4fe141d7b5b0ccb6dc2e1b7634.jpg?w=300",
+     "runtime": "12"
+    },
+    {
+     "id": "6a8fcb0d62cb25450b4357cd",
+     "name": "Ripe",
+     "short_description": null,
+     "description": "<p>Lệ is a young Vietnamese woman born to a family of durian farmers in the Mekong Delta. She lives a simple life, deeply connected to her family’s land but isolated from the larger world. When her father suggests she enter an arranged marriage as a way of securing her future, Lệ’s life is plunged into uncertainty. While she wraps her mind around the prospects of her future, the spirit of the land and ancestral realm begin to weave mysterious influence over her, guiding her to her final decision.</p>",
+     "still_image": "https://static-a.eventive.org/1788011332804temp-1788011332660-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788011333068temp-1788011333016-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1788011300510temp-1788011300494-poster.jpg",
+     "runtime": "20"
+    },
+    {
+     "id": "6a9241a3425caaac2b926c94",
+     "name": "Water Girl",
+     "short_description": null,
+     "description": "Mia has spent her whole life freediving, fishing and gliding through seaweed and rocks. Time has passed, tracing its lines on her body, and shaping the landscapes around her. Loved ones have vanished. Tonight, Mia remembers.",
+     "still_image": "https://static-a.eventive.org/d28bb22b482feb6b11256fb3173b2481.jpg",
+     "cover_image": "https://static-a.eventive.org/45eb20d7e77e5e5d119262c8236cfd85.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/61ae68002fa0e94d819285039c6ae18d.jpg?w=300",
+     "runtime": "15"
+    },
+    {
+     "id": "6a8fcb0d62cb25450b4357b6",
+     "name": "Entropy",
+     "short_description": null,
+     "description": "<p><em>Entropy</em> has mature themes and nudity. Viewer discretion is advised.</p><p><br></p><p>Mây takes action that cannot be undone and starts bigger chaos rather than balancing the current world of her own. \"Entropy” is not only Polish-Vietnamese culture clash, it showcases a social entropy process that collides and reaches to the core of inconvenient questions that we are about to answer and take responsibility for. Invisible loss can never be retrieved.</p>",
+     "still_image": "https://static-a.eventive.org/1787972365360temp-1787972365235-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787972377259temp-1787972377192-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787972365610temp-1787972365596-poster.jpg",
+     "runtime": "30"
+    },
+    {
+     "id": "6a9240676360abc7a671be97",
+     "name": "The Dream is a Snail",
+     "short_description": null,
+     "description": "<p>A struggling young artist takes an odd job as a human racetrack in a senior rejuvenation workshop, only to develop an obsession with the hypnotic sensation of snails gliding across his skin.</p>",
+     "still_image": "https://static-a.eventive.org/1787969919206temp-1787969919168-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787969919447temp-1787969919394-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/79ec50f8fa17f3d4a997e2eae3b6fa62.jpg?w=300",
+     "runtime": "15"
+    },
+    {
+     "id": "6a8bd4c52386a7cb4dd334b7",
+     "name": "Huong",
+     "short_description": null,
+     "description": "HUONG is a daughter’s attempt to understand her mother as a whole person - before she was her mom - after a single phone call split her life in two.",
+     "still_image": "https://static-a.eventive.org/1787975481606temp-1787975481281-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787975481981temp-1787975481822-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/95723066113ecc96103e06d34eed968e.jpg?w=300",
+     "runtime": "17"
+    }
+   ]
+  },
+  {
+   "id": "6a911165e3f794ecd038b435",
+   "name": "Old School, New School",
+   "description": "<p><strong>This short film set contains strong language and thematic material including suicide. Not intended for younger audiences.</strong></p><p><br></p><p>Amid the rapid technological, sociocultural changes of our present, these films tackle perennial problems framed through contemporary settings, reminding us of the timelessness of these universal issues.</p><p><br></p><p>Starting with <em>Mother’s Spring (Mùa xuân của mẹ)</em>, we follow a transmasculine child as their mom wants them to wear a feminine áo dài dress, speaking to age-old themes of acceptance and understanding. Next follows <em>Happy Pizza</em>, following two friends as they hallucinate on drugs, sparking verbal and literal fighting as their differing economic backgrounds clash. The following film <em>Happy Thoughts </em>traces a high school speech and debate champion as he enters his final competition. However, when an unexpected tragedy strikes, his Gen Z drive and spirit is tested by the weight of grief and expectation. <em>The Stand</em> parallels this Gen Z hustle as a young immigrant girl and her little brother struggle to make enough money to give their mom a break.</p><p><br></p><p>Shifting the tone, <em>Dream of Emptiness</em> follows a thirteen-year-old grandson as he searches for his grandmother following her unexplained disappearance – and, in his search, the film suggests the ways of rural Vietnam receding to time. Finally, <em>Unperforming </em>ends this set with similar notions of digitizing relationships and online perception and persona, following a man as he struggles with an obsession to measure up as he chases the attention of his crush.</p><p><br></p><p>These films take themes that have been around since the beginning of time and use contemporary settings to give fresh nuance to these topics and how they manifest in this modern age.</p><p><br></p><p>By <strong>Tai Nguyen</strong></p>",
+   "short_description": null,
+   "start_time": "2026-10-10T16:15:00.000Z",
+   "end_time": "2026-10-10T18:15:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b3",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a8bd7613fa0270842c03fe0",
+     "name": "Mother's Spring (Mùa Xuân của Mẹ)",
+     "short_description": null,
+     "description": "<p>As Tết approaches, a Vietnamese teenager grapples between cultural expectations and their desire to explore a masculine identity, especially when pressured by their mother to wear a feminine áo dài.</p>",
+     "still_image": "https://static-a.eventive.org/1788009767047temp-1788009766776-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788015478869temp-1788015478794-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/db6db029871b4c8b5b8b592ce8db6e97.jpg?w=300",
+     "runtime": "12"
+    },
+    {
+     "id": "6a8fcb0d62cb25450b4357bc",
+     "name": "Happy Pizza",
+     "short_description": null,
+     "description": "<p>In the desert silence of Joshua Tree, two friends -- a trust-fund heir desperate to escape his own wealth and a broke pharmacist resigned to a dead-end party-boy life -- fall into different dreamlike spirals, but as each of their hallucinatory nights unfold, the \"literal\" fruit that feeds one becomes the seeds that poison the other, forcing them to face how privilege and desperation shape the way they survive.</p>",
+     "still_image": "https://static-a.eventive.org/1787973316302temp-1787973316248-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787973303122temp-1787973303060-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787973316592temp-1787973316503-poster.jpg",
+     "runtime": "11"
+    },
+    {
+     "id": "6a8fcb0d62cb25450b4357be",
+     "name": "Happy Thoughts",
+     "short_description": null,
+     "description": "<p>Happy Thoughts follows an 18-year-old Vietnamese American, who is already a three-time state speech champion, as he enters his last National tournament with everything on the line. But when unexpected tragedy strikes, his world shatters. Grappling with grief, silence, and the weight of expectation, he must summon the courage to face not just the stage, but his own family’s unspoken pain. What begins as a quest for a final trophy transforms into a raw, urgent fight to find his voice.</p>",
+     "still_image": "https://static-a.eventive.org/1787975214899temp-1787975214764-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787975288207temp-1787975288147-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787975289980temp-1787975288431-poster.jpg",
+     "runtime": "15"
+    },
+    {
+     "id": "6a8fcb0d62cb25450b4357d5",
+     "name": "The Stand",
+     "short_description": null,
+     "description": "<p>When a young immigrant girl’s mother is forced to leave the evening rush at their family’s food stand, she must work with her annoying little brother to earn enough money to give their mom a break.</p>",
+     "still_image": "https://static-a.eventive.org/1788013400501temp-1788013400457-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788013400801temp-1788013400743-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1788013401086temp-1788013400998-poster.jpg",
+     "runtime": "14"
+    },
+    {
+     "id": "6a8bd1011e3947af36bcd2d4",
+     "name": "Dream of Emptiness",
+     "short_description": null,
+     "description": "Nghiêm has taken care of her grandson, Niên for the majority of his thirteen years of life, just as Niên has taken care of Nghiêm, especially when her memory began to fail her. Returning home after his job as a sand digger, Niên discovers Nghiêm is nowhere to be found...again. When his usual searches turn up nothing, he journeys from their rural village to increasingly foreign urban landscapes, guided (and at one point misguided) by the locals he meets along the way and the belief that Nghiêm could appear at any moment, anywhere.",
+     "still_image": "https://static-a.eventive.org/4c242ff679ef39e413170b68558481e9.jpg",
+     "cover_image": "https://static-a.eventive.org/a25a653e1f0da1e4b525d6ac429af01c.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/260b701abce0a874c9f617dba2ce3cc5.jpg?w=300",
+     "runtime": "26"
+    },
+    {
+     "id": "6a8fcb0d62cb25450b4357d9",
+     "name": "Unperforming",
+     "short_description": null,
+     "description": "<p>To get the attention of his crush, a gay man competes with a popular personality in his community. As an insidious swarm of marketing and peer pressure drives him to obsess over how he measures up, he struggles to escape thoughts of inadequacy.</p>",
+     "still_image": "https://static-a.eventive.org/1788013701476temp-1788013701421-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788013715973temp-1788013715918-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1788013716294temp-1788013716209-poster.jpg",
+     "runtime": "5"
+    }
+   ]
+  },
+  {
+   "id": "6a90786de66ebd7f3db73d21",
+   "name": "The Dao of Thao",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-10T18:45:00.000Z",
+   "end_time": "2026-10-10T20:40:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b2",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a8e7476b8a6c43d41801d7d",
+     "name": "The Dao of Thao",
+     "short_description": "Performer Thao P. Nguyen prepares for her next comedy show while struggling to remain true to herself as a queer Asian American mother in the face of constraining social, cultural, and familial expectations.",
+     "description": "<p><em>Director Khải Thư Nguyễn will be in attendance for a Q&amp;A after the screening.</em></p><p><br></p><p><em><span class=\"ql-cursor\">﻿</span>The Dao of Thao</em>, directed by Khai Thu Nguyen (VFF 2019’s <em>Table Stakes</em>), follows acclaimed queer Vietnamese American comedian Thao P. Nguyen. Set in the Bay Area, the film follows Thao as she prepares her latest comedy show after her previous one was named one of KQED’s Top 10 Bay Area Plays. While the film mixes interviews of her parents as they narrate their family’s story as refugees who journeyed from Thailand to the United States, <em>The Dao of Thao </em>tackles Thao’s struggle as she consolidates pressures to succeed, newfound motherhood, and sexuality.</p><p><br></p><p>Often, the cross-sections of our identity can result in erasure even within our own communities, such as with Thao’s intersection between her queer and Vietnamese history. Through Thao’s present and past, this film showcases the way Thao uses her art to navigate, explore, and ultimately redefine those pieces of identity for herself. <em>The Dao of Thao </em>bravely opens conversation on the diversity of queer experiences, let alone Vietnamese American queer experiences.</p><p><br></p><p>The conversations with her parents are interspersed with Thao’s present-day narrative, highlighting a unique intersectionality between the queer and immigrant experience. Stories of Thao’s journey from Thailand to the United States give way to narratives on intergenerational bonds as Thao uses her art to consolidate her far-reaching past and confusing present towards community and understanding.</p><p><br></p><p>By <strong>Tai Nguyen</strong></p>",
+     "still_image": "https://static-a.eventive.org/1787964106009temp-1787964105719-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787979157462temp-1787979157262-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1788369927402temp-1788369927143-poster.jpg",
+     "runtime": "70"
+    },
+    {
+     "id": "6a8fcb0d62cb25450b4357d9",
+     "name": "Unperforming",
+     "short_description": null,
+     "description": "<p>To get the attention of his crush, a gay man competes with a popular personality in his community. As an insidious swarm of marketing and peer pressure drives him to obsess over how he measures up, he struggles to escape thoughts of inadequacy.</p>",
+     "still_image": "https://static-a.eventive.org/1788013701476temp-1788013701421-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788013715973temp-1788013715918-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1788013716294temp-1788013716209-poster.jpg",
+     "runtime": "5"
+    }
+   ]
+  },
+  {
+   "id": "6a90786de66ebd7f3db73d26",
+   "name": "The Cricket and The Muddy Adventure",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-10T19:00:00.000Z",
+   "end_time": "2026-10-10T20:35:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b3",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a8e73f2577ecc984c3dae44",
+     "name": "The Cricket and The Muddy Adventure",
+     "short_description": "Inspired by Tô Hoài’s classic children’s novel “Diary of a Cricket,” the story follows Cricket and friends on a journey through modern-day Hanoi to save Muddy Hamlet—a once lush land now overrun by waste.",
+     "description": "<p><em>The Cricket and the Muddy Adventure</em> is an animated and musical retelling of a classic Vietnamese children’s novel. Along with <em>In Waves</em>, it is the joint first animated feature ever to be shown at Viet Film Fest. This film follows Cricket (Dế Mèn) as he sets out for cleaner environments in the wake of his city’s destruction by pollution. Along the way he befriends creatures who guide him towards Muddy Hamlet, a kingdom ruled by King Frog Com. However, Cricket uncovers a sinister plot by King Frog Com to stay in power, and must fight to protect their home.&nbsp;</p><p><br></p><p>Interspersed with musical numbers, <em>The Cricket and the Muddy Adventure </em>playfully reimagines&nbsp; a children’s story through its pacing and folklore feel. As Cricket explores other environments and cultures, the film promotes friendship and unity, highlighting the collaboration among different creatures against a common threat – especially in terms of protecting their homes and the environment they live in. Overall, <em>The Cricket and the Muddy Adventure </em>is an entertaining and lighthearted dive into classic Vietnamese stories and themes.&nbsp;</p><p><br></p><p>By <strong>Tai Nguyen</strong></p>",
+     "still_image": "https://static-a.eventive.org/544c20fd2373fd9a7dd84c931996eb12.jpg",
+     "cover_image": "https://static-a.eventive.org/3ace4d547f253c855113ffe53a7ee549.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/cb9cc0f27d669d9c0e5a1d992b26aad6.jpg?w=300",
+     "runtime": "84"
+    },
+    {
+     "id": "6a8e75a397da9e8e89431ed7",
+     "name": "The Sky Was Candy",
+     "short_description": null,
+     "description": "A yellow and blue day in the life of a little child.",
+     "still_image": "https://static-a.eventive.org/2b4ebf548939a8b8e9bf526f24e176df.jpg",
+     "cover_image": "https://static-a.eventive.org/adbad261e347f4e2ecedeefd13b4cfce.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/90cdc1ac728e0b3a5c6fb72abcd93fab.jpg?w=300",
+     "runtime": "3"
+    }
+   ]
+  },
+  {
+   "id": "6a9263f7aa7b3d2c00ed5697",
+   "name": "Mr. Hero",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-10T21:00:00.000Z",
+   "end_time": "2026-10-10T23:40:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b3",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a922f1b5137c9046aff2632",
+     "name": "Mr. Hero (Anh Hùng)",
+     "short_description": "A single father orchestrates an elaborate hoax to become a hero, in order to con the public and raise money for his daughter's life-saving surgery -- finds himself thrust into the national spotlight and learns what it means to be a hero.",
+     "description": "<p><strong>Contains some strong language and mature themes. Viewer discretion is advised. </strong></p><p><br></p><p>Directed by Võ Thạch Thảo, <em>Mr. Hero</em> is a heartwarming family comedy about a father’s love and the everyday struggles of the working class. The film follows middle-aged taxi driver Hùng (Thái Hòa; two-time VFF Best Actor winner – VFF 2013’s <em>In the Name of Love</em> and<em> </em>VFF 2022’s <em>Blood Moon Party</em>), a single father of two daughters. When his youngest daughter, My, falls ill, the doctor tells Hùng that she is in need of emergency surgery, which forces Hùng to take on extra labor. Already down on his luck, Hùng gambles with valuable family possessions and loses everything. In his desperation, Hùng enlists two young men – Tuấn, another cab driver, and Vinh, a social media-obsessed youth – to come up with a scheme to save his daughter.&nbsp;</p><p><br></p><p>Their scheme works at first, but trouble quickly ensues when Hùng’s plans are questioned on social media, and his own familial relationships strain, undermining the important things that animated his best-laid plans. Ultimately, the film is less a blatant critique of the ills of social media than a contemplation of more timeless questions regarding the limits of a father’s love, and how one navigates the tricky terrain between being a good person and playing with the cards one is dealt. Although a lighthearted comedy, the film also has genuinely tender moments reinforcing traditional family values. While the film is suitable for a general audience, it also touches on the political without entering too into the polemics of labor conditions in modern Vietnam.</p><p><br></p><p>By <strong>Vinh Phu Pham</strong></p>",
+     "still_image": "https://static-a.eventive.org/1787978887427temp-1787978887313-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787977167342temp-1787977167303-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787977167590temp-1787977167576-poster.jpg",
+     "runtime": "122"
+    }
+   ]
+  },
+  {
+   "id": "6a9263f7aa7b3d2c00ed5692",
+   "name": "Free to Love",
+   "description": "<p><strong>This set contains mature themes and nudity. Viewer discretion is advised.</strong></p><p><br></p><p><strong>A special panel follows this screening.</strong></p><p><br></p><p>“Free to Love” gathers a slate of short films that stretch and challenge not only gender expressions, but genre expectations – putting queer love in focus, a little off-centered, with family and longing in the foreground.</p><p><br></p><p>In <em>Before the Sea Forgets</em>, we join the journey of two men looking for a burial site in Đà Nẵng, in parallel with a seemingly random group of skateboarders who find themselves reciting poetry. From there we zoom into the intimate space of a bathroom for the first scene of <em>Mother’s Spring</em> (<em>Mùa xuân của mẹ</em>), where a daughter literally and figuratively struggles in their áo dài, not realizing that a first generation mother also needs grace. Just as you get a chance to come up for air, you will find yourself tossed into a genre-bending roller coaster. There, you must <em>Close the Eye to See</em> the unspeakable truth that a mourned lover must face as he is haunted by horror and spirituality.</p><p><br></p><p>We then round out the set with our final two unscripted films which give voice to <em>Intergenerational Stories</em>, and explore various viewpoints of all ages where love is really love and acceptance means truly accepting not only others but yourself. <em>Between Us</em> gives a rare glimpse into older lesbians who paved the way, supportive parents who raise signs along with their children, and the community forms and uplifts as a result. As Auntie Hanh says, “I know the truth can be painful to others. But the truth must be the truth.”</p><p><br></p><p>By <strong>Jenni Trang Le</strong></p>",
+   "short_description": null,
+   "start_time": "2026-10-10T21:15:00.000Z",
+   "end_time": "2026-10-10T23:40:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b2",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a8a47c1925fb5e5828aec62",
+     "name": "Before the Sea Forgets",
+     "short_description": null,
+     "description": "On Da Nang's peninsula, where echoes of war linger, a gay tourist couple searches for a forgotten Vietnamese soldier's grave, shadowed by a mysterious skate crew carving their own paths.",
+     "still_image": "https://static-a.eventive.org/1eec069b4f4cba1af21a49b0ff835f25.jpg",
+     "cover_image": "https://static-a.eventive.org/f00cda043a46980757d115c1f6feb8d2.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/1fc00563e4e2ce5ef363d547d120e9a0.jpg?w=300",
+     "runtime": "17"
+    },
+    {
+     "id": "6a8bd7613fa0270842c03fe0",
+     "name": "Mother's Spring (Mùa Xuân của Mẹ)",
+     "short_description": null,
+     "description": "<p>As Tết approaches, a Vietnamese teenager grapples between cultural expectations and their desire to explore a masculine identity, especially when pressured by their mother to wear a feminine áo dài.</p>",
+     "still_image": "https://static-a.eventive.org/1788009767047temp-1788009766776-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788015478869temp-1788015478794-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/db6db029871b4c8b5b8b592ce8db6e97.jpg?w=300",
+     "runtime": "12"
+    },
+    {
+     "id": "6a8bcee8890ed7a86ebc339f",
+     "name": "Close The Eye To See",
+     "short_description": null,
+     "description": "<p>Two young university students, Nam and Minh, live together in a small rented apartment. They are lovers. Minh suddenly disappears, leaving Nam soullessly alone in the apartment. Ngọc is their neighbour and the friend who stays by Nam's side to care for and accompany him while he is gradually losing his mind. Everything becomes apparent, and the explanation for Nam's nightmares is revealed.</p>",
+     "still_image": "https://static-a.eventive.org/362fff98df9335bc54bc57956f926079.jpg",
+     "cover_image": "https://static-a.eventive.org/9a8af96076dfd172d003e00c2afcffc2.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/ceced107c40fcb7fd8543fa7f3233480.jpg?w=300",
+     "runtime": "33"
+    },
+    {
+     "id": "6a8e7371b87cf70a023323d2",
+     "name": "Sweat",
+     "short_description": null,
+     "description": "This gorgeous, atmospheric drama sees a rural farm worker and his emotionally charged last day with a fellow farmer in the eve of his departure.",
+     "still_image": "https://static-a.eventive.org/05e8ca40afaf6c5807c4d0b568bbbadb.jpg",
+     "cover_image": "https://static-a.eventive.org/056ac7657b11bacef4a0c60ecadcd33f.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/1a6fa38c1c95f714bdcf56f4f42da612.jpg?w=300",
+     "runtime": "15"
+    },
+    {
+     "id": "6a9262c9c00450e8ff8b61be",
+     "name": "Intergenerational Stories",
+     "short_description": null,
+     "description": "<p>The film features storytellers from different generations of the Vietnamese American LGBTQ+ community, each sharing their own personal narratives about mental health, culture and identity, and intergenerational connections. This project is made possible through the generous support from Mental Health America of California (MHAC).</p>",
+     "still_image": "https://static-a.eventive.org/1788019350732temp-1788019350610-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788019327546temp-1788019327435-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1788019327868temp-1788019327780-poster.jpg",
+     "runtime": "10"
+    },
+    {
+     "id": "6a923e2b011fb525f3796cf8",
+     "name": "Between Us",
+     "short_description": null,
+     "description": "<p><em>Between Us</em> follows the multi-layered stories of LGBTQIA+ Khmer and Vietnamese cultural workers in southern California, as they contemplate the in-betweenness of belonging, healing, and carving out spaces of their own.</p><p><br></p><p><em>Between Us</em>  is an episode of <em>𝗦𝗼𝘂𝘁𝗵𝗲𝗮𝘀𝘁 𝗔𝘀𝗶𝗮𝗻 𝗔𝗺𝗲𝗿𝗶𝗰𝗮𝗻 𝗝𝗼𝘂𝗿𝗻𝗲𝘆𝘀</em> which explores the stories of five local SEAA refugee communities who, while being shaped by their resettlement journeys, have transformed the landscape of which they are a fundamental part.</p>",
+     "still_image": "https://static-a.eventive.org/1787969572011temp-1787969571868-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787970993177temp-1787970993134-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787969572339temp-1787969572219-poster.jpg",
+     "runtime": "14"
+    }
+   ]
+  },
+  {
+   "id": "6a90786de66ebd7f3db73d2b",
+   "name": "Y Vân: The Lost Sounds of Saigon",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-11T01:00:00.000Z",
+   "end_time": "2026-10-11T03:15:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b2",
+   "tags": [
+    {
+     "id": "6a29d6aa4de75c8c0f7890c3",
+     "name": "Special Screenings"
+    }
+   ],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": "Sold Out",
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1800,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a8e79e6c67f8bd06abb1631",
+     "name": "Y Vân: The Lost Sounds of Saigon",
+     "short_description": "While exploring her grandfather's musical legacy, a filmmaker reveals a forgotten chapter of Vietnam's past.",
+     "description": "<p><strong>* CENTERPIECE SCREENING * </strong></p><p><em>Director Khoa Hà will be in attendance for Q&amp;A after the screening.</em></p><p><br></p><p><em>Y Vân: The Lost Sounds of Saigon</em> is a lyrical journey through memory, music, and identity. We follow Khoa Hà on a quest to rediscover and preserve the legacy of her grandfather, acclaimed composer Y Vân. From California to the deep heart of Vietnam, Khoa is in search of the lost master tracks that recorded Y Vân’s pre-1975 hits – possibly forever lost due to time and war.&nbsp;</p><p><br></p><p>Khoa Hà co-directs with Victor Velle. The film blends investigative documentary with evocative animation, drawn from Khoa’s own background as an art director and designer. The visuals breathe new life into archival footage and family memories, turning history into something vibrant and even tactile. Hà and Velle’s film is a mosaic of cultural memory, a meditation on displacement, and a powerful story of intergenerational healing. As Khoa unearths not only her grandfather’s music, but also pieces of her own identity, the film expands into something rarely seen: a revival of modern Vietnamese music history and a reflection on how art binds communities, even those scattered across continents and oceans.</p><p><br></p><p>Whether one danced to Y Vân’s hits as far back as the 1950s, heard them as your parents karaoked, or are discovering them for the first time, songs like “Sài Gòn”, “60 Năm Cuộc Đời (60 Years of Life)”, and “Lòng Mẹ (Mother’s Heart)” will move you – sometimes to tears, sometimes to laugh, always to remember.</p><p><br></p><p>By <strong>Duyen Bui</strong></p>",
+     "still_image": "https://static-a.eventive.org/1787964508446temp-1787964508383-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787964508757temp-1787964508689-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/daf2dc60a26aa94573877859e51c155c.jpg?w=300",
+     "runtime": "93"
+    }
+   ]
+  },
+  {
+   "id": "6a90786de66ebd7f3db73d30",
+   "name": "Y Vân: The Lost Sounds of Saigon",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-11T01:00:00.000Z",
+   "end_time": "2026-10-11T03:15:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b3",
+   "tags": [
+    {
+     "id": "6a29d6aa4de75c8c0f7890c3",
+     "name": "Special Screenings"
+    }
+   ],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 2000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a8e79e6c67f8bd06abb1631",
+     "name": "Y Vân: The Lost Sounds of Saigon",
+     "short_description": "While exploring her grandfather's musical legacy, a filmmaker reveals a forgotten chapter of Vietnam's past.",
+     "description": "<p><strong>* CENTERPIECE SCREENING * </strong></p><p><em>Director Khoa Hà will be in attendance for Q&amp;A after the screening.</em></p><p><br></p><p><em>Y Vân: The Lost Sounds of Saigon</em> is a lyrical journey through memory, music, and identity. We follow Khoa Hà on a quest to rediscover and preserve the legacy of her grandfather, acclaimed composer Y Vân. From California to the deep heart of Vietnam, Khoa is in search of the lost master tracks that recorded Y Vân’s pre-1975 hits – possibly forever lost due to time and war.&nbsp;</p><p><br></p><p>Khoa Hà co-directs with Victor Velle. The film blends investigative documentary with evocative animation, drawn from Khoa’s own background as an art director and designer. The visuals breathe new life into archival footage and family memories, turning history into something vibrant and even tactile. Hà and Velle’s film is a mosaic of cultural memory, a meditation on displacement, and a powerful story of intergenerational healing. As Khoa unearths not only her grandfather’s music, but also pieces of her own identity, the film expands into something rarely seen: a revival of modern Vietnamese music history and a reflection on how art binds communities, even those scattered across continents and oceans.</p><p><br></p><p>Whether one danced to Y Vân’s hits as far back as the 1950s, heard them as your parents karaoked, or are discovering them for the first time, songs like “Sài Gòn”, “60 Năm Cuộc Đời (60 Years of Life)”, and “Lòng Mẹ (Mother’s Heart)” will move you – sometimes to tears, sometimes to laugh, always to remember.</p><p><br></p><p>By <strong>Duyen Bui</strong></p>",
+     "still_image": "https://static-a.eventive.org/1787964508446temp-1787964508383-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787964508757temp-1787964508689-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/daf2dc60a26aa94573877859e51c155c.jpg?w=300",
+     "runtime": "93"
+    }
+   ]
+  },
+  {
+   "id": "6a90786de66ebd7f3db73d35",
+   "name": "Saigon Jazz Revival Presents Carol Kim",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-11T03:30:00.000Z",
+   "end_time": "2026-10-11T05:10:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b2",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a8fcb0d62cb25450b4357cf",
+     "name": "Saigon Jazz Revival Presents Carol Kim",
+     "short_description": "More than fifty years after leaving Saigon, Vietnam's legendary \"Queen of Soul,\" Carol Kim, returns to the repertoire that defined a generation. Filmed live in New Orleans, this concert film documents a once-in-a-lifetime collaboration that revives the lost sounds of Vietnamese jazz through a contemporary New Orleans ensemble.",
+     "description": "<p>Imagine yourself in a New Orleans jazz club, enjoying a live performance by Vietnam’s Queen of Soul, finally delving into a genre she has long been adjacent to. Carol Kim used to rock the lounges of pre-1975 Saigon before leaving for the United States and becoming a diasporic musical fixture. In <em>Saigon Jazz Revival Presents Carol Kim</em>, she revives the songs of Saigon’s lost jazz era; Western favorites of hers like “Moon River” (the song that launched her career at nineteen years old) and \"Trở Về Mái Nhà Xưa\" (which uses the melody of “Torna a Surriento”); and iconic tunes that made her name, such as “Sài Gòn” – still the unofficial anthem of the namesake city.</p><p>&nbsp;</p><p>With her latest work, director Marion Hoàng Ngoc Hill (VFF 2024’s <em>Spring Will Come</em>) captures a full-circle moment in which a Vietnamese musical legend brings old songs back to life with bold new interpretations, orchestrations, and arrangements to a contemporary audience. Our concert documentary finds itself in a place of cultural intersection: where a large Vietnamese diasporic community has put down roots and where jazz was birthed by African American communities from a fusion of blues, ragtime, and Western classical music. This concert documentary inaugurates a larger project dedicated to promoting, fostering, and preserving Vietnamese jazz heritage and connecting music lovers through shared appreciation of sonic legacies.</p><p>&nbsp;</p><p>After <em>Y Vân</em>’s Centerpiece screening, grab a drink, sit down, and relax. You’re in for a magical, groovy sonic ride to end your musical night.</p><p><br></p><p>By <strong>Viet Film Fest staff</strong></p>",
+     "still_image": "https://static-a.eventive.org/1787963657140temp-1787963656915-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787963657467temp-1787963657352-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787963657741temp-1787963657640-poster.jpg",
+     "runtime": "53"
+    },
+    {
+     "id": "6a8fcb0d62cb25450b4357c9",
+     "name": "Not Dead Yet (Chưa chết mà)",
+     "short_description": null,
+     "description": "<p>Members of a funeral brass band in Saigon reflect on their intimate proximity to death.</p>",
+     "still_image": "https://static-a.eventive.org/1788011148838temp-1788011148591-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788011148828temp-1788011148723-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1788011150561temp-1788011149061-poster.jpg",
+     "runtime": "8"
+    }
+   ]
+  },
+  {
+   "id": "6a9263f7aa7b3d2c00ed569c",
+   "name": "VFF Underground, Volume II",
+   "description": "<p><strong>This short film set contains intense violence, rude humor, and sexual themes. Not intended for children. </strong></p><p><br></p><p>It’s what you think it is, or is it? Buckle up and get ready for some off-the-wall, creepy, twisty-and-turny, quirky, ballsy, oh-they-really-just-did-that films in this second edition of late night shorts.</p><p><br></p><p><em>Sleep Call </em>puts us up close and a little too personal as we get sucked into the world of a lonely young man yearning for real connection, even if the face staring back is not real in any way. Meanwhile, in <em>Hands Off!,</em> the last thing that playboy Mason wants is a real connection. He’d rather hit and quit it but this time, transported into another realm, he literally cannot. <em>UV*TV</em> hits you with offbeat humor and is drizzled with improv-style comedy that makes you wonder, “what did I just watch?”</p><p><br></p><p>Then as you’re left with questions, you will be transported into Vietnam at the beginning of a zombie outbreak where students must choose between friendship and humanity in <em>How an Apocalypse Ends.</em> After, <em>Book Madness</em> brings you back into one room, one man, surrounded by books, with a thirst for reading that may inflate his ego. And finally rounding out our rousing set of shorts is the suspenseful <em>Serial K</em>, set in The City That Never Sleeps, especially when a serial killer is targeting Asian men – particularly the paranoid, low-achieving ones.</p><p><br></p><p>Come for laughs and scares, and leave befuddled, with more questions.</p><p><br></p><p><strong>By Jenni Trang Le</strong></p>",
+   "short_description": null,
+   "start_time": "2026-10-11T04:00:00.000Z",
+   "end_time": "2026-10-11T05:50:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b3",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a92331e873792f869d39c41",
+     "name": "Sleep Call",
+     "short_description": null,
+     "description": "A lonely young man finds love online when a late-night sleep call with a stranger blossoms into an intimate digital romance.",
+     "still_image": "https://static-a.eventive.org/1787966621012temp-1787966620979-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787966726738temp-1787966726689-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/9ffc403ffde2a2a98367c5eda3eaf436.jpg?w=300",
+     "runtime": "24"
+    },
+    {
+     "id": "6a8fcb0d62cb25450b4357ba",
+     "name": "Hands Off!",
+     "short_description": null,
+     "description": "<p>Mason's womanizing habits reveal an otherworldly consequence when he is transported to a vibrant red hallway after his usual photo booth run a new girl. He is pulled through the red curtain into different realities where he is forced to confront his wrong doings torward's the girls he has hurt in his past. When he is pulled back into the hallway for the last time he is torn apart by a crowd of girls, each wanting revenge. While being torn away he notices that his new girl named Ella, someone whom he has never wronged is amongst the crowd. He asks her about her purpose of being here with confusion plastered on his face. She threatens, and tells him that he better not wrong her. Suddenly, Mason is sharply transported back into the photo booth where Ella questions why he appears nervous and out of breath. Mason quickly exists as Ella follows sharply after, she reveals a twisted photo of all of his ex girlfriends sitting next to them. Mason yells and points to them yet Ella cannot see them. Convinced that he's crazy, Ella walks away to which Mason hurriedly follows, trying to reason with her.</p>",
+     "still_image": "https://static-a.eventive.org/1787973176906temp-1787973176774-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787973177197temp-1787973177155-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787973160000temp-1787973159870-poster.jpg",
+     "runtime": "8"
+    },
+    {
+     "id": "6a8fcb0d62cb25450b4357db",
+     "name": "UV*TV",
+     "short_description": null,
+     "description": "<p>A sketch show for extraterrestrials showcasing the best of human absurdity.</p>",
+     "still_image": "https://static-a.eventive.org/1788013798501temp-1788013798383-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788013787250temp-1788013787221-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1788013798811temp-1788013798724-poster.jpg",
+     "runtime": "12"
+    },
+    {
+     "id": "6a8bd362211c8c59364eb58b",
+     "name": "How An Apocalypse Ends",
+     "short_description": null,
+     "description": "In a tense battle of friendship and survival, three teenage friends face a devastating choice: kill their best friend—now a zombie—to protect the world, or risk unleashing a global outbreak by trying to save him.",
+     "still_image": "https://static-a.eventive.org/552ecb3233464e2f8a29c5f03755859d.jpg",
+     "cover_image": "https://static-a.eventive.org/42485ed16baaba373c5eeb2a7067fb1c.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/f082ef3a3def52854de3ad5ec46f4ce7.jpg?w=300",
+     "runtime": "13"
+    },
+    {
+     "id": "6a8fcb0d62cb25450b4357ae",
+     "name": "Book Madness (Yêu sách)",
+     "short_description": null,
+     "description": "<p>Accompanied by the rhythm of jazz, a young man immerses himself in an endless cycle of reading, chasing an enlightenment that never arrives.</p>",
+     "still_image": "https://static-a.eventive.org/1787971699525temp-1787971699338-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787971699853temp-1787971699747-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787971700787temp-1787971700028-poster.jpg",
+     "runtime": "5"
+    },
+    {
+     "id": "6a8fcb0d62cb25450b4357d1",
+     "name": "Serial K",
+     "short_description": null,
+     "description": "<p>When a string of murders rattles their Brooklyn neighborhood, Alec and his best friend Jesse decide to ride out the night together. What begins as restless conversation and nervous jokes soon gives way to something darker, as news alerts, strange noises, and flickers of movement outside begin to chip away at their sense of safety. Trapped between the four walls of a cramped apartment, the friends can’t tell if they’re imagining things—or if the danger they fear has already found them.</p>",
+     "still_image": "https://static-a.eventive.org/1788013097828temp-1788013097718-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788013098124temp-1788013098077-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1788013064750temp-1788013064736-poster.jpg",
+     "runtime": "19"
+    }
+   ]
+  },
+  {
+   "id": "6a90786de66ebd7f3db73d3a",
+   "name": "Blood Moon Rite 8",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-11T05:30:00.000Z",
+   "end_time": "2026-10-11T07:45:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b2",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a8a4865b11e77fe17b20e46",
+     "name": "Blood Moon Rite 8 (Tiệc trăng máu 8)",
+     "short_description": "On the set of a shoestring horror film in an abandoned amusement park, a washed-up director performs a Blood Moon ritual to wring real terror from his cast — and gets it.",
+     "description": "<p><strong>Contains bloody violence and strong language. Not intended for children.</strong></p><p><br></p><p>Following the children’s adventure film <em>The Spectacular Adventure of the Little Prodigy</em> (<em>Trạng Tí phiêu lưu ký</em>;<em> </em>VFF 2023) and the melodrama <em>The Girl from Yesterday</em> (<em>Cô gái đến từ hôm qua</em>; VFF 2018), who would have expected the horror-comedy <em>Blood Moon Rite 8</em> coming from director Phan Gia Nhật Linh? Phan’s film is a Vietnamese remake of the Japanese cult film <em>One Cut of the Dead</em> (2017), directed by Shinichiro Ueda.</p><p><br></p><p>Don’t let “remake” deter you. <em>Blood Moon Rite 8</em> not only has the spirit and undead chaos of the original source material, but is unafraid to lampoon some of the worst tendencies and tropes found in major Vietnamese studio filmmaking. In fact, the whole film is a sort of meta-narrative: a Korean producer asking a Vietnamese cast and crew to remake a Japanese film. Here, director Tâm OK (Vân Sơn) is a director with the unfortunate reputation of making trashy films. But, out of personal inspiration – and in hopes of mending ties with his daughter (Lâm Thanh Mỹ of VFF 2016’s <em>Yellow Flowers on the Green Grass</em>) – he is thinking of making a lengthy one-shot, no-cut film. But his ambition runs into demonic forces that throw the production into disarray.</p><p><br></p><p><em>Blood Moon Rite 8</em> balances laughter and bloodlust with an appeal to make art personal – not dictated by a social media algorithm, a star’s follower count, or money men who do not care for cinema other than to check a corporate-approved box.</p><p><br></p><p>By <strong>Eric Nong</strong></p>",
+     "still_image": "https://static-a.eventive.org/938039d25faf812cf4de5ffc37fd415f.jpg",
+     "cover_image": "https://static-a.eventive.org/c2376ae217cbcc62942ef34a1c0560c3.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/2a3a7030bb052fb0d1182dffc48a0faa.jpg?w=300",
+     "runtime": "130"
+    },
+    {
+     "id": "6a8fcb0d62cb25450b4357c2",
+     "name": "Lost in Spice",
+     "short_description": null,
+     "description": "<p>To impress Emmy, Romain faces his biggest challenge yet: devouring Dragon's Breath noodles. Measured at two and a half million on the Scoville scale!</p>",
+     "still_image": "https://static-a.eventive.org/1788008877814temp-1788008877779-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788008878078temp-1788008878027-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1788008878268temp-1788008878256-poster.jpg",
+     "runtime": "3"
+    }
+   ]
+  },
+  {
+   "id": "6a90786de66ebd7f3db73d44",
+   "name": "Southeast Asian American Journeys",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-11T16:30:00.000Z",
+   "end_time": "2026-10-11T19:10:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b2",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a8e7245c67f8bd06aba8492",
+     "name": "Southeast Asian American Journeys",
+     "short_description": "This documentary follows different refugee communities across the US, from Montagnard in North Carolina to the Mien in Oregon. Interviews with California Vietnamese mamas with queer kids, a collective of Southeast Asian vendors at FDR Park, canvassing youth, and Hmong farmers who trade crops with their neighbors, unearth untold unique refugee stories.",
+     "description": "<p>In the anthology documentary <em>Southeast Asian American Journeys</em>, its five parts explore the vibrant lives and livelihoods of Southeast Asian American communities across the U.S.: in Philadelphia, where refugee businesses run a thriving market where they celebrate culture, food, and nature; in North Carolina, a Montagnard family keeps their history alive through both traditional and contemporary art forms; in Minnesota, Hmong farmers find meaning and wellness in tending to fertile soil; in Oregon, a Mien family records cassettes as keepsakes of their loved ones; and in California, queer Cambodians use grassroots organizing to fight for their dignity.</p><p>&nbsp;</p><p>Within these stories, participants range from the individuals who migrated to those who grew up stateside, showcasing the exchange of traditions and knowledge between generations. It’s especially poignant to observe these acts of oral storytelling unfold when, as stated in chapters “Threads” and “Mixtape”, some of these communities experience lower levels of literacy.</p><p>&nbsp;</p><p>All three directors (Quyên Nguyễn-Lê, Oanh-Nhi Nguyễn, and Joua Lee Grande) take great care to view these stories through a consistently dignified lens. Historical wartime context is provided not to exploit trauma for entertainment, but to clarify the beauty of how these people have grown beyond it. And what stands out most about this film are the smiles and the laughs, the warmth exuded even amidst recollections of trauma and loss. It makes evident these individuals’ agency on how they define themselves: not merely as victims of war and displacement, but joyful humans bound by shared values of kinship.</p><p><br></p><p>By <strong>Julian Doan</strong></p>",
+     "still_image": "https://static-a.eventive.org/1787969054719temp-1787969054588-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787969604229temp-1787969604181-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787969055011temp-1787969054926-poster.jpg",
+     "runtime": "70"
+    },
+    {
+     "id": "6a8e708b09b1fbd1a0057516",
+     "name": "Sea Song",
+     "short_description": null,
+     "description": "The last remaining South Vietnamese naval officers reunite in California for what will likely be the final time, finding solace with the few people who understand the complexities that shape their life histories.",
+     "still_image": "https://static-a.eventive.org/1788012881185temp-1788012881129-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788012859630temp-1788012859605-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/57a5203243e89061ea318d0a0acc544f.jpg?w=300",
+     "runtime": "18"
+    }
+   ]
+  },
+  {
+   "id": "6a9263f7aa7b3d2c00ed56a1",
+   "name": "On Such a Full Sea Are We Now Afloat",
+   "description": "<p><strong>This set contains strong language and violent imagery. Viewer discretion is advised.</strong></p><p><br></p><p>There is a tide in the affairs of each of the main characters in these films. In this set, the protagonist must decide whether to seize an opportunity that, by accident or deliberate posturing, they can now take advantage of. Some succeed, some fail, and, in the last film, there is a fateful reconsideration.</p><p><br></p><p>The bookends of this set center on familial love from returning VFF alumni. This set opens with <em>When Everything Would Be Fine</em> (directed by Mathieu Lam of VFF 2022’s <em>La passion</em>), where a French Vietnamese brother and sister must keep their family’s restaurant operating after the unexpected death of their mother. It then closes with <em>Ripe</em> (<em>Chín</em>), directed by Solara Thanh-Binh Dang (VFF 2023’s <em>Her Name is Like a Sigh</em>). There, a daughter – long dismissive of her father’s attempts to persuade her into an arranged marriage – begins reconsidering after he suffers a grievous injury.</p><p><br></p><p>Our lineup’s body turns the screws of intensity as it progresses. <em>5011</em> depicts a Vietnamese high schooler unsure how to cope with and behave towards his crush. Talking about love’s nature with his friend only produces less clarity. <em>The Dream Is a Snail</em>, which premiered at the 2026 Cannes Film Festival, depicts an absurd scenario defined by financial precarity and inequality. And the title says it all in <em>I Think About Killing You</em>, when an aspiring professional rower speculates about homicide.</p><p><br></p><p>As they chart a course, will our characters reach their intended destination or be lost to the sea?</p><p><br></p><p><strong>By Eric Nong</strong></p>",
+   "short_description": null,
+   "start_time": "2026-10-11T17:00:00.000Z",
+   "end_time": "2026-10-11T19:05:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b3",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a9242261f4f6b8f7cdd19d9",
+     "name": "When Everything Would Be Fine",
+     "short_description": null,
+     "description": "<p>After their mother's death, Timothé returns to help his sister run the family's Vietnamese restaurant. But between resentment and silence, their shared grief becomes a test of a possible reconciliation.</p>",
+     "still_image": "https://static-a.eventive.org/1787970161209temp-1787970160941-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788014345619temp-1788014345430-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1788014345937temp-1788014345861-poster.jpg",
+     "runtime": "22"
+    },
+    {
+     "id": "6a8cab8ed45d828b4563f6e0",
+     "name": "5011",
+     "short_description": "An expat and a local Vietnamese high school boy trade love stories over MMA.",
+     "description": "<p>A high school boy experiences his first crush and overthinks every small detail, looking for guidance from his American MMA partner who lives a fast-paced expat lifestyle. After trading all their so-called philosophical advice, both guys face their own bitter failures in love and realize there was never any formula to begin with.</p>",
+     "still_image": "https://static-a.eventive.org/1787610248955temp-1787610248678-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787610318458temp-1787610318310-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787610249696temp-1787610249143-poster.jpg",
+     "runtime": "12"
+    },
+    {
+     "id": "6a9240676360abc7a671be97",
+     "name": "The Dream is a Snail",
+     "short_description": null,
+     "description": "<p>A struggling young artist takes an odd job as a human racetrack in a senior rejuvenation workshop, only to develop an obsession with the hypnotic sensation of snails gliding across his skin.</p>",
+     "still_image": "https://static-a.eventive.org/1787969919206temp-1787969919168-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787969919447temp-1787969919394-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/79ec50f8fa17f3d4a997e2eae3b6fa62.jpg?w=300",
+     "runtime": "15"
+    },
+    {
+     "id": "6a8bd59db7a0c6bf8b12913c",
+     "name": "I Think About Killing You",
+     "short_description": null,
+     "description": "Team captain Dani is plagued by invasive fantasies of killing her abusive coach. When the coach pushes the team too far, Dani must choose whether or not to act on her fantasies of violence.",
+     "still_image": "https://static-a.eventive.org/1788008724546temp-1788008724506-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788008724843temp-1788008724791-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/3ee791aae30f9ff199d2e1028aa574f7.jpg?w=300",
+     "runtime": "14"
+    },
+    {
+     "id": "6a8fcb0d62cb25450b4357cd",
+     "name": "Ripe",
+     "short_description": null,
+     "description": "<p>Lệ is a young Vietnamese woman born to a family of durian farmers in the Mekong Delta. She lives a simple life, deeply connected to her family’s land but isolated from the larger world. When her father suggests she enter an arranged marriage as a way of securing her future, Lệ’s life is plunged into uncertainty. While she wraps her mind around the prospects of her future, the spirit of the land and ancestral realm begin to weave mysterious influence over her, guiding her to her final decision.</p>",
+     "still_image": "https://static-a.eventive.org/1788011332804temp-1788011332660-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1788011333068temp-1788011333016-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1788011300510temp-1788011300494-poster.jpg",
+     "runtime": "20"
+    }
+   ]
+  },
+  {
+   "id": "6a90786de66ebd7f3db73d49",
+   "name": "Meet Me at the Eclipse",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-11T19:30:00.000Z",
+   "end_time": "2026-10-11T22:05:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b3",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a8bd6a3dc167db82443468e",
+     "name": "Meet Me at the Eclipse (Hẹn em ngày nhật thực)",
+     "short_description": "In 1995, a young Catholic woman at the end of noviciate finds herself shaken by the flashbacks of a long gone first love.",
+     "description": "<p><strong>Contains some sensuality and mature themes. Viewer discretion is advised.</strong></p><p><br></p><p>Who are we and where would we be without love? This is a question director Lê Thiện Viễn (2019’s <em>The Perfect Wedding</em>) gives much thought and consideration with his film, <em>Meet Me at the Eclipse</em>. Thiên Ân (Đoàn Thiên Ân) is a Catholic sister finishing up her novitiate, her training and preparation as an exercise of her devotion to religious life, when another sister notices memories and keepsakes of Ân’s previous life holding her back.&nbsp;</p><p>&nbsp;</p><p>And so, dressed in her blue aó dài attire, Ân revisits her childhood home in Trà Mây and her encounter with a former lover, An Thiên (Khương Lê). Thiên is a humble electrician who swooned and fell for her. Love at first sight. Director Lê portrays their romance with warmth and affection. Ân and Thiên are saccharine-sweet towards each other, making their budding love all the more endearing.</p><p>&nbsp;</p><p>Of course, no relationship comes without its challenges. A religious bachelor is hoping for Ân’s hand in marriage. Thiên is working towards his conversion to Catholicism to be in the good graces of his lover’s mother. Still, Ân’s mother favors the former over the latter.</p><p>&nbsp;</p><p>More than a story of one’s turn to religious faith, Lê Thiện Viễn’s third feature is yet another demonstration of his storytelling abilities that tug at our heartstrings. His balance of melodrama and romantic-comedy are sure to bring audiences together in its premise and quest to face the truth and find oneself through love and humility.</p><p><br></p><p>By <strong>Katy Nguyen</strong></p>",
+     "still_image": "https://static-a.eventive.org/ee58ff30d2b9bc766c251f58b3332c25.jpg",
+     "cover_image": "https://static-a.eventive.org/fb71f2575dd8f0184814eafba7e56e8f.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/1c88edc4017aed057704b245c60b112c.jpg?w=300",
+     "runtime": "118"
+    }
+   ]
+  },
+  {
+   "id": "6a9263f7aa7b3d2c00ed56a6",
+   "name": "The Very Thought of You",
+   "description": "<p><strong>Contains sexual themes and nudity. Viewer discretion is advised.</strong></p><p><br></p><p>Love – present or not – makes people act in peculiar ways to those who may not understand that love. Or, it can make people forget to do the things they ought to do. These four films look at love (or one’s idea of what love is) at different stages: its beginnings, the point of betrayal, and in death and separation.</p><p><br></p><p>We open with budding beginnings in Nguyễn Năng Hải An’s <em>5011</em> (which helped the director earn a spot at USC’s School of Cinematic Arts). There, a Vietnamese high school boy, unsure how to act or speak around his crush, seeks advice from a friend who might not be of much help. <em>Empty</em> (<em>Trống</em>), directed by Mai Hoài Nguyễn Tuấn Anh (or “Luey”) follows. Loosely adapted from Haruki Murakami’s short story “Kino”, the protagonist returns home to find his wife having an affair. He flees the scene, headed for anywhere but home – his ultimate destination will feature curious moments symbolizing unresolved feelings.</p><p><br></p><p>A lack of emotional resolution carries over into the closing half of this set. The animated short <em>Water Girl</em> (<em>Fille d’eau</em>), directed by Sandra Desmazières (VFF 2023’s <em>Flowing Home</em>), finds an elderly freedive fisher reminiscing about loved ones now far away. As a reversal of Orpheus and Eurydice, Nghiêm Quỳnh Trang’s <em>Visiting Heaven Gate</em> sees a daughter and mother make an ascending pilgrimage in hopes of seeing their father and husband, respectively, one last time. Together, our final two films close on the idea that love abides.</p><p><br></p><p><strong>By Eric Nong</strong></p>",
+   "short_description": null,
+   "start_time": "2026-10-11T20:00:00.000Z",
+   "end_time": "2026-10-11T22:00:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b2",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1700,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a8cab8ed45d828b4563f6e0",
+     "name": "5011",
+     "short_description": "An expat and a local Vietnamese high school boy trade love stories over MMA.",
+     "description": "<p>A high school boy experiences his first crush and overthinks every small detail, looking for guidance from his American MMA partner who lives a fast-paced expat lifestyle. After trading all their so-called philosophical advice, both guys face their own bitter failures in love and realize there was never any formula to begin with.</p>",
+     "still_image": "https://static-a.eventive.org/1787610248955temp-1787610248678-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787610318458temp-1787610318310-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787610249696temp-1787610249143-poster.jpg",
+     "runtime": "12"
+    },
+    {
+     "id": "6a8fcb0d62cb25450b4357b4",
+     "name": "Empty",
+     "short_description": null,
+     "description": "<p>After a long business trip, \"Anh\" returned home and sniff his wife out in bed with someone else. He said nothing, quietly disappearing.\nHe took a bus and went to an abandoned house in the mountains. It’s an empty house with loose doors, and if he wanted to get in, he could find a way into every corner. He chose to stay here and open a cafe for himself.\nHere, strange things happen as a reflection of the things in his soul that he refuses to confront. Until he finally admitted to himself that he was truly empty and hurt.</p>",
+     "still_image": "https://static-a.eventive.org/1787972209143temp-1787972209011-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1787972249235temp-1787972249176-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787972209354temp-1787972209344-poster.jpg",
+     "runtime": "40"
+    },
+    {
+     "id": "6a9241a3425caaac2b926c94",
+     "name": "Water Girl",
+     "short_description": null,
+     "description": "Mia has spent her whole life freediving, fishing and gliding through seaweed and rocks. Time has passed, tracing its lines on her body, and shaping the landscapes around her. Loved ones have vanished. Tonight, Mia remembers.",
+     "still_image": "https://static-a.eventive.org/d28bb22b482feb6b11256fb3173b2481.jpg",
+     "cover_image": "https://static-a.eventive.org/45eb20d7e77e5e5d119262c8236cfd85.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/61ae68002fa0e94d819285039c6ae18d.jpg?w=300",
+     "runtime": "15"
+    },
+    {
+     "id": "6a8e76b3604b08fcba6495ff",
+     "name": "Visiting Heaven Gate",
+     "short_description": null,
+     "description": "After her father's passing, a daughter returns to Vietnam to be with her mom. Their pilgrimage to Heaven Gate reflects their struggle to connect since his loss. The mother seeks reunion with her late husband, ascending mountains for solace. The daughter, grappling with vulnerability, joins, exploring her own abyss. Together, they search for healing and understanding amidst the sublime of nature.",
+     "still_image": "https://static-a.eventive.org/d42353f2b39d577786fd4a619f052a6e.jpg",
+     "cover_image": "https://static-a.eventive.org/7eb479bc2f741b8c418b72318e25b146.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/dc6000f6468bed54a814399b77d38562.jpg?w=300",
+     "runtime": "16"
+    }
+   ]
+  },
+  {
+   "id": "6a90786de66ebd7f3db73d4e",
+   "name": "Ky Nam Inn",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-11T23:00:00.000Z",
+   "end_time": "2026-10-12T02:00:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b2",
+   "tags": [
+    {
+     "id": "6a29d6aa4de75c8c0f7890c3",
+     "name": "Special Screenings"
+    }
+   ],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 2000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a8bd628afe89c12d3052632",
+     "name": "Ky Nam Inn (Quán Kỳ Nam)",
+     "short_description": "Set in 1985 post-war Vietnam, Khang moves to Saigon after securing a position to translate \"The Little Prince.\" Due to his family connections, Khang's life under the new regime is secure. But everything changes when he meets Ky Nam, a reserved older widow who lives in Khang's new community.",
+     "description": "<p><strong>* CLOSING NIGHT FILM *</strong></p><p><em>Director Leon Lê will be in attendance for Q&amp;A after the screening.</em></p><p><br></p><p><strong>This film contains some sensuality. Viewer discretion is advised.</strong></p><p><br></p><p>Set in the mid 1980s of post-war Saigon, <em>Ky Nam Inn </em>is Leon Le’s latest romance drama detailing the nuanced lives of private individuals in the midst of a changing Vietnam. The plot centers on Khang (Liên Bỉnh Phát), a young translator from Da Lat who moves into a working-class neighborhood and meets a cast of animated characters that give the film its livelihood.</p><p><br></p><p>While working on a Vietnamese translation of Antoine de Saint-Exupéry's <em>The Little Prince</em> (an apt metaphor for childhood innocence and nostalgia), Khang develops a mis-romance with a middle-aged widow, Ky Nam (Đỗ Thị Hải Yến), who cooks in the neighborhood. While their connection is real, neighborhood gossip and social pressures against their union due to age and class differences drive the film’s emotional turmoil.. In addition to the two protagonists, there are also memorable supporting characters like Sử (Trần Thế Mạnh), the young mixed-raced kitchen helper who becomes Khang’s closest mentee companion. So too Mr. Hao (Lê Văn Thân), whose music taste and vinyl collection reminds viewers of the Saigon of a bygone era.</p><p><br></p><p>Though elements of the war are constantly present, Leon Le does a clever job of suggesting its lingering effects in the background rather than put them in center stage. Using strategic framing and the now-frequently aestheticized image of pre-Đồi mồi Saigon, the film is a tender treatment of stilted desires, emphasizing visual moods and deliberate silences over grand gestures, while highlighting neighborhood intimacies, and the colorful microcosm of alley life.</p><p><br></p><p>By <strong>Vinh Phu Pham</strong></p>",
+     "still_image": "https://static-a.eventive.org/ae695da674c7a0e55818ef2c297b023e.jpg",
+     "cover_image": "https://static-a.eventive.org/635a32345df3c20447308517128f05ad.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/3aee86ad5caf1399ab56b4f0708965eb.jpg?w=300",
+     "runtime": "140"
+    }
+   ]
+  },
+  {
+   "id": "6a90786de66ebd7f3db73d53",
+   "name": "Ky Nam Inn",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-11T23:00:00.000Z",
+   "end_time": "2026-10-12T02:00:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b3",
+   "tags": [
+    {
+     "id": "6a29d6aa4de75c8c0f7890c3",
+     "name": "Special Screenings"
+    }
+   ],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 2000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a8bd628afe89c12d3052632",
+     "name": "Ky Nam Inn (Quán Kỳ Nam)",
+     "short_description": "Set in 1985 post-war Vietnam, Khang moves to Saigon after securing a position to translate \"The Little Prince.\" Due to his family connections, Khang's life under the new regime is secure. But everything changes when he meets Ky Nam, a reserved older widow who lives in Khang's new community.",
+     "description": "<p><strong>* CLOSING NIGHT FILM *</strong></p><p><em>Director Leon Lê will be in attendance for Q&amp;A after the screening.</em></p><p><br></p><p><strong>This film contains some sensuality. Viewer discretion is advised.</strong></p><p><br></p><p>Set in the mid 1980s of post-war Saigon, <em>Ky Nam Inn </em>is Leon Le’s latest romance drama detailing the nuanced lives of private individuals in the midst of a changing Vietnam. The plot centers on Khang (Liên Bỉnh Phát), a young translator from Da Lat who moves into a working-class neighborhood and meets a cast of animated characters that give the film its livelihood.</p><p><br></p><p>While working on a Vietnamese translation of Antoine de Saint-Exupéry's <em>The Little Prince</em> (an apt metaphor for childhood innocence and nostalgia), Khang develops a mis-romance with a middle-aged widow, Ky Nam (Đỗ Thị Hải Yến), who cooks in the neighborhood. While their connection is real, neighborhood gossip and social pressures against their union due to age and class differences drive the film’s emotional turmoil.. In addition to the two protagonists, there are also memorable supporting characters like Sử (Trần Thế Mạnh), the young mixed-raced kitchen helper who becomes Khang’s closest mentee companion. So too Mr. Hao (Lê Văn Thân), whose music taste and vinyl collection reminds viewers of the Saigon of a bygone era.</p><p><br></p><p>Though elements of the war are constantly present, Leon Le does a clever job of suggesting its lingering effects in the background rather than put them in center stage. Using strategic framing and the now-frequently aestheticized image of pre-Đồi mồi Saigon, the film is a tender treatment of stilted desires, emphasizing visual moods and deliberate silences over grand gestures, while highlighting neighborhood intimacies, and the colorful microcosm of alley life.</p><p><br></p><p>By <strong>Vinh Phu Pham</strong></p>",
+     "still_image": "https://static-a.eventive.org/ae695da674c7a0e55818ef2c297b023e.jpg",
+     "cover_image": "https://static-a.eventive.org/635a32345df3c20447308517128f05ad.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/3aee86ad5caf1399ab56b4f0708965eb.jpg?w=300",
+     "runtime": "140"
+    }
+   ]
+  },
+  {
+   "id": "6a9267337dd42cf5dc7b0819",
+   "name": "VFF Encore: In Waves",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-24T02:00:00.000Z",
+   "end_time": "2026-10-24T05:00:00.000Z",
+   "venue": "6a29d6aa4de75c8c0f7890b2",
+   "tags": [
+    {
+     "id": "6a29d6aa4de75c8c0f7890c3",
+     "name": "Special Screenings"
+    }
+   ],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 2000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a9214a987b19be64bd15125",
+     "name": "In Waves",
+     "short_description": "A shy Los Angeles teenager who lives to skate and draw falls for a fearless young surfer, and when a sudden illness upends her life, he has to find the courage to meet her in the water.**  Leaner alternate if you need it to fit a tight character count:  **When a sudden illness threatens the surfer he loves, a shy L.A. skateboarder finds his courage in the ocean.",
+     "description": "<p><em>Director Phương Mai Nguyễn and author AJ Dungo will be in attendance for a Q&amp;A following the screening.</em></p><p><br></p><p><strong>Motion Picture Rating (MPA): PG-13 for thematic material, nudity including a full nude image, and some language.</strong></p><p><br></p><p>Jointly with <em>The Cricket and the Muddy Adventure</em>, <em>In Waves</em> is the first animated feature to be accepted to Viet Film Fest. VFF is screening the English dub of <em>In Waves</em>, which is being shown out-of-competition.</p><p><br></p><p>Adapted from AJ Dungo’s 2019 graphic novel of the same name, Phuong Mai Nguyen’s adaptation of <em>In Waves</em> follows AJ (Will Sharpe) and Kristen (Stephanie Hsu) in a romantic drama set amid Southern Californian suburbia and beaches. AJ, a shy skateboarder and illustrator, meets Kristen, a surfer, at a dance. From there, they will share a love that will be tested when Kristen falls ill. Over time, that love will endow both with warmth and the strength they need to persevere – expressed through both drawing and surfing.</p><p><br></p><p>Director Phuong Mai Nguyen returns to VFF a decade after winning the Grand Jury Trống Đồng Award for Best Short Film with <em>Chez moi</em> (<em>My Home</em>; VFF 2016) – still the only animated film that has ever won an award at VFF. Her film’s visual style is a blend of influences: Dungo’s graphic novel, French animation’s diverse heritage and present, the portraits of David Hockney, and its distinct SoCal setting (including VFF’s native Orange County). And that style is thanks to a number of animation studios across France using Blender to create the film’s distinct 2D/3D hybrid aesthetic. Bringing down the curtains on VFF 2026’s in-person screenings is this unique piece of independent European animation, upholding the love that makes it beautiful.</p><p><br></p><p>By <strong>Eric Nong</strong></p>",
+     "still_image": "https://static-a.eventive.org/064c3a8fbdb30e5cc8f314e0b9906a4c.jpg",
+     "cover_image": "https://static-a.eventive.org/7f62fa6f9181df43fa047942b8970963.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/035404775449750ca9bf04de9da5a870.jpg?w=300",
+     "runtime": "91"
+    }
+   ]
+  }
+ ],
+ "venues": [
+  {
+   "id": "6a29d6aa4de75c8c0f7890b2",
+   "name": "Frida Cinema - Theater 1",
+   "short_name": "Frida Cinema",
+   "address": "305 E 4th St #100, Santa Ana, CA 92701",
+   "addressLine": "305 E 4th St #100, Santa Ana, CA 92701",
+   "default_capacity": 205
+  },
+  {
+   "id": "6a29d6aa4de75c8c0f7890b3",
+   "name": "Frida Cinema - Theater 2",
+   "short_name": "Frida Cinema",
+   "address": "305 E 4th St #100, Santa Ana, CA 92701",
+   "addressLine": "305 E 4th St #100, Santa Ana, CA 92701",
+   "default_capacity": 215
+  },
+  {
+   "id": "6a29d6aa4de75c8c0f7890b5",
+   "name": "Bowers Museum",
+   "short_name": null,
+   "address": "2002 N Main St, Santa Ana, CA 92706, United States",
+   "addressLine": "2002 N Main St, Santa Ana, CA 92706, United States",
+   "default_capacity": 300
+  }
+ ],
+ "outOfEdition": []
+}

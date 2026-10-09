@@ -1,0 +1,478 @@
+{
+ "v": 1,
+ "city": {
+  "id": "airport-city",
+  "name": "Airport City",
+  "country": "IL",
+  "lat": 31.986,
+  "lng": 34.9162,
+  "timezone": "Asia/Jerusalem"
+ },
+ "places": [
+  {
+   "id": "osm:node/4315645107",
+   "name": "פסיפס לוד",
+   "nameEn": "Lod Mosaic",
+   "kind": "landmark",
+   "lat": 31.955627,
+   "lng": 34.903484,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1503102",
+   "wikipedia": null,
+   "description": "Roman mosaic found in Israel",
+   "image": "The Lod Mosaic, Israel Antiquities Authority.jpg",
+   "notability": 6,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/1083552229",
+   "name": "אנדרטה לחללי חיל התחזוקה",
+   "nameEn": "Logistics corps Memorial",
+   "kind": "landmark",
+   "lat": 31.968456,
+   "lng": 34.945843,
+   "address": null,
+   "website": null,
+   "wikidata": "Q30527422",
+   "wikipedia": "he:אתר ההנצחה לחללי חיל הלוגיסטיקה",
+   "description": "Memorial site in Israel",
+   "image": "Logistic Corps Memorial in Israel.jpg",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2467107746",
+   "name": "אנדרטת חטיבה 8",
+   "nameEn": "Memorial of the 8th Brigade",
+   "kind": "landmark",
+   "lat": 31.990713,
+   "lng": 34.902709,
+   "address": null,
+   "website": null,
+   "wikidata": "Q16132668",
+   "wikipedia": "he:אנדרטה לחללי חטיבה 8",
+   "description": null,
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/187883717",
+   "name": "חאן חילו",
+   "nameEn": "Khan Hilo",
+   "kind": "landmark",
+   "lat": 31.954379,
+   "lng": 34.900421,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7035712",
+   "wikipedia": null,
+   "description": null,
+   "image": "PikiWiki Israel 4370 khan chilo-lod.jpg",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/1011987739",
+   "name": "Lod Mosaic Center",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 31.955813,
+   "lng": 34.903413,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/742674169",
+   "name": "גבעת הספלולים",
+   "nameEn": "Giv'at HaSaflulim;Saflulim Viewpoint",
+   "kind": "viewpoint",
+   "lat": 31.99319,
+   "lng": 34.955327,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9986337738",
+   "name": "גג מאגר המים",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 31.96085,
+   "lng": 34.943429,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/1355762800",
+   "name": "מצפה אחיעד",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 32.006174,
+   "lng": 34.944167,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/417173123",
+   "name": "שוק לוד",
+   "nameEn": "Lod Market",
+   "kind": "market",
+   "lat": 31.95489,
+   "lng": 34.8983,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  }
+ ],
+ "near": "venues",
+ "stay": [
+  {
+   "id": "osm:node/2144611987",
+   "name": "שדות",
+   "nameEn": "Sadot",
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 31.968437,
+   "lng": 34.842706,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 7198,
+   "venuesNear": 0
+  }
+ ],
+ "eat": [
+  {
+   "id": "osm:way/1021522750",
+   "name": "פיצה פורטו",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "italian",
+    "pasta",
+    "pizza"
+   ],
+   "lat": 31.985856,
+   "lng": 34.91315,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 285,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/1021522747",
+   "name": "Le",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "asian",
+    "sushi"
+   ],
+   "lat": 31.986247,
+   "lng": 34.912859,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 314,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/1021522749",
+   "name": "Gaston Steakhouse",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "burger",
+    "steak_house"
+   ],
+   "lat": 31.986013,
+   "lng": 34.912644,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 333,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/4988160114",
+   "name": "אייר קפה",
+   "nameEn": "AirCafe",
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": null,
+   "lat": 31.987965,
+   "lng": 34.910012,
+   "address": "הירדן",
+   "website": null,
+   "wikidata": null,
+   "openingHours": "Su 00:00-24:00; Mo-Th 08:00-24:00; Fr 08:00-14:00; Sa 19:00-24:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "00:00",
+       "24:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "08:00",
+       "24:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr"
+     ],
+     "spans": [
+      [
+       "08:00",
+       "14:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "19:00",
+       "24:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 622,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/12593444378",
+   "name": "מי מה מו",
+   "nameEn": "Mi Ma Mu",
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "burger"
+   ],
+   "lat": 32.036476,
+   "lng": 34.864294,
+   "address": "השדרה האקדמית",
+   "website": "https://www.memamu.co.il/",
+   "wikidata": null,
+   "openingHours": "Su-Th 11:00-00:00, Fr 11:00-16:00, Sa 21:00-01:00",
+   "hours": null,
+   "toVenueM": 7447,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/12547329544",
+   "name": "פיצה טוביה",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "pizza"
+   ],
+   "lat": 32.004582,
+   "lng": 34.944193,
+   "address": null,
+   "website": "https://pizzatuvia.co.il",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 3357,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/12547329542",
+   "name": "Pizza Hut",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "pizza"
+   ],
+   "lat": 32.005525,
+   "lng": 34.946868,
+   "address": "161 שדרות עמק איילון",
+   "website": "https://pizzahut.co.il",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 3621,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/976471774",
+   "name": "Pizza Hut",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "pizza"
+   ],
+   "lat": 32.001376,
+   "lng": 34.870391,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": "24/7",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "00:00",
+       "24:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 4645,
+   "venuesNear": 0
+  }
+ ],
+ "trips": [
+  {
+   "name": "Ramla",
+   "page": "Ramla",
+   "url": "https://en.wikivoyage.org/wiki/Ramla",
+   "description": "Ramla is a similar city bordering Lod. Sometimes they are together referred to as \"Ramlod\".",
+   "lat": 31.92911,
+   "lng": 34.87151,
+   "km": 8
+  }
+ ],
+ "guide": {
+  "page": "Lod",
+  "url": "https://en.wikivoyage.org/wiki/Lod"
+ },
+ "licences": {
+  "osm": {
+   "name": "ODbL",
+   "url": "https://opendatacommons.org/licenses/odbl/",
+   "attribution": "© OpenStreetMap contributors",
+   "credit": "https://www.openstreetmap.org/copyright"
+  },
+  "wikidata": {
+   "name": "CC0",
+   "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "attribution": "Wikidata"
+  },
+  "wikivoyage": {
+   "name": "CC BY-SA 4.0",
+   "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "attribution": "Wikivoyage contributors"
+  }
+ },
+ "provenance": {
+  "osm": {
+   "fetchedAt": "2026-10-02T19:21:25Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikidata": {
+   "fetchedAt": "2026-10-02T19:22:01Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "amenities": {
+   "fetchedAt": "2026-10-02T19:31:31Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikivoyage": {
+   "fetchedAt": "2026-10-02T19:23:20Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  }
+ }
+}

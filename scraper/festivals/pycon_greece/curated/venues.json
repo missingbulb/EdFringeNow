@@ -1,0 +1,19 @@
+{
+ "about": "Hand-curated venue research for PyCon Greece, keyed by the code the pretalx adapter gives each building. Every figure is {value, source}; coordinates carry the basis they rest on.",
+ "researchedAt": "2026-10-02",
+ "venues": {
+  "technopolis": {
+   "name": "Technopolis City of Athens",
+   "address": {
+    "value": "Pireos 100, 118 54 Athens",
+    "source": "https://2026.pycon.gr/en/"
+   },
+   "coordinates": {
+    "lat": 37.9779377,
+    "lng": 23.7136361,
+    "basis": "OpenStreetMap's Τεχνόπολις Δήμου Αθηναίων (way 215710614)"
+   },
+   "notes": "The city's arts centre in a former gasworks in Gazi; the auditorium, the stage, Innovathens' tutorial room and the exhibit halls are the schedule's own rooms."
+  }
+ }
+}

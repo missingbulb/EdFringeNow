@@ -17,7 +17,8 @@ Three scripts, on three different clocks:
 The festival planner (`/planNG/`) reads these same files for the Fringe, through
 its registry entry in [`festivals/edfringe/`](festivals/edfringe/festival.toml).
 The other festivals use a separate, festival-generic layer:
-hand-run fetchers under [`festivals/`](festivals/README.md) write per-edition raw
+the fetchers under [`festivals/`](festivals/README.md), run by the `festival-update`
+and `festival-refresh` tasks or by hand, write per-edition raw
 into `data/festivals/`, and [`convert/`](convert/to_serving.py) turns it into
 `site/data/festivals/`. Its contract — fetcher vs raw vs converter, adding an
 edition or a source — is [festivals/README.md](festivals/README.md).
@@ -238,7 +239,7 @@ switched off twice over. They are declared `manual` — a manual task has no
 occurrence, so the Claudinite scheduler
 (`.github/workflows/claudinite-scheduler.yml`, the repo's only cron) never
 instantiates one — and this repository names them both in
-`taskScheduler.disabledTasks` (`.claudinite-settings.json`), which says the repo
+the Claudinite settings' `tasks.disabled` list, which says the repo
 does not run them at all: the scheduler skips them before instantiating anything
 and closes a sleeping work item that names one. Turning a refresh back on is
 taking it off that list and restoring its cadence.

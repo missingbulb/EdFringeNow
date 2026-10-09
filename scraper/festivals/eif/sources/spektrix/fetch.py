@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fetch the Edinburgh International Festival's programme from its Spektrix public API, for one edition.
 
-Run by hand:
+Run by the festival update (`scraper/festivals/update.py`), or by hand:
 
     python3 scraper/festivals/eif/sources/spektrix/fetch.py --edition <year>
 

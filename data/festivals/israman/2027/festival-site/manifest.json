@@ -1,0 +1,15 @@
+{
+ "festival": "israman",
+ "edition": "2027",
+ "source": "festival-site",
+ "fetchedAt": "2026-10-02T19:00:05Z",
+ "fetcher": "scraper/festivals/israman/sources/festival-site/fetch.py",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://israman.co.il/?page_id=313"
+ ],
+ "files": [
+  "programme.json"
+ ],
+ "notes": "One record per day of the weekend schedule: its lines, each with the times printed before it (a range in either order, a single time, an estimate) and its text, and on race day the start-wave table; the undated sections (the shuttle timetables) by title only."
+}

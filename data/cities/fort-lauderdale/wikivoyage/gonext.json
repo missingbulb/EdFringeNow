@@ -1,0 +1,55 @@
+{
+ "page": "Fort Lauderdale",
+ "url": "https://en.wikivoyage.org/wiki/Fort_Lauderdale",
+ "items": [
+  {
+   "page": "cruise ships",
+   "line": "'''Port Everglades''' is the nation's second busiest port for [[cruise ships]], after Port of Miami. There are many cruises of varying lengths (1 day to several weeks) available to choose from.  The airport offers a free shuttle bus to the port for car renters.  Many off-airport rental car locations also offer port shuttles.",
+   "resolved": "cruise ships",
+   "lat": null,
+   "lng": null
+  },
+  {
+   "page": "Miami",
+   "line": "[[Miami]]",
+   "resolved": "Miami",
+   "lat": 25.72909,
+   "lng": -80.23744
+  },
+  {
+   "page": "Miami Beach",
+   "line": "[[Miami Beach]]",
+   "resolved": "Miami Beach",
+   "lat": 25.79056,
+   "lng": -80.13
+  },
+  {
+   "page": "Everglades National Park",
+   "line": "[[Everglades National Park]]",
+   "resolved": "Everglades National Park",
+   "lat": 25.39,
+   "lng": -80.95
+  },
+  {
+   "page": "Hollywood (Florida)",
+   "line": "[[Hollywood (Florida)]] Popping down to visit the night clubs and restaurants along Hollywood Blvd near Young Circle is a close and interesting evening outing. You can also see the Hollywood beach.",
+   "resolved": "Hollywood (Florida)",
+   "lat": 26.021389,
+   "lng": -80.175
+  },
+  {
+   "page": "Florida Keys",
+   "line": "You can take overnight excursions to the  [[Florida Keys]] or the [[Bahamas]].",
+   "resolved": "Florida Keys",
+   "lat": 24.666944,
+   "lng": -81.544167
+  },
+  {
+   "page": "Orlando",
+   "line": "[[Orlando]] and its theme parks are accessible by car, coach trip, or train.",
+   "resolved": "Orlando",
+   "lat": 28.48,
+   "lng": -81.365
+  }
+ ]
+}

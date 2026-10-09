@@ -1,0 +1,1507 @@
+{
+ "v": 1,
+ "festival": {
+  "id": "scala-days",
+  "edition": "2026",
+  "ordinal": null,
+  "name": "Scala Days",
+  "nameLocal": null,
+  "city": "Berlin",
+  "country": "DE",
+  "lat": 52.52,
+  "lng": 13.405,
+  "timezone": "Europe/Berlin",
+  "lang": "en",
+  "dir": "ltr",
+  "kind": "academic",
+  "defaultGenre": "talk",
+  "site": "https://scaladays.org",
+  "firstDate": "2026-10-12",
+  "lastDate": "2026-10-13",
+  "ticketing": {
+   "model": "festival-pass",
+   "url": "https://tickets.plainschwarz.com/scaladays26/",
+   "notes": "One conference ticket covers both days; the site's ticket widget sells from this pretix shop."
+  }
+ },
+ "categories": [
+  {
+   "id": "type-interactive-labs",
+   "name": "Interactive labs"
+  },
+  {
+   "id": "type-keynote",
+   "name": "Keynote"
+  },
+  {
+   "id": "type-lightning-talk",
+   "name": "Lightning Talk"
+  },
+  {
+   "id": "type-scaladays",
+   "name": "#ScalaDays"
+  },
+  {
+   "id": "type-talk",
+   "name": "Talk"
+  }
+ ],
+ "venues": [
+  {
+   "id": "kulturbrauerei",
+   "name": "Kulturbrauerei",
+   "address": "Schönhauser Allee 36, 10435 Berlin",
+   "lat": 52.5392374,
+   "lng": 13.4135728,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {
+     "id": "frannz-salon-lab-1",
+     "name": "Frannz Salon: Lab 1",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "frannz-salon-lab-2",
+     "name": "Frannz Salon: Lab 2",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "frannz-salon-lab-3",
+     "name": "Frannz Salon: Lab 3",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "kesselhaus",
+     "name": "Kesselhaus",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "maschinenhaus",
+     "name": "Maschinenhaus",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "palais-atelier",
+     "name": "Palais Atelier",
+     "capacity": null,
+     "layout": null
+    }
+   ],
+   "accessibility": null,
+   "notes": "A former brewery, now an event complex in Prenzlauer Berg. Scala Days takes place mainly in its connected Palais, Maschinenhaus and Kesselhaus (scaladays.org); the labs are in its Frannz Salon.",
+   "refs": [
+    "https://www.openstreetmap.org/way/32294784"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "JEQ8GD",
+   "title": "Opening Session & Keynote",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/JEQ8GD/",
+   "genre": "talk",
+   "categories": [
+    "type-keynote"
+   ],
+   "blurb": "Join us as we open ScalaDays 2026! After a short opening session, Martin Odersky, the founder of Scala, will deliver his keynote!\n\nSpeakers: Martin Odersky",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "FZDGGW",
+   "title": "sbt 2.0: takeoff",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/FZDGGW/",
+   "genre": "talk",
+   "categories": [
+    "type-talk"
+   ],
+   "blurb": "sbt 2.0 is a new major series of sbt that propels itself to the modern standards. In this talk, we will focus on the new features such as the native client, Bazel-compatible caching, and new test command.\n\nWe will also go over the plugin migration effort, the differences between sbt 1 vs 2, and common pitfalls during migration.\n\nSpeakers: Eugene Yokota",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "SLQC7Y",
+   "title": "Simpler User Interfaces with Capability-Passing",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/SLQC7Y/",
+   "genre": "talk",
+   "categories": [
+    "type-talk"
+   ],
+   "blurb": "Representing user interfaces as effects in the capability-passing style gives a simple framework for creating UIs. In this talk I'll explain how capability-passing works and use it to implement a simple terminal user interface library. We'll then discuss what general principles we can take from this, that can apply to any problem.\n\nSpeakers: Noel Welsh",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "R87B7Z",
+   "title": "Securing Typelevel: Lessons from the GitHub SOS Fund",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/R87B7Z/",
+   "genre": "talk",
+   "categories": [
+    "type-talk"
+   ],
+   "blurb": "Typelevel participated in the **GitHub Secure Open Source Fund** this year. This talk shares what we learned, what we are now doing to secure the Typelevel ecosystem, and **how you can improve security in your own projects**. We will also briefly discuss the requirements of the new EU Cyber Resilience Act.\n\nSpeakers: Antonio Jimenez",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "QXAPMM",
+   "title": "A Distributed System On Fire: Diagnosing Failures with otel4s",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/QXAPMM/",
+   "genre": "talk",
+   "categories": [
+    "type-interactive-labs"
+   ],
+   "blurb": "Learn to **diagnose realistic production failures** in a distributed Typelevel streaming platform. Through a curated set of incidents, you will debug failures using telemetry and iteratively improve observability through manual instrumentation with `otel4s`, leaving with a practical mental model for **telemetry-driven debugging in Scala**.\n\nSpeakers: Antonio Jimenez, Maksym Ochenashko",
+   "durationMin": 120,
+   "imageUrl": null
+  },
+  {
+   "id": "RC939C",
+   "title": "Building Real Applications in Scala Native",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/RC939C/",
+   "genre": "talk",
+   "categories": [
+    "type-interactive-labs"
+   ],
+   "blurb": "Scala Native is great! It creates small and fast binaries, and can access all operating systems features. This workshop will introduce working with Scala Native by building a terminal based application. We'll learn how to setup and build Native code, call into with system libraries, and use the archaic but powerful features of the terminal.\n\nSpeakers: Noel Welsh",
+   "durationMin": 120,
+   "imageUrl": null
+  },
+  {
+   "id": "DYQWSL",
+   "title": "sbt 2.0 lab",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/DYQWSL/",
+   "genre": "talk",
+   "categories": [
+    "type-interactive-labs"
+   ],
+   "blurb": "Come talk to the sbt maintainers at sbt 2.0 lab. The lab session will be a mix of prepared problems and build clinic to discuss porting your build to sbt 2.\n\nSpeakers: Eugene Yokota, Anatolii Kmetiuk",
+   "durationMin": 120,
+   "imageUrl": null
+  },
+  {
+   "id": "LS3ZDZ",
+   "title": "A brief history of Scala",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/LS3ZDZ/",
+   "genre": "talk",
+   "categories": [
+    "type-talk"
+   ],
+   "blurb": "What can one tiny function teach you about twenty years of Scala? We rewrite `isPalindrome` version by version and let the code tell the story. Watch it grow from classic Scala 2 into the modern Scala 3;  tail recursion, type classes, extension methods, all earning their place. A palindrome reads the same both ways, Scala's history does not.\n\nSpeakers: Odd Möller, Martin Zachrison",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "EYKYAL",
+   "title": "AI Multiplies — Let Scala Hold the Line",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/EYKYAL/",
+   "genre": "talk",
+   "categories": [
+    "type-talk"
+   ],
+   "blurb": "AI is a multiplier, not a fixer — point it at a mess, and it scales the mess up: defects climb, reviews balloon, tests become a farce. Scala's honest compiler and typed libraries are a base that holds as you push harder. We'll assemble the workflow around them with agents, context, deterministic refactors, hermetic builds and more.\n\nSpeakers: Krzysztof Romanowski",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "SEEJRS",
+   "title": "How OOP Earned Our Trust and Let Us Down",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/SEEJRS/",
+   "genre": "talk",
+   "categories": [
+    "type-talk"
+   ],
+   "blurb": "Object-oriented programming helped shape modern software engineering — but also gave us shared mutable state, fragile hierarchies, and accidental complexity. Using real Scala adoption stories, this talk explores why legacy OOP thinking fails and how functional principles help teams build simpler systems.\n\nSpeakers: Pavel Kozlov",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "MKMNWA",
+   "title": "A Maiden Voyage into Open Source, Datatypes, and Scala",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/MKMNWA/",
+   "genre": "talk",
+   "categories": [
+    "type-lightning-talk"
+   ],
+   "blurb": "What optimizations can we find by making a simple change to a traditional data structure? In the summer of 2026 I developed a faster immutable linked list; implementing it was my first experience both writing Scala and working with an open source community. This talk explores my approach to data structure optimization and my acquisition of Scala.\n\nSpeakers: L Denney",
+   "durationMin": 5,
+   "imageUrl": null
+  },
+  {
+   "id": "GLEFDT",
+   "title": "Cats Go Wasm/WASI: Typelevel on Server-side WebAssembly",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/GLEFDT/",
+   "genre": "talk",
+   "categories": [
+    "type-lightning-talk"
+   ],
+   "blurb": "Recent work in the [scala-wasm fork](https://github.com/scala-wasm/scala-wasm) of Scala.js has made it possible for Scala apps to run directly on the WebAssembly Component Model platform. In this talk, I will share my progress of porting Cats Effect and FS2 libraries to this shiny new architecture.\n\nSpeakers: Mariusz Jakoniuk",
+   "durationMin": 5,
+   "imageUrl": null
+  },
+  {
+   "id": "XZN3MU",
+   "title": "Inline Traits for Specialization",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/XZN3MU/",
+   "genre": "talk",
+   "categories": [
+    "type-lightning-talk"
+   ],
+   "blurb": "Inline traits are a language feature that eliminate allocations and virtual dispatch associated with trait composition in Scala. They do so by inlining their methods into their implementing subclasses. When inline traits are combined with the Specialized type class, they enable trait-based abstractions to be zero-cost.\n\nSpeakers: James You",
+   "durationMin": 5,
+   "imageUrl": null
+  },
+  {
+   "id": "EDJA7U",
+   "title": "The state of Scala in 2026",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/EDJA7U/",
+   "genre": "talk",
+   "categories": [
+    "type-talk"
+   ],
+   "blurb": "With Scala 3.9 LTS out, three Scala distributions will exist in parallel: Scala Next (3.10+), the current 3.9 LTS and the old 3.3 LTS.\n\nWe will explain how to think about it: why you should migrate your libraries to 3.9 LTS, what cool features have we cooked up in Scala Next, and how the standard library can evolve now that it’s no longer frozen.\n\nSpeakers: Piotr Chabelski, Lukas Rytz",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "MM3RRZ",
+   "title": "Scala's LibGDX: A Report from the Trenches",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/MM3RRZ/",
+   "genre": "talk",
+   "categories": [
+    "type-talk"
+   ],
+   "blurb": "Java has LibGDX. Scala has powerful platforms, but not the same game-development story. SGE is my attempt to close that gap. This talk is about the engineering needed to make one Scala codebase run across desktop, browser, native and Android targets.\n\nSpeakers: Mateusz Kubuszok",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "WQVZSC",
+   "title": "Quality Pipelines for Generative AI",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/WQVZSC/",
+   "genre": "talk",
+   "categories": [
+    "type-talk"
+   ],
+   "blurb": "How do you achieve reliable results from stochastic AI models? This talk presents practical techniques for building quality pipelines around generative AI that improve output quality before human review begins, making more effective use of limited human time and attention.\n\nSpeakers: Bill Venners",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "7KYEXS",
+   "title": "Shopping for a Scala Framework",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/7KYEXS/",
+   "genre": "talk",
+   "categories": [
+    "type-talk"
+   ],
+   "blurb": "We present a new Scala framework that picks ideas from Django, Spring, Rails, and a few others, and integrates them in a way only Scala can.\n\nWe aim to show that building and deploying powerful applications can and should be easy in Scala, and not just for experts.\n\nSpeakers: Daniel Ciocîrlan, Riccardo Cardin",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "9UMGZA",
+   "title": "On Folding",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/9UMGZA/",
+   "genre": "talk",
+   "categories": [
+    "type-talk"
+   ],
+   "blurb": "Where does computation live? In origami, it lives in a paper crease. We build a functional crease pattern generator in Scala to explore what origami teaches us about programs. The insight is material before it is mathematical: pure functional programming emerges naturally from the physics of folding.\n\nSpeakers: Johanna Odersky",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "XSQMQV",
+   "title": "The State of Scala on WebAssembly",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/XSQMQV/",
+   "genre": "talk",
+   "categories": [
+    "type-talk"
+   ],
+   "blurb": "WebAssembly is increasingly used beyond browsers for serverless, sandboxing, AI workloads, and more. This talk explores the current state of Scala on Wasm with Scala.js and scala-wasm, an experimental project targeting standalone runtimes, WASI, and the Component Model. This session covers current capabilities, limitations, and future directions.\n\nSpeakers: Rikito Taniguchi",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "LXXBWY",
+   "title": "Is metaprogramming just functional programming?",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/LXXBWY/",
+   "genre": "talk",
+   "categories": [
+    "type-talk"
+   ],
+   "blurb": "Metaprogramming is the act of treating code as data, to transform it, yielding new programs. Is that not also what functional programming is all about? Similarly, what does compile time mean, when mixed with IO, where programs are constructed and run in separate phases? Let's talk about it together.\n\nSpeakers: Kathryn Frid",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "JQPA8G",
+   "title": "Back to the roots - VirtusLab Scala Stack",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/JQPA8G/",
+   "genre": "talk",
+   "categories": [
+    "type-talk"
+   ],
+   "blurb": "Scala is evolving to be more welcoming than ever. Explore the VirtusLab Scala Stack, an innovative toolkit that combines Scala 3 and Project Loom to champion direct-style programming by making concurrency more intuitive. With libraries like Ox and Tapir, the entry barrier is lowered, inviting new developers to build robust, scalable apps.​\n\nSpeakers: Jacek Kunicki",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "8PAEJW",
+   "title": "Caching in Scala using Cats Ref",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/8PAEJW/",
+   "genre": "talk",
+   "categories": [
+    "type-talk"
+   ],
+   "blurb": "Modern distributed systems depend on caching for performance, yet implementing caching correctly and safely remains a persistent challenge. This talk explores how Cats Ref from the Typelevel ecosystem enables developers to build thread-safe, testable cache while maintaining functional purity.\n\nSpeakers: Katrina Petrevice",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "8RMYG9",
+   "title": "Optimizing Scala bytecode for fun and profit",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/8RMYG9/",
+   "genre": "talk",
+   "categories": [
+    "type-talk"
+   ],
+   "blurb": "Can high-level code have the same perf as low-level hand-tuned code?\nThat’s what Scala’s optimizer is for! Your call to map on a list turns into the same bytecode as if you had written a while loop.\nIn this talk, I’ll introduce bytecode and optimization basics, present the Scala optimizer, and discuss fundamental and temporary limitations.\n\nSpeakers: Solal Pirelli",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "VJWHRZ",
+   "title": "Teaching Software Architecture using Scala",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/VJWHRZ/",
+   "genre": "talk",
+   "categories": [
+    "type-talk"
+   ],
+   "blurb": "At Active Group, we have taught more than 30 three-day trainings on Functional Software Architecture since 2019, mostly to audiences with little or no prior exposure to functional programming.  For the examples, we use Scala or Haskell. I report on the constraints, successes, and learnings of this course.\n\nSpeakers: Michael Sperber",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "MXTCZD",
+   "title": "Closing session Day 1",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/MXTCZD/",
+   "genre": "other",
+   "categories": [
+    "type-scaladays"
+   ],
+   "blurb": "Join us as we wrap up Day one of ScalaDays 2026!",
+   "durationMin": 15,
+   "imageUrl": null
+  },
+  {
+   "id": "PCDP8E",
+   "title": "Community Party",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/PCDP8E/",
+   "genre": "other",
+   "categories": [
+    "type-scaladays"
+   ],
+   "blurb": "ScalaDays is a good place to meet great people, and while there is ample time to chat and discuss during the conference, we also want to provide an opportunity for everyone to meet up outside of the regular conference program with our Community Party on Monday! \n\nOur Community Party is a casual meet-up in a relaxed atmosphere and provides a perfect opportunity to meet old and new friends, business contacts or get to know other participants of ScalaDays. We will offer food as well as alcoholic and non-alcoholic drinks.",
+   "durationMin": 240,
+   "imageUrl": null
+  },
+  {
+   "id": "CCL7JZ",
+   "title": "Welcome back!",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/CCL7JZ/",
+   "genre": "other",
+   "categories": [
+    "type-scaladays"
+   ],
+   "blurb": "Join us as we kick off Day 2 of ScalaDays 2026!",
+   "durationMin": 15,
+   "imageUrl": null
+  },
+  {
+   "id": "J7ABJP",
+   "title": "Future of Programming",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/J7ABJP/",
+   "genre": "talk",
+   "categories": [
+    "type-keynote"
+   ],
+   "blurb": "tbd\n\nSpeakers: Nada Amin",
+   "durationMin": 45,
+   "imageUrl": null
+  },
+  {
+   "id": "ACGLZW",
+   "title": "A Typelevel Prospectus",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/ACGLZW/",
+   "genre": "talk",
+   "categories": [
+    "type-talk"
+   ],
+   "blurb": "Learn more about Typelevel, the open source organization that stewards development of projects such as Cats Effect, http4s, and Circe, and offers one of the most comprehensive cross-platform stacks for the Scala ecosystem. In this talk, you will discover the people and processes driving this work and how you can participate.\n\nSpeakers: Arman Bilge",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "H8NAKF",
+   "title": "Report: where are we going with the Standard Library?",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/H8NAKF/",
+   "genre": "talk",
+   "categories": [
+    "type-talk"
+   ],
+   "blurb": "This is an experience report on the process and progress of improving the Standard Library, Scala Toolkit and other core Scala modules under the resources provided by the Sovereign Tech Agency.\n\nSpeakers: Jamie Thompson",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "K7ZLQH",
+   "title": "Mastering IntelliJ IDEA’s Debugger for Scala Development",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/K7ZLQH/",
+   "genre": "talk",
+   "categories": [
+    "type-talk"
+   ],
+   "blurb": "Debugging in Scala can be frustrating, but it doesn’t have to be. Discover how IntelliJ IDEA’s debugger thanks to features like conditional breakpoints and smart logging, can help you pinpoint bugs faster and with less hassle. Leave with practical tips to debug smarter, not harder.\n\nSpeakers: Maciej Gorywoda",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "PRW8FG",
+   "title": "Build a production service with VirtusLab Scala Stack and AI",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/PRW8FG/",
+   "genre": "talk",
+   "categories": [
+    "type-interactive-labs"
+   ],
+   "blurb": "Build and ship a production-ready microservice in direct-style Scala 3: no Futures, no IO monads. Set up an HTTP API with Tapir, concurrency and resilience with Ox, a type-safe SQL layer, and an sttp client, with AI assistance throughout. Type-safe, Loom-powered, and refreshingly simple Scala.\n\nSpeakers: Piotr Janczyk",
+   "durationMin": 120,
+   "imageUrl": null
+  },
+  {
+   "id": "Y7ZCVR",
+   "title": "Build a webapp with Cats Effect and FS2",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/Y7ZCVR/",
+   "genre": "talk",
+   "categories": [
+    "type-interactive-labs"
+   ],
+   "blurb": "Learn about Cats Effect and FS2 while building a collaborative webapp with Calico! In this lab you will build an interactive widget for a webapp. Along the way we will learn about the IO, Resource, Stream, and Signal monads, and how the Typelevel stack can be used to make frontend applications.\n\nSpeakers: Arman Bilge",
+   "durationMin": 120,
+   "imageUrl": null
+  },
+  {
+   "id": "HM87YG",
+   "title": "Reactive UI with Laminar",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/HM87YG/",
+   "genre": "talk",
+   "categories": [
+    "type-interactive-labs"
+   ],
+   "blurb": "Laminar is a Scala.js-first approach to reactive UI for the web, combining declarative presentation with logic for how to make updates based on events or other state changes. Beyond basics, lets also explore interop with JS libraries, and even concerns such as code organisation, and effective error handling practises.\n\nSpeakers: Jamie Thompson",
+   "durationMin": 120,
+   "imageUrl": null
+  },
+  {
+   "id": "RSEGGV",
+   "title": "Where Scala meets AI",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/RSEGGV/",
+   "genre": "talk",
+   "categories": [
+    "type-talk"
+   ],
+   "blurb": "The AI revolution raises questions about the utility of various technologies, especially programming languages. And when it comes to developer experience, Scala might have just the right answers. We'll take a tour of how to use Scala efficiently for and with AI.\n\nSpeakers: Adam Warski",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "X9YKXK",
+   "title": "First-class Logical Refinement Types for Scala",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/X9YKXK/",
+   "genre": "talk",
+   "categories": [
+    "type-talk"
+   ],
+   "blurb": "What if assertions such as `x > 0` were part of the type system? We present a prototype implementation of *logical refinement types for Scala*: types like `{x: Int | x > 0}`. In our system, refinement types are first-class: they can be nested, used as type arguments, and related by subtyping. We demonstrate the system through concrete examples.\n\nSpeakers: Matt Bovel",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "SX7FTM",
+   "title": "Blazing-Fast Lambda Calculus via Metaprogramming",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/SX7FTM/",
+   "genre": "talk",
+   "categories": [
+    "type-talk"
+   ],
+   "blurb": "Interpreting lambda calculus is simple but slow. Using multi-stage metaprogramming, we built a JIT that compiles each program to native JVM code at load time, running 2–10x faster than existing interpreters – including heavily optimized Rust and Haskell implementations. The surprising part: staging resulted in remarkably little code.\n\nSpeakers: Alex Nemish",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "H9VZ79",
+   "title": "Stop testing, start proving",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/H9VZ79/",
+   "genre": "talk",
+   "categories": [
+    "type-lightning-talk"
+   ],
+   "blurb": "Tests and types are our correctness gates. But who verifies the gates themselves? With agentic codegen flooding our pipelines with code we didn't write, that question has never been more dangerous to ignore.\n\nIn this talk, we explore how theorem provers complement existing practices, adding mathematical certainty where it matters most.\n\nSpeakers: Valentin Bergeron",
+   "durationMin": 5,
+   "imageUrl": null
+  },
+  {
+   "id": "T3HHRC",
+   "title": "Scala OSS vs. the LLM Era",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/T3HHRC/",
+   "genre": "talk",
+   "categories": [
+    "type-lightning-talk"
+   ],
+   "blurb": "LLMs are changing how people contribute to open source - but are they really helping? In this talk, we’ll look at compiler maintenance in the age of AI-generated PRs, issues and comments, and ask what maintainers gain, lose, and how the rules of contribution are changing.\n\nSpeakers: Patryk Zieliński",
+   "durationMin": 5,
+   "imageUrl": null
+  },
+  {
+   "id": "KKPB93",
+   "title": "AI on your desktop: secure automation using capture checking",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/KKPB93/",
+   "genre": "talk",
+   "categories": [
+    "type-lightning-talk"
+   ],
+   "blurb": "Local AI assistants like OpenClaw run with shell, browser, and credentials. Open chats make prompt injection a massive leak risk. Docker fails; approvals kill UX. TACIT opened the way: capture checking makes leaking information flows uncompilable. \n\nIn this talk, we will demo assistant security on browser automations against exploits.\n\nSpeakers: Salim Belkhir",
+   "durationMin": 5,
+   "imageUrl": null
+  },
+  {
+   "id": "8KALEK",
+   "title": "DimWit - Tensor programming with wit",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/8KALEK/",
+   "genre": "talk",
+   "categories": [
+    "type-lightning-talk"
+   ],
+   "blurb": "We present DimWit, a system for writing readable numerical and machine learning code. DimWit's core feature is a trait-based implementation of the named tensor notation, which improves readability and type-safety compared to standard tensors. We illustrate how to write machine learning models using DimWit, and discuss our experience training GPT-2.\n\nSpeakers: Benjamin Meyer, Marcel Lüthi",
+   "durationMin": 5,
+   "imageUrl": null
+  },
+  {
+   "id": "HMWUPF",
+   "title": "Panel discussion",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/HMWUPF/",
+   "genre": "other",
+   "categories": [
+    "type-scaladays"
+   ],
+   "blurb": "Panelists and topics to be announced!",
+   "durationMin": 45,
+   "imageUrl": null
+  },
+  {
+   "id": "HU3PVB",
+   "title": "Making the AI agents safe with Scala",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/HU3PVB/",
+   "genre": "talk",
+   "categories": [
+    "type-talk"
+   ],
+   "blurb": "Everyone and their dog are building permanent AI agents, but nobody is solving the real problem - how to prevent the agent from doing something it should never, ever do while preserving its general problem-solving capability. In this talk, we will introduce the CapybaraClaw - the agent built with safety in mind that gives you the peace of mind.\n\nSpeakers: Łukasz Biały, Jakub Warchoł",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "FTJSQF",
+   "title": "Scoverage: Test Coverage for the Scala Codebases",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/FTJSQF/",
+   "genre": "talk",
+   "categories": [
+    "type-talk"
+   ],
+   "blurb": "You will learn about how to measure test coverage of your Scala codebase with Scoverage, the Scala 3 coverage tool. After learning the basics, we will dive deeper into how it is implemented, and talk about the hardening work done by the Scala Center to make the feature robust and reliable in interaction with the rest of the language features.\n\nSpeakers: Anatolii Kmetiuk",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "WQVK9R",
+   "title": "Advocacy, Funding, and Patience: The Security Audit of Scala",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/WQVK9R/",
+   "genre": "talk",
+   "categories": [
+    "type-talk"
+   ],
+   "blurb": "Gain insight into how security audits are carried out on large, complex projects like Scala. Hear about how open source security advocate Open Source Technology Improvement Fund partnered with Scala maintainers to source funds, scope and manage work, and create meaningful fixes in a piece of critical software in active production.\n\nSpeakers: Amir Montazery",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "8GCRBN",
+   "title": "Cyfra: Scala on GPU",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/8GCRBN/",
+   "genre": "talk",
+   "categories": [
+    "type-talk"
+   ],
+   "blurb": "Learn how to accelerate Scala code by orders of magnitude with Cyfra.\n\nThere are many libraries that give you access to low-level GPU APIs, but a high-level, functional one is a different story. That’s why we created the Cyfra GPGPU framework. In this talk, we’ll demonstrate how to use it to build high-performance GPU applications with Scala.\n\nSpeakers: Szymon Rodziewicz, Marcin Złakowski",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "JCX8GD",
+   "title": "Type-Driven AI: High quality Scala code with LLM",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/JCX8GD/",
+   "genre": "talk",
+   "categories": [
+    "type-talk"
+   ],
+   "blurb": "Speed without quality is debt. This talk shows how Scala's type system, combined with a multi-layer validation pipeline (compiler, linting, property tests, mutation testing, and formal verification) helped by a concepts inventory and types generation acts as a guardrail for LLM-generated code, keeping correctness non-negotiable.\n\nSpeakers: Giovanni Ruggiero",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "8NF7WU",
+   "title": "Metals Reimagined - LSP in the age of LLMs",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/8NF7WU/",
+   "genre": "talk",
+   "categories": [
+    "type-talk"
+   ],
+   "blurb": "We are currently working on Metals 2, which is a new indexing and compilation approach, designed to make indexing as fast as possible and ensure the editor remains functional even if parts of the project fail to compile. Thanks to this even while working on large monorepos it should be possible to quickly set up your editor.\n\nSpeakers: Tomasz Godzik",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "HV9UPQ",
+   "title": "Bridging between Scala & Python with GraalVM",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/HV9UPQ/",
+   "genre": "talk",
+   "categories": [
+    "type-talk"
+   ],
+   "blurb": "We will present our ongoing work to bridge between Scala 3 (& Kotlin) and Python 3 using GraalVM. We will explain how the interoperability was designed; how type hints map to Scala 3's type system, how other Python 3 concepts translate to Scala, and our the progress to publish python wheels to close.\n\nSpeakers: Hamza Remmal",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "TDVER9",
+   "title": "Closing session Day 2",
+   "titleLocal": null,
+   "url": "https://cfp.scaladays.org/scala26/talk/TDVER9/",
+   "genre": "other",
+   "categories": [
+    "type-scaladays"
+   ],
+   "blurb": "Join us as we wrap up Scala Days 2026!",
+   "durationMin": 15,
+   "imageUrl": null
+  }
+ ],
+ "performances": [
+  {
+   "id": "JEQ8GD/2026-10-12T09:00",
+   "eventId": "JEQ8GD",
+   "venueId": "kulturbrauerei",
+   "roomId": "kesselhaus",
+   "date": "2026-10-12",
+   "start": "09:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "FZDGGW/2026-10-12T10:30",
+   "eventId": "FZDGGW",
+   "venueId": "kulturbrauerei",
+   "roomId": "kesselhaus",
+   "date": "2026-10-12",
+   "start": "10:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "SLQC7Y/2026-10-12T10:30",
+   "eventId": "SLQC7Y",
+   "venueId": "kulturbrauerei",
+   "roomId": "maschinenhaus",
+   "date": "2026-10-12",
+   "start": "10:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "R87B7Z/2026-10-12T10:30",
+   "eventId": "R87B7Z",
+   "venueId": "kulturbrauerei",
+   "roomId": "palais-atelier",
+   "date": "2026-10-12",
+   "start": "10:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "QXAPMM/2026-10-12T11:00",
+   "eventId": "QXAPMM",
+   "venueId": "kulturbrauerei",
+   "roomId": "frannz-salon-lab-1",
+   "date": "2026-10-12",
+   "start": "11:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "RC939C/2026-10-12T11:00",
+   "eventId": "RC939C",
+   "venueId": "kulturbrauerei",
+   "roomId": "frannz-salon-lab-2",
+   "date": "2026-10-12",
+   "start": "11:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "DYQWSL/2026-10-12T11:00",
+   "eventId": "DYQWSL",
+   "venueId": "kulturbrauerei",
+   "roomId": "frannz-salon-lab-3",
+   "date": "2026-10-12",
+   "start": "11:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "LS3ZDZ/2026-10-12T11:20",
+   "eventId": "LS3ZDZ",
+   "venueId": "kulturbrauerei",
+   "roomId": "kesselhaus",
+   "date": "2026-10-12",
+   "start": "11:20",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "EYKYAL/2026-10-12T11:20",
+   "eventId": "EYKYAL",
+   "venueId": "kulturbrauerei",
+   "roomId": "maschinenhaus",
+   "date": "2026-10-12",
+   "start": "11:20",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "SEEJRS/2026-10-12T11:20",
+   "eventId": "SEEJRS",
+   "venueId": "kulturbrauerei",
+   "roomId": "palais-atelier",
+   "date": "2026-10-12",
+   "start": "11:20",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "MKMNWA/2026-10-12T12:10",
+   "eventId": "MKMNWA",
+   "venueId": "kulturbrauerei",
+   "roomId": "kesselhaus",
+   "date": "2026-10-12",
+   "start": "12:10",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "GLEFDT/2026-10-12T12:20",
+   "eventId": "GLEFDT",
+   "venueId": "kulturbrauerei",
+   "roomId": "kesselhaus",
+   "date": "2026-10-12",
+   "start": "12:20",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "XZN3MU/2026-10-12T12:30",
+   "eventId": "XZN3MU",
+   "venueId": "kulturbrauerei",
+   "roomId": "kesselhaus",
+   "date": "2026-10-12",
+   "start": "12:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "EDJA7U/2026-10-12T14:10",
+   "eventId": "EDJA7U",
+   "venueId": "kulturbrauerei",
+   "roomId": "kesselhaus",
+   "date": "2026-10-12",
+   "start": "14:10",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "MM3RRZ/2026-10-12T14:10",
+   "eventId": "MM3RRZ",
+   "venueId": "kulturbrauerei",
+   "roomId": "maschinenhaus",
+   "date": "2026-10-12",
+   "start": "14:10",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "WQVZSC/2026-10-12T14:10",
+   "eventId": "WQVZSC",
+   "venueId": "kulturbrauerei",
+   "roomId": "palais-atelier",
+   "date": "2026-10-12",
+   "start": "14:10",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "7KYEXS/2026-10-12T15:00",
+   "eventId": "7KYEXS",
+   "venueId": "kulturbrauerei",
+   "roomId": "kesselhaus",
+   "date": "2026-10-12",
+   "start": "15:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "9UMGZA/2026-10-12T15:00",
+   "eventId": "9UMGZA",
+   "venueId": "kulturbrauerei",
+   "roomId": "palais-atelier",
+   "date": "2026-10-12",
+   "start": "15:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "XSQMQV/2026-10-12T15:50",
+   "eventId": "XSQMQV",
+   "venueId": "kulturbrauerei",
+   "roomId": "kesselhaus",
+   "date": "2026-10-12",
+   "start": "15:50",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "LXXBWY/2026-10-12T15:50",
+   "eventId": "LXXBWY",
+   "venueId": "kulturbrauerei",
+   "roomId": "maschinenhaus",
+   "date": "2026-10-12",
+   "start": "15:50",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "JQPA8G/2026-10-12T15:50",
+   "eventId": "JQPA8G",
+   "venueId": "kulturbrauerei",
+   "roomId": "palais-atelier",
+   "date": "2026-10-12",
+   "start": "15:50",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "8PAEJW/2026-10-12T16:40",
+   "eventId": "8PAEJW",
+   "venueId": "kulturbrauerei",
+   "roomId": "kesselhaus",
+   "date": "2026-10-12",
+   "start": "16:40",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "8RMYG9/2026-10-12T16:40",
+   "eventId": "8RMYG9",
+   "venueId": "kulturbrauerei",
+   "roomId": "maschinenhaus",
+   "date": "2026-10-12",
+   "start": "16:40",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "VJWHRZ/2026-10-12T16:40",
+   "eventId": "VJWHRZ",
+   "venueId": "kulturbrauerei",
+   "roomId": "palais-atelier",
+   "date": "2026-10-12",
+   "start": "16:40",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "MXTCZD/2026-10-12T18:00",
+   "eventId": "MXTCZD",
+   "venueId": "kulturbrauerei",
+   "roomId": "kesselhaus",
+   "date": "2026-10-12",
+   "start": "18:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "PCDP8E/2026-10-12T18:15",
+   "eventId": "PCDP8E",
+   "venueId": "kulturbrauerei",
+   "roomId": "kesselhaus",
+   "date": "2026-10-12",
+   "start": "18:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "CCL7JZ/2026-10-13T09:00",
+   "eventId": "CCL7JZ",
+   "venueId": "kulturbrauerei",
+   "roomId": "kesselhaus",
+   "date": "2026-10-13",
+   "start": "09:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "J7ABJP/2026-10-13T09:15",
+   "eventId": "J7ABJP",
+   "venueId": "kulturbrauerei",
+   "roomId": "kesselhaus",
+   "date": "2026-10-13",
+   "start": "09:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "ACGLZW/2026-10-13T10:30",
+   "eventId": "ACGLZW",
+   "venueId": "kulturbrauerei",
+   "roomId": "kesselhaus",
+   "date": "2026-10-13",
+   "start": "10:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "H8NAKF/2026-10-13T10:30",
+   "eventId": "H8NAKF",
+   "venueId": "kulturbrauerei",
+   "roomId": "maschinenhaus",
+   "date": "2026-10-13",
+   "start": "10:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "K7ZLQH/2026-10-13T10:30",
+   "eventId": "K7ZLQH",
+   "venueId": "kulturbrauerei",
+   "roomId": "palais-atelier",
+   "date": "2026-10-13",
+   "start": "10:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "PRW8FG/2026-10-13T11:00",
+   "eventId": "PRW8FG",
+   "venueId": "kulturbrauerei",
+   "roomId": "frannz-salon-lab-1",
+   "date": "2026-10-13",
+   "start": "11:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "Y7ZCVR/2026-10-13T11:00",
+   "eventId": "Y7ZCVR",
+   "venueId": "kulturbrauerei",
+   "roomId": "frannz-salon-lab-2",
+   "date": "2026-10-13",
+   "start": "11:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "HM87YG/2026-10-13T11:00",
+   "eventId": "HM87YG",
+   "venueId": "kulturbrauerei",
+   "roomId": "frannz-salon-lab-3",
+   "date": "2026-10-13",
+   "start": "11:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "RSEGGV/2026-10-13T11:20",
+   "eventId": "RSEGGV",
+   "venueId": "kulturbrauerei",
+   "roomId": "kesselhaus",
+   "date": "2026-10-13",
+   "start": "11:20",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "X9YKXK/2026-10-13T11:20",
+   "eventId": "X9YKXK",
+   "venueId": "kulturbrauerei",
+   "roomId": "maschinenhaus",
+   "date": "2026-10-13",
+   "start": "11:20",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "SX7FTM/2026-10-13T11:20",
+   "eventId": "SX7FTM",
+   "venueId": "kulturbrauerei",
+   "roomId": "palais-atelier",
+   "date": "2026-10-13",
+   "start": "11:20",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "H9VZ79/2026-10-13T12:10",
+   "eventId": "H9VZ79",
+   "venueId": "kulturbrauerei",
+   "roomId": "kesselhaus",
+   "date": "2026-10-13",
+   "start": "12:10",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "T3HHRC/2026-10-13T12:15",
+   "eventId": "T3HHRC",
+   "venueId": "kulturbrauerei",
+   "roomId": "kesselhaus",
+   "date": "2026-10-13",
+   "start": "12:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "KKPB93/2026-10-13T12:20",
+   "eventId": "KKPB93",
+   "venueId": "kulturbrauerei",
+   "roomId": "kesselhaus",
+   "date": "2026-10-13",
+   "start": "12:20",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "8KALEK/2026-10-13T12:25",
+   "eventId": "8KALEK",
+   "venueId": "kulturbrauerei",
+   "roomId": "kesselhaus",
+   "date": "2026-10-13",
+   "start": "12:25",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "HMWUPF/2026-10-13T14:10",
+   "eventId": "HMWUPF",
+   "venueId": "kulturbrauerei",
+   "roomId": "kesselhaus",
+   "date": "2026-10-13",
+   "start": "14:10",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "HU3PVB/2026-10-13T15:15",
+   "eventId": "HU3PVB",
+   "venueId": "kulturbrauerei",
+   "roomId": "kesselhaus",
+   "date": "2026-10-13",
+   "start": "15:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "FTJSQF/2026-10-13T15:15",
+   "eventId": "FTJSQF",
+   "venueId": "kulturbrauerei",
+   "roomId": "palais-atelier",
+   "date": "2026-10-13",
+   "start": "15:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "WQVK9R/2026-10-13T16:05",
+   "eventId": "WQVK9R",
+   "venueId": "kulturbrauerei",
+   "roomId": "kesselhaus",
+   "date": "2026-10-13",
+   "start": "16:05",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "8GCRBN/2026-10-13T16:05",
+   "eventId": "8GCRBN",
+   "venueId": "kulturbrauerei",
+   "roomId": "maschinenhaus",
+   "date": "2026-10-13",
+   "start": "16:05",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "JCX8GD/2026-10-13T16:55",
+   "eventId": "JCX8GD",
+   "venueId": "kulturbrauerei",
+   "roomId": "kesselhaus",
+   "date": "2026-10-13",
+   "start": "16:55",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "8NF7WU/2026-10-13T16:55",
+   "eventId": "8NF7WU",
+   "venueId": "kulturbrauerei",
+   "roomId": "maschinenhaus",
+   "date": "2026-10-13",
+   "start": "16:55",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "HV9UPQ/2026-10-13T16:55",
+   "eventId": "HV9UPQ",
+   "venueId": "kulturbrauerei",
+   "roomId": "palais-atelier",
+   "date": "2026-10-13",
+   "start": "16:55",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "TDVER9/2026-10-13T17:45",
+   "eventId": "TDVER9",
+   "venueId": "kulturbrauerei",
+   "roomId": "kesselhaus",
+   "date": "2026-10-13",
+   "start": "17:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  }
+ ],
+ "sources": {
+  "festival": [
+   "festival.toml"
+  ],
+  "venues": [
+   "pretalx",
+   "venues-research"
+  ],
+  "events": [
+   "pretalx"
+  ],
+  "performances": [
+   "pretalx"
+  ],
+  "availability": [],
+  "prices": []
+ },
+ "provenance": {
+  "sources": {
+   "venues-research": {
+    "kind": "curated",
+    "path": "scraper/festivals/scala_days/curated/venues.json"
+   },
+   "pretalx": {
+    "kind": "fetched",
+    "path": "data/festivals/scala-days/2026/pretalx",
+    "fetchedAt": "2026-10-02T18:34:14Z",
+    "fetcher": "scraper/festivals/scala_days/sources/pretalx/fetch.py",
+    "fetcherVersion": 1
+   }
+  },
+  "absent": [],
+  "fields": {
+   "categories.name": [
+    "pretalx"
+   ],
+   "events.blurb": [
+    "pretalx"
+   ],
+   "events.categories": [
+    "pretalx"
+   ],
+   "events.durationMin": [
+    "pretalx"
+   ],
+   "events.genre": [
+    "pretalx"
+   ],
+   "events.imageUrl": [
+    "pretalx"
+   ],
+   "events.title": [
+    "pretalx"
+   ],
+   "events.url": [
+    "pretalx"
+   ],
+   "performances.date": [
+    "pretalx"
+   ],
+   "performances.eventId": [
+    "pretalx"
+   ],
+   "performances.roomId": [
+    "pretalx"
+   ],
+   "performances.start": [
+    "pretalx"
+   ],
+   "performances.ticketUrl": [
+    "pretalx"
+   ],
+   "performances.venueId": [
+    "pretalx"
+   ],
+   "venues.address": [
+    "venues-research"
+   ],
+   "venues.lat": [
+    "venues-research"
+   ],
+   "venues.lng": [
+    "venues-research"
+   ],
+   "venues.name": [
+    "venues-research"
+   ],
+   "venues.notes": [
+    "venues-research"
+   ],
+   "venues.refs": [
+    "venues-research"
+   ],
+   "venues.rooms": [
+    "pretalx"
+   ]
+  },
+  "skipped": {}
+ }
+}

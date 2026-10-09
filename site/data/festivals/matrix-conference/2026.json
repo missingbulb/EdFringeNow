@@ -1,0 +1,2044 @@
+{
+ "v": 1,
+ "festival": {
+  "id": "matrix-conference",
+  "edition": "2026",
+  "ordinal": null,
+  "name": "The Matrix Conference",
+  "nameLocal": null,
+  "city": "Malmö",
+  "country": "SE",
+  "lat": 55.605,
+  "lng": 13.0038,
+  "timezone": "Europe/Stockholm",
+  "lang": "en",
+  "dir": "ltr",
+  "kind": "academic",
+  "defaultGenre": "talk",
+  "site": "https://2026.matrix.org",
+  "firstDate": "2026-10-20",
+  "lastDate": "2026-10-23",
+  "ticketing": {
+   "model": "festival-pass",
+   "url": "https://pretix.eu/matrix/matrix-conf-2026/",
+   "notes": "One conference ticket, with an all-day buffet, sold on pretix through the site's ticket widget."
+  }
+ },
+ "categories": [
+  {
+   "id": "7668-workshop",
+   "name": "Workshop"
+  },
+  {
+   "id": "7669-public-sector",
+   "name": "Public Sector"
+  },
+  {
+   "id": "7670-keynote",
+   "name": "Keynote"
+  },
+  {
+   "id": "7671-cryptography",
+   "name": "Cryptography"
+  },
+  {
+   "id": "7672-lightning-talks",
+   "name": "Lightning Talks"
+  },
+  {
+   "id": "7673-healthcare-sponsored-by-cgm",
+   "name": "Healthcare sponsored by CGM"
+  },
+  {
+   "id": "7712-matrix-inside",
+   "name": "Matrix Inside"
+  },
+  {
+   "id": "7713-in-practice",
+   "name": "In Practice"
+  },
+  {
+   "id": "7714-digital-sovereignty",
+   "name": "Digital Sovereignty"
+  },
+  {
+   "id": "7715-growing-a-network",
+   "name": "Growing a Network"
+  },
+  {
+   "id": "7716-next-gen-spec",
+   "name": "Next Gen Spec"
+  },
+  {
+   "id": "7717-foundation",
+   "name": "Foundation"
+  },
+  {
+   "id": "7724-public-sector-sponsored-by-element",
+   "name": "Public Sector sponsored by Element"
+  }
+ ],
+ "venues": [
+  {
+   "id": "scandic-triangeln",
+   "name": "Scandic Triangeln",
+   "address": "Triangeln 2, Malmö",
+   "lat": 55.5964229,
+   "lng": 13.001567,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {
+     "id": "katherine",
+     "name": "Katherine",
+     "capacity": 200,
+     "layout": null
+    },
+    {
+     "id": "peter",
+     "name": "Peter",
+     "capacity": 100,
+     "layout": null
+    },
+    {
+     "id": "sofya",
+     "name": "Sofya",
+     "capacity": 200,
+     "layout": null
+    },
+    {
+     "id": "workshop",
+     "name": "Workshop",
+     "capacity": 100,
+     "layout": null
+    }
+   ],
+   "accessibility": null,
+   "notes": "A hotel in central Malmö, three minutes' walk from Triangeln station (2026.matrix.org/attend). The talks' rooms are the schedule's own.",
+   "refs": [
+    "https://2026.matrix.org/attend/"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "N9AQGY",
+   "title": "Opening",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/N9AQGY/",
+   "genre": "talk",
+   "categories": [
+    "7670-keynote"
+   ],
+   "blurb": "Welcome to The Matrix Conference 2026!\n\nSpeakers: Andy Piper",
+   "durationMin": 10,
+   "imageUrl": "https://cfp.2026.matrix.org/media/matrix-conference-2026/submissions/N9AQGY/image_hrefYhR.png"
+  },
+  {
+   "id": "BVPGVY",
+   "title": "The Matrix State of the Union",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/BVPGVY/",
+   "genre": "talk",
+   "categories": [
+    "7670-keynote"
+   ],
+   "blurb": "In which Matthew gives all the latest updates on Matrix - including ecosystem uptake, new clients, new servers, new MSCs, Hydra Phase 2 and 3 progress, P2P Matrix, MatrixRTC maturity, where (D)MLS fits in, and more!\n\nSpeakers: Matthew Hodgson",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "SFHGBL",
+   "title": "Element's year in review: Interoperability in the real world.",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/SFHGBL/",
+   "genre": "talk",
+   "categories": [
+    "7670-keynote"
+   ],
+   "blurb": "A fast-paced tour of everything we’ve been up to at Element in the past year, as well as what to expect in the future. \n\nThis year's highlights centre on Element's work to make Matrix genuinely interoperable for governments and large organisations in the wild. We’ll cover what’s gone into ESS Pro and Element Pro, as well as the migration from Classic. \n\nWe’ll also give an overview of all the goodies that have landed in Element X, Element Call, Element and Web. Not to mention our continued investment in protocol research.\n\nSpeakers: Neil Johnson",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "PYSDEF",
+   "title": "Open protocols unite: Common goals in advocating?",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/PYSDEF/",
+   "genre": "talk",
+   "categories": [
+    "7672-lightning-talks"
+   ],
+   "blurb": "Can open protocols communities learn from each other? For sure! I would like to talk about political demands from a perspective of advocating for open protocols based social networks in EUrope. And why I build the alliance “Open networks and public spheres”.  I would like to learn about your political demands as the Matrix community and what common struggles are that ActivityPub or atproto communities share with you?\n\nSpeakers: samvie",
+   "durationMin": 11,
+   "imageUrl": null
+  },
+  {
+   "id": "D9Y33R",
+   "title": "Introduction to custodial / janitorial moderation and why you are already doing it",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/D9Y33R/",
+   "genre": "talk",
+   "categories": [
+    "7672-lightning-talks"
+   ],
+   "blurb": "A introduction to custodial / janitorial moderation and how you are already using this model, potentially without knowing it.\n\nSpeakers: Cat",
+   "durationMin": 11,
+   "imageUrl": null
+  },
+  {
+   "id": "VZQLU3",
+   "title": "Matrix in Public Sector - Panel Discussion",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/VZQLU3/",
+   "genre": "talk",
+   "categories": [
+    "7724-public-sector-sponsored-by-element"
+   ],
+   "blurb": "This panel discussion will gather several public sector organisations who have deployed Matrix at scale to discuss about the relevance of Matrix in public sector, the importance of cross-border collaboration / cross-border interoperability, supporting the ecosystem (and challenges thereof) and benefits of using Matrix over proprietary solutions.\n\nSpeakers: Marco Holz, Patrick Weber, Kenneth Edwall, Amandine Le Pape, Mathieu Velten",
+   "durationMin": 55,
+   "imageUrl": null
+  },
+  {
+   "id": "NBMLXD",
+   "title": "Building a safer network, together",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/NBMLXD/",
+   "genre": "talk",
+   "categories": [
+    "7715-growing-a-network"
+   ],
+   "blurb": "Join the Matrix.org Foundation Trust & Safety team members **Travis** and **Jim** as they walk through the progress the ecosystem has made in building a safer network, and invite you to join us in building the future of safety on Matrix. We'll talk about **Reporting v2**, a flagship project for the Foundation Safety team, and **how you can help**.\n\nSpeakers: Jim Mackenzie",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "QD377V",
+   "title": "Making Custom Profiles in Matrix More Useful",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/QD377V/",
+   "genre": "talk",
+   "categories": [
+    "7716-next-gen-spec"
+   ],
+   "blurb": "An overview of the UX design and technical implementation challenges faced when implementing \"live-update\" support for Profile Fields in Matrix.\n\nSpeakers: Andrew Morgan (anoa), Aaron Thornburgh",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "KDTBJ3",
+   "title": "Customize your Matrix messenger",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/KDTBJ3/",
+   "genre": "talk",
+   "categories": [
+    "7668-workshop"
+   ],
+   "blurb": "Based on Trixnity Messenger, different customization options of the Matrix messenger client are shown.\nWe start easy with some white-labelling and re-route some parts of the app.\nWe continue with some adaptations of the existing UI and by adding a new feature that integrates seamlessly.\nLastly, we explore the possibility to re-use the messenger's UI logic to build a completely new UI layer on top.\n\nSpeakers: Michael Thiele",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "7TNQFM",
+   "title": "The Adoption Gap: How Choice and Stigma Shape User Acceptance of Metadata-Private Messaging",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/7TNQFM/",
+   "genre": "talk",
+   "categories": [
+    "7715-growing-a-network"
+   ],
+   "blurb": "Tools for enabling metadata privacy - which prevents network observers from inferring who communicates with whom - have technically matured over decades. Yet, despite their maturity, these tools remain absent from today's mainstream messaging platforms. This talk looks beyond technical aspects and presents research into adoption barriers focusing on potential users themselves. It presents a study with 96 messaging app users investigating three key questions: How do users understand metadata privacy? What do they perceive as benefits and risks of metadata-private features? And under what conditions would they actually adopt metadata-private features?\nThe results reveal (1) limited understanding of metadata privacy, (2) dual-use potential as serving both legitimate and illegitimate actors, and (3) two fundamental adoption barriers. This includes a prosocial adoption gap in which despite recognizing legitimate beneficiaries (journalists, activists, whistleblowers), the majority of users would not adopt a novel metadata-private app for the sake of others' benefit. The other adoption gap we identify is a choice stigma paradox in which the optionality of metadata-private features enables acceptance but at the same time leads to social stigma, with users worrying about appearing suspicious for choosing increased privacy.  \nBuilding on these insights, I discuss what these findings mean for deploying metadata privacy in practice - including why universal defaults may succeed where optional features fail.\n\nSpeakers: Tom Biselli",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "WRGTRX",
+   "title": "A vision for a next-generation timeline",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/WRGTRX/",
+   "genre": "talk",
+   "categories": [
+    "7716-next-gen-spec"
+   ],
+   "blurb": "The timeline is the most interacted-with piece of any chat software. It's where messages live! It's hard to have a chat app without one.\n\nUnfortunately, the matrix protocol has... compromises... in the timeline made for the sake of federation. From the incosistent ordering between sync and history on Synapse, to the inability to jump to pinned messages from before you joined, to the mystery of what happens when you join a room your server previously left. \n\nThe good news is we have a solution! The bad news is it's gonna take a while. This talk is a rundown of every step needed to get a next-generation timeline. I'll explain stitched ordering, timeline fragments, and why we need state DAGs.\n\nSpeakers: Jade, Ginger",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "TQJAV9",
+   "title": "How can governments collaborate digitally without forcing every organization onto the same platform?",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/TQJAV9/",
+   "genre": "talk",
+   "categories": [
+    "7724-public-sector-sponsored-by-element"
+   ],
+   "blurb": "Sweden's eSam initiative(eSamverkansprogrammet) has explored Matrix as a foundation for interoperable communication across public-sector organizations. Starting with a live federation pilot between two national agencies, the work has evolved into a broader effort involving governance, security, legal frameworks, and long-term sustainability.\n\nThis session discusses how Matrix can support digital sovereignty, interoperability, and vendor independence while enabling practical collaboration across organizational boundaries.\n\nSpeakers: Kenneth Edwall, Cecilia Spiik",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "DMFPLT",
+   "title": "FluffyChat - Creating a [matrix] messenger for individuals",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/DMFPLT/",
+   "genre": "talk",
+   "categories": [
+    "7712-matrix-inside"
+   ],
+   "blurb": "From user discovery and end to end encryption to push notifications: how the requirements for a matrix messenger differs if the target audiance are individuals instead of businesses.\n\nSpeakers: Krille (Christian K.)",
+   "durationMin": 25,
+   "imageUrl": "https://cfp.2026.matrix.org/media/matrix-conference-2026/submissions/DMFPLT/image_5c5K1cT.webp"
+  },
+  {
+   "id": "XE3K3B",
+   "title": "Implementing Security Labels in Matrix",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/XE3K3B/",
+   "genre": "talk",
+   "categories": [
+    "7716-next-gen-spec"
+   ],
+   "blurb": "In some environments, governments and regulated organisations can't simply put people in a room and let them talk. What can be shared, and who can read it, is governed by a formal classification policy and by the clearances held by everyone present.\n\nThis talk walks through a working implementation of security labelling in Matrix using Synapse, Element Web and Advanced Identity & Access Management. We'll cover how policies are expressed, how labels attach to rooms and messages, and how the server enforces them. We'll then finish with a live demo.\n\nSpeakers: Midhun Suresh R, Kieran Lane",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "KDNVUL",
+   "title": "Bridging private federations across borders",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/KDNVUL/",
+   "genre": "talk",
+   "categories": [
+    "7724-public-sector-sponsored-by-element"
+   ],
+   "blurb": "This talk will first present an amazing demo where someone from the Swedish Matrix public sector deployment will magically be able to talk to someone on the French one, and perhaps perhaps we will even be joined by someone from the NATO one, what an amazing time to be alive!\n\nA presentation will follow to talk about how we manage to pull this through, being on a technological or human cooperation level.\n\nSpeakers: Mathieu Velten, Kenneth Edwall, Jeroen Franssen",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "3PYU7E",
+   "title": "Labrys - deploying air-gapped Matrix",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/3PYU7E/",
+   "genre": "talk",
+   "categories": [
+    "7712-matrix-inside"
+   ],
+   "blurb": "Air-gapped Matrix is usually treated as a deployment question. For us, it is the architecture.\n\nAxiom is Labrys’ operational platform, built for military clients and the most hostile threat models you can name: encrypted communications, verified media, shared mapping and live location. Underneath it, Matrix is NOT just the messenger. It is the transport. Homeservers, rooms and events carry the rest of the system, including across networks that never touch the public internet.\n\nThis talk covers what had to move inside the boundary, why using Matrix as a transport is particularly useful in isolated networks, and what we learned from taking a live platform off the internet.\n\nSpeakers: Dan Woodel, Luke Wattam",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "UV3NTW",
+   "title": "Bringing MatrixRTC to the Matrix Ecosystem",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/UV3NTW/",
+   "genre": "talk",
+   "categories": [
+    "7716-next-gen-spec"
+   ],
+   "blurb": "Element Call already proves what is possible with MatrixRTC: decentralised, federated, end-to-end encrypted video and voice calls powered entirely by the Matrix protocol — but most of the Matrix ecosystem hasn't yet adopted it.\nTo change this we need to build an ecosystem around MatrixRTC that is as vibrant as Matix itself.\nThis talk outlines the vision of components for such an ecosystem and consolidates all the details required to efficiently build on top of MatrixRTC or add support to clients and sdks.\n\nThis talk starts with a quick tour of MatrixRTC from the ground up. We start with the core specification ([MSC4143](https://github.com/matrix-org/matrix-spec-proposals/pull/4143)): what a MatrixRTC session actually is, how participants announce themselves via `m.call.member` sticky events, and how a call across a federated network of homeservers and multiple LiveKit SFUs (Selective Forwarding Unit) works.\n\nWith the foundations in place, we explore what MatrixRTC makes possible beyond video calls: low-latency data channels, real-time collaborative features, game state synchronisation, and more — all authenticated by Matrix and federated by default.\n\nThe second half of the talk will be a conversation about **how** to build on MatrixRTC correctly and **why** it matters. We share our learning how to structure SDKs around MatrixRTC and evaluate possible shared building blocks. The goal is to build an ecosystem with components suited for most tasks without reinventing the wheel.\n\nAttendees will gain a basic understanding of the technology so you leave the room knowing exactly where to start, and an awareness of what components are available to make your life easier and the final products stable and compatible. Let's bring MatrixRTC to the whole Matrix ecosystem.\n\nSpeakers: Timo Kandra, Robin Townsend",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "XQU8GA",
+   "title": "Hello from the other side: a design workshop to bridge asymmetries between messaging clients",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/XQU8GA/",
+   "genre": "talk",
+   "categories": [
+    "7668-workshop"
+   ],
+   "blurb": "When messaging across interoperable platforms or different clients in a decentralized network, there is a common set of functionalities defined by the common protocol or API bridging the conversation, but there may also be unique functionality exclusive to each client. These differences may sometimes have important implications in the user experience and privacy of the conversation partners, but there are no design patterns or agreed standards for dealing with them. For example, imagine that someone sends a \"view only once picture\" but the receiver's client lacks this functionality: would you expect the receiver to simply show the picture? To show an error message saying \"message not supported\"? Or should the sender client prevent the use of  \"asymmetrical functionality\" in the first place? \n\nIn this design workshop, we will introduce the concept of \"seamful design\", briefly present cases where asymmetrical functionalities may harm user experience, and engage all attendees in a prototyping activity to explore potential workarounds through design. Based on the prototyped design ideas, we will discuss trade-offs, challenges and potential best UX practices for designing around functional asymmetries in interoperable messaging.\n\nSpeakers: Carla Griggio, Stina Olsson, Xinyuan Liu, Tom Biselli",
+   "durationMin": 120,
+   "imageUrl": null
+  },
+  {
+   "id": "CWLX8Z",
+   "title": "Server-side functionality for multilateral use",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/CWLX8Z/",
+   "genre": "talk",
+   "categories": [
+    "7724-public-sector-sponsored-by-element"
+   ],
+   "blurb": "To make the most of the sovereignty and interoperability enabled by Matrix, governments need to deploy at scale; across multiple organisations within their own country, between partner countries and mission partner environments. At an even larger scale, they may also need to support government to citizen communications - literally tens or even hundreds of millions of people.\n\nThis session explores what’s required to deliver these types of production environments straight out of the box. We'll cover server-side interoperability, mixing and matching Element Server Suite Pro with other Matrix-based solutions without friction, and how to make federation genuinely easy to deploy and manage - within large organisations and with external partners.\n\nFor example, when you federate with a partner you should be able to find your colleague in their directory. You should be able to share files with them and collaborate seamlessly, but also safely and in a controlled manner; such as checking what goes in and out of your network with proven Secure Border Gateways.\n\nFinally, we'll explore air-gapped deployments and cross-domain functionality - enabling secure communications across classification boundaries where external connectivity simply isn't an option.\n\nSpeakers: Patrick Maier",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "7BLS3N",
+   "title": "NeoBoard at scale - Demo",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/7BLS3N/",
+   "genre": "talk",
+   "categories": [
+    "7712-matrix-inside"
+   ],
+   "blurb": "NeoBoard, the open-source real-time collaborative whiteboard built on the Matrix protocol, has come a long way since its first appearance at the Matrix Conference. In this talk, Nordeck's CEO gives an honest account of where the product stands today — the architecture, the open-source release, the feature roadmap — and announces some surprises that take NeoBoard beyond the developer community and into everyday use.\n\nSpeakers: Hato Nordeck",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "WWLM98",
+   "title": "Federated Scheduling: Integrating JSCalendar (RFC 8984) into Matrix",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/WWLM98/",
+   "genre": "talk",
+   "categories": [
+    "7716-next-gen-spec"
+   ],
+   "blurb": "Matrix already provides the essential primitives for a decentralized calendar: room memberships, federated state exchange, spaces, and support for custom event and room types. This session explores the technical integration of RFC 8984 (JSCalendar) within the Matrix protocol. We will examine how the JSON-based representation of JSCalendar can be mapped to Matrix state events and what pieces are missing. The presentation concludes with a live demonstration of a working prototype within Tammy.\n\nSpeakers: Benedict Benken",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "YHV8XB",
+   "title": "Sovereignty meets Interoperability: The European Commission's Matrix Story",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/YHV8XB/",
+   "genre": "talk",
+   "categories": [
+    "7724-public-sector-sponsored-by-element"
+   ],
+   "blurb": "Enhancing open standards and data ownership within its ecosystem, the European Commission is walking the (sovereign) talk by introducing a new Digital Workplace service powered by Matrix / Element. This talk walks you through the EC's journey from early architecture decisions to deploying a production ready communication service. We will share the practical reality of integrating Matrix into a large-scale institutional ecosystem - balancing strict security and compliance requirements with user experience and the key lessons learned along the way.\n\nSpeakers: Alexandru VIGNIDE, Diana GHEORGHE",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "PUQNED",
+   "title": "Robrix: a pure Rust multi-platform Matrix client, and a peek at its future",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/PUQNED/",
+   "genre": "talk",
+   "categories": [
+    "7712-matrix-inside"
+   ],
+   "blurb": "Robrix is a \"new\" FOSS Matrix client written entirely from scratch in Rust, with some cool power user features like a **dockable-tabs view** of multiple rooms side-by-side, just like your favorite IDE. It's simple and flexible enough for casual chatters as well, and can seamlessly transition into a sleek mobile-friendly adaptive UI for narrow screens.\n\nRobrix runs smoothly and consistently across mobile & desktop platforms, thanks to the underlying Makepad UI toolkit and Robius abstraction crates, which we also wrote ourselves in Rust. After several years of hard work on those components, we have finally reached the milestone of publishing Robrix to major app stores.\n\nJoin us to learn more, see some fun live demos, and give it a try yourself. We'll also preview some of our future ideas, such as making Matrix the best medium for coordinating and managing multi-agent workflows (even better than Telegram!).\n\nSpeakers: Kevin Boos",
+   "durationMin": 25,
+   "imageUrl": "https://cfp.2026.matrix.org/media/matrix-conference-2026/submissions/PUQNED/image_uwrwbfD.webp"
+  },
+  {
+   "id": "M3A3HK",
+   "title": "Project Hydra (phase 2+3): further improving the security of the federation protocol",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/M3A3HK/",
+   "genre": "talk",
+   "categories": [
+    "7716-next-gen-spec"
+   ],
+   "blurb": "The federation protocol is how Matrix homeservers communicate between each other. In private federations this isn't particularly challenging as the network is trusted but in the public federation this isn't true. This talk dives into what protocol improvements are in the works to make the public federation more secure against Byzantine actors, particularly against \"backdating\": intentional misuse of the concurrency primitives to manipulate the authorisation algorithm. We'll explore why this problem is hard, what some of the failure modes are, and how we are working on addressing them.\n\nSome of this work was presented in a [peer-reviewed article](https://dl.acm.org/doi/10.1145/3806077.3806691).\n\nSpeakers: Kegan Dougal",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "KZM8NW",
+   "title": "Forrester Report: Open source and open standards for sovereignty, privacy, and security",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/KZM8NW/",
+   "genre": "talk",
+   "categories": [
+    "7714-digital-sovereignty"
+   ],
+   "blurb": "Digital sovereignty is a board-level priority, but ambition often outpaces reality. In this session, Forrester analyst Dario Maisto presents findings from his latest report, drawing a clear line between sovereignty, privacy, and security, and examining the practical challenges organisations face in reducing dependency on dominant tech stacks, from productivity suites to communication. He explores how open standards and open source can support sovereignty goals, introducing a Minimum Viable Sovereignty framework for setting realistic targets.\n\nThe session also addresses the limits of open source, including project health, maintainer sustainability, and commercial support, as key factors in mission-critical viability, leaving attendees with a grounded framework for evaluating sovereignty initiatives.\n\nSpeakers: Dario Maisto",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "NBEB99",
+   "title": "As a [server administrator], I want to [run Element successfully in my organisation/community]",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/NBEB99/",
+   "genre": "talk",
+   "categories": [
+    "7712-matrix-inside"
+   ],
+   "blurb": "Introducing a new communication tool into an existing organisation or community usually means training users and addressing their common pain points as best as possible. Over the last few years, Element Server Suite (ESS) has empowered administrators to integrate Element in a way that makes sense for their organisations, through tools like Element Admin and recent improvements in the rest of the Matrix stack.\n\nThis talk will go through what the Element stack has to offer in terms of administration tooling, UX improvements for onboarding new users and integration with existing user directories. This includes concrete user-facing features like QR code login and many features introduced with Matrix Authentication Service, but also leveraging new features in the Matrix spec like extensible profiles.\n\nSpeakers: Quentin Gliech",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "V9PXRV",
+   "title": "A common journey to user federated search",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/V9PXRV/",
+   "genre": "talk",
+   "categories": [
+    "7716-next-gen-spec"
+   ],
+   "blurb": "Currently user search can only be done locally, which would at best get a list of all users known to the server.\n\nThis talk aims at explaining the research we did regarding speccing and implementing a spec change proposal for the user federated search (MSC4258).\n\nWe will also explained the different solutions we thought about and the associated tradeoffs regarding data privacy, performance and complexity.\n\nThis talk is also about a collaboration between 2 public sector teams from 2 different countries :)\n\nSpeakers: Mathieu Velten, Kai A. Hiller",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "3GTLFM",
+   "title": "Between the protocol and the customer: federation expectations in production",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/3GTLFM/",
+   "genre": "talk",
+   "categories": [
+    "7724-public-sector-sponsored-by-element"
+   ],
+   "blurb": "Every organization that adopts Matrix federation makes the protocol more valuable. Every gap they hit makes adoption harder. Rocket.Chat runs Matrix federation in production for government, defence, and critical infrastructure organizations, and that work shows where the protocol already meets customer expectations, and where it can go further. This talk shares our findings from real-world implementation conversations, findings from adoption, and proposals for native capabilities.\n\nSpeakers: Renato Becker",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "QXZEQJ",
+   "title": "From helplessness to sovereignty: Matrix as a use case for fairer information infrastructure",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/QXZEQJ/",
+   "genre": "talk",
+   "categories": [
+    "7714-digital-sovereignty"
+   ],
+   "blurb": "The privacy paradox (the theory that people say they care about their privacy but behave as if they do not), assumes that user behaviours are irrational, uninformed, and based on choosing convenience above their own data protection.\nMy research points to a different perspective: people do care, and they also behave inconsistently, but not always out of convenience. At its core, it seems that people behave inconsistently because they feel they have no agency and that “there is no point” in trying to protect their personal information. In this sense, we all live more in a state of privacy helplessness than in a paradox – a paradox implies a choice we don’t all have.\n\nRegulations like the GDPR can’t be the sole solution for such a widespread and structural issue, nor are they a substitute for measures which focus on actual empowerment. Geopolitical considerations are also leading private organisations and governments to more carefully ownership and control of their data, which leads to questions around autonomy and digital sovereignty.\n\nIn this talk I will go through the reasons why decentralised, end-to-end-encrypted public infrastructure, built on open standards, could be the structural answer to these problems. Matrix is one of the few working examples of this kind of technology being deployed in the public sector at scale. Matrix based communications are a key case study to show why open technology is essential to address individual concerns around helplessness, as well as national level issues associated with digital sovereignty (or lack of it).\n\nSpeakers: Denise Almeida",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "7GYBAP",
+   "title": "Next Generation Matrix: P2P, DMLS and more!",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/7GYBAP/",
+   "genre": "talk",
+   "categories": [
+    "7716-next-gen-spec"
+   ],
+   "blurb": "2026 has seen the resurgence of Next Generation Matrix research funded by Element, as we get back to futureproofing Matrix for the medium-long term.\n\nThe main project has been the return to P2P Matrix: embedding homeservers inside modern Matrix clients, speaking the very latest Matrix room versions, supporting arbitrary overlay networks.  This opens up the world of Matrix for pure mesh communications, and can radically improve metadata footprint (given in a world with no servers, there's nowhere for metadata to gather).  Funded by the Dutch Government, we announced this at last year's Matrix Conference in the Matrix State of the Union, and work began in earnest in April.  With first releases due in July, we should have an awful lot to talk about by the time of The Matrix Conference in October!\n\nAlongside this, there's also been a bunch of work around next generation encryption and yet more ways of marrying together Matrix and MLS, the IETF standard for group key exchange.  One of the more interesting directions has been Project Tachyon: what happens if you layer all of Matrix over Decentralised MLS, using MLS to define which devices can participate in the conversation - but use clientside Matrix state resolution for decentralised authorisation having decrypted the traffic?  In return you entirely solve the metadata problem: the server doesn't even know rooms exist; all it does is pass DMLS payloads around over to-device messages.\n\nIn this talk, we'll do a deeper dive into the latest P2P Matrix and DMLS work - and explore how Tachyon might also provide an answer to the eternal question of \"Portable Matrix\": how do you run Matrix over an existing store-and-forward protocol like SMTP, XMPP, ActivityPub, etc?\n\nSpeakers: Matthew Hodgson",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "WDFVAP",
+   "title": "Matrix in Minutes",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/WDFVAP/",
+   "genre": "talk",
+   "categories": [
+    "7668-workshop"
+   ],
+   "blurb": "I'll show you how to deploy a working Matrix server, live, in just a few minutes using Continuwuity. Then we'll get down to brass tacks and set up everything that makes Matrix great:\n- Native, next-generation video conferencing \n- Moderation bots, and all the tooling you need to manage and scale a public Matrix community\n- Bridges beyond Matrix to message family on Whatsapp and signal or merge communities on Slack or Discord\n- Bots, bots, bots! Ping racing, reminders and handy custom tools\n\nI've got a plan, but this sessions is for you, so we'll go off the rails to follow what you want to know. The intention is that everyone has something useful to take home!\n\nSpeakers: Jade",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "DNNLEW",
+   "title": "United Nations (UNICC)",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/DNNLEW/",
+   "genre": "talk",
+   "categories": [
+    "7724-public-sector-sponsored-by-element"
+   ],
+   "blurb": "Over five decades, is the largest strategic partner for common, trusted, and cybersecure\ndigital foundations across the entire UN system. Today, UNICC serves over 100 UN entities and other international organizations, operating in a global environment where secure, cross-agency collaboration is essential to fulfilling its mandates. Therefore, UNICC is uniquely positioned to identify and promote the reuse of open-source solutions across the UN system and beyond.\n\nOperating within the UN context requires strict adherence to institutional independence,\ntechnological neutrality, data privacy, and digital sovereignty. Matrix’s open, decentralized standard has helped UNICC ensure that sensitive inter-agency communications, crisis management, and incident response operations remain under complete institutional control, protected by end-to-end encryption.\n\nThis session explores UNICC’s practical journey in deploying Matrix at scale. Attendees\nwill gain insights into multi-tenant federation, open-source governance, and how\ndecentralized protocols provide a resilient, sovereign digital backbone for global public\ngoods.\n\nKey Takeaways:\n\n- Strategic Evolution: How UNICC shifted to open standards for global UN collaboration.\n- Digital Sovereignty &amp; Data Protection: Protecting sensitive data through decentralized, end-to-end encrypted architecture that strengthens institutional control and reduces dependency on proprietary platforms.\n- Operational Value: Real-world benefits of federated communication in emergency response and automated workflows.\n\nSpeakers: Sameer Chauhan",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "HCZ83N",
+   "title": "Europe’s tech sovereignty: what’s in it for Matrix?",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/HCZ83N/",
+   "genre": "talk",
+   "categories": [
+    "7714-digital-sovereignty"
+   ],
+   "blurb": "The European Commission defines tech sovereignty as Europe’s ability to act independently in the digital world by developing and controlling key technologies, data, and infrastructure, while reducing reliance on non-EU providers. In June 3, the European Commission has published a tech sovereignty package. What’s included in the package? What’s positive? What the Commission didn’t get quite right and can it be fixed? And what’s in it for Matrix and Free and Open Source Software in general? The talk will provide a gentle introduction into some of the elements of the tech sovereignty package and try to answer all these questions.\n\nSpeakers: Marcel Kolaja",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "E9YU9X",
+   "title": "Integrating Matrix Chat into the Waldur Resource Management Platform for Sovereign Conversations",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/E9YU9X/",
+   "genre": "talk",
+   "categories": [
+    "7713-in-practice"
+   ],
+   "blurb": "Waldur is a multi-tenant cloud and HPC resource-management platform. In Estonia it powers the state cloud (Riigipilv) and the national scientific computing infrastructure (ETAIS), where deployments routinely involve personal and sensitive data. Yet support for all of it happens across scattered channels: Slack, Signal, email, whatever a given user reaches for. The context for any single deployment is split across all of them. To debug a problem you reconstruct the story from fragments in different apps, there is no durable history tied to the project, and sensitive conversations end up sitting in third-party consumer tools.\nWe are building a Matrix integration for Waldur using the Application Service API, giving every project its own room. Room membership mirrors project membership: members are invited and synced automatically from their existing project roles, so the people in the conversation are exactly the people with access to the resource. The chat renders directly in the Waldur UI, and for support staff who prefer it, the same chat is also available on the go.\nWe have finished implementing the first version and are now pushing it to our first users for testing. This talk introduces the problem, walks through the solution we are building, and shares our future plans for Matrix inside Waldur.\n\nSpeakers: Hendrik Jaks",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "YWVEDN",
+   "title": "Deploying Matrix for Government and Critical Infrastructure: Lessons from the Field",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/YWVEDN/",
+   "genre": "talk",
+   "categories": [
+    "7724-public-sector-sponsored-by-element"
+   ],
+   "blurb": "Europe's need for sovereign, secure communication platforms is no longer up for debate. Matrix has established itself as a powerful open foundation for secure collaboration. However, public sector organizations also need to satisfy strict legal and compliance requirements while integrating with existing identity, security, and operational systems. \n\nDrawing on real-world deployments in regulated environments, this session explores how organizations build on Matrix to address these challenges through identity and access management integrations, auditing and compliance, workflow automation, granular room governance, and user-friendly account recovery. Attendees will gain practical insights into building secure, auditable, scalable, and sovereign collaboration environments ranging from out-of-band channels to decentralized partner networks.\n\nSpeakers: Jani Virkkula, Shoolpani",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "MFBXVD",
+   "title": "Digital Sovereignty Is No Longer a Buzzword — It's Procurement Policy",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/MFBXVD/",
+   "genre": "talk",
+   "categories": [
+    "7714-digital-sovereignty"
+   ],
+   "blurb": "Just days before this conference, the European Commission adopted the **European Technological Sovereignty Package**, placing open source explicitly at the centre of Europe's digital strategy for the first time. The timing is not coincidental. It is the political response to a structural dependency Europe can no longer afford to ignore: critical infrastructure — including healthcare — running on platforms controlled by others.\n\nThis talk makes a practical argument: digital sovereignty has moved from political rhetoric to **procurement reality**. Across Europe, more than 20 governments have already chosen Matrix as their foundation for sovereign, vendor-agnostic communication — from Germany's Bundeswehr and BundesMessenger to France's Tchap and LaSuite, Sweden's SAFOS Chatt, and the European Commission itself. This is no longer a pilot phase. It is production infrastructure.\n\nHealthcare is where the argument becomes hardest — and most compelling. Germany's **TI-Messenger**, mandated by gematik and built on the Matrix open standard, connects over 150,000 healthcare organizations and reached 74 million statutory insured citizens in July 2025, making it the largest Matrix deployment worldwide. Yet real-world adoption reveals a tension that no technical standard alone can resolve: clinical staff default to WhatsApp not out of ignorance, but because it works and patients are already there. Studies show 82% of healthcare organizations carry significant shadow IT exposure, and the NHS has internally described WhatsApp use as a *\"privacy and clinical safety timebomb\"*. The problem is not the technology. It is incentives and governance.\n\nDrawing on experience as a healthcare IT vendor building on the Matrix protocol, this talk examines **three dimensions of sovereignty** — data, infrastructure, and protocol — and shows how Matrix uniquely addresses all three simultaneously, in contrast to WhatsApp, Signal, and Microsoft Teams. It traces lessons from government deployments to their implications for regulated healthcare, and covers the regulatory drivers now turning sovereignty from aspiration into obligation: NIS2 designates healthcare as an \"essential entity\" subject to proactive audits and fines up to €10 million; the EHDS mandates structured interoperability; and the EU Technological Sovereignty Package is beginning to shape procurement criteria directly.\n\nThe talk closes with a challenge to the Matrix community: the TI-Messenger specification is a blueprint, not a ceiling. Building shared certification frameworks for healthcare across Europe — and treating interoperability between Matrix vendors as a competitive strength rather than a threat — is the next step. The window, opened by this week's EU package, will not stay open indefinitely.\n\n**Attendees will leave with:** a clear framework for positioning Matrix in regulated procurement; an honest account of where adoption stalls and why; and a concrete call to action for the Matrix ecosystem in European healthcare.\n\nSpeakers: Jens-Uwe Thieme",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "39DKCK",
+   "title": "Disappearing the Protocol: Integrating Matrix into a Multi-App Platform",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/39DKCK/",
+   "genre": "talk",
+   "categories": [
+    "7713-in-practice"
+   ],
+   "blurb": "In a comprehensive digital workspace, the ultimate measure of success for Matrix is invisibility. End-users shouldn't manage a separate Matrix profile, understand what a homeserver is, or manually exchange Matrix IDs. But how do you take a protocol designed to be the center of its own universe and cleanly relegate it to a silent, powerful chat engine under the hood of a broader platform? \n\nThis talk explores the architectural reality of \"disappearing\" Matrix into a cloud collaborative platform. We will explore how to hide Matrix-flavored concepts to users, and map platform-native user management or ACLs onto Matrix.\n\nBy looking at custom identity servers, and application bridges, we will share the practical engineering required to keep the protocol completely transparent to the user.\n\nSpeakers: Pierre 'McFly' Marty",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "FYKJMY",
+   "title": "Foundation & Governing Board update",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/FYKJMY/",
+   "genre": "talk",
+   "categories": [
+    "7670-keynote"
+   ],
+   "blurb": "The Matrix.org Foundation is the key to Matrix' independence from any commercial vendor. It exists to protect the neutrality of the Matrix protocol, promote Matrix as an open standard, give a voice to the members of the ecosystem and ensure trust and safety within the open network. This keynote will give an overview of the latest about the Foundation and will include a presentation from the Governing Board on the activities led by the various Committees and Working Groups.\n\nSpeakers: Amandine Le Pape, Nico, Neil Johnson",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "G9XJTA",
+   "title": "Matrix and MLS - The next step of the evolution",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/G9XJTA/",
+   "genre": "talk",
+   "categories": [
+    "7670-keynote"
+   ],
+   "blurb": "Last year we started the endeavour of bringing Matrix and MLS together. The work on this subject led to some pretty exciting developments. Here you will be the first to learn about them!\n\nSpeakers: Niklas Zender",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "JVU9AL",
+   "title": "Integrations at Work: Bringing Workplace Apps into Element",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/JVU9AL/",
+   "genre": "talk",
+   "categories": [
+    "7672-lightning-talks"
+   ],
+   "blurb": "In 2026, Element's Integrations team set out to make Matrix the productivity layer for sovereign workplaces, the place where your files, documents, projects, and calendar don't just link out, but live alongside your conversations. We'll walk through what we built, how we approached the hard problems, and what it means for organisations already running open-source workplace stacks. We'll also look at where this is headed and what it'll take for the wider Matrix ecosystem to build it together.\n\nSpeakers: David Langley, Half-Shot",
+   "durationMin": 7,
+   "imageUrl": null
+  },
+  {
+   "id": "9KHRGR",
+   "title": "A Year (and a half) of Continuwuity",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/9KHRGR/",
+   "genre": "talk",
+   "categories": [
+    "7672-lightning-talks"
+   ],
+   "blurb": "last April, a new homeserver burst onto the scene. Soon enough, hundreds of servers were running this mysterious new software - and the momentum didn't drop. Today, more than one and a half thousand servers on the public federation run [Continuwuity](https://continuwuity.org/). \n\nThat leads to some questions. Where did it come from? What happened? Where is it going? Well, We've got anwers for all of that. Right here. Exclusively. This is a breakdown from the team behind the ~~mystery~~ well-regarded open source project, going over all of that and more. You know you're interested.\n\nSpeakers: Jade, timedout",
+   "durationMin": 7,
+   "imageUrl": null
+  },
+  {
+   "id": "FEBUFM",
+   "title": "Making Matrix Feel Like WhatsApp Without Centralizing It",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/FEBUFM/",
+   "genre": "talk",
+   "categories": [
+    "7672-lightning-talks"
+   ],
+   "blurb": "Gua is an experimental Matrix-based messenger built around a deliberately provocative question: can a federated, end-to-end encrypted network feel as simple as WhatsApp, and what do you have to centralize to get there?\n\nThe project is an experiment built around the Matrix ecosystem. It builds on Element clients for iOS, Android, and Web, Synapse, and Matrix Authentication Service, with targeted Gua-specific forks where the user experience requires it. Around those components, it adds Java/Spring services such as identity-service and gua-resolver, plus gua-idp-web, a web frontend for the identity provider login flow. The goal is to keep the robustness of Matrix federation while hiding the complexity that usually scares off everyday users: homeserver choice, full Matrix IDs, server-specific login details, and federation topology.\n\nThe public demo uses phone-number login with OTP, similar to WhatsApp-style onboarding. Returning users can be protected with a 6-digit account PIN or passkeys, and the OIDC/MAS architecture makes it possible to extend the same login model to government identity providers, institutional identity systems, or other trusted authentication sources.\n\nThe talk focuses on the architecture behind this abstraction: Gua Identity Service, Gua’s MAS fork, gua-idp-web, and gua-resolver. Together, these components let a client start from a simple user identity, route login or registration to the correct homeserver, and maintain a trusted federation of authorized homeservers without exposing those details to the user.\n\nGua is not presented as a finished product, but as a case study in making Matrix more approachable for mainstream and institutional adoption.\n\nSpeakers: Sarah L. Silva",
+   "durationMin": 7,
+   "imageUrl": "https://cfp.2026.matrix.org/media/matrix-conference-2026/submissions/FEBUFM/image_1jk58BK.webp"
+  },
+  {
+   "id": "RERS8J",
+   "title": "Challenges of Matrix within Europe's most sovereign, most secure and largest IT Infrastructure",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/RERS8J/",
+   "genre": "talk",
+   "categories": [
+    "7669-public-sector"
+   ],
+   "blurb": "Matrix was designed around strong end-to-end encryption and user-controlled trust. While this model is ideal for private communication, large public-sector and critical infrastructure deployments face additional requirements that go beyond traditional E2EE.\n\nThis talk explores the challenges of operating Matrix within one of Europe's largest sovereign and security-critical IT infrastructures, where legal archiving obligations, compliance requirements, incident handling, automation and long-term information governance must coexist with modern encrypted communication.\n\nWe discuss why classic end-to-end encryption is not always sufficient in enterprise environments and examine the concept of End-to-Organization Encryption (E2OE) as a potential architectural approach. Rather than focusing solely on technical implementation, the session evaluates the trade-offs between confidentiality, organizational trust, operational resilience and regulatory compliance.\n\nTopics include message archiving, eDiscovery, compliance scanning, bot integration, fall handling, key recovery, device loss, and organizational access models. We will also discuss how these requirements influence Matrix client architecture, headless clients, encryption key management and federation.\n\nThe presentation is intended for Matrix developers, infrastructure architects, security professionals and public-sector operators interested in deploying Matrix at national scale while balancing sovereignty, usability and compliance.\n\nSpeakers: Richard Schlögl",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "HVRHVW",
+   "title": "Preserving Integration, Rebuilding the Core: Matrix for Healthcare Communication",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/HVRHVW/",
+   "genre": "talk",
+   "categories": [
+    "7673-healthcare-sponsored-by-cgm"
+   ],
+   "blurb": "The hardest part of modernizing healthcare communication is not building a new platform. It is preserving decades of existing integrations while enabling an entirely new communication model.\nGermany's healthcare sector currently relies on two communication systems with very different characteristics.\nKIM is the widely adopted communication backbone of the healthcare system. It enables critical workflows such as electronic certificates of incapacity for work and is deeply integrated into healthcare information systems. However, its architecture is based on traditional email technologies and on infrastructure that will have to evolve significantly in the coming years.\nThe TI-Messenger, based on Matrix, provides a modern communication architecture that already aligns with many design principles of Germany's future health infrastructure. It enables secure communication between healthcare professionals and also includes insured persons as participants in the communication ecosystem. Nevertheless, adoption has not yet reached the level required to achieve strong network effects.\nInstead of operating two independent communication ecosystems, we are pursuing a convergence strategy: a unified communication platform that preserves existing integrations and workflows while modernizing the backend infrastructure and enabling interoperability across user groups.\nThis talk presents the architectural challenges, migration strategy and interoperability concepts for transforming a nationwide, mission critical healthcare communication ecosystem towards a Matrix based future.\n\nSpeakers: Jan Kohnert",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "DDYYQW",
+   "title": "How Encryption works in Matrix",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/DDYYQW/",
+   "genre": "talk",
+   "categories": [
+    "7671-cryptography"
+   ],
+   "blurb": "Intended for people who don't know much about encryption or Matrix, this session will give an overview of how your messages are kept safe, using end-to-end encryption.\n\nWe'll very briefly review what we are trying to do: be sure who we're talking to, and be sure no-one else can read our messages. Then we'll discuss how Matrix does this: devices talk to each other with something called Olm, and messages in rooms use Megolm.\n\nBy the end of this session you should be confident talking about how Matrix keeps your data safe, and you should know enough that you are able to dig deeper when you need to.\n\nSpeakers: Andy Balaam",
+   "durationMin": 55,
+   "imageUrl": null
+  },
+  {
+   "id": "CJXTB9",
+   "title": "The Element Module Workshop",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/CJXTB9/",
+   "genre": "talk",
+   "categories": [
+    "7668-workshop"
+   ],
+   "blurb": "Hey! You may have just seen our talk about the future of integrations, or didn't see the point and hung around the bar. No matter! You will want to come to this workshop where we will teach you how to sculpt Element Web into the perfect client. We will impart the wisdom, hear the feedback and make dreams become reality.\n\nSpeakers: Half-Shot",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "LNVNTW",
+   "title": "MSG GOV: Building Brazil's Sovereign Government Messaging Platform on Matrix",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/LNVNTW/",
+   "genre": "talk",
+   "categories": [
+    "7669-public-sector"
+   ],
+   "blurb": "Governments increasingly need messaging that is secure, federated, and independent from foreign proprietary platforms, but turning an open protocol into a deployable government tool raises hard questions about sovereignty, infrastructure, and identity. This talk presents MSG GOV, a Matrix-based messaging platform for the Brazilian federal government. Today, it targets a defined set of public servants rather than the entire population or every government employee — a deliberate, controlled scope as the platform matures. We plan to share the factors that drove the need for a sovereign messaging app in the first place and to dig into how MSG GOV is built and run. The solution is designed to operate on SERPRO's sovereign cloud, the Brazilian government's own cloud infrastructure, with all the operational and trust implications that entail. At the center of the talk is identity: how MSG GOV integrates with gov.br, Brazil's national single-sign-on system, through a dedicated user management module we developed to bridge gov.br authentication with Matrix accounts.\n\nSpeakers: Diego Serpa, Jose Macedo",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "AWDD8K",
+   "title": "TI-Messenger goes Europe: Austrian healthcare adopts matrix protocol",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/AWDD8K/",
+   "genre": "talk",
+   "categories": [
+    "7673-healthcare-sponsored-by-cgm"
+   ],
+   "blurb": "Famedly talks about the developments in the Austrian healthcare market and the adoption of matrix as the messenger protocol of choice. Leaning into the similarities and differences between Germany and Austria.\n\nSpeakers: Phillipp Kurtz",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "EYBZT9",
+   "title": "Practical insights of using Matrix in Germany: External Security, Healthcare & Public Sector",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/EYBZT9/",
+   "genre": "talk",
+   "categories": [
+    "7669-public-sector"
+   ],
+   "blurb": "In our talk, we would like to give conference participants an insight into practical use cases for the Matrix solution. We will cover projects in the healthcare sector, external security, and public administration.\n\nSpeakers: Franziska Streidt, Oliver Graml",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "8LWQES",
+   "title": "Side Effects Include: Data Breaches, GDPR Fines, and a Group Chat With 47 Nurses",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/8LWQES/",
+   "genre": "talk",
+   "categories": [
+    "7673-healthcare-sponsored-by-cgm"
+   ],
+   "blurb": "Walk into any ward, GP surgery, home care team, or therapy practice in Europe and you'll find the same thing: clinicians communicating over WhatsApp. Not because they don't know better - but because it works, it's fast, and the alternatives haven't kept up.\n\nThis talk confronts the uncomfortable reality that consumer messaging apps have become the de facto communication layer of modern healthcare. WhatsApp is the most visible offender, but Signal fills the gaps, and somewhere in every organisation, someone is still making the case for Outlook. Dedicated solutions built on open standards like Matrix exist precisely to solve this - so why does WhatsApp keep winning?\n\nThe answer cuts across the entire care continuum: from large hospital trusts wrestling with security friction to mobile nurses and home care workers that no IT policy ever quite reaches. With GDPR enforcement tightening and AI finally making compliant solutions genuinely convenient, the stalemate may be breaking. This talk asks whether we're ready.\n\nSpeakers: Patrice Zoe Brend'amour",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "8ZCYUQ",
+   "title": "When to Change the Locks in Your Matrix",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/8ZCYUQ/",
+   "genre": "talk",
+   "categories": [
+    "7671-cryptography"
+   ],
+   "blurb": "When you operate communication infrastructure for one of Europe's largest defense organizations, \"good enough\" is never good enough.\nAt BWI, we do not just run Matrix. We trust in the idea behind it: that secure, open communication should be a public good.\n\nWhen we introduced Matrix into the Bundeswehr, we made a deliberate decision: everything, always, end-to-end encrypted. No exceptions, no fallbacks. That single switch revealed the hard problems. Olm and Megolm, built on the Signal Protocol, are the gold standard of modern encryption, but they were not designed for large rooms with thousands of participants at government scale. Those cracks are what brought us to MLS, the IETF standard built for exactly those harder problems: scalable group key management, stronger forward secrecy, post-compromise security. MLS does not just change how keys are managed. It changes how little the server needs to know. And that is not a side effect. It is a design goal. The less the server knows, the less it can leak, and required by VS-AP0024, the BSI guidance we operate under.\n\nThat settled the what. Rust settles the how. Not as a language choice, but as the foundation that makes formal verification of the functional core possible, and memory safety everywhere else a given.\n\nWe wrote MSC2546 ourselves, defining how MLS integrates into the Matrix protocol at the spec level. Now we are ready to share what happened next.\n\nIn this talk, Timm and David from BWI will show you what it takes to bring MLS into a real production stack: what changes in the SDK, what it means for backend modules, and how Rust becomes the common thread that holds it all together. Expect no polished success story. Expect honest engineering: what was built, where it broke, and what it cost. And at the end, the first thing they shipped with it. A new way to have a conversation that leaves no trace. Come find out when to change the locks.\n\nJoin our journey.\n\nSpeakers: Bjoern Reiners, Timm Behner, David Lassig",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "DFBNCV",
+   "title": "NI2CE network effects in a voluntary adoption paradigm",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/DFBNCV/",
+   "genre": "talk",
+   "categories": [
+    "7669-public-sector"
+   ],
+   "blurb": "Convincing users to move to NI2CE messenger and move away from the tools they are used to working with remains an issue. I would like to share my thoughts and discuss how other organisations where the use of Matrix messengers is optional deal with this.\n\nSpeakers: Jeroen Franssen",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "RAJEHG",
+   "title": "Matrix Wrench - an admin tool for operators and community managers",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/RAJEHG/",
+   "genre": "talk",
+   "categories": [
+    "7713-in-practice"
+   ],
+   "blurb": "Are you operating a large server, bridge or bot? Are you managing lots of spaces or rooms?\nDo you sometimes need to modify rooms outside of your regular account?\nTry Matrix Wrench. It's is a powerful, open-source web app to view and edit room states. It works with access tokens from users and AppServices.\n\nSpeakers: Christian Paul",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "A8MVMH",
+   "title": "New phone who dis: User verification using X.509 certificates",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/A8MVMH/",
+   "genre": "talk",
+   "categories": [
+    "7671-cryptography"
+   ],
+   "blurb": "At Element, we've been thinking about how you can be sure you are chatting to the right person, not an intruder, without reading out numbers or emoji over a video call.\n\nOne approach we've been experimenting with is the use of X.509 certificates issued by a trusted certificate authority. I'll be talking about how this helps (and when it doesn't), as well as covering the technical details of the implementation.\n\nSpeakers: Richard van der Hoff",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "MY8PLV",
+   "title": "A Vision for interoperability in Element",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/MY8PLV/",
+   "genre": "talk",
+   "categories": [
+    "7668-workshop"
+   ],
+   "blurb": "Federation is working. But does the experience reflect it?\nIn this workshop, we'll share early vision work for how interoperability shows up across Element — in search, directories, and shared rooms — and then open it up. We want to pressure-test our assumptions, hear what resonates, and understand what we're missing.\nCome ready to react, challenge, and shape what comes next. Your input will directly influence where this vision goes.\n\nSpeakers: Gaëlle Hunt",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "UZT7QE",
+   "title": "Sustainable Digital Sovereignty",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/UZT7QE/",
+   "genre": "talk",
+   "categories": [
+    "7714-digital-sovereignty"
+   ],
+   "blurb": "Digital Sovereignty is on every lips, however whilst the tech is here, we have yet to find a financially sustainable solution to it. The tragedy of the commons of open source is not new, but we’ve got to the point of needing to solve it if we really want organisations to be sovereign and resilient whilst use secure and polished products. \n\nWe all know (or will know by the end of the conference!) that Matrix is the ideal answer for any organisation looking to break free from vendor lock-in for their communications, not only because of its intrinsic properties of decentralisation and end-to-end encryption, but because it is an open standard. An open standard brings neutrality and an ecosystem which allows multiple vendors to thrive, creating a healthy competition to raise the bar of product quality and target specific markets.\n\nThis makes Matrix the perfect microcosm to get concrete examples on how digital sovereignty can be preserved in a financially sustainable manner in order to build products which can compete with the vendor-locked incumbents: from the governance of the standard to the various vendors via the open source community, this talk will use concrete examples to highlight the best and most efficient practices to contribute back for everyone’s benefit.\n\nSpeakers: Amandine Le Pape",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "QEQAZY",
+   "title": "What's New in the Matrix Rust SDK",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/QEQAZY/",
+   "genre": "talk",
+   "categories": [
+    "7713-in-practice"
+   ],
+   "blurb": "The Matrix Rust SDK has grown from an experimental client SDK into the\nfoundation that powers Element X and other Matrix applications. Along the way,\nit has gained support for major Matrix features while tackling some interesting\nengineering challenges.\n\nIn this talk, we'll explore recent additions to the SDK, including threads,\nspaces, QR code login, shared encrypted history, migration from Element Classic\nto Element X, and the centralized redecryption mechanism. We'll look at the\nproblems these features were designed to solve, the architectural decisions\nbehind them, and some of the lessons learned along the way.\n\nSpeakers: Damir Jelić",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "TZ8ZYX",
+   "title": "Towards a Post-Quantum Matrix Protocol: A Hybrid Wrapper Adapted to the Brazilian Scenario",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/TZ8ZYX/",
+   "genre": "talk",
+   "categories": [
+    "7671-cryptography"
+   ],
+   "blurb": "This presentation outlines the development experience of a post-quantum cryptography (PQC) wrapper for the vodozemac library, tailored for its use in MSG\nGOV, a Matrix-powered E2EE messenger for the Brazilian federal government. Our wrapper is designed to support multiple PQC algorithms, including ML-KEM and Brazil's state-mandated cryptography. The talk details the practical software engineering challenges associated with the hybrid integration of flexible PQC features into the Matrix protocol, extending both the key agreement and the Double Ratchet algorithm while maintaining backwards compatibility.\n\nSpeakers: Paulo A L Rego, Rodrigo Pacheco",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "37GLHX",
+   "title": "Common challenges for organizations when deploying [matrix]",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/37GLHX/",
+   "genre": "talk",
+   "categories": [
+    "7669-public-sector"
+   ],
+   "blurb": "A vanilla matrix deployment already offers a lot options and is part of many digital sovereign communication solutions (and for good reasons). It can solve some of its tech dependency issues and can be a great alternative to Teams, Slack, WhatsApp etc.\n\nHowever, some organizational requirements still require more careful thought and planning than one might expect at first glance.\n\nThis talk summarizes some of our experiences with often overlooked challenges, decisions with potentially far-reaching consequences and possible solutions/approaches when trying to implement a Matrix-Deployment for bigger organizations like schools, universities or other public organizations and similar projects.\n\nSpeakers: Jan Krammer (Janonym), Philipp Monz",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "BQUNNE",
+   "title": "Speedrun Client with the Matrix Rust SDK",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/BQUNNE/",
+   "genre": "talk",
+   "categories": [
+    "7713-in-practice"
+   ],
+   "blurb": "The Matrix Rust SDK is one of the most complete, mature, and performant SDK in the world. To illustrate our point, we will show off how to develop a Matrix CLI client from scratch with the Rust SDK live on stage, step by step, up to having a fully functional client, with a room list, a timeline, the ability to send and to receive messages, along with full end-to-end encryption support.\n\nSpeakers: Ivan Enderlin",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "XTFYUT",
+   "title": "Feature asymmetry in interoperable messaging - a barrier for mitigating network effects?",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/XTFYUT/",
+   "genre": "talk",
+   "categories": [
+    "7715-growing-a-network"
+   ],
+   "blurb": "This talk is about how feature asymmetries between interoperable messaging apps may disrupt users' online self-presentation, that is, how they choose what features to use with different groups of people to control the impression they form of them.\nMost users of messaging apps have their strategies to uphold some specific “persona”, if it is sending GIFs to add a humorous tone to the conversation, intentionally using dots at the end of messages to seem more intelligent or professional in front of their boss, or how they resonate when choosing a Snapchat avatar versus their profile picture for Teams. However, in interoperable messaging, some features are sometimes presented in different ways across clients. For example, one app may offer the sender to react to messages with an emoji, so they can reply to messages fast and with low effort, but the receiver app may attach animations to these reactions, bringing a more effortful and playful tone to the conversation. So how do these asymmetries affect users' self-presentation, when may they experience a conversation differently to how the receiver sees it? In this talk, I present a research study on how feature asymmetries across different protocols and clients may affect self-presentation and what this means for interoperability as a means for mitigating network effects.\n\nSpeakers: Stina Olsson",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "KS3A8F",
+   "title": "Starting a Sovereign Chat Project in the Dutch Government: Early Lessons",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/KS3A8F/",
+   "genre": "talk",
+   "categories": [
+    "7669-public-sector"
+   ],
+   "blurb": "How do you start a sovereign, secure chat project in the public sector? Together with the Dutch Ministry of Defence, we are launching a Matrix-based solution to enable interoperable, archivable, and decentralized communication.\nIn this talk, we share our early experiences, including the challenges of compliance, archiving, and adoption, as well as the lessons learned so far. \nJoin us to explore how Matrix can support sovereign, future-proof communication for government organizations.\n\nSpeakers: Manfred Zielinski, Gideon Bleumink",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "87JMFS",
+   "title": "The Engineering Behind Matrix Notifications",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/87JMFS/",
+   "genre": "talk",
+   "categories": [
+    "7713-in-practice"
+   ],
+   "blurb": "A notification seems simple: a message arrives, and the phone vibrates. But in the Matrix ecosystem, a single \"ping\" triggers a complex chain of events involving E2EE decryption, push rule evaluation, and state synchronization. This talk dives into the architectural challenges of implementing a robust, privacy-respecting, and energy-efficient notification engine in Trixnity.\n\nSpeakers: Benedict Benken",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "HKSYET",
+   "title": "Homeserver Decentralisation Working Group Report",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/HKSYET/",
+   "genre": "talk",
+   "categories": [
+    "7717-foundation"
+   ],
+   "blurb": "Matrix was created with the idea of federation at the core, but nowadays there is matrix.org which contains a majority of the users of the wider matrix network, nullifying the benefits of it. This has since also started generating significant cost for The Matrix Foundation and lead to shutdown of some previously offered bridges. The Homeserver Decentralisation Working Group aims to improve the situation.\n\nSpeakers: Clem, Nicolas Da Mutten",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "RXVU33",
+   "title": "Your Chat App is Actually a Game",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/RXVU33/",
+   "genre": "talk",
+   "categories": [
+    "7668-workshop"
+   ],
+   "blurb": "What if I told you that Matrix — the protocol you use to send memes and coordinate sprints — is secretly one of the best foundations for building interactive, stateful games?\nThis talk walks through the construction of a Matrix Treasure Hunt Bot: a Rust-based game engine where players solve riddles in DMs to unlock invites to new rooms, progressing through a story that lives entirely inside a federated chat network.\nBut this isn't just a fun project showcase. Under the hood, it's a solid example in the real challenges of building reliable bots on a federated protocol:\nThe Join Problem: Why room joins fail 30% of the time across homeservers — and how exponential backoff with jitter makes your bot resilient without hammering the federation.\nThe Ghost Problem: How bots silently accumulate thousands of orphaned rooms, and the automated housekeeping patterns that prevent it.\nStateful Sessions on a Stateless Stream: Mapping Matrix's event firehose to persistent player sessions, with versioned JSON state that survives reboots and code deploys.\nA Trait-Based Shell: Building an extensible command system inside a chat bot — so adding !hint or !stats is just implementing a single Rust trait.\nWhether you've never touched matrix-sdk or you're knee-deep in your own bot project, you'll leave with concrete, production-tested patterns for building bots that are as resilient as they are fun.\nThe code is open-source (GPL3) and the bot is live. You can play it today.\n\nSpeakers: nohkumado",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "8EBDVB",
+   "title": "Why Is There Rust in our Matrix?",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/8EBDVB/",
+   "genre": "talk",
+   "categories": [
+    "7669-public-sector"
+   ],
+   "blurb": "When you operate communication infrastructure for one of Europe's largest defense organizations, \"good enough\" is never good enough.\nAt BWI, we do not just run Matrix. We trust in the idea behind it: that secure, open communication should be a public good.\n\nThis talk traces that journey. It begins with our decision to adopt Matrix as the sovereign communication backbone for the German armed forces, and the architectural ambition that drives our work: a communication stack where the functional core is formally verifiable, and memory safety is a given everywhere else. An engineering target we are actively working toward.\n\nAs a first step toward that goal, working with Element, we brought a Rust-based cryptographic SDK into existence, the Matrix Rust SDK, a unified crypto platform shared across all our client applications, born from our security requirements and built to last. Rust was not an aesthetic choice. It was a deliberate decision rooted in memory safety, auditability, and the practical requirements of formal verification tooling.\n\nOur work did not stop with the SDK. The same questions that shaped our cryptographic foundation led us to ask **harder** ones about the **backend**: what would a homeserver look like if security and formal verifiability were first-class requirements from day one, not afterthoughts? We have been exploring that question, and in this talk we want to share what we have learned so far, the decisions we faced, and where those explorations have taken us.\n\nJoin our journey.\n\nSpeakers: Bjoern Reiners, Nico, David Lassig",
+   "durationMin": 25,
+   "imageUrl": "https://cfp.2026.matrix.org/media/matrix-conference-2026/submissions/8EBDVB/image_XBMNyVS.webp"
+  },
+  {
+   "id": "FAJUZD",
+   "title": "A faster, rustier Element Web",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/FAJUZD/",
+   "genre": "talk",
+   "categories": [
+    "7713-in-practice"
+   ],
+   "blurb": "At FOSDEM 2026, we presented our plan to move Element Web to be powered by the Rust SDK by rewriting incrementally into reusable components. In this talk, we'll share our progress and insights so far, showcasing our prototype version of the client based on the Matrix Rust SDK along with improvements this has allowed us to bring to the web and desktop version we all know.\n\nSpeakers: Dave Baker, Florian Duros",
+   "durationMin": 25,
+   "imageUrl": null
+  },
+  {
+   "id": "ZAMKVT",
+   "title": "Widgets Working Group",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/ZAMKVT/",
+   "genre": "talk",
+   "categories": [
+    "7717-foundation"
+   ],
+   "blurb": "Matrix Widgets have been part of the Matrix universe for years — yet they remain underused, poorly understood, and inconsistently implemented across clients. The newly founded Matrix Widgets Working Group of the Foundation is tackling this head-on: aligning on definitions, mapping use cases, and building the foundation for a flourishing widget and app ecosystem across all Matrix clients. In this talk we share the Working Group's goals, current status, and latest results — and invite the community to get involved.\n\nSpeakers: Hato Nordeck",
+   "durationMin": 25,
+   "imageUrl": "https://cfp.2026.matrix.org/media/matrix-conference-2026/submissions/ZAMKVT/image_Rmnoq35.webp"
+  },
+  {
+   "id": "HDSVJB",
+   "title": "Matrix as a CRDT Backend: The perfect container for private structured Data",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/HDSVJB/",
+   "genre": "talk",
+   "categories": [
+    "7672-lightning-talks"
+   ],
+   "blurb": "Have you ever wanted to use Matrix as a backend for privately shared notes, workout tracking, expense management, task lists, or even local LLM memory storage?\n\nMatrix is a surprisingly strong fit for these use cases. It offers end-to-end encryption, solid SDK support, multiple homeserver implementations, and effortless redundant storage — simply join a room with two accounts on different homeservers.\n\nAll of this makes Matrix an ideal backend for CRDT data structures, particularly for apps that store personal data with owner-controlled collaboration and sharing. In this talk, I will present what requirements Matrix needs to fulfill to be the perfect container for CRDT data, where it currently falls short, and why the path forward is bright — requiring only minimal changes to the spec.\n\nThis talk grew out of discussions at the Matrix Conference 2025. At the Matrix Community Summit 2026, those topics were revisited and iterated across multiple widget and integration workshops.\n\nSpeakers: Timo Kandra",
+   "durationMin": 7,
+   "imageUrl": null
+  },
+  {
+   "id": "ZB8TVD",
+   "title": "Closing",
+   "titleLocal": null,
+   "url": "https://cfp.2026.matrix.org/matrix-conference-2026/talk/ZB8TVD/",
+   "genre": "talk",
+   "categories": [
+    "7670-keynote"
+   ],
+   "blurb": "Review and outlook\n\nSpeakers: Andy Piper",
+   "durationMin": 25,
+   "imageUrl": null
+  }
+ ],
+ "performances": [
+  {
+   "id": "N9AQGY/2026-10-21T10:00",
+   "eventId": "N9AQGY",
+   "venueId": "scandic-triangeln",
+   "roomId": "sofya",
+   "date": "2026-10-21",
+   "start": "10:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "BVPGVY/2026-10-21T10:15",
+   "eventId": "BVPGVY",
+   "venueId": "scandic-triangeln",
+   "roomId": "sofya",
+   "date": "2026-10-21",
+   "start": "10:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "SFHGBL/2026-10-21T10:45",
+   "eventId": "SFHGBL",
+   "venueId": "scandic-triangeln",
+   "roomId": "sofya",
+   "date": "2026-10-21",
+   "start": "10:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "PYSDEF/2026-10-21T11:30",
+   "eventId": "PYSDEF",
+   "venueId": "scandic-triangeln",
+   "roomId": "peter",
+   "date": "2026-10-21",
+   "start": "11:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "D9Y33R/2026-10-21T11:44",
+   "eventId": "D9Y33R",
+   "venueId": "scandic-triangeln",
+   "roomId": "peter",
+   "date": "2026-10-21",
+   "start": "11:44",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "VZQLU3/2026-10-21T12:00",
+   "eventId": "VZQLU3",
+   "venueId": "scandic-triangeln",
+   "roomId": "katherine",
+   "date": "2026-10-21",
+   "start": "12:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "NBMLXD/2026-10-21T12:00",
+   "eventId": "NBMLXD",
+   "venueId": "scandic-triangeln",
+   "roomId": "peter",
+   "date": "2026-10-21",
+   "start": "12:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "QD377V/2026-10-21T12:00",
+   "eventId": "QD377V",
+   "venueId": "scandic-triangeln",
+   "roomId": "sofya",
+   "date": "2026-10-21",
+   "start": "12:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "KDTBJ3/2026-10-21T12:00",
+   "eventId": "KDTBJ3",
+   "venueId": "scandic-triangeln",
+   "roomId": "workshop",
+   "date": "2026-10-21",
+   "start": "12:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "7TNQFM/2026-10-21T12:30",
+   "eventId": "7TNQFM",
+   "venueId": "scandic-triangeln",
+   "roomId": "peter",
+   "date": "2026-10-21",
+   "start": "12:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "WRGTRX/2026-10-21T12:30",
+   "eventId": "WRGTRX",
+   "venueId": "scandic-triangeln",
+   "roomId": "sofya",
+   "date": "2026-10-21",
+   "start": "12:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "TQJAV9/2026-10-21T13:00",
+   "eventId": "TQJAV9",
+   "venueId": "scandic-triangeln",
+   "roomId": "katherine",
+   "date": "2026-10-21",
+   "start": "13:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "DMFPLT/2026-10-21T13:00",
+   "eventId": "DMFPLT",
+   "venueId": "scandic-triangeln",
+   "roomId": "peter",
+   "date": "2026-10-21",
+   "start": "13:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "XE3K3B/2026-10-21T13:00",
+   "eventId": "XE3K3B",
+   "venueId": "scandic-triangeln",
+   "roomId": "sofya",
+   "date": "2026-10-21",
+   "start": "13:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "KDNVUL/2026-10-21T14:15",
+   "eventId": "KDNVUL",
+   "venueId": "scandic-triangeln",
+   "roomId": "katherine",
+   "date": "2026-10-21",
+   "start": "14:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "3PYU7E/2026-10-21T14:15",
+   "eventId": "3PYU7E",
+   "venueId": "scandic-triangeln",
+   "roomId": "peter",
+   "date": "2026-10-21",
+   "start": "14:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "UV3NTW/2026-10-21T14:15",
+   "eventId": "UV3NTW",
+   "venueId": "scandic-triangeln",
+   "roomId": "sofya",
+   "date": "2026-10-21",
+   "start": "14:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "XQU8GA/2026-10-21T14:15",
+   "eventId": "XQU8GA",
+   "venueId": "scandic-triangeln",
+   "roomId": "workshop",
+   "date": "2026-10-21",
+   "start": "14:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "CWLX8Z/2026-10-21T14:45",
+   "eventId": "CWLX8Z",
+   "venueId": "scandic-triangeln",
+   "roomId": "katherine",
+   "date": "2026-10-21",
+   "start": "14:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "7BLS3N/2026-10-21T14:45",
+   "eventId": "7BLS3N",
+   "venueId": "scandic-triangeln",
+   "roomId": "peter",
+   "date": "2026-10-21",
+   "start": "14:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "WWLM98/2026-10-21T14:45",
+   "eventId": "WWLM98",
+   "venueId": "scandic-triangeln",
+   "roomId": "sofya",
+   "date": "2026-10-21",
+   "start": "14:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "YHV8XB/2026-10-21T15:15",
+   "eventId": "YHV8XB",
+   "venueId": "scandic-triangeln",
+   "roomId": "katherine",
+   "date": "2026-10-21",
+   "start": "15:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "PUQNED/2026-10-21T15:15",
+   "eventId": "PUQNED",
+   "venueId": "scandic-triangeln",
+   "roomId": "peter",
+   "date": "2026-10-21",
+   "start": "15:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "M3A3HK/2026-10-21T15:15",
+   "eventId": "M3A3HK",
+   "venueId": "scandic-triangeln",
+   "roomId": "sofya",
+   "date": "2026-10-21",
+   "start": "15:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "KZM8NW/2026-10-21T15:45",
+   "eventId": "KZM8NW",
+   "venueId": "scandic-triangeln",
+   "roomId": "katherine",
+   "date": "2026-10-21",
+   "start": "15:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "NBEB99/2026-10-21T15:45",
+   "eventId": "NBEB99",
+   "venueId": "scandic-triangeln",
+   "roomId": "peter",
+   "date": "2026-10-21",
+   "start": "15:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "V9PXRV/2026-10-21T15:45",
+   "eventId": "V9PXRV",
+   "venueId": "scandic-triangeln",
+   "roomId": "sofya",
+   "date": "2026-10-21",
+   "start": "15:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "3GTLFM/2026-10-21T16:45",
+   "eventId": "3GTLFM",
+   "venueId": "scandic-triangeln",
+   "roomId": "katherine",
+   "date": "2026-10-21",
+   "start": "16:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "QXZEQJ/2026-10-21T16:45",
+   "eventId": "QXZEQJ",
+   "venueId": "scandic-triangeln",
+   "roomId": "peter",
+   "date": "2026-10-21",
+   "start": "16:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "7GYBAP/2026-10-21T16:45",
+   "eventId": "7GYBAP",
+   "venueId": "scandic-triangeln",
+   "roomId": "sofya",
+   "date": "2026-10-21",
+   "start": "16:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "WDFVAP/2026-10-21T16:45",
+   "eventId": "WDFVAP",
+   "venueId": "scandic-triangeln",
+   "roomId": "workshop",
+   "date": "2026-10-21",
+   "start": "16:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "DNNLEW/2026-10-21T17:15",
+   "eventId": "DNNLEW",
+   "venueId": "scandic-triangeln",
+   "roomId": "katherine",
+   "date": "2026-10-21",
+   "start": "17:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "HCZ83N/2026-10-21T17:15",
+   "eventId": "HCZ83N",
+   "venueId": "scandic-triangeln",
+   "roomId": "peter",
+   "date": "2026-10-21",
+   "start": "17:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "E9YU9X/2026-10-21T17:15",
+   "eventId": "E9YU9X",
+   "venueId": "scandic-triangeln",
+   "roomId": "sofya",
+   "date": "2026-10-21",
+   "start": "17:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "YWVEDN/2026-10-21T17:45",
+   "eventId": "YWVEDN",
+   "venueId": "scandic-triangeln",
+   "roomId": "katherine",
+   "date": "2026-10-21",
+   "start": "17:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "MFBXVD/2026-10-21T17:45",
+   "eventId": "MFBXVD",
+   "venueId": "scandic-triangeln",
+   "roomId": "peter",
+   "date": "2026-10-21",
+   "start": "17:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "39DKCK/2026-10-21T17:45",
+   "eventId": "39DKCK",
+   "venueId": "scandic-triangeln",
+   "roomId": "sofya",
+   "date": "2026-10-21",
+   "start": "17:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "FYKJMY/2026-10-22T10:00",
+   "eventId": "FYKJMY",
+   "venueId": "scandic-triangeln",
+   "roomId": "sofya",
+   "date": "2026-10-22",
+   "start": "10:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "G9XJTA/2026-10-22T10:30",
+   "eventId": "G9XJTA",
+   "venueId": "scandic-triangeln",
+   "roomId": "sofya",
+   "date": "2026-10-22",
+   "start": "10:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "JVU9AL/2026-10-22T11:15",
+   "eventId": "JVU9AL",
+   "venueId": "scandic-triangeln",
+   "roomId": "peter",
+   "date": "2026-10-22",
+   "start": "11:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "9KHRGR/2026-10-22T11:29",
+   "eventId": "9KHRGR",
+   "venueId": "scandic-triangeln",
+   "roomId": "peter",
+   "date": "2026-10-22",
+   "start": "11:29",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "FEBUFM/2026-10-22T11:38",
+   "eventId": "FEBUFM",
+   "venueId": "scandic-triangeln",
+   "roomId": "peter",
+   "date": "2026-10-22",
+   "start": "11:38",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "RERS8J/2026-10-22T11:45",
+   "eventId": "RERS8J",
+   "venueId": "scandic-triangeln",
+   "roomId": "katherine",
+   "date": "2026-10-22",
+   "start": "11:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "HVRHVW/2026-10-22T11:45",
+   "eventId": "HVRHVW",
+   "venueId": "scandic-triangeln",
+   "roomId": "peter",
+   "date": "2026-10-22",
+   "start": "11:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "DDYYQW/2026-10-22T11:45",
+   "eventId": "DDYYQW",
+   "venueId": "scandic-triangeln",
+   "roomId": "sofya",
+   "date": "2026-10-22",
+   "start": "11:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "CJXTB9/2026-10-22T11:45",
+   "eventId": "CJXTB9",
+   "venueId": "scandic-triangeln",
+   "roomId": "workshop",
+   "date": "2026-10-22",
+   "start": "11:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "LNVNTW/2026-10-22T12:15",
+   "eventId": "LNVNTW",
+   "venueId": "scandic-triangeln",
+   "roomId": "katherine",
+   "date": "2026-10-22",
+   "start": "12:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "AWDD8K/2026-10-22T12:15",
+   "eventId": "AWDD8K",
+   "venueId": "scandic-triangeln",
+   "roomId": "peter",
+   "date": "2026-10-22",
+   "start": "12:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "EYBZT9/2026-10-22T12:45",
+   "eventId": "EYBZT9",
+   "venueId": "scandic-triangeln",
+   "roomId": "katherine",
+   "date": "2026-10-22",
+   "start": "12:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "8LWQES/2026-10-22T12:45",
+   "eventId": "8LWQES",
+   "venueId": "scandic-triangeln",
+   "roomId": "peter",
+   "date": "2026-10-22",
+   "start": "12:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "8ZCYUQ/2026-10-22T12:45",
+   "eventId": "8ZCYUQ",
+   "venueId": "scandic-triangeln",
+   "roomId": "sofya",
+   "date": "2026-10-22",
+   "start": "12:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "DFBNCV/2026-10-22T14:15",
+   "eventId": "DFBNCV",
+   "venueId": "scandic-triangeln",
+   "roomId": "katherine",
+   "date": "2026-10-22",
+   "start": "14:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "RAJEHG/2026-10-22T14:15",
+   "eventId": "RAJEHG",
+   "venueId": "scandic-triangeln",
+   "roomId": "peter",
+   "date": "2026-10-22",
+   "start": "14:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "A8MVMH/2026-10-22T14:15",
+   "eventId": "A8MVMH",
+   "venueId": "scandic-triangeln",
+   "roomId": "sofya",
+   "date": "2026-10-22",
+   "start": "14:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "MY8PLV/2026-10-22T14:15",
+   "eventId": "MY8PLV",
+   "venueId": "scandic-triangeln",
+   "roomId": "workshop",
+   "date": "2026-10-22",
+   "start": "14:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "UZT7QE/2026-10-22T14:45",
+   "eventId": "UZT7QE",
+   "venueId": "scandic-triangeln",
+   "roomId": "katherine",
+   "date": "2026-10-22",
+   "start": "14:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "QEQAZY/2026-10-22T14:45",
+   "eventId": "QEQAZY",
+   "venueId": "scandic-triangeln",
+   "roomId": "peter",
+   "date": "2026-10-22",
+   "start": "14:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "TZ8ZYX/2026-10-22T14:45",
+   "eventId": "TZ8ZYX",
+   "venueId": "scandic-triangeln",
+   "roomId": "sofya",
+   "date": "2026-10-22",
+   "start": "14:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "37GLHX/2026-10-22T15:15",
+   "eventId": "37GLHX",
+   "venueId": "scandic-triangeln",
+   "roomId": "katherine",
+   "date": "2026-10-22",
+   "start": "15:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "BQUNNE/2026-10-22T15:15",
+   "eventId": "BQUNNE",
+   "venueId": "scandic-triangeln",
+   "roomId": "peter",
+   "date": "2026-10-22",
+   "start": "15:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "XTFYUT/2026-10-22T15:15",
+   "eventId": "XTFYUT",
+   "venueId": "scandic-triangeln",
+   "roomId": "sofya",
+   "date": "2026-10-22",
+   "start": "15:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "KS3A8F/2026-10-22T16:15",
+   "eventId": "KS3A8F",
+   "venueId": "scandic-triangeln",
+   "roomId": "katherine",
+   "date": "2026-10-22",
+   "start": "16:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "87JMFS/2026-10-22T16:15",
+   "eventId": "87JMFS",
+   "venueId": "scandic-triangeln",
+   "roomId": "peter",
+   "date": "2026-10-22",
+   "start": "16:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "HKSYET/2026-10-22T16:15",
+   "eventId": "HKSYET",
+   "venueId": "scandic-triangeln",
+   "roomId": "sofya",
+   "date": "2026-10-22",
+   "start": "16:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "RXVU33/2026-10-22T16:15",
+   "eventId": "RXVU33",
+   "venueId": "scandic-triangeln",
+   "roomId": "workshop",
+   "date": "2026-10-22",
+   "start": "16:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "8EBDVB/2026-10-22T16:45",
+   "eventId": "8EBDVB",
+   "venueId": "scandic-triangeln",
+   "roomId": "katherine",
+   "date": "2026-10-22",
+   "start": "16:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "FAJUZD/2026-10-22T16:45",
+   "eventId": "FAJUZD",
+   "venueId": "scandic-triangeln",
+   "roomId": "peter",
+   "date": "2026-10-22",
+   "start": "16:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "ZAMKVT/2026-10-22T16:45",
+   "eventId": "ZAMKVT",
+   "venueId": "scandic-triangeln",
+   "roomId": "sofya",
+   "date": "2026-10-22",
+   "start": "16:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "HDSVJB/2026-10-22T17:15",
+   "eventId": "HDSVJB",
+   "venueId": "scandic-triangeln",
+   "roomId": "peter",
+   "date": "2026-10-22",
+   "start": "17:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "ZB8TVD/2026-10-22T17:45",
+   "eventId": "ZB8TVD",
+   "venueId": "scandic-triangeln",
+   "roomId": "sofya",
+   "date": "2026-10-22",
+   "start": "17:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  }
+ ],
+ "sources": {
+  "festival": [
+   "festival.toml"
+  ],
+  "venues": [
+   "pretalx",
+   "venues-research"
+  ],
+  "events": [
+   "pretalx"
+  ],
+  "performances": [
+   "pretalx"
+  ],
+  "availability": [],
+  "prices": []
+ },
+ "provenance": {
+  "sources": {
+   "venues-research": {
+    "kind": "curated",
+    "path": "scraper/festivals/matrix_conference/curated/venues.json"
+   },
+   "pretalx": {
+    "kind": "fetched",
+    "path": "data/festivals/matrix-conference/2026/pretalx",
+    "fetchedAt": "2026-10-02T18:34:16Z",
+    "fetcher": "scraper/festivals/matrix_conference/sources/pretalx/fetch.py",
+    "fetcherVersion": 1
+   }
+  },
+  "absent": [],
+  "fields": {
+   "categories.name": [
+    "pretalx"
+   ],
+   "events.blurb": [
+    "pretalx"
+   ],
+   "events.categories": [
+    "pretalx"
+   ],
+   "events.durationMin": [
+    "pretalx"
+   ],
+   "events.imageUrl": [
+    "pretalx"
+   ],
+   "events.title": [
+    "pretalx"
+   ],
+   "events.url": [
+    "pretalx"
+   ],
+   "performances.date": [
+    "pretalx"
+   ],
+   "performances.eventId": [
+    "pretalx"
+   ],
+   "performances.roomId": [
+    "pretalx"
+   ],
+   "performances.start": [
+    "pretalx"
+   ],
+   "performances.ticketUrl": [
+    "pretalx"
+   ],
+   "performances.venueId": [
+    "pretalx"
+   ],
+   "venues.address": [
+    "venues-research"
+   ],
+   "venues.lat": [
+    "venues-research"
+   ],
+   "venues.lng": [
+    "venues-research"
+   ],
+   "venues.name": [
+    "venues-research"
+   ],
+   "venues.notes": [
+    "venues-research"
+   ],
+   "venues.refs": [
+    "venues-research"
+   ],
+   "venues.rooms": [
+    "pretalx"
+   ]
+  },
+  "skipped": {}
+ }
+}

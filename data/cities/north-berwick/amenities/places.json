@@ -1,0 +1,192 @@
+{
+ "nearM": 1500,
+ "anchors": [
+  {
+   "festival": "fringe-by-the-sea",
+   "venue": "lodge-grounds",
+   "lat": 56.058,
+   "lng": -2.71661
+  },
+  {
+   "festival": "fringe-by-the-sea",
+   "venue": "scottish-seabird-centre",
+   "lat": 56.06139,
+   "lng": -2.71746
+  },
+  {
+   "festival": "fringe-by-the-sea",
+   "venue": "the-marine-hotel",
+   "lat": 56.05943,
+   "lng": -2.73874
+  },
+  {
+   "festival": "fringe-by-the-sea",
+   "venue": "the-rocketeer-restaurant",
+   "lat": 56.06066,
+   "lng": -2.71784
+  },
+  {
+   "festival": "fringe-by-the-sea",
+   "venue": "west-beach",
+   "lat": 56.05899,
+   "lng": -2.72436
+  }
+ ],
+ "places": [
+  {
+   "id": "node/13955561843",
+   "lat": 56.05842,
+   "lng": -2.727783,
+   "tags": {
+    "name": "Folly Hotel",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/1647153998",
+   "lat": 56.058003,
+   "lng": -2.722504,
+   "tags": {
+    "name": "Lucky House",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "125-127",
+    "addr:street": "High Street",
+    "addr:postcode": "EH39 4HB"
+   }
+  },
+  {
+   "id": "node/1647165449",
+   "lat": 56.058297,
+   "lng": -2.719816,
+   "tags": {
+    "name": "Osteria",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "addr:housenumber": "71",
+    "addr:street": "High Street",
+    "addr:postcode": "EH39 4HG"
+   }
+  },
+  {
+   "id": "node/1647180291",
+   "lat": 56.058813,
+   "lng": -2.716876,
+   "tags": {
+    "name": "Zitto",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://zitto.co.uk/",
+    "addr:housenumber": "10",
+    "addr:street": "Quality Street",
+    "addr:postcode": "EH39 4HP"
+   }
+  },
+  {
+   "id": "node/1647182001",
+   "lat": 56.058917,
+   "lng": -2.716907,
+   "tags": {
+    "name": "No. 12 Hotel & Bistro",
+    "amenity": "restaurant",
+    "website": "http://no12qualitystreet.co.uk/",
+    "addr:housenumber": "12",
+    "addr:street": "Quality Street",
+    "addr:postcode": "EH39 4HP"
+   }
+  },
+  {
+   "id": "node/1647216850",
+   "lat": 56.058449,
+   "lng": -2.718474,
+   "tags": {
+    "name": "The Grange",
+    "amenity": "restaurant",
+    "cuisine": "steak_house",
+    "addr:housenumber": "35",
+    "addr:street": "High Street",
+    "addr:postcode": "EH39 4HH"
+   }
+  },
+  {
+   "id": "node/2244978351",
+   "lat": 56.059136,
+   "lng": -2.717364,
+   "tags": {
+    "name": "Cucina Amore",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "addr:housenumber": "37-39",
+    "addr:street": "Quality Street",
+    "addr:postcode": "EH39 4HR"
+   }
+  },
+  {
+   "id": "node/2249466016",
+   "lat": 56.059058,
+   "lng": -2.71734,
+   "tags": {
+    "name": "35a Quality Street",
+    "tourism": "guest_house",
+    "website": "https://www.35aqualitystreet.co.uk/",
+    "addr:housenumber": "35a",
+    "addr:street": "Quality Street",
+    "addr:postcode": "EH39 4HR"
+   }
+  },
+  {
+   "id": "node/4755436306",
+   "lat": 56.057949,
+   "lng": -2.722996,
+   "tags": {
+    "name": "Poonthais",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "website": "http://www.poonthais.com/",
+    "addr:housenumber": "7",
+    "addr:street": "Westgate",
+    "addr:postcode": "EH39 4AE"
+   }
+  },
+  {
+   "id": "node/513064956",
+   "lat": 56.059428,
+   "lng": -2.738742,
+   "tags": {
+    "name": "Marine North Berwick",
+    "tourism": "hotel",
+    "website": "https://marineandlawn.com/marinenorthberwick/",
+    "addr:housenumber": "18",
+    "addr:street": "Cromwell Road",
+    "addr:postcode": "EH39 4LZ"
+   }
+  },
+  {
+   "id": "node/513064970",
+   "lat": 56.058134,
+   "lng": -2.73518,
+   "tags": {
+    "name": "Nether Abbey Hotel",
+    "tourism": "hotel",
+    "website": "https://netherabbey.co.uk/",
+    "addr:housenumber": "20",
+    "addr:street": "Dirleton Avenue",
+    "addr:postcode": "EH39 4BQ"
+   }
+  },
+  {
+   "id": "way/73550193",
+   "lat": 56.06066,
+   "lng": -2.717836,
+   "tags": {
+    "name": "Rocketeer Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "opening_hours": "Mo-We 09:00-17:00; Th-Sa 09:00-20:00; Su 09:00-18:00",
+    "addr:housenumber": "26",
+    "addr:street": "Victoria Road",
+    "addr:postcode": "EH39 4JL"
+   }
+  }
+ ]
+}

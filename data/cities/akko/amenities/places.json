@@ -1,0 +1,185 @@
+{
+ "nearM": 1000,
+ "anchors": [
+  {
+   "festival": "acco",
+   "venue": "acco-theatre-centre",
+   "lat": 32.92358,
+   "lng": 35.07053
+  }
+ ],
+ "places": [
+  {
+   "id": "node/12889488301",
+   "lat": 32.92197,
+   "lng": 35.067356,
+   "tags": {
+    "name": "Beit Elfarasha בית אלפראשה",
+    "tourism": "hotel",
+    "website": "https://beitelfarasha.com/",
+    "addr:housenumber": "49",
+    "addr:street": "הבהאים"
+   }
+  },
+  {
+   "id": "node/13522902189",
+   "lat": 32.923067,
+   "lng": 35.070854,
+   "tags": {
+    "name": "Moalem Restaurant",
+    "amenity": "restaurant",
+    "addr:housenumber": "26",
+    "addr:street": "HaShuk Hartum"
+   }
+  },
+  {
+   "id": "node/2055949175",
+   "lat": 32.923288,
+   "lng": 35.07205,
+   "tags": {
+    "name": "אכסניית נוער",
+    "name:en": "Youth hostel",
+    "tourism": "hostel"
+   }
+  },
+  {
+   "id": "node/2063730766",
+   "lat": 32.919308,
+   "lng": 35.068716,
+   "tags": {
+    "name": "أبو كريستو",
+    "name:en": "Abu Christo",
+    "amenity": "restaurant",
+    "cuisine": "seafood"
+   }
+  },
+  {
+   "id": "node/2063749916",
+   "lat": 32.921878,
+   "lng": 35.072651,
+   "tags": {
+    "name": "אכסניית שער עכו",
+    "name:en": "Sha'ar Acko motel",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "node/2063879188",
+   "lat": 32.922078,
+   "lng": 35.072819,
+   "tags": {
+    "name": "מלון עכוטל",
+    "name:en": "Akkotel",
+    "tourism": "hotel",
+    "wikidata": "Q111415810",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/2430210161",
+   "lat": 32.927991,
+   "lng": 35.0692,
+   "tags": {
+    "name": "אלבאבור",
+    "name:en": "Elbabur",
+    "amenity": "restaurant",
+    "contact:website": "www.el-babur.com"
+   }
+  },
+  {
+   "id": "node/2539429319",
+   "lat": 32.919306,
+   "lng": 35.068418,
+   "tags": {
+    "name": "دنيانا",
+    "name:en": "Doniana",
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "website": "https://www.facebook.com/דוניאנא-Doniana-دنيانا-331353773618640/"
+   }
+  },
+  {
+   "id": "node/2817702084",
+   "lat": 32.922178,
+   "lng": 35.072395,
+   "tags": {
+    "name": "نزل عكا",
+    "name:en": "Acko Hostel",
+    "tourism": "hostel",
+    "wikidata": "Q111125893"
+   }
+  },
+  {
+   "id": "node/3253983090",
+   "lat": 32.920475,
+   "lng": 35.067055,
+   "tags": {
+    "name": "نزار خوري للاستضافة",
+    "name:en": "Nzar Khoury for Hosting",
+    "tourism": "hostel",
+    "website": "https://www.booking.com/hotel/il/nzar-khoury-for-hosting.html",
+    "wikidata": "Q111997797",
+    "addr:housenumber": "مدينة عكا القديمة 11/83"
+   }
+  },
+  {
+   "id": "node/4035454889",
+   "lat": 32.919947,
+   "lng": 35.06945,
+   "tags": {
+    "name": "מסעדת המרינה",
+    "name:en": "The Marina Restaurant",
+    "amenity": "restaurant",
+    "addr:street": "לאופולד השני",
+    "addr:postcode": "84900"
+   }
+  },
+  {
+   "id": "node/442370184",
+   "lat": 32.920096,
+   "lng": 35.066892,
+   "tags": {
+    "name": "אורי בורי",
+    "name:en": "Uri Buri",
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "website": "https://www.uriburi.co.il/",
+    "addr:street": "ההגנה",
+    "addr:postcode": "24315"
+   }
+  },
+  {
+   "id": "node/4599452989",
+   "lat": 32.92836,
+   "lng": 35.073015,
+   "tags": {
+    "name": "Safta",
+    "name:en": "Safta",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "node/6832660085",
+   "lat": 32.920739,
+   "lng": 35.069396,
+   "tags": {
+    "name": "Turkiz",
+    "name:en": "Turkiz",
+    "amenity": "restaurant",
+    "cuisine": "fish",
+    "addr:street": "יוליוס קיסר"
+   }
+  },
+  {
+   "id": "way/816116524",
+   "lat": 32.919453,
+   "lng": 35.066511,
+   "tags": {
+    "name": "אלפנאר",
+    "name:en": "Alfanar",
+    "amenity": "restaurant",
+    "addr:street": "ההגנה"
+   }
+  }
+ ]
+}
