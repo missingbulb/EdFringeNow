@@ -35,8 +35,8 @@ packs:
     - "public-website"
 tasks:
   disabled:
-    - "edfringe/refresh-shows"
-    - "edfringe/refresh-tickets"
+    - "edfringe-now/refresh-shows"
+    - "edfringe-now/refresh-tickets"
     - "edfringe-now/festival-update"
     - "edfringe-now/festival-refresh"
   routines:
