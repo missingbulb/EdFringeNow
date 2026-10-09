@@ -13,9 +13,9 @@ enforced by a check:
 
 ## `edfringe-lookup-indices`
 
-`lookup-indices.mjs` asserts that every positional reference in the committed wire files resolves
+The `edfringe-lookup-indices` check asserts that every positional reference in the committed wire files resolves
 inside `site/data/venues.json`'s lookup lists: the day files' `genre` / `room` / `subs` / `ts` and
 `shows.min.json`'s `g` / `rm` / `sg` / `ar` / `p[].t` (`-1` is the producer's "unknown" and
-passes). Its red-first fixture is `data-checks.test.mjs`, run by `npm test` / `scripts/verify.sh`;
+passes). Its red-first fixtures are the pack's Go check tests (`checks/test.sh`, run by `scripts/verify.sh`);
 the last fixture runs the rule over this repo's real committed data, so the check is a live gate on
 every scrape commit and not just a unit test of itself.
