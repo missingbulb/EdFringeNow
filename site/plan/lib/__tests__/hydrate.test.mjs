@@ -25,6 +25,11 @@ const DATA = path.join(__dirname, "..", "..", "..", "data");
 const PIPELINE_DATA = path.join(__dirname, "..", "..", "..", "..", "data");
 const master = JSON.parse(
   readFileSync(path.join(PIPELINE_DATA, "normalized", "shows.json"), "utf-8"));
+// scraper/normalize.py keeps a withdrawn show in the master (reconcile_withdrawn)
+// but excludes it from shows.min.json (active_shows) — the round trip below is
+// only ever a claim about the shows actually shipped, so it compares against
+// this, not the raw master.
+const activeMaster = master.filter((s) => !s.withdrawn);
 const wire = JSON.parse(readFileSync(path.join(DATA, "normalized", "shows.min.json"), "utf-8"));
 const lookups = JSON.parse(readFileSync(path.join(DATA, "venues.json"), "utf-8"));
 const descriptions = JSON.parse(
@@ -48,22 +53,34 @@ function expected(show) {
   return { ...rest, image: imageUrl(show.image), smallImage: imageUrl(show.smallImage) };
 }
 
-test("shows.min.json rehydrates byte-identical to the master shows.json", () => {
+test("shows.min.json rehydrates byte-identical to the master's active shows", () => {
   const rehydrated = rehydrateShows(wire, lookups, YEAR, availability);
-  assert.equal(rehydrated.length, master.length, "show count must match");
+  assert.equal(rehydrated.length, activeMaster.length, "show count must match");
 
   let mismatches = 0;
   let firstBad = null;
-  for (let i = 0; i < master.length; i++) {
-    const e = JSON.stringify(expected(master[i]));
+  for (let i = 0; i < activeMaster.length; i++) {
+    const e = JSON.stringify(expected(activeMaster[i]));
     const r = JSON.stringify(rehydrated[i]);
     if (e !== r) {
       mismatches++;
-      if (!firstBad) firstBad = { i, id: master[i].id, expected: e.slice(0, 200), got: r.slice(0, 200) };
+      if (!firstBad) firstBad = { i, id: activeMaster[i].id, expected: e.slice(0, 200), got: r.slice(0, 200) };
     }
   }
   assert.equal(mismatches, 0,
-    `every show must round-trip losslessly; first mismatch: ${JSON.stringify(firstBad)}`);
+    `every active show must round-trip losslessly; first mismatch: ${JSON.stringify(firstBad)}`);
+});
+
+// A withdrawn show is a real, if rare, state of the master (scraper/normalize.py's
+// reconcile_withdrawn) — it never reaches shows.min.json at all, so nothing in
+// the wire form should name it.
+test("a withdrawn master show never appears in shows.min.json", () => {
+  const withdrawnIds = new Set(master.filter((s) => s.withdrawn).map((s) => s.id));
+  if (withdrawnIds.size === 0) return; // nothing withdrawn in the committed data yet
+  const wireIds = new Set(wire.map((s) => s.i));
+  for (const id of withdrawnIds) {
+    assert.ok(!wireIds.has(id), `withdrawn show ${id} must not be in shows.min.json`);
+  }
 });
 
 // The other half of the round-trip: what the catalogue drops, the sidecar must

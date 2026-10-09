@@ -112,6 +112,11 @@ is the judgment those two don't carry.
   `data/prices.json` is committed input written by `scraper/fetch_prices.py`, and nothing
   overwrites a hand-edit there, which is why re-running the fetch is the only fix.
 
+- **Keeping the master accurate when a show leaves the listing** — mark it `withdrawn`
+  (`reconcile_withdrawn`), never delete it, and only when `fetch_manifest.json` attests the pass
+  walked the whole listing: a partial pass read as complete would delete real shows.
+  (withdrawal-reconciliation)
+
 - **Adding a festival, an edition or a source** — `site/data/festivals/` is
   `scraper/convert/to_serving.py`'s output and `data/festivals/` its hand-fetched input; name each
   new file and its writer in `edfringe-data-dir-is-generator-output`'s allowlist, never the

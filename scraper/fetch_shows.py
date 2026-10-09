@@ -13,8 +13,15 @@ Flow:
      us how many pages there are (~77).
 
 Output (default data/raw_pages/):
-  * page_NN.json   - the raw `events` payload for each page (for later re-use)
-  * shows.json     - all show results flattened into a single array
+  * page_NN.json         - the raw `events` payload for each page (for later re-use)
+  * shows.json           - all show results flattened into a single array
+  * fetch_manifest.json  - the completeness signal: whether this run's page files
+                           amount to a walk of the WHOLE listing (recentlyAdded=ANY,
+                           no page cap, nothing failed). scraper/normalize.py's
+                           `--merge` reads it and refuses to mark any show withdrawn
+                           unless it says `"complete": true` — a recently-added
+                           top-up, a capped run or a failed page must never be read
+                           as "these are the only shows there are".
 
 Behaviour mirrors the original downloader: a random delay between requests,
 resumable (existing page files are skipped), atomic writes.
@@ -278,6 +285,35 @@ def fetch_genres(token: str) -> list:
     return data["data"]["genres"]
 
 
+# The manifest's own filename, read back by scraper/normalize.py's
+# load_fetch_manifest. Named, not shaped, so a stray JSON file left in
+# raw_pages/ by something else is never mistaken for it.
+MANIFEST_NAME = "fetch_manifest.json"
+
+
+def fetch_completeness(recently_added: str, total_pages: int, max_pages: int | None,
+                       fetched: int, skipped: int, failed: int) -> tuple[bool, str | None]:
+    """Whether this run's accumulated page files (existing + freshly fetched)
+    amount to a walk of the WHOLE listing — the signal normalize.py's `--merge`
+    requires before it will treat an id missing from this pass as withdrawn.
+
+    Pure and total: every reason a pass is partial is spelled out explicitly
+    rather than inferred, because a false "complete" here is what would let a
+    reconciliation delete shows that were simply never visited.
+    """
+    reasons = []
+    if recently_added != "ANY":
+        reasons.append(f"recentlyAdded={recently_added} narrows the walk to a subset "
+                       f"of the listing")
+    if max_pages is not None:
+        reasons.append(f"--max-pages capped the run at {max_pages} of {total_pages} pages")
+    if failed:
+        reasons.append(f"{failed} page(s) failed to fetch")
+    if fetched + skipped != total_pages:
+        reasons.append(f"only {fetched + skipped}/{total_pages} pages are accounted for")
+    return (not reasons), ("; ".join(reasons) or None)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -402,6 +438,25 @@ def main() -> int:
     shows_path.write_text(json.dumps(all_shows, ensure_ascii=False, indent=1))
     print(f"\n[{elapsed()}] Done. fetched={fetched} skipped={skipped} failed={failed}")
     print(f"[{elapsed()}] Total shows collected: {len(all_shows)} -> {shows_path}")
+
+    # The completeness signal: written every run, alongside shows.json, so the
+    # two never drift apart. Absence of this file (an older raw cache) reads as
+    # "unknown", not "complete" — normalize.py's reconciliation treats the two
+    # identically and refuses to run on either.
+    complete, reason = fetch_completeness(args.recently_added, total_pages, args.max_pages,
+                                          fetched, skipped, failed)
+    manifest = {
+        "recently_added": args.recently_added, "total": total, "per": args.per,
+        "total_pages": total_pages, "max_pages": args.max_pages,
+        "fetched": fetched, "skipped": skipped, "failed": failed,
+        "complete": complete, "reason": reason,
+    }
+    manifest_path = out_dir / MANIFEST_NAME
+    tmp = manifest_path.with_suffix(".json.tmp")
+    tmp.write_text(json.dumps(manifest, indent=1))
+    tmp.replace(manifest_path)
+    print(f"[{elapsed()}] complete={complete}" + (f" ({reason})" if reason else "") +
+          f" -> {manifest_path}")
     return 1 if failed else 0
 
 
