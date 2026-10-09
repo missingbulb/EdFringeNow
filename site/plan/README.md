@@ -33,14 +33,16 @@ There is **no server and no build step**. Everything runs in the browser:
    it indexes into, and `../data/normalized/availability.min.json`, which supplies
    each performance's `{soldOut, status}`.
 
-   They are three files rather than one so each can be cached for as long as its
-   contents last — 4 days for the catalogue (948 KB gzipped), 1 day for
-   availability (149 KB), which is the only one of them that moves through the
-   day. See
+   They are three files rather than one so each is only re-downloaded when it
+   actually changes — the catalogue (948 KB gzipped) carries nothing that moves
+   through the day, while availability (149 KB) is the one of the three that
+   does. A published manifest (`data/manifest.json`) names each file's current
+   hash and replaces guessing a lifetime per file; see
    [`site/shared/data-cache.js`](../shared/data-cache.js) and the caching table in
-   [`scraper/README.md`](../../scraper/README.md). Availability is the one fetch
-   allowed to fail: without it every performance is status-unknown, which the
-   grid already draws.
+   [`scraper/README.md`](../../scraper/README.md). All three are required —
+   without availability every performance would read as status-unknown, which
+   the grid draws as unbookable, so a load that can't get it goes to the error
+   panel instead of guessing.
 2. You upload your **favourites CSV** (the edfringe export). It is parsed in the
    browser with the `FileReader` API — nothing is uploaded anywhere. The CSV's
    `URL to Event Details` column yields a slug that matches `show.slug`, so

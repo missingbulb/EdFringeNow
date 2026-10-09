@@ -13,7 +13,7 @@
 // whenever the date window or any control changes.
 
 import { isInUK } from "../shared/geo.js";
-import { cachedFetchJson, DAY_MS } from "../shared/data-cache.js";
+import { cachedFetchJson, fetchManifest } from "../shared/data-cache.js";
 import { loadEdfringeWire } from "../shared/edfringe-wire.js";
 import { genreEmoji } from "../shared/edfringe.js";
 import { stayLink, travelLink } from "../shared/affiliates.js";
@@ -45,12 +45,12 @@ const DATA_URL = "../data/normalized/shows.min.json"; // compact catalogue; rehy
 const VENUES_URL = "../data/venues.json"; // shared lookups (enums + venue map) the catalogue indexes into
 const AVAILABILITY_URL = "../data/normalized/availability.min.json"; // per-performance ticket status
 const DESCRIPTIONS_URL = "../data/normalized/descriptions.min.json"; // slug → full text, fetched lazily
+const MANIFEST_URL = "../data/manifest.json"; // every file above, hashed — see shared/data-cache.js
 
-/* How long the descriptions sidecar may be reused before we ask the network
- * again (shared/data-cache.js): descriptions are effectively immutable, so a
- * week means a returning visitor pays for them once. The three files the
- * planner is built from carry their own lifetimes (shared/edfringe-wire.js). */
-const DESCRIPTIONS_TTL_MS = 7 * DAY_MS;
+/* Whether a downloaded data file may be reused, rather than how long, is
+ * decided by data/manifest.json (shared/data-cache.js): a file is re-fetched
+ * exactly when its published hash has moved. The three files the planner is
+ * built from are fetched and joined by shared/edfringe-wire.js. */
 
 const YEAR = 2026;
 const MONTH = "08"; // August, 2-digit
@@ -227,7 +227,7 @@ const state = {
  * copies we were given don't agree with each other (shared/edfringe-wire.js). */
 function loadCatalogue() {
   return loadEdfringeWire(
-    { catalogue: DATA_URL, lookups: VENUES_URL, availability: AVAILABILITY_URL },
+    { catalogue: DATA_URL, lookups: VENUES_URL, availability: AVAILABILITY_URL, manifest: MANIFEST_URL },
     { year: YEAR, onNote: noteCache }
   );
 }
@@ -282,14 +282,17 @@ function showLoadError(err) {
 
 /**
  * The descriptions sidecar: slug → the show's full text, fetched once per page
- * and cached for a week. Everything it feeds already works without it — the
- * hover card falls back to the catalogue's one-line blurb, and so does search —
- * so a failure here is logged and dropped, never surfaced. When it does land,
- * an open search re-runs so the results deepen under the query already typed.
+ * and reused for as long as the manifest says it's still current — in
+ * practice close to forever, since the text is effectively immutable.
+ * Everything it feeds already works without it — the hover card falls back
+ * to the catalogue's one-line blurb, and so does search — so a failure here
+ * is logged and dropped, never surfaced. When it does land, an open search
+ * re-runs so the results deepen under the query already typed.
  */
 function loadDescriptions() {
   if (state.descriptionsPromise) return state.descriptionsPromise;
-  state.descriptionsPromise = cachedFetchJson(DESCRIPTIONS_URL, DESCRIPTIONS_TTL_MS, noteCache)
+  state.descriptionsPromise = fetchManifest(MANIFEST_URL, noteCache)
+    .then((manifest) => cachedFetchJson(DESCRIPTIONS_URL, manifest, noteCache))
     .then((payload) => {
       state.descriptions = new Map(Object.entries((payload && payload.d) || {}));
       if (!$("ssPop").hidden) runSearch();

@@ -13,7 +13,7 @@
 
 import { showUrl } from "../shared/edfringe.js";
 import { isInUK } from "../shared/geo.js";
-import { cachedFetchJson, DAY_MS } from "../shared/data-cache.js";
+import { cachedFetchJson, fetchManifest } from "../shared/data-cache.js";
 import { friendlyDuration } from "../shared/duration.js";
 import { attachVersionPopup } from "../shared/version-popup.js";
 import { readVersionStamp } from "../shared/version.js";
@@ -193,25 +193,12 @@ async function init() {
 }
 
 /* ---------- Data loading ---------- */
-/* How long a downloaded data file may be reused before we ask the network again
- * (shared/data-cache.js).
- *
- * The day file gets an HOUR, not a day, and the reason is this page's whole
- * premise: it answers "what can I get into right now", so it should always be
- * showing the freshest availability published. The file is small, so a re-fetch
- * that comes back unchanged costs almost nothing.
- *
- * That still buys the reuse worth having. The url is keyed by date, so this only
- * ever concerns revisits within one day, and the common ones — a reload, a
- * reopened tab, a return an hour either side of a show — skip the download
- * entirely. The planner's catalogue is the file that earns a long TTL, and it
- * earns it by carrying no availability at all.
- *
- * venues.json holds for a day: it carries no ticket status, and its lookup lists
- * are append-only, so a copy fetched today decodes anything the day file can say.
- */
-const DAY_TTL_MS = 60 * 60 * 1000;
-const LOOKUPS_TTL_MS = DAY_MS;
+/* Which data files this page downloads. Freshness for both is decided by
+ * data/manifest.json (shared/data-cache.js), not a guessed lifetime — the day
+ * file changes whenever the hourly ticket refresh actually changes today's
+ * statuses, and no more often, which is exactly "always show the freshest
+ * availability published" without re-downloading it every load regardless. */
+const MANIFEST_URL = "data/manifest.json";
 
 /* Load today's shows: the per-day file (only this fringe day's performances,
  * kept small) joined with the venue lookup (names + coordinates), reshaped for
@@ -232,14 +219,19 @@ async function loadShows() {
   // couple of hours", with nothing wrong that anything logs.
   const wantedDay = NOW.fringeDate;
   try {
+    // Fetched fresh for this load — see fetchManifest's doc for why it must
+    // never be cached itself. A failure here (null) just means both fetches
+    // below skip the cache and go straight to the network; the data still
+    // loads correctly.
+    const manifest = await fetchManifest(MANIFEST_URL, noteCache);
     // Both are validated on the way out of the cache: a stored copy from an older
     // generation parses fine and then reads as an empty festival, with nothing
     // logged anywhere (#309). venues.json in particular is the same Cache Storage
     // entry the planner uses — one bad copy would take out both pages.
     const [lookups, day] = await Promise.all([
-      cachedFetchJson("data/venues.json", LOOKUPS_TTL_MS, noteCache,
+      cachedFetchJson("data/venues.json", manifest, noteCache,
         (d) => Boolean(d) && typeof d.venues === "object" && d.venues !== null),
-      cachedFetchJson(`data/days/${NOW.fringeDate}.json`, DAY_TTL_MS, noteCache,
+      cachedFetchJson(`data/days/${NOW.fringeDate}.json`, manifest, noteCache,
         (d) => Array.isArray(d)),
     ]);
     if (NOW.fringeDate !== wantedDay) return;
