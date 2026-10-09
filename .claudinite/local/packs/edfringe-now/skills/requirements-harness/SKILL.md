@@ -1,6 +1,6 @@
 ---
 name: requirements-harness
-description: How EdFringeNow runs product/requirements.md as tests under a real headless Chromium - writing leaves and goldens, the harness's determinism traps, the frozen fixtures and golden approval. Use before editing product/requirements.md or anything under product/requirements/.
+description: How EdFringeNow runs product/requirements.md as tests in headless Chromium: leaves, goldens, determinism traps, fixtures and approval. Use before editing product/requirements.md or product/requirements/.
 metadata:
   body: guidelines
   force-load-on-file-edits-paths:
