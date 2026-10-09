@@ -1,5 +1,4 @@
 {
-  "$schema": "../../../../../shared/packs/claudinite-tasks/task.schema.json",
   "id": "festival-update",
   "description": "Stage 3 of the data lifecycle: runs every due festival edition's declared tools and converts its programme, delivering the changed raw and serving data, and fails naming the festivals whose tools broke.",
   "trigger": "schedule",

@@ -37,13 +37,13 @@
     "on_fail": "block",
     "since": "2026-09-27",
     "scope": "action",
-    "failureMessage": "the gh CLI is not installed in this environment, so a command invoking it always fails; the GitHub MCP tools are how a session reaches GitHub here",
+    "failureMessage": "the gh CLI in this environment is not wired to the session's GitHub access (its GH_TOKEN is reported invalid); the GitHub MCP tools are how a session reaches GitHub here",
     "guardToolCalls": [
       {
         "tool": "Bash",
         "inputField": "command",
         "match": "/(^|[;&|]\\s*|\\n\\s*)(?<cmd>gh\\s+\\S+)/",
-        "what": "a Bash call invoking `{cmd}` — the gh CLI is not installed here",
+        "what": "a Bash call invoking `{cmd}` — the gh CLI is not wired to this session's GitHub access",
         "fix": "use the matching mcp__github__* tool instead of the gh CLI"
       }
     ]

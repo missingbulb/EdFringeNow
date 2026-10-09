@@ -1,5 +1,4 @@
 {
-  "$schema": "../../../../../shared/packs/claudinite-tasks/task.schema.json",
   "id": "full-scrape",
   "description": "Full rebuild of the show data: downloads every show from the edfringe.com ticketing API, rebuilds the normalized master and every derived site file from scratch, and commits the result straight to the default branch.",
   "trigger": "request",

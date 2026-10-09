@@ -26,17 +26,17 @@ step() { printf '\n\033[1m▶ %s\033[0m\n' "$1"; }
 
 step "Unit tests — node --test"
 # The shared/ helpers both front-ends import, the Now page's own js/ tests, the
-# planner's own tests, plus the local packs' — one glob for each pack's own
-# pack.test.mjs (its checks' red-first fixtures), one for the shared task
-# declaration test, one for the per-task tests beside each task. Those tests import
-# every pack manifest and task declaration, so they are also what parse-checks that
-# tree (the syntax sweep below deliberately stays off the .claudinite mount).
+# planner's own tests, plus the local pack's task tests — one glob for the shared
+# task declaration test, one for the per-task tests beside each task. Those tests
+# import every task declaration, so they are also what parse-checks that tree
+# (the syntax sweep below deliberately stays off the .claudinite mount). The
+# pack's Go checks have their own step after the conformance sweep.
 # Keep in step with the "test" script in package.json.
 # product/requirements/ contributes its default-lane gates here: the coverage
 # bijection, the gallery gate, and the pure logic cases. The browser-driven
 # screen/behavior lanes are `npm run test:ui` (CI's ui-requirements job), not
 # this fast path.
-node --test site/shared/__tests__/*.test.mjs site/js/__tests__/*.test.mjs site/plan/lib/__tests__/*.test.mjs site/plan2/lib/__tests__/*.test.mjs site/planNG/lib/__tests__/*.test.mjs product/requirements/*.test.js product/requirements/logic/logic.test.js .claudinite/local/packs/*/*.test.mjs .claudinite/local/packs/edfringe-now/tasks/*.test.mjs .claudinite/local/packs/edfringe-now/tasks/*/*.test.mjs
+node --test site/shared/__tests__/*.test.mjs site/js/__tests__/*.test.mjs site/plan/lib/__tests__/*.test.mjs site/plan2/lib/__tests__/*.test.mjs site/planNG/lib/__tests__/*.test.mjs product/requirements/*.test.js product/requirements/logic/logic.test.js .claudinite/local/packs/edfringe-now/tasks/*.test.mjs .claudinite/local/packs/edfringe-now/tasks/*/*.test.mjs
 
 step "JavaScript syntax — node --check"
 # Only our own tracked source: everything the site ships (site/), the scripts/
@@ -130,17 +130,16 @@ else
   echo "python3 not installed — skipping (CI always has it)" >&2
 fi
 
-step "Claudinite conformance — check_the_world.mjs"
-# The same command CI's "Conformance sweep" step runs. World scope: the rules
-# that audit repo state as it is now (the work-scope half runs from the Stop
-# hook). Blocking findings exit non-zero and fail this script; advisories print
-# and pass. `--root .` rather than letting it fall back to CLAUDE_PROJECT_DIR,
-# so the sweep always covers the tree this script already cd'd into.
-#
-# Naming a path inside the mount is the one thing claudinite-isolation forbids
-# outside the wiring files; it is excused by name in .claudinite-checks.json's
-# `accept` list, with the reason, rather than left to slip through the rule's
-# unquoted-path blind spot.
-node .claudinite/shared/engine/checks/check_the_world.mjs --root .
+step "Claudinite conformance — cn check world"
+# The same sweep CI's claudinite-ci workflow runs, without its pull-request
+# guard. World scope: the rules that audit repo state as it is now (the
+# work-scope half runs from the Stop hook). Blocking findings exit non-zero
+# and fail this script; advisories print and pass.
+sh .claudinite/launch check world
+
+step "Local pack checks — go vet and go test"
+# The pack's Go checks, against the SDK of the pinned cn the sweep above
+# just installed; includes their live gates over this repo's own tree.
+sh .claudinite/local/packs/edfringe-now/checks/test.sh
 
 printf '\n\033[32m✓ all checks passed\033[0m\n'

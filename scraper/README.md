@@ -239,7 +239,7 @@ switched off twice over. They are declared `manual` — a manual task has no
 occurrence, so the Claudinite scheduler
 (`.github/workflows/claudinite-scheduler.yml`, the repo's only cron) never
 instantiates one — and this repository names them both in
-`taskScheduler.disabledTasks` (`.claudinite-settings.json`), which says the repo
+the Claudinite settings' `tasks.disabled` list, which says the repo
 does not run them at all: the scheduler skips them before instantiating anything
 and closes a sleeping work item that names one. Turning a refresh back on is
 taking it off that list and restoring its cadence.

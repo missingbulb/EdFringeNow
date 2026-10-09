@@ -1,5 +1,4 @@
 {
-  "$schema": "../../../../../shared/packs/claudinite-tasks/task.schema.json",
   "id": "price-probe",
   "description": "Prints one show's raw performancePrices payload, fees and all, for questions about how the API composes a price. Prices nothing else, writes no cache file and commits nothing.",
   "trigger": "request",
