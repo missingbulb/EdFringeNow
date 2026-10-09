@@ -1,0 +1,60 @@
+# Litquake: who it is, its editions, and the sources an edition's information
+# block is assembled from. The contract every key follows is
+# scraper/festivals/README.md. San Francisco's literary festival: readings,
+# conversations and parties across the Bay Area, closing with the Lit Crawl.
+
+id = "litquake"
+name = "Litquake"
+city = "San Francisco"
+country = "US"
+region = "California"
+# The city's centre, for the festival timeline and travel maths between
+# cities; venues carry their own coordinates.
+lat = 37.7749
+lng = -122.4194
+timezone = "America/Los_Angeles"
+lang = "en"
+dir = "ltr"
+kind = "literature"
+subtypes = ["literature-books"]
+default_genre = "talk"
+site = "https://www.litquake.org"
+wikidata = "Q6648715"
+
+[ticketing]
+model = "other"
+url = "https://litquake2026.sched.com"
+notes = "Most sessions are free, many with a suggested donation; a ticketed one states its price in the schedule's own notes, which are read for price and sold-out marks. Each session's page on the schedule is its ticket link."
+currency = "USD"
+
+[[edition]]
+id = "2026"
+format = "block"
+# The schedule's October run, from the first October session to the Lit Crawl.
+# Its pre-festival September events and later year-round ones fall outside and
+# are named in the raw's outOfEdition.
+first = "2026-10-04"
+last = "2026-10-24"
+sources = ["sched", "nominatim"]
+
+[[source]]
+id = "sched"
+kind = "fetched"
+roles = ["events", "performances", "venues", "availability", "prices"]
+required = true
+fetcher = "sources/sched/fetch.py"
+adapter = "litquake/sched.py"
+
+# The schedule prints street addresses but no coordinates.
+[[source]]
+id = "nominatim"
+kind = "fetched"
+roles = ["venues"]
+required = true
+fetcher = "sources/nominatim/fetch.py"
+adapter = "litquake/nominatim.py"
+
+[merge]
+venues = ["sched", "nominatim"]
+events = ["sched"]
+performances = ["sched"]

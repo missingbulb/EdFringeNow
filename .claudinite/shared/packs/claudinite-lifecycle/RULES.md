@@ -33,7 +33,7 @@
 - **Judging whether Claudinite is current here** — read the stamp's `engineVersion` and
   `packVersions`, never `claudinite.updated` or `ref`: the versioned flows stamp versions and
   nothing else, so those two hold the provenance of the last full re-vendor rather than of this
-  mount, and a member converging nightly reads as weeks stale. (judging-whether-claudinite)
+  mount, and a member updating nightly reads as weeks stale. (judging-whether-claudinite)
 
 - **Answering "why did the mount not update"** — read the member's own artifacts (its declaration,
   its stamp, the head sha's runs) before theorizing about a platform setting; propose a settings
@@ -43,6 +43,14 @@
   evidence about the vendor set, not the canon: check the canon itself (a shallow clone, or a
   canon-scoped session) before filing an issue claiming it was never shipped, and where you can't,
   report only that the mount lacks the file. (file-vendored-module)
+
+- **Reporting or judging behavior against what a pack, task or the engine currently does** (a
+  task's `automerge`, a pack's version, any config or policy you are about to state as canon's) -
+  read the canon repo's own `packs/<id>/` at its default branch, never this repo's mounted
+  `.claudinite/shared/`. The mount is a snapshot at this repo's last-vendored version, so it
+  answers what this member runs, never what canon currently says, and the two diverge precisely
+  when this member is behind - often the very reason the read was needed. Refreshing the mount
+  costs nothing beyond the `git fetch` you'd need anyway. (reporting-judging-behavior)
 
 - **An engine source comment under the mount points at a design doc** (`DESIGN.md`) — the mount
   vendors `.mjs` sources and pack docs only, never the canon's internal design-doc tree, so the
@@ -54,7 +62,13 @@
   `; echo "EXIT:$?"` if in doubt, rather than a second pass of `--help`/`head`/`tail` hunting for
   confirmation that silence is safe. (running-checktheworld-mjs)
 
-- **Pushing a change that touches `.github/workflows/`, `.claudinite-checks.json` or pack config**
+- **Verifying "will the Stop hook block me" before committing** - run `check_the_work.mjs`, never
+  `check_the_world.mjs`: the two share no code and cover disjoint rule scopes. `check_the_world`
+  only sees `scope !== 'work'` rules and is what CI runs; the Stop hook runs `check_the_work`'s
+  `scope: 'work'` rules - the diff-plus-transcript checks. A clean `check_the_world` run says
+  nothing about what Stop will find. (stop-hook-not-world)
+
+- **Pushing a change that touches `.github/workflows/`, `.claudinite-settings.json` or pack config**
   — the world sweep runs in CI, not the Stop hook, so run it locally first rather than spend a
   push → CI → fix round trip on a finding it reports in seconds: (pushing-change-touches)
 

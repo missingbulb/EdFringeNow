@@ -1,0 +1,345 @@
+{
+ "v": 1,
+ "cities": [
+  {
+   "id": "abu-ghosh",
+   "name": "Abu Ghosh",
+   "country": "IL",
+   "lat": 31.804722,
+   "lng": 35.110833,
+   "timezone": "Asia/Jerusalem",
+   "dataUrl": "/data/cities/abu-ghosh.json",
+   "places": 5
+  },
+  {
+   "id": "airport-city",
+   "name": "Airport City",
+   "country": "IL",
+   "lat": 31.986,
+   "lng": 34.9162,
+   "timezone": "Asia/Jerusalem",
+   "dataUrl": "/data/cities/airport-city.json",
+   "places": 9
+  },
+  {
+   "id": "akko",
+   "name": "Akko",
+   "country": "IL",
+   "lat": 32.9236,
+   "lng": 35.0705,
+   "timezone": "Asia/Jerusalem",
+   "dataUrl": "/data/cities/akko.json",
+   "places": 19
+  },
+  {
+   "id": "amsterdam",
+   "name": "Amsterdam",
+   "country": "NL",
+   "lat": 52.3676,
+   "lng": 4.9041,
+   "timezone": "Europe/Amsterdam",
+   "dataUrl": "/data/cities/amsterdam.json",
+   "places": 363
+  },
+  {
+   "id": "athens",
+   "name": "Athens",
+   "country": "GR",
+   "lat": 37.9838,
+   "lng": 23.7275,
+   "timezone": "Europe/Athens",
+   "dataUrl": "/data/cities/athens.json",
+   "places": 318
+  },
+  {
+   "id": "auckland",
+   "name": "Auckland",
+   "country": "NZ",
+   "lat": -36.8485,
+   "lng": 174.7633,
+   "timezone": "Pacific/Auckland",
+   "dataUrl": "/data/cities/auckland.json",
+   "places": 218
+  },
+  {
+   "id": "berlin",
+   "name": "Berlin",
+   "country": "DE",
+   "lat": 52.52,
+   "lng": 13.405,
+   "timezone": "Europe/Berlin",
+   "dataUrl": "/data/cities/berlin.json",
+   "places": 2081
+  },
+  {
+   "id": "brighton",
+   "name": "Brighton",
+   "country": "GB",
+   "lat": 50.8225,
+   "lng": -0.1372,
+   "timezone": "Europe/London",
+   "dataUrl": "/data/cities/brighton.json",
+   "places": 67
+  },
+  {
+   "id": "capernaum",
+   "name": "Capernaum",
+   "country": "IL",
+   "lat": 32.8804,
+   "lng": 35.5736,
+   "timezone": "Asia/Jerusalem",
+   "dataUrl": "/data/cities/capernaum.json",
+   "places": 12
+  },
+  {
+   "id": "edinburgh",
+   "name": "Edinburgh",
+   "country": "GB",
+   "lat": 55.9533,
+   "lng": -3.1883,
+   "timezone": "Europe/London",
+   "dataUrl": "/data/cities/edinburgh.json",
+   "places": 195
+  },
+  {
+   "id": "eilat",
+   "name": "Eilat",
+   "country": "IL",
+   "lat": 29.5569,
+   "lng": 34.9517,
+   "timezone": "Asia/Jerusalem",
+   "dataUrl": "/data/cities/eilat.json",
+   "places": 23
+  },
+  {
+   "id": "fort-lauderdale",
+   "name": "Fort Lauderdale",
+   "country": "US",
+   "lat": 26.1224,
+   "lng": -80.1373,
+   "timezone": "America/New_York",
+   "dataUrl": "/data/cities/fort-lauderdale.json",
+   "places": 16
+  },
+  {
+   "id": "haifa",
+   "name": "Haifa",
+   "country": "IL",
+   "lat": 32.794044,
+   "lng": 34.989571,
+   "timezone": "Asia/Jerusalem",
+   "dataUrl": "/data/cities/haifa.json",
+   "places": 48
+  },
+  {
+   "id": "jerusalem",
+   "name": "Jerusalem",
+   "country": "IL",
+   "lat": 31.7683,
+   "lng": 35.2137,
+   "timezone": "Asia/Jerusalem",
+   "dataUrl": "/data/cities/jerusalem.json",
+   "places": 181
+  },
+  {
+   "id": "kfar-blum",
+   "name": "Kfar Blum",
+   "country": "IL",
+   "lat": 33.1725,
+   "lng": 35.6097,
+   "timezone": "Asia/Jerusalem",
+   "dataUrl": "/data/cities/kfar-blum.json",
+   "places": 2
+  },
+  {
+   "id": "leicester",
+   "name": "Leicester",
+   "country": "GB",
+   "lat": 52.6365,
+   "lng": -1.1339,
+   "timezone": "Europe/London",
+   "dataUrl": "/data/cities/leicester.json",
+   "places": 42
+  },
+  {
+   "id": "london",
+   "name": "London",
+   "country": "GB",
+   "lat": 51.5074,
+   "lng": -0.1278,
+   "timezone": "Europe/London",
+   "dataUrl": "/data/cities/london.json",
+   "places": 1015
+  },
+  {
+   "id": "luxembourg",
+   "name": "Luxembourg",
+   "country": "LU",
+   "lat": 49.6116,
+   "lng": 6.1319,
+   "timezone": "Europe/Luxembourg",
+   "dataUrl": "/data/cities/luxembourg.json",
+   "places": 78
+  },
+  {
+   "id": "malmo",
+   "name": "Malmö",
+   "country": "SE",
+   "lat": 55.605,
+   "lng": 13.0038,
+   "timezone": "Europe/Stockholm",
+   "dataUrl": "/data/cities/malmo.json",
+   "places": 67
+  },
+  {
+   "id": "melbourne",
+   "name": "Melbourne",
+   "country": "AU",
+   "lat": -37.815,
+   "lng": 144.9668,
+   "timezone": "Australia/Melbourne",
+   "dataUrl": "/data/cities/melbourne.json",
+   "places": 229
+  },
+  {
+   "id": "mitzpe-gvulot",
+   "name": "Mitzpe Gvulot",
+   "country": "IL",
+   "lat": 31.2111,
+   "lng": 34.4652,
+   "timezone": "Asia/Jerusalem",
+   "dataUrl": "/data/cities/mitzpe-gvulot.json",
+   "places": 4
+  },
+  {
+   "id": "new-orleans",
+   "name": "New Orleans",
+   "country": "US",
+   "lat": 29.9511,
+   "lng": -90.0715,
+   "timezone": "America/Chicago",
+   "dataUrl": "/data/cities/new-orleans.json",
+   "places": 106
+  },
+  {
+   "id": "north-berwick",
+   "name": "North Berwick",
+   "country": "GB",
+   "lat": 56.0586,
+   "lng": -2.7196,
+   "timezone": "Europe/London",
+   "dataUrl": "/data/cities/north-berwick.json",
+   "places": 4
+  },
+  {
+   "id": "ramat-gan",
+   "name": "Ramat Gan",
+   "country": "IL",
+   "lat": 32.0637,
+   "lng": 34.8322,
+   "timezone": "Asia/Jerusalem",
+   "dataUrl": "/data/cities/ramat-gan.json",
+   "places": 65
+  },
+  {
+   "id": "rapperswil",
+   "name": "Rapperswil",
+   "country": "CH",
+   "lat": 47.2267,
+   "lng": 8.8184,
+   "timezone": "Europe/Zurich",
+   "dataUrl": "/data/cities/rapperswil.json",
+   "places": 26
+  },
+  {
+   "id": "san-francisco",
+   "name": "San Francisco",
+   "country": "US",
+   "lat": 37.7749,
+   "lng": -122.4194,
+   "timezone": "America/Los_Angeles",
+   "dataUrl": "/data/cities/san-francisco.json",
+   "places": 335
+  },
+  {
+   "id": "san-jose",
+   "name": "San Jose",
+   "country": "US",
+   "lat": 37.3382,
+   "lng": -121.8863,
+   "timezone": "America/Los_Angeles",
+   "dataUrl": "/data/cities/san-jose.json",
+   "places": 87
+  },
+  {
+   "id": "santa-ana",
+   "name": "Santa Ana",
+   "country": "US",
+   "lat": 33.7455,
+   "lng": -117.8677,
+   "timezone": "America/Los_Angeles",
+   "dataUrl": "/data/cities/santa-ana.json",
+   "places": 40
+  },
+  {
+   "id": "santa-fe",
+   "name": "Santa Fe",
+   "country": "US",
+   "lat": 35.687,
+   "lng": -105.9378,
+   "timezone": "America/Denver",
+   "dataUrl": "/data/cities/santa-fe.json",
+   "places": 184
+  },
+  {
+   "id": "singapore",
+   "name": "Singapore",
+   "country": "SG",
+   "lat": 1.2903,
+   "lng": 103.852,
+   "timezone": "Asia/Singapore",
+   "dataUrl": "/data/cities/singapore.json",
+   "places": 179
+  },
+  {
+   "id": "tel-aviv",
+   "name": "Tel Aviv",
+   "country": "IL",
+   "lat": 32.0775,
+   "lng": 34.78667,
+   "timezone": "Asia/Jerusalem",
+   "dataUrl": "/data/cities/tel-aviv.json",
+   "places": 139
+  },
+  {
+   "id": "tryon",
+   "name": "Tryon",
+   "country": "US",
+   "lat": 35.2087,
+   "lng": -82.2387,
+   "timezone": "America/New_York",
+   "dataUrl": "/data/cities/tryon.json",
+   "places": 2
+  },
+  {
+   "id": "wellington",
+   "name": "Wellington",
+   "country": "NZ",
+   "lat": -41.2865,
+   "lng": 174.7762,
+   "timezone": "Pacific/Auckland",
+   "dataUrl": "/data/cities/wellington.json",
+   "places": 70
+  },
+  {
+   "id": "wichita",
+   "name": "Wichita",
+   "country": "US",
+   "lat": 37.6872,
+   "lng": -97.3301,
+   "timezone": "America/Chicago",
+   "dataUrl": "/data/cities/wichita.json",
+   "places": 29
+  }
+ ]
+}

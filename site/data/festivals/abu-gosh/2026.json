@@ -1,0 +1,1031 @@
+{
+ "v": 1,
+ "festival": {
+  "id": "abu-gosh",
+  "edition": "2026",
+  "ordinal": null,
+  "name": "Abu Gosh Music Festival",
+  "nameLocal": "פסטיבל המוזיקה אבו גוש",
+  "city": "Abu Ghosh",
+  "country": "IL",
+  "lat": 31.804722,
+  "lng": 35.110833,
+  "timezone": "Asia/Jerusalem",
+  "lang": "en",
+  "dir": "ltr",
+  "kind": "music",
+  "defaultGenre": "music",
+  "site": "https://abugoshfestival.co.il",
+  "firstDate": "2026-09-29",
+  "lastDate": "2026-10-03",
+  "ticketing": {
+   "model": "central-box-office",
+   "url": "https://agfestival.smarticket.co.il/",
+   "notes": "Tickets for every concert are sold through the festival's Smarticket box office (agfestival.smarticket.co.il; phone +972-3-9385058), one price per concert. The outdoor courtyard performances at Kiryat Ye'arim Church are free admission.",
+   "currency": "ILS",
+   "source": "https://abugoshfestival.co.il/en/%d7%9c%d7%95%d7%97-%d7%a7%d7%95%d7%a0%d7%a6%d7%a8%d7%98%d7%99%d7%9d/"
+  }
+ },
+ "categories": [
+  {
+   "id": "abu-gosh",
+   "name": "Concerts in Abu Gosh"
+  },
+  {
+   "id": "crypt",
+   "name": "The Crypt at the Benedictine Monastery"
+  },
+  {
+   "id": "outdoor",
+   "name": "Outdoor Performances"
+  },
+  {
+   "id": "tel-aviv",
+   "name": "Concerts in Tel Aviv"
+  }
+ ],
+ "venues": [
+  {
+   "id": "benedictine-crypt",
+   "name": "The Crypt, Benedictine Monastery",
+   "address": null,
+   "lat": 31.80742778,
+   "lng": 35.10738611,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "The crypt of the Crusader Church of the Resurrection in the Benedictine monastery (St Mary of the Resurrection Abbey), in the village below Kiryat Ye'arim Church. The festival's Contact & Directions page gives a separate parking pin for the crypt concerts.",
+   "refs": [
+    "https://en.wikipedia.org/wiki/Benedictine_monastery_in_Abu_Ghosh"
+   ]
+  },
+  {
+   "id": "kiryat-yearim-church",
+   "name": "Kiryat Ye'arim Church (Notre-Dame de l'Arche d'Alliance)",
+   "address": "Kiryat Ye'arim Church, Abu Ghosh",
+   "lat": 31.808572,
+   "lng": 35.103834,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {
+     "id": "cafe-terrace",
+     "name": "The Café Terrace",
+     "capacity": null,
+     "layout": "outdoor"
+    },
+    {
+     "id": "patio",
+     "name": "The Patio",
+     "capacity": null,
+     "layout": "outdoor"
+    }
+   ],
+   "accessibility": null,
+   "notes": "Our Lady of the Ark of the Covenant, on the hilltop at the north-western edge of Abu Ghosh; the festival's main venue. The free outdoor performances play the Café Terrace (the festival café 'located in the church courtyard', per the Outdoor Performances page) and the Patio, which the site places no further than the festival grounds at the church; both are open-air ('under the open sky').",
+   "refs": [
+    "https://abugoshfestival.co.il/en/%d7%94%d7%92%d7%a2%d7%94-%d7%95%d7%99%d7%a6%d7%99%d7%a8%d7%aa-%d7%a7%d7%a9%d7%a8/",
+    "https://abugoshfestival.co.il/en/outside/"
+   ]
+  },
+  {
+   "id": "tel-aviv-museum-of-art",
+   "name": "Tel Aviv Museum of Art",
+   "address": "27 Shaul HaMelech Blvd, Tel Aviv",
+   "lat": 32.0775,
+   "lng": 34.786667,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "The festival's Tel Aviv day. The address is the museum's own (tamuseum.org.il/en/visit/). The Hebrew programme places the morning concert in the museum's Recanati Hall (אולם רקאנטי); the other cards name no hall.",
+   "refs": [
+    "https://en.wikipedia.org/wiki/Tel_Aviv_Museum_of_Art"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "post-9079",
+   "title": "Fauré’s Requiem",
+   "titleLocal": "הרקוויאם של פורה",
+   "url": "https://abugoshfestival.co.il/en/%D7%9C%D7%95%D7%97-%D7%A7%D7%95%D7%A0%D7%A6%D7%A8%D7%98%D7%99%D7%9D/%d7%a7%d7%95%d7%a0%d7%a6%d7%a8%d7%98-%d7%9e%d7%95%d7%96%d7%99%d7%90%d7%95%d7%9f-%d7%9e%d7%a1-1/",
+   "genre": "music",
+   "categories": [
+    "tel-aviv"
+   ],
+   "blurb": "A festive morning concert bringing together Israeli song, beloved choral repertoire, and one of the great masterpieces of the French tradition.\n\nIn the first part of the concert, the Bat-Kol Choir, conducted by Anat Morag, takes center stage in a varied program spanning different periods, styles, and musical languages. Alongside a movement from Vivaldi’s Gloria and Fauré’s Cantique de Jean Racine, the choir will perform beloved works and arrangements from Israeli and international repertoire, including “Be’eretz Ahavati” (“In the Land I Love”), “Chad Gadya,” “Akara,” “Mizmor Layla,” “Over the Rainbow,” and “Hallelujah,” as well as The Bells of the Fields by Estonian composer Urmas Sisask.\n\nIn the second part of the concert, the Maayan Choir, conducted by Assaf Benraf, joins Bat-Kol for a joint performance of Gabriel Fauré’s Requiem. Unlike more dramatic and turbulent settings of the Requiem, Fauré created a work filled with tenderness, compassion, and light — music that offers consolation and serenity rather than fear and awe. From its restrained opening to the sublime moments of the Pie Jesu and In Paradisum, the work unfolds in a luminous, intimate, and deeply moving French sound world.\n\nThe two choirs are joined by soloists Naomi Burla-Levi, soprano, and Yair Polishook, baritone, together with the Zhanna Gandelman Quintet, for a festive performance in the Recanati Hall of the Tel Aviv Museum of Art.\n\nA concert that begins with the distinctive and colorful voice of the Bat-Kol Choir and gradually expands into a grand choral encounter filled with warmth and light in Fauré’s beloved masterpiece.",
+   "durationMin": 75,
+   "imageUrl": "https://abugoshfestival.co.il/wp-content/uploads/2026/05/hero_sukot_2026_1-1024x497.webp"
+  },
+  {
+   "id": "post-9081",
+   "title": "“Harlem Swing” – The Roaring Thirties",
+   "titleLocal": "\"הארלם סווינג\" - שנות השלושים העליזות",
+   "url": "https://abugoshfestival.co.il/en/%D7%9C%D7%95%D7%97-%D7%A7%D7%95%D7%A0%D7%A6%D7%A8%D7%98%D7%99%D7%9D/%d7%a7%d7%95%d7%a0%d7%a6%d7%a8%d7%98-%d7%9e%d7%95%d7%96%d7%99%d7%90%d7%95%d7%9f-%d7%9e%d7%a1-2/",
+   "genre": "music",
+   "categories": [
+    "tel-aviv"
+   ],
+   "blurb": "In the years when radio carried the sounds of jazz around the world, big bands conquered concert stages and dance floors with their powerful, exhilarating, life-filled sound. The Harlem Renaissance transformed New York’s legendary nightclubs — most notably the Cotton Club — into centres of creativity, freedom, rhythm and style, where music, song and dance came together in a thrilling theatrical experience.\n\nIn this festive, high-energy performance, Eli and the Chocolate Factory return to the 1930s, this time with an expanded big-band line-up. The orchestra will bring back to life the infectious swing of Count Basie, the dramatic “jungle” sounds of Duke Ellington and the rich, polished arrangements of Jimmie Lunceford — giants of the era who shaped the language of jazz and transformed it into a worldwide phenomenon.\n\nAt the heart of the performance is international jazz vocalist Eden Holan, whose rich voice, impressive range and captivating stage presence have won her acclaim. With freedom, elegance and vocal virtuosity, she will revive the spirit of the great jazz divas and lend the classics of the era her own warm, distinctive and compelling sound. Her voice will merge with the orchestra’s full-bodied sonority and, at times, move through it like an additional instrument — between melody and improvisation, tenderness and power, blues and swing.\n\nThe orchestra, comprising approximately 14 musicians, will be joined by swing dancers who will bring the spirit of the period to the stage through Lindy Hop and Charleston. Together with Eden Holan’s singing, they will create a complete theatrical celebration in which the music is not only heard — it is also seen, danced and felt throughout the body.\n\nThis performance transports the audience back to the glittering nights of Harlem: to clubs filled with smoke and style, to irresistible rhythms, and to an era when jazz was the soundtrack of freedom, movement and joie de vivre.",
+   "durationMin": 75,
+   "imageUrl": "https://abugoshfestival.co.il/wp-content/uploads/2026/05/hero_sukot_2026_2-1024x497.webp"
+  },
+  {
+   "id": "post-9082",
+   "title": "“Back to Tango”",
+   "titleLocal": "\"חוזרים לטנגו\"",
+   "url": "https://abugoshfestival.co.il/en/%D7%9C%D7%95%D7%97-%D7%A7%D7%95%D7%A0%D7%A6%D7%A8%D7%98%D7%99%D7%9D/%d7%a7%d7%95%d7%a0%d7%a6%d7%a8%d7%98-%d7%9e%d7%95%d7%96%d7%99%d7%90%d7%95%d7%9f-%d7%9e%d7%a1-3/",
+   "genre": "music",
+   "categories": [
+    "tel-aviv"
+   ],
+   "blurb": "In this deeply moving and highly expressive performance, Sylvia Kigel and the Jerusalem Tango Project invite the audience to return to the beating heart of tango, on an exhilarating musical journey from Buenos Aires to the concert stage.\n\nWith her deep, mesmerizing voice, accompanied by five virtuoso musicians, Sylvia Kigel unveils a rich world of sounds, stories and emotions — from the timeless classics of Carlos Gardel to the electrifying works of Astor Piazzolla, alongside contemporary touches and original compositions that breathe new life into the tango tradition. The ensemble is joined by Claudio Cohen Trica, who brings with him a rich array of authentic South American percussion instruments, including cajón, bombo, Andean flutes and other traditional instruments. These distinctive sounds deepen the musical experience, adding colour, rhythm and the authentic spirit of South America. The performance also features powerful selections from the South American protest-song repertoire, including songs associated with Mercedes Sosa, such as “Alfonsina y el Mar” and “Gracias a la Vida,” performed with sensitivity and haunting emotional intensity.\n\nProfessional tango dancers join the musicians on stage, adding a captivating visual dimension. The performance also incorporates theatrical elements and spoken introductions in Hebrew, creating a complete experience of music, movement and storytelling.\n\nThis is a performance that connects past and present, pain and beauty, sound and movement — a profound, authentic and unforgettable experience.",
+   "durationMin": 75,
+   "imageUrl": "https://abugoshfestival.co.il/wp-content/uploads/2026/05/hero_sukot_2026_3-1024x497.webp"
+  },
+  {
+   "id": "post-9083",
+   "title": "“Los Muchachos Paraguayos”",
+   "titleLocal": "\"לוס מוצ'אצ'וס פראגוואיוס\"",
+   "url": "https://abugoshfestival.co.il/en/%D7%9C%D7%95%D7%97-%D7%A7%D7%95%D7%A0%D7%A6%D7%A8%D7%98%D7%99%D7%9D/%d7%a7%d7%95%d7%a0%d7%a6%d7%a8%d7%98-%d7%9e%d7%95%d7%96%d7%99%d7%90%d7%95%d7%9f-%d7%9e%d7%a1-4/",
+   "genre": "music",
+   "categories": [
+    "tel-aviv"
+   ],
+   "blurb": "The acclaimed Paraguayan ensemble Los Muchachos Paraguayos comes to Israel for an exhilarating Latin celebration filled with rhythm, emotion and nostalgia. Continuing the legacy of the legendary group Los Paraguayos, the ensemble brings to the stage the distinctive sound that has become one of the most recognizable expressions of South American music.\n\nThe ensemble is led by Luis Alberto Amarilla, who continues the musical legacy of the legendary Luis Alberto del Paraná. Alongside him are five musicians and singers who combine three-part vocal harmonies, guitars, percussion and richly layered arrangements. They are joined by internationally acclaimed harpist David Carlsberg, whose playing adds a distinctive and deeply moving colour to the performance.\n\nThe programme features beloved classics including “Malagueña,” “Bésame Mucho,” “La Bamba” and “Granada,” alongside fresh new interpretations that appeal both to younger audiences and to lovers of musical nostalgia. It is an evening that brings together tradition and innovation, romance and rhythm, while capturing the authentic magic of South America.\n\nFilled with joie de vivre, human warmth and infectious energy, this is an exhilarating musical experience that will leave no one unmoved.",
+   "durationMin": 75,
+   "imageUrl": "https://abugoshfestival.co.il/wp-content/uploads/2026/05/hero_sukot_2026_4-1024x497.webp"
+  },
+  {
+   "id": "post-9541",
+   "title": "“Coffee, Jazz & Israeli Song”",
+   "titleLocal": "״קפה, ג׳אז ושיר ישראלי״",
+   "url": "https://abugoshfestival.co.il/en/outside-concerts/%d7%9e%d7%95%d7%a4%d7%a2-%d7%97%d7%95%d7%a5-%d7%9e%d7%a1-1/",
+   "genre": "music",
+   "categories": [
+    "outdoor"
+   ],
+   "blurb": "At the festival café, located in the church courtyard, singer, actress and creator Hadar Mazo joins guitarist, composer and creator Omri Bar Giora for a warm...",
+   "durationMin": 30,
+   "imageUrl": "https://abugoshfestival.co.il/wp-content/uploads/2026/08/hero_outside_sukot_2026_0000_קפה-ג׳אז-ושיר-ישראלי_1-1024x497.webp"
+  },
+  {
+   "id": "post-9092",
+   "title": "“Evening Vespers” – W. A. Mozart",
+   "titleLocal": "\"תפילות ערבית\" - ו.א.מוצרט",
+   "url": "https://abugoshfestival.co.il/en/%D7%9C%D7%95%D7%97-%D7%A7%D7%95%D7%A0%D7%A6%D7%A8%D7%98%D7%99%D7%9D/%d7%a7%d7%95%d7%a0%d7%a6%d7%a8%d7%98-%d7%9b%d7%a0%d7%a1%d7%99%d7%99%d7%94-%d7%9e%d7%a1-1/",
+   "genre": "music",
+   "categories": [
+    "abu-gosh"
+   ],
+   "blurb": "An uplifting vocal celebration featuring the Barrocada Orchestra, the Israeli Vocal Ensemble and soloists, conducted by Andres Mustonen.\n\nTwo masterpieces of the sacred vocal repertoire come together in a festive concert at Kiryat Ye’arim Church: Heinrich Schütz’s Musikalische Exequien – “Musical Funeral Rites” and Wolfgang Amadeus Mozart’s Vesperae solennes de Confessore – “Solemn Vespers.”\n\nThe concert will open with Heinrich Schütz’s powerful Musikalische Exequien – “Musical Funeral Rites” (SWV 279–281), composed in 1636 for a funeral service and regarded as one of the crowning achievements of 17th-century German vocal music.\n\nThe work, composed in three parts, combines solo voices, choir and richly textured polyphonic writing. In its final section, a moving dialogue unfolds between the soloists and a distant choir, creating an extraordinary sense of space, echo and spiritual transcendence. Schütz brings together the German musical tradition and the colourful Venetian style, creating music of profound humanity, intimacy and consolation\n\nThe second half of the concert will feature one of Mozart’s most beloved and radiant vocal works, Vesperae solennes de Confessore – “Solemn Vespers.”\n\nWritten for choir, soloists and orchestra, the work combines Classical clarity, harmonic richness and moments of spiritual exaltation. Filled with light, movement and elegance, it presents Mozart at his finest. Among its movements is the celebrated and deeply moving “Laudate Dominum,” one of the most beautiful lyrical passages the composer ever wrote.\n\nPerformed by the Barrocada Orchestra, the Israeli Vocal Ensemble and soloists, both works will take on new life in the church’s unique acoustics. This musical journey moves from the spiritual depth and intimacy of Schütz to the radiance and sublime joy of Mozart — an encounter between two eras and two magnificent ways of expressing faith, consolation and transcendence.",
+   "durationMin": 75,
+   "imageUrl": "https://abugoshfestival.co.il/wp-content/uploads/2026/05/hero_sukot_2026_5-1024x497.webp"
+  },
+  {
+   "id": "post-9542",
+   "title": "“Between Germany and France” – Ensemble Coronata",
+   "titleLocal": "״בין גרמניה לצרפת״ - אנסמבל כורונטה",
+   "url": "https://abugoshfestival.co.il/en/outside-concerts/%d7%9e%d7%95%d7%a4%d7%a2-%d7%97%d7%95%d7%a5-%d7%9e%d7%a1-2/",
+   "genre": "music",
+   "categories": [
+    "outdoor"
+   ],
+   "blurb": "A brief and refined musical journey between two of the most important centers of the European Baroque.",
+   "durationMin": 30,
+   "imageUrl": "https://abugoshfestival.co.il/wp-content/uploads/2026/08/hero_outside_sukot_2026_0001_״בין-גרמניה-לצרפת״-אנסמבל-כורונטה_2-1024x497.webp"
+  },
+  {
+   "id": "post-9543",
+   "title": "“Sounds of Hope” – Mevaseret Zion Youth Orchestra",
+   "titleLocal": "״צלילים של תקווה״ - תזמורת הנוער של מבשרת ציון",
+   "url": "https://abugoshfestival.co.il/en/outside-concerts/%d7%9e%d7%95%d7%a4%d7%a2-%d7%97%d7%95%d7%a5-%d7%9e%d7%a1-3/",
+   "genre": "music",
+   "categories": [
+    "outdoor"
+   ],
+   "blurb": "The Mevaseret Zion Youth Orchestra invites the audience to a vibrant, youthful performance filled with the joy of music-making, crossing styles, periods and musical worlds.",
+   "durationMin": 30,
+   "imageUrl": "https://abugoshfestival.co.il/wp-content/uploads/2026/08/hero_outside_sukot_2026_0009_zlil-1024x497.webp"
+  },
+  {
+   "id": "post-9100",
+   "title": "“Stabat Mater” – Haydn",
+   "titleLocal": "\"סטאבת מאטר\" – היידן",
+   "url": "https://abugoshfestival.co.il/en/%D7%9C%D7%95%D7%97-%D7%A7%D7%95%D7%A0%D7%A6%D7%A8%D7%98%D7%99%D7%9D/%d7%a7%d7%95%d7%a0%d7%a6%d7%a8%d7%98-%d7%9b%d7%a0%d7%a1%d7%99%d7%99%d7%94-%d7%9e%d7%a1-2/",
+   "genre": "music",
+   "categories": [
+    "abu-gosh"
+   ],
+   "blurb": "A moving and uplifting concert that journeys from a beloved traditional hymn and an intimate song of praise to a poignant work of remembrance, culminating in one of Joseph Haydn’s great masterpieces — Stabat Mater.\n\nThe concert will open with “Amazing Grace,” one of the world’s best-loved and most familiar hymns, followed by Franz Schubert’s “Ave Maria,” D. 839, in an arrangement for string quintet by Ze’ev Steinberg. The programme will continue with Giacomo Puccini’s brief yet profound Requiem, composed in memory of Giuseppe Verdi for mixed choir, viola, strings and organ.\n\nAt the heart of the concert is Joseph Haydn’s monumental Stabat Mater, based on the ancient Latin text portraying the grief of Mary as she stands at the foot of the cross upon which her son is crucified. The work moves between intense drama, sorrow and faith, and Classical restraint and clarity, combining rich writing for soloists, choir and instrumental ensemble.\n\nPerformed by four soloists, the Ramat Gan Chamber Choir, the Zhana Gandelman String Quintet and wind players, under the direction of conductor Hanna Tzur, the work will come vividly to life in the unique acoustics of Kiryat Ye’arim Church, offering the audience a powerful musical experience filled with beauty and emotion.",
+   "durationMin": 75,
+   "imageUrl": "https://abugoshfestival.co.il/wp-content/uploads/2026/05/hero_sukot_2026_6-1024x497.webp"
+  },
+  {
+   "id": "post-9546",
+   "title": "“Music of Tranquility” – Ensemble Tenebroso",
+   "titleLocal": "״מוזיקה של שלווה״ - אנסמבל טנברוסו",
+   "url": "https://abugoshfestival.co.il/en/outside-concerts/%d7%9e%d7%95%d7%a4%d7%a2-%d7%97%d7%95%d7%a5-%d7%9e%d7%a1-4/",
+   "genre": "music",
+   "categories": [
+    "outdoor"
+   ],
+   "blurb": "An intimate Baroque journey into a world of green groves, peaceful fields, nocturnal dreams, and passionate love.",
+   "durationMin": 30,
+   "imageUrl": "https://abugoshfestival.co.il/wp-content/uploads/2026/08/hero_outside_sukot_2026_0002_״מוזיקה-של-שלווה״-אנסמבל-טנברוסו_3-1024x497.webp"
+  },
+  {
+   "id": "post-9113",
+   "title": "Medieval Spain: Songs from the Monastery of Montserrat",
+   "titleLocal": "\"ספרד של ימי הביניים: שירים ממנזר מונסראט\"",
+   "url": "https://abugoshfestival.co.il/en/%D7%9C%D7%95%D7%97-%D7%A7%D7%95%D7%A0%D7%A6%D7%A8%D7%98%D7%99%D7%9D/%d7%a7%d7%95%d7%a0%d7%a6%d7%a8%d7%98-%d7%9b%d7%a0%d7%a1%d7%99%d7%99%d7%94-%d7%9e%d7%a1-3/",
+   "genre": "music",
+   "categories": [
+    "abu-gosh"
+   ],
+   "blurb": "A unique concert inviting the audience on a journey to medieval Spain and the Monastery of Montserrat — a place where music, faith and everyday life were intricately interwoven.\n\nThe programme brings to the stage songs composed for pilgrims alongside lively, rhythmically vibrant pieces, creating an extraordinary experience in which prayer meets movement and ancient song is brought vividly back to life with surprising power.\n\nPerformed by voices and period instruments, the music combines rich polyphony with traditional folk rhythms, profound spirituality with vivid and exhilarating energy.\n\nThis performance transports the audience into a world distant in time — a colourful, moving and truly unconventional musical experience.",
+   "durationMin": 75,
+   "imageUrl": "https://abugoshfestival.co.il/wp-content/uploads/2026/05/hero_sukot_2026_7-1024x497.webp"
+  },
+  {
+   "id": "post-9128",
+   "title": "J. S. Bach – Magnificat",
+   "titleLocal": "י.ס.באך - \"מגניפיקט\"",
+   "url": "https://abugoshfestival.co.il/en/%D7%9C%D7%95%D7%97-%D7%A7%D7%95%D7%A0%D7%A6%D7%A8%D7%98%D7%99%D7%9D/%d7%a7%d7%95%d7%a0%d7%a6%d7%a8%d7%98-%d7%9b%d7%a0%d7%a1%d7%99%d7%99%d7%94-%d7%9e%d7%a1-4/",
+   "genre": "music",
+   "categories": [
+    "abu-gosh"
+   ],
+   "blurb": "A concert bringing together two generations of the Bach family — Johann Sebastian Bach and his son, Carl Philipp Emanuel Bach — through one of the grandest forms of sacred music: the Magnificat.\n\nAt the heart of the programme is J. S. Bach’s monumental Magnificat, a radiant and inspired masterpiece that brings together choir, soloists and orchestra in a magnificent display of polyphonic richness, drama and energy.\n\nAlongside it, the programme will feature Carl Philipp Emanuel Bach’s Magnificat, Wq 215, a work poised at the crossroads between the late Baroque and the emerging Classical style. Its musical language is bold, emotional and distinctly theatrical.\n\nThis encounter between father and son reveals not only a family connection, but also a fascinating stylistic transition between two musical eras — from the polyphonic complexity and architectural balance of the Baroque to a more personal, liberated and expressive musical world.",
+   "durationMin": 75,
+   "imageUrl": "https://abugoshfestival.co.il/wp-content/uploads/2026/05/hero_sukot_2026_8-1024x497.webp"
+  },
+  {
+   "id": "post-9548",
+   "title": "“From Love to Prayer” – Tzlilei HaHar Ensemble",
+   "titleLocal": "\"מן האהבה אל התפילה\" - אנסמבל צלילי ההר",
+   "url": "https://abugoshfestival.co.il/en/outside-concerts/%d7%9e%d7%95%d7%a4%d7%a2-%d7%97%d7%95%d7%a5-%d7%9e%d7%a1-6/",
+   "genre": "music",
+   "categories": [
+    "outdoor"
+   ],
+   "blurb": "An intimate vocal journey from the Renaissance courts of Italy, England, France and Spain to the luminous, spiritual sound world of later periods.",
+   "durationMin": 30,
+   "imageUrl": "https://abugoshfestival.co.il/wp-content/uploads/2026/08/hero_outside_sukot_2026_0003_מן-האהבה-אל-התפילה_6-1024x497.webp"
+  },
+  {
+   "id": "post-9136",
+   "title": "Membra Jesu Nostri\" – Buxtehude\"",
+   "titleLocal": "מושא הערצתו של באך",
+   "url": "https://abugoshfestival.co.il/en/%D7%9C%D7%95%D7%97-%D7%A7%D7%95%D7%A0%D7%A6%D7%A8%D7%98%D7%99%D7%9D/%d7%a7%d7%95%d7%a0%d7%a6%d7%a8%d7%98-%d7%9b%d7%a0%d7%a1%d7%99%d7%99%d7%94-%d7%9e%d7%a1-5/",
+   "genre": "music",
+   "categories": [
+    "abu-gosh"
+   ],
+   "blurb": "In an intimate concert at Kiryat Ye’arim Church, Dieterich Buxtehude’s profound Membra Jesu Nostri, one of the central masterpieces of the North German Baroque, will be performed.\n\nThe cycle consists of seven cantatas and offers a meditative contemplation of the crucified Christ through a gradual focus on different parts of the body — from the feet to the face — combining liturgical texts with poetic verse drawn from the Latin tradition.\n\nBuxtehude creates a musical world that is restrained yet emotionally charged, in which rich polyphony, intimate textures and clear melodic lines come together in an expression of profound and refined spirituality.\n\nPerformed by the Barrocada Ensemble, the Israeli Vocal Ensemble and soloists, under the direction of Yuval Ben Ozer, the work will come to life in the church’s unique acoustics, inviting the listener into an experience of inward reflection and quiet contemplation.\n\nA delicate and profound encounter with one of the pinnacles of 17th-century sacred music.",
+   "durationMin": 75,
+   "imageUrl": "https://abugoshfestival.co.il/wp-content/uploads/2026/05/hero_sukot_2026_9-1024x497.webp"
+  },
+  {
+   "id": "post-9308",
+   "title": "“From Bach to Broadway” – Vocal Circle",
+   "titleLocal": "\"מבאך לברודווי\" – Vocal Circle",
+   "url": "https://abugoshfestival.co.il/en/%D7%9C%D7%95%D7%97-%D7%A7%D7%95%D7%A0%D7%A6%D7%A8%D7%98%D7%99%D7%9D/%d7%a7%d7%95%d7%a0%d7%a6%d7%a8%d7%98-%d7%a7%d7%a8%d7%99%d7%a4%d7%98%d7%94-%d7%9e%d7%a1-1/",
+   "genre": "music",
+   "categories": [
+    "crypt"
+   ],
+   "blurb": "In the enchanting and intimate acoustic space of the Crusader crypt, Vocal Circle invites the audience on an intriguing and surprising vocal journey in which the human voice completely replaces musical instruments.\n\nIn the programme “From Bach to Broadway,” the performers use fresh and original arrangements to create a rich and immediate harmonic world — ranging from hushed delicacy to explosive energy, humour and joie de vivre.\n\nThe concert moves freely between classical and contemporary music, bringing together masterpieces by Purcell, Tchaikovsky and Bardanaschwili with jazz favourites, Hebrew songs, folk music and beloved timeless melodies from around the world, including “Autumn Leaves” and “Ain’t No Sunshine.”\n\nThis is a sensual and imaginative musical celebration, reminding us why the voice is the most primal and moving instrument of all.",
+   "durationMin": 60,
+   "imageUrl": "https://abugoshfestival.co.il/wp-content/uploads/2026/06/hero_sukot_2026_17-1-1024x497.webp"
+  },
+  {
+   "id": "post-9550",
+   "title": "“Stabat Mater” – The Female Voice",
+   "titleLocal": "\"סטבט מאטר\" - הקול נשי",
+   "url": "https://abugoshfestival.co.il/en/outside-concerts/%d7%9e%d7%95%d7%a4%d7%a2-%d7%97%d7%95%d7%a5-%d7%9e%d7%a1-7/",
+   "genre": "music",
+   "categories": [
+    "outdoor"
+   ],
+   "blurb": "An intimate and richly varied vocal concert placing the female voice at its heart, moving through different worlds of emotion — from prayer and sorrow, through...",
+   "durationMin": null,
+   "imageUrl": "https://abugoshfestival.co.il/wp-content/uploads/2026/08/hero_outside_sukot_2026_0004_סטבת-מאטר-הקול-הנשי_7-1024x497.webp"
+  },
+  {
+   "id": "post-9563",
+   "title": "Getride's Quintet",
+   "titleLocal": null,
+   "url": "https://abugoshfestival.co.il/en/outside-concerts/%d7%9e%d7%95%d7%a4%d7%a2-%d7%97%d7%95%d7%a5-%d7%9e%d7%a1-8/",
+   "genre": "music",
+   "categories": [
+    "outdoor"
+   ],
+   "blurb": "Come enjoy great music, discover the stories behind the songs, and perhaps find out that some of your favorite melodies have lyrics you’ve never heard before",
+   "durationMin": 30,
+   "imageUrl": "https://abugoshfestival.co.il/wp-content/uploads/2026/08/hero_outside_sukot_2026_0005_Getride_s-Quintet-8-1024x497.webp"
+  },
+  {
+   "id": "post-9311",
+   "title": "“François Couperin: Lessons of Darkness”",
+   "titleLocal": "\"פרנסואה קופרן: תפילות הלילה\"",
+   "url": "https://abugoshfestival.co.il/en/%D7%9C%D7%95%D7%97-%D7%A7%D7%95%D7%A0%D7%A6%D7%A8%D7%98%D7%99%D7%9D/%d7%a7%d7%95%d7%a0%d7%a6%d7%a8%d7%98-%d7%a7%d7%a8%d7%99%d7%a4%d7%98%d7%94-%d7%9e%d7%a1-2/",
+   "genre": "music",
+   "categories": [
+    "crypt"
+   ],
+   "blurb": "In the intimate and unique setting of the crypt — the burial chamber beneath the ancient Crusader church in the heart of the village of Abu Gosh — a delicate, enchanting and atmospheric concert\n\nwill present one of the most beautiful works of the Baroque era: François Couperin’s masterpiece, Leçons de ténèbres.\n\nThe work was composed for the mysterious tradition of the Tenebrae services, during which verses from the Book of Lamentations were recited liturgically as the candles in the church were gradually extinguished, until the space was left in complete darkness\n\nThis is a quiet musical prayer — a concert of intimate listening, shaped by breath, resonance, ancient stone and pure female voices.",
+   "durationMin": 60,
+   "imageUrl": "https://abugoshfestival.co.il/wp-content/uploads/2026/05/hero_sukot_2026_11-1024x497.webp"
+  },
+  {
+   "id": "post-9144",
+   "title": "“Blue-and-White Swing”",
+   "titleLocal": "\"סווינג כחול לבן\"",
+   "url": "https://abugoshfestival.co.il/en/%D7%9C%D7%95%D7%97-%D7%A7%D7%95%D7%A0%D7%A6%D7%A8%D7%98%D7%99%D7%9D/%d7%a7%d7%95%d7%a0%d7%a6%d7%a8%d7%98-%d7%9b%d7%a0%d7%a1%d7%99%d7%99%d7%94-%d7%9e%d7%a1-6/",
+   "genre": "music",
+   "categories": [
+    "abu-gosh"
+   ],
+   "blurb": "A vibrant, colourful and high-energy concert bringing together the brilliant sound of the Israel Philharmonic Brass Quintet and the vocal power and rich harmonies of the Sonora Ensemble — on a musical journey from the jazz and swing traditions of America to some of the greatest classics of Israeli song.\n\nThroughout the programme, infectious swing rhythms and the gleaming sound of brass are interwoven with rich choral singing. American classics including “Carry Me Back to Old Virginny,” “St. James Infirmary” and “Tiger Rag” bring to the stage the energy, rhythm and brilliance of the jazz and brass-band traditions.\n\nFrom there, the journey continues to some of the most beloved and influential composers in Israeli music. Songs by Yoni Rechter — including “Haratzinut Hi Mimeni Vehala,” “Shir Ahava Standarti,” “Hashir Al Ha’aretz” and “Atur Mitzchech” — are presented in arrangements for voices and brass that highlight the harmonic sophistication, rhythmic vitality and distinctive musical colours of his work.\n\nThe programme also features songs by Miki Gavrielov, including “Ohev Lihyot Babayit” and “Shir Mispar 8,” as well as songs by Matti Caspi — “Kshe’Elohim Amar” and “Noah.” Other beloved songs, including “Hayamim Ha’arukim Ha’atzuvim,” “Lemi She’eino Ma’amin” and “Sahaki Sahaki,” receive fresh vocal interpretations, performed either a cappella or together with the brass quintet.\n\nThis is an exhilarating encounter between choir and brass, American swing and vocal harmony, New Orleans and the Israeli musical soundtrack — a celebration of rhythm, voices and music in blue and white.",
+   "durationMin": 75,
+   "imageUrl": "https://abugoshfestival.co.il/wp-content/uploads/2026/06/hero_sukot_2026_10-2-1024x497.webp"
+  },
+  {
+   "id": "post-9240",
+   "title": "Navidad Nuestra – A Latin Prayer",
+   "titleLocal": "“Navidad Nuestra” – תפילה לטינית",
+   "url": "https://abugoshfestival.co.il/en/%D7%9C%D7%95%D7%97-%D7%A7%D7%95%D7%A0%D7%A6%D7%A8%D7%98%D7%99%D7%9D/%d7%a7%d7%95%d7%a0%d7%a6%d7%a8%d7%98-%d7%9b%d7%a0%d7%a1%d7%99%d7%99%d7%94-%d7%9e%d7%a1-7/",
+   "genre": "music",
+   "categories": [
+    "abu-gosh"
+   ],
+   "blurb": "An exhilarating concert bringing together Latin Christian traditions, Afro–South American rhythms and vibrant folk music within the sacred setting of Kiryat Ye’arim Church.\n\nThe Los Muchachos Paraguayos Ensemble from Paraguay, the Kibbutz Artzi Choir, and an ensemble of South American instruments and percussion will perform Ariel Ramírez’s Navidad Nuestra, alongside songs of prayer, ceremony and worship from Central and South America — music that moves between folk celebration, soulful singing and ancient ritual.\n\nThe concert will feature traditional hymns and processional songs, mysterious lullabies and ceremonial songs dedicated to Saint John, revealing a musical world rich in colour, rhythm and spirit.",
+   "durationMin": 75,
+   "imageUrl": "https://abugoshfestival.co.il/wp-content/uploads/2026/05/hero_sukot_2026_12-1024x497.webp"
+  },
+  {
+   "id": "post-9564",
+   "title": "“At the Heart of Song” – Lev Tel Aviv Women’s Choir",
+   "titleLocal": "\"בלב השיר\" - מקהלת לב תל אביב",
+   "url": "https://abugoshfestival.co.il/en/outside-concerts/%d7%9e%d7%95%d7%a4%d7%a2-%d7%97%d7%95%d7%a5-%d7%9e%d7%a1-10/",
+   "genre": "music",
+   "categories": [
+    "outdoor"
+   ],
+   "blurb": "A rich and colorful program moving between profound prayer, lyrical song, humor, longing, and hope.",
+   "durationMin": 30,
+   "imageUrl": "https://abugoshfestival.co.il/wp-content/uploads/2026/08/hero_outside_sukot_2026_0008_lev-1024x497.webp"
+  },
+  {
+   "id": "post-9246",
+   "title": "J. S. Bach – St John Passion",
+   "titleLocal": "\"יוהנס פאסיון\" - י.ס.באך",
+   "url": "https://abugoshfestival.co.il/en/%D7%9C%D7%95%D7%97-%D7%A7%D7%95%D7%A0%D7%A6%D7%A8%D7%98%D7%99%D7%9D/%d7%a7%d7%95%d7%a0%d7%a6%d7%a8%d7%98-%d7%9b%d7%a0%d7%a1%d7%99%d7%99%d7%94-%d7%9e%d7%a1-8/",
+   "genre": "music",
+   "categories": [
+    "abu-gosh"
+   ],
+   "blurb": "One of Johann Sebastian Bach’s greatest masterpieces, the St John Passion (Johannes-Passion), stands among the supreme achievements of sacred music of all time.\n\nWritten for choir, soloists and orchestra, the work recounts the Passion story according to the Gospel of John with extraordinary dramatic power, combining moments of profound human suffering with spiritual grandeur and musical transcendence. Bach creates a richly expressive world of stirring choruses, deeply emotional arias and intimate chorales, moving between theatrical drama and inward contemplation.\n\nPerformed by the Collegium Tel Aviv Vocal Ensemble, the Barrocada Orchestra and soloists, under the direction of conductor Yishai Steckler, the work will come vividly to life in the unique acoustics of Kiryat Ye’arim Church.\n\nThis is a rare encounter with Bach at the height of his creative powers.",
+   "durationMin": null,
+   "imageUrl": "https://abugoshfestival.co.il/wp-content/uploads/2026/05/hero_sukot_2026_13-1024x497.webp"
+  },
+  {
+   "id": "post-9314",
+   "title": "“Strings of Passion” – Liat Cohen and Daniela Skorka",
+   "titleLocal": "\"מיתרים של תשוקה\" - ליאת כהן ודניאלה סקורקה",
+   "url": "https://abugoshfestival.co.il/en/%D7%9C%D7%95%D7%97-%D7%A7%D7%95%D7%A0%D7%A6%D7%A8%D7%98%D7%99%D7%9D/%d7%a7%d7%95%d7%a0%d7%a6%d7%a8%d7%98-%d7%a7%d7%a8%d7%99%d7%a4%d7%98%d7%94-%d7%9e%d7%a1-3/",
+   "genre": "music",
+   "categories": [
+    "crypt"
+   ],
+   "blurb": "In the intimate and unique setting of the crypt, the ancient burial chamber beneath the Crusader church in the heart of the village of Abu Gosh, the clear voice of soprano Daniela Skorka will meet the guitar of internationally acclaimed virtuoso Liat Cohen.\n\nThis is a musical journey filled with passion, colour and longing, travelling between Spain and Latin America, and between folk song and classical art music.\n\nWorks by Manuel de Falla, Joaquín Rodrigo, Fernando Sor and Isaac Albéniz will bring the spirit of Spain into the crypt — fiery melodies, delicate rhythms and poetic depth.\n\nAlongside them, the programme will feature works by Heitor Villa-Lobos, Antonio Lauro and Ariel Ramírez, including the beloved song “Alfonsina y el Mar.”\n\nWithin the ancient stone chamber, where every sound takes on its own resonance and breath, an intimate and immediate encounter unfolds between the voice, the strings and the audience. A concert of beauty, emotion and intimacy — from the passion of Spain to the gentle melancholy of South America.",
+   "durationMin": 60,
+   "imageUrl": "https://abugoshfestival.co.il/wp-content/uploads/2026/05/hero_sukot_2026_14-1024x497.webp"
+  },
+  {
+   "id": "post-9565",
+   "title": "“Sonatas for Two” – Duo Caeli",
+   "titleLocal": "\"סונטות בשניים\"- דואו קאֶלי",
+   "url": "https://abugoshfestival.co.il/en/outside-concerts/%d7%9e%d7%95%d7%a4%d7%a2-%d7%97%d7%95%d7%a5-%d7%9e%d7%a1-11/",
+   "genre": "music",
+   "categories": [
+    "outdoor"
+   ],
+   "blurb": "Duo Caeli invites the audience on an intimate journey through Baroque England, Italy and Germany, with a program of sonatas and duets by Daniel Purcell, Francesco...",
+   "durationMin": 30,
+   "imageUrl": "https://abugoshfestival.co.il/wp-content/uploads/2026/08/hero_outside_sukot_2026_0006_דואו-קאלי_10-1024x497.webp"
+  },
+  {
+   "id": "post-9566",
+   "title": "Ariel Zorbachi Quartet",
+   "titleLocal": null,
+   "url": "https://abugoshfestival.co.il/en/outside-concerts/%d7%9e%d7%95%d7%a4%d7%a2-%d7%97%d7%95%d7%a5-%d7%9e%d7%a1-12/",
+   "genre": "music",
+   "categories": [
+    "outdoor"
+   ],
+   "blurb": "The performance features well-known jazz standards alongside unique arrangements of beloved classics.",
+   "durationMin": 30,
+   "imageUrl": "https://abugoshfestival.co.il/wp-content/uploads/2026/08/hero_outside_sukot_2026_0007_Ariel-Zorbachi-Quartet-12-1024x497.webp"
+  },
+  {
+   "id": "post-9319",
+   "title": "“The Splendour of the German Baroque”",
+   "titleLocal": "״פאר הבארוק הגרמני״",
+   "url": "https://abugoshfestival.co.il/en/%D7%9C%D7%95%D7%97-%D7%A7%D7%95%D7%A0%D7%A6%D7%A8%D7%98%D7%99%D7%9D/%d7%a7%d7%95%d7%a0%d7%a6%d7%a8%d7%98-%d7%a7%d7%a8%d7%99%d7%a4%d7%98%d7%94-%d7%9e%d7%a1-4/",
+   "genre": "music",
+   "categories": [
+    "crypt"
+   ],
+   "blurb": "In the intimate and mysterious setting of the crypt, the ancient burial chamber at the heart of the Crusader church in the village of Abu Gosh, audiences are invited to encounter some of the greatest achievements of the Baroque tradition from the German-speaking world.\n\nBaroque violinist Noam Gal, viola da gamba player Amit Tiefenbrunn, and harpsichordist and organist Yizhar Karshon come together for a rich chamber programme that brings the splendour, depth and virtuosity of 17th- and 18th-century music into the crypt.\n\nThe programme journeys from the architectural complexity and spiritual power of Bach, through Buxtehude’s rich polyphony and Biber’s bold, virtuosic writing, to the late-Baroque elegance and refined sound of Abel.\n\nA pure and intimate chamber-music experience, combining the crypt’s unique acoustics with inspired historically informed performances, just a few steps away from the audience.\n\nProgramme\n\nJohann Sebastian Bach - Toccata and Fugue for Organ Heinrich Ignaz Franz Biber - Sonata from the Rosary Sonatas for Violin Carl Friedrich Abel- Sonata for Viola da Gamba Dieterich Buxtehude - Trio Sonata in G Major",
+   "durationMin": 60,
+   "imageUrl": "https://abugoshfestival.co.il/wp-content/uploads/2026/06/hero_sukot_2026_16-1-1024x497.webp"
+  },
+  {
+   "id": "post-9254",
+   "title": "“A Day in Venice, A Night in Naples”",
+   "titleLocal": "\"יום בוונציה, לילה בנאפולי\"",
+   "url": "https://abugoshfestival.co.il/en/%D7%9C%D7%95%D7%97-%D7%A7%D7%95%D7%A0%D7%A6%D7%A8%D7%98%D7%99%D7%9D/%d7%a7%d7%95%d7%a0%d7%a6%d7%a8%d7%98-%d7%9b%d7%a0%d7%a1%d7%99%d7%99%d7%94-%d7%9e%d7%a1-9/",
+   "genre": "music",
+   "categories": [
+    "abu-gosh"
+   ],
+   "blurb": "A colourful and exhilarating musical journey into the heart of Italy — from the canals, palaces and churches of Venice to the streets, nights and fiery rhythms of Naples\n\nIn the first part of the concert, we will enter the magnificent world of Baroque Italy: passionate madrigals by Claudio Monteverdi, moments of Italian Jewish sacred music by Salamone Rossi, and virtuosic works by Merula and Vivaldi. This is the Italy of the 17th century — polyphonic, dramatic, spiritual and sensual — where words, voices and harmonies are transformed into living musical theatre.\n\nFrom the elegance of Venice, the programme continues to another side of Italy: more popular, warmer and more uninhibited. Gondolier songs, tarantellas, love melodies and Neapolitan songs will bring the spirit of the Italian streets into the church — filled with rhythm, humour, emotion and joie de vivre.\n\nAt the heart of the concert are the distinctive voices of countertenor Yaniv d’Or and soprano Ya’ala Avital, joined by Ensemble Mezzo, under the musical direction of Doret Florentin, and the Jerusalem Vocal Consort. Together, they will lead the audience between sacred and secular, palace and city square, refined Baroque music and an exuberant folk celebration.\n\nThis concert begins in the golden light of Venice and concludes in a passionate Neapolitan night — an Italian celebration of voices, instruments, dance and imagination.",
+   "durationMin": 75,
+   "imageUrl": "https://abugoshfestival.co.il/wp-content/uploads/2026/05/hero_sukot_2026_15-1024x497.webp"
+  }
+ ],
+ "performances": [
+  {
+   "id": "post-9079/2026-09-29/11:00",
+   "eventId": "post-9079",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "11:00",
+   "ticketUrl": "https://agfestival.smarticket.co.il/%D7%94%D7%A8%D7%A7%D7%95%D7%95%D7%99%D7%90%D7%9D_%D7%A9%D7%9C_%D7%A4%D7%95%D7%A8%D7%94/?id=168",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 140,
+   "priceMax": 140
+  },
+  {
+   "id": "post-9081/2026-09-29/14:00",
+   "eventId": "post-9081",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "14:00",
+   "ticketUrl": "https://agfestival.smarticket.co.il/_%D7%94%D7%90%D7%A8%D7%9C%D7%9D_%D7%A1%D7%95%D7%95%D7%99%D7%A0%D7%92____%D7%A9%D7%A0%D7%95%D7%AA_%D7%94%D7%A9%D7%9C%D7%95%D7%A9%D7%99%D7%9D_%D7%94%D7%A2%D7%9C%D7%99%D7%96%D7%95%D7%AA/?id=169",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 170,
+   "priceMax": 170
+  },
+  {
+   "id": "post-9082/2026-09-29/17:30",
+   "eventId": "post-9082",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "17:30",
+   "ticketUrl": "https://agfestival.smarticket.co.il/_%D7%97%D7%95%D7%96%D7%A8%D7%99%D7%9D_%D7%9C%D7%98%D7%A0%D7%92%D7%95__-__%D7%9E%D7%95%D7%96%D7%99%D7%A7%D7%94__%D7%AA%D7%A0%D7%95%D7%A2%D7%94_%D7%95%D7%A0%D7%A9%D7%9E%D7%94_%D7%9E%D7%9E%D7%95%D7%A2%D7%93%D7%95%D7%A0%D7%99_%D7%91%D7%95%D7%90%D7%A0%D7%95%D7%A1_%D7%90%D7%99%D7%99%D7%A8%D7%A1/?id=170",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 150,
+   "priceMax": 150
+  },
+  {
+   "id": "post-9083/2026-09-29/20:30",
+   "eventId": "post-9083",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "20:30",
+   "ticketUrl": "https://agfestival.smarticket.co.il/_%D7%9C%D7%95%D7%A1_%D7%9E%D7%95%D7%A6_%D7%90%D7%A6_%D7%95%D7%A1_%D7%A4%D7%A8%D7%90%D7%92%D7%95%D7%95%D7%90%D7%99%D7%95%D7%A1____%D7%97%D7%92%D7%99%D7%92%D7%94_%D7%9C%D7%98%D7%99%D7%A0%D7%99%D7%AA_%D7%A1%D7%95%D7%97%D7%A4%D7%AA/?id=171",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 170,
+   "priceMax": 170
+  },
+  {
+   "id": "post-9541/2026-09-30/10:00",
+   "eventId": "post-9541",
+   "venueId": "kiryat-yearim-church",
+   "roomId": "cafe-terrace",
+   "date": "2026-09-30",
+   "start": "10:00",
+   "ticketUrl": null,
+   "free": true,
+   "status": "free",
+   "priceMin": 0,
+   "priceMax": 0
+  },
+  {
+   "id": "post-9541/2026-09-30/16:15",
+   "eventId": "post-9541",
+   "venueId": "kiryat-yearim-church",
+   "roomId": "cafe-terrace",
+   "date": "2026-09-30",
+   "start": "16:15",
+   "ticketUrl": null,
+   "free": true,
+   "status": "free",
+   "priceMin": 0,
+   "priceMax": 0
+  },
+  {
+   "id": "post-9092/2026-09-30/11:00",
+   "eventId": "post-9092",
+   "venueId": "kiryat-yearim-church",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "11:00",
+   "ticketUrl": "https://agfestival.smarticket.co.il/_%D7%AA%D7%A4%D7%99%D7%9C%D7%95%D7%AA_%D7%A2%D7%A8%D7%91%D7%99%D7%AA_-_%D7%95.%D7%90.%D7%9E%D7%95%D7%A6%D7%A8%D7%98_-_%D7%AA%D7%96%D7%9E%D7%95%D7%A8%D7%AA_%D7%91%D7%90%D7%A8%D7%95%D7%A7%D7%93%D7%94_%D7%95%D7%94%D7%90%D7%A0%D7%A1%D7%9E%D7%91%D7%9C_%D7%94%D7%A7%D7%95%D7%9C%D7%99_%D7%94%D7%99%D7%A9%D7%A8%D7%90%D7%9C%D7%99_/?id=172",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 210,
+   "priceMax": 210
+  },
+  {
+   "id": "post-9542/2026-09-30/12:45",
+   "eventId": "post-9542",
+   "venueId": "kiryat-yearim-church",
+   "roomId": "patio",
+   "date": "2026-09-30",
+   "start": "12:45",
+   "ticketUrl": null,
+   "free": true,
+   "status": "free",
+   "priceMin": 0,
+   "priceMax": 0
+  },
+  {
+   "id": "post-9543/2026-09-30/13:20",
+   "eventId": "post-9543",
+   "venueId": "kiryat-yearim-church",
+   "roomId": "cafe-terrace",
+   "date": "2026-09-30",
+   "start": "13:20",
+   "ticketUrl": null,
+   "free": true,
+   "status": "free",
+   "priceMin": 0,
+   "priceMax": 0
+  },
+  {
+   "id": "post-9100/2026-09-30/14:00",
+   "eventId": "post-9100",
+   "venueId": "kiryat-yearim-church",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "14:00",
+   "ticketUrl": "https://agfestival.smarticket.co.il/_%D7%A1%D7%98%D7%90%D7%91%D7%AA_%D7%9E%D7%90%D7%98%D7%A8____%D7%94%D7%99%D7%99%D7%93%D7%9F_/?id=173",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 210,
+   "priceMax": 210
+  },
+  {
+   "id": "post-9546/2026-09-30/15:45",
+   "eventId": "post-9546",
+   "venueId": "kiryat-yearim-church",
+   "roomId": "patio",
+   "date": "2026-09-30",
+   "start": "15:45",
+   "ticketUrl": null,
+   "free": true,
+   "status": "free",
+   "priceMin": 0,
+   "priceMax": 0
+  },
+  {
+   "id": "post-9113/2026-09-30/17:00",
+   "eventId": "post-9113",
+   "venueId": "kiryat-yearim-church",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "17:00",
+   "ticketUrl": "https://agfestival.smarticket.co.il/%D7%A1%D7%A4%D7%A8%D7%93_%D7%A9%D7%9C_%D7%99%D7%9E%D7%99_%D7%94%D7%91%D7%99%D7%A0%D7%99%D7%99%D7%9D__%D7%A9%D7%99%D7%A8%D7%99%D7%9D_%D7%9E%D7%9E%D7%A0%D7%96%D7%A8_%D7%9E%D7%95%D7%A0%D7%A1%D7%A8%D7%90%D7%98/?id=174",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 180,
+   "priceMax": 180
+  },
+  {
+   "id": "post-9541/2026-10-01/10:00",
+   "eventId": "post-9541",
+   "venueId": "kiryat-yearim-church",
+   "roomId": "cafe-terrace",
+   "date": "2026-10-01",
+   "start": "10:00",
+   "ticketUrl": null,
+   "free": true,
+   "status": "free",
+   "priceMin": 0,
+   "priceMax": 0
+  },
+  {
+   "id": "post-9541/2026-10-01/13:15",
+   "eventId": "post-9541",
+   "venueId": "kiryat-yearim-church",
+   "roomId": "cafe-terrace",
+   "date": "2026-10-01",
+   "start": "13:15",
+   "ticketUrl": null,
+   "free": true,
+   "status": "free",
+   "priceMin": 0,
+   "priceMax": 0
+  },
+  {
+   "id": "post-9541/2026-10-01/16:15",
+   "eventId": "post-9541",
+   "venueId": "kiryat-yearim-church",
+   "roomId": "cafe-terrace",
+   "date": "2026-10-01",
+   "start": "16:15",
+   "ticketUrl": null,
+   "free": true,
+   "status": "free",
+   "priceMin": 0,
+   "priceMax": 0
+  },
+  {
+   "id": "post-9128/2026-10-01/11:00",
+   "eventId": "post-9128",
+   "venueId": "kiryat-yearim-church",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "11:00",
+   "ticketUrl": "https://agfestival.smarticket.co.il/_%D7%94%D7%90%D7%91__%D7%94%D7%91%D7%9F_%D7%95%D7%94%D7%9E%D7%92%D7%A0%D7%99%D7%A4%D7%99%D7%A7%D7%98__-_%D7%A9%D7%A0%D7%99_%D7%9E%D7%92%D7%A0%D7%99%D7%A4%D7%99%D7%A7%D7%98%D7%99%D7%9D_%D7%9C%D7%91%D7%99%D7%AA_%D7%91%D7%90%D7%9A/?id=175",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 230,
+   "priceMax": 230
+  },
+  {
+   "id": "post-9548/2026-10-01/12:45",
+   "eventId": "post-9548",
+   "venueId": "kiryat-yearim-church",
+   "roomId": "patio",
+   "date": "2026-10-01",
+   "start": "12:45",
+   "ticketUrl": null,
+   "free": true,
+   "status": "free",
+   "priceMin": 0,
+   "priceMax": 0
+  },
+  {
+   "id": "post-9136/2026-10-01/14:00",
+   "eventId": "post-9136",
+   "venueId": "kiryat-yearim-church",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "14:00",
+   "ticketUrl": "https://agfestival.smarticket.co.il/_%D7%9E%D7%9E%D7%91%D7%A8%D7%94_%D7%99%D7%96%D7%95_%D7%A0%D7%95%D7%A1%D7%98%D7%A8%D7%99____%D7%91%D7%95%D7%A7%D7%A1%D7%98%D7%94%D7%95%D7%93%D7%94_/?id=176",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 210,
+   "priceMax": 210
+  },
+  {
+   "id": "post-9308/2026-10-01/14:30",
+   "eventId": "post-9308",
+   "venueId": "benedictine-crypt",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "14:30",
+   "ticketUrl": "https://agfestival.smarticket.co.il/_%D7%9E%D7%A2%D7%92%D7%9C_%D7%A9%D7%9C_%D7%A7%D7%95%D7%9C%D7%95%D7%AA____Vocal_Circle-_%D7%9E%D7%90%D7%95%D7%A4%D7%A8%D7%94_%D7%95%D7%92_%D7%90%D7%96_%D7%95%D7%A2%D7%93_%D7%A9%D7%99%D7%A8%D7%99_%D7%90%D7%94%D7%91%D7%94_%D7%9E%D7%9B%D7%9C_%D7%94%D7%A2%D7%95%D7%9C%D7%9D/?id=183",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 120,
+   "priceMax": 120
+  },
+  {
+   "id": "post-9550/2026-10-01/15:45",
+   "eventId": "post-9550",
+   "venueId": "kiryat-yearim-church",
+   "roomId": "patio",
+   "date": "2026-10-01",
+   "start": "15:45",
+   "ticketUrl": null,
+   "free": true,
+   "status": "free",
+   "priceMin": 0,
+   "priceMax": 0
+  },
+  {
+   "id": "post-9563/2026-10-01/16:15",
+   "eventId": "post-9563",
+   "venueId": "kiryat-yearim-church",
+   "roomId": "cafe-terrace",
+   "date": "2026-10-01",
+   "start": "16:15",
+   "ticketUrl": null,
+   "free": true,
+   "status": "free",
+   "priceMin": 0,
+   "priceMax": 0
+  },
+  {
+   "id": "post-9311/2026-10-01/16:45",
+   "eventId": "post-9311",
+   "venueId": "benedictine-crypt",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "16:45",
+   "ticketUrl": "https://agfestival.smarticket.co.il/_%D7%A4%D7%A8%D7%A0%D7%A1%D7%95%D7%90%D7%94_%D7%A7%D7%95%D7%A4%D7%A8%D7%9F__%D7%AA%D7%A4%D7%99%D7%9C%D7%95%D7%AA_%D7%94%D7%9C%D7%99%D7%9C%D7%94_/?id=178",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 120,
+   "priceMax": 120
+  },
+  {
+   "id": "post-9144/2026-10-01/17:00",
+   "eventId": "post-9144",
+   "venueId": "kiryat-yearim-church",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "17:00",
+   "ticketUrl": "https://agfestival.smarticket.co.il/_%D7%9E%D7%92%D7%91%D7%A8%D7%99%D7%90%D7%9C%D7%99_%D7%95%D7%A2%D7%93_%D7%92%D7%91%D7%A8%D7%99%D7%90%D7%9C%D7%95%D7%91_-_%D7%90%D7%A0%D7%A1%D7%9E%D7%91%D7%9C_%D7%A1%D7%95%D7%A0%D7%95%D7%A8%D7%94__%D7%97%D7%9E%D7%99%D7%A9%D7%99%D7%99%D7%AA_%D7%94%D7%9E%D7%AA%D7%9B%D7%AA_%D7%A9%D7%9C_%D7%94%D7%A4%D7%99%D7%9C%D7%94%D7%A8%D7%9E%D7%95%D7%A0%D7%99%D7%AA_%D7%94%D7%99%D7%A9%D7%A8%D7%90%D7%9C%D7%99%D7%AA/?id=177",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 130,
+   "priceMax": 130
+  },
+  {
+   "id": "post-9541/2026-10-03/10:00",
+   "eventId": "post-9541",
+   "venueId": "kiryat-yearim-church",
+   "roomId": "cafe-terrace",
+   "date": "2026-10-03",
+   "start": "10:00",
+   "ticketUrl": null,
+   "free": true,
+   "status": "free",
+   "priceMin": 0,
+   "priceMax": 0
+  },
+  {
+   "id": "post-9541/2026-10-03/13:15",
+   "eventId": "post-9541",
+   "venueId": "kiryat-yearim-church",
+   "roomId": "cafe-terrace",
+   "date": "2026-10-03",
+   "start": "13:15",
+   "ticketUrl": null,
+   "free": true,
+   "status": "free",
+   "priceMin": 0,
+   "priceMax": 0
+  },
+  {
+   "id": "post-9541/2026-10-03/16:15",
+   "eventId": "post-9541",
+   "venueId": "kiryat-yearim-church",
+   "roomId": "cafe-terrace",
+   "date": "2026-10-03",
+   "start": "16:15",
+   "ticketUrl": null,
+   "free": true,
+   "status": "free",
+   "priceMin": 0,
+   "priceMax": 0
+  },
+  {
+   "id": "post-9240/2026-10-03/11:00",
+   "eventId": "post-9240",
+   "venueId": "kiryat-yearim-church",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "11:00",
+   "ticketUrl": "https://agfestival.smarticket.co.il/_Navidad_Nuestra____%D7%AA%D7%A4%D7%99%D7%9C%D7%94_%D7%9C%D7%98%D7%99%D7%A0%D7%99%D7%AA_%D7%97%D7%92%D7%99%D7%92%D7%94_%D7%A6%D7%91%D7%A2%D7%95%D7%A0%D7%99%D7%AA_%D7%A9%D7%9C_%D7%A7%D7%95%D7%9C%D7%95%D7%AA__%D7%9B%D7%9C%D7%99%D7%9D_%D7%95%D7%A0%D7%A9%D7%9E%D7%94_%D7%93%D7%A8%D7%95%D7%9D_%D7%90%D7%9E%D7%A8%D7%99%D7%A7%D7%90%D7%99%D7%AA/?id=179",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 230,
+   "priceMax": 230
+  },
+  {
+   "id": "post-9564/2026-10-03/12:45",
+   "eventId": "post-9564",
+   "venueId": "kiryat-yearim-church",
+   "roomId": "patio",
+   "date": "2026-10-03",
+   "start": "12:45",
+   "ticketUrl": null,
+   "free": true,
+   "status": "free",
+   "priceMin": 0,
+   "priceMax": 0
+  },
+  {
+   "id": "post-9246/2026-10-03/14:00",
+   "eventId": "post-9246",
+   "venueId": "kiryat-yearim-church",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "14:00",
+   "ticketUrl": "https://agfestival.smarticket.co.il/_%D7%99%D7%95%D7%94%D7%A0%D7%A1_%D7%A4%D7%90%D7%A1%D7%99%D7%95%D7%9F__-_%D7%99.%D7%A1.%D7%91%D7%90%D7%9A/?id=180",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 230,
+   "priceMax": 230
+  },
+  {
+   "id": "post-9314/2026-10-03/14:30",
+   "eventId": "post-9314",
+   "venueId": "benedictine-crypt",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "14:30",
+   "ticketUrl": "https://agfestival.smarticket.co.il/_%D7%9E%D7%99%D7%AA%D7%A8%D7%99%D7%9D_%D7%A9%D7%9C_%D7%AA%D7%A9%D7%95%D7%A7%D7%94_-_%D7%9C%D7%99%D7%90%D7%AA_%D7%9B%D7%94%D7%9F_%D7%93%D7%A0%D7%99%D7%90%D7%9C%D7%94_%D7%A1%D7%A7%D7%95%D7%A8%D7%A7%D7%94_/?id=182",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 120,
+   "priceMax": 120
+  },
+  {
+   "id": "post-9565/2026-10-03/15:45",
+   "eventId": "post-9565",
+   "venueId": "kiryat-yearim-church",
+   "roomId": "patio",
+   "date": "2026-10-03",
+   "start": "15:45",
+   "ticketUrl": null,
+   "free": true,
+   "status": "free",
+   "priceMin": 0,
+   "priceMax": 0
+  },
+  {
+   "id": "post-9566/2026-10-03/16:15",
+   "eventId": "post-9566",
+   "venueId": "kiryat-yearim-church",
+   "roomId": "cafe-terrace",
+   "date": "2026-10-03",
+   "start": "16:15",
+   "ticketUrl": null,
+   "free": true,
+   "status": "free",
+   "priceMin": 0,
+   "priceMax": 0
+  },
+  {
+   "id": "post-9319/2026-10-03/16:45",
+   "eventId": "post-9319",
+   "venueId": "benedictine-crypt",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "16:45",
+   "ticketUrl": "https://agfestival.smarticket.co.il/_%D7%A4%D7%90%D7%A8_%D7%94%D7%91%D7%90%D7%A8%D7%95%D7%A7_%D7%94%D7%92%D7%A8%D7%9E%D7%A0%D7%99__-_%D7%91%D7%90%D7%9A__%D7%91%D7%99%D7%91%D7%A8_%D7%95%D7%91%D7%95%D7%A7%D7%A1%D7%98%D7%94%D7%95%D7%93%D7%94/?id=184",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 120,
+   "priceMax": 120
+  },
+  {
+   "id": "post-9254/2026-10-03/17:00",
+   "eventId": "post-9254",
+   "venueId": "kiryat-yearim-church",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "17:00",
+   "ticketUrl": "https://agfestival.smarticket.co.il/_%D7%9E%D7%95%D7%A0%D7%98%D7%95%D7%95%D7%A8%D7%93%D7%99__%D7%A8%D7%95%D7%A1%D7%99_%D7%95%D7%91%D7%90%D7%9A_-_%D7%99%D7%A0%D7%99%D7%91_%D7%93_%D7%90%D7%95%D7%A8_%D7%90%D7%A0%D7%A1%D7%9E%D7%91%D7%9C_%D7%9E%D7%A6%D7%95_%D7%94%D7%A7%D7%95%D7%A0%D7%A1%D7%95%D7%A8%D7%98_%D7%94%D7%A7%D7%95%D7%9C%D7%99_%D7%94%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%9E%D7%99/?id=181",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 130,
+   "priceMax": 130
+  }
+ ],
+ "sources": {
+  "festival": [
+   "festival.toml"
+  ],
+  "venues": [
+   "venues-research"
+  ],
+  "events": [
+   "abugosh-site"
+  ],
+  "performances": [
+   "abugosh-site"
+  ],
+  "availability": [
+   "abugosh-site"
+  ],
+  "prices": [
+   "abugosh-site"
+  ]
+ },
+ "provenance": {
+  "sources": {
+   "abugosh-site": {
+    "kind": "fetched",
+    "path": "data/festivals/abu-gosh/2026/abugosh-site",
+    "fetchedAt": "2026-09-27T09:23:11Z",
+    "fetcher": "scraper/festivals/abu_gosh/sources/abugosh-site/fetch.py",
+    "fetcherVersion": 1
+   },
+   "venues-research": {
+    "kind": "curated",
+    "path": "scraper/festivals/abu_gosh/curated/venues.json"
+   }
+  },
+  "absent": [],
+  "fields": {
+   "categories.name": [
+    "abugosh-site"
+   ],
+   "events.blurb": [
+    "abugosh-site"
+   ],
+   "events.categories": [
+    "abugosh-site"
+   ],
+   "events.durationMin": [
+    "abugosh-site"
+   ],
+   "events.imageUrl": [
+    "abugosh-site"
+   ],
+   "events.title": [
+    "abugosh-site"
+   ],
+   "events.titleLocal": [
+    "abugosh-site"
+   ],
+   "events.url": [
+    "abugosh-site"
+   ],
+   "performances.date": [
+    "abugosh-site"
+   ],
+   "performances.eventId": [
+    "abugosh-site"
+   ],
+   "performances.free": [
+    "abugosh-site"
+   ],
+   "performances.priceMax": [
+    "abugosh-site"
+   ],
+   "performances.priceMin": [
+    "abugosh-site"
+   ],
+   "performances.roomId": [
+    "abugosh-site"
+   ],
+   "performances.start": [
+    "abugosh-site"
+   ],
+   "performances.status": [
+    "abugosh-site"
+   ],
+   "performances.ticketUrl": [
+    "abugosh-site"
+   ],
+   "performances.venueId": [
+    "abugosh-site"
+   ],
+   "venues.accessibility": [
+    "venues-research"
+   ],
+   "venues.address": [
+    "venues-research"
+   ],
+   "venues.capacity": [
+    "venues-research"
+   ],
+   "venues.lat": [
+    "venues-research"
+   ],
+   "venues.layout": [
+    "venues-research"
+   ],
+   "venues.lng": [
+    "venues-research"
+   ],
+   "venues.name": [
+    "venues-research"
+   ],
+   "venues.notes": [
+    "venues-research"
+   ],
+   "venues.refs": [
+    "venues-research"
+   ],
+   "venues.rooms": [
+    "venues-research"
+   ]
+  },
+  "skipped": {}
+ }
+}

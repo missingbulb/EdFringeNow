@@ -1,0 +1,1106 @@
+{
+ "v": 1,
+ "city": {
+  "id": "rapperswil",
+  "name": "Rapperswil",
+  "country": "CH",
+  "lat": 47.2267,
+  "lng": 8.8184,
+  "timezone": "Europe/Zurich"
+ },
+ "places": [
+  {
+   "id": "osm:node/4192210341",
+   "name": "Polenmuseum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 47.227248,
+   "lng": 8.815622,
+   "address": null,
+   "website": "https://polenmuseum.ch/",
+   "wikidata": "Q689839",
+   "wikipedia": "pl:Muzeum Polskie w Rapperswilu",
+   "description": "historical Museum in Rapperswil in the canton of St. Gallen, Switzerland",
+   "image": "Rapperswil - Schloss - Polenmuseum - Innenansicht 2012-09-23 15-53-10 (P7000) ShiftN.jpg",
+   "notability": 11,
+   "highlight": true,
+   "openingHours": "Apr-Oct: Mo-Su 13:00-17:00; Mar,Nov,Dec: Sa,Su 13:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": [
+      [
+       "04-01",
+       "10-31"
+      ]
+     ],
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "13:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "03-01",
+       "03-31"
+      ],
+      [
+       "11-01",
+       "11-30"
+      ],
+      [
+       "12-01",
+       "12-31"
+      ]
+     ],
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "13:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:relation/17175264",
+   "name": "Schloss Rapperswil",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 47.227325,
+   "lng": 8.815634,
+   "address": "Lindenhügel, 8640",
+   "website": "https://www.schlossrapperswil.com/",
+   "wikidata": "Q1354897",
+   "wikipedia": "de:Schloss Rapperswil",
+   "description": "castle in Rapperswil in the canton of St. Gallen, Switzerland",
+   "image": "Rapperswil - Schloss - Bahnhof IMG 8092.JPG",
+   "notability": 6,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/26572316",
+   "name": "Knie's Kinderzoo",
+   "nameEn": null,
+   "kind": "zoo",
+   "lat": 47.223237,
+   "lng": 8.822277,
+   "address": null,
+   "website": "https://www.knieskinderzoo.ch/",
+   "wikidata": "Q688446",
+   "wikipedia": "de:Knies Kinderzoo",
+   "description": "zoo",
+   "image": "Knies Kinderzoo IMG 3835.JPG",
+   "notability": 4,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2953670478",
+   "name": "Centum Prata",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 47.235964,
+   "lng": 8.820614,
+   "address": null,
+   "website": null,
+   "wikidata": "Q8987384",
+   "wikipedia": "de:Centum Prata",
+   "description": "former Roman Vicus in Rapperswil-Jona in the canton of St. Gallen, Switzerland",
+   "image": "Centum prata (Kempraten) - Meienbergstrasse 2012-01-16 14-31-20.JPG",
+   "notability": 3,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/268134047",
+   "name": "Lindenhof",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 47.227037,
+   "lng": 8.814186,
+   "address": null,
+   "website": null,
+   "wikidata": "Q14541553",
+   "wikipedia": "de:Lindenhof (Rapperswil)",
+   "description": "moraine hill and a public square being the historic center of Rapperswil, Switzerland",
+   "image": "Rapperswil - Schloss - Lindenhof 2010-06-14 19-07-52.JPG",
+   "notability": 3,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/203451072",
+   "name": "Rathaus",
+   "nameEn": null,
+   "kind": "attraction",
+   "lat": 47.226334,
+   "lng": 8.816347,
+   "address": "1, 8640",
+   "website": null,
+   "wikidata": "Q1728856",
+   "wikipedia": "de:Rathaus (Rapperswil)",
+   "description": "administrative building in Rapperswil in the canton of St. Gallen, Switzerland",
+   "image": "Rathaus Rapperswil - Hauptplatz 2012-07-30 11-56-11 ShiftN.jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2492113644",
+   "name": "Stadtmuseum Rapperswil-Jona",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 47.227964,
+   "lng": 8.817755,
+   "address": null,
+   "website": "https://stadtmuseum-rapperswil-jona.ch/",
+   "wikidata": "Q2327693",
+   "wikipedia": "de:Stadtmuseum Rapperswil-Jona",
+   "description": "museum in Rapperswil-Jona, Switzerland",
+   "image": "Historische Schuhwerkstatt - Stadtmuseum Rapperswil 2013-04-06 15-37-58 (P7700).JPG",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": "We-Fr 14:00-17:00; Sa,Su 11:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "14:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/193167471",
+   "name": "Curti-Haus",
+   "nameEn": null,
+   "kind": "attraction",
+   "lat": 47.226363,
+   "lng": 8.813728,
+   "address": "1, 8640",
+   "website": null,
+   "wikidata": "Q14544694",
+   "wikipedia": "de:Curti-Haus",
+   "description": "bourgeois house on Curtiplatz in Rapperswil in the canton of St. Gallen, Switzerland",
+   "image": "Curti-Haus - Rapperswil Curti-Platz 2011-08-06 15-17-26 ShiftN2.jpg",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/26262225",
+   "name": "Hauptplatz",
+   "nameEn": null,
+   "kind": "attraction",
+   "lat": 47.226726,
+   "lng": 8.816379,
+   "address": null,
+   "website": null,
+   "wikidata": "Q14544294",
+   "wikipedia": "de:Hauptplatz (Rapperswil)",
+   "description": "square in Rapperswil, Canton of St. Gallen, Switzerland",
+   "image": "Hauptplatz - Rapperswil Schlosstreppe 2011-06-19 14-57-58 ShiftN2.jpg",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/206126916",
+   "name": "Kunst(Zeug)Haus",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 47.227825,
+   "lng": 8.826592,
+   "address": "1 Schönbodenstrasse, 8640",
+   "website": "https://www.kunstzeughaus.ch/",
+   "wikidata": "Q14541537",
+   "wikipedia": "de:Altes Zeughaus (Rapperswil)",
+   "description": "former armory in Rapperswil in the canton of St. Gallen, Switzerland, now repurposed",
+   "image": "Altes Zeughaus Rapperswil - Neue Jonastrasse 2013-03-22 15-17-03 (P7700).JPG",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": "We 14:00-20:00; Th 14:00-17:00; Fr-Su 11:00-17:00; PH off",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we"
+     ],
+     "spans": [
+      [
+       "14:00",
+       "20:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "th"
+     ],
+     "spans": [
+      [
+       "14:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/4192195372",
+   "name": "Polnische Freiheitssäule",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 47.227351,
+   "lng": 8.815194,
+   "address": null,
+   "website": null,
+   "wikidata": "Q16058392",
+   "wikipedia": "pl:Kolumna Barska",
+   "description": "monument in Rapperswil, Switzerland",
+   "image": "Rapperswil - Freiheitssäule - Lindenhof 2010-10-02 18-27-20.JPG",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/235764676",
+   "name": "Schloss Meienberg",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 47.235135,
+   "lng": 8.830267,
+   "address": "36 Meienbergstrasse, 8645",
+   "website": null,
+   "wikidata": "Q14541554",
+   "wikipedia": "de:Schloss Meienberg",
+   "description": "castle-like complex on the Meienberg in Jona in the canton of St. Gallen, Switzerland",
+   "image": "Meienberg (Rapperswil-Jona) IMG 9051.JPG",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5684401070",
+   "name": "Aeffenrain",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 47.242096,
+   "lng": 8.812054,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/85404900",
+   "name": "Duftrosengarten für Sehbehinderte und Invalide",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 47.227673,
+   "lng": 8.818989,
+   "address": null,
+   "website": "https://www.rapperswil-jona.ch/Rosengaerten.1324.0.html",
+   "wikidata": "Q19668360",
+   "wikipedia": null,
+   "description": "rose garden",
+   "image": "Rapperswil - Duftrosengarten Panorama 2.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9633146790",
+   "name": "Foto-Spot Rapperswil-Jona",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 47.224705,
+   "lng": 8.814595,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5684417987",
+   "name": "Frohberg",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 47.241629,
+   "lng": 8.827247,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13190843206",
+   "name": "Galerie zum Schwanen",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 47.226251,
+   "lng": 8.814563,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5684437599",
+   "name": "Hummelberg",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 47.232269,
+   "lng": 8.851468,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5684433752",
+   "name": "Johannisberg",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 47.23312,
+   "lng": 8.845604,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5684403399",
+   "name": "Paradies",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 47.241438,
+   "lng": 8.817764,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/194103794",
+   "name": "Rosengarten beim Kapuzinerkloster",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 47.226678,
+   "lng": 8.813276,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/59139772",
+   "name": "Schlossgarten",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 47.226787,
+   "lng": 8.813764,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5684420264",
+   "name": "Schrännen",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 47.246169,
+   "lng": 8.823432,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5684399662",
+   "name": "Schwösterrain/Balm",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 47.246492,
+   "lng": 8.804151,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4718661989",
+   "name": "Streichelzoo",
+   "nameEn": null,
+   "kind": "zoo",
+   "lat": 47.223199,
+   "lng": 8.820745,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5684427945",
+   "name": "oberer Rüssel",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 47.247664,
+   "lng": 8.815311,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  }
+ ],
+ "near": "venues",
+ "stay": [
+  {
+   "id": "osm:node/3416370382",
+   "name": "Hotel Speer",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": 4.0,
+   "cuisine": null,
+   "lat": 47.225635,
+   "lng": 8.816846,
+   "address": "5 Untere Bahnhofstrasse, 8640",
+   "website": "https://sorellhotels.com/de/speer/rapperswil",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 284,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/4280011859",
+   "name": "Hotel & Restaurant JAKOB",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 47.226769,
+   "lng": 8.816519,
+   "address": null,
+   "website": "https://www.jakob-rapperswil.ch/",
+   "wikidata": "Q112013470",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 409,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/5951998252",
+   "name": "Pilgerherberge Rapperswil",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 47.22619,
+   "lng": 8.815963,
+   "address": "5 Seestrasse, 8640",
+   "website": "https://www.pilgerherberge.ch/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 347,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/1117540744",
+   "name": "Moxy Rapperswil",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 47.227562,
+   "lng": 8.82503,
+   "address": "66 Neue Jonastrasse, 8640",
+   "website": "https://www.marriott.com/en-us/hotels/zrhox-moxy-rapperswil/overview/?scid=f2ae0541-1279-4f24-b197-a979c79310b0",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 815,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/9633494699",
+   "name": "Moxy Rapperswil",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 47.227561,
+   "lng": 8.825084,
+   "address": "66 Neue Jonastrasse, 8640",
+   "website": "https://www.marriott.com/en-us/hotels/zrhox-moxy-rapperswil/overview/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 818,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/13190848664",
+   "name": "Hotel Hirschen",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 47.225621,
+   "lng": 8.816152,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 283,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/13190843207",
+   "name": "Hotel Schwanen",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 47.226168,
+   "lng": 8.813918,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 393,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/13055830638",
+   "name": "Jugendherberge Rapperswil-Jona",
+   "nameEn": "Rapperswil-Jona Youth Hostel",
+   "kind": "hostel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 47.218335,
+   "lng": 8.836412,
+   "address": null,
+   "website": "https://www.youthhostel.ch/de/hostels/rapperswil-jona/",
+   "wikidata": null,
+   "openingHours": "Mar-Oct: Mo-Fr 07:30-10:00,17:00-22:00",
+   "hours": [
+    {
+     "dates": [
+      [
+       "03-01",
+       "10-31"
+      ]
+     ],
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "07:30",
+       "10:00"
+      ],
+      [
+       "17:00",
+       "22:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 1595,
+   "venuesNear": 0
+  }
+ ],
+ "eat": [
+  {
+   "id": "osm:way/903050685",
+   "name": "Mensa OST Campus Rapperswil Jona",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "regional"
+   ],
+   "lat": 47.22301,
+   "lng": 8.816413,
+   "address": null,
+   "website": "https://gastro.migros.ch/de/genossenschaften/ostschweiz/gemeinschaftsgastronomie/restaurant-ost-rapperswil.",
+   "wikidata": null,
+   "openingHours": "Mo-Fr 08:30-13:30; PH off",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "08:30",
+       "13:30"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 10,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/1369664259",
+   "name": "Shizuka Sushi",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "japanese",
+    "tibetan"
+   ],
+   "lat": 47.225575,
+   "lng": 8.816353,
+   "address": "2 Fischmarktstrasse, 8640",
+   "website": "https://www.shizukasushi.ch/",
+   "wikidata": null,
+   "openingHours": "Mo off, Tu-Su 11:30-14:00,17:30-22:00",
+   "hours": null,
+   "toVenueM": 276,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/4508725395",
+   "name": "Sayori euro asia sushi bar",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "asian",
+    "sushi"
+   ],
+   "lat": 47.225568,
+   "lng": 8.816902,
+   "address": "5 Untere Bahnhofstrasse, 8640",
+   "website": "https://www.sayori.ch/sayori/rapperswil/",
+   "wikidata": null,
+   "openingHours": "Mo-Su 10:00-23:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "23:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 277,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/206104217",
+   "name": "Da Eleonora",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "italian"
+   ],
+   "lat": 47.223567,
+   "lng": 8.82017,
+   "address": "34 Oberseestrasse, 8640",
+   "website": "https://tcrapperswil.ch/restaurant",
+   "wikidata": null,
+   "openingHours": "Mar 16-Nov 15 Mo-Su 10:00-22:00+ \"Verlängerung max. bis 24:00; Durchgehend warme Küche; (Bei schlechtem Wetter fragt ihr betr. Randzeiten sicherheitshalber nach)\"; Nov 16-Mar 15 closed \"Auf Anfrage für Anlässe zur Verfügung.\"",
+   "hours": null,
+   "toVenueM": 284,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/6019760513",
+   "name": "Marco's Pasta Bar",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "italian"
+   ],
+   "lat": 47.225649,
+   "lng": 8.816367,
+   "address": "4 Fischmarktstrasse, 8640",
+   "website": "https://www.marcospastabar.com/",
+   "wikidata": null,
+   "openingHours": "Tu-Su 11:30-14:00,17:30-24:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "14:00"
+      ],
+      [
+       "17:30",
+       "24:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 285,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/1355269805",
+   "name": "10' dieci",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "pizza",
+    "italian"
+   ],
+   "lat": 47.225702,
+   "lng": 8.815354,
+   "address": "8640",
+   "website": "https://www.dieci.ch/de/restaurant-rapperswil",
+   "wikidata": null,
+   "openingHours": "09:00+",
+   "hours": null,
+   "toVenueM": 303,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/1356639376",
+   "name": "Mi Terra Vinoteca Argentina",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "argentinian"
+   ],
+   "lat": 47.226075,
+   "lng": 8.817278,
+   "address": "7 Alpenstrasse, 8640",
+   "website": "https://www.mitierra.ch/kontakt/",
+   "wikidata": null,
+   "openingHours": "We-Fr 15:00-19:00; Sa 10:00-18:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "15:00",
+       "19:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "18:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 337,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/14107005222",
+   "name": "Bacino",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "pizza",
+    "italian"
+   ],
+   "lat": 47.226048,
+   "lng": 8.81486,
+   "address": "21 Marktgasse, 8640",
+   "website": "https://www.ristorante-bacino.ch/",
+   "wikidata": null,
+   "openingHours": "Mo-Su 11:30-23:30",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "23:30"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 351,
+   "venuesNear": 1
+  }
+ ],
+ "trips": [
+  {
+   "name": "Zurich",
+   "page": "Zurich",
+   "url": "https://en.wikivoyage.org/wiki/Zurich",
+   "description": "Zurich is about 20-25 minutes away",
+   "lat": 47.36842,
+   "lng": 8.54045,
+   "km": 26
+  }
+ ],
+ "guide": {
+  "page": "Rapperswil",
+  "url": "https://en.wikivoyage.org/wiki/Rapperswil"
+ },
+ "licences": {
+  "osm": {
+   "name": "ODbL",
+   "url": "https://opendatacommons.org/licenses/odbl/",
+   "attribution": "© OpenStreetMap contributors",
+   "credit": "https://www.openstreetmap.org/copyright"
+  },
+  "wikidata": {
+   "name": "CC0",
+   "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "attribution": "Wikidata"
+  },
+  "wikivoyage": {
+   "name": "CC BY-SA 4.0",
+   "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "attribution": "Wikivoyage contributors"
+  }
+ },
+ "provenance": {
+  "osm": {
+   "fetchedAt": "2026-10-02T20:01:59Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikidata": {
+   "fetchedAt": "2026-10-02T20:02:00Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "amenities": {
+   "fetchedAt": "2026-10-02T20:02:57Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikivoyage": {
+   "fetchedAt": "2026-10-02T20:03:01Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  }
+ }
+}

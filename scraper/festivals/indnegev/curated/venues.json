@@ -1,0 +1,15 @@
+{
+ "about": "Hand-curated venue research for InDNegev, keyed by the code the converter gives the festival grounds. Not tied to an edition. Every figure is {value, source}, or null when nobody could cite it; coordinates carry the basis they rest on. The stages are the site's own and come from the timetable, not from here.",
+ "researchedAt": "2026-09-27",
+ "venues": {
+  "mitzpe-gvulot": {
+   "name": "מצפה גבולות",
+   "address": {"value": "מצפה גבולות, ליד קיבוץ גבולות", "source": "https://indnegev.co.il/"},
+   "coordinates": {"lat": 31.2111, "lng": 34.4652, "basis": "approximate: Kibbutz Gvulot (OSM way 82487534), beside the festival grounds"},
+   "capacity": null,
+   "layout": {"value": "outdoor", "source": "https://indnegev.co.il/"},
+   "accessibility": null,
+   "notes": "An open-air festival site with a campsite beside the stages."
+  }
+ }
+}

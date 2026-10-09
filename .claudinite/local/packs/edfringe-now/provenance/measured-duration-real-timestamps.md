@@ -19,3 +19,8 @@
 - **Retire when:** the session's own timing-claim habit is reliably backed by a captured
   `date`-based start time compared against the job's own `started_at`/completion timestamp before
   any duration is written into a commit or PR body, with no further near-miss.
+
+## 2026-09-24 · reworded · trimmed to trigger and action
+- **Reason:** the owner asked to trim rule prose to zero story ("Trim to zero, unless crucial to
+  understand severity"); the incident history lives on this file.
+- **Actor:** @missingbulb (owner).

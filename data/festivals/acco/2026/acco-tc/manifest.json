@@ -1,0 +1,15 @@
+{
+ "festival": "acco",
+ "edition": "2026",
+ "source": "acco-tc",
+ "fetchedAt": "2026-09-25T20:55:42Z",
+ "fetcher": "scraper/festivals/acco/sources/acco-tc/fetch.py",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://www.acco-tc.com/shows/accofestival/"
+ ],
+ "files": [
+  "programme.json"
+ ],
+ "notes": "One line per performance as the page prints it; labels untranslated."
+}

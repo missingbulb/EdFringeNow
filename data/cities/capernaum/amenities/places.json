@@ -1,0 +1,184 @@
+{
+ "nearM": 8000,
+ "anchors": [
+  {
+   "festival": "isra",
+   "venue": "davids-harp-galilee",
+   "lat": 32.88043,
+   "lng": 35.57356
+  }
+ ],
+ "places": [
+  {
+   "id": "node/10134814917",
+   "lat": 32.904651,
+   "lng": 35.550268,
+   "tags": {
+    "name": "Tibi’s",
+    "name:en": "Tibi’s",
+    "amenity": "restaurant",
+    "opening_hours": "Su-Sa 12:30-23:00"
+   }
+  },
+  {
+   "id": "node/4841481760",
+   "lat": 32.879869,
+   "lng": 35.49534,
+   "tags": {
+    "name": "חקוק בלב",
+    "name:en": "Hakuk Balev",
+    "tourism": "guest_house",
+    "website": "https://www.hakukbalev.co.il/"
+   }
+  },
+  {
+   "id": "node/6985075784",
+   "lat": 32.863904,
+   "lng": 35.538012,
+   "tags": {
+    "name": "Ali's Restaurant",
+    "name:en": "Ali's Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "fish"
+   }
+  },
+  {
+   "id": "node/895708933",
+   "lat": 32.845279,
+   "lng": 35.51676,
+   "tags": {
+    "name": "k. hanahal",
+    "name:en": "k. hanahal",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/914810992",
+   "lat": 32.881578,
+   "lng": 35.555849,
+   "tags": {
+    "name": "אכסניית הר האושר",
+    "name:en": "Mount of Beatitudes Guest House",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "node/915270956",
+   "lat": 32.869846,
+   "lng": 35.543344,
+   "tags": {
+    "name": "Pilgerhaus Tabgha",
+    "name:en": "Pilgerhaus Tabgha",
+    "tourism": "guest_house",
+    "addr:postcode": "14950"
+   }
+  },
+  {
+   "id": "node/931732210",
+   "lat": 32.881058,
+   "lng": 35.557062,
+   "tags": {
+    "name": "cafeteria",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "way/1072747016",
+   "lat": 32.841021,
+   "lng": 35.520363,
+   "tags": {
+    "name": "The Sea of Galilee Hotel",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/1073556449",
+   "lat": 32.831519,
+   "lng": 35.515154,
+   "tags": {
+    "name": "Solaya Kinneret",
+    "name:en": "Solaya Kinneret",
+    "tourism": "hotel",
+    "website": "https://www.solayakineret.com",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/1252007083",
+   "lat": 32.891819,
+   "lng": 35.509123,
+   "tags": {
+    "name": "עדיליון",
+    "name:en": "Adilion",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/1353602826",
+   "lat": 32.887737,
+   "lng": 35.576783,
+   "tags": {
+    "name": "נבל דוד",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/643422769",
+   "lat": 32.861225,
+   "lng": 35.644826,
+   "tags": {
+    "name": "מלון כינר גליל",
+    "name:en": "Kinar Galil hotel",
+    "tourism": "hotel",
+    "wikidata": "Q38219356"
+   }
+  },
+  {
+   "id": "way/742242034",
+   "lat": 32.891212,
+   "lng": 35.593715,
+   "tags": {
+    "name": "St. Peter Restaurant",
+    "name:en": "St. Peter Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "mediterranean",
+    "website": "https://st-peters-restaurant.business.site",
+    "opening_hours": "11:30-15:30"
+   }
+  },
+  {
+   "id": "way/789963907",
+   "lat": 32.916482,
+   "lng": 35.545592,
+   "tags": {
+    "name": "מסעדת אבו סלאח",
+    "name:en": "Abu Salah",
+    "amenity": "restaurant",
+    "cuisine": "meat;arab",
+    "opening_hours": "08:30-22:00"
+   }
+  },
+  {
+   "id": "way/902639676",
+   "lat": 32.862748,
+   "lng": 35.535657,
+   "tags": {
+    "name": "אכסניית אנ\"א כרי דשא",
+    "name:en": "HI Karei Deshe",
+    "tourism": "hostel",
+    "contact:website": "https://en.iyha.org.il/karei-deshe-kinneret-hostel",
+    "wikidata": "Q6786300"
+   }
+  },
+  {
+   "id": "way/978832566",
+   "lat": 32.843828,
+   "lng": 35.52337,
+   "tags": {
+    "name": "נוף גינוסר",
+    "name:en": "Nof Ginussar",
+    "tourism": "hotel"
+   }
+  }
+ ]
+}

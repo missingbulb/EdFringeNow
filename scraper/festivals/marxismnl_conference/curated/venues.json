@@ -1,0 +1,32 @@
+{
+ "about": "Hand-curated venue research for MarxismNL Conference, keyed by the code the pretalx adapter gives each building. Every figure is {value, source}; coordinates carry the basis they rest on.",
+ "researchedAt": "2026-10-02",
+ "venues": {
+  "iish": {
+   "name": "International Institute of Social History",
+   "address": {
+    "value": "Cruquiusweg 31, Amsterdam",
+    "source": "https://marxism-nl.org/en"
+   },
+   "coordinates": {
+    "lat": 52.3690003,
+    "lng": 4.9393848,
+    "basis": "OpenStreetMap's Internationaal Instituut voor Sociale Geschiedenis (node 1386072785)"
+   },
+   "notes": "The conference page places the conference at the IISH; its four panel rooms are the schedule's Nettlau, Posthumus, Scheltema and Nikolaevsky rooms."
+  },
+  "iire": {
+   "name": "IIRE",
+   "address": {
+    "value": "Lombokstraat 40, 1094 AL Amsterdam",
+    "source": "https://marxism-nl.org/en"
+   },
+   "coordinates": {
+    "lat": 52.3653022,
+    "lng": 4.9364575,
+    "basis": "OpenStreetMap's Lombokstraat 40 (node 2827529140)"
+   },
+   "notes": "The International Institute for Research and Education, where the schedule holds the three evening keynote panels; its address is the one marxism-nl.org gives for its other IIRE events."
+  }
+ }
+}

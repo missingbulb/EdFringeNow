@@ -1,0 +1,14 @@
+{
+ "city": "ramat-gan",
+ "source": "osm",
+ "fetchedAt": "2026-10-02T19:18:48Z",
+ "fetcher": "scraper/cities/fetch.py",
+ "fetcherVersion": 2,
+ "urls": [
+  "https://maps.mail.ru/osm/tools/overpass/api/interpreter"
+ ],
+ "files": [
+  "places.json"
+ ],
+ "notes": "One Overpass query: [out:json][timeout:180];(nwr(around:5000,32.0637,34.8322)[\"tourism\"~\"^(museum|gallery|zoo|aquarium|theme_park|viewpoint)$\"][\"name\"];nwr(around:5000,32.0637,34.8322)[\"tourism\"=\"attraction\"][\"name\"][\"wikidata\"];nwr(around:5000,32.0637,34.8322)[\"leisure\"=\"garden\"][\"name\"][\"wikidata\"];nwr(around:5000,32.0637,34.8322)[\"leisure\"=\"garden\"][\"name\"][\"opening_hours\"];nwr(around:5000,32.0637,34.8322)[\"leisure\"~\"^(park|nature_reserve)$\"][\"name\"][\"wikidata\"];nwr(around:5000,32.0637,34.8322)[\"amenity\"=\"marketplace\"][\"name\"];nwr(around:5000,32.0637,34.8322)[\"historic\"~\"^(castle|palace|monument|memorial|ruins|church|cathedral|fort|city_gate|archaeological_site)$\"][\"name\"][\"wikidata\"];nwr(around:5000,32.0637,34.8322)[\"building\"~\"^(cathedral|church)$\"][\"name\"][\"wikidata\"][\"tourism\"];);out center tags;"
+}

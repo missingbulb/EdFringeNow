@@ -1,0 +1,4925 @@
+{
+ "v": 1,
+ "city": {
+  "id": "singapore",
+  "name": "Singapore",
+  "country": "SG",
+  "lat": 1.2903,
+  "lng": 103.852,
+  "timezone": "Asia/Singapore"
+ },
+ "places": [
+  {
+   "id": "osm:way/47257476",
+   "name": "Singapore Botanic Gardens",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 1.31467,
+   "lng": 103.816057,
+   "address": "1 Cluny Road, 259569",
+   "website": "https://www.nparks.gov.sg/sbg",
+   "wikidata": "Q3046409",
+   "wikipedia": "en:Singapore Botanic Gardens",
+   "description": "botanical garden located in Singapore",
+   "image": "Singapore Botanic Gardens Palm Valley.jpg",
+   "notability": 44,
+   "highlight": true,
+   "openingHours": "Mo-Su 05:00-24:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "05:00",
+       "24:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:relation/10231144",
+   "name": "Gardens by the Bay",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 1.28101,
+   "lng": 103.864904,
+   "address": null,
+   "website": "https://www.gardensbythebay.com.sg",
+   "wikidata": "Q630135",
+   "wikipedia": "en:Gardens by the Bay",
+   "description": "urban park in Singapore",
+   "image": "Supertree Grove, Gardens by the Bay, Singapore - 20120712-02.jpg",
+   "notability": 36,
+   "highlight": true,
+   "openingHours": "09:00-21:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "09:00",
+       "21:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:relation/18007977",
+   "name": "Helix Bridge",
+   "nameEn": "The Helix Bridge",
+   "kind": "attraction",
+   "lat": 1.287477,
+   "lng": 103.860443,
+   "address": null,
+   "website": null,
+   "wikidata": "Q2681107",
+   "wikipedia": "en:Helix Bridge",
+   "description": "bridge in Singapore",
+   "image": "Puente Helix, Marina Bay, Singapur, 2023-08-16, DD 144-146 HDR.jpg",
+   "notability": 23,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/32342169",
+   "name": "National Museum of Singapore",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.296562,
+   "lng": 103.848412,
+   "address": "93 Stamford Road, 178897",
+   "website": "https://www.nationalmuseum.nhb.gov.sg/",
+   "wikidata": "Q632689",
+   "wikipedia": "en:National Museum of Singapore",
+   "description": "national museum of Singapore",
+   "image": "National Museum of Singapore 2, Aug 06.JPG",
+   "notability": 22,
+   "highlight": true,
+   "openingHours": "Mo-Su 10:00-19:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "19:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/95756945",
+   "name": "Universal Studios Singapore",
+   "nameEn": null,
+   "kind": "attraction",
+   "lat": 1.254233,
+   "lng": 103.822991,
+   "address": "30 Sentosa Gateway, 098140",
+   "website": "https://www.rwsentosa.com/en/attractions/universal-studios-singapore",
+   "wikidata": "Q1186714",
+   "wikipedia": "en:Universal Studios Singapore",
+   "description": "amusement park",
+   "image": "Universal Studios lake (6952709373).jpg",
+   "notability": 20,
+   "highlight": true,
+   "openingHours": "Mo-Th 10:00-19:00; Fr-Sa 10:00-22:00; Su 10:00-19:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "19:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "22:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "19:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/687917300",
+   "name": "Merlion Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 1.286001,
+   "lng": 103.854185,
+   "address": null,
+   "website": null,
+   "wikidata": "Q6819812",
+   "wikipedia": "en:Merlion Park",
+   "description": "major tourist attraction at One Fullerton, Singapore",
+   "image": "Singapore Merlion BCT.jpg",
+   "notability": 19,
+   "highlight": true,
+   "openingHours": "24/7",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "00:00",
+       "24:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/2511049756",
+   "name": "Chinatown",
+   "nameEn": null,
+   "kind": "attraction",
+   "lat": 1.279969,
+   "lng": 103.843688,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1318670",
+   "wikipedia": "en:Chinatown, Singapore",
+   "description": "neighborhood in Singapore, subzone of Outram",
+   "image": "Pagoda Street Chinatown Singapore.jpg",
+   "notability": 18,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4759240362",
+   "name": "National Gallery Singapore",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.290256,
+   "lng": 103.851471,
+   "address": "1 Saint Andrew's Road, 178957",
+   "website": "https://www.nationalgallery.sg",
+   "wikidata": "Q6970475",
+   "wikipedia": "en:National Gallery Singapore",
+   "description": "public institution and national museum in Singapore",
+   "image": "Padang Atrium, National Gallery Singapore - 20151127-03.jpg",
+   "notability": 17,
+   "highlight": true,
+   "openingHours": "10:00-19:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "10:00",
+       "19:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:relation/14314416",
+   "name": "ArtScience Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.286063,
+   "lng": 103.85926,
+   "address": "10 Bayfront Avenue, 018956",
+   "website": "https://www.marinabaysands.com/museum.html",
+   "wikidata": "Q2744014",
+   "wikipedia": "en:ArtScience Museum",
+   "description": "museum in Singapore",
+   "image": "Singapore ArtScience Museum 1.jpg",
+   "notability": 16,
+   "highlight": true,
+   "openingHours": "Mo-Su 10:00-19:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "19:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/46595390",
+   "name": "Asian Civilisations Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.287446,
+   "lng": 103.85142,
+   "address": "1 Empress Place, 179555",
+   "website": "https://acm.org.sg/",
+   "wikidata": "Q633033",
+   "wikipedia": "en:Asian Civilisations Museum",
+   "description": "One of the national museums of Singapore",
+   "image": "Asian Civilisations Museum, Empress Place 2.JPG",
+   "notability": 15,
+   "highlight": true,
+   "openingHours": "10:00-19:00; Fr 10:00-21:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "10:00",
+       "19:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "21:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/41895536",
+   "name": "Istana",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 1.307096,
+   "lng": 103.842881,
+   "address": "1 Edinburgh Road",
+   "website": null,
+   "wikidata": "Q843531",
+   "wikipedia": "en:The Istana",
+   "description": "official residence and office of the President of Singapore",
+   "image": "Istana 20, Singapore, Jan 06.JPG",
+   "notability": 13,
+   "highlight": true,
+   "openingHours": "\"on 5 public holidays/year\"",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:relation/19580129",
+   "name": "East Coast Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 1.304731,
+   "lng": 103.922269,
+   "address": null,
+   "website": null,
+   "wikidata": "Q3521764",
+   "wikipedia": null,
+   "description": "beach park in the eastern part of Singapore",
+   "image": "Beach at East Coast Park, Singapore - 20050809-01.jpg",
+   "notability": 12,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/172413996",
+   "name": "Sri Temasek",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 1.3039,
+   "lng": 103.843041,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7586295",
+   "wikipedia": "en:Sri Temasek",
+   "description": "official residence of the Prime Minister of Singapore, designated a national monument in 1992",
+   "image": "Sri Temasek 4, Jan 06.JPG",
+   "notability": 11,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/127348526",
+   "name": "Peranakan Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.29428,
+   "lng": 103.849101,
+   "address": "39 Armenian Street, 179941",
+   "website": "https://www.nhb.gov.sg/peranakanmuseum/",
+   "wikidata": "Q3078303",
+   "wikipedia": "en:Peranakan Museum",
+   "description": "museum in Singapore specialising in Peranakan culture",
+   "image": "Asian Civilisations Museum, Armenian Street 3, Jan 06.JPG",
+   "notability": 10,
+   "highlight": true,
+   "openingHours": "Mo-Th,Sa-Su 10:00-19:00; Fr 10:00-21:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "19:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "21:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/171979089",
+   "name": "Chinese Garden",
+   "nameEn": null,
+   "kind": "garden",
+   "lat": 1.283099,
+   "lng": 103.863547,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5100456",
+   "wikipedia": "en:Chinese Garden, Singapore",
+   "description": "Park in Jurong East, Singapore",
+   "image": "Chinese Gardens (8058580441).jpg",
+   "notability": 9,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/16892550",
+   "name": "Fort Canning Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 1.294038,
+   "lng": 103.846713,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1438470",
+   "wikipedia": "en:Fort Canning Hill",
+   "description": "park in Singapore",
+   "image": "Fort Canning Park sign, Singapore - 20110506.jpg",
+   "notability": 9,
+   "highlight": true,
+   "openingHours": "24/7",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "00:00",
+       "24:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/95600876",
+   "name": "Fort Siloso",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 1.258754,
+   "lng": 103.808549,
+   "address": null,
+   "website": null,
+   "wikidata": "Q4419293",
+   "wikipedia": "en:Fort Siloso",
+   "description": "decommissioned coastal artillery battery in Sentosa, Singapore",
+   "image": "Fort Siloso sign, Sentosa, Singapore - 20071208.jpg",
+   "notability": 9,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3756800538",
+   "name": "新加坡佛牙寺龙华院",
+   "nameEn": "Buddha Tooth Relic Museum",
+   "kind": "museum",
+   "lat": 1.281305,
+   "lng": 103.844432,
+   "address": "288 South Bridge Road, 058840",
+   "website": "http://www.btrts.org.sg/",
+   "wikidata": "Q839965",
+   "wikipedia": "en:Buddha Tooth Relic Temple and Museum",
+   "description": "Buddhist temple and museum complex located in the Chinatown district of Singapore",
+   "image": "BTRTM as seen from Maxwell MRT entrance (2025) - img 03.jpg",
+   "notability": 9,
+   "highlight": true,
+   "openingHours": "Mo-Su 07:00-19:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "07:00",
+       "19:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/166311288",
+   "name": "Civilian War Memorial",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 1.292897,
+   "lng": 103.854712,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5124736",
+   "wikipedia": "en:Civilian War Memorial",
+   "description": "Memorial in Singapore to civilians killed during the Japanese occupation of Singapore in World War II",
+   "image": "War Memorial Park 5, Singapore, Aug 06.JPG",
+   "notability": 7,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/9574726",
+   "name": "Resorts World Sentosa",
+   "nameEn": null,
+   "kind": "attraction",
+   "lat": 1.255923,
+   "lng": 103.820264,
+   "address": "8 Sentosa Gateway, 098269",
+   "website": "https://www.rwsentosa.com/",
+   "wikidata": "Q5955134",
+   "wikipedia": "en:Resorts World Sentosa",
+   "description": "Resort on Sentosa Island, Singapore",
+   "image": "Resorts World Sentosa.jpg",
+   "notability": 7,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/30527029",
+   "name": "Istana Kampong Glam",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 1.302671,
+   "lng": 103.859948,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1674820",
+   "wikipedia": "en:Istana Kampong Glam",
+   "description": "former palace in Singapore",
+   "image": "Malay Heritage Centre, Istana Kampong Glam 3, Dec 05.JPG",
+   "notability": 6,
+   "highlight": true,
+   "openingHours": "Tu-Su 08:00-21:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "08:00",
+       "21:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/155990073",
+   "name": "Malay Heritage Centre",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.302887,
+   "lng": 103.859822,
+   "address": "85 Sultan Gate, 198501",
+   "website": "https://malayheritage.org.sg/",
+   "wikidata": "Q6741538",
+   "wikipedia": "en:Malay Heritage Centre",
+   "description": "cultural centre and museum in Singapore",
+   "image": "Malay Heritage Centre, 2012.jpg",
+   "notability": 6,
+   "highlight": true,
+   "openingHours": "Tu-Su 10:00-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/171984328",
+   "name": "Singapore Oceanarium",
+   "nameEn": null,
+   "kind": "zoo",
+   "lat": 1.258345,
+   "lng": 103.820456,
+   "address": "24 Sentosa Gateway, 098137",
+   "website": "https://www.singaporeoceanarium.com/en.html",
+   "wikidata": "Q3082977",
+   "wikipedia": "en:Marine Life Park",
+   "description": "aquarium in Singapore",
+   "image": "SEA aquarium 2.jpg",
+   "notability": 6,
+   "highlight": true,
+   "openingHours": "10:00-19:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "10:00",
+       "19:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/176326997",
+   "name": "Indian Heritage Centre",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.305659,
+   "lng": 103.852289,
+   "address": "5 Campbell Lane, 209924",
+   "website": null,
+   "wikidata": "Q25551594",
+   "wikipedia": "en:Indian Heritage Centre",
+   "description": "history museum in Singapore",
+   "image": "Indian Heritage Centre, Singapore - 20150423-05.jpg",
+   "notability": 5,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/15727863",
+   "name": "Labrador Nature Reserve",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 1.266201,
+   "lng": 103.803052,
+   "address": null,
+   "website": null,
+   "wikidata": "Q14874451",
+   "wikipedia": "en:Labrador Nature Reserve",
+   "description": "nature reserve in Singapore",
+   "image": "Labrador Park Old Fort.jpg",
+   "notability": 5,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/44414597",
+   "name": "Hong Lim Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 1.286308,
+   "lng": 103.846582,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5895617",
+   "wikipedia": "en:Hong Lim Park",
+   "description": "heritage park",
+   "image": "Hong Lim Park 2, Mar 06.JPG",
+   "notability": 5,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/343746558",
+   "name": "Mount Faber Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 1.271744,
+   "lng": 103.819037,
+   "address": null,
+   "website": null,
+   "wikidata": "Q6920714",
+   "wikipedia": "en:Mount Faber",
+   "description": "place in Singapore",
+   "image": "Mount faber aerial.JPG",
+   "notability": 5,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/271791474",
+   "name": "Sun Yat Sen Nanyang Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.328067,
+   "lng": 103.847038,
+   "address": "12 Tai Gin Road, 327874",
+   "website": null,
+   "wikidata": "Q10123616",
+   "wikipedia": "en:Sun Yat Sen Nanyang Memorial Hall",
+   "description": "memorial hall in Singapore",
+   "image": "Sun Yat Sen Nanyang Memorial Hall 5, Aug 06.JPG",
+   "notability": 5,
+   "highlight": false,
+   "openingHours": "off",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:node/6899658954",
+   "name": "Dragon's Teeth Gate Viewpoint",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 1.260002,
+   "lng": 103.807375,
+   "address": null,
+   "website": null,
+   "wikidata": "Q573956",
+   "wikipedia": "en:Long Ya Men",
+   "description": "granite outcrop formerly located at Keppel Harbour",
+   "image": null,
+   "notability": 4,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5717895585",
+   "name": "Madame Tussauds Singapore",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.254099,
+   "lng": 103.817766,
+   "address": null,
+   "website": "http://www.madametussauds.com/Singapore/",
+   "wikidata": "Q19840386",
+   "wikipedia": "en:Madame Tussauds Singapore",
+   "description": "wax museum and tourist attraction",
+   "image": "Madame Tussauds Singapore facade 12.29.15.JPG",
+   "notability": 4,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/460428718",
+   "name": "War Memorial Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 1.29278,
+   "lng": 103.854755,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7968476",
+   "wikipedia": "en:War Memorial Park, Singapore",
+   "description": "World War II memorial park",
+   "image": "City Skyline, War Memorial Park, Singapore (3337588640).jpg",
+   "notability": 4,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/172814143",
+   "name": "Baba House",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.277067,
+   "lng": 103.837359,
+   "address": "157 Neil Road",
+   "website": null,
+   "wikidata": "Q4837312",
+   "wikipedia": "en:Baba House",
+   "description": "historic house in Singapore",
+   "image": "141 Neil Road 20240725 181725.jpg",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/393739717",
+   "name": "Dalhousie Obelisk",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 1.287448,
+   "lng": 103.852223,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5210876",
+   "wikipedia": "en:Dalhousie Obelisk",
+   "description": "monument in Empress Place, Singapore",
+   "image": "Dalhousie Obelisk 2, Jan 06.JPG",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/9976848",
+   "name": "Esplanade Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 1.289687,
+   "lng": 103.853619,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5399032",
+   "wikipedia": "en:Esplanade Park",
+   "description": "historic park originally built in 1943 located in the Esplanade within the Downtown Core of the Central Area in Singapore's central business district.",
+   "image": "Esplanade Park, Oct 06.JPG",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": "24/7",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "00:00",
+       "24:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/11288867468",
+   "name": "Former Malay Film Productions",
+   "nameEn": null,
+   "kind": "attraction",
+   "lat": 1.326446,
+   "lng": 103.851498,
+   "address": "8 Jalan Ampas",
+   "website": null,
+   "wikidata": "Q12696705",
+   "wikipedia": "en:Malay Film Productions",
+   "description": "Singapore film studio",
+   "image": null,
+   "notability": 3,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/41665003",
+   "name": "Henderson Waves Bridge",
+   "nameEn": null,
+   "kind": "attraction",
+   "lat": 1.276247,
+   "lng": 103.815461,
+   "address": null,
+   "website": null,
+   "wikidata": "Q100288026",
+   "wikipedia": null,
+   "description": "highest pedestrian bridge in Singapore",
+   "image": "Singapore Southern Ridges Henderson Waves 05.jpg",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/172272609",
+   "name": "Nagore Durgha Indian Muslim Heritage Centre",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.281459,
+   "lng": 103.84787,
+   "address": "140 Telok Ayer Street, 068604",
+   "website": null,
+   "wikidata": "Q14179982",
+   "wikipedia": "en:Nagore Durgha, Singapore",
+   "description": "Indian Muslim shrine",
+   "image": "Chinatown SG - Nagore Durgha (Nagore Dargah) Sufi Shrine (2025) - img 04.jpg",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4601396854",
+   "name": "Raffles' Landing Site",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 1.287719,
+   "lng": 103.850787,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7282563",
+   "wikipedia": "en:Raffles's Landing Site",
+   "description": "Historical site in Singapore",
+   "image": "Raffles Landing Place 2, Jan 06.JPG",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/256153658",
+   "name": "Tan Kim Seng Fountain",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 1.291126,
+   "lng": 103.854198,
+   "address": null,
+   "website": null,
+   "wikidata": "Q23073306",
+   "wikipedia": "en:Tan Sim Seng Fountain",
+   "description": "fountain",
+   "image": "Tan Kim Seng Fountain 3, Aug 06.JPG",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/15394784",
+   "name": "Telok Blangah Hill Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 1.277841,
+   "lng": 103.809523,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7697797",
+   "wikipedia": "en:Telok Blangah Hill Park",
+   "description": "park in Singapore",
+   "image": "Terrace Garden, Telok Blangah Hill Park, Singapore - 20100102.jpg",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4362541394",
+   "name": "Battlebox Visitor Centre",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.296123,
+   "lng": 103.846234,
+   "address": "2 Cox Terrace Fort Canning Park, 179622",
+   "website": "http://www.battlebox.com.sg",
+   "wikidata": "Q7715823",
+   "wikipedia": "en:The Battle Box",
+   "description": "museum in Singapore",
+   "image": "The Battle Box ticketing office, Fort Canning Park, Singapore - 20051104.jpg",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": "We-Su,PH 10:00-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/54029860",
+   "name": "HortPark",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 1.279052,
+   "lng": 103.799489,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5906603",
+   "wikipedia": "en:HortPark",
+   "description": "park in Singapore",
+   "image": "Silver Garden HortPark Singapore.jpg",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/46522850",
+   "name": "Istana Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 1.299265,
+   "lng": 103.84383,
+   "address": null,
+   "website": null,
+   "wikidata": "Q6088537",
+   "wikipedia": "en:Istana Park",
+   "description": "park in Singapore",
+   "image": "Istana Park, Dec 05.JPG",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2738929707",
+   "name": "Mint Museum of Toys",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.296311,
+   "lng": 103.85461,
+   "address": null,
+   "website": "https://emint.com/contact-us/",
+   "wikidata": "Q6869564",
+   "wikipedia": "en:Mint Museum of Toys",
+   "description": "toy museum in Singapore",
+   "image": null,
+   "notability": 2,
+   "highlight": false,
+   "openingHours": "Mo off; Tu-Su 09:30-18:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo"
+     ],
+     "spans": []
+    },
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "09:30",
+       "18:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/39430856",
+   "name": "Pearl's Hill City Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 1.284708,
+   "lng": 103.83984,
+   "address": "Pearl's Hill City Park",
+   "website": null,
+   "wikidata": "Q7158006",
+   "wikipedia": "en:Pearl's Hill City Park",
+   "description": "park in Singapore",
+   "image": "Pond at Pearl's Hill City Park, Singapore.jpg",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5003225021",
+   "name": "Singapore City Gallery",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.279502,
+   "lng": 103.84519,
+   "address": "45 Maxwell Road, 069118",
+   "website": "https://www.ura.gov.sg/uol/citygallery",
+   "wikidata": "Q16334460",
+   "wikipedia": "en:Singapore City Gallery",
+   "description": "urban planning museum in Maxwell Road, Singapore",
+   "image": "Singapore City Gallery \"Central Area Model\" (2025) - img 02.jpg",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": "Mo-Sa 09:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/256153714",
+   "name": "The Cenotaph",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 1.290281,
+   "lng": 103.853817,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7721864",
+   "wikipedia": "en:The Cenotaph, Singapore",
+   "description": "Singapore war monument",
+   "image": "The Cenotaph, Singapore, Oct 06.JPG",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/395120471",
+   "name": "Youth Olympic Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 1.289089,
+   "lng": 103.860468,
+   "address": null,
+   "website": null,
+   "wikidata": "Q8059236",
+   "wikipedia": "en:Youth Olympic Park",
+   "description": "park in Singapore",
+   "image": "Youth Olympic Park.jpg",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/218253806",
+   "name": "Ann Siang Hill Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 1.280837,
+   "lng": 103.846135,
+   "address": null,
+   "website": null,
+   "wikidata": "Q4766674",
+   "wikipedia": "en:Ann Siang Hill",
+   "description": "hill in Singapore",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11806649909",
+   "name": "Balestier Art Deco shophouses",
+   "nameEn": null,
+   "kind": "attraction",
+   "lat": 1.321624,
+   "lng": 103.853055,
+   "address": "230 Balestier Road",
+   "website": null,
+   "wikidata": "Q111914778",
+   "wikipedia": "en:Balestier Art Deco shophouses",
+   "description": "art Deco shophouses in Balestier, Singapore",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/52235738",
+   "name": "Dhoby Ghaut Green",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 1.29861,
+   "lng": 103.845994,
+   "address": null,
+   "website": null,
+   "wikidata": "Q15213898",
+   "wikipedia": "en:Dhoby Ghaut Green",
+   "description": "Park in Singapore",
+   "image": "Memorial to the Victims of Konfrontasi, Dhoby Ghaut Green (2025) - img 03.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/41662089",
+   "name": "Emerald Hill",
+   "nameEn": null,
+   "kind": "attraction",
+   "lat": 1.303058,
+   "lng": 103.839354,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5370441",
+   "wikipedia": "en:Emerald Hill, Singapore",
+   "description": "neighbourhood and conservation area in Singapore",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2618440389",
+   "name": "Former Indian National Army Monument",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 1.289416,
+   "lng": 103.853892,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5470092",
+   "wikipedia": "en:Former Indian National Army Monument",
+   "description": "memorial site in Singapore",
+   "image": "Former Indian National Army Monument.JPG",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/178436852",
+   "name": "House of Tan Teng Niah",
+   "nameEn": null,
+   "kind": "attraction",
+   "lat": 1.307059,
+   "lng": 103.850935,
+   "address": "37 Kerbau Road",
+   "website": null,
+   "wikidata": "Q120703742",
+   "wikipedia": "en:House of Tan Teng Niah",
+   "description": "Building in Little India, Singapore",
+   "image": "Wikimania 2023-Singapore today-Little India-03302.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/595500624",
+   "name": "Lim Bo Seng Memorial",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 1.288508,
+   "lng": 103.853083,
+   "address": null,
+   "website": null,
+   "wikidata": "Q54321624",
+   "wikipedia": "en:Lim Bo Seng Memorial",
+   "description": "war memorial in Singapore",
+   "image": "Lim Bo Seng Memorial 2, Aug 06.JPG",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/437015220",
+   "name": "Mount Emily Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 1.304616,
+   "lng": 103.847513,
+   "address": null,
+   "website": null,
+   "wikidata": "Q6920638",
+   "wikipedia": "en:Mount Emily Park",
+   "description": "park in Singapore",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6712453286",
+   "name": "Objectifs - Centre for Photography and Film",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.299803,
+   "lng": 103.852019,
+   "address": "155 Middle Road, 188977",
+   "website": "https://objectifs.com.sg/",
+   "wikidata": "Q7075069",
+   "wikipedia": "en:Objectifs",
+   "description": null,
+   "image": "Objectifs.JPG",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": "Mo-Sa 12:00-19:00; Su 12:00-16:00; Mo,PH off",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "19:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "16:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "mo"
+     ],
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:way/106193383",
+   "name": "Raffles Place Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 1.283856,
+   "lng": 103.851502,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7282591",
+   "wikipedia": "en:Raffles Place Park",
+   "description": "park in Raffles Place, Singapore",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11818534979",
+   "name": "Sim Kwong Ho shophouses",
+   "nameEn": null,
+   "kind": "attraction",
+   "lat": 1.323241,
+   "lng": 103.852534,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111915364",
+   "wikipedia": "en:Sim Kwong Ho shophouses",
+   "description": "historic shophouses in Singapore, built 1926",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/478355767",
+   "name": "Skyline Luge Sentosa",
+   "nameEn": null,
+   "kind": "attraction",
+   "lat": 1.255051,
+   "lng": 103.817349,
+   "address": "Imbiah Road",
+   "website": "http://www.skylineluge.sg",
+   "wikidata": "Q15276097",
+   "wikipedia": "en:Sentosa Luge",
+   "description": "tourist attraction located in Singapore",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": "Mo-Su 10:00-21:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "21:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/117052183",
+   "name": "Tanjong Pagar Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 1.276564,
+   "lng": 103.845841,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7683390",
+   "wikipedia": "en:Tanjong Pagar Park",
+   "description": "park in Tanjong Pagar, Singapore",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/329762423",
+   "name": "Tiong Bahru Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 1.28767,
+   "lng": 103.824076,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7808728",
+   "wikipedia": "en:Tiong Bahru Park",
+   "description": "park",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/271791476",
+   "name": "Zhongshan Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 1.327223,
+   "lng": 103.847003,
+   "address": null,
+   "website": null,
+   "wikidata": "Q107042863",
+   "wikipedia": null,
+   "description": "park in Central Singapore",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": "24/7",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "00:00",
+       "24:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/4402052494",
+   "name": "megazip adventure park",
+   "nameEn": null,
+   "kind": "attraction",
+   "lat": 1.256879,
+   "lng": 103.814305,
+   "address": "Imbiah Hill Road, 098967",
+   "website": null,
+   "wikidata": "Q6808067",
+   "wikipedia": "en:Mega Adventure Park",
+   "description": "Attraction on Sentosa, Singapore",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3324020268",
+   "name": "1-Altitude Viewing Gallery",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 1.284747,
+   "lng": 103.850993,
+   "address": "1 Raffles Place, 048616",
+   "website": "https://www.1-altitude.com/viewing-gallery/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Su 08:30-17:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "08:30",
+       "17:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/5761606753",
+   "name": "4D Adventureland",
+   "nameEn": null,
+   "kind": "attraction",
+   "lat": 1.255334,
+   "lng": 103.816543,
+   "address": null,
+   "website": "https://4dadventureland.com.sg/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Su 12:00-19:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "19:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/11563386251",
+   "name": "55 Artspace",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.327481,
+   "lng": 103.875143,
+   "address": "55 Genting Road",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11563386261",
+   "name": "7879 Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.30845,
+   "lng": 103.856204,
+   "address": "105 Desker Road, 209627",
+   "website": "https://www.7879.sg/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11802121100",
+   "name": "Aesthetic Art Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.312104,
+   "lng": 103.862907,
+   "address": "2 Kallang Avenue",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/1873233367",
+   "name": "Ancient Egypt",
+   "nameEn": null,
+   "kind": "attraction",
+   "lat": 1.253673,
+   "lng": 103.82284,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10940110464",
+   "name": "Art Outreach",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.277229,
+   "lng": 103.803701,
+   "address": "5 Lock Road",
+   "website": "https://artoutreachsingapore.org",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11563386263",
+   "name": "Art Seasons Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.327515,
+   "lng": 103.873874,
+   "address": "50 Genting Lane",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Tu,Su 09:00-20:00; We-Sa \"by Appointment\"; PH off",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/11724980058",
+   "name": "Art Social",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.303483,
+   "lng": 103.864616,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/8059375621",
+   "name": "Art plus Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.296767,
+   "lng": 103.853907,
+   "address": "231 Bain Street",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/481650013",
+   "name": "ArtBlue Studio",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.282817,
+   "lng": 103.830026,
+   "address": "23 Yong Siak Street, 168652",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11361584770",
+   "name": "ArtScience Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.286138,
+   "lng": 103.85923,
+   "address": "6 Bayfront Avenue, 018974",
+   "website": "https://marinabaysands.com",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Su 10:00-19:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "19:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/7175058264",
+   "name": "Artcommune Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.296434,
+   "lng": 103.852652,
+   "address": "76 Bras Basah Road",
+   "website": "https://www.artcommune.com.sg/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4294906889",
+   "name": "Big Fish Aquarium",
+   "nameEn": null,
+   "kind": "zoo",
+   "lat": 1.282841,
+   "lng": 103.866469,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11716744769",
+   "name": "Black Earth Arts Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.30862,
+   "lng": 103.902807,
+   "address": null,
+   "website": "https://www.blackearthartmuseum.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/683697288",
+   "name": "Blk 117 Aljunied Ave 2 Market",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 1.320649,
+   "lng": 103.88718,
+   "address": "117 Aljunied Avenue 2, 380117",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/47250130",
+   "name": "Burkill Hall",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.312326,
+   "lng": 103.813688,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/7096008183",
+   "name": "CDL Green Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.308369,
+   "lng": 103.817735,
+   "address": null,
+   "website": "https://www.nparks.gov.sg/sbg/our-gardens/tanglin-entrance/heritage-museum-cdl-gallery",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Su 09:00-18:00; Tu[-1] off",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/8059361244",
+   "name": "Cape of Good Heart Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.296833,
+   "lng": 103.853821,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10052925641",
+   "name": "CapitaSpring Green Oasis",
+   "nameEn": null,
+   "kind": "garden",
+   "lat": 1.28394,
+   "lng": 103.849987,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Fr 08:30-10:30,14:30-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "08:30",
+       "10:30"
+      ],
+      [
+       "14:30",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/10052925640",
+   "name": "CapitaSpring Sky Garden",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 1.283972,
+   "lng": 103.850029,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Fr 08:30-10:30,14:30-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "08:30",
+       "10:30"
+      ],
+      [
+       "14:30",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/7142188654",
+   "name": "Chan + Hori Contemporary",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.277679,
+   "lng": 103.804488,
+   "address": "6 Lock Road, 108934",
+   "website": "https://www.chanhori.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Fr 11:00-19:00; Sa,Su 12:00-18:00; Mo, PH off",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/3756799298",
+   "name": "Chinatown Heritage Centre",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.283496,
+   "lng": 103.84433,
+   "address": "48 Pagoda Street, 059207",
+   "website": "https://chinatownheritagecentre.com.sg/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Su 10:00-20:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "20:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/4047389534",
+   "name": "Civil Defense Heritage Gallery",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.292074,
+   "lng": 103.849142,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/8362841949",
+   "name": "Comma Space 逗号空间",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.277431,
+   "lng": 103.80346,
+   "address": "1 Lock Road",
+   "website": "https://comma-space.com",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9827708296",
+   "name": "Confluence",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.286897,
+   "lng": 103.845067,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/880870252",
+   "name": "DECK",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.301714,
+   "lng": 103.851743,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11627229964",
+   "name": "Eagle’s Eye Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.286936,
+   "lng": 103.847211,
+   "address": "34B North Canal Road, 059290",
+   "website": "https://eagles-eye.com.sg/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "We-Sa 10:00-18:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "18:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/152302087",
+   "name": "Empress Market",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 1.316253,
+   "lng": 103.805633,
+   "address": "7 Empress Road, 280007",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10550118437",
+   "name": "Eurasian Heritage Gallery",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.310035,
+   "lng": 103.899319,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/8362814678",
+   "name": "Fost Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.277498,
+   "lng": 103.8035,
+   "address": "1 Lock Road",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6884053285",
+   "name": "Fuk Tak Chi",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.282876,
+   "lng": 103.848782,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/7053744370",
+   "name": "G Art",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.296918,
+   "lng": 103.853867,
+   "address": "233 Bain Street",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11627229961",
+   "name": "Gallery Thirty Three",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.286917,
+   "lng": 103.847252,
+   "address": "33 North Canal Road",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9653219407",
+   "name": "Geylang Serai Heritage Gallery",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.316681,
+   "lng": 103.897202,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/7126026542",
+   "name": "Haig Road Market",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 1.315131,
+   "lng": 103.895579,
+   "address": "13 Haig Road, 430013",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6356165775",
+   "name": "Harmony in Diversity Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.279357,
+   "lng": 103.846603,
+   "address": null,
+   "website": "https://www.harmonyindiversitygallery.sg/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Sa 10:00-17:00; Su,PH off",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:way/1173008767",
+   "name": "Hatch Art Project",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.282478,
+   "lng": 103.830297,
+   "address": "7 Yong Siak Street, 168644",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/1408555573",
+   "name": "Healing Garden",
+   "nameEn": null,
+   "kind": "garden",
+   "lat": 1.317404,
+   "lng": 103.817414,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "We-Mo 05:00-19:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su",
+      "mo"
+     ],
+     "spans": [
+      [
+       "05:00",
+       "19:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/1467038016",
+   "name": "IMBA Theatre",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.283255,
+   "lng": 103.861901,
+   "address": "18 Marina Gardens Dr, 018953",
+   "website": "https://imbaglobal.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Su 09:00-21:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "21:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/231917921",
+   "name": "Istana Heritage Gallery",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.299449,
+   "lng": 103.843368,
+   "address": "35 Orchard Road, 238902",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/489366770",
+   "name": "Jacob Ballas Children's Garden",
+   "nameEn": null,
+   "kind": "garden",
+   "lat": 1.321496,
+   "lng": 103.818458,
+   "address": null,
+   "website": null,
+   "wikidata": "Q98270252",
+   "wikipedia": null,
+   "description": "garden dedicated to children and playground",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": "Tu-Su 08:00-19:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "08:00",
+       "19:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/12231175233",
+   "name": "Jews of Singapore Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.298144,
+   "lng": 103.850486,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/1873233383",
+   "name": "Jurassic World",
+   "nameEn": null,
+   "kind": "attraction",
+   "lat": 1.253904,
+   "lng": 103.823853,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/124957879",
+   "name": "Kallang Estate Fresh Market and Food Centre",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 1.307369,
+   "lng": 103.883988,
+   "address": "17 Old Airport Road, 397972",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3370311299",
+   "name": "Kim Keat Palm Market",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 1.335216,
+   "lng": 103.857185,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/8566518469",
+   "name": "Kwok Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.30541,
+   "lng": 103.830202,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13498173420",
+   "name": "Kwong Wai Shiu Hospital Heritage Gallery",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.317781,
+   "lng": 103.858593,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11018023320",
+   "name": "Lamipak Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.322699,
+   "lng": 103.852074,
+   "address": "279 Balestier Road",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/7053715520",
+   "name": "Leica Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.295757,
+   "lng": 103.853871,
+   "address": "328 North Bridge Road",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5350977624",
+   "name": "Light Show Viewing Point",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 1.284084,
+   "lng": 103.858438,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11819634281",
+   "name": "Lookout Loop",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 1.254166,
+   "lng": 103.818975,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9457436890",
+   "name": "Lorong 4 Blk 93 Market and Hawker Centre",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 1.338452,
+   "lng": 103.849557,
+   "address": "93 Lorong 4 Toa Payoh, 310093",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/14184494350",
+   "name": "MAS Gallery",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.274494,
+   "lng": 103.846633,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10559834077",
+   "name": "MOE Heritage Centre",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.32582,
+   "lng": 103.844868,
+   "address": "565 Balestier Road, 329927",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Fr 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/5037812522",
+   "name": "Marina Bay Laser show viewpoint",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 1.284377,
+   "lng": 103.859099,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6837406386",
+   "name": "Marina Bay View",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 1.284673,
+   "lng": 103.854048,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4682910166",
+   "name": "Memorial for the Victims of the Konfrantasi",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 1.29847,
+   "lng": 103.847268,
+   "address": null,
+   "website": null,
+   "wikidata": "Q134972341",
+   "wikipedia": null,
+   "description": "memorial in Singapore",
+   "image": "Memorial to the Victims of Konfrontasi, Dhoby Ghaut Green (2025) - img 01.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/7142188682",
+   "name": "Mizuma Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.27922,
+   "lng": 103.805036,
+   "address": "22 Lock Road",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3856046951",
+   "name": "Musical Box Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.280726,
+   "lng": 103.847466,
+   "address": "168 Telok Ayer Street, 068619",
+   "website": "https://www.singaporemusicalboxmuseum.org/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Sa 10:00-15:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "15:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/489365459",
+   "name": "National Orchid Garden",
+   "nameEn": null,
+   "kind": "garden",
+   "lat": 1.312747,
+   "lng": 103.813714,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Su 08:30-19:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "08:30",
+       "19:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/11508097286",
+   "name": "New Art Museum Singapore",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.271929,
+   "lng": 103.837102,
+   "address": "39 Keppel Road",
+   "website": "https://www.whitestone-gallery.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4737053628",
+   "name": "Old Boys Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.276504,
+   "lng": 103.835825,
+   "address": "Kampong Bahru Road",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9050950001",
+   "name": "Opera Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.30353,
+   "lng": 103.832456,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/169103322",
+   "name": "Pek Kio Market & Food Centre",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 1.316126,
+   "lng": 103.850225,
+   "address": "41A Cambridge Road, 211041",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Su,PH 00:00-24:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "00:00",
+       "24:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/2248129074",
+   "name": "People's Park",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 1.28581,
+   "lng": 103.84416,
+   "address": "058357",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/1541260942",
+   "name": "Police Heritage Centre",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.324405,
+   "lng": 103.845492,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4560997465",
+   "name": "Pororo Park",
+   "nameEn": null,
+   "kind": "attraction",
+   "lat": 1.29061,
+   "lng": 103.857079,
+   "address": "6 Raffles Boulevard, 039594",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/14206478747",
+   "name": "Prestige Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.271921,
+   "lng": 103.836877,
+   "address": "39 Keppel Road",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/116801907",
+   "name": "Red Dot Design Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.280073,
+   "lng": 103.856266,
+   "address": "11 Marina Boulevard, 018940",
+   "website": "https://www.museum.red-dot.sg/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Fr 11:00-19:00; Sa-Su 10:00-19:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "19:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "19:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/6139807049",
+   "name": "Redhill Wet Market",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 1.287822,
+   "lng": 103.818352,
+   "address": "150079",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/12464143608",
+   "name": "Roof Garden",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 1.275821,
+   "lng": 103.849582,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13296344401",
+   "name": "Roof Terrace",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 1.289219,
+   "lng": 103.856032,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9451765608",
+   "name": "SAM at Tanjong Pagar Distripark",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.271882,
+   "lng": 103.836555,
+   "address": "39 Keppel Road",
+   "website": "https://www.singaporeartmuseum.sg/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Su 10:00-19:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "19:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/1509682370",
+   "name": "SEAB Heritage Gallery",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.28756,
+   "lng": 103.83048,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/8022188486",
+   "name": "San-Ee Art Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.296885,
+   "lng": 103.85402,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/1110010020",
+   "name": "Scentopia",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.254664,
+   "lng": 103.813653,
+   "address": null,
+   "website": "https://www.scentopia-singapore.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/159637727",
+   "name": "Sentosa Nature Discovery",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.255866,
+   "lng": 103.817347,
+   "address": "21 Siloso Road, 098968",
+   "website": "https://www.sentosa.com.sg/Explore/Sentosa-Nature-Discovery-Walking-Trails/Sentosa-Nature-Discovery",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/7142188657",
+   "name": "ShanghART Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.278312,
+   "lng": 103.804378,
+   "address": "9 Lock Road, 108937",
+   "website": "https://shanghartgallery.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "We-Su 11:00-19:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "19:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/9331507343",
+   "name": "Shout",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.305778,
+   "lng": 103.832892,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5667430193",
+   "name": "Singapore Botanic Gardens Heritage Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.30874,
+   "lng": 103.817616,
+   "address": null,
+   "website": "https://www.nparks.gov.sg/sbg/our-gardens/tanglin-entrance/heritage-museum-cdl-gallery",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/1080516770",
+   "name": "Singapore Chinese Cultural Centre",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.275829,
+   "lng": 103.849516,
+   "address": "1 Straits Boulevard, 018906",
+   "website": "https://singaporeccc.org.sg",
+   "wikidata": "Q126400707",
+   "wikipedia": null,
+   "description": "cultural center in Singapore, Singapore",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": "Mo-Su 10:00-20:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "20:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/3756807018",
+   "name": "Singapore Coin and Notes Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.283403,
+   "lng": 103.84448,
+   "address": "40 Pagoda Street",
+   "website": "http://www.singaporecoinsandnotesmuseum.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/1985259385",
+   "name": "Singapore Maritime Gallery",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.270718,
+   "lng": 103.862987,
+   "address": "31 Marina Coastal Drive, 018988",
+   "website": "https://www.maritimegallery.sg",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Su 09:00-18:00; Mo off",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "18:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "mo"
+     ],
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:way/358462343",
+   "name": "Singapore Sports Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.301347,
+   "lng": 103.87341,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/1315968963",
+   "name": "SkyPark Observation Deck",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 1.284918,
+   "lng": 103.861157,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13042664601",
+   "name": "Skyline View",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 1.280506,
+   "lng": 103.870932,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4108805599",
+   "name": "Skyville@Dawson",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 1.295806,
+   "lng": 103.809992,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2248167729",
+   "name": "Southern Ridges",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 1.255571,
+   "lng": 103.81774,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4749908922",
+   "name": "Southernmost Point of Continental Asia",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 1.247947,
+   "lng": 103.821412,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11834999308",
+   "name": "Straits Enclave",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.309326,
+   "lng": 103.902257,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/7142188653",
+   "name": "Sundaram Tagore Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.277388,
+   "lng": 103.803808,
+   "address": "5 Lock Road, 108933",
+   "website": "https://www.sundaramtagore.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Sa 11:00-19:00; Su-Mo,PH \"by appointment\"",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/8485491035",
+   "name": "Supertree Observatory",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 1.281942,
+   "lng": 103.863934,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/171975666",
+   "name": "Tanjong Pagar Market And Food Centre",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 1.276623,
+   "lng": 103.843158,
+   "address": "6 Tanjong Pagar Plaza, 081006",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/12136676397",
+   "name": "Tekka Wet Market",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 1.306521,
+   "lng": 103.850483,
+   "address": "665 Buffalo Road, 210665",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "06:30-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "06:30",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/6942492515",
+   "name": "Telok Blangah Market",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 1.273891,
+   "lng": 103.807946,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4362541694",
+   "name": "The Archeological Dig and Exhibition Area",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.294609,
+   "lng": 103.84758,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Su 08:30-18:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "08:30",
+       "18:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/7142188681",
+   "name": "The Columns",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.27922,
+   "lng": 103.805187,
+   "address": "22 Lock Road",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/8821249366",
+   "name": "The Fluxus House",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.279823,
+   "lng": 103.840805,
+   "address": null,
+   "website": "https://fluxushouse.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Su 10:00-20:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "20:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/11806482469",
+   "name": "The Gem Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.304585,
+   "lng": 103.853123,
+   "address": "9 Perak Road",
+   "website": "https://thegemmuseum.gallery/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Fr 12:00-17:00; Sa 11:00-15:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "15:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/10997766459",
+   "name": "The Ngee Ann Kongsi Gallery 1",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.29963,
+   "lng": 103.851235,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/1931861592",
+   "name": "The Pinnacle@Duxton",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 1.275581,
+   "lng": 103.841319,
+   "address": null,
+   "website": "http://www.pinnacleduxton.com.sg/Public.html",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "09:00-21:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "09:00",
+       "21:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/7015806929",
+   "name": "The Private Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.298129,
+   "lng": 103.851285,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/21297472",
+   "name": "Tiong Bahru Market",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 1.284779,
+   "lng": 103.832422,
+   "address": "30 Seng Poh Road, 168898",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/148409809",
+   "name": "Toa Payoh Lorong 8 Market",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 1.340267,
+   "lng": 103.854416,
+   "address": "210 Lorong 8 Toa Payoh, 310210",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11395312837",
+   "name": "Trickeye",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.258563,
+   "lng": 103.811807,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2497047979",
+   "name": "Utterly Art",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.283772,
+   "lng": 103.844651,
+   "address": "20B Mosque Street, 059500",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "|| By appointments. Call Keng Hock +65 94872006",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/10280120309",
+   "name": "Vantage Point to view Supertree show",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 1.281582,
+   "lng": 103.864662,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/688890778",
+   "name": "Vintage cameras museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 1.303678,
+   "lng": 103.859084,
+   "address": "8 Jalan Kledek, 199264",
+   "website": "https://www.vintagecamerasmuseumsg.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/261533779",
+   "name": "Whampoa Market",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 1.323174,
+   "lng": 103.853858,
+   "address": "92 Whampoa Drive",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/481650009",
+   "name": "White Space Art Asia",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.282303,
+   "lng": 103.830435,
+   "address": "1H Yong Siak Street, 168641",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9739031522",
+   "name": "XM Studios",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.30833,
+   "lng": 103.862186,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9632700637",
+   "name": "Y2ARTS",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.281679,
+   "lng": 103.819418,
+   "address": "211 Henderson Road, 159552",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Su 11:00-18:30; Mo,PH || \"by appointment\"",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/7142188656",
+   "name": "Yavuz Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.278322,
+   "lng": 103.804284,
+   "address": "9 Lock Road, 108937",
+   "website": "https://yavuzgallery.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Sa 11:00-19:00; Su 12:00-17:00; Mo, PH off",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/8059370595",
+   "name": "Zen Art Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 1.297107,
+   "lng": 103.85349,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  }
+ ],
+ "near": "venues",
+ "stay": [
+  {
+   "id": "osm:node/11517501222",
+   "name": "Raffles Hotel",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": 5.0,
+   "cuisine": null,
+   "lat": 1.294682,
+   "lng": 103.854641,
+   "address": "1 Beach Road",
+   "website": "https://raffles.com/singapore",
+   "wikidata": "Q1538837",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 412,
+   "venuesNear": 6
+  },
+  {
+   "id": "osm:way/351305505",
+   "name": "Mercure",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": 4.0,
+   "cuisine": null,
+   "lat": 1.299623,
+   "lng": 103.853114,
+   "address": "122 Middle Road, 188973",
+   "website": "http://www.mercure.com/gb/hotel-A0D7-mercure-singapore-bugis/index.shtml",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 189,
+   "venuesNear": 6
+  },
+  {
+   "id": "osm:node/4302905910",
+   "name": "Local",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 1.298498,
+   "lng": 103.850368,
+   "address": "30 Bencoolen Street, 189621",
+   "website": "https://www.30bencoolen.com.sg",
+   "wikidata": null,
+   "openingHours": "24/7",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "00:00",
+       "24:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 314,
+   "venuesNear": 6
+  },
+  {
+   "id": "osm:way/172596704",
+   "name": "Hotel Grand Pacific",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 1.297397,
+   "lng": 103.852631,
+   "address": "101 Victoria Street, 188018",
+   "website": "https://www.hotelgrandpacific.com.sg/",
+   "wikidata": "Q111140343",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 318,
+   "venuesNear": 6
+  },
+  {
+   "id": "osm:node/4302906613",
+   "name": "Victoria Hotel",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 1.297016,
+   "lng": 103.852414,
+   "address": "87;89 Victoria Street, 188016",
+   "website": "https://nuvegroup.com.sg",
+   "wikidata": "Q111429447",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 364,
+   "venuesNear": 6
+  },
+  {
+   "id": "osm:relation/21057404",
+   "name": "InterContinental Singapore",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 1.29836,
+   "lng": 103.854904,
+   "address": "80 Middle Road, 188966",
+   "website": "https://www.ihg.com/intercontinental/hotels/gb/en/singapore/sinhb/hoteldetail",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 103,
+   "venuesNear": 6
+  },
+  {
+   "id": "osm:node/4302906119",
+   "name": "Plush Pods",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 1.298002,
+   "lng": 103.856935,
+   "address": "2 Tan Quee Lan Street, 188091",
+   "website": "https://plush-pods.com/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 279,
+   "venuesNear": 6
+  },
+  {
+   "id": "osm:way/103110145",
+   "name": "The Capitol Kempinski Hotel",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 1.294047,
+   "lng": 103.850859,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7597400",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 286,
+   "venuesNear": 6
+  }
+ ],
+ "eat": [
+  {
+   "id": "osm:node/5484076765",
+   "name": "Genki Sushi",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "japanese",
+    "sushi"
+   ],
+   "lat": 1.299769,
+   "lng": 103.853939,
+   "address": "201 Victoria Street, 188067",
+   "website": "https://www.genkisushi.com.sg/",
+   "wikidata": null,
+   "openingHours": "Mo-Su,PH 11:00-22:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "22:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 108,
+   "venuesNear": 6
+  },
+  {
+   "id": "osm:node/6743835939",
+   "name": "LeNu Chef Wai's Noodle Bar",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "chinese",
+    "noodle"
+   ],
+   "lat": 1.299694,
+   "lng": 103.855783,
+   "address": "200 Victoria Street, 188021",
+   "website": "https://www.paradisegp.com/",
+   "wikidata": null,
+   "openingHours": "Mo-Fr 11:00-22:00; Sa-Su 10:30-22:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "22:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:30",
+       "22:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 121,
+   "venuesNear": 6
+  },
+  {
+   "id": "osm:node/6174355186",
+   "name": "En Sushi",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "sushi",
+    "asian"
+   ],
+   "lat": 1.29902,
+   "lng": 103.853671,
+   "address": "112 Middle Road",
+   "website": "https://ensushisg.com",
+   "wikidata": null,
+   "openingHours": "Mo-Th 11:30-15:00, 18:00-22:00; Fr-Su 11:30-15:00, 17:30-22:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "15:00"
+      ],
+      [
+       "18:00",
+       "22:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "15:00"
+      ],
+      [
+       "17:30",
+       "22:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 127,
+   "venuesNear": 6
+  },
+  {
+   "id": "osm:node/9878830133",
+   "name": "Ssak3 싹쓰리",
+   "nameEn": "Ssak3",
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "korean"
+   ],
+   "lat": 1.297325,
+   "lng": 103.853469,
+   "address": null,
+   "website": "https://ssak3brasbasah.com/",
+   "wikidata": null,
+   "openingHours": "Mo-Fr 11:30-14:30,17:00-22:30; Sa,Su 11:30-15:30,17:00-22:30",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "14:30"
+      ],
+      [
+       "17:00",
+       "22:30"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "15:30"
+      ],
+      [
+       "17:00",
+       "22:30"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 262,
+   "venuesNear": 6
+  },
+  {
+   "id": "osm:node/7053741317",
+   "name": "Binomio",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "spanish"
+   ],
+   "lat": 1.296023,
+   "lng": 103.854216,
+   "address": "328 North Bridge Road, 188719",
+   "website": "https://www.binomio.sg/",
+   "wikidata": null,
+   "openingHours": "Mo-Sa 12:00-13:45,17:30-22:00; Su 12:00-13:45,17:30-21:15",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "13:45"
+      ],
+      [
+       "17:30",
+       "22:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "13:45"
+      ],
+      [
+       "17:30",
+       "21:15"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 368,
+   "venuesNear": 6
+  },
+  {
+   "id": "osm:node/8418723731",
+   "name": "Ippudo",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "ramen"
+   ],
+   "lat": 1.294148,
+   "lng": 103.853199,
+   "address": "#B1-61/62 Raffles City, 179103",
+   "website": "http://www.ippudo.com.sg/",
+   "wikidata": null,
+   "openingHours": "Mo-Fr 11:00-22:00; Sa-Su,PH 10:30-22:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "22:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:30",
+       "22:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 390,
+   "venuesNear": 6
+  },
+  {
+   "id": "osm:node/8418723738",
+   "name": "Sushi Tei",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "japanese"
+   ],
+   "lat": 1.294502,
+   "lng": 103.85313,
+   "address": "#03-13/14 Raffles City, 179103",
+   "website": "https://sushitei.com/",
+   "wikidata": null,
+   "openingHours": "Mo-Su 11:30-22:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "22:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 429,
+   "venuesNear": 6
+  },
+  {
+   "id": "osm:node/12547475456",
+   "name": "The Dolar Shop Hot Pot Singapore",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "chinese",
+    "hotpot"
+   ],
+   "lat": 1.295283,
+   "lng": 103.852019,
+   "address": "#B1-01/02 30 Victoria St, CHIJMES, 187996",
+   "website": "https://www.dolarshop.com/location/singapore",
+   "wikidata": null,
+   "openingHours": "Mo-Su 17:00-23:30",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "17:00",
+       "23:30"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 435,
+   "venuesNear": 6
+  }
+ ],
+ "trips": [
+  {
+   "name": "Johor Bahru",
+   "page": "Johor Bahru",
+   "url": "https://en.wikivoyage.org/wiki/Johor_Bahru",
+   "description": "Malaysian city just across the Causeway. Just 20 min by bus 950 from Woodlands Bus Interchange. Not much to look at, but popular for cheap eating, shopping, spa experiences and Legoland Malaysia.",
+   "lat": 1.4833,
+   "lng": 103.7333,
+   "km": 25
+  },
+  {
+   "name": "Batam",
+   "page": "Batam",
+   "url": "https://en.wikivoyage.org/wiki/Batam",
+   "description": "The nearest Indonesian island to Singapore, just a short ferry trip away. Mainly industrial and infamous for its vice trade, but has some resorts.",
+   "lat": 1.0833,
+   "lng": 104.0333,
+   "km": 31
+  },
+  {
+   "name": "Bintan",
+   "page": "Bintan",
+   "url": "https://en.wikivoyage.org/wiki/Bintan",
+   "description": "Indonesian island just 55 min away by ferry, offering both high-end resorts and the \"real Indonesia\" experience.",
+   "lat": 1.0,
+   "lng": 104.5,
+   "km": 79
+  },
+  {
+   "name": "Pulau Tioman",
+   "page": "Tioman",
+   "url": "https://en.wikivoyage.org/wiki/Tioman",
+   "description": "The nearest of Malaysia's East Coast paradise islands, reachable by bus & ferry.",
+   "lat": 2.8167,
+   "lng": 104.1833,
+   "km": 174
+  }
+ ],
+ "guide": {
+  "page": "Singapore",
+  "url": "https://en.wikivoyage.org/wiki/Singapore"
+ },
+ "licences": {
+  "osm": {
+   "name": "ODbL",
+   "url": "https://opendatacommons.org/licenses/odbl/",
+   "attribution": "© OpenStreetMap contributors",
+   "credit": "https://www.openstreetmap.org/copyright"
+  },
+  "wikidata": {
+   "name": "CC0",
+   "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "attribution": "Wikidata"
+  },
+  "wikivoyage": {
+   "name": "CC BY-SA 4.0",
+   "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "attribution": "Wikivoyage contributors"
+  }
+ },
+ "provenance": {
+  "osm": {
+   "fetchedAt": "2026-10-02T20:15:47Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikidata": {
+   "fetchedAt": "2026-10-02T20:16:01Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "amenities": {
+   "fetchedAt": "2026-10-02T20:17:53Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikivoyage": {
+   "fetchedAt": "2026-10-02T20:18:12Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  }
+ }
+}

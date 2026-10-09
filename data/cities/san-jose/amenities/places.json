@@ -1,0 +1,1834 @@
+{
+ "nearM": 1500,
+ "anchors": [
+  {
+   "festival": null,
+   "venue": null,
+   "lat": 37.3382,
+   "lng": -121.8863
+  }
+ ],
+ "places": [
+  {
+   "id": "node/10048459127",
+   "lat": 37.337203,
+   "lng": -121.887296,
+   "tags": {
+    "name": "Briyani & Beyond",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "addr:housenumber": "17",
+    "addr:street": "South 4th Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "node/10048461452",
+   "lat": 37.338334,
+   "lng": -121.887467,
+   "tags": {
+    "name": "WhyHotel",
+    "tourism": "hotel",
+    "website": "https://www.placemakr.com/locations/san-jose/whyhotel-downtown-san-jose/"
+   }
+  },
+  {
+   "id": "node/11218411472",
+   "lat": 37.333103,
+   "lng": -121.888783,
+   "tags": {
+    "name": "AJI Bar & Robata",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "website": "https://www.hilton.com/en/hotels/sjcsmhh-signia-san-jose/dining/aji-bar-and-robata/",
+    "opening_hours": "Su-Th 16:00-23:00, Fr-Sa 16:00-00:00",
+    "addr:housenumber": "170",
+    "addr:street": "South Market Street",
+    "addr:postcode": "95113",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/11283283039",
+   "lat": 37.349808,
+   "lng": -121.893871,
+   "tags": {
+    "name": "Jtown Pizza Company",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://jtownpizza.com/",
+    "opening_hours": "Mo-Tu 11:30-22:00; We-Su 11:30-24:00",
+    "addr:housenumber": "625",
+    "addr:street": "North 6th Street",
+    "addr:postcode": "95112",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/11518442603",
+   "lat": 37.336704,
+   "lng": -121.884711,
+   "tags": {
+    "name": "Ben Sandwiches",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese;sandwich",
+    "addr:housenumber": "221",
+    "addr:street": "East San Fernando Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "node/12307773201",
+   "lat": 37.335472,
+   "lng": -121.898514,
+   "tags": {
+    "name": "Poor House Bistro",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "addr:housenumber": "317",
+    "addr:street": "West Saint John Street",
+    "addr:postcode": "95110"
+   }
+  },
+  {
+   "id": "node/12813626055",
+   "lat": 37.338086,
+   "lng": -121.887216,
+   "tags": {
+    "name": "Strāta",
+    "name:en": "Strāta",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.stratasj.com/",
+    "addr:housenumber": "181",
+    "addr:street": "East Santa Clara Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/12882515350",
+   "lat": 37.335127,
+   "lng": -121.897937,
+   "tags": {
+    "name": "Bibo’s",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "addr:housenumber": "320",
+    "addr:street": "West Saint John Street",
+    "addr:postcode": "95110"
+   }
+  },
+  {
+   "id": "node/12882515351",
+   "lat": 37.335091,
+   "lng": -121.89802,
+   "tags": {
+    "name": "Ancora Vino",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://san-jose.enotecalastoria.com/",
+    "addr:housenumber": "320",
+    "addr:street": "West Saint John Street",
+    "addr:postcode": "95110"
+   }
+  },
+  {
+   "id": "node/12882827543",
+   "lat": 37.33544,
+   "lng": -121.898159,
+   "tags": {
+    "name": "Henry’s Hi-Life",
+    "amenity": "restaurant",
+    "cuisine": "barbecue",
+    "website": "https://henryshilife.com/",
+    "addr:housenumber": "301",
+    "addr:street": "West Saint John Street",
+    "addr:postcode": "95110"
+   }
+  },
+  {
+   "id": "node/13157631623",
+   "lat": 37.336458,
+   "lng": -121.880291,
+   "tags": {
+    "name": "Lane 15 Spartan Snacks",
+    "amenity": "restaurant",
+    "cuisine": "snackbar",
+    "addr:housenumber": "211",
+    "addr:street": "South 9th Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "node/13318492349",
+   "lat": 37.333189,
+   "lng": -121.887221,
+   "tags": {
+    "name": "Eos & Nyx",
+    "amenity": "restaurant",
+    "cuisine": "mediterranean",
+    "website": "https://www.opentable.com/r/eos-and-nyx-san-jose",
+    "opening_hours": "Tu-Fr 17:00-22:00; Sa-Su 10:00-13:00,17:00-22:00",
+    "addr:housenumber": "201",
+    "addr:street": "South 2nd Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/13322885549",
+   "lat": 37.333814,
+   "lng": -121.885065,
+   "tags": {
+    "name": "Suni Sushi",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "website": "https://pos.chowbus.com/online-ordering/store/sumi-sushi/21287",
+    "opening_hours": "11:00-21:00",
+    "addr:housenumber": "119",
+    "addr:street": "Paseo De San Antonio",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/13826493602",
+   "lat": 37.331092,
+   "lng": -121.887032,
+   "tags": {
+    "name": "Jackie’s Place",
+    "amenity": "restaurant",
+    "addr:housenumber": "321",
+    "addr:street": "South 1st Street"
+   }
+  },
+  {
+   "id": "node/14203129133",
+   "lat": 37.337154,
+   "lng": -121.883653,
+   "tags": {
+    "name": "Neeya Thai Kitchen",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "website": "https://www.neeyathaikitchen.com/",
+    "addr:housenumber": "273",
+    "addr:street": "East San Fernando Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "node/1700572855",
+   "lat": 37.330996,
+   "lng": -121.883683,
+   "tags": {
+    "name": "China Chen",
+    "amenity": "restaurant",
+    "addr:housenumber": "400",
+    "addr:street": "South 3rd Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "node/1768788322",
+   "lat": 37.331186,
+   "lng": -121.887226,
+   "tags": {
+    "name": "Original Joe’s",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://originaljoes.com/",
+    "opening_hours": "Mo-Th,Su 16:00-22:00; Fr-Sa 16:00-23:00",
+    "addr:housenumber": "301",
+    "addr:street": "South 1st Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/1922643490",
+   "lat": 37.348408,
+   "lng": -121.895146,
+   "tags": {
+    "name": "SJ Omogari Korean Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "website": "https://omogarisj.com",
+    "opening_hours": "Mo-Fr 11:30-15:00,17:00-21:00; Sa 11:30-21:00; Su off",
+    "addr:housenumber": "154",
+    "addr:street": "Jackson Street",
+    "addr:postcode": "95112",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/1976891829",
+   "lat": 37.332803,
+   "lng": -121.884728,
+   "tags": {
+    "name": "Pizza My Heart",
+    "amenity": "restaurant",
+    "cuisine": "pizza"
+   }
+  },
+  {
+   "id": "node/2525733655",
+   "lat": 37.339619,
+   "lng": -121.882893,
+   "tags": {
+    "name": "The Last Round",
+    "amenity": "restaurant",
+    "cuisine": "pizza;sandwich",
+    "addr:housenumber": "354",
+    "addr:street": "East Santa Clara Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/2572326447",
+   "lat": 37.339821,
+   "lng": -121.893577,
+   "tags": {
+    "name": "Teske’s Germania",
+    "amenity": "restaurant",
+    "cuisine": "german",
+    "addr:housenumber": "255",
+    "addr:street": "North 1st Street",
+    "addr:postcode": "95110"
+   }
+  },
+  {
+   "id": "node/2655212506",
+   "lat": 37.33651,
+   "lng": -121.894208,
+   "tags": {
+    "name": "On a Roll",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese;spring_roll",
+    "website": "https://sanpedrosquaremarket.com/San-Pedro-Square-Market-Tenants/on-a-roll",
+    "addr:housenumber": "87",
+    "addr:street": "North San Pedro Street",
+    "addr:postcode": "95110"
+   }
+  },
+  {
+   "id": "node/2882792357",
+   "lat": 37.335396,
+   "lng": -121.89021,
+   "tags": {
+    "name": "Good Karma Vegan Cafe",
+    "amenity": "restaurant",
+    "addr:housenumber": "37",
+    "addr:street": "South 1st Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/3208512952",
+   "lat": 37.332576,
+   "lng": -121.889124,
+   "tags": {
+    "name": "The Grill On The Alley",
+    "amenity": "restaurant",
+    "website": "https://www.thegrill.com/locations/the-grill-san-jose-california",
+    "addr:housenumber": "172",
+    "addr:street": "South Market Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/3215367502",
+   "lat": 37.334545,
+   "lng": -121.889145,
+   "tags": {
+    "name": "Élyse Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "french;vietnamese",
+    "website": "https://www.elyserestaurant.com/",
+    "opening_hours": "Tu-Sa 17:00-21:00",
+    "addr:housenumber": "96",
+    "addr:street": "South 1st Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/3215367503",
+   "lat": 37.334378,
+   "lng": -121.889476,
+   "tags": {
+    "name": "Rookies Sports Lounge",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "website": "https://rookieslodge.com/downtown-san-jose/",
+    "addr:housenumber": "99",
+    "addr:street": "South 1st Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/3458835606",
+   "lat": 37.335157,
+   "lng": -121.893207,
+   "tags": {
+    "name": "The Farmers Union",
+    "amenity": "restaurant",
+    "website": "https://www.thefarmersunion.com/",
+    "addr:housenumber": "151",
+    "addr:street": "West Santa Clara Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/3458835620",
+   "lat": 37.332252,
+   "lng": -121.901258,
+   "tags": {
+    "name": "Bloom Energy Power Club",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/3478559713",
+   "lat": 37.336351,
+   "lng": -121.88971,
+   "tags": {
+    "name": "The City Fish",
+    "amenity": "restaurant",
+    "cuisine": "fish_and_chips",
+    "website": "https://www.thecityfish.online/",
+    "opening_hours": "Mo-We,Su 11:00-21:00; Th-Sa 11:00-22:00",
+    "addr:housenumber": "30",
+    "addr:street": "East Santa Clara Street",
+    "addr:postcode": "95113",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3478559764",
+   "lat": 37.335398,
+   "lng": -121.892696,
+   "tags": {
+    "name": "Taqueria La Victoria",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "addr:housenumber": "131",
+    "addr:street": "West Santa Clara Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/3532017127",
+   "lat": 37.349487,
+   "lng": -121.892869,
+   "tags": {
+    "name": "Sushi Maru",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "website": "https://sushimarusj.com",
+    "opening_hours": "Mo,We-Th 11:30-14:00,17:30-20:30; Tu off; Fr-Sa 11:30-14:00,17:30-20:45; Su 11:30-14:00,17:30-20:15",
+    "addr:housenumber": "262",
+    "addr:street": "Jackson Street",
+    "addr:postcode": "95112",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3537422692",
+   "lat": 37.336544,
+   "lng": -121.89062,
+   "tags": {
+    "name": "The Eden Gardens",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "addr:housenumber": "2",
+    "addr:street": "North 1st Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/3557262037",
+   "lat": 37.348547,
+   "lng": -121.894855,
+   "tags": {
+    "name": "Spread",
+    "amenity": "restaurant",
+    "cuisine": "sandwich;ice_cream",
+    "website": "https://spreaddeli.com",
+    "opening_hours": "11:00-20:00",
+    "addr:housenumber": "170",
+    "addr:street": "Jackson Street",
+    "addr:postcode": "95112",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3559626834",
+   "lat": 37.34908,
+   "lng": -121.893781,
+   "tags": {
+    "name": "B'anne",
+    "amenity": "restaurant",
+    "website": "https://bannebakery.com/",
+    "opening_hours": "Mo-We off; Th-Su 08:00-14:00",
+    "addr:housenumber": "224",
+    "addr:street": "Jackson Street",
+    "addr:postcode": "95112",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3562595478",
+   "lat": 37.348579,
+   "lng": -121.892854,
+   "tags": {
+    "name": "Okayama",
+    "amenity": "restaurant",
+    "cuisine": "japanese;okinawan",
+    "website": "https://okayamasushi.menu11.com/",
+    "opening_hours": "11:00-21:00",
+    "addr:housenumber": "565",
+    "addr:street": "North 6th Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "node/3562595481",
+   "lat": 37.348821,
+   "lng": -121.895064,
+   "tags": {
+    "name": "Shabu Time",
+    "amenity": "restaurant",
+    "cuisine": "japanese;hotpot",
+    "website": "https://www.shabutime.com/",
+    "opening_hours": "Mo-Th 16:30-22:00; Fr-Su 12:00-22:00",
+    "addr:housenumber": "171",
+    "addr:street": "Jackson Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "node/3573968505",
+   "lat": 37.334852,
+   "lng": -121.893812,
+   "tags": {
+    "name": "The Pressroom",
+    "amenity": "restaurant",
+    "website": "https://pressroomsj.com/",
+    "addr:housenumber": "189",
+    "addr:street": "West Santa Clara Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/3573968508",
+   "lat": 37.337239,
+   "lng": -121.88883,
+   "tags": {
+    "name": "The Joint",
+    "amenity": "restaurant",
+    "cuisine": "burger",
+    "addr:housenumber": "93",
+    "addr:street": "East Santa Clara Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/3573968551",
+   "lat": 37.349269,
+   "lng": -121.894119,
+   "tags": {
+    "name": "Kumako Ramen",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "addr:housenumber": "211",
+    "addr:street": "Jackson Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "node/3595854508",
+   "lat": 37.349299,
+   "lng": -121.894065,
+   "tags": {
+    "name": "Kaita",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "website": "https://kaitarestaurant.com",
+    "opening_hours": "Mo,Su off; Tu-Th 11:30-14:00,17:00-20:30; Fr-Sa 11:30-14:00,17:00-21:00",
+    "addr:housenumber": "215",
+    "addr:street": "Jackson Street",
+    "addr:postcode": "95112",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3595854512",
+   "lat": 37.349776,
+   "lng": -121.893746,
+   "tags": {
+    "name": "Minato",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "addr:housenumber": "617",
+    "addr:street": "North 6th Street",
+    "addr:postcode": "95112",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3595854578",
+   "lat": 37.33564,
+   "lng": -121.891205,
+   "tags": {
+    "name": "Fuji Sushi",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "addr:housenumber": "56",
+    "addr:street": "West Santa Clara Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/3606791587",
+   "lat": 37.33428,
+   "lng": -121.889743,
+   "tags": {
+    "name": "Mezcal",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://mezcalrestaurantsj.com//",
+    "addr:housenumber": "25",
+    "addr:street": "West San Fernando Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/3606791588",
+   "lat": 37.336171,
+   "lng": -121.886063,
+   "tags": {
+    "name": "Home Eat;汉家宴",
+    "name:en": "Home Eat",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "88",
+    "addr:street": "South 4th Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "node/3606793084",
+   "lat": 37.33912,
+   "lng": -121.88389,
+   "tags": {
+    "name": "Tostadas",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "addr:housenumber": "304",
+    "addr:street": "East Santa Clara Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "node/3606793499",
+   "lat": 37.339212,
+   "lng": -121.883639,
+   "tags": {
+    "name": "Punjab Cafe",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://www.punjabcafesanjose.com/",
+    "addr:housenumber": "322",
+    "addr:street": "East Santa Clara Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "node/3606793507",
+   "lat": 37.336312,
+   "lng": -121.889791,
+   "tags": {
+    "name": "Fox Tales",
+    "amenity": "restaurant",
+    "website": "https://www.foxtalefermentationproject.com/",
+    "addr:housenumber": "30",
+    "addr:street": "East Santa Clara Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/3608158853",
+   "lat": 37.333349,
+   "lng": -121.891828,
+   "tags": {
+    "name": "El Cabrón",
+    "name:en": "El Cabrón",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "addr:housenumber": "155",
+    "addr:street": "West San Fernando Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/3608593572",
+   "lat": 37.333847,
+   "lng": -121.891151,
+   "tags": {
+    "name": "La Hacienda Lounge",
+    "name:en": "La Hacienda Lounge",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "addr:housenumber": "95",
+    "addr:street": "South Market Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/3612914349",
+   "lat": 37.336703,
+   "lng": -121.888919,
+   "tags": {
+    "name": "Muchos!",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "addr:housenumber": "72",
+    "addr:street": "East Santa Clara Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/3624046601",
+   "lat": 37.3348,
+   "lng": -121.889327,
+   "tags": {
+    "name": "Angelou’s Mexican Grill",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://angelousmexicangrill.com/",
+    "opening_hours": "Mo-Th 10:30-21:30; Fr,Sa 10:30-23:30; Su off",
+    "addr:housenumber": "78",
+    "addr:street": "South 1st Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/3624046610",
+   "lat": 37.339897,
+   "lng": -121.882277,
+   "tags": {
+    "name": "Tofoo Cơm Chay",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "website": "http://www.tofoo-com-chay.com/",
+    "addr:housenumber": "388",
+    "addr:street": "East Santa Clara Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "node/3624053410",
+   "lat": 37.348245,
+   "lng": -121.877897,
+   "tags": {
+    "name": "Fast Pizza",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "addr:housenumber": "797",
+    "addr:street": "East Julian Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "node/3630269835",
+   "lat": 37.330982,
+   "lng": -121.887746,
+   "tags": {
+    "name": "Il Fornaio San Jose",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.ilfornaio.com/?restaurant_id=3156",
+    "addr:housenumber": "302",
+    "addr:street": "South Market Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/3630274640",
+   "lat": 37.333689,
+   "lng": -121.885617,
+   "tags": {
+    "name": "Spoonfish Poke",
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "website": "https://direct.chownow.com/order/40331/locations/61237",
+    "opening_hours": "Mo-Su 11:30-19:30",
+    "addr:housenumber": "111",
+    "addr:street": "Paseo De San Antonio",
+    "addr:postcode": "95112",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3632382346",
+   "lat": 37.332091,
+   "lng": -121.887798,
+   "tags": {
+    "name": "Mosaic",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "website": "http://www.mosaicdowntown.com/",
+    "opening_hours": "Mo 07:00-09:30, Su-Th 16:00-23:30, Fr,Sa 16:00-01:30, Su-Th 16:00-20:30, Fr,Sa 16:00-21:00, Sa,Su 00:00-16:00"
+   }
+  },
+  {
+   "id": "node/3634565755",
+   "lat": 37.332888,
+   "lng": -121.887943,
+   "tags": {
+    "name": "Scott’s Seafood",
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "website": "https://www.scottsseafoodsj.com/",
+    "addr:housenumber": "200",
+    "addr:street": "South 1st Street",
+    "addr:postcode": "95113",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3634565759",
+   "lat": 37.334628,
+   "lng": -121.889203,
+   "tags": {
+    "name": "Angkor Chef",
+    "amenity": "restaurant",
+    "cuisine": "cambodian",
+    "website": "https://angkorchef.square.site/",
+    "opening_hours": "Mo,Su off; Tu-Th 11:30-21:00; Fr 11:30-22:00; Sa 12:00-22:00",
+    "addr:housenumber": "86",
+    "addr:street": "South 1st Street",
+    "addr:postcode": "95113-2406",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3634866122",
+   "lat": 37.335068,
+   "lng": -121.888569,
+   "tags": {
+    "name": "San Jose Bar and Grill",
+    "amenity": "restaurant",
+    "cuisine": "burger",
+    "website": "https://www.sanjosebarandgrill.com/",
+    "addr:housenumber": "85",
+    "addr:street": "South 2nd Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/3640237515",
+   "lat": 37.336971,
+   "lng": -121.889991,
+   "tags": {
+    "name": "Angelou’s Taqueria",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://angelousmexicangrill.com/",
+    "addr:housenumber": "21",
+    "addr:street": "North 2nd Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/3640237537",
+   "lat": 37.330681,
+   "lng": -121.8841,
+   "tags": {
+    "name": "Dakao",
+    "name:en": "Dakao",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "website": "http://dakaosj.wix.com/dakao",
+    "opening_hours": "Mo-Su 08:00-19:00",
+    "addr:housenumber": "98",
+    "addr:street": "East San Salvador Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "node/3642759798",
+   "lat": 37.335216,
+   "lng": -121.888211,
+   "tags": {
+    "name": "Loft",
+    "amenity": "restaurant",
+    "website": "https://loftbarandbistro.com/",
+    "addr:housenumber": "90",
+    "addr:street": "South 2nd Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/3707538686",
+   "lat": 37.336269,
+   "lng": -121.888016,
+   "tags": {
+    "name": "Mountain Mike's",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www.mountainmikespizza.com/locations/san-jose-29-s-3rd-st/",
+    "addr:housenumber": "29",
+    "addr:street": "South 3rd Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/4093396815",
+   "lat": 37.326672,
+   "lng": -121.883745,
+   "tags": {
+    "name": "La Penita",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/4348719693",
+   "lat": 37.336449,
+   "lng": -121.894516,
+   "tags": {
+    "name": "Pasta Fresca",
+    "amenity": "restaurant",
+    "cuisine": "italian"
+   }
+  },
+  {
+   "id": "node/4485153091",
+   "lat": 37.335966,
+   "lng": -121.894639,
+   "tags": {
+    "name": "SP2",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "website": "https://sp2sanjose.com/"
+   }
+  },
+  {
+   "id": "node/4765780799",
+   "lat": 37.337271,
+   "lng": -121.887791,
+   "tags": {
+    "name": "Seven Seas Sushi",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "addr:housenumber": "130",
+    "addr:street": "East Santa Clara Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "node/4785297230",
+   "lat": 37.336468,
+   "lng": -121.894338,
+   "tags": {
+    "name": "Loteria Taco Bar",
+    "amenity": "restaurant",
+    "cuisine": "mexican"
+   }
+  },
+  {
+   "id": "node/4785300413",
+   "lat": 37.336286,
+   "lng": -121.893966,
+   "tags": {
+    "name": "Firehouse No. 1",
+    "amenity": "restaurant",
+    "cuisine": "gastropub;burger",
+    "website": "http://firehouse1.com/",
+    "addr:housenumber": "69",
+    "addr:street": "North San Pedro Street",
+    "addr:postcode": "95110"
+   }
+  },
+  {
+   "id": "node/4797406237",
+   "lat": 37.330072,
+   "lng": -121.886222,
+   "tags": {
+    "name": "Petiscos Adega",
+    "name:en": "Petiscos Adega",
+    "amenity": "restaurant",
+    "website": "https://petiscosadega.com",
+    "opening_hours": "Mo-Fr 17:00-21:00; Sa-Su 11:30-21:00",
+    "addr:housenumber": "399",
+    "addr:street": "South 1st Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/4824007621",
+   "lat": 37.337032,
+   "lng": -121.888103,
+   "tags": {
+    "name": "Hotel Clariana",
+    "name:en": "Hotel Clariana",
+    "tourism": "hotel",
+    "website": "http://www.hotelclariana.com/",
+    "addr:housenumber": "100",
+    "addr:street": "East Santa Clara Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/4873109329",
+   "lat": 37.339486,
+   "lng": -121.88413,
+   "tags": {
+    "name": "Phở Passion",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese;noodle;tea",
+    "website": "https://phopassion.com/",
+    "addr:housenumber": "301",
+    "addr:street": "East Santa Clara Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/4873109330",
+   "lat": 37.339562,
+   "lng": -121.884198,
+   "tags": {
+    "name": "Restaurante El Conrro",
+    "amenity": "restaurant",
+    "cuisine": "mexican;seafood",
+    "addr:housenumber": "301",
+    "addr:street": "East Santa Clara Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/4878743820",
+   "lat": 37.336374,
+   "lng": -121.88147,
+   "tags": {
+    "name": "Paseo Fresh",
+    "amenity": "restaurant",
+    "cuisine": "american;sandwich;salad;soup",
+    "website": "https://new.dineoncampus.com/sjsu/campus-map/paseo-fresh-deli-coffee",
+    "opening_hours": "Mo-Su 08:00-16:00",
+    "addr:housenumber": "211",
+    "addr:street": "South 9th Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "node/4892309594",
+   "lat": 37.348499,
+   "lng": -121.895739,
+   "tags": {
+    "name": "La Corona Taqueria",
+    "name:en": "La Corona Taqueria",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://sites.google.com/site/taqueriacoronasanjose/",
+    "opening_hours": "Mo-Su 08:30-21:00",
+    "addr:housenumber": "601",
+    "addr:street": "North 4th Street",
+    "addr:postcode": "95112",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/5125137291",
+   "lat": 37.332844,
+   "lng": -121.889446,
+   "tags": {
+    "name": "Fountain Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "website": "https://www.hilton.com/en/hotels/sjcsmhh-signia-san-jose/dining/fountain-restaurant/",
+    "opening_hours": "Mo-Su 06:30-10:30",
+    "addr:housenumber": "170",
+    "addr:street": "South Market Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/5198727221",
+   "lat": 37.332609,
+   "lng": -121.876081,
+   "tags": {
+    "name": "Đà-Lạt",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "addr:housenumber": "408",
+    "addr:street": "East William Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "node/5662084353",
+   "lat": 37.332887,
+   "lng": -121.87551,
+   "tags": {
+    "name": "The Corner",
+    "amenity": "restaurant",
+    "addr:housenumber": "414",
+    "addr:street": "East William Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "node/6301022410",
+   "lat": 37.340383,
+   "lng": -121.892558,
+   "tags": {
+    "name": "Devine Cheese and Wine",
+    "amenity": "restaurant",
+    "website": "https://www.devinecheeseandwine.com/",
+    "opening_hours": "Tu-Th 17:00-20:30; Fr-Sa 16:00-21:00",
+    "addr:housenumber": "27",
+    "addr:street": "Devine Street",
+    "addr:postcode": "95110;95112"
+   }
+  },
+  {
+   "id": "node/6431850371",
+   "lat": 37.332974,
+   "lng": -121.875083,
+   "tags": {
+    "name": "Milano Pizza",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "addr:housenumber": "510",
+    "addr:street": "South 10th Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "node/6499035244",
+   "lat": 37.328976,
+   "lng": -121.884436,
+   "tags": {
+    "name": "Orchestria Palm Court Restaurant",
+    "amenity": "restaurant",
+    "website": "www.orchestriapalmcourt.com/",
+    "opening_hours": "Fr,Sa 17:45-20:45",
+    "addr:housenumber": "27",
+    "addr:street": "East William Street"
+   }
+  },
+  {
+   "id": "node/679000900",
+   "lat": 37.332288,
+   "lng": -121.888844,
+   "tags": {
+    "name": "Morton’s The Steakhouse",
+    "amenity": "restaurant",
+    "cuisine": "steak"
+   }
+  },
+  {
+   "id": "node/7121798607",
+   "lat": 37.336418,
+   "lng": -121.881375,
+   "tags": {
+    "name": "Japanese Fusion",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "website": "https://new.dineoncampus.com/sjsu/campus-map/japanese-fusion",
+    "opening_hours": "Mo-Fr 10:00-17:00",
+    "addr:housenumber": "211",
+    "addr:street": "South 9th Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "node/823952587",
+   "lat": 37.336174,
+   "lng": -121.876901,
+   "tags": {
+    "name": "San Carlos Pizza",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "addr:housenumber": "484",
+    "addr:street": "East San Carlos Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "node/8878568274",
+   "lat": 37.334008,
+   "lng": -121.892276,
+   "tags": {
+    "name": "Myth Taverna",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "website": "https://mythloungesj.com/",
+    "addr:housenumber": "152",
+    "addr:street": "Post Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/8878568277",
+   "lat": 37.333876,
+   "lng": -121.889301,
+   "tags": {
+    "name": "Silicon Valley Capital Club",
+    "amenity": "restaurant",
+    "website": "https://club.clubcorp.com/Clubs/Silicon-Valley-Capital-Club/",
+    "addr:housenumber": "50",
+    "addr:street": "West San Fernando Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/8945354199",
+   "lat": 37.348915,
+   "lng": -121.894851,
+   "tags": {
+    "name": "Gombei",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "website": "http://gombei.com/",
+    "opening_hours": "Mo,Su off; Tu-Th 11:00-13:30,17:00-20:00; Fr-Sa 11:00-13:30,17:00-20:30",
+    "addr:housenumber": "193",
+    "addr:street": "Jackson Street",
+    "addr:postcode": "95112",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/9005922531",
+   "lat": 37.336277,
+   "lng": -121.877367,
+   "tags": {
+    "name": "Back A Yard",
+    "amenity": "restaurant",
+    "cuisine": "caribbean",
+    "website": "https://backayard.net/",
+    "addr:housenumber": "457",
+    "addr:street": "East San Carlos Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "node/9161602637",
+   "lat": 37.338134,
+   "lng": -121.884608,
+   "tags": {
+    "name": "Habibiz",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "https://habibizfood.com/",
+    "addr:housenumber": "262",
+    "addr:street": "East Santa Clara Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/9797483359",
+   "lat": 37.335677,
+   "lng": -121.877018,
+   "tags": {
+    "name": "Sammy G’s",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www.sammygspizza.com/",
+    "addr:housenumber": "330",
+    "addr:street": "South 10th Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "node/9840193977",
+   "lat": 37.332461,
+   "lng": -121.884678,
+   "tags": {
+    "name": "Hoagie Steak Out",
+    "amenity": "restaurant",
+    "addr:housenumber": "304",
+    "addr:street": "South 3rd Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "node/9878349956",
+   "lat": 37.334503,
+   "lng": -121.89364,
+   "tags": {
+    "name": "Dac Phuc",
+    "name:en": "Dac Phuc",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "opening_hours": "Mo-Su 10:00-15:00",
+    "addr:housenumber": "198",
+    "addr:street": "West Santa Clara Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/9902986292",
+   "lat": 37.335779,
+   "lng": -121.893619,
+   "tags": {
+    "name": "Serious Dumpling",
+    "amenity": "restaurant",
+    "cuisine": "dumpling",
+    "addr:housenumber": "28",
+    "addr:street": "North San Pedro Street"
+   }
+  },
+  {
+   "id": "node/9902986293",
+   "lat": 37.335895,
+   "lng": -121.893706,
+   "tags": {
+    "name": "Gyu-Kaku",
+    "amenity": "restaurant",
+    "cuisine": "japanese;barbecue",
+    "website": "https://www.gyu-kaku.com/sanjose/",
+    "addr:housenumber": "28",
+    "addr:street": "North San Pedro Street"
+   }
+  },
+  {
+   "id": "relation/13363041",
+   "lat": 37.332113,
+   "lng": -121.887986,
+   "tags": {
+    "name": "Four Points by Sheraton San Jose Downtown",
+    "tourism": "hotel",
+    "website": "https://www.marriott.com/hotels/travel/sjcfp-four-points-san-jose-downtown/",
+    "wikidata": "Q5911764",
+    "addr:housenumber": "211",
+    "addr:street": "South 1st Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "relation/14283557",
+   "lat": 37.329345,
+   "lng": -121.884472,
+   "tags": {
+    "name": "Convention Center Inn & Suites",
+    "tourism": "motel",
+    "addr:housenumber": "475",
+    "addr:street": "South 2nd Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "relation/5339214",
+   "lat": 37.333059,
+   "lng": -121.88902,
+   "tags": {
+    "name": "Signia",
+    "tourism": "hotel",
+    "website": "https://www.hilton.com/en/hotels/sjcsmhh-signia-san-jose/",
+    "wikidata": "Q5430607",
+    "addr:housenumber": "170",
+    "addr:street": "South Market Street",
+    "addr:postcode": "95113",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "relation/7325175",
+   "lat": 37.333005,
+   "lng": -121.889065,
+   "tags": {
+    "name": "Signia by Hilton San Jose",
+    "tourism": "hotel",
+    "wikidata": "Q5430607",
+    "addr:housenumber": "170",
+    "addr:street": "South Market Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "way/1061223377",
+   "lat": 37.335604,
+   "lng": -121.893024,
+   "tags": {
+    "name": "Must be Thai",
+    "amenity": "restaurant",
+    "addr:housenumber": "18",
+    "addr:street": "North San Pedro Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "way/1065760256",
+   "lat": 37.335072,
+   "lng": -121.890788,
+   "tags": {
+    "name": "Labyrinth Bar & Kitchen",
+    "amenity": "restaurant",
+    "website": "http://labyrinthsj.com/",
+    "addr:housenumber": "45",
+    "addr:street": "Post Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "way/1065760264",
+   "lat": 37.335116,
+   "lng": -121.890695,
+   "tags": {
+    "name": "The Club On Post",
+    "amenity": "restaurant",
+    "addr:housenumber": "43",
+    "addr:street": "Post Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "way/1069833463",
+   "lat": 37.329197,
+   "lng": -121.890287,
+   "tags": {
+    "name": "Affinity",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "way/113102740",
+   "lat": 37.332703,
+   "lng": -121.884008,
+   "tags": {
+    "name": "Grande Pizzeria",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www.yelp.com/biz/grande-pizzeria-san-jose",
+    "addr:housenumber": "150",
+    "addr:street": "East San Carlos Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "way/158248756",
+   "lat": 37.33593,
+   "lng": -121.893972,
+   "tags": {
+    "name": "The Old Spaghetti Factory",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.osf.com/",
+    "addr:housenumber": "51",
+    "addr:street": "North San Pedro Street",
+    "addr:postcode": "95110"
+   }
+  },
+  {
+   "id": "way/216300992",
+   "lat": 37.341333,
+   "lng": -121.879063,
+   "tags": {
+    "name": "Vegetarian House",
+    "amenity": "restaurant",
+    "cuisine": "international;chinese;vietnamese;thai;indian;asian;american",
+    "website": "https://vegetarianhouse.us/",
+    "opening_hours": "Mo,We-Fr 11:00-14:00,16:00-20:30; Tu off; Sa-Su 11:00-15:00,16:00-20:30",
+    "addr:housenumber": "520",
+    "addr:street": "East Santa Clara Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "way/232569881",
+   "lat": 37.341729,
+   "lng": -121.890794,
+   "tags": {
+    "name": "La Victoria Taqueria",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "addr:housenumber": "291",
+    "addr:street": "North 4th Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "way/345802555",
+   "lat": 37.333182,
+   "lng": -121.896078,
+   "tags": {
+    "name": "AC Hotel San Jose",
+    "tourism": "hotel",
+    "website": "http://achotels.marriott.com/hotels/ac-hotel-san-jose-downtown",
+    "addr:housenumber": "350",
+    "addr:street": "West Santa Clara Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "way/345802567",
+   "lat": 37.341748,
+   "lng": -121.879553,
+   "tags": {
+    "name": "Vũng Tàu",
+    "name:en": "Vung Tau",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "website": "https://vungtaurestaurant.com/",
+    "addr:housenumber": "535",
+    "addr:street": "East Santa Clara Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "way/350497018",
+   "lat": 37.3492,
+   "lng": -121.893287,
+   "tags": {
+    "name": "Kazoo",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "addr:housenumber": "250",
+    "addr:street": "Jackson Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "way/350497021",
+   "lat": 37.34904,
+   "lng": -121.893618,
+   "tags": {
+    "name": "Hukilau San Jose",
+    "amenity": "restaurant",
+    "cuisine": "hawaiian",
+    "website": "https://www.dahukilau.com/sanjose",
+    "opening_hours": "Mo 16:00-20:00; Tu-Th,Su 11:00-14:00,16:00-20:00; Fr-Sa 11:00-14:00,17:00-23:00",
+    "addr:housenumber": "230",
+    "addr:street": "Jackson Street",
+    "addr:postcode": "95112",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/355058998",
+   "lat": 37.339435,
+   "lng": -121.883225,
+   "tags": {
+    "name": "Cơm Gà Nam An",
+    "amenity": "restaurant",
+    "cuisine": "chicken;vietnamese;chinese",
+    "website": "https://comganaman.eat24hour.com/",
+    "addr:housenumber": "348",
+    "addr:street": "East Santa Clara Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "way/355059000",
+   "lat": 37.339748,
+   "lng": -121.882362,
+   "tags": {
+    "name": "Kali Noodles & Tea Bar",
+    "name:en": "Kali Noodles & Tea Bar",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese;noodle",
+    "opening_hours": "Mo, We-Th 10:00-20:00; Fr-Su 09:00-20:00",
+    "addr:housenumber": "374",
+    "addr:street": "East Santa Clara Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "way/355203513",
+   "lat": 37.333152,
+   "lng": -121.892207,
+   "tags": {
+    "name": "Taurinus",
+    "amenity": "restaurant",
+    "cuisine": "steak_house",
+    "website": "https://www.taurinussteakhouse.com/",
+    "addr:housenumber": "167",
+    "addr:street": "West San Fernando Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "way/355249951",
+   "lat": 37.340389,
+   "lng": -121.892784,
+   "tags": {
+    "name": "Hobee's Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "breakfast;brunch",
+    "website": "https://hobees.com/locations/hobees-restaurant-and-beer-garden-downtown-san-jose/",
+    "opening_hours": "Mo off; Tu-Su 08:00-14:00; Dec 25 off",
+    "addr:housenumber": "261",
+    "addr:street": "North 2nd Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "way/355360090",
+   "lat": 37.350678,
+   "lng": -121.884234,
+   "tags": {
+    "name": "Peppertales",
+    "amenity": "restaurant",
+    "cuisine": "pakistani;indian",
+    "website": "https://peppertales.us/",
+    "addr:housenumber": "498",
+    "addr:street": "North 13th Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "way/357009931",
+   "lat": 37.347943,
+   "lng": -121.877741,
+   "tags": {
+    "name": "Orale Restaurant & Bar",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "addr:housenumber": "792",
+    "addr:street": "East Julian Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "way/357091669",
+   "lat": 37.333129,
+   "lng": -121.874905,
+   "tags": {
+    "name": "Phở Công Lý",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese;noodle",
+    "opening_hours": "Mo-Su 09:00-22:00",
+    "addr:housenumber": "460",
+    "addr:street": "East William Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "way/357951070",
+   "lat": 37.327229,
+   "lng": -121.89565,
+   "tags": {
+    "name": "El Jalapeño Rojo",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "addr:housenumber": "400",
+    "addr:street": "West San Carlos Street",
+    "addr:postcode": "95126"
+   }
+  },
+  {
+   "id": "way/363651044",
+   "lat": 37.344927,
+   "lng": -121.893903,
+   "tags": {
+    "name": "The Hensley House",
+    "tourism": "guest_house",
+    "addr:housenumber": "456",
+    "addr:street": "North 3rd Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "way/363686760",
+   "lat": 37.332667,
+   "lng": -121.875368,
+   "tags": {
+    "name": "Cali-Spartan Mexican Kitchen",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "addr:housenumber": "515",
+    "addr:street": "South 10th Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "way/371657329",
+   "lat": 37.332216,
+   "lng": -121.883976,
+   "tags": {
+    "name": "Dosa & Curry Cafe",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "addr:housenumber": "345",
+    "addr:street": "South 4th Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "way/37918472",
+   "lat": 37.330317,
+   "lng": -121.888339,
+   "tags": {
+    "name": "San Jose Marriott",
+    "tourism": "hotel",
+    "website": "https://www.marriott.com/hotels/travel/sjcsj-san-jose-marriott/",
+    "wikidata": "Q111393440",
+    "addr:housenumber": "301",
+    "addr:street": "South Market Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "way/37918597",
+   "lat": 37.329247,
+   "lng": -121.890459,
+   "tags": {
+    "name": "Hilton San Jose",
+    "tourism": "hotel",
+    "website": "https://www3.hilton.com/en/hotels/california/hilton-san-jose-SJCSHHF/",
+    "wikidata": "Q111650629",
+    "addr:housenumber": "300",
+    "addr:street": "Almaden Boulevard",
+    "addr:postcode": "95110"
+   }
+  },
+  {
+   "id": "way/39018176",
+   "lat": 37.330094,
+   "lng": -121.891087,
+   "tags": {
+    "name": "Hyatt Place San Jose/Downtown",
+    "tourism": "hotel",
+    "website": "https://www.hyatt.com/en-US/hotel/california/hyatt-place-san-jose-downtown/sjczj",
+    "addr:housenumber": "282",
+    "addr:street": "Almaden Boulevard",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "way/39018269",
+   "lat": 37.334415,
+   "lng": -121.895073,
+   "tags": {
+    "name": "Hotel De Anza",
+    "tourism": "hotel",
+    "wikidata": "Q5244224",
+    "addr:housenumber": "233",
+    "addr:street": "West Santa Clara Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "way/39020002",
+   "lat": 37.326446,
+   "lng": -121.888162,
+   "tags": {
+    "name": "Kukar’s House of Pizza",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://kukarshouseofpizza.com/",
+    "addr:housenumber": "527",
+    "addr:street": "Almaden Avenue",
+    "addr:postcode": "95110"
+   }
+  },
+  {
+   "id": "way/39020020",
+   "lat": 37.327726,
+   "lng": -121.883317,
+   "tags": {
+    "name": "City Center Motel",
+    "tourism": "motel",
+    "addr:housenumber": "45",
+    "addr:street": "East Reed Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "way/39020075",
+   "lat": 37.330977,
+   "lng": -121.887456,
+   "tags": {
+    "name": "The Westin San Jose",
+    "tourism": "hotel",
+    "website": "https://www.marriott.com/hotels/travel/sjcwi-the-westin-san-jose/",
+    "wikidata": "Q5911936",
+    "addr:housenumber": "302",
+    "addr:street": "South Market Street",
+    "addr:postcode": "95113",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/45727960",
+   "lat": 37.335941,
+   "lng": -121.892778,
+   "tags": {
+    "name": "Sushi [Confidential]",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "website": "http://sushiconfidential.com/contact-san-jose-location-sushi.html",
+    "addr:housenumber": "31",
+    "addr:street": "North Market Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "way/45728000",
+   "lat": 37.335661,
+   "lng": -121.892568,
+   "tags": {
+    "name": "Hinodeya",
+    "amenity": "restaurant",
+    "cuisine": "ramen",
+    "opening_hours": "Su-Th 11:00-24:00; Fr-Sa 11:00-27:00",
+    "addr:housenumber": "9",
+    "addr:street": "North Market Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "way/45728006",
+   "lat": 37.335828,
+   "lng": -121.892763,
+   "tags": {
+    "name": "Tiki Pete",
+    "amenity": "restaurant",
+    "cuisine": "hawaiian",
+    "website": "https://www.facebook.com/tikipete.US/",
+    "addr:housenumber": "23",
+    "addr:street": "North Market Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "way/513673524",
+   "lat": 37.336138,
+   "lng": -121.898736,
+   "tags": {
+    "name": "Paesano Ristorante Italiano",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "addr:housenumber": "350",
+    "addr:street": "West Julian Street",
+    "addr:postcode": "95110"
+   }
+  },
+  {
+   "id": "way/595458263",
+   "lat": 37.338661,
+   "lng": -121.885879,
+   "tags": {
+    "name": "Island Taste",
+    "amenity": "restaurant",
+    "cuisine": "jamaican;haitian;caribbean",
+    "website": "https://www.islandtastegrill.com/",
+    "addr:housenumber": "225",
+    "addr:street": "East Santa Clara Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "way/616791347",
+   "lat": 37.336887,
+   "lng": -121.876175,
+   "tags": {
+    "name": "Naglee Park Garage",
+    "amenity": "restaurant",
+    "website": "https://www.nagleeparkdining.com/",
+    "opening_hours": "Tu-Sa 16:00-20:00",
+    "addr:housenumber": "505",
+    "addr:street": "East San Carlos Street",
+    "addr:postcode": "95112"
+   }
+  }
+ ]
+}

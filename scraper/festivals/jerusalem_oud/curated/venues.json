@@ -1,0 +1,39 @@
+{
+ "about": "Hand-curated venue research for the Jerusalem International Oud Festival, keyed by the venue codes the confederation-house adapter maps the site's location labels to. Not tied to an edition, because a hall outlives a programme. Every figure is {value, source}, or null when nobody could cite it; coordinates carry the basis they rest on and the page they were read from.",
+ "researchedAt": "2026-09-27",
+ "venues": {
+  "confederation-house": {
+   "name": "בית הקונפדרציה",
+   "address": {"value": "אמיל בוטה 12, ימין משה, ירושלים", "source": "https://www.confederationhouse.org/contact"},
+   "coordinates": {"lat": 31.774194, "lng": 35.224972, "basis": "wikidata", "source": "https://www.wikidata.org/wiki/Q7032769"},
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": {"value": "חניית נכים, ומערכות עזר לשמע באירועים באולמות הבית.", "source": "https://www.confederationhouse.org/page_18115"},
+   "notes": "The festival's home, in Yemin Moshe below the Old City walls. No seat count published."
+  },
+  "khan-theatre": {
+   "name": "תיאטרון החאן",
+   "address": {"value": "דוד רמז, ירושלים", "source": "https://nominatim.openstreetmap.org/search?q=%D7%AA%D7%99%D7%90%D7%98%D7%A8%D7%95%D7%9F+%D7%94%D7%97%D7%90%D7%9F+%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D&format=json&addressdetails=1"},
+   "coordinates": {"lat": 31.768528, "lng": 35.224614, "basis": "wikipedia", "source": "https://en.wikipedia.org/wiki/Jerusalem_Khan_Theatre"},
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "The Jerusalem Khan Theatre, a ten-minute walk from Confederation House. Its main hall seats 232 and its small hall 69 (khan.co.il/halls); the festival does not say which hall, so no capacity is served. OpenStreetMap gives the street but no house number."
+  },
+  "jerusalem-theatre": {
+   "name": "תיאטרון ירושלים",
+   "address": {"value": "דוד מרכוס 20, ירושלים", "source": "https://www.jerusalem-theatre.co.il/eng/Contact_Us"},
+   "coordinates": {"lat": 31.768911, "lng": 35.215644, "basis": "wikipedia", "source": "https://en.wikipedia.org/wiki/Jerusalem_Theatre"},
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {"id": "sherover", "name": "אולם שרובר", "capacity": {"value": 980, "source": "https://www.jerusalem-theatre.co.il/eng/Halls"}, "layout": null},
+    {"id": "rebecca-crown", "name": "אולם רבקה קראון", "capacity": {"value": 460, "source": "https://www.jerusalem-theatre.co.il/eng/Halls"}, "layout": null}
+   ],
+   "accessibility": {"value": "האולמות נגישים לכיסאות גלגלים, עם מערכת הגברה לכבדי שמיעה.", "source": "https://www.jerusalem-theatre.co.il/eng/Halls"},
+   "notes": "The Jerusalem Centre for the Performing Arts in Talbiya. The festival plays two of its halls, the Sherover Theatre and the Rebecca Crown Hall."
+  }
+ }
+}

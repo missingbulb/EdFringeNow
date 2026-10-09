@@ -1,0 +1,45 @@
+engine:
+  channel: "staging"
+  version: "1.61009.2"
+  manifest: "sha512-fHTGCiHvaJxkyCa424bKgRG52obRzwgSZwp/ubya6/MsiGeTRPr3TMs/geoWuzAEzFLUupWcStmI8SYEiE7c5Q=="
+  releases: "missingbulb/ClaudiniteStagingDistro"
+packs:
+  channel: "canary"
+  declared:
+    - "basics"
+    - "claudinite-lifecycle"
+    - "git-github"
+    - "html"
+    - id: "claudinite-growth"
+      config:
+        retention_days: 10
+    - "local/edfringe-now"
+    - id: "executable-requirements"
+      config:
+        spec: "product/requirements.md"
+      answers:
+        ui_testing: "Headless Chromium via Playwright (pre-installed in the environment): render the real single-page app — Leaflet map included, with map tiles and other network faked deterministically — and assert pixel-exact visual goldens the owner reviews by sight; short per-leaf tests drive to a state and capture. Pure planner rules (plan/lib) stay node --test logic leaves. No visual harness exists yet — this is the target mechanism."
+        requirements_source: "Authored fresh at product/requirements.md (config.spec), distilled from the existing product brief docs/product-spec.md. No prior formal requirements doc or issue-tracker backlog to extract."
+    - "spec-driven-product"
+    - id: "product-wiki"
+      answers:
+        product: "Fringe Discover: a spontaneity/reachability tool for the Edinburgh Festival Fringe. Where listings apps answer 'what exists?', this answers 'what can I actually make right now?' — given the user's location, how far they'll travel and how, and their next commitment, it collapses ~3,800 shows into a short list of genuinely reachable options that haven't started and still leave time to reach whatever is next."
+        users: "Fringe-goers mid-festival, usually on foot and without a fixed plan — visitors with a gap between a booked show and dinner, locals and tourists intimidated by the programme's scale. Decisive in the moment rather than researchers: they want a short list of good, reachable options, not 3,800 search results. Emotional target: 'delight + relief'."
+        market: "Edinburgh Fringe discovery and planning tools. Alternatives: the official Fringe app (a 'Nearby now' + shake-to-search finder), Plan My Fringe (a schedule optimiser with a walking-time 'Fringe Trail'), the edfringe.com programme and filters, the Half Price Hut (same-day discounts), review outlets such as ThreeWeeks, plus street posters and word-of-mouth. None centres full reachability — travel mode plus next-commitment slack — the way Fringe Discover does."
+    - id: "claude-code-web-users-support"
+      config:
+        repo: "missingbulb/Shepherd"
+      answers:
+        store: "missingbulb/Shepherd"
+    - "cloudflare-site"
+    - "public-website"
+tasks:
+  disabled:
+    - "edfringe-now/refresh-shows"
+    - "edfringe-now/refresh-tickets"
+    - "edfringe-now/festival-update"
+    - "edfringe-now/festival-refresh"
+  routines:
+    default:
+      url: "https://api.anthropic.com/v1/claude_code/routines/trig_019ysxedonGvJiDzVZbJamBd/fire"
+      tokenSecret: "CCR_ROUTINE_TOKEN"

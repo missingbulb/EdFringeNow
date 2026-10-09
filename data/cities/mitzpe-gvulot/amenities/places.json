@@ -1,0 +1,360 @@
+{
+ "nearM": 25000,
+ "anchors": [
+  {
+   "festival": "indnegev",
+   "venue": "mitzpe-gvulot",
+   "lat": 31.2111,
+   "lng": 34.4652
+  }
+ ],
+ "places": [
+  {
+   "id": "node/10596185005",
+   "lat": 31.354423,
+   "lng": 34.298481,
+   "tags": {
+    "name": "منزل السيد ابراهيم الشيخ احمد",
+    "name:en": "Ibrahem Ahmed",
+    "tourism": "guest_house",
+    "addr:street": "El Transe"
+   }
+  },
+  {
+   "id": "node/10720330605",
+   "lat": 31.258172,
+   "lng": 34.234053,
+   "tags": {
+    "name": "قيادة قطاع شمال سيناء",
+    "tourism": "hostel"
+   }
+  },
+  {
+   "id": "node/10811171106",
+   "lat": 31.35634,
+   "lng": 34.298724,
+   "tags": {
+    "name": "محمد صافي",
+    "name:en": "Mohammed Safi",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/10811172605",
+   "lat": 31.356331,
+   "lng": 34.298725,
+   "tags": {
+    "name": "منزل محمد صافي",
+    "name:en": "Mohammed Safi Building",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/11010437806",
+   "lat": 31.373963,
+   "lng": 34.353218,
+   "tags": {
+    "name": "بيت ابو خالد مهنا",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "node/11225202237",
+   "lat": 31.342046,
+   "lng": 34.303052,
+   "tags": {
+    "name": "منزل/احمد العبادلة",
+    "tourism": "guest_house",
+    "addr:street": "شارع جمال عبد الناصر"
+   }
+  },
+  {
+   "id": "node/11271915069",
+   "lat": 31.350332,
+   "lng": 34.3068,
+   "tags": {
+    "name": "منزل السيد .ابو احمد شبير",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "node/4177062549",
+   "lat": 31.31617,
+   "lng": 34.619595,
+   "tags": {
+    "name": "רחלה",
+    "name:en": "Rachella",
+    "amenity": "restaurant",
+    "addr:street": "מבצע קדש"
+   }
+  },
+  {
+   "id": "node/4387295094",
+   "lat": 31.420947,
+   "lng": 34.384813,
+   "tags": {
+    "name": "مطعم ناهد أبو جياب",
+    "amenity": "restaurant",
+    "addr:street": "شارع بهاء الدين بن سعيد"
+   }
+  },
+  {
+   "id": "node/4417198896",
+   "lat": 31.420939,
+   "lng": 34.384822,
+   "tags": {
+    "name": "مطعم القناعة ناهد أبو جياب",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/4417268390",
+   "lat": 31.422135,
+   "lng": 34.382874,
+   "tags": {
+    "name": "مطعم معتوق للمأكولات الشعبية",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/4417291290",
+   "lat": 31.422183,
+   "lng": 34.383228,
+   "tags": {
+    "name": "مطبخ معتوق لكل المناسبات",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/5008572421",
+   "lat": 31.346714,
+   "lng": 34.301962,
+   "tags": {
+    "name": "توب 5",
+    "name:en": "Top 5",
+    "amenity": "restaurant",
+    "cuisine": "steak_house;burger;sandwich;chicken;curry;friture",
+    "opening_hours": "Sa-Th 09:55-23:00",
+    "addr:street": "AlSeqaly St."
+   }
+  },
+  {
+   "id": "node/5008572621",
+   "lat": 31.346664,
+   "lng": 34.30205,
+   "tags": {
+    "name": "مشاوي البابا",
+    "name:en": "Albaba resturant",
+    "amenity": "restaurant",
+    "cuisine": "barbecue;grill",
+    "opening_hours": "Sa-Th 09:00-22:00; Fr 09:00-15:00",
+    "addr:street": "AlSeqaly St."
+   }
+  },
+  {
+   "id": "node/5590887622",
+   "lat": 31.40081,
+   "lng": 34.340181,
+   "tags": {
+    "name": "صالة وايت فلور",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/6085673385",
+   "lat": 31.340778,
+   "lng": 34.293087,
+   "tags": {
+    "name": "منزل محمد فارس",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "node/6087404885",
+   "lat": 31.344755,
+   "lng": 34.294142,
+   "tags": {
+    "name": "منزل السيد عبد الرحيم الحلاق",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "node/6298655687",
+   "lat": 31.409468,
+   "lng": 34.347189,
+   "tags": {
+    "name": "منزل المختار أبو إبراهيم بشير",
+    "name:en": "abo ibrahem basheer",
+    "tourism": "guest_house",
+    "addr:street": "شارع الحكر",
+    "addr:postcode": "00972"
+   }
+  },
+  {
+   "id": "node/7011045785",
+   "lat": 31.402643,
+   "lng": 34.33076,
+   "tags": {
+    "name": "منزل ابو الامير ابو جبل",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "node/7143066785",
+   "lat": 31.341079,
+   "lng": 34.338992,
+   "tags": {
+    "name": "مطعم القدس للماكولات الشعبية",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/7148577286",
+   "lat": 31.351784,
+   "lng": 34.298858,
+   "tags": {
+    "name": "مطعم الفقعاوي للمأكولات الشعبية",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/7434177685",
+   "lat": 31.400571,
+   "lng": 34.33527,
+   "tags": {
+    "name": "فلل ابو سليم",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "node/8096493818",
+   "lat": 31.344016,
+   "lng": 34.306304,
+   "tags": {
+    "name": "مطعم ابو خديجه",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Su 09:00-16:00",
+    "addr:street": "شارع السنية"
+   }
+  },
+  {
+   "id": "node/8446781384",
+   "lat": 31.210591,
+   "lng": 34.465739,
+   "tags": {
+    "name": "Dining Room",
+    "name:en": "Daining Room",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/8446781385",
+   "lat": 31.210885,
+   "lng": 34.467116,
+   "tags": {
+    "name": "Pub Gvulot",
+    "name:en": "Pub Gvulot",
+    "amenity": "restaurant",
+    "cuisine": "burger"
+   }
+  },
+  {
+   "id": "node/8446793996",
+   "lat": 31.210272,
+   "lng": 34.464953,
+   "tags": {
+    "name": "Gvulot reception",
+    "name:en": "Gvulot reception",
+    "tourism": "hostel"
+   }
+  },
+  {
+   "id": "node/8699131829",
+   "lat": 31.351862,
+   "lng": 34.289724,
+   "tags": {
+    "name": "منزل المهندس/أبو محمد الأستاذ",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "node/8699131925",
+   "lat": 31.351936,
+   "lng": 34.289783,
+   "tags": {
+    "name": "منزل الدكتور/أبو نبيل الأستاذ",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "node/8732657117",
+   "lat": 31.373732,
+   "lng": 34.297306,
+   "tags": {
+    "name": "القدس",
+    "tourism": "hotel",
+    "addr:street": "غوش قطيف"
+   }
+  },
+  {
+   "id": "node/9782081017",
+   "lat": 31.333457,
+   "lng": 34.284987,
+   "tags": {
+    "name": "ابو طارق الديري",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "node/9863444121",
+   "lat": 31.340559,
+   "lng": 34.294115,
+   "tags": {
+    "name": "زبونة طرف الغرباوي",
+    "tourism": "hotel",
+    "addr:street": "شارع جمال عبد الناصر"
+   }
+  },
+  {
+   "id": "way/302806808",
+   "lat": 31.346298,
+   "lng": 34.30416,
+   "tags": {
+    "name": "Amasy Resturant",
+    "amenity": "restaurant",
+    "cuisine": "regional"
+   }
+  },
+  {
+   "id": "way/305244899",
+   "lat": 31.343457,
+   "lng": 34.305282,
+   "tags": {
+    "name": "مطعم السنابل",
+    "name:en": "Al-Sanabel",
+    "amenity": "restaurant",
+    "opening_hours": "24/7",
+    "addr:street": "شارع السنية"
+   }
+  },
+  {
+   "id": "way/306012004",
+   "lat": 31.344027,
+   "lng": 34.303223,
+   "tags": {
+    "name": "AlMasry For Shawerma",
+    "amenity": "restaurant",
+    "cuisine": "regional"
+   }
+  },
+  {
+   "id": "way/306146623",
+   "lat": 31.343615,
+   "lng": 34.30376,
+   "tags": {
+    "name": "Abo Ghareeb Resturant",
+    "amenity": "restaurant"
+   }
+  }
+ ]
+}

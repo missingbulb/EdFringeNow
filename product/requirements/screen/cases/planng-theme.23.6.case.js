@@ -1,0 +1,21 @@
+"use strict";
+const { jerusalemReady, plannerReady, chooseOnStrip } = require("../../shared/case-helpers");
+
+const HEAD = [".site-header", ".page-head"];
+
+module.exports = {
+  description: "the page in each festival's genre palette: comedy's brass for Jerusalem, then film's blue for Haifa",
+  page: "/planNG/?festival=jerusalem-comedy",
+  viewport: "desktop",
+  ready: jerusalemReady,
+  // The same region twice, one festival each: the name, the genre's palette and
+  // the wash behind them move with the festival chosen; the header above does not.
+  async capture(page, t) {
+    const jerusalem = await t.unionClip(HEAD, 0);
+    await chooseOnStrip(page, "haifa-iff");
+    await plannerReady(page, "haifa-iff");
+    await page.evaluate(() => window.scrollTo(0, 0));
+    const haifa = await t.unionClip(HEAD, 0);
+    return t.stitchV([jerusalem, haifa], 8);
+  },
+};

@@ -1,0 +1,2260 @@
+{
+ "v": 1,
+ "festival": {
+  "id": "tallgrass-film-festival",
+  "edition": "2026",
+  "ordinal": 24,
+  "name": "Tallgrass Film Festival",
+  "nameLocal": null,
+  "city": "Wichita",
+  "country": "US",
+  "lat": 37.6872,
+  "lng": -97.3301,
+  "timezone": "America/Chicago",
+  "lang": "en",
+  "dir": "ltr",
+  "kind": "film",
+  "defaultGenre": "film",
+  "site": "https://tallgrassfilm.org",
+  "firstDate": "2026-10-15",
+  "lastDate": "2026-10-18",
+  "ticketing": {
+   "model": "central-box-office",
+   "url": "https://tallgrassfilmfestival2026.eventive.org",
+   "notes": "Sold on tallgrassfilmfestival2026.eventive.org, one ticket page per screening; some events are pass-holders only.",
+   "currency": "USD"
+  }
+ },
+ "categories": [
+  {
+   "id": "69fb4b9ffab7d2ee1bec648d",
+   "name": "Narrative Feature"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec648e",
+   "name": "Documentary Feature"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec648f",
+   "name": "Narrative Short"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec6490",
+   "name": "Documentary Short"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec6491",
+   "name": "Music Video"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec6492",
+   "name": "Gordon Parks Award for Black Excellence in Filmmaking  Feature"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec6493",
+   "name": "Gordon Parks Award for Black Excellence in Filmmaking Short"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec6494",
+   "name": "Kansas Filmmaker Feature"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec6495",
+   "name": "Kansas Filmmaker Short"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec6497",
+   "name": "Murmurations Short"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec6498",
+   "name": "Thane Chastain Emerging Young Filmmaker"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec6499",
+   "name": "Vortex Experimental"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec649b",
+   "name": "13+"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec649c",
+   "name": "All Ages"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec649d",
+   "name": "Mature"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec649e",
+   "name": "Foreign Language"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec649f",
+   "name": "LGBTQIA+"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec64a0",
+   "name": "Kansas Premiere"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec64a1",
+   "name": "Regional Premiere"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec64a4",
+   "name": "World Premiere"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec64a6",
+   "name": "Drama"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec64a7",
+   "name": "Comedy"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec64a9",
+   "name": "Mystery"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec64aa",
+   "name": "Family"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec64ab",
+   "name": "Coming of Age"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec64ac",
+   "name": "Arts"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec64ad",
+   "name": "Wichita"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec64ae",
+   "name": "Pop Culture"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec64af",
+   "name": "Indigenous"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec64b0",
+   "name": "Crime"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec64b1",
+   "name": "Social Justice"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec64b5",
+   "name": "Health"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec64b8",
+   "name": "Dark"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec64b9",
+   "name": "Experimental"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec64ba",
+   "name": "Thriller"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec64bd",
+   "name": "Mental Health"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec64be",
+   "name": "Romance"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec64c1",
+   "name": "Environmental"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec64c5",
+   "name": "Stubbornly Independent"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec64ca",
+   "name": "Party"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec64cd",
+   "name": "Historical"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec64cf",
+   "name": "Religion"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec64d0",
+   "name": "Musical"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec64d1",
+   "name": "Panel"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec64de",
+   "name": "Relationship"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec64e0",
+   "name": "Science"
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec64e2",
+   "name": "Politics"
+  },
+  {
+   "id": "6a9f85034a9ff9a1efadf5bf",
+   "name": "Biography"
+  },
+  {
+   "id": "6a9f850e4a9ff9a1efadf6ec",
+   "name": "Senior / Aging"
+  },
+  {
+   "id": "6a9f85233d1f348f7c72d7ec",
+   "name": "Music"
+  },
+  {
+   "id": "6a9f8529b5979e8067917971",
+   "name": "Military"
+  },
+  {
+   "id": "6a9f853ab5979e8067917cbb",
+   "name": "Documentary"
+  },
+  {
+   "id": "6a9f8baa8b3ce3a8f702b27a",
+   "name": "Spotlight"
+  },
+  {
+   "id": "6a9f8ef6169e0a4d8eb0610e",
+   "name": "Out of Competition"
+  },
+  {
+   "id": "6a9f8fcd0c5028c8ea5717d9",
+   "name": "Kansas"
+  },
+  {
+   "id": "6a9f984d4c121953446b3a3b",
+   "name": "Animation"
+  }
+ ],
+ "venues": [
+  {
+   "id": "69fb4b9ffab7d2ee1bec6469",
+   "name": "City Arts",
+   "address": "334 N Mead St, Wichita, KS 67202",
+   "lat": 37.690788,
+   "lng": -97.328688,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec646b",
+   "name": "BOULEVARD THEATRE 6",
+   "address": "353 N Mead St, Wichita, KS 67202",
+   "lat": 37.691129,
+   "lng": -97.329321,
+   "online": false,
+   "capacity": 75,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec646c",
+   "name": "BOULEVARD THEATRE 4",
+   "address": "353 N Mead St, Wichita, KS 67202",
+   "lat": 37.691129,
+   "lng": -97.329321,
+   "online": false,
+   "capacity": 99,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec646d",
+   "name": "BOULEVARD THEATRE 7",
+   "address": "353 N Mead St, Wichita, KS 67202",
+   "lat": 37.691129,
+   "lng": -97.329321,
+   "online": false,
+   "capacity": 20,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec646e",
+   "name": "BOULEVARD THEATRE 5",
+   "address": "353 N Mead St, Wichita, KS 67202",
+   "lat": 37.691129,
+   "lng": -97.329321,
+   "online": false,
+   "capacity": 122,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec646f",
+   "name": "BOULEVARD THEATRE  1",
+   "address": "353 N Mead St, Wichita, KS 67202",
+   "lat": 37.691129,
+   "lng": -97.329321,
+   "online": false,
+   "capacity": 132,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec6470",
+   "name": "BOULEVARD THEATRE  2",
+   "address": "353 N Mead St, Wichita, KS 67202",
+   "lat": 37.691129,
+   "lng": -97.329321,
+   "online": false,
+   "capacity": 132,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "69fb4b9ffab7d2ee1bec6473",
+   "name": "BOULEVARD THEATRE  3",
+   "address": "353 N Mead St, Wichita, KS 67202",
+   "lat": 37.691129,
+   "lng": -97.329321,
+   "online": false,
+   "capacity": 230,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aa957cacace3599f9b6eff9",
+   "name": "WSU Shocker Studios",
+   "address": "3803 E Harry St Ste 121, Wichita, KS 67218",
+   "lat": 37.662842,
+   "lng": -97.291181,
+   "online": false,
+   "capacity": 200,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aa9587102ac588ffd371bdd",
+   "name": "Hawks Nest",
+   "address": "3210 E Osie St, Wichita, KS 67218",
+   "lat": 37.663481,
+   "lng": -97.298516,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aa959683cd6d89a0c56bf5d",
+   "name": "Cargill Community Tent",
+   "address": "E 2nd St N, Wichita, KS 67213",
+   "lat": 37.68978,
+   "lng": -97.335588,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aa959e285d5edf858513e47",
+   "name": "Orpheum Theatre",
+   "address": "200 N Broadway, Wichita, KS 67202, USA",
+   "lat": 37.688059,
+   "lng": -97.335459,
+   "online": false,
+   "capacity": 1281,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aa95a6db1d24e8c8d870747",
+   "name": "Velvet Tiger",
+   "address": "429 S Hydraulic, Wichita, KS 67211",
+   "lat": 37.639407,
+   "lng": -97.31711,
+   "online": false,
+   "capacity": 35,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  }
+ ],
+ "events": [
+  {
+   "id": "6aa95b6a6a5c91e2fc2f8175",
+   "title": "Opening Reception",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa95b6a6a5c91e2fc2f8175",
+   "genre": "other",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec64ca"
+   ],
+   "blurb": null,
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "films-6a9f8d98ea2827618634ba36",
+   "title": "Yo (Love Is a Rebellious Bird)",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/films/6a9f8d98ea2827618634ba36",
+   "genre": "film",
+   "categories": [
+    "6a9f8baa8b3ce3a8f702b27a",
+    "69fb4b9ffab7d2ee1bec648e",
+    "69fb4b9ffab7d2ee1bec64a0",
+    "69fb4b9ffab7d2ee1bec64ac",
+    "6a9f85034a9ff9a1efadf5bf",
+    "69fb4b9ffab7d2ee1bec64b9"
+   ],
+   "blurb": "Anna spends a decade obsessively building a detailed 1/3-scale version of her friend’s house after losing her. It’s just big enough for Anna to squeeze through the door, and inside lives a puppet of her friend Yo.",
+   "durationMin": 78,
+   "imageUrl": "https://static-a.eventive.org/43b9034acf93112b97816bfa6a483bb1.jpg"
+  },
+  {
+   "id": "6aa95dbf6e0e1c84e451427b",
+   "title": "Open Night Hang Out",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa95dbf6e0e1c84e451427b",
+   "genre": "other",
+   "categories": [],
+   "blurb": null,
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "6aa95e7e6e0e1c84e4515a97",
+   "title": "Filmmaker Coffee Mixer",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa95e7e6e0e1c84e4515a97",
+   "genre": "other",
+   "categories": [],
+   "blurb": "Start your day with some caffeine and join us for an informal mix-and-mingle session with the terrific team behind our Stubbornly Independent programming and you, the filmmakers of Tallgrass 2026! Learn more about what to expect at Tallgrass 2026, the excellent films screening over the weekend, and have a chance to forge new connections here in Wichita.\n\nPlease note this event is for the following pass types: Filmmaker, Jury, Industry, and Media.",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "6aa9bd5f6e0e1c84e4582086",
+   "title": "Behind the Scenes with Film Festival Alliance",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9bd5f6e0e1c84e4582086",
+   "genre": "other",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec64d1"
+   ],
+   "blurb": "Curious about the film festival landscape? Come to this session to learn more about the film festival industry with Film Festival Alliance. Whether this is your first time attending a festival or you’re a veteran attendee, this session will provide insights into the inner workings of the festival landscape. Have a question you’d like to submit in advance? Email it to programming@tallgrassfilm.org with the subject line ‘Behind the Scenes with FFA.’",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "films-6a9fb8608c7a94fb7b143d7a",
+   "title": "Glorious Summer",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/films/6a9fb8608c7a94fb7b143d7a",
+   "genre": "film",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec648d",
+    "69fb4b9ffab7d2ee1bec64a1",
+    "69fb4b9ffab7d2ee1bec649b",
+    "69fb4b9ffab7d2ee1bec649e",
+    "69fb4b9ffab7d2ee1bec64b9",
+    "69fb4b9ffab7d2ee1bec64a6",
+    "69fb4b9ffab7d2ee1bec64a9"
+   ],
+   "blurb": "A sun-drenched Renaissance palace. Three women remain in a carefree state of limbo, tended to by an unseen, all-providing system. But as cracks in the paradise begin to appear, they are faced with a life-altering choice: escape or remain in the perfect illusion?",
+   "durationMin": 89,
+   "imageUrl": "https://static-a.eventive.org/52ded2e96b7c152d15e4df74c9a16535.jpg"
+  },
+  {
+   "id": "films-6a9fb9c30c636bda1dfd3ab6",
+   "title": "Run Amok",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/films/6a9fb9c30c636bda1dfd3ab6",
+   "genre": "film",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec648d",
+    "69fb4b9ffab7d2ee1bec64a1",
+    "69fb4b9ffab7d2ee1bec649b",
+    "69fb4b9ffab7d2ee1bec64a7",
+    "69fb4b9ffab7d2ee1bec64b1",
+    "69fb4b9ffab7d2ee1bec64d0",
+    "6a9f85233d1f348f7c72d7ec",
+    "69fb4b9ffab7d2ee1bec64ab"
+   ],
+   "blurb": "A teenage girl decides to stage a full, musical reenactment of the shooting that took place at her high school 10 years ago.",
+   "durationMin": 103,
+   "imageUrl": "https://static-a.eventive.org/7e7dbdc34f24f65e94b764e0bd06bba5.jpg"
+  },
+  {
+   "id": "films-6a9fc56719fbc268e4792eb5",
+   "title": "Crystal Cross",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/films/6a9fc56719fbc268e4792eb5",
+   "genre": "film",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec64c5",
+    "6a9f8baa8b3ce3a8f702b27a",
+    "69fb4b9ffab7d2ee1bec64a1",
+    "69fb4b9ffab7d2ee1bec649d",
+    "6a9f85233d1f348f7c72d7ec",
+    "69fb4b9ffab7d2ee1bec64a6",
+    "69fb4b9ffab7d2ee1bec64bd",
+    "69fb4b9ffab7d2ee1bec64a7",
+    "69fb4b9ffab7d2ee1bec64b8",
+    "69fb4b9ffab7d2ee1bec64cf",
+    "69fb4b9ffab7d2ee1bec64af"
+   ],
+   "blurb": "A quirky Christian singer and a suicidal dad drive cross-country, forging an unlikely bond through bad decisions, bizarre roadside attractions, and an all-original soundtrack. \"Crystal Cross\" is a hilarious, bittersweet road trip about two lost souls finding comfort (but not salvation) in each other’s messes.",
+   "durationMin": 88,
+   "imageUrl": "https://static-a.eventive.org/e030e055abe0c9bfc9efaa940bb63295.jpg"
+  },
+  {
+   "id": "films-6a9f8a4619c3939c54418f7d",
+   "title": "Uncommitted",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/films/6a9f8a4619c3939c54418f7d",
+   "genre": "film",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec648e",
+    "69fb4b9ffab7d2ee1bec64a0",
+    "69fb4b9ffab7d2ee1bec64b1",
+    "69fb4b9ffab7d2ee1bec64e2",
+    "69fb4b9ffab7d2ee1bec649b"
+   ],
+   "blurb": "Uncommitted follows Arab and Muslim American organizers who transform grief over Gaza into a grassroots movement that galvanizes nearly a million protest votes during the 2024 Democratic presidential primaries. From Dearborn to the Democratic National Convention, the film chronicles an emerging political coalition as it discovers its collective power and tests the possibilities, and limits, of representation, dissent, and American democracy.",
+   "durationMin": 89,
+   "imageUrl": "https://static-a.eventive.org/1788840571725temp-1788840571588-cover.jpg"
+  },
+  {
+   "id": "films-6a9fc848dedb9d7b17554142",
+   "title": "A Woman's Work",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/films/6a9fc848dedb9d7b17554142",
+   "genre": "film",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec64c5",
+    "69fb4b9ffab7d2ee1bec64a0",
+    "69fb4b9ffab7d2ee1bec649b",
+    "69fb4b9ffab7d2ee1bec649f",
+    "69fb4b9ffab7d2ee1bec64a6"
+   ],
+   "blurb": "A young woman in rural Kentucky works as a coal miner to provide for her two younger sisters after losing her parents; her father, who was also a coal miner, to the opioid epidemic.",
+   "durationMin": 91,
+   "imageUrl": "https://static-a.eventive.org/1788856410460temp-1788856410374-cover.jpg"
+  },
+  {
+   "id": "films-6a9fad75bd816d64532d8ca2",
+   "title": "Fighting More Than Fire",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/films/6a9fad75bd816d64532d8ca2",
+   "genre": "film",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec6492",
+    "69fb4b9ffab7d2ee1bec64a0",
+    "69fb4b9ffab7d2ee1bec649b",
+    "6a9f853ab5979e8067917cbb",
+    "69fb4b9ffab7d2ee1bec64cd",
+    "69fb4b9ffab7d2ee1bec64b1"
+   ],
+   "blurb": "Fighting More Than Fire is a documentary that captures the living history of Black firefighters in Tulsa, OK.",
+   "durationMin": 84,
+   "imageUrl": "https://static-a.eventive.org/53a94c1636c0a68f03ac973bac0c03af.jpg"
+  },
+  {
+   "id": "6aa9a8fd8b39cedba9e7d6bb",
+   "title": "Meet The Filmmakers",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9a8fd8b39cedba9e7d6bb",
+   "genre": "other",
+   "categories": [],
+   "blurb": "Meet the filmmakers! L,",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "films-6a9fae3e557bb1a68737491f",
+   "title": "Wood Street",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/films/6a9fae3e557bb1a68737491f",
+   "genre": "film",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec6492",
+    "69fb4b9ffab7d2ee1bec64a0",
+    "69fb4b9ffab7d2ee1bec649b",
+    "69fb4b9ffab7d2ee1bec64b1",
+    "69fb4b9ffab7d2ee1bec64bd",
+    "6a9f853ab5979e8067917cbb"
+   ],
+   "blurb": "Two unhoused men turned community leaders— John and LaMonté —organize their neighbors in the face of displacement, addiction, and a failing social system.",
+   "durationMin": 100,
+   "imageUrl": "https://static-a.eventive.org/1788849792515temp-1788849792337-cover.jpg"
+  },
+  {
+   "id": "films-6a9fb9077c2bf76202dcd3a3",
+   "title": "CAITY",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/films/6a9fb9077c2bf76202dcd3a3",
+   "genre": "film",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec648d",
+    "69fb4b9ffab7d2ee1bec64a0",
+    "69fb4b9ffab7d2ee1bec649b",
+    "69fb4b9ffab7d2ee1bec649f",
+    "69fb4b9ffab7d2ee1bec64ab",
+    "69fb4b9ffab7d2ee1bec64a6",
+    "69fb4b9ffab7d2ee1bec64de",
+    "69fb4b9ffab7d2ee1bec64bd"
+   ],
+   "blurb": "16 year-old Caity and her newly sober father, Paul, co-operate their family business: a locally-beloved haunted house. When Paul relapses, Caity tries to cover for him but struggles to manage as she tests the limits of her own relationship to substances and falls for a new employee, Hannah.",
+   "durationMin": 101,
+   "imageUrl": "https://static-a.eventive.org/349bda70009141f4c07f613bcdaf72b3.jpg"
+  },
+  {
+   "id": "films-6a9fb09c169e0a4d8eb2fc35",
+   "title": "All American Girls",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/films/6a9fb09c169e0a4d8eb2fc35",
+   "genre": "film",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec6494",
+    "69fb4b9ffab7d2ee1bec64a0",
+    "6a9f85034a9ff9a1efadf5bf",
+    "6a9f853ab5979e8067917cbb",
+    "6a9f984d4c121953446b3a3b",
+    "6a9f850e4a9ff9a1efadf6ec",
+    "69fb4b9ffab7d2ee1bec649f",
+    "69fb4b9ffab7d2ee1bec649b",
+    "69fb4b9ffab7d2ee1bec649e"
+   ],
+   "blurb": "All American Girls explores inclusivity in U.S. historical narratives through the famed American Girl brand, which was brought to life by legendary entrepreneur, Pleasant Rowland.",
+   "durationMin": 94,
+   "imageUrl": "https://static-a.eventive.org/1788850633751temp-1788850633692-cover.jpg"
+  },
+  {
+   "id": "films-6a9fc8ce5dbcd6863216666f",
+   "title": "Don't Kill My Vibe",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/films/6a9fc8ce5dbcd6863216666f",
+   "genre": "film",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec64c5",
+    "69fb4b9ffab7d2ee1bec64a1",
+    "69fb4b9ffab7d2ee1bec649d",
+    "69fb4b9ffab7d2ee1bec64a7",
+    "69fb4b9ffab7d2ee1bec64b0",
+    "69fb4b9ffab7d2ee1bec64ba"
+   ],
+   "blurb": "What begins as a nostalgic road trip for two estranged friends quickly spirals out of control when they discover they've been unwittingly transporting drugs, forcing old tensions in their relationship to bubble to the surface.",
+   "durationMin": 80,
+   "imageUrl": "https://static-a.eventive.org/1788856594644temp-1788856594522-cover.jpg"
+  },
+  {
+   "id": "films-6a9f8bcd86b0aa785ce2ba64",
+   "title": "Landscapes of Memory",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/films/6a9f8bcd86b0aa785ce2ba64",
+   "genre": "film",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec648e",
+    "69fb4b9ffab7d2ee1bec64a0",
+    "69fb4b9ffab7d2ee1bec649b",
+    "69fb4b9ffab7d2ee1bec64b1",
+    "69fb4b9ffab7d2ee1bec64cd",
+    "69fb4b9ffab7d2ee1bec64e2",
+    "69fb4b9ffab7d2ee1bec64cf",
+    "69fb4b9ffab7d2ee1bec649e"
+   ],
+   "blurb": "LANDSCAPES OF MEMORY follows Leah Galant’s journey through Germany as she reckons with family trauma and the weight of historical memory of the Holocaust. Interwoven stories of a Holocaust-survivor descendant, a Nazi-descendant historian, exiled Palestinian artists, and her father’s ALS, reveal the uses and abuses of memory culture.",
+   "durationMin": 78,
+   "imageUrl": "https://static-a.eventive.org/0c223aa78e26637b9ac0f766cc2cc33f.jpg"
+  },
+  {
+   "id": "films-6a9fbccbbc76e3b4bac17a89-6a9fbd91a39dfadfe6441882-6a9fbe2b0281a025952e5185-6a9fbeab62df325343ac92ad-6a9fc11aec6ae28f58802a13-6a9fc3275dbcd6863215df1d-6a9fc3e2246eef428da760e9",
+   "title": "QUEER VISIONS Narrative Shorts",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9a99ff96d731e78631584",
+   "genre": "film",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec648f",
+    "69fb4b9ffab7d2ee1bec649f"
+   ],
+   "blurb": "After What Happened at the Library: In the wake of a terrifying encounter, an overwhelmed drag queen struggles under the weight of public attention.\n\nIn Her You'll Find Sanctuary: After the arrival of a nun with mystical visions, Sister Miriam becomes envious of her rival's sudden notoriety and begins falsifying miracles in a grotesque game of spiritual cat-and-mouse.\n\nsomething still: When a heartbroken man returns to his ex-boyfriends' apartment, they're forced to confront the aftermath of a boundary they chose to blur.\n\nMatches: After matching with a famous actor on a dating app, Ryan is invited to a party at his mansion where he is unexpectedly thrown into a cut throat competition for the actor’s heart.\n\nLas Cosas Que Brillan: A curious trans mermaid defies her mother’s warnings to venture up to the surface, only to discover the world above is not what she dreamt.\n\nIs it Like, a Date?!?: Two teenage girls at an art museum are desperate to figure out if their meetup is a date — while their parents connect in the parking lot and wind up on a date of their own.\n\nSam Wants Her Sweater Back: Three queer friends launch a half-witted heist to steal back a sweater from one of their exes. But recovering from heartbreak isn't quite the slick-lit, neon-noir adventure one of them imagines.",
+   "durationMin": 93,
+   "imageUrl": "https://static-a.eventive.org/1788853695936temp-1788853695734-cover.jpg"
+  },
+  {
+   "id": "films-6a9f906bd379ea2d12b2eb51-6a9f924a98ad4f3f82145d3c-6a9f9524feabe4372add99c4-6a9f978a7c3e0b5b9f6c2235",
+   "title": "LOOKING GLASS Documentary Shorts",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9aad3712a5975af9cbd70",
+   "genre": "film",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec6490"
+   ],
+   "blurb": "This is Not a Heartbeat: An essayistic exploration of ultrasound technology and the spectre of the fetal heartbeat in American politics, THIS IS NOT A HEARTBEAT asks: when machines mediate how we see the body, what are we actually seeing, and who gets to decide what it means?\n\nBorn Secret: A filmmaker returns to his home town that built the atomic bomb.\n\nGreensburg Anew: Spanning more than three decades, a photographer returns to Greensburg, Kansas, tracing its journey from life before an EF5 tornado to a sustainable future, while asking what it means to live with the knowledge that disaster could strike again.\n\nHER BABY DIDN'T BLOCK HER JUMPSHOT: Before Title IX, Iowa high school girls thrilled fans playing 6-on-6 basketball. When All-State star Jane Christoffer was banned for becoming a mother, she challenged the their notion of farm-girl femininity, demanding her right to play ball.",
+   "durationMin": 77,
+   "imageUrl": "https://static-a.eventive.org/1788843349273temp-1788843349223-cover.jpg"
+  },
+  {
+   "id": "6aa9ac4cb202d291f066d930",
+   "title": "Popcorn Happy Hour",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9ac4cb202d291f066d930",
+   "genre": "other",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec64ca"
+   ],
+   "blurb": "Popcorn Happy Hour",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "films-6a9fafeea5a171ec0dea0b83",
+   "title": "Brimstone Terrace",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/films/6a9fafeea5a171ec0dea0b83",
+   "genre": "film",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec6494",
+    "69fb4b9ffab7d2ee1bec649d",
+    "69fb4b9ffab7d2ee1bec64a0",
+    "6a9f8fcd0c5028c8ea5717d9",
+    "69fb4b9ffab7d2ee1bec64ad",
+    "6a9f984d4c121953446b3a3b",
+    "69fb4b9ffab7d2ee1bec64b8",
+    "69fb4b9ffab7d2ee1bec64a7",
+    "69fb4b9ffab7d2ee1bec64ac"
+   ],
+   "blurb": "When a depressed public defender ends his own life, he is sentenced to an eternity in Hell. However, after Satan takes notice of his skills, he is offered an afterlife-changing deal that may not fall in line with his own values.",
+   "durationMin": 93,
+   "imageUrl": "https://static-a.eventive.org/dfb0abbc09be034a097c8a904e82418d.jpg"
+  },
+  {
+   "id": "films-6a9f879b0c636bda1df9a860",
+   "title": "AMAZING LIVE SEA MONKEYS",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/films/6a9f879b0c636bda1df9a860",
+   "genre": "film",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec648e",
+    "69fb4b9ffab7d2ee1bec649b",
+    "6a9f85034a9ff9a1efadf5bf",
+    "69fb4b9ffab7d2ee1bec64e0",
+    "69fb4b9ffab7d2ee1bec64c1",
+    "69fb4b9ffab7d2ee1bec64a1"
+   ],
+   "blurb": "From her crumbling estate on the Potomac, Yolanda Signorelli is engaged in a battle to wrest control of her late husband Harold’s iconic toy Amazing Live Sea-Monkeys back from the corporate men who she insists stole them from her, and to rescue them from the stain of her husband’s dark legacy.",
+   "durationMin": 99,
+   "imageUrl": "https://static-a.eventive.org/318dfdd3710ceb665d89ffcf9a33dd22.jpg"
+  },
+  {
+   "id": "films-6a9fb7d14c121953446c83dd",
+   "title": "The Peril at Pincer Point",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/films/6a9fb7d14c121953446c83dd",
+   "genre": "film",
+   "categories": [],
+   "blurb": "On a quest to prove his competency, an inept sound recordist finds himself entangled in a nautical prophecy on the spectral island of Pincer Point.",
+   "durationMin": 83,
+   "imageUrl": "https://static-a.eventive.org/49bbd6ce24a005cae600524b38eb7bb2.jpg"
+  },
+  {
+   "id": "films-6a9fc9c241d7cfe6de100ec6-6a9fca8b8b0001ebf5c0956b-6a9fcb24456243fc3a7e76de-6a9fcbce1ae0fc71a5ba0f84-6a9fccdec25310daef21ee6c-6a9fcd86315980ca1eced99d-6a9fce70a39dfadfe644c513-6a9fcf5d41d7cfe6de105386",
+   "title": "VORTEX Experimental Shorts",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9ab5edc9a059e4b9e43e7",
+   "genre": "film",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec6499"
+   ],
+   "blurb": "8 Seconds at the Three Sisters: A filmmaker’s solo canoe trip to an ancient bald cypress swamp takes an unexpected turn, prompting him to reconstruct an experience whose images and sounds were lost to the river.\n\nCrumble: Crumble is an experimental short film about identity, trauma, loss, and the search for healing. A woman drifts between dream and reality, feeling alone and unseen in her own life. When she meets the child she once was, she begins to understand that healing is not something given by others. It starts when she has the courage to face herself.\n\nHungerstruck: When an influencer starved for fame finds the role of a Cannibal killer, she documents her audition process through vlogs, determined to prove to her loyal audience she'll go as far and as method as possible to keep them watching.\n\nFreakshow: While a group of mimes are getting ready for a performance, one of them reaches a breaking point.\n\nThe Big Grate: The quiet ritual of preparing the pre-Columbian soup pozole unravels into a visceral reflection on cultural identity, memory, and violence in this reimagined take on Martin Scorsese’s early-career film, The Big Shave.\n\nThe Last Bateau: Almost a half century after her great-grandfather’s voice was captured on cassette tapes, a woman returns to Caddo Lake to restore the last boat he built and listen to the legacy he left behind.\n\nThe Phenomenal Nothing: Two women in mirrored routines find within the rhythm of repetition a moment of unspoken connection.\n\nBreak All The Vases, Steal All The Flowers: Oh rascal children of Gaza, You who constantly disturbed me with your screams under my window, You who filled every morning with rush and chaos, You who broke my vase and stole the lonely flower on my balcony, “Come back – And scream as you want, And break all the vases, Steal all the flowers, Come back, Just come back…” -- Khalid Juma",
+   "durationMin": 69,
+   "imageUrl": "https://static-a.eventive.org/1788856956385temp-1788856956182-cover.jpg"
+  },
+  {
+   "id": "films-6a9fbad848caa490a8cf89b3",
+   "title": "She Keeps Me Young",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/films/6a9fbad848caa490a8cf89b3",
+   "genre": "film",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec648d",
+    "69fb4b9ffab7d2ee1bec64a0",
+    "69fb4b9ffab7d2ee1bec649d",
+    "69fb4b9ffab7d2ee1bec64a7",
+    "69fb4b9ffab7d2ee1bec64a6",
+    "69fb4b9ffab7d2ee1bec649f"
+   ],
+   "blurb": "Michelle is floating through life until a surprising connection with a high schooler challenges her friendship with her overbearing best friend, in this bitingly astute and exceptionally hilarious satire.",
+   "durationMin": 91,
+   "imageUrl": "https://static-a.eventive.org/1788853137338temp-1788853137157-cover.jpg"
+  },
+  {
+   "id": "films-6a9f85997c3e0b5b9f6b3ce4",
+   "title": "When We Were Live",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/films/6a9f85997c3e0b5b9f6b3ce4",
+   "genre": "film",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec648e",
+    "69fb4b9ffab7d2ee1bec64a1",
+    "69fb4b9ffab7d2ee1bec649d",
+    "69fb4b9ffab7d2ee1bec64ac",
+    "69fb4b9ffab7d2ee1bec649f",
+    "69fb4b9ffab7d2ee1bec64b1"
+   ],
+   "blurb": "Told entirely through restored public access footage, When We Were Live revives the unforgettable characters who turned an Austin community TV station into a world-famous stage for self-expression.",
+   "durationMin": 93,
+   "imageUrl": "https://static-a.eventive.org/1788839791337temp-1788839791288-cover.jpg"
+  },
+  {
+   "id": "films-6a9fd72d447d6b7f3ca0af55-6a9fd817feabe4372ae0f28e-6a9fd8b9d36ca83172669107-6a9fd959d36ca83172669743-6a9fdaea03ea1155a0037ba9",
+   "title": "Murmurations Shorts",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9b5f789ffa89575007a2e",
+   "genre": "film",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec6497"
+   ],
+   "blurb": "Art21: Delcy Morelos: Artist Delcy Morelos uses earth, seeds, fabrics, and spices to create immersive experiences that foster recognition of and respect for the Earth as a living entity, urging each of us to find healing and harmony through a dialogue with the natural world.\n\nIn The Still Of Night: On the Day of the Dead, a 10-year-old kid anxiously awaits a visit from his grandfather from the afterlife to finally meet him. He has to confront the skepticism of his parents, who discover that memory transcends life and death.\n\nFish Die with Mar: Mar sinks into a journey through her subconscious, where water and fish carry her toward memories that seemed forgotten. Connecting with her childhood, she confronts the fears and traumas her body has never forgotten.\n\nThe Last Day of All: Three friends reunite to develop a roll of film filled with memories, while they confess the feelings they kept hidden.\n\nSão Paulo, New York: As his visa nears expiration, an aspiring hip-hop producer must choose between chasing his dream in New York or returning to São Paulo and confronting the life he left behind.",
+   "durationMin": 81,
+   "imageUrl": "https://static-a.eventive.org/1788860750663temp-1788860750507-cover.jpg"
+  },
+  {
+   "id": "films-6a9fbc21feabe4372adf5df1",
+   "title": "Loves Company",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/films/6a9fbc21feabe4372adf5df1",
+   "genre": "film",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec648d",
+    "6a9f8baa8b3ce3a8f702b27a",
+    "69fb4b9ffab7d2ee1bec64a1",
+    "69fb4b9ffab7d2ee1bec649d",
+    "69fb4b9ffab7d2ee1bec64ac",
+    "69fb4b9ffab7d2ee1bec649f",
+    "69fb4b9ffab7d2ee1bec64b0",
+    "69fb4b9ffab7d2ee1bec64a7",
+    "69fb4b9ffab7d2ee1bec64b8",
+    "6a9f850e4a9ff9a1efadf6ec",
+    "69fb4b9ffab7d2ee1bec64ba"
+   ],
+   "blurb": "Lonely Antoinette thinks she's been saved from misery when her favorite Hollywood personality, Blake de Troy, a professional guest-star desperate for a comeback, crashes in the Florida swamps near her home. But don't meet (or kidnap) your idols.",
+   "durationMin": 94,
+   "imageUrl": "https://static-a.eventive.org/c2cd5e8e268f57a3fb2b5e0fef3d25a3.jpg"
+  },
+  {
+   "id": "6aa9ac95f940dc3c94469fef",
+   "title": "The Empire (Theatre) Strikes Back  & PARTY TILL YOU POP!",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9ac95f940dc3c94469fef",
+   "genre": "other",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec64ca"
+   ],
+   "blurb": "The Empire (Theatre) Strikes Back\n\n& PARTY TILL YOU POP!",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "6aa968f5720c2f08ad350d59",
+   "title": "MO Movies: Regional Filmmaking with the Missouri Film Office",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa968f5720c2f08ad350d59",
+   "genre": "other",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec64d1"
+   ],
+   "blurb": "Learn more about Midwestern filmmaking ecosystems with the Missouri Film Office. This panel will present 3 short films from the Missouri Stories Production Lab, an educational and marketing program that brings to life short films set in the world of winning scripts from the Missouri Stories Scriptwriting Fellowship, and will be followed by a panel discussion with the filmmakers and the Missouri Film Office. Curious about regional film production and development? Hear from these professionals about nurturing filmmaking in the Midwest.",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "films-6a9f98bc357bb0a7ead46286-6a9f99e303ea1155a0019ba1-6a9f9a90e52d01a59e6d6a3c-6a9f9b6d03ea1155a001c86c-6a9fa738c25310daef1f8e0a-6a9fa8436d428baba64fb161-6a9fa942b613add80c13f1c1-6a9faa4a5a24c8992e029dd2-6a9fab23b613add80c144167-6a9fabb9e8df8cab2f0c91b1-6a9fac5dc63950653a75d81e",
+   "title": "Thane Chastain Emerging Young Filmmaker Shorts",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9ae1b4b5999861dd63a11",
+   "genre": "film",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec6498"
+   ],
+   "blurb": "Everything I'm Not; Everything I Am: Clayton Nonhof, a high schooler, learns how to process pressure.\n\nThorns & Roses: In the town of Springvale, two rival gardeners face off for the Garden of the Year award. As their petty pranks begin to escalate, tension ignites, and something unexpected begins to grow between them.\n\nThe Bunny: Five years after his sister vanished on Easter night, sixteen-year-old Johnny lives in a town still scarred by her disappearance.\n\nThe Wheelchair: Two boys must learn to empathize with one another after they're sent to the principal's office after a fight.\n\n64: When a high-achieving student becomes consumed by the pressure to succeed, a single failing grade begins to haunt him, forcing him to confront the devastating truth that he has lost sight of who he is beyond his achievements.\n\nCOYOTES: Coyotes are an important part of our ecosystem, but can pose a significant risk to outdoor pets. Understanding their behavior is key to keeping our four-legged friends safe.\n\nCowtown: Before History was to be demolished, two men chose to save it; this is the desperate fight to save Wichita’s history.\n\nCall Me At 9:00: Murder mystery set in a lone phone booth in 1958. Each character presented makes a call and more of the story is revealed through these calls.\n\nMoe's: The identity of a unique restaurant unfolds through its balance of chaos and community, combining barbeque, bowling, live music, and a bar into one space where all of these elements coexist and thrive.\n\nNot Just Kicks: The life of a lonely pair of shoes, from brand new to worn-in.\n\nFoundation: After experiencing the confronting realities of cow farming as a child, Anthony Walsgott abandoned his life as a lawyer to purchase a pristine 120-acre block on Queensland’s Mary River—a place which is now home to Australia’s largest cow sanctuary.",
+   "durationMin": 85,
+   "imageUrl": "https://static-a.eventive.org/86a3d98aec1f4035ad090fb51dcbdae2.jpg"
+  },
+  {
+   "id": "films-6a9f8939b9a3d530f6b78a25",
+   "title": "baby/girls",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/films/6a9f8939b9a3d530f6b78a25",
+   "genre": "film",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec648e",
+    "69fb4b9ffab7d2ee1bec64a0",
+    "69fb4b9ffab7d2ee1bec649b",
+    "69fb4b9ffab7d2ee1bec64b1",
+    "69fb4b9ffab7d2ee1bec64cf",
+    "69fb4b9ffab7d2ee1bec64ab",
+    "69fb4b9ffab7d2ee1bec64b5"
+   ],
+   "blurb": "Set in America’s Heartland, baby/girls follows three teens living in a maternity home as they navigate pregnancy and early motherhood. The film offers an intimate, unfiltered look at girlhood and motherhood colliding in the American South.",
+   "durationMin": 95,
+   "imageUrl": "https://static-a.eventive.org/1788840296423temp-1788840296263-cover.jpg"
+  },
+  {
+   "id": "6aa9b9146e0e1c84e457b228",
+   "title": "Meet the Filmmakers",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9b9146e0e1c84e457b228",
+   "genre": "other",
+   "categories": [],
+   "blurb": "Meet the Filmmakers!",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "films-6a9f914d8c08b195484a548d-6a9f943502eda0286e8f594a-6a9f95f62477acb64186c8ec-6a9f96b187ffe77309327887",
+   "title": "DISPLACMENT Documentary Shorts",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9af8f1bf393496e3d4f94",
+   "genre": "film",
+   "categories": [],
+   "blurb": "A Derailment: At 8:55pm on February 3, 2023, a freight train carrying hazardous materials derailed in East Palestine, Ohio. Told entirely through found footage and news archive, A DERAILMENT puts you in the center of disaster.\n\nSea Song: The last remaining South Vietnamese naval officers reunite in California for what will likely be the final time, finding solace with the few people who understand the complexities that shape their life histories.\n\nSunday Mornings at the Beach: Amid surfers and sunbathers, a quiet cross-border ritual unfolds, where faith, fellowship, and resistance meet at the edge of the sea.\n\nPUPPY LOVE Tails of the City: Through the stories of four New York City dogs and their humans, PUPPY LOVE: Tails of the City explores how the joys and challenges of dog parenting can transform our lives, deepen our capacity for care, and create unexpected communities on both sides of the leash.",
+   "durationMin": 83,
+   "imageUrl": "https://static-a.eventive.org/1788842494342temp-1788842494286-cover.jpg"
+  },
+  {
+   "id": "films-6a9f8bcd86b0aa785ce2ba64-6a9f914d8c08b195484a548d",
+   "title": "Landscapes of Memory & A Derailment",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa96fb8f96d731e785ffa0f",
+   "genre": "film",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec648e",
+    "69fb4b9ffab7d2ee1bec64a0",
+    "69fb4b9ffab7d2ee1bec649b",
+    "69fb4b9ffab7d2ee1bec64b1",
+    "69fb4b9ffab7d2ee1bec64cd",
+    "69fb4b9ffab7d2ee1bec64e2",
+    "69fb4b9ffab7d2ee1bec64cf",
+    "69fb4b9ffab7d2ee1bec649e"
+   ],
+   "blurb": "Landscapes of Memory: LANDSCAPES OF MEMORY follows Leah Galant’s journey through Germany as she reckons with family trauma and the weight of historical memory of the Holocaust. Interwoven stories of a Holocaust-survivor descendant, a Nazi-descendant historian, exiled Palestinian artists, and her father’s ALS, reveal the uses and abuses of memory culture.\n\nA Derailment: At 8:55pm on February 3, 2023, a freight train carrying hazardous materials derailed in East Palestine, Ohio. Told entirely through found footage and news archive, A DERAILMENT puts you in the center of disaster.",
+   "durationMin": 104,
+   "imageUrl": "https://static-a.eventive.org/0c223aa78e26637b9ac0f766cc2cc33f.jpg"
+  },
+  {
+   "id": "films-6a9f8f19e8df8cab2f0b7301",
+   "title": "Seized",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/films/6a9f8f19e8df8cab2f0b7301",
+   "genre": "film",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec649b",
+    "69fb4b9ffab7d2ee1bec648e",
+    "6a9f8ef6169e0a4d8eb0610e",
+    "6a9f8fcd0c5028c8ea5717d9",
+    "69fb4b9ffab7d2ee1bec64b1",
+    "69fb4b9ffab7d2ee1bec64e2",
+    "69fb4b9ffab7d2ee1bec64b0"
+   ],
+   "blurb": "Balancing the absurdity of small-town politics with the gravity of a constitutional crisis, the small town of Marion, Kansas is thrust into the international spotlight after a police raid on the Marion County Record and the death of its 98-year-old co-owner.",
+   "durationMin": 94,
+   "imageUrl": "https://static-a.eventive.org/1788841923294temp-1788841923111-cover.jpg"
+  },
+  {
+   "id": "films-6a9faf26dc0b029f64582aa7",
+   "title": "Fort Scott Stories",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/films/6a9faf26dc0b029f64582aa7",
+   "genre": "film",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec6492",
+    "69fb4b9ffab7d2ee1bec64a0",
+    "69fb4b9ffab7d2ee1bec649c",
+    "6a9f8fcd0c5028c8ea5717d9",
+    "6a9f853ab5979e8067917cbb",
+    "69fb4b9ffab7d2ee1bec64aa"
+   ],
+   "blurb": "Fort Scott Stories is a continuing conversation first crafted by Gordon Parks in his hometown in 1950 with his Life magazine photo essay. The filmmaker picks up the trail illustrating a deeply moving, compelling and intimate portrait of present-day Fort Scott.",
+   "durationMin": 108,
+   "imageUrl": "https://static-a.eventive.org/1788850138193temp-1788850138073-cover.jpg"
+  },
+  {
+   "id": "6aa9b96896044863a23d7db1",
+   "title": "Popcorn Happy Hour",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9b96896044863a23d7db1",
+   "genre": "other",
+   "categories": [],
+   "blurb": "Popcorn Happy Hour",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "films-6a9fbba536e723f0841ca2d7",
+   "title": "Mallory's Ghost",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/films/6a9fbba536e723f0841ca2d7",
+   "genre": "film",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec648d",
+    "69fb4b9ffab7d2ee1bec64a0",
+    "69fb4b9ffab7d2ee1bec649b",
+    "69fb4b9ffab7d2ee1bec64a7",
+    "69fb4b9ffab7d2ee1bec64a6",
+    "69fb4b9ffab7d2ee1bec64be",
+    "69fb4b9ffab7d2ee1bec64de",
+    "69fb4b9ffab7d2ee1bec64ba"
+   ],
+   "blurb": "A timid young woman follows her boyfriend on a creative retreat to coastal Maine, but soon becomes convinced that she’s being haunted by the ghost of his ex-lover and muse.",
+   "durationMin": 86,
+   "imageUrl": "https://static-a.eventive.org/16c785f0db7a480874c093dbfececf10.jpg"
+  },
+  {
+   "id": "films-6a9f83b5e8df8cab2f0b1e15",
+   "title": "The Last Critic",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/films/6a9f83b5e8df8cab2f0b1e15",
+   "genre": "film",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec648e",
+    "69fb4b9ffab7d2ee1bec649c",
+    "69fb4b9ffab7d2ee1bec64a0",
+    "69fb4b9ffab7d2ee1bec64ac",
+    "6a9f85034a9ff9a1efadf5bf",
+    "6a9f85233d1f348f7c72d7ec",
+    "6a9f850e4a9ff9a1efadf6ec"
+   ],
+   "blurb": "Robert Christgau, The Dean of American Rock Critics, whose work has inspired and infuriated readers for sixty years—is still at it in his eighties, grading records, interrogating commas and listening to absolutely everything (except heavy metal).",
+   "durationMin": 84,
+   "imageUrl": "https://static-a.eventive.org/1788839316952temp-1788839316892-cover.jpg"
+  },
+  {
+   "id": "films-6a9fb25b94ced4d5016c93fa",
+   "title": "Harrison Ford Comes to Wichita",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/films/6a9fb25b94ced4d5016c93fa",
+   "genre": "film",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec6494",
+    "69fb4b9ffab7d2ee1bec64a4",
+    "69fb4b9ffab7d2ee1bec649b",
+    "6a9f853ab5979e8067917cbb",
+    "6a9f85034a9ff9a1efadf5bf",
+    "69fb4b9ffab7d2ee1bec64cd",
+    "69fb4b9ffab7d2ee1bec64a7",
+    "69fb4b9ffab7d2ee1bec64ad",
+    "6a9f8fcd0c5028c8ea5717d9"
+   ],
+   "blurb": "When Hollywood legend Harrison Ford makes his annual trips to Wichita, KS, the town buzzes with local folklore known as “Harrison Sightings.\" For filmmaker Graham High, what begins as an investigation into a hometown mystery unfolds into something bigger. Harrison Ford Comes to Wichita is a feature-length documentary that explores an endearing American city, its unassuming locals, and the unexpected ways we find ourselves in the places we left behind.",
+   "durationMin": 92,
+   "imageUrl": "https://static-a.eventive.org/1788851008095temp-1788851007927-cover.jpg"
+  },
+  {
+   "id": "films-6a9fc6654098529378c29370-6abdc73395fbdcac23e81242",
+   "title": "Copeland",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9762b050d944f28531904",
+   "genre": "film",
+   "categories": [
+    "6a9f8baa8b3ce3a8f702b27a",
+    "6a9f8ef6169e0a4d8eb0610e",
+    "6a9f853ab5979e8067917cbb",
+    "69fb4b9ffab7d2ee1bec64ac",
+    "6a9f85034a9ff9a1efadf5bf",
+    "6a9f8fcd0c5028c8ea5717d9",
+    "69fb4b9ffab7d2ee1bec64ae",
+    "6a9f85233d1f348f7c72d7ec",
+    "6a9f8529b5979e8067917971",
+    "69fb4b9ffab7d2ee1bec64a1",
+    "69fb4b9ffab7d2ee1bec649c"
+   ],
+   "blurb": "Copeland: Documentary about the amazing life and music of The Police drummer, Stewart Copeland, with never before seen home movie footage shot by Stewart himself\n\n(re)Dedicated - The Historic Restoration of Wichita's Orpheum Theatre: Chronicling the history of Wichita’s Orpheum Theatre and the concerned citizens who fought to save this legendary venue for the next generation of Wichitans.",
+   "durationMin": 99,
+   "imageUrl": "https://static-a.eventive.org/1788856157911temp-1788856157879-cover.jpg"
+  },
+  {
+   "id": "6aa9be133cd6d89a0c5e42e7",
+   "title": "Coffee Mixer with Tallgrass Programmers & Filmmakers",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9be133cd6d89a0c5e42e7",
+   "genre": "other",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec64d1"
+   ],
+   "blurb": "Ll Start your day with some caffeine and join us for an informal mix-and-mingle session with the terrific team behind our Stubbornly Independent programming and you, the filmmakers of Tallgrass 2026! Learn more about what to expect at Tallgrass 2026, the excellent films screening over the weekend, and have a chance to forge new connections here in Wichita. Please note this event is for the following pass types: Filmmaker, Jury, Industry, and Media.",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "6aa9b9bb1780ff33317b0365",
+   "title": "Hollywood Gods After Dark",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9b9bb1780ff33317b0365",
+   "genre": "other",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec64ca"
+   ],
+   "blurb": "\".",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "films-6a9fb368456243fc3a7cfa21-6a9fb4258c08b195484b8893-6a9fb4ccc395fe1a28cf7fe3-6a9fb56a7d4c96afe25254a3-6a9fb64ee3fa956a0010207a-6a9fb71c5952ea005b035758",
+   "title": "Kansas Shorts",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aab4293a14c7d9e3f1b3cb4",
+   "genre": "film",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec6495"
+   ],
+   "blurb": "Flooding Kaw Nation: Submerged Cities, Desecrated Graves, and Kaw Lake: In the 1970s, the federal government flooded the Kaw town of Washunga, Oklahoma to build Kaw Lake, inundating not only the homes but also the cemetery. Twenty years later, it became clear, though the headstones were moved, many Kaw ancestors were left behind. In this short documentary, Kaw Nation citizens describe the painful impact of these events and show how they worked to mitigate the consequences.\n\nSafer Waters: Artist Stephen Towns on Paradise Park: During a period of Jim Crow laws, strict segregation, and unrelenting racism, Paradise Park—a central Florida lake attraction for Black people that flourished at midcentury—provided an opportunity for African Americans to briefly escape oppression into a world of joy and leisure. Safer Waters: Artist Stephen Towns on Paradise Park highlights the craftsmanship of fiber artist and figurative painter Stephen Towns's Paradise Park series along with the archival photographs and interviews of the park's workers and visitors that inspired him.\n\nRainbow Rider: Rainbow Rider follows Shelle Lichti, an outspoken lesbian truck driver hauling freight across the country in her eponymous and iconic rainbow semi-truck. With her chihuahua sidekick in tow, Shelle encounters the joys of the open road, grumpy dispatchers, and lots of middle fingers sent in her direction.\n\nHit-Woman: A hit-woman's mission takes a deadly turn when her slippery target fights back. In this battle of wits and survival, only one will walk away alive. Who will it be?\n\nIt's Nice to Finally Meet You: IT’S NICE TO FINALLY MEET YOU is a film that follows Hannah, a young woman who must face her fears and follow her heart as she prepares to meet the parents.\n\nWe're All Sorry Souls: A sister burdened with loss and responsibility tries to maintain hope for her and her brother in a resort town where luxury and hardship collide.",
+   "durationMin": 105,
+   "imageUrl": "https://static-a.eventive.org/1788851941190temp-1788851941003-cover.jpg"
+  },
+  {
+   "id": "films-6a9fd03bbd816d64532fd007-6a9fd10636e723f0841d6452-6a9fd1c5b5979e8067945049-6a9fd2a048caa490a8d091ff-6a9fd35087ffe7730934f8be-6a9fd3f28b0001ebf5c18fd7-6a9fd4836045a04dc14dd4ec-6a9fd50f94e07b5d7039a18f-6a9fd5cb5dbcd68632174273-6a9fd666c63950653a781647-6a9fd959d36ca83172669743",
+   "title": "Music Video Shorts Block Sponsored by Movement Musick",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9ba67f0a8a5a6878aa708",
+   "genre": "film",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec6491"
+   ],
+   "blurb": "Kalyn Fay \"MORE\": In MORE, Kalyn Fay divulges, \"I could tell you how I’ve been, how it’s going maybe, But lately I’m just trying to make it through.\" Searching for meaning outside of the routine of life's daily grind, she finds new perspective in the Oklahoma prairie.\n\nI'm Wonderin': Short film music video about slowing down and appreciating time as it is.\n\nWhat if I Die Flying Over Oklahoma?: Trapped in the middle seat, singer-songwriter Rae Isla spirals into an existential crisis that transforms airplane anxiety into a surreal question of \"what if?\"\n\nMental Trillness by tv-ma: When rapper tv-ma is asked to perform with collaborator, Dreamverb, at a house show things go awry when an mysterious foe from his past arrives.\n\nMarital Bed - Ghost: When Wendy accepts an invitation to the secluded mansion of a wealthy older man, her dream date descends into a supernatural ritual that threatens to make her the newest member of his haunting circle of dead wives.\n\nSpin Me Again: A woman trapped in an endless cycle between reality and imagination struggles to break free from the eternal return of existence.\n\nMonday Anthem: DJ Corey Grand is jumped in the park and seeks out the Guardians of Cleveland to defeat the villain responsible.\n\nLeft Behind: As a singer begs an ex-lover not to leave him behind, a phone call blurs the line between the present and a fading memory.\n\nSAME AS U: SAME AS U is a surrealist film that depicts an identity in transition. A series of every day backdrops with objects turning into other objects playfully match-cutting from one shot to the other. These objects are shape-shifting in a faceless world.\n\nRelief by Mourning Habit: Relief by Mourning Habit is a music video that uses real time lighting throughout to showcase each band member as the video evolves it gets more colorful & exciting!\n\nIn The Still Of Night: On the Day of the Dead, a 10-year-old kid anxiously awaits a visit from his grandfather from the afterlife to finally meet him. He has to confront the skepticism of his parents, who discover that memory transcends life and death.",
+   "durationMin": 57,
+   "imageUrl": "https://static-a.eventive.org/1788860174160temp-1788860174085-cover.jpg"
+  },
+  {
+   "id": "films-6abdbfb03c766f2cfa50795d-6abdc145507c0054713791fe-6abdc24cdc8985bd0377d8b0-6abdc3badd623051780bde28-6abdc4bb5cd2eea1317f4bc5-6abdc576ca3b4232accc6342-6abdc6405cd2eea1317f9673",
+   "title": "Best of Women in Dance on Film 2021-2025",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/schedule/6abe78cde9db4b89b35190b1",
+   "genre": "film",
+   "categories": [],
+   "blurb": "DYAD: DYAD poetically explores the resilience and fragility of the human form set against the stark beauty of California's Mojave Desert towns.\n\nIn Capsule: Dual Rivet premieres In Capsule, a short dance film exploring the concepts of reality and perception. The film follows two women who are stuck in man-made, monochrome boxes, searching for meaning in the confines of their prescribed spaces.\n\nEchoes of Silence: Echoes of Silence is at once a contemporary dance performance, historical record, and moving meditation. Shot at Vancouver's historic Japanese Language School, and featuring original music by traditionally based Japanese drumming group Onibana Taiko, this short film reflects on intergenerational trauma caused by Japanese internment and dispossession during the Second World War.\n\nfuse: Two muddy bodies escape from a planter and are concretized into stillness, frozen by the city.\n\nCOMPOST: A site-specific screendance influenced by Donna Haraway's literature. Regenerative Politics for living together in a multi-species world.\n\nViolet crumble: When trauma and pain are unavoidable, a young woman must find her way through the dark corners of her experience to find hope.\n\niuSui: Exploring concepts of hope and fear,dark and light to portray the human condition in all its complexity, vulnerability and force. iuSui explores the curious sense of peace that lives within exceptionally acute tension.",
+   "durationMin": 60,
+   "imageUrl": "https://static-a.eventive.org/1790822867186temp-1790822867124-cover.jpg"
+  },
+  {
+   "id": "films-6a9fe295230bcf26d3635312-6a9fe3a8d36ca8317267a6c0-6a9fe45e7c3e0b5b9f71e8b6-6a9fe5143a54f472384e6c10-6a9fe5edf9fc51dbd6bc37e4-6a9fe6a6e79347542527c29c-6a9fe746230bcf26d363ec17-6a9fe8af7c3e0b5b9f7255c8",
+   "title": "Gordon Parks Shorts",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9bb190e559e2beb2b3eeb",
+   "genre": "film",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec6493"
+   ],
+   "blurb": "Arthur Jafa: Sequencing the Notes: Artist Arthur Jafa explores the rich landscape of Black cultural production by identifying and utilizing Black methodologies and aesthetics, uncovering the nuances of Black identity.\n\nEl Tiguere: A Dominican immigrant operates a mobile food garden under the radar in The Bronx, determined to rebuild his life and repair his relationship with his estranged son.\n\nOh Happy Day!: Over the course of Easter week, a young boy struggles to impress his crush.\n\nThe last wish: When an unsettling visitor disrupts her fragile new life, a 70-year-old widow is compelled to face her greatest fear, water, forcing her into a battle with both her past and her own mortality.\n\nCleo & Zion: While on a road trip to visit their estranged mother, two divided sisters realize they are more alike than different.\n\nThe Baltimore Barber: A beloved West Baltimore barber mentors a hopeful teen while the same violence that haunts his neighborhood begins closing in on them both.\n\nI Know it's Me.: Karina makes an important decision about her mental health on the dawn on her new abilities.\n\nWe're All Black Down Here: In a racially divided 1950s Britain, a black miner struggles to find acceptance above ground.",
+   "durationMin": 100,
+   "imageUrl": "https://static-a.eventive.org/1788863732465temp-1788863732300-cover.jpg"
+  },
+  {
+   "id": "6aa97b398758dc623739f551",
+   "title": "Closing Night Spotlight Party",
+   "titleLocal": null,
+   "url": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa97b398758dc623739f551",
+   "genre": "other",
+   "categories": [
+    "69fb4b9ffab7d2ee1bec64ca"
+   ],
+   "blurb": null,
+   "durationMin": null,
+   "imageUrl": null
+  }
+ ],
+ "performances": [
+  {
+   "id": "6aa95b6a6a5c91e2fc2f8175",
+   "eventId": "6aa95b6a6a5c91e2fc2f8175",
+   "venueId": "6aa957cacace3599f9b6eff9",
+   "roomId": null,
+   "date": "2026-10-15",
+   "start": "17:30",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa95b6a6a5c91e2fc2f8175",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6aa95cbbf7cbaeef29754b6d",
+   "eventId": "films-6a9f8d98ea2827618634ba36",
+   "venueId": "6aa957cacace3599f9b6eff9",
+   "roomId": null,
+   "date": "2026-10-15",
+   "start": "19:00",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa95cbbf7cbaeef29754b6d",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6aa95dbf6e0e1c84e451427b",
+   "eventId": "6aa95dbf6e0e1c84e451427b",
+   "venueId": "6aa9587102ac588ffd371bdd",
+   "roomId": null,
+   "date": "2026-10-15",
+   "start": "21:30",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa95dbf6e0e1c84e451427b",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6aa95e7e6e0e1c84e4515a97",
+   "eventId": "6aa95e7e6e0e1c84e4515a97",
+   "venueId": "69fb4b9ffab7d2ee1bec6469",
+   "roomId": null,
+   "date": "2026-10-16",
+   "start": "09:30",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa95e7e6e0e1c84e4515a97",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6aa9bd5f6e0e1c84e4582086",
+   "eventId": "6aa9bd5f6e0e1c84e4582086",
+   "venueId": "69fb4b9ffab7d2ee1bec6469",
+   "roomId": null,
+   "date": "2026-10-16",
+   "start": "10:45",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9bd5f6e0e1c84e4582086",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6aa95fb64b5999861dcfa1ec",
+   "eventId": "films-6a9fb8608c7a94fb7b143d7a",
+   "venueId": "69fb4b9ffab7d2ee1bec646c",
+   "roomId": null,
+   "date": "2026-10-16",
+   "start": "11:00",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa95fb64b5999861dcfa1ec",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa9603d1f72560b9d470858",
+   "eventId": "films-6a9fb9c30c636bda1dfd3ab6",
+   "venueId": "69fb4b9ffab7d2ee1bec6473",
+   "roomId": null,
+   "date": "2026-10-16",
+   "start": "11:15",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9603d1f72560b9d470858",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa960b6d4aa41242f22540a",
+   "eventId": "films-6a9fc56719fbc268e4792eb5",
+   "venueId": "69fb4b9ffab7d2ee1bec646b",
+   "roomId": null,
+   "date": "2026-10-16",
+   "start": "11:15",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa960b6d4aa41242f22540a",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa961e20e559e2beb23da2f",
+   "eventId": "films-6a9f8a4619c3939c54418f7d",
+   "venueId": "69fb4b9ffab7d2ee1bec646e",
+   "roomId": null,
+   "date": "2026-10-16",
+   "start": "11:30",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa961e20e559e2beb23da2f",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa962424aaef6b9b78e4d67",
+   "eventId": "films-6a9fc848dedb9d7b17554142",
+   "venueId": "69fb4b9ffab7d2ee1bec646f",
+   "roomId": null,
+   "date": "2026-10-16",
+   "start": "11:30",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa962424aaef6b9b78e4d67",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa962ad5c0a0eb3e1dc1c7f",
+   "eventId": "films-6a9fad75bd816d64532d8ca2",
+   "venueId": "69fb4b9ffab7d2ee1bec6470",
+   "roomId": null,
+   "date": "2026-10-16",
+   "start": "11:45",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa962ad5c0a0eb3e1dc1c7f",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa9a8fd8b39cedba9e7d6bb",
+   "eventId": "6aa9a8fd8b39cedba9e7d6bb",
+   "venueId": "6aa959683cd6d89a0c56bf5d",
+   "roomId": null,
+   "date": "2026-10-16",
+   "start": "12:00",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9a8fd8b39cedba9e7d6bb",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6aa97f79abb6c816ce46e1fd",
+   "eventId": "films-6a9fae3e557bb1a68737491f",
+   "venueId": "69fb4b9ffab7d2ee1bec646c",
+   "roomId": null,
+   "date": "2026-10-16",
+   "start": "13:45",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa97f79abb6c816ce46e1fd",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa97ddf7d84ede792165acc",
+   "eventId": "films-6a9fb9077c2bf76202dcd3a3",
+   "venueId": "69fb4b9ffab7d2ee1bec646f",
+   "roomId": null,
+   "date": "2026-10-16",
+   "start": "14:15",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa97ddf7d84ede792165acc",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa97ea46c338071eb0f8a0c",
+   "eventId": "films-6a9fb09c169e0a4d8eb2fc35",
+   "venueId": "69fb4b9ffab7d2ee1bec6473",
+   "roomId": null,
+   "date": "2026-10-16",
+   "start": "14:15",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa97ea46c338071eb0f8a0c",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa97e404b5999861dd19304",
+   "eventId": "films-6a9fc8ce5dbcd6863216666f",
+   "venueId": "69fb4b9ffab7d2ee1bec6470",
+   "roomId": null,
+   "date": "2026-10-16",
+   "start": "14:30",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa97e404b5999861dd19304",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa9a8423534ff605a5d73b9",
+   "eventId": "films-6a9f8bcd86b0aa785ce2ba64",
+   "venueId": "69fb4b9ffab7d2ee1bec646e",
+   "roomId": null,
+   "date": "2026-10-16",
+   "start": "14:30",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9a8423534ff605a5d73b9",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa9a99ff96d731e78631584",
+   "eventId": "films-6a9fbccbbc76e3b4bac17a89-6a9fbd91a39dfadfe6441882-6a9fbe2b0281a025952e5185-6a9fbeab62df325343ac92ad-6a9fc11aec6ae28f58802a13-6a9fc3275dbcd6863215df1d-6a9fc3e2246eef428da760e9",
+   "venueId": "69fb4b9ffab7d2ee1bec646b",
+   "roomId": null,
+   "date": "2026-10-16",
+   "start": "14:30",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9a99ff96d731e78631584",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6aa9aad3712a5975af9cbd70",
+   "eventId": "films-6a9f906bd379ea2d12b2eb51-6a9f924a98ad4f3f82145d3c-6a9f9524feabe4372add99c4-6a9f978a7c3e0b5b9f6c2235",
+   "venueId": "69fb4b9ffab7d2ee1bec646d",
+   "roomId": null,
+   "date": "2026-10-16",
+   "start": "14:45",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9aad3712a5975af9cbd70",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa9ac4cb202d291f066d930",
+   "eventId": "6aa9ac4cb202d291f066d930",
+   "venueId": "6aa959683cd6d89a0c56bf5d",
+   "roomId": null,
+   "date": "2026-10-16",
+   "start": "16:00",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9ac4cb202d291f066d930",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6aa96345ebbe006ac2998a85",
+   "eventId": "films-6a9fafeea5a171ec0dea0b83",
+   "venueId": "69fb4b9ffab7d2ee1bec646c",
+   "roomId": null,
+   "date": "2026-10-16",
+   "start": "16:45",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa96345ebbe006ac2998a85",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa9642451e71276ce5cf713",
+   "eventId": "films-6a9f879b0c636bda1df9a860",
+   "venueId": "69fb4b9ffab7d2ee1bec6473",
+   "roomId": null,
+   "date": "2026-10-16",
+   "start": "17:00",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9642451e71276ce5cf713",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa964a6af1a6cda75d0ee30",
+   "eventId": "films-6a9fb7d14c121953446c83dd",
+   "venueId": "69fb4b9ffab7d2ee1bec6470",
+   "roomId": null,
+   "date": "2026-10-16",
+   "start": "17:15",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa964a6af1a6cda75d0ee30",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa9ab5edc9a059e4b9e43e7",
+   "eventId": "films-6a9fc9c241d7cfe6de100ec6-6a9fca8b8b0001ebf5c0956b-6a9fcb24456243fc3a7e76de-6a9fcbce1ae0fc71a5ba0f84-6a9fccdec25310daef21ee6c-6a9fcd86315980ca1eced99d-6a9fce70a39dfadfe644c513-6a9fcf5d41d7cfe6de105386",
+   "venueId": "69fb4b9ffab7d2ee1bec646b",
+   "roomId": null,
+   "date": "2026-10-16",
+   "start": "17:15",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9ab5edc9a059e4b9e43e7",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa964fbde2476df07143dc2",
+   "eventId": "films-6a9fbad848caa490a8cf89b3",
+   "venueId": "69fb4b9ffab7d2ee1bec646f",
+   "roomId": null,
+   "date": "2026-10-16",
+   "start": "17:30",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa964fbde2476df07143dc2",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa9671763f75cedbfb69cb1",
+   "eventId": "films-6a9f85997c3e0b5b9f6b3ce4",
+   "venueId": "69fb4b9ffab7d2ee1bec646e",
+   "roomId": null,
+   "date": "2026-10-16",
+   "start": "17:30",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9671763f75cedbfb69cb1",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa9b5f789ffa89575007a2e",
+   "eventId": "films-6a9fd72d447d6b7f3ca0af55-6a9fd817feabe4372ae0f28e-6a9fd8b9d36ca83172669107-6a9fd959d36ca83172669743-6a9fdaea03ea1155a0037ba9",
+   "venueId": "69fb4b9ffab7d2ee1bec646d",
+   "roomId": null,
+   "date": "2026-10-16",
+   "start": "17:45",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9b5f789ffa89575007a2e",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa967673125621180539f3a",
+   "eventId": "films-6a9fbc21feabe4372adf5df1",
+   "venueId": "69fb4b9ffab7d2ee1bec6473",
+   "roomId": null,
+   "date": "2026-10-16",
+   "start": "20:00",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa967673125621180539f3a",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6aa9ac95f940dc3c94469fef",
+   "eventId": "6aa9ac95f940dc3c94469fef",
+   "venueId": "6aa959683cd6d89a0c56bf5d",
+   "roomId": null,
+   "date": "2026-10-16",
+   "start": "22:15",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9ac95f940dc3c94469fef",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6aa968f5720c2f08ad350d59",
+   "eventId": "6aa968f5720c2f08ad350d59",
+   "venueId": "69fb4b9ffab7d2ee1bec6469",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "10:45",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa968f5720c2f08ad350d59",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6aa9ae1b4b5999861dd63a11",
+   "eventId": "films-6a9f98bc357bb0a7ead46286-6a9f99e303ea1155a0019ba1-6a9f9a90e52d01a59e6d6a3c-6a9f9b6d03ea1155a001c86c-6a9fa738c25310daef1f8e0a-6a9fa8436d428baba64fb161-6a9fa942b613add80c13f1c1-6a9faa4a5a24c8992e029dd2-6a9fab23b613add80c144167-6a9fabb9e8df8cab2f0c91b1-6a9fac5dc63950653a75d81e",
+   "venueId": "69fb4b9ffab7d2ee1bec646b",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "10:45",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9ae1b4b5999861dd63a11",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa9696af96d731e785f47f5",
+   "eventId": "films-6a9f8a4619c3939c54418f7d",
+   "venueId": "69fb4b9ffab7d2ee1bec646e",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "11:00",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9696af96d731e785f47f5",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa96b5c712a5975af961446",
+   "eventId": "films-6a9fb9077c2bf76202dcd3a3",
+   "venueId": "69fb4b9ffab7d2ee1bec646f",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "11:00",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa96b5c712a5975af961446",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa96a711780ff333174529a",
+   "eventId": "films-6a9fae3e557bb1a68737491f",
+   "venueId": "69fb4b9ffab7d2ee1bec6470",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "11:15",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa96a711780ff333174529a",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa96c55feb4d1d7422e09e9",
+   "eventId": "films-6a9f8d98ea2827618634ba36",
+   "venueId": "69fb4b9ffab7d2ee1bec646d",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "11:15",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa96c55feb4d1d7422e09e9",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa96ad96a932c363d4496d2",
+   "eventId": "films-6a9f8939b9a3d530f6b78a25",
+   "venueId": "69fb4b9ffab7d2ee1bec6473",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "11:30",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa96ad96a932c363d4496d2",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa96bd2bdd2231e552a0ec0",
+   "eventId": "films-6a9fbc21feabe4372adf5df1",
+   "venueId": "69fb4b9ffab7d2ee1bec646c",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "11:45",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa96bd2bdd2231e552a0ec0",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa9b9146e0e1c84e457b228",
+   "eventId": "6aa9b9146e0e1c84e457b228",
+   "venueId": "6aa959683cd6d89a0c56bf5d",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "12:00",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9b9146e0e1c84e457b228",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6aa9af8f1bf393496e3d4f94",
+   "eventId": "films-6a9f914d8c08b195484a548d-6a9f943502eda0286e8f594a-6a9f95f62477acb64186c8ec-6a9f96b187ffe77309327887",
+   "venueId": "69fb4b9ffab7d2ee1bec646b",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "13:30",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9af8f1bf393496e3d4f94",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa96fb8f96d731e785ffa0f",
+   "eventId": "films-6a9f8bcd86b0aa785ce2ba64-6a9f914d8c08b195484a548d",
+   "venueId": "69fb4b9ffab7d2ee1bec646f",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "13:45",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa96fb8f96d731e785ffa0f",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa96ce3cfce5c55e45549b7",
+   "eventId": "films-6a9f8f19e8df8cab2f0b7301",
+   "venueId": "6aa959e285d5edf858513e47",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "14:00",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa96ce3cfce5c55e45549b7",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa96e0eebbe006ac29cdb36",
+   "eventId": "films-6a9fb8608c7a94fb7b143d7a",
+   "venueId": "69fb4b9ffab7d2ee1bec646e",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "14:00",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa96e0eebbe006ac29cdb36",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa96e808758dc623735bc5c",
+   "eventId": "films-6a9f85997c3e0b5b9f6b3ce4",
+   "venueId": "69fb4b9ffab7d2ee1bec6470",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "14:00",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa96e808758dc623735bc5c",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa96f2ed464b37c0d8a8712",
+   "eventId": "films-6a9fafeea5a171ec0dea0b83",
+   "venueId": "69fb4b9ffab7d2ee1bec646d",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "14:00",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa96f2ed464b37c0d8a8712",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa96ed98c3f823ed136e95b",
+   "eventId": "films-6a9faf26dc0b029f64582aa7",
+   "venueId": "69fb4b9ffab7d2ee1bec6473",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "14:15",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa96ed98c3f823ed136e95b",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa9714a712a5975af96d686",
+   "eventId": "films-6a9fb9c30c636bda1dfd3ab6",
+   "venueId": "69fb4b9ffab7d2ee1bec646c",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "14:30",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9714a712a5975af96d686",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa9b96896044863a23d7db1",
+   "eventId": "6aa9b96896044863a23d7db1",
+   "venueId": "6aa959683cd6d89a0c56bf5d",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "16:00",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9b96896044863a23d7db1",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6aa9b5116a5c91e2fc360135",
+   "eventId": "films-6a9fbba536e723f0841ca2d7",
+   "venueId": "69fb4b9ffab7d2ee1bec646f",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "16:30",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9b5116a5c91e2fc360135",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa9722b06f076176169194b",
+   "eventId": "films-6a9fc8ce5dbcd6863216666f",
+   "venueId": "69fb4b9ffab7d2ee1bec6470",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "16:45",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9722b06f076176169194b",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa97560eafe7df6c5c31b32",
+   "eventId": "films-6a9f879b0c636bda1df9a860",
+   "venueId": "69fb4b9ffab7d2ee1bec646d",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "16:45",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa97560eafe7df6c5c31b32",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa971dfcace3599f9b98365",
+   "eventId": "films-6a9fbad848caa490a8cf89b3",
+   "venueId": "69fb4b9ffab7d2ee1bec646e",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "17:00",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa971dfcace3599f9b98365",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa9742d8b39cedba9e3460a",
+   "eventId": "films-6a9f83b5e8df8cab2f0b1e15",
+   "venueId": "69fb4b9ffab7d2ee1bec6473",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "17:00",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9742d8b39cedba9e3460a",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa9728455fded4e77a902a9",
+   "eventId": "films-6a9fad75bd816d64532d8ca2",
+   "venueId": "69fb4b9ffab7d2ee1bec646c",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "17:15",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9728455fded4e77a902a9",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa972dd692f0653b1b0f0ff",
+   "eventId": "films-6a9fb25b94ced4d5016c93fa",
+   "venueId": "6aa959e285d5edf858513e47",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "17:15",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa972dd692f0653b1b0f0ff",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa9762b050d944f28531904",
+   "eventId": "films-6a9fc6654098529378c29370-6abdc73395fbdcac23e81242",
+   "venueId": "6aa959e285d5edf858513e47",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "20:00",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9762b050d944f28531904",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6aa9be133cd6d89a0c5e42e7",
+   "eventId": "6aa9be133cd6d89a0c5e42e7",
+   "venueId": "69fb4b9ffab7d2ee1bec6469",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "21:30",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9be133cd6d89a0c5e42e7",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6aa9b9bb1780ff33317b0365",
+   "eventId": "6aa9b9bb1780ff33317b0365",
+   "venueId": "6aa959683cd6d89a0c56bf5d",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "22:00",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9b9bb1780ff33317b0365",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6aab4293a14c7d9e3f1b3cb4",
+   "eventId": "films-6a9fb368456243fc3a7cfa21-6a9fb4258c08b195484b8893-6a9fb4ccc395fe1a28cf7fe3-6a9fb56a7d4c96afe25254a3-6a9fb64ee3fa956a0010207a-6a9fb71c5952ea005b035758",
+   "venueId": "69fb4b9ffab7d2ee1bec6473",
+   "roomId": null,
+   "date": "2026-10-18",
+   "start": "11:00",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aab4293a14c7d9e3f1b3cb4",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa9771c63f75cedbfb8f1a5",
+   "eventId": "films-6a9f83b5e8df8cab2f0b1e15",
+   "venueId": "69fb4b9ffab7d2ee1bec646f",
+   "roomId": null,
+   "date": "2026-10-18",
+   "start": "11:15",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9771c63f75cedbfb8f1a5",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa9ba67f0a8a5a6878aa708",
+   "eventId": "films-6a9fd03bbd816d64532fd007-6a9fd10636e723f0841d6452-6a9fd1c5b5979e8067945049-6a9fd2a048caa490a8d091ff-6a9fd35087ffe7730934f8be-6a9fd3f28b0001ebf5c18fd7-6a9fd4836045a04dc14dd4ec-6a9fd50f94e07b5d7039a18f-6a9fd5cb5dbcd68632174273-6a9fd666c63950653a781647-6a9fd959d36ca83172669743",
+   "venueId": "69fb4b9ffab7d2ee1bec646b",
+   "roomId": null,
+   "date": "2026-10-18",
+   "start": "11:15",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9ba67f0a8a5a6878aa708",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa9777c13ea679b479de6de",
+   "eventId": "films-6a9faf26dc0b029f64582aa7",
+   "venueId": "69fb4b9ffab7d2ee1bec646c",
+   "roomId": null,
+   "date": "2026-10-18",
+   "start": "11:30",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9777c13ea679b479de6de",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa9768f157919e18effbbc9",
+   "eventId": "films-6a9fb09c169e0a4d8eb2fc35",
+   "venueId": "69fb4b9ffab7d2ee1bec6470",
+   "roomId": null,
+   "date": "2026-10-18",
+   "start": "11:45",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9768f157919e18effbbc9",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa977e4050d944f28537f08",
+   "eventId": "films-6a9fc848dedb9d7b17554142",
+   "venueId": "69fb4b9ffab7d2ee1bec646e",
+   "roomId": null,
+   "date": "2026-10-18",
+   "start": "12:00",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa977e4050d944f28537f08",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa9788736cca53344a6655a",
+   "eventId": "films-6a9f8939b9a3d530f6b78a25",
+   "venueId": "69fb4b9ffab7d2ee1bec646d",
+   "roomId": null,
+   "date": "2026-10-18",
+   "start": "14:00",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9788736cca53344a6655a",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa978e4cace3599f9bae60b",
+   "eventId": "films-6a9fb25b94ced4d5016c93fa",
+   "venueId": "69fb4b9ffab7d2ee1bec6473",
+   "roomId": null,
+   "date": "2026-10-18",
+   "start": "14:00",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa978e4cace3599f9bae60b",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa97949b711c96709538ccd",
+   "eventId": "films-6a9fbba536e723f0841ca2d7",
+   "venueId": "69fb4b9ffab7d2ee1bec646f",
+   "roomId": null,
+   "date": "2026-10-18",
+   "start": "14:15",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa97949b711c96709538ccd",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6abe78cde9db4b89b35190b1",
+   "eventId": "films-6abdbfb03c766f2cfa50795d-6abdc145507c0054713791fe-6abdc24cdc8985bd0377d8b0-6abdc3badd623051780bde28-6abdc4bb5cd2eea1317f4bc5-6abdc576ca3b4232accc6342-6abdc6405cd2eea1317f9673",
+   "venueId": "69fb4b9ffab7d2ee1bec646b",
+   "roomId": null,
+   "date": "2026-10-18",
+   "start": "14:15",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6abe78cde9db4b89b35190b1",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa9bb190e559e2beb2b3eeb",
+   "eventId": "films-6a9fe295230bcf26d3635312-6a9fe3a8d36ca8317267a6c0-6a9fe45e7c3e0b5b9f71e8b6-6a9fe5143a54f472384e6c10-6a9fe5edf9fc51dbd6bc37e4-6a9fe6a6e79347542527c29c-6a9fe746230bcf26d363ec17-6a9fe8af7c3e0b5b9f7255c8",
+   "venueId": "69fb4b9ffab7d2ee1bec646c",
+   "roomId": null,
+   "date": "2026-10-18",
+   "start": "14:30",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa9bb190e559e2beb2b3eeb",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa979c710fedd3b60b17a0a",
+   "eventId": "films-6a9fb7d14c121953446c83dd",
+   "venueId": "69fb4b9ffab7d2ee1bec646e",
+   "roomId": null,
+   "date": "2026-10-18",
+   "start": "15:00",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa979c710fedd3b60b17a0a",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aa97ac53534ff605a59b48b",
+   "eventId": "films-6a9fc56719fbc268e4792eb5",
+   "venueId": "69fb4b9ffab7d2ee1bec6473",
+   "roomId": null,
+   "date": "2026-10-18",
+   "start": "17:45",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa97ac53534ff605a59b48b",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6aa97b398758dc623739f551",
+   "eventId": "6aa97b398758dc623739f551",
+   "venueId": "6aa95a6db1d24e8c8d870747",
+   "roomId": null,
+   "date": "2026-10-18",
+   "start": "20:00",
+   "ticketUrl": "https://tallgrassfilmfestival2026.eventive.org/schedule/6aa97b398758dc623739f551",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  }
+ ],
+ "sources": {
+  "festival": [
+   "festival.toml"
+  ],
+  "venues": [
+   "eventive",
+   "nominatim"
+  ],
+  "events": [
+   "eventive"
+  ],
+  "performances": [
+   "eventive"
+  ],
+  "availability": [
+   "eventive"
+  ],
+  "prices": [
+   "eventive"
+  ]
+ },
+ "provenance": {
+  "sources": {
+   "eventive": {
+    "kind": "fetched",
+    "path": "data/festivals/tallgrass-film-festival/2026/eventive",
+    "fetchedAt": "2026-10-02T18:08:22Z",
+    "fetcher": "scraper/festivals/tallgrass_film_festival/sources/eventive/fetch.py",
+    "fetcherVersion": 1
+   },
+   "nominatim": {
+    "kind": "fetched",
+    "path": "data/festivals/tallgrass-film-festival/2026/nominatim",
+    "fetchedAt": "2026-10-02T18:33:31Z",
+    "fetcher": "scraper/festivals/tallgrass_film_festival/sources/nominatim/fetch.py",
+    "fetcherVersion": 3
+   }
+  },
+  "absent": [],
+  "fields": {
+   "categories.name": [
+    "eventive"
+   ],
+   "events.blurb": [
+    "eventive"
+   ],
+   "events.categories": [
+    "eventive"
+   ],
+   "events.durationMin": [
+    "eventive"
+   ],
+   "events.genre": [
+    "eventive"
+   ],
+   "events.imageUrl": [
+    "eventive"
+   ],
+   "events.title": [
+    "eventive"
+   ],
+   "events.url": [
+    "eventive"
+   ],
+   "performances.date": [
+    "eventive"
+   ],
+   "performances.eventId": [
+    "eventive"
+   ],
+   "performances.free": [
+    "eventive"
+   ],
+   "performances.priceMax": [
+    "eventive"
+   ],
+   "performances.priceMin": [
+    "eventive"
+   ],
+   "performances.start": [
+    "eventive"
+   ],
+   "performances.status": [
+    "eventive"
+   ],
+   "performances.ticketUrl": [
+    "eventive"
+   ],
+   "performances.venueId": [
+    "eventive"
+   ],
+   "venues.address": [
+    "eventive"
+   ],
+   "venues.capacity": [
+    "eventive"
+   ],
+   "venues.lat": [
+    "nominatim"
+   ],
+   "venues.lng": [
+    "nominatim"
+   ],
+   "venues.name": [
+    "eventive"
+   ],
+   "venues.online": [
+    "eventive"
+   ]
+  },
+  "skipped": {}
+ }
+}

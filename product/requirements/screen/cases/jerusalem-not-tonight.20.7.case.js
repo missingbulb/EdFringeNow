@@ -1,5 +1,5 @@
 "use strict";
-const { jerusalemReady, jerusalemStarred, settle } = require("../../shared/case-helpers");
+const { jerusalemAllDays, jerusalemReady, jerusalemStarred, settle, openCard } = require("../../shared/case-helpers");
 
 // A favourited show that plays three evenings, drafted onto Monday. Refusing
 // that one evening moves it to another of its own — and it competes for the
@@ -9,16 +9,15 @@ const TUE = '.sch-day[data-date="2026-10-20"]';
 
 module.exports = {
   description: "'not this night' moves the show to another of its own nights",
-  page: "/planJerusalem/",
+  page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
-  localStorage: jerusalemStarred(["yolo"]),
+  localStorage: { ...jerusalemStarred(["yolo"]), ...jerusalemAllDays() },
   ready: jerusalemReady,
   async capture(page, t) {
     const pair = () => t.unionClip([MON, TUE], 4);
     const before = await pair();
     // The verdicts live in the popup, so the card has to be opened first.
-    await page.hover(`${MON} .sch-show--fav`);
-    await settle(page);
+    await openCard(page, `${MON} .sch-show--fav`);
     await page.click('#calPreview [data-verdict="noTime"]');
     await settle(page);
     return t.animate([before, await pair()]);

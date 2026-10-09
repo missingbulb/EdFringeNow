@@ -1,0 +1,74 @@
+{
+ "about": "Hand-curated venue research for the Tel Aviv Festival, keyed by our venue id; festival-site's adapter maps the programme's venue labels onto these ids and room ids. Not edition-specific: a hall outlives a programme. Every figure is {value, source} with the URL it was read from, or null when nobody could cite it; coordinates also say the basis they rest on. Venue names are the festival's own Hebrew; room names are the programme's labels as written, several of them the museum exhibitions a show plays inside.",
+ "researchedAt": "2026-09-27",
+ "venues": {
+  "tel-aviv-museum-of-art": {
+   "name": "מוזיאון תל־אביב לאמנות",
+   "address": "שדרות שאול המלך 27, תל אביב",
+   "coordinates": {"value": {"lat": 32.0775, "lng": 34.78667}, "source": "https://en.wikipedia.org/wiki/Tel_Aviv_Museum_of_Art", "basis": "the article's coordinates for the museum"},
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {"id": "recanati-hall", "name": "אולם רקנאטי", "capacity": null, "layout": null},
+    {"id": "asia-hall", "name": "אולם אסיא", "capacity": null, "layout": null},
+    {"id": "kaufmann-hall", "name": "אולם קאופמן", "capacity": null, "layout": null},
+    {"id": "yaglom-hall", "name": "אולם סיימון ומרי יגלום", "capacity": null, "layout": null},
+    {"id": "rickles-foyer", "name": "מבואת ריקליס", "capacity": null, "layout": null},
+    {"id": "rapaport-foyer", "name": "מבואת רפפורט", "capacity": null, "layout": null},
+    {"id": "photography-gallery", "name": "גלריית הצילום", "capacity": null, "layout": null},
+    {"id": "rubinstein-miniatures", "name": "חדרי המיניאטורות של הלנה רובינשטיין", "capacity": null, "layout": null},
+    {"id": "noma-bar-exhibition", "name": "נומה בר: מצד שני", "capacity": null, "layout": null},
+    {"id": "new-bones-exhibition", "name": "חזון העצמות החדשות", "capacity": null, "layout": null},
+    {"id": "year-zero-exhibition", "name": "שנת אפס", "capacity": null, "layout": null},
+    {"id": "sculpture-garden", "name": "גן הפסלים", "capacity": null, "layout": {"value": "outdoor", "source": "https://telavivfestival.co.il/program"}}
+   ],
+   "accessibility": null,
+   "notes": "The museum nights' home. The festival sells entry to its galleries on a space-available basis, and holds its open-air shows subject to the weather. Some rooms are exhibitions the show plays inside (נומה בר: מצד שני, חזון העצמות החדשות, שנת אפס) rather than named halls. No seat counts are published."
+  },
+  "beit-ariela": {
+   "name": "בית אריאלה",
+   "address": "שדרות שאול המלך 25, תל אביב",
+   "coordinates": {"value": {"lat": 32.0767, "lng": 34.7864}, "source": "https://he.wikipedia.org/wiki/%D7%91%D7%99%D7%AA_%D7%90%D7%A8%D7%99%D7%90%D7%9C%D7%94", "basis": "the article's coordinates for the library"},
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {"id": "auditorium", "name": "אודיטוריום בית אריאלה", "capacity": null, "layout": null},
+    {"id": "urban-salon", "name": "הסלון העירוני, בית אריאלה", "capacity": null, "layout": null}
+   ],
+   "accessibility": null,
+   "notes": "The Sha'ar Zion central library, next door to the museum; its shows are part of the museum night passes."
+  },
+  "tel-aviv-performing-arts-center": {
+   "name": "המשכן לאמנויות הבמה",
+   "address": "שדרות שאול המלך 19, תל אביב",
+   "coordinates": {"value": {"lat": 32.0764, "lng": 34.7855}, "source": "https://he.wikipedia.org/wiki/%D7%94%D7%9E%D7%A9%D7%9B%D7%9F_%D7%9C%D7%90%D7%9E%D7%A0%D7%95%D7%99%D7%95%D7%AA_%D7%94%D7%91%D7%9E%D7%94_(%D7%AA%D7%9C_%D7%90%D7%91%D7%99%D7%91)", "basis": "the article's coordinates for the building"},
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "The Golda Centre, home of the Israeli Opera and the Cameri. The programme does not name the hall the opening plays."
+  },
+  "heichal-hatarbut": {
+   "name": "היכל התרבות",
+   "address": "רחוב הוברמן 2, תל אביב",
+   "coordinates": {"value": {"lat": 32.073643, "lng": 34.779974}, "source": "https://en.wikipedia.org/wiki/Heichal_HaTarbut", "basis": "the article's coordinates for the building"},
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {"id": "lowy-hall", "name": "אולם לאוי", "capacity": null, "layout": null}
+   ],
+   "accessibility": null,
+   "notes": "Heichal HaTarbut (the Charles Bronfman Auditorium), home of the Israel Philharmonic."
+  },
+  "beit-radical": {
+   "name": "בית רדיקל",
+   "address": "מרחב 3426, התחייה פינת הרצל, תל אביב-יפו",
+   "coordinates": {"value": {"lat": 32.0487236, "lng": 34.7688827}, "source": "https://radical.org.il/contact/", "basis": "the place pin of the Google Maps link on the venue's contact page"},
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "Radical's house in the 3426 compound, where the festival's after party plays."
+  }
+ }
+}

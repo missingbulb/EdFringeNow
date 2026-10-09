@@ -1,0 +1,3054 @@
+/* The festival planner's stylesheet: the Fringe planner's, plus a theme.
+ *
+ * The page IS the Fringe planner's board, so it imports that stylesheet whole
+ * rather than copying 1,600 lines that would then drift. Everything below is
+ * either a brand token redefined, a rule the second festival's *shape* needs
+ * (five columns rather than thirty-one), or a component this page has and the
+ * Fringe planner doesn't (the browse stage, the origin question).
+ *
+ * Theming is per genre: the page root carries `data-genre="<kind>"`, the
+ * focused festival's `kind` from the registry, and each genre's block below
+ * redefines the same handful of tokens, so two comedy festivals share one
+ * palette. A genre with no block keeps the house palette plan.css defines.
+ * The wordmark is ./festivals.js's.
+ */
+@import url("../plan/plan.css");
+
+:root {
+  /* The wash behind the page's top — each festival's block sets its own. */
+  --wash: light-dark(#e7e0fb, #1c1830);
+  --wash-clear: light-dark(rgba(231, 224, 251, 0), rgba(28, 24, 48, 0));
+  /* Each genre's accent, named once: its palette below takes it as --violet. */
+  --genre-comedy: light-dark(#b8862b, #d7a340);
+  --genre-film: light-dark(#1f6fb2, #5aa9e6);
+  --genre-fringe: light-dark(#c2185b, #f06292);
+  --genre-theatre: light-dark(#c4572e, #e8825a);
+  /* A dot or stripe that names a festival anywhere else reads its genre's. */
+  --colour-jerusalem-comedy: var(--genre-comedy);
+  --colour-haifa-iff: var(--genre-film);
+  --colour-edfringe: var(--genre-fringe);
+  --colour-acco: var(--genre-theatre);
+}
+
+[data-festival-colour="jerusalem-comedy"] {
+  --festival-colour: var(--colour-jerusalem-comedy);
+}
+[data-festival-colour="haifa-iff"] {
+  --festival-colour: var(--colour-haifa-iff);
+}
+[data-festival-colour="edfringe"] {
+  --festival-colour: var(--colour-edfringe);
+}
+[data-festival-colour="acco"] {
+  --festival-colour: var(--colour-acco);
+}
+
+/* ---- the genres' palettes ---------------------------------------------- */
+
+:root[data-genre="comedy"] {
+  /* Comedy: warm brass on sandstone, the house lights up — the accent the
+     Fringe planner spends on violet. Kept to the same two-tone shape (a mid tone and
+     a second for hover/active) so every rule in plan.css that reaches for
+     --violet lands somewhere sensible without being restated here. In the dark
+     the pair swaps direction: brass lifts towards the light rather than away
+     from it, because the hover state has to stay the brighter of the two. */
+  --wash: light-dark(#f1ddb6, #241d12);
+  --wash-clear: light-dark(rgba(241, 221, 182, 0), rgba(36, 29, 18, 0));
+  --violet: var(--genre-comedy);
+  --violet-dark: light-dark(#94691d, #ecc06a);
+  --ink: light-dark(#1d1a14, #f2e9da);
+  --paper: light-dark(#ffffff, #221d16);
+  --bg: light-dark(#faf7f0, #14110c);
+  --muted: light-dark(#7a7160, #a89c86);
+  --line: light-dark(#ece5d8, #37301f);
+  /* light-dark() takes colours, not whole shadows — wrapping the lengths in it
+     too makes every box-shadow that reads this token invalid, i.e. no shadow at
+     all, in both themes. */
+  --shadow-soft: 0 12px 30px light-dark(rgba(16, 24, 40, 0.08), rgba(0, 0, 0, 0.55));
+  /* The "in your plan" pill, which plan.css paints as ink-on-wash. */
+  --ok-text: light-dark(#047857, #6fe0ab);
+  --ok-bg: light-dark(#e6f7ee, #123527);
+}
+
+/* Film: the blue of a darkened auditorium lit by the screen. */
+:root[data-genre="film"] {
+  --wash: light-dark(#cde2f5, #0f1c28);
+  --wash-clear: light-dark(rgba(205, 226, 245, 0), rgba(15, 28, 40, 0));
+  --violet: var(--genre-film);
+  --violet-dark: light-dark(#17568c, #8cc6f2);
+  --ink: light-dark(#0e1a26, #e4eef7);
+  --paper: light-dark(#ffffff, #14202c);
+  --bg: light-dark(#f5f9fc, #0b141c);
+  --muted: light-dark(#5d6f80, #8fa4b6);
+  --line: light-dark(#dde8f1, #243646);
+}
+
+/* The fringe: a flyposter magenta on slate, every genre at once. */
+:root[data-genre="fringe"] {
+  --wash: light-dark(#f7cde0, #2a1220);
+  --wash-clear: light-dark(rgba(247, 205, 224, 0), rgba(42, 18, 32, 0));
+  --violet: var(--genre-fringe);
+  --violet-dark: light-dark(#961245, #f48fb1);
+  --ink: light-dark(#1b1a22, #eeeaf2);
+  --paper: light-dark(#ffffff, #1c1a22);
+  --bg: light-dark(#f7f6f9, #111016);
+  --muted: light-dark(#6b6878, #a19eb0);
+  --line: light-dark(#e6e3ec, #302d3a);
+}
+
+/* Theatre: the red of the curtain and the stage's warm boards. */
+:root[data-genre="theatre"] {
+  --wash: light-dark(#f6d3c1, #2a1812);
+  --wash-clear: light-dark(rgba(246, 211, 193, 0), rgba(42, 24, 18, 0));
+  --violet: var(--genre-theatre);
+  --violet-dark: light-dark(#9c4322, #f2a585);
+  --ink: light-dark(#23150f, #f6e7df);
+  --paper: light-dark(#ffffff, #23160f);
+  --bg: light-dark(#fcf7f4, #150d09);
+  --muted: light-dark(#7d6559, #b09385);
+  --line: light-dark(#f0e0d7, #3c2a21);
+}
+
+/* ---- moving between festivals ------------------------------------------ */
+
+/* The theme's colours fade into the next festival's rather than jump. Only a
+   registered custom property interpolates — an unregistered one is a string
+   and flips at the end — so each token a palette above sets is registered as
+   a colour, and the root transitions them. Every rule reading a token follows
+   it frame by frame, and the page keeps responding throughout (a date handle
+   being dragged included), which a snapshot cross-fade would not. The header
+   declares its own values, so it holds still. */
+@property --wash { syntax: "<color>"; inherits: true; initial-value: transparent; }
+@property --wash-clear { syntax: "<color>"; inherits: true; initial-value: transparent; }
+@property --violet { syntax: "<color>"; inherits: true; initial-value: transparent; }
+@property --violet-dark { syntax: "<color>"; inherits: true; initial-value: transparent; }
+@property --ink { syntax: "<color>"; inherits: true; initial-value: transparent; }
+@property --paper { syntax: "<color>"; inherits: true; initial-value: transparent; }
+@property --bg { syntax: "<color>"; inherits: true; initial-value: transparent; }
+@property --muted { syntax: "<color>"; inherits: true; initial-value: transparent; }
+@property --line { syntax: "<color>"; inherits: true; initial-value: transparent; }
+
+:root {
+  transition: --wash 0.6s ease, --wash-clear 0.6s ease, --violet 0.6s ease, --violet-dark 0.6s ease, --ink 0.6s ease, --paper 0.6s ease, --bg 0.6s ease, --muted 0.6s ease, --line 0.6s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { transition: none; }
+}
+
+:root {
+  /* The grid's palette, cut down to what this festival publishes: a night is on
+     sale or it is free. The Fringe's sold-out / 2-for-1 / preview colours are
+     left defined by the import and simply never drawn. */
+  --fr-avail: light-dark(#2a9d8f, #35b6a6);
+  --fr-free: light-dark(#1f9e55, #2fbd6a);
+  --fr-ink: light-dark(#00243d, #f2e9da);
+
+  /* Hebrew, Japanese and Cyrillic: Inter carries the Cyrillic, and neither it
+     nor Plus Jakarta Sans carries the other two scripts, so Heebo and Noto Sans
+     JP go in front of both. A Latin string still renders in the site's own face
+     — neither added font has Latin coverage worth preferring, so the fallback
+     order decides, which is what we want. */
+  --sans: "Inter", "Heebo", "Noto Sans JP", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --display: "Plus Jakarta Sans", "Heebo", "Noto Sans JP", "Inter", system-ui, sans-serif;
+
+  /* How many nights the grid spans. The Fringe planner's calendar is a fixed
+     month; a festival's is exactly as long as its programme, and both the day
+     header and every lane's track have to agree on the number. */
+  --fest-days: 5;
+}
+
+/* Every colour above picks its side with `light-dark()`, which reads the used
+   colour scheme — so the whole dark theme is these two rules: the device asks
+   for dark and the reader has not said otherwise, or the reader chose it. Light
+   declares nothing, deliberately: `color-scheme` shifts how the page's own
+   background composites by a unit per channel, and the light rendering is
+   committed in the goldens. Declaring it only on the dark side also darkens the
+   native select and time fields there, which is the rest of what it is for. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+/* Hebrew needs a little more line height than the Latin faces are set for, or
+   the nikud-less but tall letters clip in the dense grid rows. Japanese wants
+   the same room for the same reason. */
+[lang="he"] {
+  font-family: "Heebo", var(--sans);
+  line-height: 1.35;
+}
+[lang="ja"] {
+  font-family: "Noto Sans JP", var(--sans);
+  line-height: 1.4;
+}
+
+/* A warm stone wash behind the page's top, so the festival reads as its own
+   place without touching a single component. One gradient, no images. */
+/* The Fringe planner caps its content at plan.css's --maxw; this page is a
+   calendar first, and a wide screen is more days and hours in view, so it
+   spans the window, header and footer included, to keep one set of edges. */
+body.festival-page {
+  --maxw: none;
+}
+
+/* The page leaves the mouse cursor to the browser. plan.css, which this page
+   imports whole, sets its own for the Fringe planner, so they are reverted to
+   the browser's here rather than stripped from a stylesheet another page
+   uses; !important because those rules are more specific than any reset. */
+body.festival-page,
+body.festival-page *,
+body.festival-page *::before,
+body.festival-page *::after {
+  cursor: revert !important;
+}
+
+body.festival-page {
+  background: linear-gradient(180deg, var(--wash) 0%, var(--wash) 160px, var(--wash-clear) 560px), var(--bg);
+}
+
+/* The leading festival's city, faded behind the top of the page
+   (city-backdrop.js). It sits over the wash and under everything else — the
+   body is no stacking context, so z-index -1 paints it just above the canvas
+   the body's background is drawn on — and it thins out to nothing before the
+   calendar, which is never drawn over a picture. Scrolls with the page. */
+.city-backdrop {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 620px;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(180deg, #000 35%, transparent);
+  mask-image: linear-gradient(180deg, #000 35%, transparent);
+}
+.city-backdrop img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.city-backdrop img.is-on {
+  opacity: 0.45;
+}
+@media (prefers-reduced-motion: reduce) {
+  .city-backdrop img { transition: none; }
+}
+
+/* --- the grid's shape ---------------------------------------------------- */
+
+.days,
+.lane-track {
+  grid-template-columns: repeat(var(--fest-days), minmax(0, 1fr));
+}
+
+/* Both belong to the Fringe's month-long calendar: a pre-festival shaded zone
+   and JS-positioned weekend stripes. This grid is only the festival's own
+   nights, and the weekend is already marked on the day header. */
+.wknd-cols,
+.festend {
+  display: none;
+}
+
+/* --- the browse stage ---------------------------------------------------- */
+
+/* The Fringe planner's empty board asks for a favourites file. There is no such
+   export for this festival, so the empty board is the programme itself — which
+   at this size is a better starting point than a search box anyway. */
+.browse-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 16px 6px;
+  overflow: hidden;
+}
+.browse-head {
+  flex: 0 0 auto;
+}
+.browse-line1 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+.browse-line2 {
+  margin: 2px 0 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.browse-list {
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 0 4px 8px 0;
+  list-style: none;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+/* --- the reader's own two controls ---------------------------------------- */
+
+/* Language and theme sit at the end of the header: they belong to the reader
+   rather than to the site, so they read as the last thing in the bar rather
+   than as part of its identity. */
+.chrome-prefs {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-inline-start: 10px;
+}
+.lang-select {
+  height: 30px;
+  padding: 0 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+.lang-select:hover,
+.theme-toggle:hover {
+  border-color: var(--violet);
+  color: var(--violet-dark);
+}
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+}
+/* The toggle shows the state a press would move to, which is the opposite of
+   the one in force — so the icons swap with the theme, on the reader's choice
+   or (with no choice made) on the device's. */
+.theme-ico--sun {
+  display: none;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-ico--sun {
+    display: block;
+  }
+  :root:not([data-theme="light"]) .theme-ico--moon {
+    display: none;
+  }
+}
+:root[data-theme="dark"] .theme-ico--sun {
+  display: block;
+}
+:root[data-theme="dark"] .theme-ico--moon {
+  display: none;
+}
+
+/* The Fringe planner's header is a three-column grid sized for a logo, a nav
+   and one hint. This one carries two controls more, which is more than 390px
+   of phone can hold in a row — so below the width where the festival's dates
+   already drop out, the header becomes two rows and the nav takes the second.
+   (The board below it is a 1174px grid and stays a desktop instrument; this is
+   about the chrome not running off the edge on the way to it.) */
+@media (max-width: 940px) {
+  /* Flex rather than the imported grid: a grid column is shared down the rows,
+     so the wordmark's width would set the nav's and push the controls off the
+     edge — which is exactly what it did. */
+  .header-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 6px;
+    column-gap: 12px;
+  }
+  .logo {
+    flex: 1 1 100%;
+  }
+  .main-nav {
+    gap: 20px;
+  }
+  .header-side {
+    margin-inline-start: auto;
+  }
+}
+
+/* What the failed fetch actually said, under the line that says it failed.
+   Untranslated on purpose — it is the network's words, not ours. */
+.state-tech {
+  margin: 4px 0 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+/* --- the components the Fringe planner paints white ----------------------- */
+
+/* plan.css was written for one theme and spells those surfaces `#fff`. They are
+   restated here against the token, which carries both themes, rather than
+   duplicated into a dark-only block — a rule that reads the same in the light
+   is a rule that cannot drift between the two. */
+.site-header {
+  background: color-mix(in srgb, var(--paper) 95%, transparent);
+}
+
+/* The bar is the site's, not the festival's: it keeps the house palette
+   plan.css defines whichever festival's block is in force on the root, so
+   nothing in it moves when the reader picks another festival. plan.css has no
+   dark side, so the dark half of each pair is set here. */
+.site-header {
+  --violet: light-dark(#6c4cf1, #a591ff);
+  --violet-dark: light-dark(#5a3fd6, #c3b6ff);
+  --ink: light-dark(#101828, #eceaf5);
+  --paper: light-dark(#ffffff, #1a1826);
+  --muted: light-dark(#667085, #a3a0b5);
+  --line: light-dark(#eaecf0, #2e2b3d);
+  /* Opaque, or the festival's wash behind the page's top tints it. */
+  background: var(--paper);
+  color: var(--ink);
+}
+.board-clear,
+.btn-ghost,
+.board-legend-btn,
+.ss-bar,
+.chip-trigger,
+.panel-filter,
+.opt-select,
+.ctl-time,
+.ctl-num,
+.tmode,
+.tmode-btn,
+.meal-pill,
+.sch-show,
+.sch-pin,
+.sch-emoji {
+  background: var(--paper);
+}
+/* The light halves below are plan.css's own values, kept to the byte: this page
+   is restating those rules to give them a dark half, not to restyle the light
+   one. The schedule's own two-layer background is the exception that has to be
+   left alone in the light and overridden only in the dark — restating it at all
+   moves the antialiasing of its rounded corners, which the goldens hold. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .schedule-wrap {
+    background:
+      linear-gradient(var(--paper), var(--paper)) padding-box,
+      repeating-linear-gradient(90deg, #2b251c 0 1px, transparent 1px 100%);
+  }
+}
+:root[data-theme="dark"] .schedule-wrap {
+  background:
+    linear-gradient(var(--paper), var(--paper)) padding-box,
+    repeating-linear-gradient(90deg, #2b251c 0 1px, transparent 1px 100%);
+}
+.sch-day--empty {
+  background: repeating-linear-gradient(
+    45deg,
+    light-dark(#fbfbfd, #1b170f) 0 5px,
+    light-dark(#f4f5f8, #231d14) 5px 10px
+  );
+}
+.browse-list .ss-row,
+.ss-results .ss-row {
+  color: var(--ink);
+}
+/* The footer is the one band that is dark in both themes, so it cannot follow
+   --ink (which flips) and states its own two. */
+.site-footer {
+  background: light-dark(#1d1a14, #0a0906);
+  color: light-dark(#d9d9d9, #b6ac99);
+}
+.sch-day--empty .sch-day-head {
+  background: light-dark(#f7f7fa, #1b170f);
+}
+.sch-day.wknd .sch-day-head {
+  background: light-dark(#f4f2fe, #241d12);
+}
+
+/* --- right to left -------------------------------------------------------- */
+
+/* The board's own geometry follows the page's direction on its own: the day
+   columns, the lanes and the schedule's days are grid and flex tracks. What is
+   left here is
+   the handful of places plan.css states a physical side. */
+[dir="rtl"] .ss-icon {
+  left: auto;
+  right: 12px;
+}
+[dir="rtl"] .ss-input {
+  padding-left: 12px;
+  padding-right: 40px;
+}
+/* The status stripe, and the padding that clears it, move to the other edge —
+   with plan.css's own colour, which is the performance's status rather than
+   the block's text. */
+[dir="rtl"] .sch-show {
+  border-left: 1px solid var(--line);
+  border-right: 4px solid var(--seg, var(--violet));
+  padding: 1px 9px 1px 4px;
+}
+[dir="rtl"] .schedule.cols-tiny .sch-show {
+  padding-right: 5px;
+  border-right-width: 3px;
+  border-left-width: 1px;
+}
+[dir="rtl"] .sch-emoji {
+  left: auto;
+  right: -2px;
+  transform: translate(50%, -50%);
+}
+[dir="rtl"] .lane-remove {
+  right: auto;
+  left: 4px;
+}
+
+/* --- the version popup --------------------------------------------------- */
+
+/* Each front-end ships its own rules for the shared popup module (a stylesheet
+   cannot be imported the way a module can) — except here, where the import
+   above already brought the planner's in. Nothing to add. */
+
+/* --- the calendar leads ---------------------------------------------------
+ *
+ * plan.css draws a schedule block as one flat link: a stripe, a name, an hour.
+ * Here a card is the draft's pick for its hour, and when other shows wanted
+ * the hour too, a lane beside it draws each of them at its own times.
+ * Everything else the page has to say about a card is in the popup, so a
+ * calendar at rest reads as a calendar.
+ */
+.sch-slot { position: absolute; left: 3px; right: 3px; }
+/* The pick leaves a band clear at its end edge for the lane. */
+.sch-slot--contested .sch-show { inset-inline-end: 24px; }
+.sch-show {
+  position: absolute; inset: 0;
+  flex-direction: column; justify-content: center; gap: 1px;
+  padding: 3px 5px 3px 9px;
+  overflow: hidden; z-index: 2;
+  box-shadow: 0 2px 5px rgba(16, 24, 40, 0.1);
+}
+.sch-slot:hover .sch-show { box-shadow: 0 5px 14px rgba(16, 24, 40, 0.18); }
+/* Only the name and its meta are the link out to the festival's own page. */
+.sch-open {
+  display: flex; flex-direction: column; gap: 1px; min-width: 0;
+  text-decoration: none; color: var(--ink);
+}
+.sch-open:hover .sch-name { text-decoration: underline; }
+.sch-show .sch-name { -webkit-line-clamp: 1; }
+.sch-show:not(.sch-show--tight) .sch-name { -webkit-line-clamp: 2; }
+
+/* The lane is as tall as the slot, so it is one steady target; the bars it
+   holds reach above and below it to the rivals' own starts and ends, and are
+   painted through (pointer-events off) so the lane is the only thing hit. */
+.sch-rivals {
+  position: absolute; top: 0; bottom: 0; inset-inline-end: 0; width: 22px;
+  padding: 0; border: 0; border-radius: 4px; background: transparent;
+  z-index: 1;
+}
+.sch-rivals:hover, .sch-rivals[aria-expanded="true"] {
+  background: color-mix(in srgb, var(--violet) 10%, transparent);
+}
+.sch-rivals:focus-visible { outline: 2px solid var(--violet); outline-offset: 1px; }
+/* Each rival is a solid bar capped at its start and its end, so where it
+   begins and stops reads off the calendar's own hour lines. */
+.sch-rival {
+  --w: min(8px, calc((20px - (var(--lanes) - 1) * 2px) / var(--lanes)));
+  position: absolute; pointer-events: none;
+  top: var(--from); height: var(--len);
+  inset-inline-start: calc(1px + var(--lane) * (var(--w) + 2px)); width: var(--w);
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--violet) 45%, var(--paper));
+  border-block: 2px solid var(--violet-dark);
+  box-sizing: border-box;
+}
+/* An end it does not have on the calendar (unpublished, or past the cards
+   beside it) fades out uncapped. */
+.sch-rival--open-start { border-top-width: 0; mask-image: linear-gradient(to bottom, transparent, #000 10px); }
+.sch-rival--open-end { border-bottom-width: 0; mask-image: linear-gradient(to top, transparent, #000 10px); }
+.sch-rival--open-start.sch-rival--open-end {
+  mask-image: linear-gradient(to bottom, transparent, #000 10px, #000 calc(100% - 10px), transparent);
+}
+.sch-rivals:hover .sch-rival, .sch-rivals[aria-expanded="true"] .sch-rival {
+  background: color-mix(in srgb, var(--violet) 70%, var(--paper));
+}
+/* More rows than fit: the lane widens, never past a quarter of the slot, and
+   its rows narrow to fit them all, a pixel apart while there is room and
+   touching after that, in two shades so touching rows still read as two. */
+.sch-slot--crowd { container-type: inline-size; --crowd-w: clamp(22px, calc(var(--lanes) * 3px - 1px), 25cqi); }
+.sch-slot--crowd .sch-show { inset-inline-end: calc(var(--crowd-w) + 2px); }
+.sch-rivals--crowd { width: var(--crowd-w); }
+.sch-crowd {
+  --gap: clamp(0px, calc((var(--crowd-w) - 2px - var(--lanes) * 2px) / (var(--lanes) - 1)), 1px);
+  --w: calc((var(--crowd-w) - 2px - (var(--lanes) - 1) * var(--gap)) / var(--lanes));
+  --step: calc(var(--w) + var(--gap));
+  --bar: color-mix(in srgb, var(--violet) 45%, var(--paper));
+  --bar-alt: color-mix(in srgb, var(--violet) 28%, var(--paper));
+  --cap: var(--violet-dark);
+  position: absolute; inset-inline: 1px; pointer-events: none;
+}
+.sch-rivals--crowd:hover .sch-crowd, .sch-rivals--crowd[aria-expanded="true"] .sch-crowd {
+  --bar: color-mix(in srgb, var(--violet) 70%, var(--paper));
+  --bar-alt: color-mix(in srgb, var(--violet) 52%, var(--paper));
+}
+/* Narrow columns give the lane less of the card; the tiniest merge its rows,
+   since a bar a pixel or two wide says nothing. */
+.schedule.cols-narrow .sch-slot--contested .sch-show { inset-inline-end: 13px; }
+.schedule.cols-narrow .sch-rivals { width: 12px; }
+.schedule.cols-narrow .sch-rival { --w: calc((10px - (var(--lanes) - 1) * 1px) / var(--lanes)); inset-inline-start: calc(1px + var(--lane) * (var(--w) + 1px)); }
+.schedule.cols-tiny .sch-slot--contested .sch-show { inset-inline-end: 6px; }
+.schedule.cols-tiny .sch-rivals { width: 5px; }
+.schedule.cols-tiny .sch-rival { --w: 5px; inset-inline-start: 0; border-width: 0; }
+.schedule.cols-narrow .sch-slot--crowd { --crowd-w: clamp(12px, calc(var(--lanes) * 2px), 25cqi); }
+.schedule.cols-narrow .sch-slot--crowd .sch-show { inset-inline-end: calc(var(--crowd-w) + 1px); }
+.schedule.cols-narrow .sch-rivals--crowd { width: var(--crowd-w); }
+/* Merged in the tiniest, each bar faint, so the strip darkens where they
+   pile up. */
+.schedule.cols-tiny .sch-slot--crowd { --crowd-w: 5px; }
+.schedule.cols-tiny .sch-slot--crowd .sch-show { inset-inline-end: 6px; }
+.schedule.cols-tiny .sch-rivals--crowd { width: 5px; }
+.schedule.cols-tiny .sch-crowd {
+  --w: 5px; --step: 0px; inset-inline: 0;
+  --bar: color-mix(in srgb, var(--violet) 25%, transparent); --bar-alt: var(--bar); --cap: var(--bar);
+}
+
+/* A card the reader has fixed in place, and one they have favourited: the
+   first is the stronger claim, so it takes the ring and the only badge a
+   card's face ever carries. */
+.sch-show--locked {
+  border-color: var(--ok);
+  box-shadow: inset 0 0 0 1.5px var(--ok), 0 2px 6px rgba(16, 24, 40, 0.1);
+}
+.sch-show--fav:not(.sch-show--locked) {
+  box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--violet) 55%, transparent),
+              0 2px 6px rgba(16, 24, 40, 0.08);
+}
+.sch-lock {
+  position: absolute; top: 2px; inset-inline-end: 3px;
+  font-size: 0.6rem; line-height: 1; pointer-events: none;
+}
+
+/* --- the calendar's two floating surfaces --------------------------------- */
+/* The card, not the calendar, is what they are positioned in — see placePop. */
+.plan-result { position: relative; }
+.cal-pop {
+  position: absolute; z-index: 40; width: max-content; max-width: 300px;
+  padding: 8px 10px; border-radius: 10px;
+  background: var(--paper); border: 1px solid var(--line);
+  box-shadow: 0 10px 26px rgba(16, 24, 40, 0.18);
+  font-size: 0.7rem; line-height: 1.35; color: var(--ink);
+}
+.cal-pop .pop-title {
+  margin: 0 0 2px; font-family: var(--display); font-weight: 700; font-size: 0.76rem;
+}
+.cal-pop .pop-lead { margin: 0 0 6px; color: var(--muted); font-size: 0.64rem; }
+/* A show's popup leads with its picture, edge to edge across the top. */
+.cal-pop--preview { width: 280px; }
+.pop-art {
+  margin: -8px -10px 8px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+  background: color-mix(in srgb, var(--muted) 12%, var(--paper));
+}
+.pop-art:not(:first-child) { margin-top: 0; border-radius: 0; }
+.pop-art img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.pop-art--emoji {
+  aspect-ratio: 3 / 1;
+  display: grid;
+  place-items: center;
+  background: color-mix(in srgb, var(--festival-colour, var(--violet)) 22%, var(--paper));
+  font-size: 2.2rem;
+  line-height: 1;
+}
+.cal-pop .pop-where { margin: 0 0 4px; color: var(--muted); font-size: 0.64rem; }
+.cal-pop .pop-about {
+  margin: 0 0 2px;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.cal-pop .pop-link {
+  display: inline-block;
+  margin: 0 0 6px;
+  color: var(--violet-dark, var(--violet));
+  font-size: 0.64rem;
+  font-weight: 600;
+}
+.cal-pop .pop-foot { margin: 6px 0 0; color: var(--muted); font-size: 0.62rem; }
+.cal-pop .pop-more { margin: 4px 0 0; color: var(--muted); font-size: 0.66rem; }
+.panel-more { margin: 6px 8px 2px; color: var(--muted); font-size: 0.72rem; line-height: 1.35; }
+.pop-nights, .pop-rivals { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.pop-night {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 10px;
+  padding: 2px 6px; border-radius: 6px; font-variant-numeric: tabular-nums;
+}
+.pop-night.is-drafted { background: color-mix(in srgb, var(--ok) 15%, transparent); font-weight: 700; }
+.pop-night.is-rejected { color: var(--muted); }
+.pop-night.is-rejected .pn-when { text-decoration: line-through; }
+.pn-note { flex: 0 0 auto; font-size: 0.6rem; color: var(--muted); font-weight: 400; }
+.pop-rival, .pop-pick {
+  display: flex; align-items: center; gap: 8px;
+  width: 100%; text-align: start;
+  font: inherit; padding: 4px 6px; border-radius: 6px;
+  border: 1px solid transparent; background: transparent; color: inherit;
+}
+.pop-rival:hover { border-color: var(--violet); background: color-mix(in srgb, var(--violet) 8%, transparent); }
+.pr-nights { flex: 0 0 auto; margin-inline-start: auto; font-size: 0.6rem; color: var(--muted); }
+/* The draft's own pick heads the list, as the thing the rest are offered
+   against: not a button, because it already has the hour. */
+.pop-pick {
+  flex-wrap: wrap; row-gap: 1px; padding: 4px 6px; border-radius: 6px;
+  background: color-mix(in srgb, var(--ok) 13%, transparent);
+}
+.pr-badge {
+  flex: 0 0 100%; font-size: 0.56rem; font-weight: 700; letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--ok);
+}
+.pr-kind { flex: 0 0 auto; font-size: 0.8rem; }
+.pr-text { flex: 1 1 0; display: flex; flex-direction: column; min-width: 0; }
+.pr-title { font-weight: 700; }
+.pr-where { font-size: 0.6rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.pr-take { flex: 0 0 auto; font-size: 0.7rem; opacity: 0.35; }
+.pop-rival:hover .pr-take, .pop-rival:focus-visible .pr-take { opacity: 1; }
+.cal-pop--rivals { min-width: 240px; }
+
+/* How few nights the show has — the reason it holds the hour, said where
+   there is room to say it in words. */
+.pop-rarity {
+  display: inline-block;
+  font-size: 0.6rem; font-weight: 700; line-height: 1.6;
+  padding: 0 6px; border-radius: 999px;
+  background: color-mix(in srgb, var(--muted) 14%, transparent);
+  color: var(--muted);
+}
+.pop-rarity--rare {
+  background: color-mix(in srgb, var(--violet) 18%, transparent);
+  color: var(--violet-dark);
+}
+
+/* The four answers lead the popup, as pictures: the page's own label names
+   each one on a rest of the pointer, and the hint below them names all four
+   until the reader has used one. */
+.pop-verdicts {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px;
+  margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid var(--line);
+}
+.vb {
+  display: flex; align-items: center; justify-content: center;
+  height: 34px; padding: 0;
+  font: inherit; font-size: 1.05rem; line-height: 1;
+  border: 1px solid var(--line); border-radius: 9px;
+  background: var(--paper); color: var(--ink);
+}
+/* An emoji face first, so a heart is drawn red rather than as a text glyph. */
+.vb-mark { font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", emoji, sans-serif; }
+.vb:hover { border-color: var(--violet); background: color-mix(in srgb, var(--violet) 8%, var(--paper)); }
+.vb:focus-visible { outline: 2px solid var(--violet); outline-offset: 1px; }
+.vb.is-on { border-color: var(--ok); background: color-mix(in srgb, var(--ok) 16%, var(--paper)); }
+.vb--noTime:hover, .vb--noShow:hover { border-color: var(--bad, #c2410c); background: color-mix(in srgb, var(--bad, #c2410c) 8%, var(--paper)); }
+.pop-hint {
+  margin: 0 0 8px; padding: 6px 8px; border-radius: 7px;
+  font-size: 0.66rem; line-height: 1.35;
+  background: color-mix(in srgb, var(--violet) 10%, var(--paper)); color: var(--ink);
+}
+
+/* The travel between two shows, in a sentence. */
+.cal-pop--preview.cal-pop--leg { width: 240px; }
+.leg-card { display: flex; gap: 8px; align-items: flex-start; margin: 0; font-size: 0.72rem; line-height: 1.4; }
+.leg-card-emoji { font-size: 1.1rem; line-height: 1; }
+.leg-card-words { display: flex; flex-direction: column; gap: 1px; }
+.leg-card-trip { font-weight: 700; margin-bottom: 2px; }
+.leg-card-margin { margin-top: 3px; }
+.leg-card-margin { color: var(--muted); }
+
+/* The page's one tooltip (tip.js), in place of the browser's. */
+.tip {
+  position: fixed; z-index: 60; max-width: 240px; pointer-events: none;
+  padding: 4px 8px; border-radius: 6px;
+  font-size: 0.66rem; line-height: 1.35;
+  background: var(--ink); color: var(--paper);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.18);
+}
+.tip[hidden] { display: none; }
+
+/* --- the drawer ----------------------------------------------------------- */
+/* The grid and the programme, one fold back. Closed it is a single line; open
+   it is the board the Fringe planner leads with, unchanged. */
+.drawer { margin-top: 18px; }
+.drawer > .panel { margin-top: 10px; }
+.drawer-summary {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 14px; border-radius: 12px;
+  background: var(--paper); border: 1px solid var(--line);
+  list-style: none;
+}
+.drawer-summary::-webkit-details-marker { display: none; }
+.drawer-summary:hover { border-color: var(--violet); }
+.drawer-caret { color: var(--muted); transition: transform 0.15s ease; }
+.drawer[open] .drawer-caret { transform: rotate(90deg); }
+.drawer-title { font-family: var(--display); font-weight: 700; font-size: 0.86rem; }
+.drawer-count { margin-inline-start: auto; color: var(--muted); font-size: 0.72rem; }
+
+/* --- the trip's city ------------------------------------------------------ */
+/* Four short lists side by side, two by two on a narrow screen: a name that
+   links out, and one line under it saying what and how far. */
+.guide-body {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px 22px; padding: 16px 18px;
+}
+.guide-head {
+  display: flex; align-items: center; gap: 6px; margin: 0 0 8px;
+  font-family: var(--display); font-size: 0.82rem; font-weight: 700;
+}
+.guide-emoji { font-size: 1.05rem; }
+.guide-list ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
+.guide-item { display: grid; gap: 1px; min-width: 0; }
+.guide-name {
+  color: var(--ink); font-size: 0.78rem; font-weight: 600; text-decoration: none;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.guide-name:hover { color: var(--violet-dark); text-decoration: underline; }
+.guide-meta {
+  color: var(--muted); font-size: 0.68rem; line-height: 1.35;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+/* The source's own English, its own block so a right-to-left page keeps it
+   whole: aligned with the page, clamped to two lines. */
+.guide-note {
+  color: var(--muted); font-size: 0.68rem; line-height: 1.35;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
+}
+[dir="rtl"] .guide-note { text-align: right; }
+@media (max-width: 560px) {
+  .guide-body { grid-template-columns: 1fr 1fr; gap: 14px; padding: 12px; }
+}
+
+/* --- right to left -------------------------------------------------------- */
+/* The block's rows are flex tracks and follow the page's direction on their
+   own; what is left is the accent stripe, which plan.css states as a side and
+   this page's own [dir] block already moves — restated here only because the
+   padding changed with the four-row layout. */
+[dir="rtl"] .sch-show { padding: 3px 9px 3px 5px; }
+
+[dir="rtl"] .drawer-caret { transform: scaleX(-1); }
+[dir="rtl"] .drawer[open] .drawer-caret { transform: scaleX(-1) rotate(90deg); }
+/* The calendar never scrolls sideways: every day of the trip shares the
+   width there is, however narrow that makes a column, and a column stops at
+   --sch-day-max so a wide screen with a short trip doesn't stretch a day into
+   a banner. */
+:root {
+  --sch-day-max: 260px;
+}
+.schedule {
+  min-width: 0;
+}
+.sch-day {
+  min-width: 0;
+  max-width: var(--sch-day-max);
+}
+
+/* --- the preference questions ---------------------------------------------
+ *
+ * The row above the calendar: one chip per question, naming its answer, and a
+ * panel behind each that floats over the calendar with the picture answers and
+ * the exact numbers. It has
+ * no counterpart in the Fringe planner's stylesheet — that page states its
+ * preferences as a strip of fields — so all of it is here.
+ */
+/* The Fringe planner rules its result off from the heading and paragraph above
+   it. There is no heading here, so the rule would separate the card's own edge
+   from the first question. */
+.plan-result {
+  margin-top: 0;
+  border-top: none;
+  padding-top: 0;
+}
+.prefs {
+  position: relative;
+  z-index: 30;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.pref {
+  position: relative;
+}
+/* The chip: the question in small type over its answer, one line of each
+   whatever the answer is, so the row never grows. */
+.pref-chip {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-content: center;
+  align-items: center;
+  column-gap: 10px;
+  min-width: 132px;
+  /* A whole number of pixels, so the calendar under the row starts on a pixel
+     boundary rather than wherever two lines of type happen to end. */
+  box-sizing: border-box;
+  height: 54px;
+  padding: 6px 12px 7px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  text-align: start;
+}
+.pref-chip:hover,
+.pref.is-open .pref-chip {
+  border-color: var(--violet);
+}
+.pref-chip:focus-visible {
+  outline: 3px solid var(--violet);
+  outline-offset: 2px;
+}
+.pref-chip .pref-ask {
+  grid-column: 1;
+  font-family: inherit;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.pref-answer {
+  grid-column: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 800;
+  font-size: 0.92rem;
+  color: var(--violet-dark);
+  white-space: nowrap;
+}
+/* A chip whose answer who-is-coming filled in says so, beside its question. */
+.pref-suggested {
+  display: none;
+  margin-inline-start: 4px;
+  font-size: 0.66rem;
+}
+.pref.is-suggested .pref-suggested {
+  display: inline;
+}
+.pref.is-suggested .pref-answer {
+  font-style: italic;
+}
+.pref-ages {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+.pref-ages-label {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+.pref-age {
+  min-width: 34px;
+  padding: 4px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.78rem;
+}
+.pref-age.is-on {
+  border-color: var(--violet);
+  background: color-mix(in srgb, var(--violet) 14%, var(--paper));
+  color: var(--violet-dark);
+  font-weight: 700;
+}
+.pref-caret {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  justify-self: end;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+.pref.is-open .pref-caret {
+  transform: rotate(180deg);
+}
+/* The panel floats: it is out of the flow, so however much it holds the
+   calendar under it stays where it was. */
+.pref-panel {
+  position: absolute;
+  top: calc(100% + 6px);
+  inset-inline-start: 0;
+  width: min(460px, calc(100vw - 32px));
+  max-height: min(520px, 70vh);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--paper);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
+}
+.pref-panel[hidden] {
+  display: none;
+}
+/* The last two chips sit near the row's far end; their panels open towards
+   the start so they stay on screen. */
+.pref:nth-last-child(-n + 2) .pref-panel {
+  inset-inline-start: auto;
+  inset-inline-end: 0;
+}
+.pref-answers--kinds {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+}
+.pref-answers--kinds .pref-pick {
+  max-width: none;
+}
+.pref-checks {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.pref-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+.fest-dot {
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--festival-colour, var(--muted));
+}
+/* The corner above the hours holds the night's fold: a big plus that opens
+   23:00 to 08:00, with how many things it hides. */
+.sch-gutter-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sch-night {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--paper);
+  color: var(--violet-dark);
+  font: inherit;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.sch-night:hover,
+.sch-night:focus-visible {
+  border-color: var(--violet);
+  outline: none;
+}
+.sch-night-count {
+  position: absolute;
+  top: -5px;
+  inset-inline-end: -7px;
+  min-width: 16px;
+  padding: 1px 4px;
+  border-radius: 999px;
+  background: var(--violet);
+  color: #fff;
+  font-size: 0.6rem;
+}
+
+/* A block the calendar just lost, drawn once more while it shrinks away. */
+.sch-ghost {
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* A festival in the festivals chip carries the stripe its shows carry on the
+   calendar, at the same width, beside its name and how far it is. */
+.fest-stripe {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 4px;
+  min-height: 1.4em;
+  border-radius: 2px;
+  background: var(--festival-colour, var(--muted));
+}
+.fest-row {
+  align-items: flex-start;
+}
+/* Online shows sit in the festivals list like a festival of their own, a
+   picture where a festival's stripe would be. */
+.fest-row--online {
+  margin-top: 4px;
+  padding-top: 6px;
+  border-top: 1px solid var(--line);
+}
+.fest-online {
+  flex: 0 0 auto;
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+.fest-row input {
+  margin-top: 3px;
+}
+.fest-words {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.fest-km {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+.fest-row--out {
+  opacity: 0.6;
+  /* No checkbox: the stripe sits where the others' names start. */
+  padding-inline-start: 21px;
+}
+.pref-tags,
+.pref-variety {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+}
+.pref-tag-find {
+  height: 32px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.82rem;
+}
+.pref-tag-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.pref-tag-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.pref-tag-festival {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+.pref-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.pref-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+.pref-tag:hover {
+  border-color: var(--violet);
+}
+.pref-tag:focus-visible {
+  outline: 3px solid var(--violet);
+  outline-offset: 2px;
+}
+.pref-tag.is-only {
+  border-color: var(--violet);
+  background: color-mix(in srgb, var(--violet) 14%, var(--paper));
+  color: var(--violet-dark);
+}
+.pref-tag.is-out {
+  border-style: dashed;
+  color: var(--muted);
+  text-decoration: line-through;
+}
+.pref-tag-mark {
+  font-weight: 800;
+  text-decoration: none;
+}
+.pref-answers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+/* An answer is its picture first: the word under it names the picture rather
+   than the other way round, which is what makes the row scannable without
+   being read. */
+.pref-pick {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+  min-width: 66px;
+  max-width: 108px;
+  padding: 8px 8px 6px;
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+}
+.pref-pick:hover:not([disabled]) {
+  border-color: var(--violet);
+}
+.pref-pick.is-on {
+  border-color: var(--violet);
+  background: color-mix(in srgb, var(--violet) 14%, var(--paper));
+  color: var(--violet-dark);
+}
+.pref-pick[disabled] {
+  opacity: 0.45;
+}
+.pref-pick:focus-visible {
+  outline: 3px solid var(--violet);
+  outline-offset: 2px;
+}
+.pref-ico {
+  font-size: 1.45rem;
+  line-height: 1.1;
+}
+.pref-word {
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+.pref-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.pref-row--soon {
+  justify-content: space-between;
+}
+.pref-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+/* A control the page is honest about not having wired yet — see leaf 21.4. */
+.pref-soon {
+  padding: 1px 7px;
+  border: 1px dashed var(--line);
+  border-radius: 999px;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.pref-note {
+  margin: 0;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.pref-meal {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.pref-meal-on {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.pref-meal-times,
+.pref-meal-place {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.pref-place {
+  width: 128px;
+  height: 30px;
+  padding: 0 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.8rem;
+}
+.pref-place:focus-visible {
+  outline: 3px solid var(--violet);
+  outline-offset: 2px;
+}
+.prefs .opt-select {
+  height: 30px;
+  padding: 0 8px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+}
+
+/* --- the day's two lines ------------------------------------------------
+ *
+ * The day's two boundaries, drawn on the calendar. The lines, their grips and
+ * their flags are plan.css's own components (.sch-dayline / .sch-zone), so
+ * this is the overlay that holds them.
+ */
+.sch-blockers {
+  position: absolute;
+  inset-inline-end: 0;
+  z-index: 6;
+  pointer-events: none;
+}
+.sch-dayline:focus-visible {
+  outline: none;
+}
+.sch-dayline:focus-visible .dl-flag {
+  background: var(--violet);
+  color: #fff;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--violet) 40%, transparent);
+}
+/* A boundary further out than the axis reaches sits on the axis edge; its flag
+   still carries the hour it really holds, so the two never disagree. */
+.sch-dayline.is-beyond {
+  border-top-style: dashed;
+}
+/* A start boundary drawn on the axis top has nothing above it to hang its flag
+   in, so the flag drops below the line rather than over the day headers. */
+.sch-dayline--start.is-beyond .dl-flag {
+  bottom: auto;
+  top: 6px;
+}
+/* Likewise an end boundary on the axis bottom lifts its flag above the line:
+   hung below, it would stick out of the calendar and give it a scrollbar. */
+.sch-dayline--end.is-floor .dl-flag {
+  top: auto;
+  bottom: 6px;
+}
+/* The calendar scrolls sideways when its days outgrow the page, which makes
+   it a scroll box on both axes: room below the axis keeps what straddles the
+   bottom line (the last hour's label, the end line's grip) inside it, so it
+   never scrolls up and down. */
+.schedule {
+  padding-bottom: 10px;
+}
+
+/* The hatch plan.css draws over its zones is tuned for a white board; in the
+   dark it disappears into it. */
+.sch-zone {
+  background: repeating-linear-gradient(
+    -45deg,
+    light-dark(rgba(16, 24, 40, 0.05), rgba(255, 255, 255, 0.05)) 0 6px,
+    light-dark(rgba(16, 24, 40, 0.02), rgba(255, 255, 255, 0.015)) 6px 12px
+  );
+}
+
+/* --- the reader's own days ------------------------------------------------- */
+
+/* A day's head is where the reader says what the day is for. */
+.sch-day-head[data-day-head]:hover .sch-dow,
+.sch-day-head[data-day-head]:focus-visible .sch-dow {
+  color: var(--violet-dark);
+  text-decoration: underline;
+}
+.sch-day-head[data-day-head]:focus-visible {
+  outline: 2px solid var(--violet);
+  outline-offset: -2px;
+}
+
+/* A kept day — rest or an excursion — is one block over its column; a day
+   given to a festival nearby keeps its shows and says so in a strip at its
+   top, in that festival's colour. Personal blocks carry no festival stripe:
+   they are hatched, with their emoji. */
+.sch-keep {
+  position: absolute;
+  inset-inline: 3px;
+  top: 0;
+  z-index: 3;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 18px;
+  border: 1px dashed light-dark(#c9c4dc, #4a4560);
+  border-radius: 10px;
+  background: repeating-linear-gradient(
+    -45deg,
+    light-dark(#f6f4fd, #1f1b2b) 0 8px,
+    light-dark(#fbfaff, #191622) 8px 16px
+  );
+  color: var(--ink);
+  touch-action: none;
+}
+.sch-keep--festival {
+  height: auto;
+  padding: 3px 6px;
+  border: 0;
+  border-inline-start: 4px solid var(--festival-colour, var(--violet));
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--festival-colour, var(--violet)) 14%, var(--paper));
+  justify-content: flex-start;
+}
+.sch-day--festival .sch-body {
+  background-color: color-mix(in srgb, var(--festival-colour, var(--violet)) 5%, transparent);
+}
+.keep-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--paper);
+  font-size: 0.66rem;
+  font-weight: 700;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.sch-keep--festival .keep-label {
+  min-width: 0;
+  padding: 0;
+  background: none;
+}
+/* A kept day's title is often wider than its day: it ends in an ellipsis at
+   the column's edge rather than running over the next day's shows. */
+.sch-keep {
+  overflow: hidden;
+}
+.keep-label {
+  max-width: 100%;
+}
+.keep-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Days in a row kept for the same thing are one stretch: their blocks meet
+   across the column edges and one title spans them (titleKeptRuns()). */
+.sch-keep--run .keep-label {
+  visibility: hidden;
+}
+.sch-keep--run-first {
+  inset-inline-end: 0;
+  border-start-end-radius: 0;
+  border-end-end-radius: 0;
+}
+.sch-keep--run-mid {
+  inset-inline: 0;
+  border-radius: 0;
+}
+.sch-keep--run-last {
+  inset-inline-start: 0;
+  border-start-start-radius: 0;
+  border-end-start-radius: 0;
+}
+.sch-keep--festival.sch-keep--run-mid,
+.sch-keep--festival.sch-keep--run-last {
+  border-inline-start-width: 0;
+}
+.sch-keep-title {
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  padding-inline: 6px;
+  overflow: hidden;
+  pointer-events: none;
+}
+.sch-keep-title--festival {
+  justify-content: flex-start;
+  padding-inline: 10px 6px;
+}
+.sch-keep-title--festival .keep-label {
+  padding: 0;
+  background: none;
+}
+.keep-emoji {
+  font-size: 0.9rem;
+}
+.sch-keep:focus-visible,
+.sch-own:focus-visible {
+  outline: 2px solid var(--violet);
+  outline-offset: 1px;
+}
+
+.sch-own {
+  position: absolute;
+  inset-inline: 3px;
+  z-index: 2;
+  overflow: hidden;
+  padding: 2px 6px;
+  border: 1px solid light-dark(#d9d3ea, #3c3750);
+  border-radius: 6px;
+  background: repeating-linear-gradient(
+    -45deg,
+    light-dark(#f7f5fc, #1e1a29) 0 6px,
+    light-dark(#fdfcff, #181521) 6px 12px
+  );
+  color: var(--ink);
+  font-size: 0.62rem;
+  line-height: 1.3;
+  touch-action: none;
+}
+.sch-own--meal {
+  background: repeating-linear-gradient(
+    -45deg,
+    light-dark(#fff6e8, #2a2114) 0 6px,
+    light-dark(#fffbf4, #221b11) 6px 12px
+  );
+  border-color: light-dark(#f1d9b3, #4d3b20);
+}
+.sch-own--flight {
+  border-style: dashed;
+  background: repeating-linear-gradient(
+    -45deg,
+    light-dark(#eef4fb, #172030) 0 6px,
+    light-dark(#f7fafd, #121a27) 6px 12px
+  );
+  border-color: light-dark(#c4d6ea, #2c3d55);
+}
+.sch-own--out {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+/* How the reader gets between the airport and town, under the flight. */
+.own-ground {
+  display: block;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.own-ground--ask {
+  color: var(--violet-dark);
+  text-decoration: underline dotted;
+}
+.sch-own--flight .own-label {
+  white-space: normal;
+}
+.own-label {
+  display: block;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.own-time {
+  display: block;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.own-resize {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 6px;
+}
+.sch-add-anchor {
+  position: absolute;
+  inset-inline: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+/* The menu a day's head, a kept day or a block of the reader's own opens. */
+.cal-menu {
+  display: grid;
+  gap: 2px;
+  min-width: 170px;
+  padding: 6px;
+}
+.cal-menu .menu-title {
+  padding: 2px 6px 4px;
+  color: var(--muted);
+  font-size: 0.64rem;
+  font-weight: 700;
+}
+.cal-menu .menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 8px;
+  border: 0;
+  border-radius: 7px;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.72rem;
+  text-align: start;
+}
+.cal-menu .menu-item[data-festival-colour] {
+  box-shadow: inset 3px 0 0 var(--festival-colour);
+}
+.cal-menu .menu-item:hover,
+.cal-menu .menu-item:focus-visible {
+  background: color-mix(in srgb, var(--violet) 10%, transparent);
+  outline: none;
+}
+.cal-menu .menu-item.is-on {
+  font-weight: 700;
+  color: var(--violet-dark);
+}
+/* A choice beside where to book it. */
+.cal-menu .menu-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.cal-menu .menu-row .menu-item {
+  flex: 1;
+}
+.cal-menu .menu-book {
+  color: var(--violet-dark);
+  font-size: 0.64rem;
+  white-space: nowrap;
+}
+.menu-emoji {
+  width: 1.2em;
+  text-align: center;
+}
+
+/* --- the year ------------------------------------------------------------ */
+
+/* Beside the year, what narrows the festivals it draws (23.24): a globe with
+   the place menu under it at the start, the types with the chosen one's
+   subtypes under them at the end. On a narrow screen the two sit side by
+   side above the year. */
+.timeline {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-areas: "types main place";
+  column-gap: 14px;
+  align-items: start;
+}
+.tl-filters {
+  display: contents;
+}
+.tl-main {
+  grid-area: main;
+  min-width: 0;
+}
+/* One family of capsules speaks for every choice on the bar: the globe's
+   badges and its way back out, the chosen type's subtypes, and the trip's
+   length on the year. A chosen one fills with the page's colour. */
+.tl-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 20px;
+  padding: 0 8px;
+  border: 1.5px solid color-mix(in srgb, var(--violet) 45%, var(--line));
+  border-radius: 999px;
+  background: var(--paper);
+  box-shadow: 0 1px 3px color-mix(in srgb, var(--ink) 22%, transparent);
+  font: inherit;
+  font-size: 0.66rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--violet-dark);
+  white-space: nowrap;
+}
+button.tl-chip {
+  cursor: pointer;
+}
+button.tl-chip:hover,
+button.tl-chip:focus-visible {
+  border-color: var(--violet);
+}
+button.tl-chip:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--violet) 40%, transparent);
+  outline-offset: 1px;
+}
+.tl-chip.is-picked,
+.tl-chip[aria-checked="true"] {
+  border-color: var(--violet);
+  background: var(--violet);
+  color: var(--paper);
+}
+
+/* The types and the globe stand level with the year's first row, as tall as
+   its rows. */
+.tl-place {
+  grid-area: place;
+  position: relative;
+  width: 164px;
+  height: 180px;
+  margin-top: 26px;
+}
+/* The globe: a desk globe, its sphere shaded and held in a brass ring on a
+   wooden stand. Its colours are read by the canvas through a probe placed
+   here. */
+.tl-lens {
+  position: relative;
+  width: 132px;
+  height: 132px;
+  margin-inline: auto;
+  --globe-sea: light-dark(#3d7fb8, #2a5f8c);
+  --globe-sea-deep: light-dark(#16466f, #0c2740);
+  --globe-dot: light-dark(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.06));
+  --globe-land: light-dark(#e3cf96, #b9a46c);
+  --globe-land-shadow: light-dark(rgba(60, 40, 10, 0.45), rgba(0, 0, 0, 0.55));
+  --globe-lit: color-mix(in srgb, var(--violet) 50%, var(--paper));
+  --globe-picked: var(--violet);
+  --globe-line: light-dark(rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.14));
+  --globe-ring: transparent;
+  --globe-home: var(--paper);
+  --globe-home-ink: var(--ink);
+}
+.tl-lens[hidden] {
+  display: none;
+}
+/* Light falls on the globe from the upper left. */
+.tl-lens::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.5) 0, rgba(255, 255, 255, 0.1) 18%, transparent 40%),
+    radial-gradient(circle at 50% 50%, transparent 56%, rgba(8, 20, 40, 0.45) 100%);
+  box-shadow: inset -10px -12px 22px rgba(0, 0, 0, 0.28);
+}
+.tl-badges,
+.tl-up-slot {
+  z-index: 1;
+}
+.tl-stand {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 173px;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 2;
+}
+.tl-globe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 6px 16px color-mix(in srgb, var(--violet) 25%, transparent);
+  cursor: grab;
+  touch-action: none;
+  /* A layer of its own lands on whole pixels, so the drawing is never
+     resampled at whatever fraction of a pixel the page puts it on. */
+  will-change: transform;
+}
+.tl-lens.is-dragging .tl-globe {
+  cursor: grabbing;
+}
+.tl-badges {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.tl-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  padding: 0 2px 0 6px;
+  font-size: 0.6rem;
+  pointer-events: auto;
+  touch-action: none;
+}
+.tl-badge[hidden] {
+  display: none;
+}
+.tl-badge-count {
+  min-width: 13px;
+  height: 13px;
+  padding: 0 3px;
+  border-radius: 999px;
+  background: var(--violet);
+  color: var(--paper);
+  font-size: 0.56rem;
+  line-height: 13px;
+  text-align: center;
+}
+.tl-badge.is-picked .tl-badge-count {
+  background: var(--paper);
+  color: var(--violet-dark);
+}
+/* A place the chosen type has nothing in stays a way through, faded. */
+.tl-badge.is-empty:not(:hover) {
+  opacity: 0.6;
+}
+/* Crowded out, a badge keeps only its count. */
+.tl-badge.is-compact {
+  padding: 0 1.5px;
+}
+.tl-badge.is-compact .tl-badge-name {
+  display: none;
+}
+/* The way back out, pinned to the lens's upper corner. */
+.tl-up-slot {
+  position: absolute;
+  top: -6px;
+  inset-inline-start: -8px;
+}
+.tl-up-arrow {
+  width: 5px;
+  height: 5px;
+  border-inline-start: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+}
+[dir="rtl"] .tl-up-arrow {
+  transform: rotate(-45deg);
+}
+
+/* The types: nine pictured tiles; once one is chosen it becomes the header,
+   the other eight a row beneath it, and its subtypes chips under them. */
+.tl-types {
+  grid-area: types;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 212px;
+  margin-top: 26px;
+}
+.tl-type-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 68px);
+  gap: 4px;
+}
+.tl-type {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+  padding: 3px 0 2px;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+.tl-type img {
+  display: block;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(16, 24, 40, 0.18);
+  transition: transform 0.15s ease;
+}
+.tl-type:hover img {
+  transform: translateY(-2px) rotate(-3deg);
+}
+/* A type in the grid is its picture alone; its name is on its card (23.41). */
+.tl-type[aria-pressed="false"] .tl-type-name {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.tl-type-name {
+  max-width: 66px;
+  overflow: hidden;
+  font-size: 0.62rem;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/* How many festivals the chosen place holds of the type, on its corner. */
+.tl-type-count {
+  position: absolute;
+  top: 0;
+  inset-inline-end: 8px;
+  min-width: 15px;
+  height: 15px;
+  padding: 0 3px;
+  border: 1.5px solid var(--paper);
+  border-radius: 999px;
+  background: var(--violet);
+  color: var(--paper);
+  font-size: 0.56rem;
+  font-weight: 800;
+  line-height: 12px;
+  text-align: center;
+}
+.tl-type.is-empty {
+  opacity: 0.45;
+}
+.tl-type.is-empty img {
+  filter: grayscale(1);
+}
+.tl-type.is-empty .tl-type-count {
+  display: none;
+}
+.tl-type:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--violet) 40%, transparent);
+  outline-offset: 1px;
+}
+.tl-types.has-pick .tl-type-grid {
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 6px 3px;
+}
+.tl-types.has-pick .tl-type {
+  padding: 1px 0;
+  border-radius: 9px;
+}
+.tl-types.has-pick .tl-type[aria-pressed="false"] img {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.18);
+}
+.tl-types.has-pick .tl-type[aria-pressed="false"] .tl-type-name,
+.tl-types.has-pick .tl-type[aria-pressed="false"] .tl-type-count {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.tl-types.has-pick .tl-type[aria-pressed="false"]:not(:hover) {
+  opacity: 0.6;
+}
+/* The chosen type: the header, its picture beside its name and count, in the
+   same ring as the globe's lens. */
+.tl-type[aria-pressed="true"] {
+  grid-column: 1 / -1;
+  order: -1;
+  flex-direction: row;
+  gap: 10px;
+  padding-block: 5px;
+  padding-inline: 5px 26px;
+  border: 3px solid var(--violet);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--violet) 10%, var(--paper));
+  box-shadow: 0 6px 16px color-mix(in srgb, var(--violet) 25%, transparent);
+}
+.tl-type[aria-pressed="true"] img {
+  width: 40px;
+  height: 40px;
+}
+.tl-type[aria-pressed="true"] .tl-type-name {
+  max-width: none;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+.tl-type[aria-pressed="true"] .tl-type-count {
+  position: static;
+  margin-inline-start: auto;
+  border: 0;
+  min-width: 20px;
+  height: 20px;
+  font-size: 0.7rem;
+  line-height: 20px;
+}
+.tl-type[aria-pressed="true"]::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  inset-inline-end: 6px;
+  width: 9px;
+  height: 9px;
+  background:
+    linear-gradient(45deg, transparent 43%, var(--muted) 43% 57%, transparent 57%),
+    linear-gradient(-45deg, transparent 43%, var(--muted) 43% 57%, transparent 57%);
+}
+.tl-subtypes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.tl-subtypes:empty {
+  display: none;
+}
+@media (max-width: 620px) {
+  .timeline {
+    grid-template-columns: auto auto;
+    grid-template-areas: "types place" "main main";
+    justify-content: space-between;
+    column-gap: 6px;
+    row-gap: 12px;
+  }
+  .tl-place {
+    width: 112px;
+    height: 124px;
+  }
+  .tl-lens {
+    width: 90px;
+    height: 90px;
+  }
+  .tl-stand {
+    height: 118px;
+  }
+  .tl-types {
+    width: 206px;
+  }
+  .tl-type-grid {
+    grid-template-columns: repeat(3, 66px);
+    gap: 3px;
+  }
+  .tl-type img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* The strip across the top: twelve months, a bar per festival edition. Every
+   position is logical, so a right-to-left page runs the year from the right. */
+.timeline {
+  margin: 14px 0 4px;
+  padding: 36px 12px 8px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  /* Translucent, so the city behind the top of the page (23.17) shows
+     through the year it is part of. */
+  background: color-mix(in srgb, var(--paper) 78%, transparent);
+  box-shadow: var(--shadow-soft);
+}
+.tl-year {
+  position: relative;
+}
+.tl-months {
+  position: relative;
+  height: 18px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 8px;
+}
+/* The reader's own public holidays: a green orb on the months for each break
+   they make, sized for the eye rather than the strip's scale, so it may sit
+   over a month's name. */
+.tl-orb {
+  position: absolute;
+  top: 3px;
+  height: 11px;
+  padding: 0;
+  border: 1.5px solid var(--paper);
+  border-radius: 999px;
+  background: radial-gradient(circle at 35% 35%, var(--orb-shine), var(--orb) 70%);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--ink) 25%, transparent);
+  z-index: 2;
+}
+.tl-orb:hover,
+.tl-orb:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--orb) 45%, transparent);
+  outline-offset: 1px;
+}
+:root {
+  --orb: light-dark(#2f9e57, #4cc27a);
+  --orb-shine: light-dark(#8fdcaa, #a6f0c2);
+}
+
+/* The card a festival or an orb shows when pointed at. */
+.tl-card,
+.tl-type-card {
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 320px;
+  padding: 8px 11px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper);
+  box-shadow: var(--shadow-soft);
+  font-size: 0.78rem;
+  color: var(--ink);
+  pointer-events: none;
+}
+.tl-type-card {
+  z-index: 6;
+  width: max-content;
+  max-width: 260px;
+}
+.tl-card[hidden],
+.tl-type-card[hidden] {
+  display: none;
+}
+.tl-card-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+.tl-card-line.is-muted {
+  color: var(--muted);
+}
+.tl-card-line.is-good {
+  color: var(--ok-text, #047857);
+  font-weight: 700;
+}
+
+.tl-month {
+  position: absolute;
+  top: 0;
+  padding-inline-start: 4px;
+  border-inline-start: 1px solid var(--line);
+  font-size: 0.72rem;
+  line-height: 18px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.tl-month--first {
+  border-inline-start: 0;
+  padding-inline-start: 0;
+}
+/* The festivals' rows keep one height, as tall as the types and the globe
+   beside them; the trip's band, its ends and the travel pictures lie over
+   them. */
+.tl-track {
+  position: relative;
+}
+.tl-rows {
+  position: relative;
+}
+.tl-period {
+  position: absolute;
+  top: -8px;
+  bottom: 0;
+  background: color-mix(in srgb, var(--violet) 14%, transparent);
+  border-radius: 4px;
+}
+/* Today: a stick figure standing on the months' line, holding up a sign. It
+   shifts about a little, and cheers when the reader makes a choice. */
+.tl-today {
+  position: absolute;
+  bottom: -1px;
+  width: 0;
+  height: 0;
+  color: var(--ink);
+  z-index: 3;
+  pointer-events: none;
+}
+.tl-dude {
+  position: absolute;
+  bottom: 0;
+  left: -10px;
+  overflow: visible;
+}
+.tl-sign {
+  position: absolute;
+  bottom: 33px;
+  left: 6px;
+  transform: translateX(-50%);
+  transform-origin: 50% calc(100% + 10px);
+  padding: 0 4px;
+  border: 1.5px solid var(--ink);
+  border-radius: 3px;
+  background: var(--paper);
+  font-size: 0.6rem;
+  font-weight: 800;
+  line-height: 12px;
+  white-space: nowrap;
+  animation: tl-sign-sway 3.2s ease-in-out infinite;
+}
+.tl-sign::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 1.5px;
+  height: 10px;
+  margin-left: -0.75px;
+  background: var(--ink);
+}
+.tl-dude .dude-arm {
+  transform-box: view-box;
+  transform-origin: 10px 12px;
+  animation: tl-arm-swing 2.4s ease-in-out infinite;
+}
+.tl-dude .dude-leg {
+  transform-box: view-box;
+  transform-origin: 10px 21px;
+  animation: tl-leg-tap 1.9s ease-in-out infinite;
+}
+.tl-today.is-cheering .tl-dude,
+.tl-today.is-cheering .tl-sign {
+  animation: tl-cheer 0.55s ease-out 2;
+}
+.tl-today.is-cheering .dude-arm {
+  animation: tl-arm-cheer 1.1s ease-out 1;
+}
+@keyframes tl-sign-sway {
+  0%, 100% { transform: translateX(-50%) rotate(-4deg); }
+  50% { transform: translateX(-50%) rotate(4deg); }
+}
+@keyframes tl-arm-swing {
+  0%, 100% { transform: rotate(-10deg); }
+  50% { transform: rotate(12deg); }
+}
+@keyframes tl-leg-tap {
+  0%, 70%, 100% { transform: rotate(0deg); }
+  80% { transform: rotate(-8deg); }
+}
+@keyframes tl-cheer {
+  0%, 100% { translate: 0 0; }
+  40% { translate: 0 -5px; }
+}
+@keyframes tl-arm-cheer {
+  0%, 100% { transform: rotate(0deg); }
+  20%, 80% { transform: rotate(125deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tl-sign,
+  .tl-dude .dude-arm,
+  .tl-dude .dude-leg,
+  .tl-today.is-cheering .tl-dude,
+  .tl-today.is-cheering .tl-sign,
+  .tl-today.is-cheering .dude-arm {
+    animation: none;
+  }
+}
+.timeline {
+  --type-academic: #3b82f6;
+  --type-art: #14b8a6;
+  --type-comedy: #facc15;
+  --type-dance: #ec4899;
+  --type-film: #ef4444;
+  --type-mixed: #6366f1;
+  --type-music: #9b5cf6;
+  --type-sports: #22c55e;
+  --type-theatre: #f59e0b;
+}
+/* A festival is a bar in its type's colour, at its dates, on its row. One the
+   rows have no room for lies faint behind them; changing the filters moves
+   each to its new place, and one that comes or goes fades (23.39). */
+.tl-item {
+  --tone: var(--muted);
+  position: absolute;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: var(--ink);
+  white-space: nowrap;
+  transition:
+    inset-inline-start 0.45s ease,
+    width 0.45s ease,
+    top 0.45s ease,
+    height 0.45s ease,
+    opacity 0.45s ease,
+    filter 0.45s ease;
+}
+.tl-item[data-type="academic"] { --tone: var(--type-academic); }
+.tl-item[data-type="art"] { --tone: var(--type-art); }
+.tl-item[data-type="comedy"] { --tone: var(--type-comedy); }
+.tl-item[data-type="dance"] { --tone: var(--type-dance); }
+.tl-item[data-type="film"] { --tone: var(--type-film); }
+.tl-item[data-type="mixed"] { --tone: var(--type-mixed); }
+.tl-item[data-type="music"] { --tone: var(--type-music); }
+.tl-item[data-type="sports"] { --tone: var(--type-sports); }
+.tl-item[data-type="theatre"] { --tone: var(--type-theatre); }
+.tl-item.is-faint {
+  opacity: 0.22;
+  filter: saturate(0.45);
+  pointer-events: none;
+}
+.tl-item.is-entering,
+.tl-item.is-leaving {
+  opacity: 0;
+}
+.tl-item.is-leaving {
+  pointer-events: none;
+}
+.tl-track.is-lens .tl-item {
+  transition: opacity 0.45s ease, filter 0.45s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tl-item {
+    transition: none;
+  }
+}
+.tl-bar {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--tone);
+}
+.tl-item.is-empty .tl-bar {
+  background: color-mix(in srgb, var(--tone) 18%, var(--paper));
+  box-shadow: inset 0 0 0 2px var(--tone);
+}
+.tl-item:hover .tl-bar,
+.tl-item:focus-visible .tl-bar {
+  box-shadow: 0 0 0 2px var(--paper), 0 0 0 3.5px var(--tone);
+}
+/* A name is drawn only while every name fits beside its bar, or inside a bar
+   the lens has grown wide enough to hold it. */
+.tl-label {
+  position: absolute;
+  top: 50%;
+  inset-inline-start: calc(100% + 6px);
+  translate: 0 -50%;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--muted);
+  visibility: hidden;
+}
+.tl-item--late .tl-label {
+  inset-inline-start: auto;
+  inset-inline-end: calc(100% + 6px);
+}
+.tl-track.is-named .tl-label {
+  visibility: visible;
+}
+.tl-item:hover .tl-label,
+.tl-item:focus-visible .tl-label {
+  color: var(--ink);
+}
+.tl-track.is-lens .tl-item.is-magnified .tl-label {
+  visibility: visible;
+  inset-inline: 0;
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
+}
+.tl-track.is-lens .tl-item.is-magnified.is-empty .tl-label {
+  color: var(--ink);
+  text-shadow: none;
+}
+.tl-track.is-lens:not(.is-named) .tl-item:not(.is-magnified) .tl-label {
+  visibility: hidden;
+}
+.tl-item.is-focus .tl-bar {
+  box-shadow: 0 0 0 2px var(--paper), 0 0 0 4px var(--violet);
+}
+.tl-item.is-focus .tl-label {
+  color: var(--violet-dark);
+  font-weight: 800;
+}
+.tl-card-name {
+  font-weight: 700;
+}
+.tl-none {
+  margin: 4px 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* --- the trip: its band on the year, its dates, the flights either side ---- */
+
+/* Each end of the trip's band is a handle: a line across the whole strip,
+   months and all, with a grip at its middle to take hold of. */
+.tl-handle {
+  position: absolute;
+  top: -26px;
+  bottom: 0;
+  /* Narrow, so a short trip's band still has room to be taken hold of
+     between its two ends; the grip is wider than the line it sits on. */
+  width: 10px;
+  margin-inline-start: -5px;
+  touch-action: none;
+  z-index: 2;
+}
+.tl-handle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  margin-left: -1px;
+  background: var(--violet);
+}
+/* The planner's own grip (plan.css's .win-edge pill, upright here): two white
+   bars on a violet capsule, running along the line it grabs, at the middle of
+   the rows in view (the handle reaches 26px above them, over the months, and
+   28px below them, over the trip's measure). */
+.tl-grip {
+  position: absolute;
+  top: calc(50% - 1px);
+  left: 50%;
+  width: 12px;
+  height: 26px;
+  transform: translate(-50%, -50%);
+  border-radius: 7px;
+  background-color: var(--violet);
+  background-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff);
+  background-repeat: no-repeat;
+  background-size: 1.5px 12px;
+  background-position: 4px center, 7.5px center;
+  box-shadow: 0 1px 4px rgba(16, 24, 40, 0.3);
+  transition: transform 0.12s ease;
+}
+.tl-handle:hover .tl-grip,
+.tl-handle:focus-visible .tl-grip {
+  transform: translate(-50%, -50%) scale(1.12);
+}
+.tl-handle:focus-visible {
+  outline: none;
+}
+.tl-handle:focus-visible .tl-grip {
+  outline: 3px solid color-mix(in srgb, var(--violet) 45%, transparent);
+  outline-offset: 1px;
+}
+/* Under the rows, the trip measured like a drawing: a line the width of the
+   band, its first and last day at the ends and its length in the middle, in
+   a lane of its own, clear of the months and today's figure. */
+.tl-track.has-trip {
+  padding-bottom: 28px;
+}
+.tl-span {
+  position: absolute;
+  bottom: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3px;
+  transform: translateX(-50%);
+  z-index: 3;
+  pointer-events: none;
+}
+[dir="rtl"] .tl-span {
+  transform: translateX(50%);
+}
+.tl-span::before {
+  content: "";
+  position: absolute;
+  inset-inline: 2px;
+  top: 50%;
+  height: 1.5px;
+  margin-top: -0.75px;
+  background: var(--violet);
+}
+.tl-span .tl-chip {
+  position: relative;
+  height: 18px;
+}
+.tl-day {
+  padding: 0 5px;
+  border-color: var(--violet);
+  background: var(--violet);
+  color: var(--paper);
+}
+/* The way there and back: a large picture beside each end of the trip, just
+   outside its line at the middle of the rows in view, the way out before the
+   first day and home after the last. It covers the festivals it sits over,
+   which lie outside the trip.
+   Until the reader says how they travel it keeps changing between the ways,
+   which is what asks for the click; once said it holds still. */
+.tl-way {
+  position: absolute;
+  top: calc(50% - 14px);
+  width: 52px;
+  height: 52px;
+  padding: 5px;
+  border: 1.5px solid color-mix(in srgb, var(--violet) 35%, var(--line));
+  border-radius: 14px;
+  background: var(--paper);
+  color: var(--violet);
+  box-shadow: var(--shadow-soft);
+  z-index: 2;
+}
+.tl-way[hidden] {
+  display: none;
+}
+.tl-way--from {
+  transform: translate(calc(-100% - 12px), -50%);
+}
+.tl-way--to {
+  transform: translate(12px, -50%);
+}
+[dir="rtl"] .tl-way--from {
+  transform: translate(calc(100% + 12px), -50%);
+}
+[dir="rtl"] .tl-way--to {
+  transform: translate(-12px, -50%);
+}
+.tl-way.is-unsettled {
+  border-style: dashed;
+}
+.tl-way:hover,
+.tl-way:focus-visible {
+  border-color: var(--violet);
+  background: color-mix(in srgb, var(--violet) 8%, var(--paper));
+}
+.tl-way > svg,
+.tl-way .arrive-icons {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.tl-way .arrive-icons {
+  position: relative;
+  opacity: 0.8;
+}
+.tl-way .arrive-icons > svg {
+  width: 100%;
+  height: 100%;
+}
+/* A plane heads along the reader's line: into the trip on the way out, away
+   from it on the way home. */
+.tl-way .way-fly {
+  transform: rotate(90deg);
+}
+[dir="rtl"] .tl-way .way-fly {
+  transform: rotate(-90deg);
+}
+[dir="rtl"] .tl-way .way-drive {
+  transform: scaleX(-1);
+}
+
+/* The travel card, under the strip: where you live, how you travel, and once
+   said, the answer and the flights for a flyer. */
+.travel-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--violet);
+}
+.travel-said {
+  margin: 0;
+  font-weight: 700;
+  color: var(--ink);
+}
+.travel-flights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+.origin-guess {
+  margin: 6px 0 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.flight {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--violet) 5%, var(--paper));
+  font-size: 0.85rem;
+  min-width: 0;
+}
+.flight-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 6px;
+  min-width: 0;
+}
+.flight-plane {
+  flex: 0 0 auto;
+  color: var(--violet);
+}
+/* Taking off on the way out, coming home the other way. The plane points
+   along the reader's line, so a right-to-left page turns it round too. */
+.flight--out .way-fly {
+  transform: rotate(45deg);
+}
+.flight--back .way-fly {
+  transform: rotate(135deg);
+}
+[dir="rtl"] .flight--out .way-fly {
+  transform: rotate(-45deg);
+}
+[dir="rtl"] .flight--back .way-fly {
+  transform: rotate(-135deg);
+}
+[dir="rtl"] .flight .way-drive {
+  transform: scaleX(-1);
+}
+.arrive-icons {
+  position: relative;
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  color: var(--violet);
+  opacity: 0.7;
+}
+.arrive-icons > svg {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: arrive-turn 8s ease-in-out infinite;
+}
+.arrive-icons > svg:first-child {
+  opacity: 1;
+}
+.arrive-icons > .way-train {
+  animation-delay: -6s;
+}
+.arrive-icons > .way-drive {
+  animation-delay: -4s;
+}
+.arrive-icons > .way-local {
+  animation-delay: -2s;
+}
+@keyframes arrive-turn {
+  0%, 21% { opacity: 1; }
+  25%, 96% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .arrive-icons > svg {
+    animation: none;
+  }
+}
+.flight-title {
+  font-weight: 800;
+}
+.flight-day {
+  color: var(--muted);
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+.flight-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+.flight-route {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+.flight-from {
+  width: 4.2em;
+  font: inherit;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 2px 4px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--paper);
+  color: var(--ink);
+}
+.flight-from[aria-invalid="true"] {
+  border-color: #c0392b;
+}
+.flight-arrow {
+  color: var(--muted);
+}
+[dir="rtl"] .flight-arrow {
+  transform: scaleX(-1);
+}
+.flight-fare,
+.flight-search {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 6px;
+  color: var(--ink);
+  text-decoration: none;
+}
+.flight-search {
+  color: var(--violet-dark);
+  font-weight: 700;
+  text-decoration: underline;
+}
+.flight-time,
+.flight-price {
+  font-weight: 800;
+}
+.flight-price {
+  color: var(--violet-dark);
+}
+.flight-dot {
+  color: var(--muted);
+}
+.flight-partner {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+.flight-partner::after {
+  content: " ↗";
+}
+.flight-change {
+  align-self: flex-start;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 0.78rem;
+  color: var(--violet-dark);
+  text-decoration: underline;
+}
+.timeline .origin-card {
+  margin: 12px 0 0;
+}
+
+/* --- what the pool holds -------------------------------------------------- */
+
+.pool-note {
+  margin: 0 0 10px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--violet) 8%, var(--paper));
+  font-size: 0.84rem;
+}
+.pool-line {
+  margin: 2px 0;
+}
+.pool-line--out {
+  color: var(--muted);
+}
+
+/* --- where the reader is coming from ------------------------------------- */
+
+.origin-card {
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  border: 2px solid var(--violet);
+  border-radius: 14px;
+  background: var(--paper);
+}
+.origin-ask {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.02rem;
+}
+.origin-why {
+  margin: 2px 0 10px;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.origin-answers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.origin-abroad {
+  gap: 6px;
+}
+.origin-select {
+  max-width: 190px;
+}
+.origin-skip {
+  margin-top: 8px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 0.8rem;
+  color: var(--violet-dark);
+  text-decoration: underline;
+}
+.origin-status {
+  margin: 6px 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.origin-status:empty {
+  display: none;
+}
+
+/* --- a list too long to draw --------------------------------------------- */
+
+.browse-more {
+  padding: 8px 0 4px;
+  text-align: center;
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+/* A day of the period with nothing on it keeps the Fringe planner's sliver,
+   which this page's wider columns would otherwise override: the day either
+   side of a festival is for travelling, and is drawn as such. */
+.sch-day.sch-day--empty {
+  min-width: 30px;
+}
+
+/* The origin answers are sentences rather than pictures, so they sit in a row
+   with their emoji beside the words. */
+.origin-pick {
+  flex-direction: row;
+  align-items: center;
+  max-width: none;
+  padding: 8px 12px;
+}
+.origin-pick .pref-word {
+  white-space: nowrap;
+}
+
+/* The show's name in the city's own language, beside the programme's. */
+.ss-row-local {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+/* A phone: the year's month names every third month, smaller travel
+ * pictures, and the country list inside its card. */
+@media (max-width: 620px) {
+  .tl-month:not(:nth-child(3n + 1)) {
+    font-size: 0;
+  }
+  .tl-way {
+    width: 40px;
+    height: 40px;
+    padding: 4px;
+  }
+  .origin-abroad {
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+  .origin-select {
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+
+/* A show's edge is its festival's colour, and its kind leads its name; a free
+   show says so in a tag rather than in the edge. */
+.sch-show { --seg: var(--festival-colour, var(--violet)); }
+.sch-kind {
+  margin-inline-end: 3px;
+  font-size: 0.7rem;
+}
+/* Pinned to the card's end corner rather than set in the meta line, so a short
+   card keeps its one line for the name. */
+.sch-free {
+  position: absolute;
+  bottom: 2px;
+  inset-inline-end: 3px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ok) 16%, var(--paper));
+  color: var(--ink);
+  font-size: 0.58rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.fest-legend {
+  display: flex;
+  width: fit-content;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  padding: 8px 4px 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+.fest-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ---- the checkout: the locked shows, gathered to buy ------------------- */
+.checkout {
+  margin-top: 18px;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--paper);
+}
+.checkout-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.checkout-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+.checkout-count {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.checkout-groups {
+  display: grid;
+  gap: 14px;
+  margin: 12px 0;
+}
+.checkout-festival {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+/* The same type as .checkout-note and .checkout-count, which the translations
+   measure these strings against: both are drawn only once a show is locked. */
+.checkout-how {
+  margin: 2px 0 6px;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+.checkout-how a {
+  color: inherit;
+}
+.checkout-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.checkout-row {
+  display: grid;
+  grid-template-columns: 110px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  border-top: 1px solid var(--line);
+  font-size: 0.85rem;
+}
+.checkout-when {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.checkout-show {
+  overflow: hidden;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.checkout-buy {
+  color: var(--violet-dark);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.checkout-buy--free,
+.checkout-buy--covered {
+  color: var(--muted);
+}
+.checkout-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+}
+.checkout-go {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 12px;
+  background: var(--violet);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.checkout-go:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+.checkout-note {
+  flex: 1 1 240px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+/* --- the event filters ------------------------------------------------------ */
+
+/* The kinds panel's second line: a collapsed "Find a show" that opens onto the
+   search box and the genre, sub-genre and venue filters. Everything in it stays
+   in the panel's flow, which scrolls: an overlay there would be clipped. */
+.event-filters {
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+}
+.event-filters[hidden] {
+  display: none;
+}
+.ef-summary {
+  display: flex;
+  align-items: center;
+  /* A whole number of pixels, so what follows in the panel starts on one. */
+  height: 20px;
+  gap: 6px;
+  list-style: none;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+.ef-summary::-webkit-details-marker {
+  display: none;
+}
+.ef-summary:focus-visible {
+  outline: 3px solid var(--violet);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.ef-caret {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+.event-filters[open] .ef-caret {
+  transform: rotate(90deg);
+}
+[dir="rtl"] .event-filters:not([open]) .ef-caret {
+  transform: scaleX(-1);
+}
+.event-filters .show-search {
+  margin-top: 10px;
+  text-align: start;
+}
+/* The search box leads the line on a row of its own, the filters wrap under
+   it; a filter's options drop under the whole line, at its full width. */
+.ss-line {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.ss-line .ss-bar {
+  flex: 1 1 100%;
+  padding: 5px 9px 5px 12px;
+  border-width: 1.5px;
+  border-radius: 10px;
+  box-shadow: none;
+}
+.ss-line .ss-input {
+  font-size: 0.9rem;
+}
+.ss-line .filter-chip {
+  position: static;
+}
+.ss-line .chip-panel {
+  inset-inline: 0;
+  min-width: 0;
+}
+.event-filters .ss-pop {
+  position: static;
+  margin-top: 8px;
+  box-shadow: none;
+  max-height: 300px;
+}
+.ss-line .chip-trigger {
+  padding: 5px 9px;
+}

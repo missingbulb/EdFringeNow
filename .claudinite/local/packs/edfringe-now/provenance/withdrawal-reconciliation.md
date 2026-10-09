@@ -12,3 +12,10 @@
   `active_shows`, `load_fetch_manifest`) — no check owns it; the behaviour is proved by
   `normalize.py --selftest` and `hydrate.test.mjs`, not a repo-scanning rule.
 - **Landed:** #295
+
+## 2026-10-09 · moved · into the data-pipeline skill
+- **Reason:** main moved this pack's data-pipeline section out of RULES.md into the data-pipeline
+  skill while this rule waited in its PR, so the rule follows its section there on merge.
+- **Actor:** @missingbulb (owner's restructure, #871); carried across by Claude when merging main.
+- **Mechanism:** a guideline of the data-pipeline skill, force-loaded on edits under scraper/,
+  data/ and site/data/.

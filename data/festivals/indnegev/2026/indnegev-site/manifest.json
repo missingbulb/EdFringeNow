@@ -1,0 +1,16 @@
+{
+ "festival": "indnegev",
+ "edition": "2026",
+ "source": "indnegev-site",
+ "fetchedAt": "2026-10-02T18:27:53Z",
+ "fetcher": "scraper/festivals/indnegev/sources/indnegev-site/fetch.py",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://indnegev.co.il/schedule",
+  "https://indnegev.co.il/_next/static/chunks/520-060d5d7ef00b7010.js"
+ ],
+ "files": [
+  "programme.json"
+ ],
+ "notes": "The schedule page renders one day; the whole timetable is a literal in one of its script chunks (parse.py). `start`/`end` are minutes after the festival day's midnight; `date`/`startTime` are the wall clock of `start`. `shown` is false for the sets the chunk filters out of the published schedule."
+}

@@ -1,0 +1,787 @@
+{
+ "places": [
+  {
+   "id": "node/10218649993",
+   "lat": -41.261879,
+   "lng": 174.781153,
+   "tags": {
+    "name": "Highland Park Trig Lookout",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/10560847473",
+   "lat": -41.3012,
+   "lng": 174.77962,
+   "tags": {
+    "name": "Covenant",
+    "tourism": "gallery",
+    "website": "https://www.facebook.com/@covenantstorenz/"
+   }
+  },
+  {
+   "id": "node/10728579606",
+   "lat": -41.252821,
+   "lng": 174.798733,
+   "tags": {
+    "name": "Amritsar Street Lookout",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/10760537167",
+   "lat": -41.288508,
+   "lng": 174.77816,
+   "tags": {
+    "name": "2011 Rugby World Cup Monument",
+    "historic": "monument",
+    "wikidata": "Q139598434"
+   }
+  },
+  {
+   "id": "node/1166098689",
+   "lat": -41.278954,
+   "lng": 174.77533,
+   "tags": {
+    "name": "Reserve Bank Museum",
+    "tourism": "museum",
+    "opening_hours": "Mo-Fr 09:30-16:00",
+    "website": "http://rbnzmuseum.govt.nz"
+   }
+  },
+  {
+   "id": "node/11840425128",
+   "lat": -41.284324,
+   "lng": 174.767156,
+   "tags": {
+    "name": "Space Place",
+    "tourism": "museum",
+    "opening_hours": "Tu-We 17:00-22:30; Th 10:00-22:30; Fr-Sa 10:00-23:00; Su 10:00-17:00",
+    "website": "https://www.museumswellington.org.nz/space-place/",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12207742100",
+   "lat": -41.313618,
+   "lng": 174.781292,
+   "tags": {
+    "name": "Twentysix Art Gallery",
+    "tourism": "gallery",
+    "website": "https://twentysix.co.nz/",
+    "addr:housenumber": "26",
+    "addr:street": "Constable Street",
+    "addr:postcode": "6021",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/13605029501",
+   "lat": -41.292602,
+   "lng": 174.77554,
+   "tags": {
+    "name": "Enjoy Contemporary Art Space",
+    "tourism": "gallery",
+    "opening_hours": "We-Fr 11:00-18:00; Sa 11:00-16:00",
+    "website": "https://enjoy.org.nz/",
+    "addr:housenumber": "211",
+    "addr:street": "Left Bank",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/13713510822",
+   "lat": -41.327703,
+   "lng": 174.800057,
+   "tags": {
+    "name": "Real Aotearoa",
+    "tourism": "gallery",
+    "website": "https://www.realaotearoa.co.nz/",
+    "addr:housenumber": "70",
+    "addr:street": "Kingsford Smith Street"
+   }
+  },
+  {
+   "id": "node/1690510529",
+   "lat": -41.291708,
+   "lng": 174.75219,
+   "tags": {
+    "name": "Zealandia",
+    "tourism": "attraction",
+    "wikidata": "Q913886",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/170485240",
+   "lat": -41.296037,
+   "lng": 174.794325,
+   "tags": {
+    "name": "Mount Victoria Lookout",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/175059306",
+   "lat": -41.292228,
+   "lng": 174.776324,
+   "tags": {
+    "name": "The Bucket Fountain",
+    "tourism": "attraction",
+    "amenity": "fountain",
+    "wikidata": "Q7720471",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1753424821",
+   "lat": -41.259789,
+   "lng": 174.769289,
+   "tags": {
+    "name": "Fish Ladder",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/1933157621",
+   "lat": -41.311006,
+   "lng": 174.780043,
+   "tags": {
+    "name": "Newtown Fruit & Vegetables Market",
+    "amenity": "marketplace",
+    "opening_hours": "Sa 07:00-14:00",
+    "addr:street": "Mein Street",
+    "addr:postcode": "6021"
+   }
+  },
+  {
+   "id": "node/2065718761",
+   "lat": -41.288564,
+   "lng": 174.70732,
+   "tags": {
+    "name": "Makara Peak Summit Viewing Deck",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/2628264189",
+   "lat": -41.297189,
+   "lng": 174.772349,
+   "tags": {
+    "name": "Holocaust Centre of New Zealand",
+    "tourism": "museum",
+    "opening_hours": "Su-Fr 10:00-13:00",
+    "website": "https://www.holocaustcentre.org.nz/",
+    "addr:housenumber": "80",
+    "addr:street": "Webb Street",
+    "addr:postcode": "6011",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/2685676737",
+   "lat": -41.241474,
+   "lng": 174.789416,
+   "tags": {
+    "name": "Khandallah Park Lower Lookout",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/293323936",
+   "lat": -41.295868,
+   "lng": 174.738776,
+   "tags": {
+    "name": "Wright's Hill Fortress",
+    "historic": "castle",
+    "wikidata": "Q2594483"
+   }
+  },
+  {
+   "id": "node/296293162",
+   "lat": -41.294972,
+   "lng": 174.79817,
+   "tags": {
+    "name": "Centennial Lookout",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/298326385",
+   "lat": -41.300047,
+   "lng": 174.779385,
+   "tags": {
+    "name": "Cricket Museum",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "node/298326576",
+   "lat": -41.300633,
+   "lng": 174.781306,
+   "tags": {
+    "name": "William Wakefield Memorial",
+    "historic": "memorial",
+    "wikidata": "Q17067807"
+   }
+  },
+  {
+   "id": "node/307351536",
+   "lat": -41.28417,
+   "lng": 174.76323,
+   "tags": {
+    "name": "James Hector Memorial Lookout",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/3326510389",
+   "lat": -41.303852,
+   "lng": 174.801919,
+   "tags": {
+    "name": "Evans Bay Patent Slip",
+    "historic": "monument",
+    "wikidata": "Q79301218"
+   }
+  },
+  {
+   "id": "node/3659565908",
+   "lat": -41.234164,
+   "lng": 174.779886,
+   "tags": {
+    "name": "Kaukau Lookout",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/3846016569",
+   "lat": -41.259992,
+   "lng": 174.791413,
+   "tags": {
+    "name": "Kaiwharawhara",
+    "historic": "ruins",
+    "wikidata": "Q6348699",
+    "wikipedia": "en:Kaiwharawhara railway station"
+   }
+  },
+  {
+   "id": "node/447755989",
+   "lat": -41.310899,
+   "lng": 174.745278,
+   "tags": {
+    "name": "Wind Turbine",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/4630968664",
+   "lat": -41.28806,
+   "lng": 174.775519,
+   "tags": {
+    "name": "TheFLOW Gallery",
+    "tourism": "gallery",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/5906316003",
+   "lat": -41.290435,
+   "lng": 174.78597,
+   "tags": {
+    "name": "James Blackie",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/5906608090",
+   "lat": -41.287454,
+   "lng": 174.776476,
+   "tags": {
+    "name": "AVID gallery",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/5911562019",
+   "lat": -41.284744,
+   "lng": 174.77801,
+   "tags": {
+    "name": "New Zealand Academy of Fine Arts",
+    "tourism": "gallery",
+    "wikidata": "Q7015191",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/5919900528",
+   "lat": -41.292402,
+   "lng": 174.775151,
+   "tags": {
+    "name": "Robert Heald Gallery",
+    "tourism": "gallery",
+    "opening_hours": "We-Fr 11:00-17:00; Sa 11:00-16:00",
+    "website": "https://roberthealdgallery.com/",
+    "addr:housenumber": "230",
+    "addr:street": "Left Bank"
+   }
+  },
+  {
+   "id": "node/5928017579",
+   "lat": -41.289811,
+   "lng": 174.773819,
+   "tags": {
+    "name": "Vincents Art Workshop",
+    "tourism": "gallery",
+    "website": "https://vincents.co.nz/",
+    "addr:housenumber": "148",
+    "addr:street": "Willis Street",
+    "addr:postcode": "6011",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/6081979525",
+   "lat": -41.287328,
+   "lng": 174.776513,
+   "tags": {
+    "name": "Page",
+    "tourism": "gallery",
+    "opening_hours": "Mo-Th 10:00-17:00; Fr 10:00-16:00",
+    "website": "https://www.pagegalleries.co.nz/",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/6091848775",
+   "lat": -41.291251,
+   "lng": 174.783271,
+   "tags": {
+    "name": "Harbourside Market",
+    "amenity": "marketplace",
+    "opening_hours": "Su 07:30-13:00",
+    "website": "www.harboursidemarket.co.nz",
+    "addr:housenumber": "75",
+    "addr:street": "Cable Street",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/6408866830",
+   "lat": -41.300468,
+   "lng": 174.805521,
+   "tags": {
+    "name": "Greta Point Lookout",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/6717968767",
+   "lat": -41.289806,
+   "lng": 174.831645,
+   "tags": {
+    "name": "Kau Point Battery",
+    "historic": "fort",
+    "wikidata": "Q27628427",
+    "wikipedia": "en:Kau Point Battery"
+   }
+  },
+  {
+   "id": "node/7469489833",
+   "lat": -41.275012,
+   "lng": 174.765347,
+   "tags": {
+    "name": "Te Ahumairangi Hill Lookout",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/783462498",
+   "lat": -41.266099,
+   "lng": 174.75248,
+   "tags": {
+    "name": "Moko",
+    "tourism": "attraction",
+    "wikidata": "Q107437042"
+   }
+  },
+  {
+   "id": "node/8356441101",
+   "lat": -41.259336,
+   "lng": 174.780698,
+   "tags": {
+    "name": "O'Neill Marriage Memorial",
+    "tourism": "viewpoint",
+    "historic": "memorial"
+   }
+  },
+  {
+   "id": "node/8433352757",
+   "lat": -41.278837,
+   "lng": 174.772156,
+   "tags": {
+    "name": "Thorndon Lookout",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/8682259908",
+   "lat": -41.28868,
+   "lng": 174.768688,
+   "tags": {
+    "name": "Victoria University Classics Museum",
+    "tourism": "museum",
+    "website": "https://www.wgtn.ac.nz/slc/about/our-programmes/classics/classics-museum",
+    "addr:housenumber": "Old Kirk Building",
+    "addr:street": "Tim Beaglehole Courtyard, Victoria University of Wellington",
+    "addr:postcode": "6012"
+   }
+  },
+  {
+   "id": "relation/12750214",
+   "lat": -41.32191,
+   "lng": 174.784324,
+   "tags": {
+    "name": "Wellington Zoo",
+    "tourism": "zoo",
+    "wikidata": "Q7981545",
+    "wikipedia": "en:Wellington Zoo"
+   }
+  },
+  {
+   "id": "way/103733974",
+   "lat": -41.285041,
+   "lng": 174.825992,
+   "tags": {
+    "name": "Massey Memorial",
+    "historic": "memorial",
+    "website": "https://www.nzhistory.net.nz/media/photo/massey-memorial",
+    "wikidata": "Q6784616",
+    "wikipedia": "en:Massey Memorial"
+   }
+  },
+  {
+   "id": "way/1051954498",
+   "lat": -41.298875,
+   "lng": 174.777214,
+   "tags": {
+    "name": "Tomb of the Unknown Warrior",
+    "historic": "memorial",
+    "wikidata": "Q13534610"
+   }
+  },
+  {
+   "id": "way/1066010977",
+   "lat": -41.298323,
+   "lng": 174.779164,
+   "tags": {
+    "name": "Museum of New Zealand Te Papa Tongarewa Archives",
+    "tourism": "museum",
+    "building": "yes"
+   }
+  },
+  {
+   "id": "way/1259560429",
+   "lat": -41.267218,
+   "lng": 174.754766,
+   "tags": {
+    "name": "Ōtari-Wilton’s Bush",
+    "leisure": "nature_reserve",
+    "website": "https://wellingtongardens.nz/our-gardens/otari-wiltons-bush/",
+    "wikidata": "Q7108457",
+    "wikipedia": "en:Ōtari-Wilton's Bush"
+   }
+  },
+  {
+   "id": "way/1270466258",
+   "lat": -41.291673,
+   "lng": 174.71064,
+   "tags": {
+    "name": "Mākara Peak Mountain Bike Park",
+    "leisure": "nature_reserve",
+    "wikidata": "Q15243986"
+   }
+  },
+  {
+   "id": "way/1315223913",
+   "lat": -41.277599,
+   "lng": 174.765071,
+   "tags": {
+    "name": "Stellin Memorial Park",
+    "leisure": "nature_reserve",
+    "wikidata": "Q113992335"
+   }
+  },
+  {
+   "id": "way/153924615",
+   "lat": -41.283582,
+   "lng": 174.778202,
+   "tags": {
+    "name": "New Zealand Portrait Gallery",
+    "tourism": "museum",
+    "building": "yes",
+    "website": "https://nzportraitgallery.org.nz/",
+    "wikidata": "Q28180748",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/153924707",
+   "lat": -41.2914,
+   "lng": 174.784942,
+   "tags": {
+    "name": "Waitangi Park",
+    "leisure": "park",
+    "wikidata": "Q7960464",
+    "wikipedia": "en:Waitangi Park"
+   }
+  },
+  {
+   "id": "way/171565205",
+   "lat": -41.287028,
+   "lng": 174.77876,
+   "tags": {
+    "name": "Frank Kitts Park",
+    "leisure": "park",
+    "wikidata": "Q108672022"
+   }
+  },
+  {
+   "id": "way/190557095",
+   "lat": -41.29033,
+   "lng": 174.781989,
+   "tags": {
+    "name": "Museum of New Zealand Te Papa Tongarewa",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "10:00-18:00; Dec 24 off",
+    "website": "https://tepapa.govt.nz",
+    "wikidata": "Q915603",
+    "wikipedia": "en:Te Papa",
+    "addr:housenumber": "55",
+    "addr:street": "Cable Street",
+    "addr:postcode": "6011",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/20266439",
+   "lat": -41.282533,
+   "lng": 174.766134,
+   "tags": {
+    "name": "Wellington Botanic Garden",
+    "tourism": "attraction",
+    "leisure": "garden",
+    "website": "https://wellingtongardens.nz/our-gahttps://wellingtongardens.nz/our-gardens/wellington-botanic-garden-ki-paekaka/rdens/wellington-botanic-garden-ki-paekaka/",
+    "wikidata": "Q2447822",
+    "wikipedia": "en:Wellington Botanic Garden",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/202880717",
+   "lat": -41.298592,
+   "lng": 174.778075,
+   "tags": {
+    "name": "Pukeahu National War Memorial Park",
+    "leisure": "park",
+    "wikidata": "Q117350783"
+   }
+  },
+  {
+   "id": "way/24617372",
+   "lat": -41.30046,
+   "lng": 174.767021,
+   "tags": {
+    "name": "Central Park",
+    "leisure": "park",
+    "wikidata": "Q113992945"
+   }
+  },
+  {
+   "id": "way/250856271",
+   "lat": -41.285311,
+   "lng": 174.778131,
+   "tags": {
+    "name": "Wellington Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Mo-Su 10:00-17:00",
+    "website": "http://wellingtoncityheritage.org.nz/buildings/151-300/160-wellington-harbour-board-head-office-and-bond-store;https://www.museumswellington.org.nz/wellington-museum/",
+    "wikidata": "Q9292226",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/251420391",
+   "lat": -41.28859,
+   "lng": 174.769133,
+   "tags": {
+    "name": "Adam Art Gallery",
+    "tourism": "gallery",
+    "building": "yes",
+    "website": "http://www.adamartgallery.org.nz/",
+    "wikidata": "Q4678651"
+   }
+  },
+  {
+   "id": "way/252061659",
+   "lat": -41.285245,
+   "lng": 174.767448,
+   "tags": {
+    "name": "Cable Car Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Mo-Su 10:00-17:00",
+    "website": "https://www.museumswellington.org.nz/cable-car-museum/",
+    "wikidata": "Q61066504",
+    "addr:housenumber": "1A",
+    "addr:street": "Upland Road",
+    "addr:postcode": "6012",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/25563334",
+   "lat": -41.307068,
+   "lng": 174.770093,
+   "tags": {
+    "name": "Prince of Wales Park",
+    "leisure": "park",
+    "wikidata": "Q101409610"
+   }
+  },
+  {
+   "id": "way/256795384",
+   "lat": -41.275167,
+   "lng": 174.7775,
+   "tags": {
+    "name": "Hungarian Garden",
+    "leisure": "park",
+    "wikidata": "Q106615447"
+   }
+  },
+  {
+   "id": "way/263452531",
+   "lat": -41.288435,
+   "lng": 174.777311,
+   "tags": {
+    "name": "Wellington City Gallery / Te Whare Toi",
+    "tourism": "gallery",
+    "building": "yes",
+    "opening_hours": "Mo-Su 10:00-17:00; Dec 25 off",
+    "wikidata": "Q5123171",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/264055222",
+   "lat": -41.289317,
+   "lng": 174.78046,
+   "tags": {
+    "name": "SS Hikitia",
+    "tourism": "attraction",
+    "historic": "ship",
+    "wikidata": "Q5760586",
+    "wikipedia": "en:Hikitia",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/264854202",
+   "lat": -41.299296,
+   "lng": 174.769961,
+   "tags": {
+    "name": "Nairn Street Colonial Cottage",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Mo-Su 12:00-16:00",
+    "website": "http://nairnstcottage.nz/",
+    "wikidata": "Q9292492",
+    "wikipedia": "en:Nairn Street Cottage",
+    "addr:housenumber": "68",
+    "addr:street": "Nairn Street"
+   }
+  },
+  {
+   "id": "way/26640029",
+   "lat": -41.320671,
+   "lng": 174.782366,
+   "tags": {
+    "name": "Newtown Park",
+    "leisure": "park",
+    "wikidata": "Q11938648"
+   }
+  },
+  {
+   "id": "way/26716306",
+   "lat": -41.324534,
+   "lng": 174.778317,
+   "tags": {
+    "name": "Martin Luckie Park",
+    "leisure": "park",
+    "wikidata": "Q124803314"
+   }
+  },
+  {
+   "id": "way/343355722",
+   "lat": -41.270158,
+   "lng": 174.779851,
+   "tags": {
+    "name": "Katherine Mansfield House and Garden",
+    "tourism": "museum",
+    "building": "yes",
+    "addr:housenumber": "25",
+    "addr:street": "Tinakori Road",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "way/556390300",
+   "lat": -41.338697,
+   "lng": 174.793243,
+   "tags": {
+    "name": "Dorrie Leslie Park",
+    "leisure": "park",
+    "wikidata": "Q117768979"
+   }
+  },
+  {
+   "id": "way/624607128",
+   "lat": -41.279463,
+   "lng": 174.774314,
+   "tags": {
+    "name": "Bolton St Cemetery Chapel",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Mo-Su 10:00-16:00"
+   }
+  },
+  {
+   "id": "way/768675621",
+   "lat": -41.315389,
+   "lng": 174.76759,
+   "tags": {
+    "name": "Hoggard Street Reserve",
+    "leisure": "nature_reserve",
+    "wikidata": "Q84091732",
+    "addr:housenumber": "25",
+    "addr:street": "Hoggard Street"
+   }
+  },
+  {
+   "id": "way/895400049",
+   "lat": -41.294703,
+   "lng": 174.834506,
+   "tags": {
+    "name": "Fort Ballance",
+    "historic": "castle",
+    "building": "yes",
+    "wikidata": "Q5470767",
+    "wikipedia": "en:Fort Ballance"
+   }
+  }
+ ]
+}

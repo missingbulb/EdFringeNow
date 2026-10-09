@@ -1,8 +1,11 @@
 ---
 name: bug-investigation
-description: Method for investigating a bug and pinning down its root cause. Use when investigating a bug report, when a fix didn't hold or a bug recurs, or when a report doesn't reproduce against main.
+description: Pinning down a bug's root cause. Use when investigating a bug report, when a fix didn't hold or a bug recurs, or when a report doesn't reproduce.
 metadata:
   body: workflow
+  usage:
+    expect: judgment
+
 ---
 
 # Bug investigations

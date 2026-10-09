@@ -1,0 +1,15 @@
+{
+ "festival": "fringe-by-the-sea",
+ "edition": "2026",
+ "source": "nominatim",
+ "fetchedAt": "2026-09-25T14:11:49Z",
+ "fetcher": "scraper/festivals/fringe_by_the_sea/sources/nominatim/fetch.py",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://nominatim.openstreetmap.org/search"
+ ],
+ "files": [
+  "geocode.json"
+ ],
+ "notes": "One free-text query per distinct place in festival-site, bounded to viewbox -2.86,56.09,-2.62,56.02, retried with its leading parts dropped and then on its postcode; hits on a whole town or area are refused. First hit, rounded to 6 dp; no hit is null."
+}

@@ -1,0 +1,1629 @@
+{
+ "places": [
+  {
+   "id": "node/1034196934",
+   "lat": 32.077207,
+   "lng": 34.821323,
+   "tags": {
+    "name": "המשכן לאמנות יהודית על שם דוד לבקובסקי",
+    "name:en": "David Labkovsky Center for Jewish Art",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "node/1067614291",
+   "lat": 32.08022,
+   "lng": 34.78068,
+   "tags": {
+    "name": "אנדרטה לשואה ולתקומה",
+    "name:en": "Holocaust Memorial",
+    "tourism": "artwork",
+    "historic": "memorial",
+    "wikidata": "Q570442",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/10779832405",
+   "lat": 32.074028,
+   "lng": 34.775867,
+   "tags": {
+    "name": "הפצצות האיטלקים על תל אביב",
+    "name:en": "Italian bombing of Tel Aviv",
+    "historic": "memorial",
+    "wikidata": "Q2638412",
+    "wikipedia": "he:הפצצת חיל האוויר האיטלקי על תל אביב במלחמת העולם השנייה"
+   }
+  },
+  {
+   "id": "node/11009454698",
+   "lat": 32.09787,
+   "lng": 34.780105,
+   "tags": {
+    "name": "גן חללי הטרור",
+    "name:en": "Terror Victim's Park",
+    "leisure": "park",
+    "wikidata": "Q112626777",
+    "wikipedia": "he:גן חללי הטרור"
+   }
+  },
+  {
+   "id": "node/11010395997",
+   "lat": 32.100359,
+   "lng": 34.814402,
+   "tags": {
+    "name": "גן הקקטוסים",
+    "name:en": "Kaktusim Garden",
+    "leisure": "garden",
+    "website": "https://park.co.il/domain/גן-הקקטוסים/",
+    "wikidata": "Q41792201",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/11010395999",
+   "lat": 32.099156,
+   "lng": 34.814877,
+   "tags": {
+    "name": "הגן הגזום",
+    "name:en": "Gazum Garden",
+    "leisure": "garden",
+    "website": "https://park.co.il/domain/הגן-הגזום/",
+    "wikidata": "Q115088149",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/11011181723",
+   "lat": 32.05365,
+   "lng": 34.756476,
+   "tags": {
+    "name": "הבזאר המזרחי",
+    "name:en": "Bazaar Mizrahi",
+    "amenity": "marketplace"
+   }
+  },
+  {
+   "id": "node/11012660856",
+   "lat": 32.056658,
+   "lng": 34.762791,
+   "tags": {
+    "name": "המושבה האמריקאית–גרמנית",
+    "name:en": "American–German Colony",
+    "tourism": "attraction",
+    "wikidata": "Q4745650",
+    "wikipedia": "he:המושבה האמריקאית-גרמנית ביפו"
+   }
+  },
+  {
+   "id": "node/1127659185",
+   "lat": 32.102891,
+   "lng": 34.799478,
+   "tags": {
+    "name": "המוזיאון הישראלי",
+    "name:en": "The Israeli Museum.",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "node/11486250370",
+   "lat": 32.126264,
+   "lng": 34.785275,
+   "tags": {
+    "name": "TV lookout",
+    "name:en": "TV lookout",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/11486365469",
+   "lat": 32.130758,
+   "lng": 34.787004,
+   "tags": {
+    "name": "מצפור הצוק",
+    "name:en": "Cliff lookout",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/1152327673",
+   "lat": 32.109141,
+   "lng": 34.791369,
+   "tags": {
+    "name": "כ\"ג יורדי הסירה",
+    "name:en": "23 Seamen Monument",
+    "historic": "monument",
+    "wikidata": "Q12406373"
+   }
+  },
+  {
+   "id": "node/1199015083",
+   "lat": 32.054665,
+   "lng": 34.754214,
+   "tags": {
+    "name": "המוזיאון לעתיקות יפו",
+    "name:en": "Jaffa Antiquities Museum",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "node/12063066379",
+   "lat": 32.071255,
+   "lng": 34.779908,
+   "tags": {
+    "name": "מוזיאון בית יוסף באו",
+    "name:en": "Joseph Bau House Museum",
+    "tourism": "museum",
+    "website": "https://www.josephbau.com/",
+    "wikidata": "Q16130084"
+   }
+  },
+  {
+   "id": "node/12115361265",
+   "lat": 32.068023,
+   "lng": 34.778309,
+   "tags": {
+    "name": "מרכז אדמונד דה רוטשילד",
+    "tourism": "museum",
+    "wikidata": "Q28812020"
+   }
+  },
+  {
+   "id": "node/12134225495",
+   "lat": 32.058522,
+   "lng": 34.771114,
+   "tags": {
+    "name": "Ta'ar Gallery",
+    "name:en": "Ta'ar Gallery",
+    "tourism": "gallery",
+    "opening_hours": "Th 18:00-21:00; Fr-Sa 11:00-14:00",
+    "addr:street": "אלוף בצלות"
+   }
+  },
+  {
+   "id": "node/12531999001",
+   "lat": 32.061808,
+   "lng": 34.764402,
+   "tags": {
+    "name": "Levys Art",
+    "tourism": "gallery",
+    "website": "https://www.levysart.com",
+    "addr:housenumber": "20",
+    "addr:street": "שבזי"
+   }
+  },
+  {
+   "id": "node/13257409833",
+   "lat": 32.053204,
+   "lng": 34.751702,
+   "tags": {
+    "name": "מוזיאון אורי גלר",
+    "name:en": "Uri Geller Museum",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "node/13780488721",
+   "lat": 32.056987,
+   "lng": 34.761339,
+   "tags": {
+    "name": "גלריה עודד",
+    "tourism": "gallery",
+    "website": "https://odedgallery.co.il/"
+   }
+  },
+  {
+   "id": "node/1696878506",
+   "lat": 32.072613,
+   "lng": 34.815186,
+   "tags": {
+    "name": "מצפור שלום",
+    "name:en": "Mitspe HaShalom",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/1698149094",
+   "lat": 32.079071,
+   "lng": 34.821875,
+   "tags": {
+    "name": "מוזיאון עירוני לאמנות המזרח",
+    "name:en": "Eastern Culture",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "node/1937689826",
+   "lat": 32.057179,
+   "lng": 34.758951,
+   "tags": {
+    "name": "Gallery Harel, Printers & Publishers",
+    "name:en": "Gallery Harel, Printers & Publishers",
+    "tourism": "gallery",
+    "website": "https://www.harelart.com/",
+    "wikidata": "Q30527569",
+    "addr:housenumber": "8",
+    "addr:street": "אליזבת ברגנר"
+   }
+  },
+  {
+   "id": "node/2078990759",
+   "lat": 32.098858,
+   "lng": 34.773765,
+   "tags": {
+    "name": "שוק הנמל",
+    "name:en": "Port Market – Shuk HaNamel",
+    "amenity": "marketplace",
+    "opening_hours": "Su-Fr 08:30-18:00",
+    "addr:housenumber": "14",
+    "addr:street": "נמל תל אביב"
+   }
+  },
+  {
+   "id": "node/2522398688",
+   "lat": 32.033716,
+   "lng": 34.81882,
+   "tags": {
+    "name": "תצפית מטרופולינית",
+    "name:en": "The metropolitan observation point",
+    "tourism": "viewpoint",
+    "wikipedia": "he:קו רקיע (פארק אריאל שרון)"
+   }
+  },
+  {
+   "id": "node/2546304210",
+   "lat": 32.089986,
+   "lng": 34.818929,
+   "tags": {
+    "name": "אנדרטת הזיכרון למחתרת ולדב גרונר",
+    "name:en": "Underground & Dov Gruner Memorial",
+    "historic": "memorial",
+    "wikidata": "Q49006240"
+   }
+  },
+  {
+   "id": "node/278478093",
+   "lat": 32.099559,
+   "lng": 34.837012,
+   "tags": {
+    "name": "תל זיתון",
+    "name:en": "Tel Zeton",
+    "historic": "archaeological_site",
+    "wikidata": "Q61125424"
+   }
+  },
+  {
+   "id": "node/2862959841",
+   "lat": 32.056561,
+   "lng": 34.769487,
+   "tags": {
+    "name": "מוזיאון לח\"י",
+    "name:en": "Lechi Museum",
+    "tourism": "museum",
+    "wikidata": "Q6518785",
+    "addr:housenumber": "8",
+    "addr:street": "שטרן"
+   }
+  },
+  {
+   "id": "node/2983652837",
+   "lat": 32.033422,
+   "lng": 34.768848,
+   "tags": {
+    "name": "הפילבוקס",
+    "name:en": "The Pillbox",
+    "historic": "ruins",
+    "wikidata": "Q44052759",
+    "wikipedia": "he:הפילבוקס (חולון)"
+   }
+  },
+  {
+   "id": "node/3176663724",
+   "lat": 32.081946,
+   "lng": 34.781083,
+   "tags": {
+    "name": "האנדרטה לזכר יצחק רבין",
+    "name:en": "Yitzhak Rabin Memorial",
+    "historic": "memorial",
+    "wikidata": "Q6950271"
+   }
+  },
+  {
+   "id": "node/340382877",
+   "lat": 32.097603,
+   "lng": 34.78161,
+   "tags": {
+    "name": "גן הבנים",
+    "name:en": "Gan HaBanim",
+    "leisure": "park",
+    "website": "https://park.co.il/domain/גן-הבנים/",
+    "wikidata": "Q112624938",
+    "wikipedia": "he:גן הבנים (תל אביב-יפו)"
+   }
+  },
+  {
+   "id": "node/358533497",
+   "lat": 32.098585,
+   "lng": 34.80573,
+   "tags": {
+    "name": "ראש ציפור",
+    "name:en": "Rosh Tzipor",
+    "tourism": "attraction",
+    "leisure": "park",
+    "website": "https://park.co.il/domain/פארק-הצפרות",
+    "wikidata": "Q41808451",
+    "addr:housenumber": "73",
+    "addr:street": "קוסובסקי"
+   }
+  },
+  {
+   "id": "node/3638085126",
+   "lat": 32.062834,
+   "lng": 34.770918,
+   "tags": {
+    "name": "היכל העצמאות",
+    "name:en": "Independence Hall",
+    "tourism": "museum",
+    "website": "http://www.eng.ihi.org.il",
+    "wikidata": "Q7210801",
+    "addr:housenumber": "16",
+    "addr:street": "שדרות רוטשילד"
+   }
+  },
+  {
+   "id": "node/412398150",
+   "lat": 32.085365,
+   "lng": 34.771715,
+   "tags": {
+    "name": "בית בן גוריון",
+    "name:en": "Ben Gurion House",
+    "tourism": "museum",
+    "wikidata": "Q1846184",
+    "addr:housenumber": "15"
+   }
+  },
+  {
+   "id": "node/4178729022",
+   "lat": 32.072895,
+   "lng": 34.772568,
+   "tags": {
+    "name": "קורבנות השואה ההומוסקסואלים",
+    "name:en": "LGBT Holocaust Victims Memorial",
+    "historic": "memorial",
+    "wikidata": "Q16132628",
+    "wikipedia": "he:אנדרטה לזכר ההומואים והלסביות שנרדפו בשואה (תל אביב)"
+   }
+  },
+  {
+   "id": "node/429882211",
+   "lat": 32.072924,
+   "lng": 34.770956,
+   "tags": {
+    "name": "בית ביאליק",
+    "name:en": "Bialik Museum",
+    "tourism": "museum",
+    "opening_hours": "Mo-Th 09:00-17:00; Fr,Sa,PH 10:00-14:00; Su off",
+    "wikidata": "Q4902448"
+   }
+  },
+  {
+   "id": "node/429882215",
+   "lat": 32.072077,
+   "lng": 34.770697,
+   "tags": {
+    "name": "בית ראובן רובין",
+    "name:en": "Rubin Museum",
+    "tourism": "museum",
+    "opening_hours": "Mo-Fr 10:00-15:00; Tu 10:00-20:00; Sa 11:00-14:00; Su off",
+    "wikidata": "Q6726495"
+   }
+  },
+  {
+   "id": "node/4439643391",
+   "lat": 32.074605,
+   "lng": 34.791615,
+   "tags": {
+    "name": "מצפה עזריאלי",
+    "name:en": "Azrieli Center Circular Tower Observation Deck",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/4589543173",
+   "lat": 32.073076,
+   "lng": 34.77065,
+   "tags": {
+    "name": "Bauhaus Tel-Aviv",
+    "name:en": "Bauhaus Tel-Aviv",
+    "tourism": "museum",
+    "opening_hours": "We 11:00-17:00; Fr 10:00-14:00",
+    "wikidata": "Q22132004"
+   }
+  },
+  {
+   "id": "node/5223262956",
+   "lat": 32.031936,
+   "lng": 34.818854,
+   "tags": {
+    "name": "תצפית דרומית",
+    "name:en": "Southern Viepoint",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/535959150",
+   "lat": 32.106079,
+   "lng": 34.826587,
+   "tags": {
+    "name": "עשר טחנות",
+    "name:en": "Ten Mills",
+    "historic": "archaeological_site",
+    "wikidata": "Q6984402"
+   }
+  },
+  {
+   "id": "node/5594903074",
+   "lat": 32.078543,
+   "lng": 34.766668,
+   "tags": {
+    "name": "אנדרטת האלטלנה",
+    "name:en": "Altalena memorial",
+    "historic": "monument",
+    "wikidata": "Q56374573"
+   }
+  },
+  {
+   "id": "node/576979427",
+   "lat": 32.061006,
+   "lng": 34.766515,
+   "tags": {
+    "name": "מוזיאון נחום גוטמן",
+    "name:en": "Nachum Gutman Museum",
+    "tourism": "museum",
+    "wikidata": "Q7215906"
+   }
+  },
+  {
+   "id": "node/5909729071",
+   "lat": 32.082314,
+   "lng": 34.78935,
+   "tags": {
+    "name": "מלחמת בני אור בבני חושך",
+    "name:en": "War between the sons of light and the sons of darkness monument",
+    "historic": "memorial",
+    "wikidata": "Q56696218"
+   }
+  },
+  {
+   "id": "node/5920228481",
+   "lat": 32.06329,
+   "lng": 34.771881,
+   "tags": {
+    "name": "בית אליהו גולומב",
+    "name:en": "Eliyahu Golomb House",
+    "tourism": "museum",
+    "opening_hours": "Mo-Th, Su 08:00-16:00"
+   }
+  },
+  {
+   "id": "node/6106446404",
+   "lat": 32.079232,
+   "lng": 34.769465,
+   "tags": {
+    "name": "גלרייה ברונו",
+    "name:en": "Bruno Gallery",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/6814572830",
+   "lat": 32.063062,
+   "lng": 34.771298,
+   "tags": {
+    "name": "האנדרטה למייסדי העיר תל אביב",
+    "historic": "memorial",
+    "wikidata": "Q7210692"
+   }
+  },
+  {
+   "id": "node/6814604090",
+   "lat": 32.063989,
+   "lng": 34.769478,
+   "tags": {
+    "name": "המרכז להכרת תל אביב",
+    "name:en": "Tel Aviv Center",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "node/735827234",
+   "lat": 32.059332,
+   "lng": 34.758698,
+   "tags": {
+    "name": "מוזיאון האצ\"ל בתש\"ח",
+    "name:en": "Etzel Museum",
+    "tourism": "museum",
+    "wikidata": "Q11787097",
+    "wikipedia": "he:מוזיאון האצ\"ל בתש\"ח"
+   }
+  },
+  {
+   "id": "node/769268647",
+   "lat": 32.07345,
+   "lng": 34.770999,
+   "tags": {
+    "name": "בית העיר תל אביב-יפו",
+    "name:en": "Old Municipality House",
+    "tourism": "museum",
+    "wikidata": "Q6950310"
+   }
+  },
+  {
+   "id": "node/769281592",
+   "lat": 32.091252,
+   "lng": 34.770821,
+   "tags": {
+    "name": "אנדרטת הטייסים",
+    "name:en": "Pilots Memorial",
+    "historic": "memorial",
+    "wikidata": "Q49006241",
+    "wikipedia": "he:אנדרטת הטייסים (גן העצמאות)"
+   }
+  },
+  {
+   "id": "node/7968212104",
+   "lat": 32.05964,
+   "lng": 34.77263,
+   "tags": {
+    "name": "שוק לוינסקי",
+    "name:en": "Levinski Market",
+    "amenity": "marketplace"
+   }
+  },
+  {
+   "id": "node/9996951901",
+   "lat": 32.073428,
+   "lng": 34.770462,
+   "tags": {
+    "name": "Liebling house",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "node/9996989784",
+   "lat": 32.071309,
+   "lng": 34.770625,
+   "tags": {
+    "name": "The Photo House",
+    "tourism": "gallery",
+    "wikidata": "Q16129872"
+   }
+  },
+  {
+   "id": "relation/15690216",
+   "lat": 32.077531,
+   "lng": 34.786326,
+   "tags": {
+    "name": "מוזיאון תל אביב לאומנות",
+    "name:en": "Tel Aviv Museum of Art",
+    "tourism": "museum",
+    "building": "yes",
+    "website": "https://www.tamuseum.org.il/",
+    "wikidata": "Q1267958",
+    "addr:housenumber": "27",
+    "addr:street": "שאול המלך",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "relation/16022802",
+   "lat": 32.100083,
+   "lng": 34.810542,
+   "tags": {
+    "name": "גני יהושע",
+    "name:en": "Yehushua Gardens",
+    "leisure": "park",
+    "wikidata": "Q1683522",
+    "wikipedia": "he:פארק הירקון"
+   }
+  },
+  {
+   "id": "relation/16034344",
+   "lat": 32.048679,
+   "lng": 34.771127,
+   "tags": {
+    "name": "גני הטבע",
+    "leisure": "garden",
+    "wikidata": "Q6839679",
+    "wikipedia": "he:גני הטבע (תל אביב)"
+   }
+  },
+  {
+   "id": "relation/16808648",
+   "lat": 32.102736,
+   "lng": 34.796058,
+   "tags": {
+    "name": "מרכז אדם ועמלו",
+    "name:en": "Man and His Work",
+    "tourism": "museum",
+    "building": "yes",
+    "website": "https://www.eretzmuseum.org.il/מרכז-אדם-ועמלו/"
+   }
+  },
+  {
+   "id": "relation/7773671",
+   "lat": 32.060098,
+   "lng": 34.817437,
+   "tags": {
+    "name": "גן כורזין",
+    "name:en": "Korazin Garden",
+    "leisure": "park",
+    "wikidata": "Q26769312"
+   }
+  },
+  {
+   "id": "way/1003998576",
+   "lat": 32.045668,
+   "lng": 34.823861,
+   "tags": {
+    "name": "הספארי ברמת גן",
+    "name:en": "Ramat Gan Safari",
+    "tourism": "zoo",
+    "opening_hours": "Jan-Feb: Su-Th 09:00-16:30; Jan-Feb: Fr 09:00-16:00; Jan-Feb: Sa 08:30-16:30",
+    "website": "https://www.safari.co.il/",
+    "wikidata": "Q2343219",
+    "wikipedia": "en:Ramat Gan Safari"
+   }
+  },
+  {
+   "id": "way/1019049226",
+   "lat": 32.077995,
+   "lng": 34.774195,
+   "tags": {
+    "name": "מזרקת מים ואש",
+    "name:en": "Fire and Water Fountain",
+    "tourism": "attraction",
+    "amenity": "fountain",
+    "wikidata": "Q5451545",
+    "wikipedia": "en:Fire and Water Fountain",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/1019383351",
+   "lat": 32.073817,
+   "lng": 34.779327,
+   "tags": {
+    "name": "ביתן הלנה רובינשטיין",
+    "name:en": "Helena Rubinstein Pavillon",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "way/103128113",
+   "lat": 32.112904,
+   "lng": 34.805363,
+   "tags": {
+    "name": "גן אסתר סידי לזכר חללי מערכות ישראל בוגרי האוניברסיטה",
+    "name:en": "Esther Sidi Garden in Memory of theUniversity’s Fallen in Israel’s Wars",
+    "historic": "memorial",
+    "wikidata": "Q55650547"
+   }
+  },
+  {
+   "id": "way/103524361",
+   "lat": 32.113713,
+   "lng": 34.802648,
+   "tags": {
+    "name": "גלריה יד מישל קיקואין",
+    "name:en": "Michel Kikoine Gallery",
+    "tourism": "gallery",
+    "building": "yes"
+   }
+  },
+  {
+   "id": "way/1037169386",
+   "lat": 32.069971,
+   "lng": 34.784344,
+   "tags": {
+    "name": "שוק העתיקות והוינטג'",
+    "name:en": "Antiques & Vintage Market",
+    "amenity": "marketplace",
+    "opening_hours": "Tu 11:00-18:00; Fr 07:00-16:00",
+    "addr:street": "כיכר גבעון"
+   }
+  },
+  {
+   "id": "way/103818625",
+   "lat": 32.053598,
+   "lng": 34.75058,
+   "tags": {
+    "name": "בית שמעון הבורסקאי",
+    "name:en": "House of Simon the Tanner",
+    "tourism": "attraction",
+    "historic": "building",
+    "building": "yes",
+    "wikidata": "Q6757722",
+    "wikipedia": "he:בית שמעון הבורסקאי",
+    "addr:housenumber": "8",
+    "addr:street": "שמעון הבורסקי"
+   }
+  },
+  {
+   "id": "way/103859183",
+   "lat": 32.053295,
+   "lng": 34.751356,
+   "tags": {
+    "name": "מוזיאון אילנה גור",
+    "name:en": "Illana Gur Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q12408902"
+   }
+  },
+  {
+   "id": "way/104304038",
+   "lat": 32.062565,
+   "lng": 34.760207,
+   "tags": {
+    "name": "פארק צ'ארלס קלור",
+    "name:en": "Charles Clore Park",
+    "leisure": "park",
+    "wikidata": "Q2776516"
+   }
+  },
+  {
+   "id": "way/104708772",
+   "lat": 32.087192,
+   "lng": 34.818497,
+   "tags": {
+    "name": "גן אברהם",
+    "name:en": "Gan Avraham",
+    "leisure": "park",
+    "wikidata": "Q7034132"
+   }
+  },
+  {
+   "id": "way/104708802",
+   "lat": 32.082281,
+   "lng": 34.811364,
+   "tags": {
+    "name": "גן שאול",
+    "name:en": "Shaul Garden",
+    "leisure": "park",
+    "wikidata": "Q12404978"
+   }
+  },
+  {
+   "id": "way/1081688634",
+   "lat": 32.025654,
+   "lng": 34.803775,
+   "tags": {
+    "name": "מוזיאון אזור",
+    "name:en": "Azor Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q24248411"
+   }
+  },
+  {
+   "id": "way/1185397465",
+   "lat": 32.05364,
+   "lng": 34.755621,
+   "tags": {
+    "name": "שוק עמיעד",
+    "name:en": "Shuk Amiad",
+    "amenity": "marketplace"
+   }
+  },
+  {
+   "id": "way/1185613183",
+   "lat": 32.09617,
+   "lng": 34.818389,
+   "tags": {
+    "name": "בית נתן רפפורט",
+    "name:en": "Beit Natan Rappaport",
+    "tourism": "museum",
+    "building": "yes",
+    "website": "https://www.ramat-gan.muni.il/going_out/museums/beit_rappaport/",
+    "addr:housenumber": "125",
+    "addr:street": "רוקח"
+   }
+  },
+  {
+   "id": "way/1238174659",
+   "lat": 32.113534,
+   "lng": 34.802353,
+   "tags": {
+    "name": "הגלריה האוניברסיטאית לאמנות ע\"ש גניה שרייבר",
+    "name:en": "Genya Schreiber Gallery",
+    "tourism": "gallery",
+    "building": "yes",
+    "wikidata": "Q12406413"
+   }
+  },
+  {
+   "id": "way/149528321",
+   "lat": 32.072882,
+   "lng": 34.774902,
+   "tags": {
+    "name": "בית ז'בוטינסקי",
+    "name:en": "Beit Jabotinsky",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q2908869"
+   }
+  },
+  {
+   "id": "way/149546103",
+   "lat": 32.068551,
+   "lng": 34.768802,
+   "tags": {
+    "name": "שוק הכרמל",
+    "name:en": "Carmel Market",
+    "amenity": "marketplace",
+    "wikidata": "Q1708950",
+    "addr:housenumber": "48",
+    "addr:street": "הכרמל",
+    "addr:postcode": "6560475"
+   }
+  },
+  {
+   "id": "way/149546104",
+   "lat": 32.068155,
+   "lng": 34.770174,
+   "tags": {
+    "name": "נחלת בנימין",
+    "name:en": "Nahalat Binyamin",
+    "amenity": "marketplace",
+    "opening_hours": "Fr 08:00-14:00"
+   }
+  },
+  {
+   "id": "way/151643650",
+   "lat": 32.045362,
+   "lng": 34.824007,
+   "tags": {
+    "name": "פינת ליטוף",
+    "name:en": "Petting Zoo",
+    "tourism": "zoo",
+    "opening_hours": "\"decided by the safari\""
+   }
+  },
+  {
+   "id": "way/152185115",
+   "lat": 32.044976,
+   "lng": 34.770326,
+   "tags": {
+    "name": "פארק החורשות",
+    "name:en": "Ha'Horshot Park",
+    "leisure": "park",
+    "wikidata": "Q16129519"
+   }
+  },
+  {
+   "id": "way/154716343",
+   "lat": 32.060702,
+   "lng": 34.816837,
+   "tags": {
+    "name": "בית ווהלין",
+    "name:en": "Wolyn House",
+    "tourism": "museum",
+    "building": "yes",
+    "addr:housenumber": "10",
+    "addr:street": "כורזין"
+   }
+  },
+  {
+   "id": "way/154716346",
+   "lat": 32.063208,
+   "lng": 34.807201,
+   "tags": {
+    "name": "גן חיל האויר",
+    "name:en": "Air Force Garden",
+    "leisure": "park",
+    "wikidata": "Q26769316"
+   }
+  },
+  {
+   "id": "way/157509492",
+   "lat": 32.081507,
+   "lng": 34.794807,
+   "tags": {
+    "name": "גן וולובלסקי קרני",
+    "name:en": "Volovelski Karni",
+    "leisure": "park",
+    "wikidata": "Q80273779"
+   }
+  },
+  {
+   "id": "way/157516442",
+   "lat": 32.071722,
+   "lng": 34.830826,
+   "tags": {
+    "name": "פארק דוד",
+    "name:en": "David Park",
+    "leisure": "park",
+    "wikidata": "Q26769307"
+   }
+  },
+  {
+   "id": "way/163143588",
+   "lat": 32.104488,
+   "lng": 34.799211,
+   "tags": {
+    "name": "מוזיאון הפלמ\"ח",
+    "name:en": "Hapalmach Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q2899919",
+    "wikipedia": "he:מוזיאון הפלמ\"ח"
+   }
+  },
+  {
+   "id": "way/164668782",
+   "lat": 32.09449,
+   "lng": 34.819117,
+   "tags": {
+    "name": "מוזיאון לאמנות רמת גן",
+    "name:en": "Ramat Gan Art Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "addr:housenumber": "146",
+    "addr:street": "אבא הלל סילבר",
+    "addr:postcode": "5257203"
+   }
+  },
+  {
+   "id": "way/182818349",
+   "lat": 32.041345,
+   "lng": 34.747716,
+   "tags": {
+    "name": "גינת טולוז",
+    "name:en": "Toulouse Garden",
+    "leisure": "park",
+    "wikidata": "Q26769333"
+   }
+  },
+  {
+   "id": "way/218871499",
+   "lat": 32.068261,
+   "lng": 34.781312,
+   "tags": {
+    "name": "גן קריית ספר",
+    "name:en": "Kiryat Sefer Garden",
+    "leisure": "park",
+    "wikidata": "Q6990268",
+    "wikipedia": "he:גן קריית ספר"
+   }
+  },
+  {
+   "id": "way/232898381",
+   "lat": 32.041437,
+   "lng": 34.804183,
+   "tags": {
+    "name": "פינת חי",
+    "tourism": "zoo"
+   }
+  },
+  {
+   "id": "way/24893732",
+   "lat": 32.07845,
+   "lng": 34.778498,
+   "tags": {
+    "name": "ככר מסריק",
+    "name:en": "Masaryk square",
+    "leisure": "park",
+    "wikidata": "Q2776314",
+    "wikipedia": "he:כיכר מסריק"
+   }
+  },
+  {
+   "id": "way/256195918",
+   "lat": 32.047314,
+   "lng": 34.766369,
+   "tags": {
+    "name": "גן אבו נבוט",
+    "leisure": "park",
+    "wikidata": "Q58211292"
+   }
+  },
+  {
+   "id": "way/26301668",
+   "lat": 32.082412,
+   "lng": 34.78616,
+   "tags": {
+    "name": "גן סוטין",
+    "name:en": "Soutine garden",
+    "leisure": "park",
+    "wikidata": "Q7190171",
+    "wikipedia": "he:גן סוטין"
+   }
+  },
+  {
+   "id": "way/284108856",
+   "lat": 32.071107,
+   "lng": 34.787061,
+   "tags": {
+    "name": "שרונה מרקט",
+    "name:en": "Sarona Market",
+    "amenity": "marketplace",
+    "building": "yes",
+    "opening_hours": "Mo 10:00-22:00; Tu 10:00-22:00; We 10:00-22:00; Th 10:00-23:00; Fr 09:00-16:00; Sa 10:00-22:00",
+    "website": "https://saronamarket.co.il/",
+    "wikidata": "Q63790641",
+    "wikipedia": "en:Sarona Market",
+    "addr:housenumber": "3",
+    "addr:street": "אלוף קלמן מגן"
+   }
+  },
+  {
+   "id": "way/28988613",
+   "lat": 32.051184,
+   "lng": 34.763458,
+   "tags": {
+    "name": "גן כרונינגן",
+    "name:en": "Groningen",
+    "leisure": "park",
+    "wikidata": "Q6580389"
+   }
+  },
+  {
+   "id": "way/292684389",
+   "lat": 32.067321,
+   "lng": 34.82678,
+   "tags": {
+    "name": "גן יקיר",
+    "leisure": "park",
+    "wikidata": "Q26769308"
+   }
+  },
+  {
+   "id": "way/30127380",
+   "lat": 32.094463,
+   "lng": 34.781958,
+   "tags": {
+    "name": "כיכר היל",
+    "name:en": "Kikar Hill",
+    "leisure": "park",
+    "wikidata": "Q7043115"
+   }
+  },
+  {
+   "id": "way/30146258",
+   "lat": 32.077765,
+   "lng": 34.784435,
+   "tags": {
+    "name": "גינת דובנוב",
+    "name:en": "Dubnov",
+    "leisure": "park",
+    "wikidata": "Q5311048"
+   }
+  },
+  {
+   "id": "way/30879066",
+   "lat": 32.084789,
+   "lng": 34.791569,
+   "tags": {
+    "name": "גן הגת",
+    "name:en": "Gan HaGat",
+    "leisure": "park",
+    "wikidata": "Q6609253",
+    "wikipedia": "he:גן הגת",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/31066186",
+   "lat": 32.058951,
+   "lng": 34.806194,
+   "tags": {
+    "name": "פארק אדית וולפסון",
+    "name:en": "Edith Wolfson park",
+    "leisure": "park",
+    "wikidata": "Q7220129",
+    "wikipedia": "he:פארק אדית וולפסון"
+   }
+  },
+  {
+   "id": "way/33631428",
+   "lat": 32.073058,
+   "lng": 34.7731,
+   "tags": {
+    "name": "גן מאיר",
+    "name:en": "Gan Meir",
+    "leisure": "park",
+    "wikidata": "Q2911068",
+    "wikipedia": "he:גן מאיר"
+   }
+  },
+  {
+   "id": "way/34056445",
+   "lat": 32.038218,
+   "lng": 34.758303,
+   "tags": {
+    "name": "דוידוף",
+    "name:en": "Davidoff",
+    "leisure": "park",
+    "wikidata": "Q26769332"
+   }
+  },
+  {
+   "id": "way/35169732",
+   "lat": 32.078725,
+   "lng": 34.77583,
+   "tags": {
+    "name": "גינת רות",
+    "name:en": "Ruth Garden",
+    "leisure": "park",
+    "wikidata": "Q26769318"
+   }
+  },
+  {
+   "id": "way/35193699",
+   "lat": 32.078271,
+   "lng": 34.767239,
+   "tags": {
+    "name": "גן לונדון",
+    "name:en": "London garden",
+    "leisure": "park",
+    "wikidata": "Q2909214",
+    "wikipedia": "he:כיכר לונדון"
+   }
+  },
+  {
+   "id": "way/35208625",
+   "lat": 32.106587,
+   "lng": 34.812081,
+   "tags": {
+    "name": "לונה פארק",
+    "name:en": "Luna Park",
+    "tourism": "theme_park",
+    "leisure": "park",
+    "opening_hours": "Mo-Th, Su 10:00-21:00; Sa 10:00-21:00",
+    "website": "https://www.lunapark.co.il/",
+    "wikidata": "Q4519503",
+    "addr:housenumber": "101",
+    "addr:street": "שדרות רוקח תל אביב"
+   }
+  },
+  {
+   "id": "way/37558390",
+   "lat": 32.066606,
+   "lng": 34.765321,
+   "tags": {
+    "name": "גן הכובשים",
+    "name:en": "HaKovshim",
+    "leisure": "park",
+    "wikidata": "Q26769320",
+    "wikipedia": "he:גן הכובשים"
+   }
+  },
+  {
+   "id": "way/37558654",
+   "lat": 32.091505,
+   "lng": 34.771668,
+   "tags": {
+    "name": "גן העצמאות",
+    "name:en": "The Independence Park",
+    "leisure": "park",
+    "wikidata": "Q7190091"
+   }
+  },
+  {
+   "id": "way/389769463",
+   "lat": 32.030463,
+   "lng": 34.820866,
+   "tags": {
+    "name": "פארק אריאל שרון",
+    "name:en": "Chiriya",
+    "leisure": "park",
+    "historic": "yes",
+    "wikidata": "Q9504937",
+    "wikipedia": "he:פארק אריאל שרון"
+   }
+  },
+  {
+   "id": "way/395915381",
+   "lat": 32.074978,
+   "lng": 34.773257,
+   "tags": {
+    "name": "כיכר השוטר",
+    "name:en": "HaShoter Square",
+    "leisure": "garden",
+    "wikidata": "Q20502736"
+   }
+  },
+  {
+   "id": "way/43142171",
+   "lat": 32.06145,
+   "lng": 34.775185,
+   "tags": {
+    "name": "גינת השרון",
+    "name:en": "Hasharon garden",
+    "leisure": "garden",
+    "wikidata": "Q26769322"
+   }
+  },
+  {
+   "id": "way/43892047",
+   "lat": 32.069544,
+   "lng": 34.772914,
+   "tags": {
+    "name": "גינת שינקין",
+    "name:en": "Shenkin Garden",
+    "leisure": "garden",
+    "wikidata": "Q12404939"
+   }
+  },
+  {
+   "id": "way/44851783",
+   "lat": 32.04428,
+   "lng": 34.746846,
+   "tags": {
+    "name": "מדרון יפו",
+    "name:en": "Midron Jaffa",
+    "leisure": "park",
+    "wikidata": "Q12408861"
+   }
+  },
+  {
+   "id": "way/45556106",
+   "lat": 32.049413,
+   "lng": 34.823049,
+   "tags": {
+    "name": "הפארק הלאומי",
+    "name:en": "HaPark HaLeumi",
+    "tourism": "attraction",
+    "leisure": "park",
+    "opening_hours": "24/7",
+    "wikidata": "Q3738170",
+    "wikipedia": "he:הפארק הלאומי (רמת גן)",
+    "addr:housenumber": "3",
+    "addr:street": "אחד העם"
+   }
+  },
+  {
+   "id": "way/48071619",
+   "lat": 32.113974,
+   "lng": 34.805358,
+   "tags": {
+    "name": "אנו - מוזיאון העם היהודי",
+    "name:en": "Anu - Museum of the Jewish People",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q796764"
+   }
+  },
+  {
+   "id": "way/507677287",
+   "lat": 32.095544,
+   "lng": 34.819402,
+   "tags": {
+    "name": "בית אהרון כהנא",
+    "name:en": "Beit Aharon Kahana",
+    "tourism": "gallery",
+    "building": "yes",
+    "opening_hours": "closed",
+    "website": "https://www.ramat-gan.muni.il/going_out/museums/aharon_kahana/"
+   }
+  },
+  {
+   "id": "way/508942605",
+   "lat": 32.086269,
+   "lng": 34.813832,
+   "tags": {
+    "name": "גן המלך דוד",
+    "name:en": "Gan Hamelech David",
+    "leisure": "park",
+    "wikidata": "Q26769341"
+   }
+  },
+  {
+   "id": "way/51336447",
+   "lat": 32.039231,
+   "lng": 34.80209,
+   "tags": {
+    "name": "פארק מנחם בגין",
+    "name:en": "Begin Park",
+    "leisure": "park",
+    "wikidata": "Q6603577"
+   }
+  },
+  {
+   "id": "way/543888242",
+   "lat": 32.065119,
+   "lng": 34.827379,
+   "tags": {
+    "name": "גן דרור",
+    "leisure": "park",
+    "wikidata": "Q26769310"
+   }
+  },
+  {
+   "id": "way/551423533",
+   "lat": 32.064684,
+   "lng": 34.805419,
+   "tags": {
+    "name": "גן ילדי טהרן",
+    "name:en": "Yaldei Teheran Garden",
+    "leisure": "park",
+    "wikidata": "Q26769315"
+   }
+  },
+  {
+   "id": "way/555923909",
+   "lat": 32.060319,
+   "lng": 34.814238,
+   "tags": {
+    "name": "גן ילדי הגנים",
+    "name:en": "Yaldi Ha'Ganim Garden",
+    "leisure": "park",
+    "wikidata": "Q26769324"
+   }
+  },
+  {
+   "id": "way/55695879",
+   "lat": 32.103334,
+   "lng": 34.777053,
+   "tags": {
+    "name": "תל כודאדי",
+    "name:en": "Tel Kudadi",
+    "historic": "archaeological_site",
+    "wikidata": "Q6730120",
+    "wikipedia": "he:תל כודאדי"
+   }
+  },
+  {
+   "id": "way/608660608",
+   "lat": 32.069814,
+   "lng": 34.809779,
+   "tags": {
+    "name": "גן קורצ'אק",
+    "leisure": "park",
+    "wikidata": "Q26769313"
+   }
+  },
+  {
+   "id": "way/640627236",
+   "lat": 32.055066,
+   "lng": 34.75627,
+   "tags": {
+    "name": "מגדל השעון יפו",
+    "name:en": "Jaffa Clock Tower",
+    "tourism": "attraction",
+    "amenity": "clock",
+    "building": "tower",
+    "wikidata": "Q2919379",
+    "wikipedia": "he:מגדל השעון (יפו)",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/643412733",
+   "lat": 32.052726,
+   "lng": 34.790438,
+   "tags": {
+    "name": "שוק התקווה",
+    "name:en": "Hatikva Market",
+    "amenity": "marketplace",
+    "wikidata": "Q6636274"
+   }
+  },
+  {
+   "id": "way/80391217",
+   "lat": 32.069828,
+   "lng": 34.814906,
+   "tags": {
+    "name": "גן העליה השניה",
+    "name:en": "HaAliya HaShniya Garden",
+    "leisure": "park",
+    "wikidata": "Q18191508"
+   }
+  },
+  {
+   "id": "way/81652298",
+   "lat": 32.103314,
+   "lng": 34.79758,
+   "tags": {
+    "name": "מוזיאון אלכסנדר לתולדות הדואר והבולאות",
+    "name:en": "Alexander Museum of Postal History and Philately",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q107062421"
+   }
+  },
+  {
+   "id": "way/81652303",
+   "lat": 32.102104,
+   "lng": 34.795991,
+   "tags": {
+    "name": "מוזיאון ארץ ישראל",
+    "name:en": "Eretz Israel Museum",
+    "tourism": "museum",
+    "website": "https://www.eretzmuseum.org.il/",
+    "wikidata": "Q840618"
+   }
+  },
+  {
+   "id": "way/81848412",
+   "lat": 32.101953,
+   "lng": 34.795275,
+   "tags": {
+    "name": "תל קסילה",
+    "name:en": "Tell Qasile",
+    "tourism": "attraction",
+    "historic": "archaeological_site",
+    "wikidata": "Q2690025"
+   }
+  },
+  {
+   "id": "way/84092298",
+   "lat": 32.053461,
+   "lng": 34.75635,
+   "tags": {
+    "name": "שוק הפשפשים",
+    "name:en": "Shuk HaPishpeshim",
+    "tourism": "attraction",
+    "amenity": "marketplace",
+    "website": "https://www.shuktlv.co.il/category/שוק-הפשפשים",
+    "wikidata": "Q6771448",
+    "wikipedia": "he:שוק הפשפשים (יפו)",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/842380486",
+   "lat": 32.073458,
+   "lng": 34.779293,
+   "tags": {
+    "name": "גן יעקב",
+    "name:en": "Yaakov",
+    "leisure": "garden",
+    "wikidata": "Q6903012"
+   }
+  },
+  {
+   "id": "way/855004769",
+   "lat": 32.060082,
+   "lng": 34.76797,
+   "tags": {
+    "name": "פארק המסילה",
+    "name:en": "The Track Park",
+    "leisure": "park",
+    "wikidata": "Q97206990",
+    "wikipedia": "he:פארק המסילה (תל אביב)"
+   }
+  },
+  {
+   "id": "way/89155389",
+   "lat": 32.076731,
+   "lng": 34.821923,
+   "tags": {
+    "name": "הר הבנים",
+    "leisure": "park",
+    "wikidata": "Q26769306"
+   }
+  },
+  {
+   "id": "way/89163634",
+   "lat": 32.046568,
+   "lng": 34.823909,
+   "tags": {
+    "name": "מוזיאון האדם והחי",
+    "name:en": "Man and the Living World Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q6694349"
+   }
+  },
+  {
+   "id": "way/90167443",
+   "lat": 32.113761,
+   "lng": 34.80788,
+   "tags": {
+    "name": "מוזיאון הטבע ע\"ש שטיינהרדט",
+    "name:en": "Steinhardt Museum of Natural History",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q29044424",
+    "addr:housenumber": "12",
+    "addr:street": "קלאוזנר"
+   }
+  },
+  {
+   "id": "way/91873004",
+   "lat": 32.101304,
+   "lng": 34.811231,
+   "tags": {
+    "name": "הגן הטרופי",
+    "name:en": "Tropical Garden",
+    "leisure": "garden",
+    "opening_hours": "Mo-Fr, Su 09:00-15:00; Sa 10:00-13:00",
+    "website": "https://park.co.il/domain/הגן-הטרופי/",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/927229746",
+   "lat": 32.096207,
+   "lng": 34.808012,
+   "tags": {
+    "name": "שבע טחנות",
+    "name:en": "Seven Mills",
+    "historic": "archaeological_site",
+    "opening_hours": "24/7",
+    "website": "https://www.yarqon.cet.ac.il/street/שבע-טחנות/",
+    "wikidata": "Q7059220",
+    "wikipedia": "he:שבע טחנות",
+    "wheelchair": "designated"
+   }
+  },
+  {
+   "id": "way/96838152",
+   "lat": 32.077308,
+   "lng": 34.786355,
+   "tags": {
+    "name": "גן הפסלים ע\"ש לולה אבנר",
+    "name:en": "Lola Beer Ebner Sculpture Garden",
+    "leisure": "garden",
+    "wikidata": "Q139575"
+   }
+  },
+  {
+   "id": "way/98259523",
+   "lat": 32.114238,
+   "lng": 34.808749,
+   "tags": {
+    "name": "הגנים הבוטניים",
+    "name:en": "Yehuda Naftali Botanic Garden",
+    "leisure": "garden",
+    "wikidata": "Q9010957"
+   }
+  },
+  {
+   "id": "way/98259532",
+   "lat": 32.112019,
+   "lng": 34.808579,
+   "tags": {
+    "name": "הגן למחקר זואולוגי ע\"ש א׳ מאיר סיגלס",
+    "name:en": "I. Meier Segals Garden for Zoological Research",
+    "tourism": "zoo"
+   }
+  },
+  {
+   "id": "way/98693387",
+   "lat": 32.091684,
+   "lng": 34.807888,
+   "tags": {
+    "name": "גבעת נפוליאון (תל גריסה)",
+    "name:en": "Tel Gerisa",
+    "tourism": "attraction",
+    "historic": "archaeological_site",
+    "wikidata": "Q7695568",
+    "wikipedia": "he:תל נפוליאון"
+   }
+  },
+  {
+   "id": "way/99655265",
+   "lat": 32.104475,
+   "lng": 34.814209,
+   "tags": {
+    "name": "גן הפסלים",
+    "name:en": "Sculptures Garden",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "way/99661624",
+   "lat": 32.107037,
+   "lng": 34.789548,
+   "tags": {
+    "name": "גן ז'ילבר",
+    "name:en": "Jilber Garden",
+    "leisure": "park",
+    "wikidata": "Q26769342"
+   }
+  }
+ ]
+}

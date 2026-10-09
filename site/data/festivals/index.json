@@ -1,0 +1,1533 @@
+{
+ "v": 1,
+ "festivals": [
+  {
+   "id": "abu-gosh",
+   "name": "Abu Gosh Music Festival",
+   "nameLocal": "פסטיבל המוזיקה אבו גוש",
+   "city": "Abu Ghosh",
+   "country": "IL",
+   "lat": 31.804722,
+   "lng": 35.110833,
+   "timezone": "Asia/Jerusalem",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "music",
+   "subtypes": [
+    "music-classical",
+    "music-vocal"
+   ],
+   "defaultGenre": "music",
+   "site": "https://abugoshfestival.co.il",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://agfestival.smarticket.co.il/"
+   },
+   "popularity": 771,
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-09-29",
+     "lastDate": "2026-10-03",
+     "format": "block",
+     "dataUrl": "/data/festivals/abu-gosh/2026.json",
+     "events": 27
+    }
+   ]
+  },
+  {
+   "id": "acco",
+   "name": "Acco Festival of Alternative Israeli Theatre",
+   "nameLocal": "פסטיבל עכו הבינלאומי לתיאטרון אחר",
+   "city": "Akko",
+   "country": "IL",
+   "lat": 32.9236,
+   "lng": 35.0705,
+   "timezone": "Asia/Jerusalem",
+   "lang": "he",
+   "dir": "rtl",
+   "kind": "theatre",
+   "subtypes": [
+    "theatre-alternative"
+   ],
+   "defaultGenre": "theatre",
+   "site": "https://accofestival.co.il",
+   "ticketing": {
+    "model": "per-event-seller",
+    "url": null
+   },
+   "popularity": 2459,
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-09-27",
+     "lastDate": "2026-10-01",
+     "format": "block",
+     "dataUrl": "/data/festivals/acco/2026.json",
+     "events": 69
+    }
+   ]
+  },
+  {
+   "id": "ais-conference",
+   "name": "Association for Israel Studies Annual Conference",
+   "nameLocal": null,
+   "city": "Ramat Gan",
+   "country": "IL",
+   "lat": 32.0637,
+   "lng": 34.8322,
+   "timezone": "Asia/Jerusalem",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "academic",
+   "subtypes": [
+    "academic-israel-studies",
+    "academic-social-sciences"
+   ],
+   "defaultGenre": "talk",
+   "site": "https://aisisraelstudies.org/conference/conference/",
+   "ticketing": {
+    "model": "festival-pass",
+    "url": "https://ws.eventact.com/AIS2026/Registration"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": 42,
+     "firstDate": "2026-10-19",
+     "lastDate": "2026-10-21",
+     "format": "block",
+     "dataUrl": "/data/festivals/ais-conference/2026.json",
+     "events": 106
+    }
+   ]
+  },
+  {
+   "id": "brighton-fringe",
+   "name": "Brighton Fringe",
+   "nameLocal": null,
+   "city": "Brighton",
+   "country": "GB",
+   "lat": 50.8225,
+   "lng": -0.1372,
+   "timezone": "Europe/London",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "fringe",
+   "subtypes": [],
+   "defaultGenre": "other",
+   "site": "https://www.brightonfringe.org",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://www.brightonfringe.org"
+   },
+   "popularity": 2399,
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-05-01",
+     "lastDate": "2026-05-31",
+     "format": "block",
+     "dataUrl": "/data/festivals/brighton-fringe/2026.json",
+     "events": 816
+    }
+   ]
+  },
+  {
+   "id": "edfringe",
+   "name": "Edinburgh Festival Fringe",
+   "nameLocal": null,
+   "city": "Edinburgh",
+   "country": "GB",
+   "lat": 55.9533,
+   "lng": -3.1883,
+   "timezone": "Europe/London",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "fringe",
+   "subtypes": [],
+   "defaultGenre": "other",
+   "site": "https://www.edfringe.com",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://www.edfringe.com"
+   },
+   "popularity": 190289,
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-08-07",
+     "lastDate": "2026-08-31",
+     "format": "edfringe-wire",
+     "dataUrl": "/data/normalized/shows.min.json",
+     "wire": {
+      "lookups": "/data/venues.json",
+      "availability": "/data/normalized/availability.min.json"
+     },
+     "events": 4122
+    }
+   ]
+  },
+  {
+   "id": "edinburgh-art-festival",
+   "name": "Edinburgh Art Festival",
+   "nameLocal": null,
+   "city": "Edinburgh",
+   "country": "GB",
+   "lat": 55.9533,
+   "lng": -3.1883,
+   "timezone": "Europe/London",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "art",
+   "subtypes": [
+    "art-contemporary"
+   ],
+   "defaultGenre": "other",
+   "site": "https://edinburghartfestival.com",
+   "ticketing": {
+    "model": "per-event-seller",
+    "url": null
+   },
+   "popularity": 1298,
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-08-14",
+     "lastDate": "2026-08-30",
+     "format": "block",
+     "dataUrl": "/data/festivals/edinburgh-art-festival/2026.json",
+     "events": 36
+    }
+   ]
+  },
+  {
+   "id": "edinburgh-book-festival",
+   "name": "Edinburgh International Book Festival",
+   "nameLocal": null,
+   "city": "Edinburgh",
+   "country": "GB",
+   "lat": 55.9533,
+   "lng": -3.1883,
+   "timezone": "Europe/London",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "literature",
+   "subtypes": [
+    "literature-books"
+   ],
+   "defaultGenre": "talk",
+   "site": "https://www.edbookfest.co.uk",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://www.edbookfest.co.uk"
+   },
+   "popularity": 7327,
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-08-15",
+     "lastDate": "2026-08-30",
+     "format": "block",
+     "dataUrl": "/data/festivals/edinburgh-book-festival/2026.json",
+     "events": 587
+    }
+   ]
+  },
+  {
+   "id": "edinburgh-deaf-festival",
+   "name": "Edinburgh Deaf Festival",
+   "nameLocal": null,
+   "city": "Edinburgh",
+   "country": "GB",
+   "lat": 55.9533,
+   "lng": -3.1883,
+   "timezone": "Europe/London",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "multi",
+   "subtypes": [
+    "multi-deaf-arts"
+   ],
+   "defaultGenre": "other",
+   "site": "https://edinburghdeaffestival.com",
+   "ticketing": {
+    "model": "per-event-seller",
+    "url": null
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-08-07",
+     "lastDate": "2026-08-16",
+     "format": "block",
+     "dataUrl": "/data/festivals/edinburgh-deaf-festival/2026.json",
+     "events": 70
+    }
+   ]
+  },
+  {
+   "id": "edinburgh-tattoo",
+   "name": "Royal Edinburgh Military Tattoo",
+   "nameLocal": null,
+   "city": "Edinburgh",
+   "country": "GB",
+   "lat": 55.9533,
+   "lng": -3.1883,
+   "timezone": "Europe/London",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "music",
+   "subtypes": [
+    "music-military"
+   ],
+   "defaultGenre": "music",
+   "site": "https://www.edintattoo.co.uk",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://book.edintattoo.co.uk"
+   },
+   "popularity": 94060,
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-08-07",
+     "lastDate": "2026-08-29",
+     "format": "block",
+     "dataUrl": null,
+     "events": null
+    },
+    {
+     "id": "2027",
+     "ordinal": null,
+     "firstDate": "2027-08-06",
+     "lastDate": "2027-08-28",
+     "format": "block",
+     "dataUrl": "/data/festivals/edinburgh-tattoo/2027.json",
+     "events": 1
+    }
+   ]
+  },
+  {
+   "id": "eif",
+   "name": "Edinburgh International Festival",
+   "nameLocal": null,
+   "city": "Edinburgh",
+   "country": "GB",
+   "lat": 55.9533,
+   "lng": -3.1883,
+   "timezone": "Europe/London",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "multi",
+   "subtypes": [],
+   "defaultGenre": "other",
+   "site": "https://www.eif.co.uk",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://www.eif.co.uk"
+   },
+   "popularity": 37017,
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-08-07",
+     "lastDate": "2026-08-30",
+     "format": "block",
+     "dataUrl": "/data/festivals/eif/2026.json",
+     "events": 79
+    }
+   ]
+  },
+  {
+   "id": "eiff",
+   "name": "Edinburgh International Film Festival",
+   "nameLocal": null,
+   "city": "Edinburgh",
+   "country": "GB",
+   "lat": 55.9533,
+   "lng": -3.1883,
+   "timezone": "Europe/London",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "film",
+   "subtypes": [
+    "film-international"
+   ],
+   "defaultGenre": "film",
+   "site": "https://www.edfilmfest.org",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://www.edfilmfest.org"
+   },
+   "popularity": 25539,
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-08-13",
+     "lastDate": "2026-08-19",
+     "format": "block",
+     "dataUrl": "/data/festivals/eiff/2026.json",
+     "events": 77
+    }
+   ]
+  },
+  {
+   "id": "fringe-by-the-sea",
+   "name": "Fringe by the Sea",
+   "nameLocal": null,
+   "city": "North Berwick",
+   "country": "GB",
+   "lat": 56.0586,
+   "lng": -2.7196,
+   "timezone": "Europe/London",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "multi",
+   "subtypes": [],
+   "defaultGenre": "other",
+   "site": "https://www.fringebythesea.com",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": null
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-07-31",
+     "lastDate": "2026-08-09",
+     "format": "block",
+     "dataUrl": "/data/festivals/fringe-by-the-sea/2026.json",
+     "events": 167
+    }
+   ]
+  },
+  {
+   "id": "hack-lu",
+   "name": "hack.lu",
+   "nameLocal": null,
+   "city": "Luxembourg",
+   "country": "LU",
+   "lat": 49.6116,
+   "lng": 6.1319,
+   "timezone": "Europe/Luxembourg",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "academic",
+   "subtypes": [
+    "academic-computer-security"
+   ],
+   "defaultGenre": "talk",
+   "site": "https://hack.lu",
+   "ticketing": {
+    "model": "festival-pass",
+    "url": "https://pretix.eu/circl/2026.hack.lu/"
+   },
+   "popularity": 651,
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": 20,
+     "firstDate": "2026-10-20",
+     "lastDate": "2026-10-23",
+     "format": "block",
+     "dataUrl": "/data/festivals/hack-lu/2026.json",
+     "events": 82
+    }
+   ]
+  },
+  {
+   "id": "haifa-iff",
+   "name": "Haifa International Film Festival",
+   "nameLocal": "פסטיבל הסרטים הבינלאומי חיפה",
+   "city": "Haifa",
+   "country": "IL",
+   "lat": 32.794044,
+   "lng": 34.989571,
+   "timezone": "Asia/Jerusalem",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "film",
+   "subtypes": [
+    "film-international"
+   ],
+   "defaultGenre": "film",
+   "site": "https://www.haifaff.co.il",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://www.haifaff.co.il"
+   },
+   "popularity": 11212,
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": 42,
+     "firstDate": "2026-09-25",
+     "lastDate": "2026-10-03",
+     "format": "block",
+     "dataUrl": "/data/festivals/haifa-iff/2026.json",
+     "events": 133
+    }
+   ]
+  },
+  {
+   "id": "iaem",
+   "name": "Israeli Association for Emergency Medicine Annual Scientific Assembly",
+   "nameLocal": "הכנס השנתי של האיגוד הישראלי לרפואה דחופה",
+   "city": "Airport City",
+   "country": "IL",
+   "lat": 31.986,
+   "lng": 34.9162,
+   "timezone": "Asia/Jerusalem",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "academic",
+   "subtypes": [
+    "academic-medicine"
+   ],
+   "defaultGenre": "talk",
+   "site": "https://emergencymedicine-2026.forms-wizard.biz/",
+   "ticketing": {
+    "model": "festival-pass",
+    "url": "https://emergencymedicine-2026.forms-wizard.biz/users/new"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-10-21",
+     "lastDate": "2026-10-21",
+     "format": "block",
+     "dataUrl": "/data/festivals/iaem/2026.json",
+     "events": 9
+    }
+   ]
+  },
+  {
+   "id": "icisa",
+   "name": "ICISA, International Conference of the Israel Society of Anesthesiologists",
+   "nameLocal": "הכנס הבינלאומי של איגוד הרופאים המרדימים",
+   "city": "Tel Aviv",
+   "country": "IL",
+   "lat": 32.0654,
+   "lng": 34.7637,
+   "timezone": "Asia/Jerusalem",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "academic",
+   "subtypes": [
+    "academic-medicine"
+   ],
+   "defaultGenre": "talk",
+   "site": "https://www.icisa2026.com/",
+   "ticketing": {
+    "model": "festival-pass",
+    "url": "https://icisa2026-reg.forms-wizard.biz/users/new"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-11-17",
+     "lastDate": "2026-11-19",
+     "format": "block",
+     "dataUrl": "/data/festivals/icisa/2026.json",
+     "events": 63
+    }
+   ]
+  },
+  {
+   "id": "indnegev",
+   "name": "InDNegev",
+   "nameLocal": "אינדינגב",
+   "city": "Mitzpe Gvulot",
+   "country": "IL",
+   "lat": 31.2111,
+   "lng": 34.4652,
+   "timezone": "Asia/Jerusalem",
+   "lang": "he",
+   "dir": "rtl",
+   "kind": "music",
+   "subtypes": [
+    "music-indie",
+    "music-israeli"
+   ],
+   "defaultGenre": "music",
+   "site": "https://indnegev.co.il",
+   "ticketing": {
+    "model": "festival-pass",
+    "url": "https://www.eventer.co.il/ind2026"
+   },
+   "popularity": 6578,
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-10-15",
+     "lastDate": "2026-10-17",
+     "format": "block",
+     "dataUrl": "/data/festivals/indnegev/2026.json",
+     "events": 142
+    }
+   ]
+  },
+  {
+   "id": "isra",
+   "name": "ISRA Annual Conference (Israel Radiological Association)",
+   "nameLocal": null,
+   "city": "Capernaum",
+   "country": "IL",
+   "lat": 32.8804,
+   "lng": 35.5736,
+   "timezone": "Asia/Jerusalem",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "academic",
+   "subtypes": [
+    "academic-radiology",
+    "academic-medicine"
+   ],
+   "defaultGenre": "talk",
+   "site": "https://events.ortra.com/isra2026",
+   "ticketing": {
+    "model": "festival-pass",
+    "url": "https://events.ortra.com/isra2026/Registration"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-10-18",
+     "lastDate": "2026-10-20",
+     "format": "block",
+     "dataUrl": "/data/festivals/isra/2026.json",
+     "events": 26
+    }
+   ]
+  },
+  {
+   "id": "israel-neurological-association",
+   "name": "Israel Neurological Association Annual Conference",
+   "nameLocal": "הכנס השנתי של האיגוד הנוירולוגי בישראל",
+   "city": "Tel Aviv",
+   "country": "IL",
+   "lat": 32.1054,
+   "lng": 34.8084,
+   "timezone": "Asia/Jerusalem",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "academic",
+   "subtypes": [
+    "academic-medicine"
+   ],
+   "defaultGenre": "talk",
+   "site": "https://israelneurocongress.com/",
+   "ticketing": {
+    "model": "festival-pass",
+    "url": "https://reg.eventact.com//welcome?Form=irp8AAA&c=i7AI&Event=ip5cAAA&lang=he"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-12-21",
+     "lastDate": "2026-12-22",
+     "format": "block",
+     "dataUrl": "/data/festivals/israel-neurological-association/2026.json",
+     "events": 14
+    }
+   ]
+  },
+  {
+   "id": "israman",
+   "name": "Challenge ISRAMAN",
+   "nameLocal": "צ'אלנג' ישראמן",
+   "city": "Eilat",
+   "country": "IL",
+   "lat": 29.5482,
+   "lng": 34.9633,
+   "timezone": "Asia/Jerusalem",
+   "lang": "he",
+   "dir": "rtl",
+   "kind": "sports",
+   "subtypes": [
+    "sports-triathlon"
+   ],
+   "defaultGenre": "other",
+   "site": "https://israman.co.il/",
+   "ticketing": {
+    "model": "other",
+    "url": "https://israman.co.il/?page_id=33067"
+   },
+   "editions": [
+    {
+     "id": "2027",
+     "ordinal": null,
+     "firstDate": "2027-01-27",
+     "lastDate": "2027-01-30",
+     "format": "block",
+     "dataUrl": "/data/festivals/israman/2027.json",
+     "events": 21
+    }
+   ]
+  },
+  {
+   "id": "jerusalem-comedy",
+   "name": "Jerusalem Comedy Festival",
+   "nameLocal": "פסטיבל הקומדיה הישראלי",
+   "city": "Jerusalem",
+   "country": "IL",
+   "lat": 31.7683,
+   "lng": 35.2137,
+   "timezone": "Asia/Jerusalem",
+   "lang": "he",
+   "dir": "rtl",
+   "kind": "comedy",
+   "subtypes": [
+    "comedy-standup"
+   ],
+   "defaultGenre": "comedy",
+   "site": "https://comedy-festival.co.il",
+   "ticketing": {
+    "model": "per-event-seller",
+    "url": null
+   },
+   "popularity": 121,
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-10-18",
+     "lastDate": "2026-10-22",
+     "format": "block",
+     "dataUrl": "/data/festivals/jerusalem-comedy/2026.json",
+     "events": 34
+    }
+   ]
+  },
+  {
+   "id": "jerusalem-oud",
+   "name": "Jerusalem International Oud Festival",
+   "nameLocal": "פסטיבל העוד הבינלאומי ירושלים",
+   "city": "Jerusalem",
+   "country": "IL",
+   "lat": 31.7683,
+   "lng": 35.2137,
+   "timezone": "Asia/Jerusalem",
+   "lang": "he",
+   "dir": "rtl",
+   "kind": "music",
+   "subtypes": [
+    "music-oud",
+    "music-world"
+   ],
+   "defaultGenre": "music",
+   "site": "https://www.confederationhouse.org/page_18014",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://www.confederationhouse.org/page_18014"
+   },
+   "popularity": 1083,
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-11-05",
+     "lastDate": "2026-11-12",
+     "format": "block",
+     "dataUrl": "/data/festivals/jerusalem-oud/2026.json",
+     "events": 16
+    }
+   ]
+  },
+  {
+   "id": "kol-hamusica",
+   "name": "Voice of Music in the Upper Galilee (Kol HaMusica)",
+   "nameLocal": "פסטיבל קול המוסיקה בגליל העליון",
+   "city": "Kfar Blum",
+   "country": "IL",
+   "lat": 33.1725,
+   "lng": 35.6097,
+   "timezone": "Asia/Jerusalem",
+   "lang": "he",
+   "dir": "rtl",
+   "kind": "music",
+   "subtypes": [
+    "music-classical",
+    "music-chamber"
+   ],
+   "defaultGenre": "music",
+   "site": "https://www.kol-hamusica.org.il/",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://galil-elion.smarticket.co.il/%D7%A4%D7%A1%D7%98%D7%99%D7%91%D7%9C_%D7%A7%D7%95%D7%9C_%D7%94%D7%9E%D7%95%D7%A1%D7%99%D7%A7%D7%94"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-10-28",
+     "lastDate": "2026-11-01",
+     "format": "block",
+     "dataUrl": "/data/festivals/kol-hamusica/2026.json",
+     "events": 14
+    }
+   ]
+  },
+  {
+   "id": "leicester-comedy",
+   "name": "Leicester Comedy Festival",
+   "nameLocal": null,
+   "city": "Leicester",
+   "country": "GB",
+   "lat": 52.6365,
+   "lng": -1.1339,
+   "timezone": "Europe/London",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "comedy",
+   "subtypes": [
+    "comedy-standup"
+   ],
+   "defaultGenre": "comedy",
+   "site": "https://www.comedy-festival.co.uk",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://events.comedy-festival.co.uk"
+   },
+   "popularity": 2295,
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-02-04",
+     "lastDate": "2026-02-22",
+     "format": "block",
+     "dataUrl": "/data/festivals/leicester-comedy/2026.json",
+     "events": 699
+    }
+   ]
+  },
+  {
+   "id": "litquake",
+   "name": "Litquake",
+   "nameLocal": null,
+   "city": "San Francisco",
+   "country": "US",
+   "region": "California",
+   "lat": 37.7749,
+   "lng": -122.4194,
+   "timezone": "America/Los_Angeles",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "literature",
+   "subtypes": [
+    "literature-books"
+   ],
+   "defaultGenre": "talk",
+   "site": "https://www.litquake.org",
+   "ticketing": {
+    "model": "other",
+    "url": "https://litquake2026.sched.com"
+   },
+   "popularity": 911,
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-10-04",
+     "lastDate": "2026-10-24",
+     "format": "block",
+     "dataUrl": "/data/festivals/litquake/2026.json",
+     "events": 93
+    }
+   ]
+  },
+  {
+   "id": "london-latino-film-festival",
+   "name": "London Latino Film Festival",
+   "nameLocal": null,
+   "city": "London",
+   "country": "GB",
+   "lat": 51.5074,
+   "lng": -0.1278,
+   "timezone": "Europe/London",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "film",
+   "subtypes": [
+    "film-latin-american"
+   ],
+   "defaultGenre": "film",
+   "site": "https://londonlatinofilmfestival.org.uk",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://lolaff2026.eventive.org"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": 1,
+     "firstDate": "2026-10-02",
+     "lastDate": "2026-10-06",
+     "format": "block",
+     "dataUrl": "/data/festivals/london-latino-film-festival/2026.json",
+     "events": 39
+    }
+   ]
+  },
+  {
+   "id": "marxismnl-conference",
+   "name": "MarxismNL Conference",
+   "nameLocal": null,
+   "city": "Amsterdam",
+   "country": "NL",
+   "lat": 52.3676,
+   "lng": 4.9041,
+   "timezone": "Europe/Amsterdam",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "academic",
+   "subtypes": [
+    "academic-politics"
+   ],
+   "defaultGenre": "talk",
+   "site": "https://marxism-nl.org",
+   "ticketing": {
+    "model": "other",
+    "url": "https://forms.gle/peVgY3Pqgh2Cw2hz7"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": 1,
+     "firstDate": "2026-10-07",
+     "lastDate": "2026-10-09",
+     "format": "block",
+     "dataUrl": "/data/festivals/marxismnl-conference/2026.json",
+     "events": 77
+    }
+   ]
+  },
+  {
+   "id": "matrix-conference",
+   "name": "The Matrix Conference",
+   "nameLocal": null,
+   "city": "Malmö",
+   "country": "SE",
+   "lat": 55.605,
+   "lng": 13.0038,
+   "timezone": "Europe/Stockholm",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "academic",
+   "subtypes": [
+    "academic-computer-science"
+   ],
+   "defaultGenre": "talk",
+   "site": "https://2026.matrix.org",
+   "ticketing": {
+    "model": "festival-pass",
+    "url": "https://pretix.eu/matrix/matrix-conf-2026/"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-10-20",
+     "lastDate": "2026-10-23",
+     "format": "block",
+     "dataUrl": "/data/festivals/matrix-conference/2026.json",
+     "events": 70
+    }
+   ]
+  },
+  {
+   "id": "micf",
+   "name": "Melbourne International Comedy Festival",
+   "nameLocal": null,
+   "city": "Melbourne",
+   "country": "AU",
+   "region": "Victoria",
+   "lat": -37.815,
+   "lng": 144.9668,
+   "timezone": "Australia/Melbourne",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "comedy",
+   "subtypes": [
+    "comedy-standup"
+   ],
+   "defaultGenre": "comedy",
+   "site": "https://www.comedyfestival.com.au",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://www.comedyfestival.com.au"
+   },
+   "popularity": 11855,
+   "editions": [
+    {
+     "id": "2027",
+     "ordinal": null,
+     "firstDate": "2027-03-24",
+     "lastDate": "2027-04-18",
+     "format": "block",
+     "dataUrl": null,
+     "events": null
+    }
+   ]
+  },
+  {
+   "id": "new-orleans-film-festival",
+   "name": "New Orleans Film Festival",
+   "nameLocal": null,
+   "city": "New Orleans",
+   "country": "US",
+   "region": "Louisiana",
+   "lat": 29.9511,
+   "lng": -90.0715,
+   "timezone": "America/Chicago",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "film",
+   "subtypes": [
+    "film-independent"
+   ],
+   "defaultGenre": "film",
+   "site": "https://neworleansfilmsociety.org",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://nofs.eventive.org"
+   },
+   "popularity": 1555,
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": 37,
+     "firstDate": "2026-10-22",
+     "lastDate": "2026-10-27",
+     "format": "block",
+     "dataUrl": "/data/festivals/new-orleans-film-festival/2026.json",
+     "events": 121
+    }
+   ]
+  },
+  {
+   "id": "nzicf",
+   "name": "NZ International Comedy Festival",
+   "nameLocal": null,
+   "city": "Auckland",
+   "country": "NZ",
+   "lat": -36.8485,
+   "lng": 174.7633,
+   "timezone": "Pacific/Auckland",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "comedy",
+   "subtypes": [
+    "comedy-standup"
+   ],
+   "defaultGenre": "comedy",
+   "site": "https://www.comedyfestival.co.nz",
+   "ticketing": {
+    "model": "per-event-seller",
+    "url": null
+   },
+   "popularity": 2021,
+   "editions": [
+    {
+     "id": "2027",
+     "ordinal": null,
+     "firstDate": "2027-04-30",
+     "lastDate": "2027-05-23",
+     "format": "block",
+     "dataUrl": null,
+     "events": null
+    }
+   ]
+  },
+  {
+   "id": "outshine-lgbtq-film-festival",
+   "name": "OUTshine LGBTQ+ Film Festival (Fall Edition)",
+   "nameLocal": null,
+   "city": "Fort Lauderdale",
+   "country": "US",
+   "region": "Florida",
+   "lat": 26.1224,
+   "lng": -80.1373,
+   "timezone": "America/New_York",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "film",
+   "subtypes": [
+    "film-queer"
+   ],
+   "defaultGenre": "film",
+   "site": "https://outshinefilm.com",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://outshinefall2026.eventive.org"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-10-15",
+     "lastDate": "2026-10-25",
+     "format": "block",
+     "dataUrl": "/data/festivals/outshine-lgbtq-film-festival/2026.json",
+     "events": 36
+    }
+   ]
+  },
+  {
+   "id": "pycon-greece",
+   "name": "PyCon Greece",
+   "nameLocal": null,
+   "city": "Athens",
+   "country": "GR",
+   "lat": 37.9838,
+   "lng": 23.7275,
+   "timezone": "Europe/Athens",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "academic",
+   "subtypes": [
+    "academic-computer-science"
+   ],
+   "defaultGenre": "talk",
+   "site": "https://2026.pycon.gr",
+   "ticketing": {
+    "model": "festival-pass",
+    "url": "https://pretix.eu/pygreece/pycon-gr-2026/"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": 2,
+     "firstDate": "2026-10-12",
+     "lastDate": "2026-10-13",
+     "format": "block",
+     "dataUrl": "/data/festivals/pycon-greece/2026.json",
+     "events": 51
+    }
+   ]
+  },
+  {
+   "id": "red-sea-jazz",
+   "name": "Red Sea Jazz Festival",
+   "nameLocal": "פסטיבל הג׳אז ים סוף",
+   "city": "Eilat",
+   "country": "IL",
+   "lat": 29.5569,
+   "lng": 34.9517,
+   "timezone": "Asia/Jerusalem",
+   "lang": "he",
+   "dir": "rtl",
+   "kind": "music",
+   "subtypes": [
+    "music-jazz"
+   ],
+   "defaultGenre": "music",
+   "site": "https://redseajazz.co.il/",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://redseajazz.co.il/lineup/"
+   },
+   "popularity": 2553,
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": 40,
+     "firstDate": "2026-11-11",
+     "lastDate": "2026-11-14",
+     "format": "block",
+     "dataUrl": "/data/festivals/red-sea-jazz/2026.json",
+     "events": 46
+    }
+   ]
+  },
+  {
+   "id": "santa-fe-international-film-festival",
+   "name": "Santa Fe International Film Festival",
+   "nameLocal": null,
+   "city": "Santa Fe",
+   "country": "US",
+   "region": "New Mexico",
+   "lat": 35.687,
+   "lng": -105.9378,
+   "timezone": "America/Denver",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "film",
+   "subtypes": [
+    "film-international"
+   ],
+   "defaultGenre": "film",
+   "site": "https://santafe.film",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://sfiff.eventive.org"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-10-14",
+     "lastDate": "2026-10-19",
+     "format": "block",
+     "dataUrl": "/data/festivals/santa-fe-international-film-festival/2026.json",
+     "events": 119
+    }
+   ]
+  },
+  {
+   "id": "scala-days",
+   "name": "Scala Days",
+   "nameLocal": null,
+   "city": "Berlin",
+   "country": "DE",
+   "lat": 52.52,
+   "lng": 13.405,
+   "timezone": "Europe/Berlin",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "academic",
+   "subtypes": [
+    "academic-computer-science"
+   ],
+   "defaultGenre": "talk",
+   "site": "https://scaladays.org",
+   "ticketing": {
+    "model": "festival-pass",
+    "url": "https://tickets.plainschwarz.com/scaladays26/"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-10-12",
+     "lastDate": "2026-10-13",
+     "format": "block",
+     "dataUrl": "/data/festivals/scala-days/2026.json",
+     "events": 50
+    }
+   ]
+  },
+  {
+   "id": "seeei-electricity-energy",
+   "name": "Electricity & Energy, the SEEEI Annual Convention",
+   "nameLocal": "חשמל ואנרגיה, הכנס השנתי של אגודת מהנדסי החשמל והאלקטרוניקה בישראל",
+   "city": "Eilat",
+   "country": "IL",
+   "lat": 29.5492,
+   "lng": 34.9675,
+   "timezone": "Asia/Jerusalem",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "academic",
+   "subtypes": [
+    "academic-engineering"
+   ],
+   "defaultGenre": "talk",
+   "site": "https://www.electricity2026.com/en",
+   "ticketing": {
+    "model": "festival-pass",
+    "url": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-11-10",
+     "lastDate": "2026-11-13",
+     "format": "block",
+     "dataUrl": "/data/festivals/seeei-electricity-energy/2026.json",
+     "events": 56
+    }
+   ]
+  },
+  {
+   "id": "silicon-valley-jewish-film-festival",
+   "name": "Silicon Valley Jewish Film Festival",
+   "nameLocal": null,
+   "city": "San Jose",
+   "country": "US",
+   "region": "California",
+   "lat": 37.3382,
+   "lng": -121.8863,
+   "timezone": "America/Los_Angeles",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "film",
+   "subtypes": [
+    "film-jewish"
+   ],
+   "defaultGenre": "film",
+   "site": "https://www.svjff.org",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://svjff.eventive.org"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-10-10",
+     "lastDate": "2026-10-25",
+     "format": "block",
+     "dataUrl": "/data/festivals/silicon-valley-jewish-film-festival/2026.json",
+     "events": 9
+    }
+   ]
+  },
+  {
+   "id": "singapore-international-film-festival",
+   "name": "Singapore International Film Festival",
+   "nameLocal": null,
+   "city": "Singapore",
+   "country": "SG",
+   "lat": 1.2903,
+   "lng": 103.852,
+   "timezone": "Asia/Singapore",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "film",
+   "subtypes": [
+    "film-international"
+   ],
+   "defaultGenre": "film",
+   "site": "https://sgiff.com",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://sgiff.eventive.org"
+   },
+   "popularity": 7465,
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": 37,
+     "firstDate": "2026-10-21",
+     "lastDate": "2026-11-07",
+     "format": "block",
+     "dataUrl": "/data/festivals/singapore-international-film-festival/2026.json",
+     "events": 106
+    }
+   ]
+  },
+  {
+   "id": "swiss-python-summit",
+   "name": "Swiss Python Summit",
+   "nameLocal": null,
+   "city": "Rapperswil",
+   "country": "CH",
+   "lat": 47.2267,
+   "lng": 8.8184,
+   "timezone": "Europe/Zurich",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "academic",
+   "subtypes": [
+    "academic-computer-science"
+   ],
+   "defaultGenre": "talk",
+   "site": "https://www.python-summit.ch",
+   "ticketing": {
+    "model": "festival-pass",
+    "url": "https://www.python-summit.ch/register/"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-10-22",
+     "lastDate": "2026-10-23",
+     "format": "block",
+     "dataUrl": "/data/festivals/swiss-python-summit/2026.json",
+     "events": 22
+    }
+   ]
+  },
+  {
+   "id": "tallgrass-film-festival",
+   "name": "Tallgrass Film Festival",
+   "nameLocal": null,
+   "city": "Wichita",
+   "country": "US",
+   "region": "Kansas",
+   "lat": 37.6872,
+   "lng": -97.3301,
+   "timezone": "America/Chicago",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "film",
+   "subtypes": [
+    "film-independent"
+   ],
+   "defaultGenre": "film",
+   "site": "https://tallgrassfilm.org",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://tallgrassfilmfestival2026.eventive.org"
+   },
+   "popularity": 1118,
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": 24,
+     "firstDate": "2026-10-15",
+     "lastDate": "2026-10-18",
+     "format": "block",
+     "dataUrl": "/data/festivals/tallgrass-film-festival/2026.json",
+     "events": 49
+    }
+   ]
+  },
+  {
+   "id": "tel-aviv-festival",
+   "name": "Tel Aviv Festival",
+   "nameLocal": "פסטיבל תל־אביב",
+   "city": "Tel Aviv",
+   "country": "IL",
+   "lat": 32.0775,
+   "lng": 34.78667,
+   "timezone": "Asia/Jerusalem",
+   "lang": "he",
+   "dir": "rtl",
+   "kind": "multi",
+   "subtypes": [
+    "music-israeli",
+    "art-museum"
+   ],
+   "defaultGenre": "music",
+   "site": "https://telavivfestival.co.il",
+   "ticketing": {
+    "model": "festival-pass",
+    "url": "https://telavivfestival.co.il/#tickets"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": 2,
+     "firstDate": "2026-11-01",
+     "lastDate": "2026-11-08",
+     "format": "block",
+     "dataUrl": "/data/festivals/tel-aviv-festival/2026.json",
+     "events": 54
+    }
+   ]
+  },
+  {
+   "id": "tlvfest",
+   "name": "TLVFest, Tel Aviv International LGBTQ+ Film Festival",
+   "nameLocal": "פסטיבל קולנוע גאה",
+   "city": "Tel Aviv",
+   "country": "IL",
+   "lat": 32.0708,
+   "lng": 34.7833,
+   "timezone": "Asia/Jerusalem",
+   "lang": "he",
+   "dir": "rtl",
+   "kind": "film",
+   "subtypes": [
+    "film-lgbtq"
+   ],
+   "defaultGenre": "film",
+   "site": "https://www.cinema.co.il/%D7%A4%D7%A1%D7%98%D7%99%D7%91%D7%9C-%D7%92%D7%90%D7%94/",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://www.cinema.co.il/"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-10-22",
+     "lastDate": "2026-10-31",
+     "format": "block",
+     "dataUrl": "/data/festivals/tlvfest/2026.json",
+     "events": 58
+    }
+   ]
+  },
+  {
+   "id": "tryon-international-film-festival",
+   "name": "Tryon International Film Festival",
+   "nameLocal": null,
+   "city": "Tryon",
+   "country": "US",
+   "region": "North Carolina",
+   "lat": 35.2087,
+   "lng": -82.2387,
+   "timezone": "America/New_York",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "film",
+   "subtypes": [
+    "film-independent"
+   ],
+   "defaultGenre": "film",
+   "site": "https://triff2026.eventive.org",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://triff2026.eventive.org"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-10-08",
+     "lastDate": "2026-10-11",
+     "format": "block",
+     "dataUrl": "/data/festivals/tryon-international-film-festival/2026.json",
+     "events": 62
+    }
+   ]
+  },
+  {
+   "id": "viet-film-fest",
+   "name": "Viet Film Fest",
+   "nameLocal": null,
+   "city": "Santa Ana",
+   "country": "US",
+   "region": "California",
+   "lat": 33.7455,
+   "lng": -117.8677,
+   "timezone": "America/Los_Angeles",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "film",
+   "subtypes": [
+    "film-diaspora"
+   ],
+   "defaultGenre": "film",
+   "site": "https://www.vietfilmfest.com",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://vietfilmfest2026.eventive.org"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-10-08",
+     "lastDate": "2026-10-23",
+     "format": "block",
+     "dataUrl": "/data/festivals/viet-film-fest/2026.json",
+     "events": 29
+    }
+   ]
+  }
+ ]
+}

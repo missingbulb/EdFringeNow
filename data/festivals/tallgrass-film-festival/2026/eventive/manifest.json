@@ -1,0 +1,16 @@
+{
+ "festival": "tallgrass-film-festival",
+ "edition": "2026",
+ "source": "eventive",
+ "fetchedAt": "2026-10-02T18:08:22Z",
+ "fetcher": "scraper/festivals/tallgrass_film_festival/sources/eventive/fetch.py",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://tallgrassfilmfestival2026.eventive.org/schedule",
+  "https://api.eventive.org/event_buckets/69fb4b9ffab7d2ee1bec63ba/events?api_key=<the tenant's public api_key>"
+ ],
+ "files": [
+  "programme.json"
+ ],
+ "notes": "Eventive's public events API for the tenant's bucket, unauthenticated (the key is the one the box office ships). In-person screenings in the edition only; start_time is UTC; prices in cents (scraper/festivals/platforms/eventive.py)."
+}

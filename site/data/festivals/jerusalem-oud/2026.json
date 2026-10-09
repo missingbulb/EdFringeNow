@@ -1,0 +1,604 @@
+{
+ "v": 1,
+ "festival": {
+  "id": "jerusalem-oud",
+  "edition": "2026",
+  "ordinal": null,
+  "name": "Jerusalem International Oud Festival",
+  "nameLocal": "פסטיבל העוד הבינלאומי ירושלים",
+  "city": "Jerusalem",
+  "country": "IL",
+  "lat": 31.7683,
+  "lng": 35.2137,
+  "timezone": "Asia/Jerusalem",
+  "lang": "he",
+  "dir": "rtl",
+  "kind": "music",
+  "defaultGenre": "music",
+  "site": "https://www.confederationhouse.org/page_18014",
+  "firstDate": "2026-11-05",
+  "lastDate": "2026-11-12",
+  "ticketing": {
+   "notes": "Each concert's page prints one ticket price. Tickets are sold on bimot.co.il (the pages link to it) and by phone at *6226.",
+   "currency": "ILS",
+   "source": "https://www.confederationhouse.org/page_18014",
+   "model": "central-box-office",
+   "url": "https://www.confederationhouse.org/page_18014"
+  }
+ },
+ "categories": [],
+ "venues": [
+  {
+   "id": "confederation-house",
+   "name": "בית הקונפדרציה",
+   "address": "אמיל בוטה 12, ימין משה, ירושלים",
+   "lat": 31.774194,
+   "lng": 35.224972,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": "חניית נכים, ומערכות עזר לשמע באירועים באולמות הבית.",
+   "notes": "The festival's home, in Yemin Moshe below the Old City walls. No seat count published.",
+   "refs": [
+    "https://www.confederationhouse.org/contact",
+    "https://www.confederationhouse.org/page_18115",
+    "https://www.wikidata.org/wiki/Q7032769"
+   ]
+  },
+  {
+   "id": "jerusalem-theatre",
+   "name": "תיאטרון ירושלים",
+   "address": "דוד מרכוס 20, ירושלים",
+   "lat": 31.768911,
+   "lng": 35.215644,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {
+     "id": "sherover",
+     "name": "אולם שרובר",
+     "capacity": 980,
+     "layout": null
+    },
+    {
+     "id": "rebecca-crown",
+     "name": "אולם רבקה קראון",
+     "capacity": 460,
+     "layout": null
+    }
+   ],
+   "accessibility": "האולמות נגישים לכיסאות גלגלים, עם מערכת הגברה לכבדי שמיעה.",
+   "notes": "The Jerusalem Centre for the Performing Arts in Talbiya. The festival plays two of its halls, the Sherover Theatre and the Rebecca Crown Hall.",
+   "refs": [
+    "https://en.wikipedia.org/wiki/Jerusalem_Theatre",
+    "https://www.jerusalem-theatre.co.il/eng/Contact_Us",
+    "https://www.jerusalem-theatre.co.il/eng/Halls"
+   ]
+  },
+  {
+   "id": "khan-theatre",
+   "name": "תיאטרון החאן",
+   "address": "דוד רמז, ירושלים",
+   "lat": 31.768528,
+   "lng": 35.224614,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "The Jerusalem Khan Theatre, a ten-minute walk from Confederation House. Its main hall seats 232 and its small hall 69 (khan.co.il/halls); the festival does not say which hall, so no capacity is served. OpenStreetMap gives the street but no house number.",
+   "refs": [
+    "https://en.wikipedia.org/wiki/Jerusalem_Khan_Theatre",
+    "https://nominatim.openstreetmap.org/search?q=%D7%AA%D7%99%D7%90%D7%98%D7%A8%D7%95%D7%9F+%D7%94%D7%97%D7%90%D7%9F+%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D&format=json&addressdetails=1"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "page-21040",
+   "title": "מופע פתיחה – דודו טסה & ג'וני גרינווד – Jarak Qaribak جارك قريبك",
+   "titleLocal": null,
+   "url": "https://www.confederationhouse.org/page_21040",
+   "genre": "music",
+   "categories": [],
+   "blurb": "המוזיקאי המוערך והמצליח דודו טסה והמלחין והגיטריסט עטור הפרסים, ג'וני גרינווד (רדיוהד, The Smile) במופע משותף. במופע יבוצעו שירים מאלבומם \"Jarak Qaribak\", בו מחדשים השניים שירי אהבה ערביים קלאסיים מהמזרח התיכון עם זמרים וזמרות ממדינות האזור השונות (ירדן, לבנון, סוריה, עיראק, אלג׳יר, מצרים, מרוקו ועוד). במופע ישולבו גם שירים מן הפרק החדש של הפרויקט המשותף ומאלבומי ״הכוויתים״.\nעבודתם המשותפת של שני היוצרים החלה כשטסה פתח את סיבוב ההופעות של רדיוהד בארה״ב, לאחר שהוציא את אלבומו ״דודו טסה והכוויתים״, בו הצדיע ליצירה של סבו, דאוד אל כוויתי ואחיו סאלח, שנולדו בעיראק והפכו למוזיקאים מהגדולים והחשובים בשנות ה-40 במזרח התיכון.\nאת האמנים ילווה הרכב מוזיקאים וזמרים מהשורה הראשונה מהארץ ומהעולם, מה שהופך את ההופעה לאחד האירועים הסוחפים והמהפנטים ביותר בתולדות פסטיבל העוד.\nבהשתתפות:\nג׳וני גרינווד | דודו טסה\nקראר אל סעדי (קירי) שירה | ג׳יאנה נדאף שירה | דן מאיו תופים | נור בר גורן כלי הקשה | לואי חורי כלי הקשה | אריאל קסיס קאנון | יצחק ונטורה חליל | ספי ציזלינג חצוצרה | מעיין מילוא טרומבון | עדן ג׳משיד צ׳לו | יוהנה ריטמולר כינור | תומר מוקד כינור | סיראז׳ עבדאלמועטי ויולה | יניב טייכמן עוד | שרונה קטן קלידים | אומרי קטן שירה | תמר שוויקי שירה",
+   "durationMin": null,
+   "imageUrl": "https://www.confederationhouse.org/Media/Uploads/%D7%90%D7%A8%D7%95%D7%A22_%D7%93%D7%95%D7%93%D7%95_%D7%98%D7%A1%D7%94_%D7%A1%D7%95%D7%A4%D7%99%281%29.jpg"
+  },
+  {
+   "id": "page-21043",
+   "title": "טריו וסים עודה: הדרך לאקסטזה",
+   "titleLocal": null,
+   "url": "https://www.confederationhouse.org/page_21043",
+   "genre": "music",
+   "categories": [],
+   "blurb": "נגן העוד, המלחין והחוקר ד\"ר וסים עודה, מציג מופע קאמרי חדש, המסמן את דרכו היצירתית הנעה בין מסורת המוזיקה הערבית הקלאסית ואמנות המקאם ליצירות ועיבודים מקוריים. המופע משלב עושר מלודי, מורכבות קצבית ואלתור חי, סוחף ורב-עוצמה. הטריו של עודה מפגיש בין העוד, הפסנתר וכלי ההקשה ויוצר צליל ייחודי המחבר בין יצירות מקוריות חדשות שלו לבין פנינים מן הרפרטואר הערבי והמערבי בעיבודים מקוריים. עודה הוא מהקולות המקוריים במוזיקה הערבית העכשווית ומשתף פעולה עם אמנים בינלאומיים כמו מאסטר העוד סימון שאהין, עומר פארוק טקבילק, הסימפונייטה של לונדון ולהקת רדיוהד.\nד\"ר וסים עודה עוד | ד\"ר פאדי דיב פסנתר | נאבע' אבו נקולא כלי הקשה",
+   "durationMin": null,
+   "imageUrl": "https://www.confederationhouse.org/Media/Uploads/%D7%98%D7%A8%D7%99%D7%95_%D7%95%D7%A1%D7%99%D7%9D_%D7%A2%D7%95%D7%93%D7%94%281%29.jpg"
+  },
+  {
+   "id": "page-21046",
+   "title": "פרופ' תייסיר אליאס: רסיטל עוד – תרבות הצליל",
+   "titleLocal": null,
+   "url": "https://www.confederationhouse.org/page_21046",
+   "genre": "music",
+   "categories": [],
+   "blurb": "מסע מוזיקלי סוחף אל שורשי המוזיקה הערבית עם וירטואוז העוד הנודע פרופ' תייסיר אליאס, מנגני העוד והמוזיקאים הבולטים בעולם בימינו. אליאס יציג בנגינתו מבחר יצירות קאנוניות קלאסיות לצד יצירות מקוריות מפרי עטו, המשקפות את עולמו האמנותי הרב-תרבותי. הוא ישלב בקונצרט קטעי אימפרוביזציה ותקאסים שלמים שיביאו לידי ביטוי פרשנויות שונות, עומק פילוסופי ורגשי והתעלות רוחנית - \"טרב\".\nפרופ' אליאס, הנודע בנגינתו הווירטואוזית, הופיע כסולן עם תזמורות רבות בארץ ובעולם ושיתף פעולה עם גדולי האמנים ברחבי תבל, כגון: זאקיר חוסיין, הארי פראסאד צ'וארסיה, יצחק פרלמן, איוואן פישר, פקו דה לוצ'יה, ודיע אל סאפי, מוניר בשיר ועוד. אליאס זכה במגוון פרסים חשובים בארץ ובחו\"ל והשנה אף זכה בפרס מפעל חיים ע\"ש שולמית אלוני.\nבמופע יארח פרופ' אליאס את אחד המוזיקאים הגדולים בישראל ובעולם - המנצח, המלחין, הפדגוג ונגן המנדולינה הווירטואוז שמואל אלבז.\n\nפרופ' תייסיר אליאס ניהול מוזיקלי, עוד | שמואל אלבז מנדולינה",
+   "durationMin": null,
+   "imageUrl": "https://www.confederationhouse.org/Media/Uploads/%D7%AA%D7%A8%D7%91%D7%95_%D7%94%D7%A6%D7%9C%D7%99%D7%9C_%D7%AA%D7%99%D7%99%D7%A1%D7%99%D7%A8_%D7%90%D7%9C%D7%99%D7%90%D7%A1%281%29.jpg"
+  },
+  {
+   "id": "page-21049",
+   "title": "שרלי סבח: גשר המיתרים",
+   "titleLocal": null,
+   "url": "https://www.confederationhouse.org/page_21049",
+   "genre": "music",
+   "categories": [],
+   "blurb": "נגן העוד, הזמר והמלחין שרלי סבח, יופיע עם הסבח'ס - שני בניו הגיטריסטיים אילן דור סבח, בגיטרה ספרדית, ויאיר סבח, בגיטרה אקוסטית. יחד עמם יופיע נגן כלי ההקשה יעקב לב שמח, במופע מיוחד לפסטיבל העוד. הסבח'ס יציגו מבחר מיצירותיו של שרלי סבח, האורגות יחד אלמנטים ממוזיקה ערבית קלאסית, פלמנקו, מוזיקה מהבלקן, ג'אז ורוק, לטקסטורות אוניברסליות ועל-זמניות. המופע כולל שירים מאלבומו \"מוצא המילים\", המציג לחנים לשיריהם של נתן אלתרמן, פאבלו נרודה ופדריקו גרסיה לורקה, וכן יצירות חדשות שהולחנו במיוחד עבור המופע בפסטיבל העוד.\n\nשרלי סבח עוד, גיטרה, שירה | אילן דור סבח גיטרה ספרדית | יאיר סבח גיטרה אקוסטית | יעקב לב שמח זארב, דרבוקה, כלי הקשה",
+   "durationMin": null,
+   "imageUrl": "https://www.confederationhouse.org/Media/Uploads/%D7%A9%D7%A8%D7%9C%D7%99_%D7%A1%D7%91%D7%97_%D7%92%D7%A9%D7%A8_%D7%94%D7%9E%D7%99%D7%AA%D7%A8%D7%99%D7%9D%281%29.jpg"
+  },
+  {
+   "id": "page-21052",
+   "title": "עומרי מור מארח את שלמה בר",
+   "titleLocal": null,
+   "url": "https://www.confederationhouse.org/page_21052",
+   "genre": "music",
+   "categories": [],
+   "blurb": "הפסנתרן והמלחין עומרי מור מארח את נגן כלי ההקשה והזמר שלמה בר. המופע מתמקד בהשפעה ובהשראה של המסורת האלג'יראית במוזיקה האנדלוסית על מוזיקת הג'אז, ונע בין יצירות אנדלוסיות מקוריות ויצירות של מור ושל בר. את השניים תלווה להקה שתציג את מסורת המוזיקה האנדלוסית כמסורת חיה, המושפעת משפות הנגנים השונים.\nמור למד את רזי המוזיקה האנדלוסית הצפון-אפריקאית אצל מאסטר העוד והמוזיקה האלג'יראית נינו ביטון. בר הוא מחלוצי סצינת מוזיקת העולם בארץ ומנהיג להקת \"הברירה הטבעית\".\nעומרי מור פסנתר וניהול מוזיקלי | אמן אורח: שלמה בר שירה, תוף | אליהו דגמי סאז, גיטרה | אברהם מימרן כינור | גלעד ואקנין מנדול, עוד | אילון ברגר בנג'ו | יהודה אשש בס | מתן כספי כלי הקשה | הלל אמסלם כלי הקשה | אביב בונה אידריסו תופים",
+   "durationMin": null,
+   "imageUrl": "https://www.confederationhouse.org/Media/Uploads/%D7%A2%D7%95%D7%9E%D7%A8%D7%99_%D7%9E%D7%95%D7%A8_%D7%A2%D7%93%D7%9B%D7%A0%D7%99%281%29.jpg"
+  },
+  {
+   "id": "page-21055",
+   "title": "נור דרוויש: הדהוד",
+   "titleLocal": null,
+   "url": "https://www.confederationhouse.org/page_21055",
+   "genre": "music",
+   "categories": [],
+   "blurb": "זמרת האופרה נור דרוויש מציעה מסע מוזיקלי קאמרי ואינטימי בין מסורות ותרבויות מזרחיות ומערביות, בהשראת המוסיקה הקלאסית ועולם המקאם. המופע משלב את שיריה המקוריים, חלקם בביצועי בכורה, עם יצירות על-זמניות מהרפרטואר של אום כולתום, פיירוז, פאריד אל־אטרש ואמנים נוספים. דרוויש מפתיעה ביכולתה הקולית העשירה, המגוונת והעוצמתית וסוחפת את הקהל לחוויה בלתי נשכחת הנעה בין עבר להווה, ובין מסורת ליצירה עכשווית.\nנור דרוויש שירה | לואי ח'לייף עוד | קובי ליליאן פסנתר | איגור פרוג כינור | נור גורן כלי הקשה | עדן ג'משיד צ'לו",
+   "durationMin": null,
+   "imageUrl": "https://www.confederationhouse.org/Media/Uploads/%D7%A0%D7%95%D7%A8_%D7%93%D7%A8%D7%95%D7%99%D7%99%D7%A9%281%29.jpg"
+  },
+  {
+   "id": "page-21058",
+   "title": "באביס צרטוס וארטי קטימה – נשמה יוונית - מהרבטיקו ועד סמירנאיקה",
+   "titleLocal": null,
+   "url": "https://www.confederationhouse.org/page_21058",
+   "genre": "music",
+   "categories": [],
+   "blurb": "הופעה משותפת חד-פעמית וראשונה בישראל, במיוחד עבור פסטיבל העוד, של הזמר היווני הוותיק באביס צרטוס והזמרת ונגנית הסנטור הצעירה ארטי קטימה. השניים יציגו את המוזיקה היוונית העממית השורשית – הרבטיקו, הבלוז היווני והסמירנאיקה - המוזיקה שהביאו עמם הפליטים היווניים.\nצרטוס הוא מוזיקאי מוערך מזה למעלה מחמישים שנה ונחשב לאחד מזמרי הרבטיקו החשובים בדורו. הוא הופיע לצד תזמורת מיקיס תאודורקיס, גליקריה ועוד. בקולו העשיר הוא מעביר את הרגש של תקופה שלמה ומחבר בצורה מרגשת בין העבר וההווה. קטימה הופיעה לצד יורגוס דאלארס וגליקריה, והיא ממשיכה את המסורת היוונית בדרכה שלה, מבלי לאבד את האותנטיות המאפיינת אותה.\nבאביס צרטוס שירה | ארטי קטימה שירה | יאניס צרטוס קלידים, אקורדיון | קוסטס זרידאקיס בוזוקי | ניקוס קאינוריוס גיטרה | תיאסיוולוס סטאמוליס סאונד | יורגוס קראליוטיס כלי הקשה | ואנגליס סרנטידיס כינור | ייצוג בלעדי ברכה כהן הפקות יווניות בישראל",
+   "durationMin": null,
+   "imageUrl": "https://www.confederationhouse.org/Media/Uploads/%D7%91%D7%90%D7%91%D7%99%D7%A1_%D7%A6%D7%A8%D7%98%D7%95%D7%A1_%D7%95%D7%90%D7%A8%D7%98%D7%99_%D7%A7%D7%98%D7%99%D7%9E%D7%94_%D7%94%D7%A2%D7%93%D7%9B%D7%A0%D7%99%281%29.jpg"
+  },
+  {
+   "id": "page-21061",
+   "title": "עוד אמשיך לשיר ולנגן – מופע מחווה לאהובה עוזרי במלאת עשור למותה",
+   "titleLocal": null,
+   "url": "https://www.confederationhouse.org/page_21061",
+   "genre": "music",
+   "categories": [],
+   "blurb": "מופע מחווה לאהובה עוזרי, מהיוצרות המקוריות והמשפיעות במוזיקה הישראלית במלאת עשור למותה. מסע אל עולמה המוזיקלי העשיר של עוזרי, המציע מפגש מחודש ומרתק עם יצירותיה האיקוניות.\nהמוזיקאי-זמר-בסיסט-מלחין אבי בללי הוא ממייסדי להקת \"נקמת הטרקטור\" ומי שיצר פרויקטים פורצי דרך שחיברו בין רוק, אלקטרוניקה, מוזיקה מזרחית ופיוט, כמו גם יצירת המחול הנודעת עם להקת בת שבע, \"אחד מי יודע\". כמו בפרוייקטים קודמים של בללי, גם מופע זה יוצר חיבורים בין עולמות מוזיקליים שלכאורה רחוקים זה מזה, אך נטועים בשורשים משותפים ויוצרים ביחד שפה חדשה.\nאת בללי ילווה אנסמבל של שישה נגנים, שחלקם ליוו את עוזרי לאורך השנים ונושאים עמם את ה-DNA המוזיקלי הייחודי שלה. אליהם יצטרפו הזמרות אפרת גוֹש, הילה רוח, רות דולורס וייס וגליה חי, כשכל אחת מהן מביאה את קולה האישי ונקודת מבטה המקורית אל תוך היצירה העל-זמנית של עוזרי.\n\nאבי בללי שירה, בס | שאול בסר קלידים | רון בונקר גיטרה, בולבול טארנג | אליהו דגמי עוד, גיטרה | מעיין דוארי פרקשן | גליה חי ויולה, שירה | אורחות: אפרת גוֹש, הילה רוח, רות דולורס וייס",
+   "durationMin": null,
+   "imageUrl": "https://www.confederationhouse.org/Media/Uploads/%D7%90%D7%94%D7%95%D7%91%D7%94_%D7%A2%D7%95%D7%96%D7%A8%D7%99_%D7%AA%D7%9E%D7%95%D7%A0%D7%94_%D7%99%D7%99%D7%A6%D7%95%D7%92%D7%99%D7%AA_%D7%9C%D7%9E%D7%95%D7%A4%D7%A2%281%29.jpg"
+  },
+  {
+   "id": "page-21064",
+   "title": "גור וולנר וסאזלנד – מופע השקה הומאז' לברי סחרוף ולסאז הטורקי",
+   "titleLocal": null,
+   "url": "https://www.confederationhouse.org/page_21064",
+   "genre": "music",
+   "categories": [],
+   "blurb": "סאזלנד הוא הרכב חדשני בסצנת מוזיקת העולם המקומית, וכולו סובב את כלי המיתר המוביל במוזיקה הטורקית העממית, הסאז: כלי של מספרי סיפורים, של משוררים, של האנשים הפשוטים והמוזיקאים המדופלמים כאחד.\nסאזלנד, בהובלת נגן הסאז וחוקר המוזיקה הטורקית גור וולנר ובהפקה מוזיקלית של אלעד כהן בונן (אהוד בנאי, השמחות), יופיעו יחד עם חמישה נגני סאז - עידו וולפסון, אדם סולוז'ון, מוריה מנחם, עדי שורני וחיים אור הופמן. כולם מנגנים בסוגים שונים של של סאז, בשילוב עבודת מחשב, תופים בלייב וסאונד עכשווי, ויוצרים טקסטורה מוזיקלית עשירה וייחודית. הפרויקט הראשון של סאזלנד הוא מחווה לגיטריסט-זמר-מלחין יליד טורקיה, ברי סחרוף, ומציע פרשנות \"סאזית\" לשיריו, בשילוב השפעות מהמוזיקה הטורקית העממית.\n\nגור וולנר סאז | אלעד כהן בונן הפקה מוזיקלית, תופים, אלקטרוניקה | עידו וולפסון סאז | אדם סולוז'ין סאז | מוריה מנחם סאז | עדי שורני סאז | חיים אור הופמן סאז | אורחת מיוחדת: גילי לב ארי אמנית מחול מזרחי",
+   "durationMin": null,
+   "imageUrl": "https://www.confederationhouse.org/Media/Uploads/%D7%92%D7%95%D7%A8_%D7%95%D7%95%D7%9C%D7%A0%D7%A8_%D7%95%D7%A1%D7%90%D7%96%D7%9C%D7%A0%D7%93%D7%90%D7%A8%D7%95%D7%A210%281%29.jpg"
+  },
+  {
+   "id": "page-21066",
+   "title": "טריבני (Triveni) – המפגש השמיימי של המוזיקה ההודית הקלאסית",
+   "titleLocal": null,
+   "url": "https://www.confederationhouse.org/page_21066",
+   "genre": "music",
+   "categories": [],
+   "blurb": "טריבני (Triveni) בסנסקריט מתאר מפגש של שלושה נהרות מיתיים. המופע מפגיש שלושה מהמאסטרים הגדולים של המוזיקה ההודית הקלאסית - זוכה פרס הגראמי, חלילן הבנסורי ראקש צ׳אורסיה, ממשיך דרכו של דודו ומורו, גדול נגני הבנסורי בכל הזמנים, פנדיט הריפרסאד צ'אורסיה, יחד עם נגן הסיטאר המוביל בדורו פורבאיאן צ׳אטרג'י ונגן הטבלה הוירטואוז אוג׳ס ואדיה. מפגש פסגה שכזה מתרחש לעיתים נדירות וזו הפעם הראשונה שהוא עתיד להתקיים בישראל.\nטריבני יציע את הרוח המדיטטיבית, האלתורים הספונטניים והקצב הסוחף המאפיינים את המסורת הגדולה של המוזיקה ההודית הקלאסית. שלושת המאסטרים ימריאו למחוזות חדשים במופע שהוא שילוב של מסורת וחדשנות, של עומק ותעוזה. זו חוויה ייחודית וחד פעמית בה אפשר לחוות איך הראגה והטאלה ההודיים - המבנים המלודיים ומעגלי הקצב – משמשים כקנבס מוזיקלי בידי שלושה רבי אמנים.\nראקש צ׳אורסיה חלילי בנסורי | פורבאיאן צ׳אטרג׳י סיטאר | אוג׳ס אדהיה טבלה",
+   "durationMin": null,
+   "imageUrl": "https://www.confederationhouse.org/Media/Uploads/%D7%98%D7%A8%D7%99%D7%91%D7%A0%D7%99_%D7%9E%D7%95%D7%A4%D7%A2_%D7%94%D7%95%D7%93%D7%99_-_%D7%A2%D7%93%D7%9B%D7%A0%D7%99%281%29.jpg"
+  },
+  {
+   "id": "page-21069",
+   "title": "איתמר דוארי: Tinctura",
+   "titleLocal": null,
+   "url": "https://www.confederationhouse.org/page_21069",
+   "genre": "music",
+   "categories": [],
+   "blurb": "איתמר דוארי, מהמוזיקאים ואמני כלי ההקשה המוערכים בארץ ובעולם, מגיע לפסטיבל העוד למופע בכורה מיוחד. במופע יציג דוארי את לחניו המקוריים, לקראת צאת אלבומו הראשון.\nהמופע, המבוסס על חומרים אינסטרומנטליים שכתב דוארי לפסנתר מתוך חיבור עמוק ואינטואיטיבי לכלי, ממצה את עולמו האמנותי העשיר וחושף אותו כמעיין נובע של השראה ויצירה.\n\nמשתתפים:\nאיתמר דוארי כלי הקשה | איתמר בורוכוב חצוצרה | אופיר ויפליך עוד | יענקלה סגל בס | גיא מוסקוביץ' פסנתר",
+   "durationMin": null,
+   "imageUrl": "https://www.confederationhouse.org/Media/Uploads/%D7%90%D7%99%D7%AA%D7%9E%D7%A8_%D7%93%D7%95%D7%90%D7%A8%D7%99_%D7%AA%D7%9E%D7%95%D7%A0%D7%94_%D7%A2%D7%93%D7%9B%D7%A0%D7%99%D7%AA_%D7%9C%D7%90%D7%AA%D7%A8%D7%90%D7%A8%D7%95%D7%A212%281%29.jpg"
+  },
+  {
+   "id": "page-21072",
+   "title": "התזמורת האנדלוסית הישראלית מארחת את אנאס בלהאשמי ואנסנמבל גשרי אהבה (מרוקו)",
+   "titleLocal": null,
+   "url": "https://www.confederationhouse.org/page_21072",
+   "genre": "music",
+   "categories": [],
+   "blurb": "מופע של אנסמבל גשרי אהבה המרוקני - חמישה זמרים מובילים ממרוקו - הדור הצעיר והמבטיח בהובלת אומן הקול אנאס בלהאשמי, יופיעו יחד עם חמישה פייטנים ישראלים מאנסמבל המרכז לתרבות האנדלוסית ופיוט בישראל על במה אחת. על כולם ינצח רועי אזולאי, במופע המוקדש לקולות החדשים של המוזיקה האנדלוסית.\nהמופע הוא דיאלוג מוזיקלי חי, בשירה בעברית ובערבית, בין מסורות יהודיות ומוסלמיות. השורשים העתיקים של המסורת האנדלוסית מוצגים בעיבודים חדשים וברוח צעירה, החושפת את העושר התרבותי המשותף שנרקם לאורך דורות בין קהילות, שפות ותרבויות סביב הים התיכון ומעניקה קול חדש למסורת האנדלוסית המפוארת.\n\nרועי אזולאי ניצוח | אנסמבל גשרי אהבה: אנאס בלהאשמי, עבדלילה מוטאווקיל, סלימן רבילה, אנאס אל חארראז, וזאקאריה דאומאני | אנסמבל המרכז לתרבות האנדלוסית ופיוט בישראל: מנור בן דוד, יעקב בן אדיבה, רז אלבז, שלומי לוגסי, יהונתן חוטה\n\nאלעד לוי ניהול אמנותי",
+   "durationMin": null,
+   "imageUrl": "https://www.confederationhouse.org/Media/Uploads/%D7%A0%D7%95%D7%91%D7%94_%D7%97%D7%93%D7%A9%D7%94%281%29.jpg"
+  },
+  {
+   "id": "page-21075",
+   "title": "שלומי שבן והפסנתר: הפקה מיוחדת לפסטיבל העוד – אורחים מיוחדים: מארק אליהו & האחים קדוש",
+   "titleLocal": null,
+   "url": "https://www.confederationhouse.org/page_21075",
+   "genre": "music",
+   "categories": [],
+   "blurb": "הזמר-יוצר-פסנתרן שלומי שבן שב לפסטיבל העוד עם הפקה מיוחדת לפסטיבל. שבן, מן היוצרים המקוריים והמשפיעים במוזיקה הישראלית, יוצא למסע מוזיקלי בין שיריו לבין עולמות צליל חדשים, במפגש הנע בין כתיבה אישית לאלתור, בין מזרח למערב.\nלצדו יתארח מארק אליהו, מן המוזיקאים והמלחינים הבולטים בישראל - אמן שקולו המוזיקלי מחבר בין מסורות עתיקות לשפה עכשווית ומביא לבמה את עומק הצליל והרגש המזוהים עמו.\nאליהם יצטרפו האחים קדוש, מן הקולות המסקרנים של הדור החדש - הרכב המעמיד את העוד בלב היצירה, ומרחיב את גבולותיו באמצעות השפעות של ג'אז, פרוגרסיב רוק ומוזיקה עכשווית. זוהי הופעתם הראשונה בפסטיבל העוד וגם המפגש הבימתי הראשון שלהם עם שבן.\nהפסנתר של שבן, הקמנצ'ה של מארק אליהו והשפה המוזיקלית הייחודית של האחים קדוש יחברו לערב שבו שירים מוכרים יקבלו פנים חדשות, מתוך דיאלוג חי בין מסורות מוזיקליות, אלתור ויצירה עכשווית.\nמשתתפים:\nשלומי שבן שירה, פסנתר | מארק אליהו קמנצ'ה | האחים קדוש עוד | עלי קדוש קונטרבס | אלאמר קדוש תופים, כלי הקשה",
+   "durationMin": null,
+   "imageUrl": "https://www.confederationhouse.org/Media/Uploads/%D7%A9%D7%9C%D7%95%D7%9E%D7%99_%D7%A9%D7%91%D7%9F_-_%D7%AA%D7%9E%D7%95%D7%A0%D7%94_%D7%A2%D7%93%D7%9B%D7%A0%D7%99%D7%AA%281%29.jpg"
+  },
+  {
+   "id": "page-21078",
+   "title": "חַדֵּשׁ כְּקֶדֶם שִׁירֵינוּ: פיוטים עלומים משירת המפטירים",
+   "titleLocal": null,
+   "url": "https://www.confederationhouse.org/page_21078",
+   "genre": "music",
+   "categories": [],
+   "blurb": "\"שירת המפטירים\" היא מסורת של שירת בקשות ופזמונים בלחנים עות'מאניים בקרב יהודי טורקיה. ראשיתה בהתכנסויות מיסטיות לפנות שחר במאה ה-16. עם התפוררות האימפריה וגלי ההגירה, אבדו עם השנים לחנים רבים שבמשך דורות הועברו בעל-פה.\nהמופע חַדֵּשׁ כְּקֶדֶם שִׁירֵינוּ מפגיש שישה מוזיקאים ישראלים המתמחים במסורת העות'מאנית, בביצוע בכורה לפיוטי מפטירים לא ידועים ששוחזרו מאוספי תווים עתיקים. תווים אלה, פרי מיזמי שימור שערכו חוגי המפטירים באיסטנבול לפני כמאה שנה, נדדו במזוודותיהם של חזנים ופייטנים ושרדו בהיחבא בישראל ומחוצה לה. השירים ממחישים מורשת מוזיקלית משותפת ליהודים, למוסלמים ולנוצרים במרחב העות’מאני. מבחר יצירות ממופע זה יראה אור לראשונה בקרוב בעריכת פרופ' אדוין סרוסי וד\"ר יורם ארנון, בהוצאת המרכז לחקר המוסיקה היהודית שבאוניברסיטה העברית בירושלים.\nבהשתתפות:\nנירי שדה שירה, נאי | יוסי ברונפמן קאנון | עידו רומנו טנבור | מארק קירז’נר קונטרבס | אבי אגבבה כלי הקשה | יורם ארנון עוד, ניהול מוזיקלי\nדברי הקדמה: פרופ' אדוין סרוסי",
+   "durationMin": null,
+   "imageUrl": "https://www.confederationhouse.org/Media/Uploads/%D7%A9%D7%99%D7%A8%D7%AA_%D7%94%D7%9E%D7%A4%D7%98%D7%99%D7%A8%D7%99%D7%9D%281%29.jpg"
+  },
+  {
+   "id": "page-21081",
+   "title": "פולחן האביב של פאריד אל-אטרש: יצירת מחול של אורלי פורטל",
+   "titleLocal": null,
+   "url": "https://www.confederationhouse.org/page_21081",
+   "genre": "dance",
+   "categories": [],
+   "blurb": "יצירת המחול של הכוריאוגרפית אורלי פורטל נולדה מתוך הניגון הקלאסי של פאריד אל-אטרש, \"המאהב הנצחי\", הזמר, המלחין ונגן העוד שהפך לאייקון בלתי נשכח. זהו מחול פולחן אביבי במרחבים בלתי מוגבלים של זמן ומקום, שבו נשים רוקדות על מזבח האהבה באלכימיה של מלודיה ומקצב, תוך ניפוץ מיתוס ההתאהבות והתמסרות לגוף הנשי. באמצעות שפת הגוף מתארת היצירה פריחה וקמילה וסוף שהוא התחלה. צער האהבה מפנה מקום לטראבּ - תחושת התעלות ואקסטזה.\nכוריאוגרפיה: אורלי פורטל | רקדניות: TBA | תלבושות: אנה כרושציבה | תאורה: אמיר קסטרו | ניהול הצגה: TBA | מוזיקה: פאריד אל-אטרש, אדי אל-רביע (הנה האביב)",
+   "durationMin": null,
+   "imageUrl": "https://www.confederationhouse.org/Media/Uploads/%D7%90%D7%95%D7%A8%D7%9C%D7%99_%D7%A4%D7%95%D7%A8%D7%98%D7%9C%281%29.jpg"
+  },
+  {
+   "id": "page-21084",
+   "title": "מופע סיום – טיפקס",
+   "titleLocal": null,
+   "url": "https://www.confederationhouse.org/page_21084",
+   "genre": "music",
+   "categories": [],
+   "blurb": "הלהקה האהובה \"טיפקס\" מציגה מופע סיום מיוחד וחגיגי עבור פסטיבל העוד. הלהקה תופיע עם תזמורת \"החפלה וההורה\", המונה שמונה נגנים וירטואוזים ושלוש זמרות, בסאונד הנע בין הורה, חפלה, דיסקו ומימונה. יחד הם יבצעו את מיטב להיטי הלהקה והפתעות נוספות רבות, במופע של שובבות מוזיקלית וביצועים מפתיעים.\nבהשתתפות:\nחברי טיפקס:\nקובי אוז שירה | גל פרמן בס | רמי יוסיפוב גיטרות | אדם מדר כינור, מנדולינה, חצוצרה, חליל | מוטי יוסף תופים | שחר ימפולסקי קלידים, מחשב, אקורדיון | שני יצהרי שירה\nתזמורת החפלה וההורה:\nאודי רז טובה, טרומבון | אורי אהרמן זורנה, חליל, קלרינט, סקסופון | אלי פרמינגר חצוצרה | יובל יקיר מרימבה, גלוקנשפיל, כלי הקשה | יוני וייצמן עוד, כינור, בוזוקי | ליאת רוזנברג כינור | מעיין מילוא טרומבון | פז אפשטיין שירה | קרן קורקוס שירה | רותם לוי דרבוקה, גיטרה אקוסטית | שירי אורן שירה",
+   "durationMin": null,
+   "imageUrl": "https://www.confederationhouse.org/Media/Uploads/%D7%98%D7%99%D7%A4%D7%A7%D7%A1%281%29.jpg"
+  }
+ ],
+ "performances": [
+  {
+   "id": "page-21040/2026-11-05/21:00",
+   "eventId": "page-21040",
+   "venueId": "jerusalem-theatre",
+   "roomId": "sherover",
+   "date": "2026-11-05",
+   "start": "21:00",
+   "ticketUrl": "https://bit.ly/4x6VbYa",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 250,
+   "priceMax": 250
+  },
+  {
+   "id": "page-21043/2026-11-06/12:00",
+   "eventId": "page-21043",
+   "venueId": "confederation-house",
+   "roomId": null,
+   "date": "2026-11-06",
+   "start": "12:00",
+   "ticketUrl": "https://bit.ly/4x5XNFQ",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 90,
+   "priceMax": 90
+  },
+  {
+   "id": "page-21046/2026-11-07/21:00",
+   "eventId": "page-21046",
+   "venueId": "confederation-house",
+   "roomId": null,
+   "date": "2026-11-07",
+   "start": "21:00",
+   "ticketUrl": "https://bit.ly/4zT7ytF",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 90,
+   "priceMax": 90
+  },
+  {
+   "id": "page-21049/2026-11-08/18:30",
+   "eventId": "page-21049",
+   "venueId": "confederation-house",
+   "roomId": null,
+   "date": "2026-11-08",
+   "start": "18:30",
+   "ticketUrl": "https://bit.ly/4gSd0UY",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 90,
+   "priceMax": 90
+  },
+  {
+   "id": "page-21052/2026-11-08/21:00",
+   "eventId": "page-21052",
+   "venueId": "khan-theatre",
+   "roomId": null,
+   "date": "2026-11-08",
+   "start": "21:00",
+   "ticketUrl": "https://bit.ly/467i2YD",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 120,
+   "priceMax": 120
+  },
+  {
+   "id": "page-21055/2026-11-09/18:30",
+   "eventId": "page-21055",
+   "venueId": "confederation-house",
+   "roomId": null,
+   "date": "2026-11-09",
+   "start": "18:30",
+   "ticketUrl": "https://bit.ly/3VcyvZd",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 90,
+   "priceMax": 90
+  },
+  {
+   "id": "page-21058/2026-11-09/21:00",
+   "eventId": "page-21058",
+   "venueId": "jerusalem-theatre",
+   "roomId": "rebecca-crown",
+   "date": "2026-11-09",
+   "start": "21:00",
+   "ticketUrl": "https://bit.ly/3UwKnoN",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 180,
+   "priceMax": 180
+  },
+  {
+   "id": "page-21061/2026-11-09/21:00",
+   "eventId": "page-21061",
+   "venueId": "khan-theatre",
+   "roomId": null,
+   "date": "2026-11-09",
+   "start": "21:00",
+   "ticketUrl": "https://bit.ly/4gB6jYw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 120,
+   "priceMax": 120
+  },
+  {
+   "id": "page-21064/2026-11-10/18:30",
+   "eventId": "page-21064",
+   "venueId": "confederation-house",
+   "roomId": null,
+   "date": "2026-11-10",
+   "start": "18:30",
+   "ticketUrl": "https://bit.ly/4x70siq",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 90,
+   "priceMax": 90
+  },
+  {
+   "id": "page-21066/2026-11-10/21:00",
+   "eventId": "page-21066",
+   "venueId": "jerusalem-theatre",
+   "roomId": "rebecca-crown",
+   "date": "2026-11-10",
+   "start": "21:00",
+   "ticketUrl": "https://bit.ly/4gKRDEW",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 160,
+   "priceMax": 160
+  },
+  {
+   "id": "page-21069/2026-11-10/21:00",
+   "eventId": "page-21069",
+   "venueId": "khan-theatre",
+   "roomId": null,
+   "date": "2026-11-10",
+   "start": "21:00",
+   "ticketUrl": "https://bit.ly/3SsOUIl",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 120,
+   "priceMax": 120
+  },
+  {
+   "id": "page-21072/2026-11-11/20:30",
+   "eventId": "page-21072",
+   "venueId": "jerusalem-theatre",
+   "roomId": "rebecca-crown",
+   "date": "2026-11-11",
+   "start": "20:30",
+   "ticketUrl": "https://bit.ly/4zR8EWI",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 169,
+   "priceMax": 169
+  },
+  {
+   "id": "page-21075/2026-11-11/21:00",
+   "eventId": "page-21075",
+   "venueId": "jerusalem-theatre",
+   "roomId": "sherover",
+   "date": "2026-11-11",
+   "start": "21:00",
+   "ticketUrl": "https://bit.ly/46Cw6tl",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 180,
+   "priceMax": 180
+  },
+  {
+   "id": "page-21078/2026-11-12/18:30",
+   "eventId": "page-21078",
+   "venueId": "confederation-house",
+   "roomId": null,
+   "date": "2026-11-12",
+   "start": "18:30",
+   "ticketUrl": "https://bit.ly/4zP9YJD",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 90,
+   "priceMax": 90
+  },
+  {
+   "id": "page-21081/2026-11-12/20:30",
+   "eventId": "page-21081",
+   "venueId": "jerusalem-theatre",
+   "roomId": "rebecca-crown",
+   "date": "2026-11-12",
+   "start": "20:30",
+   "ticketUrl": "https://shorturl.at/wVrAl",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 120,
+   "priceMax": 120
+  },
+  {
+   "id": "page-21084/2026-11-12/21:00",
+   "eventId": "page-21084",
+   "venueId": "jerusalem-theatre",
+   "roomId": "sherover",
+   "date": "2026-11-12",
+   "start": "21:00",
+   "ticketUrl": "https://shorturl.at/1pbh7",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 180,
+   "priceMax": 180
+  }
+ ],
+ "sources": {
+  "festival": [
+   "festival.toml"
+  ],
+  "venues": [
+   "venues-research"
+  ],
+  "events": [
+   "confederation-house"
+  ],
+  "performances": [
+   "confederation-house"
+  ],
+  "availability": [],
+  "prices": [
+   "confederation-house"
+  ]
+ },
+ "provenance": {
+  "sources": {
+   "confederation-house": {
+    "kind": "fetched",
+    "path": "data/festivals/jerusalem-oud/2026/confederation-house",
+    "fetchedAt": "2026-09-27T09:21:43Z",
+    "fetcher": "scraper/festivals/jerusalem_oud/sources/confederation-house/fetch.py",
+    "fetcherVersion": 1
+   },
+   "venues-research": {
+    "kind": "curated",
+    "path": "scraper/festivals/jerusalem_oud/curated/venues.json"
+   }
+  },
+  "absent": [],
+  "fields": {
+   "events.blurb": [
+    "confederation-house"
+   ],
+   "events.categories": [
+    "confederation-house"
+   ],
+   "events.durationMin": [
+    "confederation-house"
+   ],
+   "events.genre": [
+    "confederation-house"
+   ],
+   "events.imageUrl": [
+    "confederation-house"
+   ],
+   "events.title": [
+    "confederation-house"
+   ],
+   "events.titleLocal": [
+    "confederation-house"
+   ],
+   "events.url": [
+    "confederation-house"
+   ],
+   "performances.date": [
+    "confederation-house"
+   ],
+   "performances.eventId": [
+    "confederation-house"
+   ],
+   "performances.free": [
+    "confederation-house"
+   ],
+   "performances.priceMax": [
+    "confederation-house"
+   ],
+   "performances.priceMin": [
+    "confederation-house"
+   ],
+   "performances.roomId": [
+    "confederation-house"
+   ],
+   "performances.start": [
+    "confederation-house"
+   ],
+   "performances.ticketUrl": [
+    "confederation-house"
+   ],
+   "performances.venueId": [
+    "confederation-house"
+   ],
+   "venues.accessibility": [
+    "venues-research"
+   ],
+   "venues.address": [
+    "venues-research"
+   ],
+   "venues.capacity": [
+    "venues-research"
+   ],
+   "venues.lat": [
+    "venues-research"
+   ],
+   "venues.layout": [
+    "venues-research"
+   ],
+   "venues.lng": [
+    "venues-research"
+   ],
+   "venues.name": [
+    "venues-research"
+   ],
+   "venues.notes": [
+    "venues-research"
+   ],
+   "venues.refs": [
+    "venues-research"
+   ],
+   "venues.rooms": [
+    "venues-research"
+   ]
+  },
+  "skipped": {}
+ }
+}

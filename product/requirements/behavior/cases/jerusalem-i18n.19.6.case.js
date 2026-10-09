@@ -73,13 +73,13 @@ function vendoredJapaneseRanges() {
 module.exports = {
   description:
     "every translated string fits the pixel budget its key declares, in all four languages and at both viewports",
-  page: "/planJerusalem/",
+  page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   localStorage: jerusalemStarred(),
   async verify(page, { origin, assert }) {
-    const { STRINGS } = await import(path.join(REPO, "site/planJerusalem/i18n/translations.js"));
+    const { STRINGS } = await import(path.join(REPO, "site/planNG/i18n/translations.js"));
     const { PAGES: LOCALIZED_PAGES } = await import(path.join(REPO, "scripts/localize-pages.mjs"));
-    const { format, argumentsOf } = await import(path.join(REPO, "site/planJerusalem/i18n/format.js"));
+    const { format, argumentsOf } = await import(path.join(REPO, "site/planNG/i18n/format.js"));
 
     // A string the harness cannot draw cannot be measured either: the font jail
     // carries no CJK, so Japanese is only real here while the vendored Noto
@@ -113,8 +113,10 @@ module.exports = {
       // (the date window's overlay is only laid out there), and then measured
       // at each viewport by resizing it.
       await page.setViewportSize(VIEWPORTS.desktop);
-      await page.goto(`${origin}${url}`, { waitUntil: "load" });
+      await page.goto(`${origin}${url}?festival=jerusalem-comedy`, { waitUntil: "load" });
       await jerusalemReady(page);
+      // The origin question opens only when asked for, from a travel picture.
+      await page.click(".tl-way--from");
 
       for (const [name, size] of Object.entries(VIEWPORTS)) {
         await page.setViewportSize(size);

@@ -20,3 +20,8 @@
 - **Retire when:** a stretch of `AskUserQuestion` transcripts on structural complaints shows the
   restructure option being offered and either chosen or explicitly declined, rather than the owner
   routinely overriding via free text.
+
+## 2026-09-24 · reworded · trimmed to trigger and action
+- **Reason:** the owner asked to trim rule prose to zero story ("Trim to zero, unless crucial to
+  understand severity"); the incident history lives on this file.
+- **Actor:** @missingbulb (owner).

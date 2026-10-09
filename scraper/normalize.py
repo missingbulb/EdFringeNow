@@ -113,6 +113,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import subprocess
 import sys
 import tempfile
 from datetime import datetime, timedelta, timezone
@@ -135,6 +136,7 @@ DEFAULT_MASTER = PIPELINE_DATA / "normalized" / "shows.json"
 DEFAULT_PRICES = PIPELINE_DATA / "prices.json"
 
 DEFAULT_MASTER_MIN = SITE_DATA / "normalized" / "shows.min.json"
+FESTIVAL_CONVERTER = Path(__file__).resolve().parent / "convert" / "to_serving.py"
 DEFAULT_AVAILABILITY = SITE_DATA / "normalized" / "availability.min.json"
 DEFAULT_DESCRIPTIONS = SITE_DATA / "normalized" / "descriptions.min.json"
 DEFAULT_VENUES = SITE_DATA / "venues.json"
@@ -1203,6 +1205,10 @@ def write_derived_outputs(master: list[dict], venues: dict, venues_path: Path,
     # step — a withdrawn show's description sitting unused there costs nothing
     # and saves a re-fetch if the show comes back.
     write_json(descriptions_path, build_descriptions(master))
+    if master_min_path.resolve() == DEFAULT_MASTER_MIN.resolve():
+        # The festival registry counts this catalogue's shows for the year's
+        # strip, so a catalogue that moves moves the count with it.
+        subprocess.run([sys.executable, str(FESTIVAL_CONVERTER), "--index"], check=True)
 
     # Per-day August files + index.
     days = build_day_files(active, genre_ix, room_ix, sub_ix, ts_ix, perf_prices)

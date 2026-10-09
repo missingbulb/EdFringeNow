@@ -145,11 +145,31 @@ function fulfillPage(route, filePath) {
   return route.fulfill({ status: 200, contentType: MIME[".html"], body: html });
 }
 
+// The hosts the frozen festival blocks name for their shows' pictures.
+let imageHosts = null;
+function showImageHosts() {
+  if (imageHosts) return imageHosts;
+  imageHosts = new Set();
+  const root = path.join(FIXTURES_DIR, "data", "festivals");
+  for (const festival of fs.readdirSync(root, { withFileTypes: true })) {
+    if (!festival.isDirectory()) continue;
+    for (const file of fs.readdirSync(path.join(root, festival.name))) {
+      if (!file.endsWith(".json")) continue;
+      const block = JSON.parse(fs.readFileSync(path.join(root, festival.name, file), "utf8"));
+      for (const event of block.events || []) {
+        if (event.imageUrl) imageHosts.add(new URL(event.imageUrl).hostname);
+      }
+    }
+  }
+  return imageHosts;
+}
+
 // The routing table: URL → bytes, worked out once for the whole suite.
 //   - our fake origin: fixtures override, then vendor, then the repo tree;
 //   - Google Fonts CSS + unpkg Leaflet/markercluster: the committed vendor copies;
 //   - OSM tiles: one committed fixture tile, whatever the coordinates;
 //   - the geocoder: the committed fixture response (cases exercise "found");
+//   - a festival site's show picture: one committed stand-in image;
 //   - anything else: aborted.
 async function routeAll(context, { dataDir, failData }) {
   await context.route("**/*", (route) => {
@@ -208,6 +228,12 @@ async function routeAll(context, { dataDir, failData }) {
     }
     if (hostname === "photon.komoot.io" || hostname === "nominatim.openstreetmap.org") {
       return fulfillFile(route, path.join(FIXTURES_DIR, "geocode.json"));
+    }
+    // A show's picture from a festival's own site: one committed stand-in,
+    // whatever the show. Edinburgh's image host is not among them, so the
+    // Fringe pages keep drawing their cards without pictures.
+    if (showImageHosts().has(hostname)) {
+      return fulfillFile(route, path.join(FIXTURES_DIR, "show-image.png"));
     }
     return route.abort();
   });

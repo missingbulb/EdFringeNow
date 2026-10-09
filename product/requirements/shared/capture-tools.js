@@ -28,19 +28,22 @@ const RECT_STABLE_READS = 2;
 const RECT_MAX_READS = 20;
 
 async function rectOf(page, selector) {
+  // A region redrawn whole has, for a moment, no box at all: that read is
+  // one more that is not yet stable, never the answer.
   const read = async () => {
     const box = await page.locator(selector).first().boundingBox();
-    if (!box) throw new Error(`no visible element for ${selector}`);
+    if (!box) return null;
     const { sx, sy } = await page.evaluate(() => ({ sx: window.scrollX, sy: window.scrollY }));
     return { x: box.x + sx, y: box.y + sy, width: box.width, height: box.height };
   };
   let previous = await read();
   let same = 0;
-  for (let i = 0; i < RECT_MAX_READS && same < RECT_STABLE_READS; i++) {
+  for (let i = 0; i < RECT_MAX_READS && (same < RECT_STABLE_READS || !previous); i++) {
     const next = await read();
-    same = JSON.stringify(next) === JSON.stringify(previous) ? same + 1 : 0;
+    same = next && JSON.stringify(next) === JSON.stringify(previous) ? same + 1 : 0;
     previous = next;
   }
+  if (!previous) throw new Error(`no visible element for ${selector}`);
   return previous;
 }
 
@@ -78,12 +81,35 @@ async function padToPage(page, rect, px = 6) {
   };
 }
 
+// A full-page shot paints the site header where the scrolled viewport has it,
+// so a frame taken after a step scrolled the page would show it laid over the
+// content below. For the shot it sits where the page's own flow puts it: the
+// same box, since a sticky element keeps its place in the flow.
+const PIN_HEADER_CSS = ".site-header { position: relative !important; }";
+
+async function shootInFlow(page, opts) {
+  const style = await page.addStyleTag({ content: PIN_HEADER_CSS });
+  try {
+    return await page.screenshot(opts);
+  } finally {
+    await style.evaluate((el) => el.remove());
+  }
+}
+
 function makeTools(page) {
   // fullPage so a clip below the fold is still inside the rendered image;
   // padToPage converts the boundingBox rect into document space.
-  const clip = async (rect) => page.screenshot({ clip: await padToPage(page, rect, 0), fullPage: true, ...SHOT_OPTS });
+  const clip = async (rect) => shootInFlow(page, { clip: await padToPage(page, rect, 0), fullPage: true, ...SHOT_OPTS });
+  // A fixed-position tip belongs to the viewport, and a full-page shot resizes
+  // it out from under the pointer that holds the tip open: shoot the viewport.
+  const clipInView = async (rect) => {
+    const r = await padToPage(page, rect, 0);
+    const { sx, sy } = await page.evaluate(() => ({ sx: window.scrollX, sy: window.scrollY }));
+    return shootInFlow(page, { clip: { ...r, x: r.x - sx, y: r.y - sy }, ...SHOT_OPTS });
+  };
   return {
     rectOf: (sel) => rectOf(page, sel),
+    clipInView,
     union,
     pad,
     clip,

@@ -1,0 +1,2778 @@
+{
+ "nearM": 1000,
+ "anchors": [
+  {
+   "festival": "matrix-conference",
+   "venue": "scandic-triangeln",
+   "lat": 55.59642,
+   "lng": 13.00157
+  }
+ ],
+ "places": [
+  {
+   "id": "node/1012287185",
+   "lat": 55.596718,
+   "lng": 13.009581,
+   "tags": {
+    "name": "Sanlo",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "website": "https://sanlo.se/",
+    "opening_hours": "Tu-Th 11:30-14:00, 17:00-21:00; Fr 11:30-14:00, 17:00-22:00; Sa 12:00-22:00",
+    "addr:housenumber": "6",
+    "addr:street": "Bergsgatan",
+    "addr:postcode": "21154"
+   }
+  },
+  {
+   "id": "node/1012306188",
+   "lat": 55.598601,
+   "lng": 13.009584,
+   "tags": {
+    "name": "The Paradise",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://theparadise.se/",
+    "opening_hours": "Mo-Fr 10:00-22:00; Sa,Su 12:00-22:00",
+    "addr:housenumber": "18",
+    "addr:street": "Amiralsgatan",
+    "addr:postcode": "211 55",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/10129165430",
+   "lat": 55.598106,
+   "lng": 12.996398,
+   "tags": {
+    "name": "Cataleya",
+    "amenity": "restaurant",
+    "cuisine": "italian;international",
+    "website": "https://www.restaurangcataleya.com/",
+    "addr:housenumber": "16",
+    "addr:street": "Fersens väg"
+   }
+  },
+  {
+   "id": "node/10129165431",
+   "lat": 55.59852,
+   "lng": 12.996794,
+   "tags": {
+    "name": "Noi",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www.noipizza.se",
+    "opening_hours": "Tu-Sa 12:00-21:00",
+    "addr:housenumber": "12",
+    "addr:street": "Erik Dahlbergsgatan"
+   }
+  },
+  {
+   "id": "node/10129165432",
+   "lat": 55.594827,
+   "lng": 13.000803,
+   "tags": {
+    "name": "WOSO",
+    "amenity": "restaurant",
+    "cuisine": "sushi;sallad;poké",
+    "website": "https://woso.se/",
+    "addr:housenumber": "3",
+    "addr:street": "S:t Johannesgatan"
+   }
+  },
+  {
+   "id": "node/10129165433",
+   "lat": 55.594808,
+   "lng": 13.001518,
+   "tags": {
+    "name": "Rice & Soup",
+    "amenity": "restaurant",
+    "cuisine": "asian;chinese;japanese;sushi",
+    "website": "https://www.triangeln.com/Riceandsoup/",
+    "addr:street": "Sankt Johannesgatan"
+   }
+  },
+  {
+   "id": "node/10129165434",
+   "lat": 55.594805,
+   "lng": 13.001677,
+   "tags": {
+    "name": "Rosegarden (Triangeln)",
+    "amenity": "restaurant",
+    "cuisine": "chinese;japanese;sushi;asian",
+    "website": "https://rosegarden.se/locations/malmo-triangeln",
+    "addr:street": "Sankt Johannesgatan"
+   }
+  },
+  {
+   "id": "node/1015583552",
+   "lat": 55.592008,
+   "lng": 13.008932,
+   "tags": {
+    "name": "Metro",
+    "amenity": "restaurant",
+    "website": "http://metropamalmo.se",
+    "opening_hours": "Tu-Th 17:00-01:00, Fr-Su 16:00-01:00",
+    "addr:housenumber": "14",
+    "addr:street": "Ängelholmsgatan",
+    "addr:postcode": "214 22",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/1030487936",
+   "lat": 55.592498,
+   "lng": 13.006394,
+   "tags": {
+    "name": "Bistro Sante",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/10737968750",
+   "lat": 55.604276,
+   "lng": 12.997837,
+   "tags": {
+    "name": "Karl-Mikael",
+    "amenity": "restaurant",
+    "cuisine": "local",
+    "website": "https://www.karl-mikael.com/",
+    "addr:housenumber": "13",
+    "addr:street": "Engelbrektsgatan"
+   }
+  },
+  {
+   "id": "node/10754158006",
+   "lat": 55.594226,
+   "lng": 13.01682,
+   "tags": {
+    "name": "Volk",
+    "amenity": "restaurant",
+    "website": "https://www.volkmalmo.se/",
+    "addr:housenumber": "52",
+    "addr:street": "Amiralsgatan",
+    "addr:postcode": "214 37"
+   }
+  },
+  {
+   "id": "node/10754158012",
+   "lat": 55.599478,
+   "lng": 13.00851,
+   "tags": {
+    "name": "Sakura",
+    "amenity": "restaurant",
+    "cuisine": "sushi"
+   }
+  },
+  {
+   "id": "node/10754158013",
+   "lat": 55.599881,
+   "lng": 13.008114,
+   "tags": {
+    "name": "Sinlapa",
+    "amenity": "restaurant",
+    "cuisine": "thai"
+   }
+  },
+  {
+   "id": "node/10754158018",
+   "lat": 55.604528,
+   "lng": 13.004263,
+   "tags": {
+    "name": "Kung Fu Dumpling",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/10756703252",
+   "lat": 55.595272,
+   "lng": 12.990991,
+   "tags": {
+    "name": "Pizzeria Lupo Trattoria",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://pizzerialupo.se",
+    "opening_hours": "Mo-Fr 11:30-22:00; Sa-Su 12:00-22:00"
+   }
+  },
+  {
+   "id": "node/10756703258",
+   "lat": 55.594137,
+   "lng": 12.988868,
+   "tags": {
+    "name": "Pizzeria Kronborg",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www.pizzeriakronborg.se",
+    "opening_hours": "Mo-Th 11:30-21:00; Fr 11:30-22:00; Sa 13:00-22:00; Su 13:00-21:00",
+    "addr:housenumber": "10",
+    "addr:street": "Kronborgsvägen",
+    "addr:postcode": "21742"
+   }
+  },
+  {
+   "id": "node/10756703259",
+   "lat": 55.594255,
+   "lng": 12.988372,
+   "tags": {
+    "name": "Pasta kompaniet",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/11056830152",
+   "lat": 55.600302,
+   "lng": 13.004625,
+   "tags": {
+    "name": "Saladzone",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Fr 10:00-18:00; Sa 11:00-17:00",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/11109485805",
+   "lat": 55.599151,
+   "lng": 13.000475,
+   "tags": {
+    "name": "Boru Bowl Bar",
+    "amenity": "restaurant",
+    "cuisine": "asian;beef_bowl;korean",
+    "website": "http://borubowlbar.com",
+    "opening_hours": "Mo-Sa 11:00-21:00; Su 11:00-20:00",
+    "addr:housenumber": "1",
+    "addr:street": "Kärleksgatan",
+    "addr:postcode": "211 45"
+   }
+  },
+  {
+   "id": "node/11179353225",
+   "lat": 55.596006,
+   "lng": 13.009399,
+   "tags": {
+    "name": "Art of Spices",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://www.artofspices.se/",
+    "addr:housenumber": "10",
+    "addr:street": "Bergsgatan"
+   }
+  },
+  {
+   "id": "node/11464017069",
+   "lat": 55.605178,
+   "lng": 12.997985,
+   "tags": {
+    "name": "Lion Bar",
+    "amenity": "restaurant",
+    "website": "https://lionbar.se/restauranger/lion-bar-malmo/",
+    "opening_hours": "Mo-Th 15:00-00:00; Fr-Su 15:00-01:00",
+    "addr:housenumber": "4",
+    "addr:street": "Landbygatan"
+   }
+  },
+  {
+   "id": "node/11635574088",
+   "lat": 55.591468,
+   "lng": 13.011124,
+   "tags": {
+    "name": "Storasyster Mastio",
+    "amenity": "restaurant",
+    "cuisine": "italian;pizza",
+    "website": "https://mastio.se/MASTIO/mollan.html",
+    "opening_hours": "Mo-Tu 16:00-23:00; We-Th 11:30-23:00; Fr-Sa 11:30-00:00; Su 11:30-23:00",
+    "addr:housenumber": "20",
+    "addr:street": "Simrishamnsgatan",
+    "addr:postcode": "21423",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/11635629738",
+   "lat": 55.596438,
+   "lng": 13.008951,
+   "tags": {
+    "name": "Doori",
+    "amenity": "restaurant",
+    "cuisine": "chicken;korean",
+    "opening_hours": "Mo closed; Tu-Th 11:30-21:00; Fr 11:30-21:30; Sa-Su 12:00-21:30"
+   }
+  },
+  {
+   "id": "node/1179544295",
+   "lat": 55.596509,
+   "lng": 12.995949,
+   "tags": {
+    "name": "Malmö Opera Grill",
+    "amenity": "restaurant",
+    "wikidata": "Q1507772"
+   }
+  },
+  {
+   "id": "node/11834955495",
+   "lat": 55.592825,
+   "lng": 13.005515,
+   "tags": {
+    "name": "Sweet Lemon",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "addr:postcode": "21420"
+   }
+  },
+  {
+   "id": "node/11836930423",
+   "lat": 55.600041,
+   "lng": 13.004624,
+   "tags": {
+    "name": "Bagelkungen",
+    "amenity": "restaurant",
+    "cuisine": "bagel;sandwich"
+   }
+  },
+  {
+   "id": "node/11861982300",
+   "lat": 55.592245,
+   "lng": 13.005636,
+   "tags": {
+    "name": "Tintin Sushi",
+    "amenity": "restaurant",
+    "cuisine": "asian;sushi"
+   }
+  },
+  {
+   "id": "node/11861982301",
+   "lat": 55.592196,
+   "lng": 13.005637,
+   "tags": {
+    "name": "Asian House",
+    "amenity": "restaurant",
+    "cuisine": "asian"
+   }
+  },
+  {
+   "id": "node/11872007477",
+   "lat": 55.598026,
+   "lng": 12.996748,
+   "tags": {
+    "name": "V.E.S.P.A",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "opening_hours": "Mo-Th 11:30-21:00; Fr 11:30-22:00; Sa 12:00-22:00; Su 12:00-21:00",
+    "addr:housenumber": "11",
+    "addr:street": "Holmgatan"
+   }
+  },
+  {
+   "id": "node/11886736267",
+   "lat": 55.603102,
+   "lng": 13.003586,
+   "tags": {
+    "name": "Benne",
+    "amenity": "restaurant",
+    "cuisine": "pasta",
+    "website": "https://bennepastabar.se/",
+    "opening_hours": "Mo-Th 11:00-20:00; Fr 11:00-21:00; Sa 12:00-21:00; Su 12:00-20:00"
+   }
+  },
+  {
+   "id": "node/11886749193",
+   "lat": 55.603113,
+   "lng": 13.003231,
+   "tags": {
+    "name": "Brödernas",
+    "amenity": "restaurant",
+    "cuisine": "burger"
+   }
+  },
+  {
+   "id": "node/11903607360",
+   "lat": 55.603367,
+   "lng": 13.003149,
+   "tags": {
+    "name": "Sushi Yama",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "website": "https://sushiyama.se",
+    "opening_hours": "Mo-Th 10:00-20:00, Fr-Su 10:00-21:00",
+    "addr:housenumber": "1",
+    "addr:street": "Malmborgsgatan",
+    "addr:postcode": "21138"
+   }
+  },
+  {
+   "id": "node/12020345518",
+   "lat": 55.598859,
+   "lng": 12.997954,
+   "tags": {
+    "name": "Freja Café &Vinbar",
+    "amenity": "restaurant",
+    "addr:housenumber": "9",
+    "addr:street": "Davidshallstorg"
+   }
+  },
+  {
+   "id": "node/12037142251",
+   "lat": 55.595853,
+   "lng": 13.002537,
+   "tags": {
+    "name": "Hummusson",
+    "amenity": "restaurant",
+    "cuisine": "mediterranean",
+    "opening_hours": "Mo-Fr 11:00-18:00; Sa-Su 11:00-16:00",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12058822692",
+   "lat": 55.604053,
+   "lng": 13.006662,
+   "tags": {
+    "name": "Modomia",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/1239620654",
+   "lat": 55.598469,
+   "lng": 12.99637,
+   "tags": {
+    "name": "Mutantur",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Fr 17:00-18:00+",
+    "addr:housenumber": "14",
+    "addr:street": "Fersensväg",
+    "addr:postcode": "211 42"
+   }
+  },
+  {
+   "id": "node/12477950693",
+   "lat": 55.605055,
+   "lng": 13.004364,
+   "tags": {
+    "name": "Slice",
+    "amenity": "restaurant",
+    "cuisine": "pizza"
+   }
+  },
+  {
+   "id": "node/12518209690",
+   "lat": 55.594939,
+   "lng": 13.003859,
+   "tags": {
+    "name": "Kichirou Sushi",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "addr:housenumber": "60",
+    "addr:street": "Södra Förstadsgatan"
+   }
+  },
+  {
+   "id": "node/12854950552",
+   "lat": 55.601358,
+   "lng": 13.000177,
+   "tags": {
+    "name": "Fiskbaren",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/13031723448",
+   "lat": 55.602394,
+   "lng": 13.002069,
+   "tags": {
+    "name": "Tipico",
+    "amenity": "restaurant",
+    "cuisine": "italian"
+   }
+  },
+  {
+   "id": "node/1309266389",
+   "lat": 55.599592,
+   "lng": 13.00953,
+   "tags": {
+    "name": "Golden Crown",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "39",
+    "addr:street": "Föreningsgatan",
+    "addr:postcode": "21152"
+   }
+  },
+  {
+   "id": "node/1309298154",
+   "lat": 55.599715,
+   "lng": 13.008323,
+   "tags": {
+    "name": "Acaí and Poké",
+    "amenity": "restaurant",
+    "cuisine": "hawaiian",
+    "website": "https://acaiandpoke.com/",
+    "opening_hours": "Mo-Fr 11:00-18:00, Sa-Su 11:00-19:00",
+    "addr:housenumber": "12",
+    "addr:street": "Amiralsgatan",
+    "addr:postcode": "211 55"
+   }
+  },
+  {
+   "id": "node/1309359393",
+   "lat": 55.600031,
+   "lng": 13.004264,
+   "tags": {
+    "name": "Perssons Kök & Bar",
+    "amenity": "restaurant",
+    "cuisine": "steak_house",
+    "addr:housenumber": "1",
+    "addr:street": "Storgatan",
+    "addr:postcode": "211 41"
+   }
+  },
+  {
+   "id": "node/13128189001",
+   "lat": 55.604134,
+   "lng": 13.001058,
+   "tags": {
+    "name": "The Poke",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Sa 11:00-19:00; Su 11:00-17:00",
+    "addr:housenumber": "15",
+    "addr:street": "Södergatan"
+   }
+  },
+  {
+   "id": "node/13228003736",
+   "lat": 55.60481,
+   "lng": 13.000127,
+   "tags": {
+    "name": "V",
+    "amenity": "restaurant",
+    "cuisine": "italian;pizza",
+    "opening_hours": "Mo-Tu 09:00-22:00; We-Th 11:00-23:00; Fr-Sa 11:00-00:00; Su 13:00-21:00",
+    "addr:housenumber": "5",
+    "addr:street": "Skomakaregatan",
+    "addr:postcode": "211 34"
+   }
+  },
+  {
+   "id": "node/13437731201",
+   "lat": 55.601008,
+   "lng": 13.002072,
+   "tags": {
+    "name": "C'mon Pizza & Rock n Roll",
+    "amenity": "restaurant",
+    "addr:housenumber": "36",
+    "addr:street": "Drottninggatan",
+    "addr:postcode": "21141"
+   }
+  },
+  {
+   "id": "node/13732232160",
+   "lat": 55.588806,
+   "lng": 12.999377,
+   "tags": {
+    "name": "Mötesplats CRC - Mersmak",
+    "amenity": "restaurant",
+    "website": "mersmak.me/vara-stallen/motesplats-crc/",
+    "opening_hours": "Mo-Fr 11:00-13:30; PH closed",
+    "addr:housenumber": "35",
+    "addr:street": "Jan Waldenströms gata"
+   }
+  },
+  {
+   "id": "node/13914158302",
+   "lat": 55.589825,
+   "lng": 13.008705,
+   "tags": {
+    "name": "El Tepeyac",
+    "amenity": "restaurant",
+    "cuisine": "mexican"
+   }
+  },
+  {
+   "id": "node/13955786901",
+   "lat": 55.600415,
+   "lng": 13.007608,
+   "tags": {
+    "name": "Olá",
+    "amenity": "restaurant",
+    "cuisine": "portuguese"
+   }
+  },
+  {
+   "id": "node/13964578405",
+   "lat": 55.591979,
+   "lng": 13.005706,
+   "tags": {
+    "name": "Mezza Beirut",
+    "amenity": "restaurant",
+    "cuisine": "middle_eastern;lebanese",
+    "website": "https://www.mezzabeirut.se/",
+    "addr:housenumber": "88",
+    "addr:street": "Södra Förstadsgatan",
+    "addr:postcode": "214 20"
+   }
+  },
+  {
+   "id": "node/1668752062",
+   "lat": 55.59661,
+   "lng": 12.987593,
+   "tags": {
+    "name": "Pub & Pizzeria Pappagallo",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://pappagallo.se/",
+    "opening_hours": "Mo-Th 16:00-23:00; Fr 16:00-01:00, Sa 14:00-01:00, Su 14:00-23:00",
+    "addr:housenumber": "6",
+    "addr:street": "Fågelbacksgatan",
+    "addr:postcode": "21744"
+   }
+  },
+  {
+   "id": "node/1668865664",
+   "lat": 55.590654,
+   "lng": 12.99707,
+   "tags": {
+    "name": "Bloom in the park",
+    "amenity": "restaurant",
+    "cuisine": "international",
+    "website": "https://www.bloominthepark.se/",
+    "addr:housenumber": "17",
+    "addr:street": "Pildammsvägen",
+    "addr:postcode": "21466"
+   }
+  },
+  {
+   "id": "node/1721599298",
+   "lat": 55.597108,
+   "lng": 13.000339,
+   "tags": {
+    "name": "Vivo",
+    "amenity": "restaurant",
+    "cuisine": "swedish",
+    "website": "https://labarcarestaurang.se/"
+   }
+  },
+  {
+   "id": "node/1726889286",
+   "lat": 55.591259,
+   "lng": 13.006404,
+   "tags": {
+    "name": "Shahan Restaurang",
+    "amenity": "restaurant",
+    "cuisine": "afghan;middle_eastern",
+    "opening_hours": "Mo-Fr 11:30-21:00; Sa,Su 12:30-21:00",
+    "addr:housenumber": "43",
+    "addr:street": "Bergsgatan",
+    "addr:postcode": "21422"
+   }
+  },
+  {
+   "id": "node/1726889462",
+   "lat": 55.593092,
+   "lng": 13.008086,
+   "tags": {
+    "name": "Bright",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/1751710259",
+   "lat": 55.599197,
+   "lng": 13.014118,
+   "tags": {
+    "name": "Henrik Smith Residence",
+    "tourism": "hostel"
+   }
+  },
+  {
+   "id": "node/1780224911",
+   "lat": 55.59168,
+   "lng": 13.001465,
+   "tags": {
+    "name": "Corfitz Taverna",
+    "amenity": "restaurant",
+    "website": "https://www.mah.se/fakulteter-och-omraden/Odontologiska-fakulteten/Funktioner-och-tjanster1/Restaurant-Corfitz-Taverna/",
+    "contact:website": "https://www.mah.se/fakulteter-och-omraden/Odontologiska-fakulteten/Funktioner-och-tjanster1/Restaurant-Corfitz-Taverna/",
+    "addr:housenumber": "16",
+    "addr:street": "Smedjegatan"
+   }
+  },
+  {
+   "id": "node/1780224912",
+   "lat": 55.589812,
+   "lng": 12.999525,
+   "tags": {
+    "name": "Freda 49",
+    "amenity": "restaurant",
+    "website": "http://www.freda49.se/",
+    "contact:website": "http://www.freda49.se/",
+    "opening_hours": "Mo-Fr 07:30-16:00",
+    "addr:housenumber": "25",
+    "addr:street": "Jan Waldenströms gata"
+   }
+  },
+  {
+   "id": "node/1855449695",
+   "lat": 55.596617,
+   "lng": 13.013527,
+   "tags": {
+    "name": "Vinny's",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www.vinnys.se/",
+    "opening_hours": "Tu-Th 15:00-23:00; Fr 15:00-24:00, Sa 13:00-24:00, Su 13:00-21:00",
+    "addr:housenumber": "3",
+    "addr:street": "Sankt Knuts torg",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1863945725",
+   "lat": 55.602966,
+   "lng": 12.997351,
+   "tags": {
+    "name": "RoseGarden Neo Asian",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "website": "https://rosegarden.se/locations/malmogrand",
+    "opening_hours": "Mo-Th 17:30-21:00,11:30-15:00; Fr 11:30-15:00,17:00-22:00; Sa 12:00-15:30,17:00-22:00; Su 13:00-15:30,17:00-20:30",
+    "addr:housenumber": "59",
+    "addr:street": "Stora Nygatan",
+    "addr:postcode": "211 37"
+   }
+  },
+  {
+   "id": "node/2293728921",
+   "lat": 55.603201,
+   "lng": 12.999329,
+   "tags": {
+    "name": "Elite Hotel Plaza",
+    "tourism": "hotel",
+    "website": "https://www.elite.se/en/hotels/malmo/elite-plaza-hotel-malmo/",
+    "addr:housenumber": "49",
+    "addr:street": "Gustav Adolfs torg",
+    "addr:postcode": "201 80",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2293728948",
+   "lat": 55.603216,
+   "lng": 12.999848,
+   "tags": {
+    "name": "Hotel Noble House",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/2293728955",
+   "lat": 55.604164,
+   "lng": 12.998873,
+   "tags": {
+    "name": "Johan P",
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2295943593",
+   "lat": 55.594322,
+   "lng": 13.006539,
+   "tags": {
+    "name": "The More Hotel",
+    "tourism": "hotel",
+    "wikidata": "Q111875666"
+   }
+  },
+  {
+   "id": "node/2322901505",
+   "lat": 55.592122,
+   "lng": 13.006438,
+   "tags": {
+    "name": "The Vegan Bar",
+    "amenity": "restaurant",
+    "cuisine": "burger",
+    "website": "https://www.veganbar.se/",
+    "opening_hours": "Mo-Fr 15:00-01:00, Sa 13:00-01:00, Su 15:00-23:00",
+    "addr:housenumber": "45",
+    "addr:street": "Södra Skolgatan",
+    "addr:postcode": "214 22"
+   }
+  },
+  {
+   "id": "node/2549896881",
+   "lat": 55.594895,
+   "lng": 13.009797,
+   "tags": {
+    "name": "Grand Malmö",
+    "amenity": "restaurant",
+    "cuisine": "asian;Nordic",
+    "website": "https://www.grandmalmo.se/",
+    "addr:housenumber": "17",
+    "addr:street": "Monbijougatan",
+    "addr:postcode": "211 53"
+   }
+  },
+  {
+   "id": "node/2595966920",
+   "lat": 55.596478,
+   "lng": 13.012752,
+   "tags": {
+    "name": "Marias Gatukök",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Su 11:00-21:00",
+    "addr:street": "Sankt Knuts torg",
+    "addr:postcode": "211 57",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2715605826",
+   "lat": 55.589923,
+   "lng": 13.00587,
+   "tags": {
+    "name": "Södervärns krog",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/2747390806",
+   "lat": 55.593112,
+   "lng": 13.007448,
+   "tags": {
+    "name": "Chicken Fresh",
+    "amenity": "restaurant",
+    "cuisine": "chicken"
+   }
+  },
+  {
+   "id": "node/3051074370",
+   "lat": 55.59686,
+   "lng": 13.002028,
+   "tags": {
+    "name": "Sabaidee Triangeln",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "opening_hours": "Mo-Fr 11:00-21:00; Sa,Su 00:00-21:00"
+   }
+  },
+  {
+   "id": "node/3051074384",
+   "lat": 55.596886,
+   "lng": 13.000007,
+   "tags": {
+    "name": "Los Arcos",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://www.losarcos.se/",
+    "opening_hours": "Mo-Fr 11:30-15:00,17:00-23:00;Sa 13:00-24:00;Su 17:00-22:00",
+    "addr:housenumber": "3",
+    "addr:street": "Östra Rönneholmsvägen",
+    "addr:postcode": "21147"
+   }
+  },
+  {
+   "id": "node/3051074424",
+   "lat": 55.594496,
+   "lng": 13.003391,
+   "tags": {
+    "name": "Khanh",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "website": "http://khanh.se/",
+    "opening_hours": "Mo-Sa 11:00-20:00; Su 12:00-18:00",
+    "addr:housenumber": "3a",
+    "addr:street": "Friisgatan",
+    "addr:postcode": "21421"
+   }
+  },
+  {
+   "id": "node/3357955290",
+   "lat": 55.60466,
+   "lng": 12.996745,
+   "tags": {
+    "name": "Vollmers",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "website": "https://www.vollmers.nu/",
+    "addr:street": "Tegelgårdsgatan"
+   }
+  },
+  {
+   "id": "node/3358053111",
+   "lat": 55.604327,
+   "lng": 12.995573,
+   "tags": {
+    "name": "Continental Hotel",
+    "tourism": "hotel",
+    "website": "www.continental-hotel.se",
+    "addr:housenumber": "2",
+    "addr:street": "Hospitalsgatan",
+    "addr:postcode": "211 33",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/3369322609",
+   "lat": 55.602483,
+   "lng": 13.002866,
+   "tags": {
+    "name": "Gränden",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/3369322610",
+   "lat": 55.602535,
+   "lng": 13.003271,
+   "tags": {
+    "name": "Elysée",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Th 17:00-22:30; Fr 17:00-23:30; Sa 16:00-23:30; Su 15:00-22:00"
+   }
+  },
+  {
+   "id": "node/3385991242",
+   "lat": 55.59448,
+   "lng": 13.004285,
+   "tags": {
+    "name": "Delhi",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://www.restaurangdelhi.se/",
+    "opening_hours": "Mo-Fr 11:00-22:00; Sa-Su 13:00-22:00",
+    "addr:housenumber": "66",
+    "addr:street": "Södra Förstadsgatan",
+    "addr:postcode": "21420"
+   }
+  },
+  {
+   "id": "node/3388921205",
+   "lat": 55.600934,
+   "lng": 13.001538,
+   "tags": {
+    "name": "Yemen Restaurang",
+    "amenity": "restaurant",
+    "cuisine": "yemeni",
+    "website": "https://www.yemenrestaurang.se/",
+    "addr:housenumber": "36",
+    "addr:street": "Drottninggatan",
+    "addr:postcode": "211 41"
+   }
+  },
+  {
+   "id": "node/3393578487",
+   "lat": 55.603766,
+   "lng": 13.003357,
+   "tags": {
+    "name": "Bastard Burgers",
+    "amenity": "restaurant",
+    "cuisine": "burger",
+    "website": "https://bastardburgers.com/se/restaurants/malmo/",
+    "opening_hours": "Mo-We 11:00-20:00; Th 11:00-21:00; Fr 11:00-22:00; Sa 12:00-22:00; Su 12:00-20:00",
+    "addr:housenumber": "28",
+    "addr:street": "Kalendegatan",
+    "addr:postcode": "211 35"
+   }
+  },
+  {
+   "id": "node/3393579536",
+   "lat": 55.603517,
+   "lng": 13.001791,
+   "tags": {
+    "name": "Scandic Sankt Jörgen",
+    "tourism": "hotel",
+    "wikidata": "Q111410183",
+    "addr:housenumber": "35",
+    "addr:street": "Stora Nygatan",
+    "addr:postcode": "211 37"
+   }
+  },
+  {
+   "id": "node/3396655403",
+   "lat": 55.603582,
+   "lng": 13.00231,
+   "tags": {
+    "name": "Bamboo City",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/3398710390",
+   "lat": 55.600992,
+   "lng": 13.004042,
+   "tags": {
+    "name": "Sky Hotel Malmö City",
+    "tourism": "hotel",
+    "wikidata": "Q111410186",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3402678109",
+   "lat": 55.589305,
+   "lng": 13.006948,
+   "tags": {
+    "name": "Gallia",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/3402678115",
+   "lat": 55.596467,
+   "lng": 13.000666,
+   "tags": {
+    "name": "Kin Long",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "https://kinlong.se/",
+    "opening_hours": "Mo-Fr 17:00-24:00, Sa 13:00-24:00, Su 13:00-22:00",
+    "addr:housenumber": "1",
+    "addr:street": "Rådmansgatan"
+   }
+  },
+  {
+   "id": "node/3402678116",
+   "lat": 55.596942,
+   "lng": 13.003987,
+   "tags": {
+    "name": "Kohai",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "website": "https://www.kohai.se/",
+    "opening_hours": "Mo-Fr 11:00-21:00; Sa 12:00-21:00",
+    "addr:housenumber": "10",
+    "addr:street": "Föreningsgatan",
+    "addr:postcode": "21144"
+   }
+  },
+  {
+   "id": "node/3414497904",
+   "lat": 55.604903,
+   "lng": 13.003227,
+   "tags": {
+    "name": "Sushi Bar Kyoto",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "opening_hours": "Mo-Fr 11:00-18:00"
+   }
+  },
+  {
+   "id": "node/3414497905",
+   "lat": 55.604214,
+   "lng": 13.003281,
+   "tags": {
+    "name": "Salads and Smoothies",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Fr 07:00-19:00, Sa 10:00-16:00"
+   }
+  },
+  {
+   "id": "node/3519113027",
+   "lat": 55.599651,
+   "lng": 13.007704,
+   "tags": {
+    "name": "The social bar and bistro",
+    "amenity": "restaurant",
+    "addr:housenumber": "19",
+    "addr:street": "Amiralsgatan",
+    "addr:postcode": "211 55"
+   }
+  },
+  {
+   "id": "node/3734378354",
+   "lat": 55.604815,
+   "lng": 13.005773,
+   "tags": {
+    "name": "Laziza",
+    "amenity": "restaurant",
+    "cuisine": "lebanese",
+    "opening_hours": "Mo-Fr 11:00-15:00; Sa,Su 10:30-17:00",
+    "addr:housenumber": "21",
+    "addr:street": "Baltzarsgatan",
+    "addr:postcode": "211 36",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/3754763558",
+   "lat": 55.604569,
+   "lng": 13.002559,
+   "tags": {
+    "name": "Holy Greens",
+    "amenity": "restaurant",
+    "cuisine": "salad",
+    "opening_hours": "Mo-Fr 08:00-19:00; Sa 11:00-17:00; Su 11:00-16:00",
+    "addr:housenumber": "26",
+    "addr:street": "Baltzarsgatan",
+    "addr:postcode": "21136",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4102273492",
+   "lat": 55.596844,
+   "lng": 13.014255,
+   "tags": {
+    "name": "Spoonery",
+    "amenity": "restaurant",
+    "website": "https://www.spoonery.se/restaurang/St-Knut",
+    "opening_hours": "Mo-Su 11:30-21:00",
+    "addr:housenumber": "7",
+    "addr:street": "Sankt Knuts väg",
+    "addr:postcode": "211 57",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/4173295515",
+   "lat": 55.59293,
+   "lng": 13.008025,
+   "tags": {
+    "name": "Sara Restaurang & Pizzeria",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Th 11:00-03:00, Fr,Sa 11:00-05:00, Su 11:00-03:00",
+    "addr:housenumber": "24",
+    "addr:street": "Bergsgatan",
+    "addr:postcode": "214 22"
+   }
+  },
+  {
+   "id": "node/417987298",
+   "lat": 55.597486,
+   "lng": 13.001458,
+   "tags": {
+    "name": "La Penombra",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "addr:housenumber": "36",
+    "addr:street": "Södra Förstadsgatan"
+   }
+  },
+  {
+   "id": "node/417987302",
+   "lat": 55.597192,
+   "lng": 13.002721,
+   "tags": {
+    "name": "Gamla Brogatan",
+    "amenity": "restaurant",
+    "website": "https://brogatan.eu/",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/417994872",
+   "lat": 55.601129,
+   "lng": 13.009917,
+   "tags": {
+    "name": "Element",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Fr 09:30-18:00, Sa,Su 10:00-17:00"
+   }
+  },
+  {
+   "id": "node/4195728430",
+   "lat": 55.597608,
+   "lng": 13.000004,
+   "tags": {
+    "name": "Ark",
+    "amenity": "restaurant",
+    "website": "https://arkkokobar.se",
+    "addr:housenumber": "23B",
+    "addr:street": "Davidshallsgatan"
+   }
+  },
+  {
+   "id": "node/4244531269",
+   "lat": 55.589275,
+   "lng": 13.007052,
+   "tags": {
+    "name": "Chicama",
+    "amenity": "restaurant",
+    "cuisine": "peruvian",
+    "addr:housenumber": "8",
+    "addr:street": "Ahlmansgatan",
+    "addr:postcode": "21427"
+   }
+  },
+  {
+   "id": "node/4265654395",
+   "lat": 55.592754,
+   "lng": 13.005588,
+   "tags": {
+    "name": "Ganesha",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://www.ganeshafood.com/",
+    "addr:housenumber": "82",
+    "addr:street": "Södra Förstadsgatan"
+   }
+  },
+  {
+   "id": "node/4397748090",
+   "lat": 55.598112,
+   "lng": 13.000939,
+   "tags": {
+    "name": "Lera",
+    "amenity": "restaurant",
+    "cuisine": "middle_eastern;syrian",
+    "website": "https://lera-restaurang.se/",
+    "opening_hours": "Mo-Th 11:30-21:00; Fr-Sa 11:30-22:00; Su 11:30-21:00",
+    "addr:housenumber": "23 B",
+    "addr:street": "Södra Förstadsgatan",
+    "addr:postcode": "211 43",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4418055890",
+   "lat": 55.595053,
+   "lng": 12.999223,
+   "tags": {
+    "name": "Smak",
+    "amenity": "restaurant",
+    "website": "https://smak.info/",
+    "opening_hours": "Mo-Su 11:00-17:00",
+    "addr:housenumber": "7",
+    "addr:street": "Sankt Johannesgatan",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/444832884",
+   "lat": 55.604552,
+   "lng": 13.003787,
+   "tags": {
+    "name": "First Hotel Garden",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/444845108",
+   "lat": 55.602853,
+   "lng": 13.002753,
+   "tags": {
+    "name": "Sankt Markus Vinkällare",
+    "amenity": "restaurant",
+    "website": "https://stmarkusvinkallare.nu/",
+    "opening_hours": "Mo-Th 17:00-23:00; Fr 17:00-23:30; Sa 16:00-23:30",
+    "addr:housenumber": "2C",
+    "addr:street": "Stadt Hamburgsgatan",
+    "addr:postcode": "21138"
+   }
+  },
+  {
+   "id": "node/444865281",
+   "lat": 55.60362,
+   "lng": 12.999744,
+   "tags": {
+    "name": "Hotel Noble House",
+    "tourism": "hotel",
+    "contact:website": "http://www.hotelnoblehouse.se",
+    "addr:housenumber": "6",
+    "addr:street": "Per Weijersgatan",
+    "addr:postcode": "211 34"
+   }
+  },
+  {
+   "id": "node/445332875",
+   "lat": 55.604,
+   "lng": 13.008304,
+   "tags": {
+    "name": "Vegegården",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "website": "https://vegegarden.com",
+    "contact:website": "https://vegegarden.com",
+    "opening_hours": "Mo-Fr 11:30-15:00; Sa-Su 13:00-21:00",
+    "addr:housenumber": "23",
+    "addr:street": "Rörsjögatan",
+    "addr:postcode": "211 37",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4456630006",
+   "lat": 55.599775,
+   "lng": 12.996148,
+   "tags": {
+    "name": "Atmosfär",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Th 12:00-20:45; Fr 12:00-22:15; Sa 13:00-22:15; Su 15:00-20:45"
+   }
+  },
+  {
+   "id": "node/445842675",
+   "lat": 55.599192,
+   "lng": 12.997896,
+   "tags": {
+    "name": "Goose",
+    "amenity": "restaurant",
+    "cuisine": "internationell",
+    "website": "https://goosemalmo.se/",
+    "opening_hours": "Mo-Th 15:00-23:00; Fr,Sa 14:00-24:00",
+    "addr:housenumber": "6",
+    "addr:street": "Davidshallstorg"
+   }
+  },
+  {
+   "id": "node/445842838",
+   "lat": 55.590921,
+   "lng": 13.01078,
+   "tags": {
+    "name": "Restaurang Zula",
+    "amenity": "restaurant",
+    "cuisine": "african;ethiopian;eritrean",
+    "opening_hours": "11:00-22:00,11:00-01:00,12:00-01:00,12:00-22:00",
+    "addr:housenumber": "10",
+    "addr:street": "Ystadsgatan",
+    "addr:postcode": "21424",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/4738304721",
+   "lat": 55.598152,
+   "lng": 13.008879,
+   "tags": {
+    "name": "Bouchon",
+    "amenity": "restaurant",
+    "cuisine": "french",
+    "website": "https://bouchon.se/",
+    "opening_hours": "Mo-Fr 17:30+; Sa-Su 17:00+",
+    "addr:housenumber": "5",
+    "addr:street": "Andréelundsvägen",
+    "addr:postcode": "211 52"
+   }
+  },
+  {
+   "id": "node/4738304723",
+   "lat": 55.59098,
+   "lng": 13.006841,
+   "tags": {
+    "name": "Chefs of Sweden",
+    "amenity": "restaurant",
+    "cuisine": "burger",
+    "addr:housenumber": "34",
+    "addr:street": "Bergsgatan",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/474727509",
+   "lat": 55.597992,
+   "lng": 12.999212,
+   "tags": {
+    "name": "SOHO",
+    "amenity": "restaurant",
+    "cuisine": "asian;cocktails",
+    "website": "https://www.sohomalmo.se/",
+    "opening_hours": "Mo-Fr 10:00-18:00, Sa 10:00-15:00",
+    "addr:street": "Holmgatan",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4788873930",
+   "lat": 55.596246,
+   "lng": 13.009461,
+   "tags": {
+    "name": "Casual Street Food",
+    "amenity": "restaurant",
+    "cuisine": "burger;american",
+    "opening_hours": "Tu-Th 11:30-21:30; Fr 11:30-22:00; Sa 12:00-22:00; Su 14:00-21:00",
+    "addr:housenumber": "8",
+    "addr:street": "Bergsgatan",
+    "addr:postcode": "21154"
+   }
+  },
+  {
+   "id": "node/4860686121",
+   "lat": 55.596893,
+   "lng": 13.00959,
+   "tags": {
+    "name": "Curry on Wheels",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "addr:housenumber": "4A",
+    "addr:street": "Almbacksgatan"
+   }
+  },
+  {
+   "id": "node/4860687821",
+   "lat": 55.597021,
+   "lng": 13.009597,
+   "tags": {
+    "name": "Sio",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "addr:housenumber": "4",
+    "addr:street": "Bergsgatan",
+    "addr:postcode": "21154"
+   }
+  },
+  {
+   "id": "node/5318761145",
+   "lat": 55.594813,
+   "lng": 13.001166,
+   "tags": {
+    "name": "Kitchen 961",
+    "amenity": "restaurant",
+    "cuisine": "lebanese",
+    "addr:housenumber": "3211",
+    "addr:street": "Sankt Johannesgatan"
+   }
+  },
+  {
+   "id": "node/5318761146",
+   "lat": 55.594819,
+   "lng": 13.001314,
+   "tags": {
+    "name": "Torstens",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/5318761148",
+   "lat": 55.597745,
+   "lng": 12.999937,
+   "tags": {
+    "name": "Davidshalls Pizzeria",
+    "amenity": "restaurant",
+    "cuisine": "greek;gyros;pizza",
+    "website": "http://davidhallspizzeria.se"
+   }
+  },
+  {
+   "id": "node/534571956",
+   "lat": 55.592809,
+   "lng": 13.006704,
+   "tags": {
+    "name": "Star restaurang och bar",
+    "amenity": "restaurant",
+    "cuisine": "burger;pasta;bar;grill",
+    "website": "https://starrestaurang.se/",
+    "opening_hours": "Mo-Su 11:00-01:00",
+    "addr:housenumber": "30",
+    "addr:street": "Södra Skolgatan",
+    "addr:postcode": "214 22",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/534572236",
+   "lat": 55.59273,
+   "lng": 13.007217,
+   "tags": {
+    "name": "Restaurang Möllan",
+    "amenity": "restaurant",
+    "opening_hours": "We-Sa 15:00-01:00, Tu 15:00-24:00, Su,Mo 03:00-23:00",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/536813370",
+   "lat": 55.590714,
+   "lng": 13.010541,
+   "tags": {
+    "name": "Asien",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "website": "https://asienrestaurang.se/",
+    "opening_hours": "Mo-Fr 11:30-14:30, 17:00-22:00; Sa-Su 12:00-22:00",
+    "addr:housenumber": "17",
+    "addr:street": "Ystadsgatan",
+    "addr:postcode": "214 24",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/536824935",
+   "lat": 55.591259,
+   "lng": 13.007767,
+   "tags": {
+    "name": "Restaurang Shiraz",
+    "amenity": "restaurant",
+    "cuisine": "persian",
+    "addr:housenumber": "5A",
+    "addr:street": "Möllevångstorget",
+    "addr:postcode": "21424",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/536826013",
+   "lat": 55.591331,
+   "lng": 13.00894,
+   "tags": {
+    "name": "Krua Thai",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "opening_hours": "Mo 11:00-15:00; Tu-Fr 11:00-15:00,17:00-22:00; Sa,Su 13:00-22:00",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/536828523",
+   "lat": 55.59196,
+   "lng": 13.008467,
+   "tags": {
+    "name": "Nyhavn",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Th 14:00-01:00, Fr-Su 12:00-01:00"
+   }
+  },
+  {
+   "id": "node/536829711",
+   "lat": 55.592049,
+   "lng": 13.007806,
+   "tags": {
+    "name": "Mascot",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/536831867",
+   "lat": 55.590873,
+   "lng": 13.009733,
+   "tags": {
+    "name": "Enjera",
+    "amenity": "restaurant",
+    "cuisine": "ethiopian",
+    "website": "http://enjera.online",
+    "opening_hours": "Su 12:00-22:00; Fr-Sa 12:00-01:00; Mo, We-Th 13:00-22:00; Tu 15:00-22:00",
+    "addr:housenumber": "13",
+    "addr:street": "Ystadsgatan",
+    "addr:postcode": "21424",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/536836196",
+   "lat": 55.592268,
+   "lng": 13.00873,
+   "tags": {
+    "name": "Scandwich",
+    "amenity": "restaurant",
+    "cuisine": "sandwich;fusion;lunch",
+    "website": "https://www.scandwich.se/mollan",
+    "opening_hours": "Mo-Fr 11:30-23:00+; Sa 12:00-23:00+; Su off",
+    "addr:housenumber": "7B",
+    "addr:street": "Kristianstadsgatan",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/536872774",
+   "lat": 55.593202,
+   "lng": 13.007474,
+   "tags": {
+    "name": "Yukai",
+    "amenity": "restaurant",
+    "cuisine": "japanese;vietnamese",
+    "opening_hours": "Mo-Fr 11:00-14:00,16:00-22:00; Sa 12:00-22:00; Su 12:00-21:30",
+    "addr:housenumber": "35",
+    "addr:street": "Bergsgatan",
+    "addr:postcode": "214 22",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/5484485172",
+   "lat": 55.603435,
+   "lng": 12.996033,
+   "tags": {
+    "name": "Pinchos",
+    "amenity": "restaurant",
+    "cuisine": "tapas",
+    "website": "https://www.pinchos.se/malmo/",
+    "opening_hours": "Tu-Th 16:00-23:00; Fr 15:00-01:00, Sa 12:00-01:00, Su 12:00-23:00",
+    "addr:housenumber": "1",
+    "addr:street": "Generalsgatan"
+   }
+  },
+  {
+   "id": "node/560967014",
+   "lat": 55.603648,
+   "lng": 13.003009,
+   "tags": {
+    "name": "Spot",
+    "amenity": "restaurant",
+    "cuisine": "italian;pizza",
+    "addr:housenumber": "33",
+    "addr:street": "Stora Nygatan",
+    "addr:postcode": "211 37"
+   }
+  },
+  {
+   "id": "node/578393373",
+   "lat": 55.59032,
+   "lng": 13.01255,
+   "tags": {
+    "name": "Restaurant Khayyam",
+    "amenity": "restaurant",
+    "cuisine": "persian",
+    "opening_hours": "11:30-21:00",
+    "addr:housenumber": "25",
+    "addr:street": "Ystadsgatan",
+    "addr:postcode": "21424",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/625987396",
+   "lat": 55.604577,
+   "lng": 13.000488,
+   "tags": {
+    "name": "Mando Steakhouse",
+    "amenity": "restaurant",
+    "cuisine": "steak_house",
+    "website": "https://mandosteakhouse.com/",
+    "opening_hours": "Mo-Th 14:00-22:00; Fr 11:30-22:00; Sa 12:00-22:00; Su 13:00-21:00",
+    "addr:housenumber": "4",
+    "addr:street": "Skomakaregatan",
+    "addr:postcode": "211 34",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/6301869950",
+   "lat": 55.597888,
+   "lng": 12.998861,
+   "tags": {
+    "name": "Dashi",
+    "amenity": "restaurant",
+    "cuisine": "asian;noodle;soup;ramen",
+    "addr:housenumber": "4",
+    "addr:street": "Holmgatan",
+    "addr:postcode": "21145"
+   }
+  },
+  {
+   "id": "node/6302279918",
+   "lat": 55.599859,
+   "lng": 12.99916,
+   "tags": {
+    "name": "Marvin",
+    "amenity": "restaurant",
+    "cuisine": "english;pies",
+    "website": "https://www.instagram.com/marvinofmalmo/",
+    "opening_hours": "We,Th 11:30-22:00; Fr 11:30-23:00; Sa 11:30-22:30; Su 12:00-19:00",
+    "addr:housenumber": "41B",
+    "addr:street": "Storgatan"
+   }
+  },
+  {
+   "id": "node/6303839491",
+   "lat": 55.59892,
+   "lng": 12.997935,
+   "tags": {
+    "name": "La Bonne Vie",
+    "amenity": "restaurant",
+    "cuisine": "french",
+    "website": "https://labonnevie.se/",
+    "opening_hours": "Mo-Fr 11:30-18:00+; Sa 12:00-18:00+; Su 12:00-21:00"
+   }
+  },
+  {
+   "id": "node/6339859447",
+   "lat": 55.596423,
+   "lng": 13.001567,
+   "tags": {
+    "name": "Scandic Triangeln",
+    "amenity": "restaurant",
+    "website": "https://www.scandichotels.com/hotels/sweden/malmo/scandic-triangeln/restaurant-bar/triangeln-restaurant-lounge",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/6479097885",
+   "lat": 55.592092,
+   "lng": 13.007536,
+   "tags": {
+    "name": "Indian Express 2",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/6487748346",
+   "lat": 55.598703,
+   "lng": 12.99781,
+   "tags": {
+    "name": "Ngon",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "website": "https://ngonrestaurang.se/",
+    "opening_hours": "Mo-Fr 11:30-21:00; Sa 12:00-21:00; Su 13:00-21:00"
+   }
+  },
+  {
+   "id": "node/6513056496",
+   "lat": 55.600584,
+   "lng": 12.993771,
+   "tags": {
+    "name": "Novell",
+    "amenity": "restaurant",
+    "cuisine": "coffee_shop",
+    "website": "https://www.novellmalmo.se/",
+    "contact:website": "https://www.novellmalmo.se/contact/",
+    "opening_hours": "Mo-Th 10:00-19:00, Fr 10:00-18:00, Sa-Su 10:00-17:00",
+    "addr:housenumber": "11",
+    "addr:street": "Kung Oscars väg",
+    "addr:postcode": "211 42",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/658707737",
+   "lat": 55.599665,
+   "lng": 12.998928,
+   "tags": {
+    "name": "Mrs Brown",
+    "amenity": "restaurant",
+    "website": "https://mrsbrown.se/",
+    "opening_hours": "Mo-Th 16:00+; Fr 15:00+; Sa 12:00+; Su off"
+   }
+  },
+  {
+   "id": "node/6604886943",
+   "lat": 55.598444,
+   "lng": 12.995746,
+   "tags": {
+    "name": "Green Mango",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "addr:housenumber": "5",
+    "addr:street": "Fersens väg",
+    "addr:postcode": "21142"
+   }
+  },
+  {
+   "id": "node/6819587873",
+   "lat": 55.597642,
+   "lng": 13.009175,
+   "tags": {
+    "name": "Nem & Nori",
+    "amenity": "restaurant",
+    "cuisine": "sushi;thai"
+   }
+  },
+  {
+   "id": "node/6850907828",
+   "lat": 55.599418,
+   "lng": 12.997838,
+   "tags": {
+    "name": "LU",
+    "amenity": "restaurant",
+    "cuisine": "asian;chinese;cantonese",
+    "website": "https://koket.lu/",
+    "opening_hours": "Mo-Fr 11:30-14:30,17:00-22:00; Sa 13:00-22:00"
+   }
+  },
+  {
+   "id": "node/7001369712",
+   "lat": 55.604556,
+   "lng": 12.996365,
+   "tags": {
+    "name": "Julie Vinbar",
+    "amenity": "restaurant",
+    "website": "https://juliemalmo.se/",
+    "opening_hours": "Mo-Su 12:00-22:00",
+    "addr:housenumber": "9",
+    "addr:street": "Tegelgårdsgatan",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/7282929872",
+   "lat": 55.592679,
+   "lng": 13.007839,
+   "tags": {
+    "name": "Grill House",
+    "amenity": "restaurant",
+    "cuisine": "turkish;arab;middle_eastern;kebab"
+   }
+  },
+  {
+   "id": "node/7282929873",
+   "lat": 55.592636,
+   "lng": 13.007826,
+   "tags": {
+    "name": "Intergrill",
+    "amenity": "restaurant",
+    "cuisine": "arab;middle_eastern;falafel;kebab",
+    "opening_hours": "Su-Th 12:00-03:00; Fr-Sa 12:00-05:00",
+    "addr:housenumber": "26C",
+    "addr:street": "Bergsgatan",
+    "addr:postcode": "21422"
+   }
+  },
+  {
+   "id": "node/7282929874",
+   "lat": 55.592618,
+   "lng": 13.008047,
+   "tags": {
+    "name": "Tandoor",
+    "amenity": "restaurant",
+    "cuisine": "middle_eastern;arab;kebab",
+    "opening_hours": "Mo-Su 09:00-23:00",
+    "addr:housenumber": "6B",
+    "addr:street": "Kristianstadsgatan",
+    "addr:postcode": "21423"
+   }
+  },
+  {
+   "id": "node/7282929876",
+   "lat": 55.592,
+   "lng": 13.008135,
+   "tags": {
+    "name": "Kontrast Restaurang",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://www.kontrastrestaurang.se/",
+    "addr:housenumber": "6B",
+    "addr:street": "Möllevångstorget",
+    "addr:postcode": "21424"
+   }
+  },
+  {
+   "id": "node/7282929877",
+   "lat": 55.5926,
+   "lng": 13.00564,
+   "tags": {
+    "name": "The South Indian",
+    "amenity": "restaurant",
+    "cuisine": "indian;south_in",
+    "opening_hours": "Mo-Fr 17:00-21:00; Sa-Su 11:30-22:00",
+    "addr:housenumber": "84A",
+    "addr:street": "Södra Förstadsgatan",
+    "addr:postcode": "21420"
+   }
+  },
+  {
+   "id": "node/7282929879",
+   "lat": 55.592312,
+   "lng": 13.005644,
+   "tags": {
+    "name": "Vin:D",
+    "amenity": "restaurant",
+    "cuisine": "chinese;shanghai",
+    "website": "https://vindmalmo.se/",
+    "opening_hours": "Mo-Th 11:00-20:00; Fr 11:00-21:00; Sa 13:00-21:00",
+    "addr:housenumber": "86",
+    "addr:street": "Södra Förstadsgatan",
+    "addr:postcode": "21420"
+   }
+  },
+  {
+   "id": "node/7283161476",
+   "lat": 55.589801,
+   "lng": 13.008759,
+   "tags": {
+    "name": "Bao Bao",
+    "amenity": "restaurant",
+    "cuisine": "chinese"
+   }
+  },
+  {
+   "id": "node/7283161477",
+   "lat": 55.589807,
+   "lng": 13.008699,
+   "tags": {
+    "name": "Pin Pin Dumpling",
+    "amenity": "restaurant",
+    "cuisine": "asian"
+   }
+  },
+  {
+   "id": "node/7283161483",
+   "lat": 55.591777,
+   "lng": 13.012341,
+   "tags": {
+    "name": "Asino",
+    "amenity": "restaurant",
+    "cuisine": "pasta",
+    "website": "https://asino.se/",
+    "addr:housenumber": "23B",
+    "addr:street": "Kristianstadsgatan",
+    "addr:postcode": "21423"
+   }
+  },
+  {
+   "id": "node/7283438893",
+   "lat": 55.591018,
+   "lng": 13.005426,
+   "tags": {
+    "name": "Miss Vietnam",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "website": "https://missvietnam.se/",
+    "opening_hours": "Tu-Fr 11:00-14:30,16:30-22:00; Sa,Su 11:30-22:00",
+    "addr:housenumber": "91",
+    "addr:street": "Södra Förstadsgatan",
+    "addr:postcode": "21420"
+   }
+  },
+  {
+   "id": "node/7283438894",
+   "lat": 55.590799,
+   "lng": 13.005357,
+   "tags": {
+    "name": "Kålhuvet",
+    "amenity": "restaurant",
+    "website": "https://www.kalhuvet.se/",
+    "opening_hours": "Tu-Sa 14:00-16:00",
+    "addr:housenumber": "93",
+    "addr:street": "Södra Förstadsgatan",
+    "addr:postcode": "21420"
+   }
+  },
+  {
+   "id": "node/7283438902",
+   "lat": 55.591851,
+   "lng": 13.008871,
+   "tags": {
+    "name": "Ramen to Bíiru",
+    "amenity": "restaurant",
+    "cuisine": "ramen",
+    "website": "https://ramentobiiru.se/mollevangstorget/",
+    "opening_hours": "Mo-Th 11:30-22:00; Fr 11:30-23:00; Sa 12:00-23:00; Su 12:00-22:00",
+    "addr:housenumber": "10",
+    "addr:street": "Simrishamnsgatan",
+    "addr:postcode": "214 23",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/7283459641",
+   "lat": 55.593573,
+   "lng": 13.006164,
+   "tags": {
+    "name": "400 grader",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "opening_hours": "Tu-Fr 11:15-14:00, Mo-We 17:00-21:00, Th,Fr 17:00-22:00, Sa 14:00-22:00, Su 14:00-21:00",
+    "addr:housenumber": "33",
+    "addr:street": "Södra Skolgatan",
+    "addr:postcode": "21420"
+   }
+  },
+  {
+   "id": "node/7283459644",
+   "lat": 55.594994,
+   "lng": 13.004456,
+   "tags": {
+    "name": "Ciao",
+    "amenity": "restaurant",
+    "cuisine": "pizza"
+   }
+  },
+  {
+   "id": "node/7283459645",
+   "lat": 55.59503,
+   "lng": 13.004685,
+   "tags": {
+    "name": "Paloma",
+    "amenity": "restaurant",
+    "cuisine": "chilean;latin_american",
+    "website": "https://www.palomamalmo.se/",
+    "addr:housenumber": "8",
+    "addr:street": "Friisgatan",
+    "addr:postcode": "21146"
+   }
+  },
+  {
+   "id": "node/7283459646",
+   "lat": 55.594955,
+   "lng": 13.005961,
+   "tags": {
+    "name": "Friis 14",
+    "amenity": "restaurant",
+    "cuisine": "french;international",
+    "website": "https://www.friis14.com/",
+    "opening_hours": "Tu-Th 11:30-23:00; Fr 11:30-24:00; Sa 14:00-24:00",
+    "addr:housenumber": "14",
+    "addr:street": "Friisgatan"
+   }
+  },
+  {
+   "id": "node/7294162871",
+   "lat": 55.589956,
+   "lng": 13.00821,
+   "tags": {
+    "name": "Burger Mansion",
+    "amenity": "restaurant",
+    "cuisine": "burger",
+    "website": "https://www.burgermansion.se/",
+    "addr:housenumber": "8",
+    "addr:street": "Claesgatan",
+    "addr:postcode": "21426"
+   }
+  },
+  {
+   "id": "node/7294847547",
+   "lat": 55.60472,
+   "lng": 12.99978,
+   "tags": {
+    "name": "Enoclub Osteria",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.enoclub.se/",
+    "addr:housenumber": "10",
+    "addr:street": "Skomakaregatan",
+    "addr:postcode": "21134"
+   }
+  },
+  {
+   "id": "node/7295202486",
+   "lat": 55.589863,
+   "lng": 13.010244,
+   "tags": {
+    "name": "Thai Viet Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "asian;thai;vietnamese",
+    "website": "https://thaiviet.se/",
+    "opening_hours": "Mo,Tu,Th,Fr 11:00-14:30,16:30-22:00; Sa,Su 13:00-22:00"
+   }
+  },
+  {
+   "id": "node/7299632725",
+   "lat": 55.599396,
+   "lng": 13.008947,
+   "tags": {
+    "name": "Lowkey LOCO",
+    "amenity": "restaurant",
+    "cuisine": "seafood;caribbean;fish",
+    "addr:housenumber": "37",
+    "addr:street": "Föreningsgatan",
+    "addr:postcode": "21152"
+   }
+  },
+  {
+   "id": "node/7299722833",
+   "lat": 55.59249,
+   "lng": 13.008764,
+   "tags": {
+    "name": "V.E.D",
+    "amenity": "restaurant",
+    "cuisine": "barbecue;burger;indian",
+    "opening_hours": "Mo-Su 17:00-01:00",
+    "addr:housenumber": "10a",
+    "addr:street": "Kristianstadsgatan",
+    "addr:postcode": "21423"
+   }
+  },
+  {
+   "id": "node/7794349939",
+   "lat": 55.591499,
+   "lng": 13.009039,
+   "tags": {
+    "name": "Möllan Curry",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://www.mollancurry.se",
+    "opening_hours": "11:00-15:00",
+    "addr:housenumber": "12-14",
+    "addr:street": "Möllevångstorget",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/7794349940",
+   "lat": 55.591196,
+   "lng": 13.009402,
+   "tags": {
+    "name": "Möllans pizzeria",
+    "amenity": "restaurant",
+    "cuisine": "pizza;kebab",
+    "addr:housenumber": "4",
+    "addr:street": "Ystadsgatan",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/8069401269",
+   "lat": 55.604587,
+   "lng": 13.005097,
+   "tags": {
+    "name": "Indian Kashmir",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://www.indiankashmir.se/",
+    "opening_hours": "Mo-Fr 11:00-14:30,16:00-21:30; Sa 14:00-21:30; Su 16:00-21:00",
+    "addr:housenumber": "18",
+    "addr:street": "Balzarsgatan",
+    "addr:postcode": "211 36"
+   }
+  },
+  {
+   "id": "node/8069401270",
+   "lat": 55.603676,
+   "lng": 13.005221,
+   "tags": {
+    "name": "Da Zio",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://da-zio.se/",
+    "opening_hours": "Mo-Fr 11:00-21:00; Sa,Su 12:00-22:00",
+    "addr:housenumber": "44",
+    "addr:street": "Stora Nygatan",
+    "addr:postcode": "211 37"
+   }
+  },
+  {
+   "id": "node/8069401272",
+   "lat": 55.599605,
+   "lng": 13.008393,
+   "tags": {
+    "name": "Restaurang Vitlök",
+    "amenity": "restaurant",
+    "cuisine": "thai;indian",
+    "opening_hours": "Mo-Fr 11:00-20:00",
+    "addr:housenumber": "12",
+    "addr:street": "Amiralsgatan",
+    "addr:postcode": "211 55"
+   }
+  },
+  {
+   "id": "node/8078248459",
+   "lat": 55.591706,
+   "lng": 13.005736,
+   "tags": {
+    "name": "Aliwan Alshami",
+    "amenity": "restaurant",
+    "cuisine": "middle_eastern"
+   }
+  },
+  {
+   "id": "node/8122281187",
+   "lat": 55.590949,
+   "lng": 13.010643,
+   "tags": {
+    "name": "Diwan",
+    "amenity": "restaurant",
+    "cuisine": "pizza;falafel;hamburger;manaish",
+    "addr:housenumber": "10",
+    "addr:street": "Ystadsgatan",
+    "addr:postcode": "21424",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/8187945110",
+   "lat": 55.594392,
+   "lng": 13.003989,
+   "tags": {
+    "name": "döner kabab-ji",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/8187973730",
+   "lat": 55.596191,
+   "lng": 13.009774,
+   "tags": {
+    "name": "Sauvage",
+    "amenity": "restaurant",
+    "website": "https://restaurangsauvage.se/",
+    "addr:housenumber": "32a",
+    "addr:street": "Spångatan",
+    "addr:postcode": "211 53"
+   }
+  },
+  {
+   "id": "node/9119830519",
+   "lat": 55.591238,
+   "lng": 13.011338,
+   "tags": {
+    "name": "Sansa Café",
+    "amenity": "restaurant",
+    "cuisine": "coffee_shop;cake;ice_cream",
+    "website": "https://www.instagram.com/sansamalmo/",
+    "opening_hours": "Mo-Fr 07:30-17:00; Sa,Su 10:00-16:00",
+    "addr:housenumber": "20A",
+    "addr:street": "Södra Parkgatan",
+    "addr:postcode": "21422",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/9199778106",
+   "lat": 55.600743,
+   "lng": 13.002329,
+   "tags": {
+    "name": "Asian Kingdom (Sri Lankan)",
+    "amenity": "restaurant",
+    "cuisine": "asian;chinese;curry;indian",
+    "opening_hours": "Mo-Tu, Th 11:00-15:00; Fr 11:00-20:00; Sa 12:00-18:00",
+    "addr:housenumber": "1",
+    "addr:street": "Västra Kanalgatan",
+    "addr:postcode": "21141"
+   }
+  },
+  {
+   "id": "node/9199778107",
+   "lat": 55.600677,
+   "lng": 13.002312,
+   "tags": {
+    "name": "Malmö City Pizzeria",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "addr:housenumber": "1",
+    "addr:street": "Västra Kanalgatan",
+    "addr:postcode": "21141"
+   }
+  },
+  {
+   "id": "node/945421545",
+   "lat": 55.590817,
+   "lng": 13.008275,
+   "tags": {
+    "name": "Balthazar",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/9505901462",
+   "lat": 55.599049,
+   "lng": 12.997917,
+   "tags": {
+    "name": "Osteria di Lá",
+    "amenity": "restaurant",
+    "cuisine": "pizza;italiensk",
+    "website": "https://osteriadila.se/",
+    "addr:street": "Davidshallstorg"
+   }
+  },
+  {
+   "id": "node/9505901463",
+   "lat": 55.599355,
+   "lng": 12.997864,
+   "tags": {
+    "name": "Rau",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "website": "https://www.raumalmo.se/",
+    "addr:street": "Davidshallstorg"
+   }
+  },
+  {
+   "id": "node/9551518756",
+   "lat": 55.596681,
+   "lng": 12.999946,
+   "tags": {
+    "name": "Ur Vår Jord - salladsbar & skafferi",
+    "amenity": "restaurant",
+    "cuisine": "salad",
+    "website": "https://lanthandelnmalmo.se",
+    "addr:housenumber": "6",
+    "addr:street": "Östra Rönneholmsvägen",
+    "addr:postcode": "21147"
+   }
+  },
+  {
+   "id": "node/9576546413",
+   "lat": 55.598702,
+   "lng": 12.997544,
+   "tags": {
+    "name": "Edda",
+    "amenity": "restaurant",
+    "website": "https://www.eddas.se/",
+    "opening_hours": "Tu-Fr 11:00-21:00; Sa 16:00-23:00",
+    "addr:housenumber": "5",
+    "addr:street": "Erik Dahlbergsgatan",
+    "addr:postcode": "211 48"
+   }
+  },
+  {
+   "id": "node/9576546414",
+   "lat": 55.599905,
+   "lng": 12.99613,
+   "tags": {
+    "name": "Escama Gastrobar",
+    "amenity": "restaurant",
+    "cuisine": "spanskt;tapas",
+    "opening_hours": "Su-Th 16:00-23:00; Fr,Sa 13:00-01:00",
+    "addr:housenumber": "4",
+    "addr:street": "Fersens väg"
+   }
+  },
+  {
+   "id": "node/9605413230",
+   "lat": 55.59281,
+   "lng": 13.007358,
+   "tags": {
+    "name": "Arous Damascus",
+    "amenity": "restaurant",
+    "cuisine": "syrian;kebab;shawarma;fast_food;falafel",
+    "addr:housenumber": "37",
+    "addr:street": "Bergsgatan",
+    "addr:postcode": "21422"
+   }
+  },
+  {
+   "id": "node/991719823",
+   "lat": 55.604116,
+   "lng": 13.009804,
+   "tags": {
+    "name": "Gerege",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "website": "https://gerege.nu/",
+    "opening_hours": "Mo 11:30-14:00; Tu-Fr 11:30-14:00,17:00-21:30; Sa 12:00-14:00,17:00-21:30; Su 17:00-21:30",
+    "addr:housenumber": "23",
+    "addr:street": "Södra Promenaden",
+    "addr:postcode": "21138"
+   }
+  },
+  {
+   "id": "relation/2912571",
+   "lat": 55.60362,
+   "lng": 12.999744,
+   "tags": {
+    "name": "Hotel Noble House",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "relation/7872479",
+   "lat": 55.597538,
+   "lng": 12.996817,
+   "tags": {
+    "name": "Teaterhotellet",
+    "tourism": "hotel",
+    "stars": "3",
+    "website": "https://teaterhotellet.se/",
+    "addr:housenumber": "20",
+    "addr:street": "Fersens väg"
+   }
+  },
+  {
+   "id": "way/102209299",
+   "lat": 55.599565,
+   "lng": 13.007398,
+   "tags": {
+    "name": "Quality Hotel The Mill",
+    "tourism": "hotel",
+    "website": "https://www.nordicchoicehotels.com/hotels/sweden/malmo/quality-hotel-the-mill/",
+    "wikidata": "Q111875665",
+    "addr:housenumber": "19",
+    "addr:street": "Amiralsgatan"
+   }
+  },
+  {
+   "id": "way/1036504108",
+   "lat": 55.601956,
+   "lng": 12.999924,
+   "tags": {
+    "name": "Sumo sushi",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "opening_hours": "Mo-Fr 11:00-20:00, Sa 12:00-20:00"
+   }
+  },
+  {
+   "id": "way/1036504122",
+   "lat": 55.601515,
+   "lng": 13.000919,
+   "tags": {
+    "name": "Umami",
+    "amenity": "restaurant",
+    "cuisine": "south",
+    "website": "https://umamigrill.se/malmo/",
+    "addr:street": "Södra Tullgatan",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/1036504123",
+   "lat": 55.601504,
+   "lng": 13.001083,
+   "tags": {
+    "name": "Dirty Taco",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "opening_hours": "Mo-Th 11:00-21:00; Fr 11:00-22:00; Sa 12:00-22:00; Su 12:00-21:00"
+   }
+  },
+  {
+   "id": "way/1036504124",
+   "lat": 55.601523,
+   "lng": 13.001234,
+   "tags": {
+    "name": "Vibliotek",
+    "amenity": "restaurant",
+    "cuisine": "tapas",
+    "website": "https://www.vibliotek.se/",
+    "opening_hours": "Mo-Fr 11:30-24:00; Sa-Su,PH 12:00-24:00",
+    "addr:housenumber": "3",
+    "addr:street": "Södra Vallgatan"
+   }
+  },
+  {
+   "id": "way/1036504125",
+   "lat": 55.601541,
+   "lng": 13.00139,
+   "tags": {
+    "name": "Trastienda",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "way/1036504127",
+   "lat": 55.601579,
+   "lng": 13.001715,
+   "tags": {
+    "name": "Hawii Poké",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Fr 11:00-20:00; Sa 12:00-17:00; Su 12:00-16:00"
+   }
+  },
+  {
+   "id": "way/1036504132",
+   "lat": 55.601628,
+   "lng": 13.00181,
+   "tags": {
+    "name": "Texas Longhorn",
+    "amenity": "restaurant",
+    "cuisine": "steak_house",
+    "website": "http://www.texassmokehouse.se/restaurants/steakhouse/longhorn_malmo",
+    "opening_hours": "Mo-Fr 11:00-14:00, Sa,Su 12:00-16:00, Mo,Tu 17:00-21:00, We,Th 17:00-22:00, Fr 14:00-22:30, Sa 16:00-22:30, Su 16:00-21:00"
+   }
+  },
+  {
+   "id": "way/1036504137",
+   "lat": 55.600002,
+   "lng": 13.001434,
+   "tags": {
+    "name": "Bullen",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "website": "https://www.bullen.nu/",
+    "opening_hours": "Mo-Fr 11:30-01:00, Sa 12:00-01:00, Su 12:00-23:00",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/1036504146",
+   "lat": 55.600468,
+   "lng": 13.000787,
+   "tags": {
+    "name": "Urban Turban",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://www.urbanturban.nu/",
+    "addr:housenumber": "3",
+    "addr:street": "Södra Förstadsgatan",
+    "addr:postcode": "211 43"
+   }
+  },
+  {
+   "id": "way/1036504147",
+   "lat": 55.600393,
+   "lng": 13.000799,
+   "tags": {
+    "name": "Aiko Sushi",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "way/1091108899",
+   "lat": 55.605133,
+   "lng": 12.998287,
+   "tags": {
+    "name": "Être Bistro",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "way/1091108900",
+   "lat": 55.605047,
+   "lng": 12.998357,
+   "tags": {
+    "name": "Green Chili",
+    "amenity": "restaurant",
+    "cuisine": "indian"
+   }
+  },
+  {
+   "id": "way/1091108901",
+   "lat": 55.604939,
+   "lng": 12.998394,
+   "tags": {
+    "name": "Steakhouse Lilla Torg",
+    "amenity": "restaurant",
+    "cuisine": "steak_house"
+   }
+  },
+  {
+   "id": "way/1091108903",
+   "lat": 55.605111,
+   "lng": 12.99933,
+   "tags": {
+    "name": "La Grappa",
+    "amenity": "restaurant",
+    "cuisine": "italian"
+   }
+  },
+  {
+   "id": "way/1092638236",
+   "lat": 55.603306,
+   "lng": 13.000358,
+   "tags": {
+    "name": "Icha mochi",
+    "amenity": "restaurant",
+    "cuisine": "japanese;sushi"
+   }
+  },
+  {
+   "id": "way/1092638238",
+   "lat": 55.603341,
+   "lng": 13.000661,
+   "tags": {
+    "name": "Gustav Adolf restaurant & café",
+    "amenity": "restaurant",
+    "website": "https://www.gustavadolf.com/",
+    "addr:housenumber": "43",
+    "addr:street": "Gustav Adolfs Torg",
+    "addr:postcode": "21139"
+   }
+  },
+  {
+   "id": "way/1092638239",
+   "lat": 55.603289,
+   "lng": 13.000168,
+   "tags": {
+    "name": "Miso",
+    "amenity": "restaurant",
+    "cuisine": "japanese;dagens_lunch;bento",
+    "website": "https://www.misomiso.se/miso-malmo/",
+    "addr:street": "Gustav Adolfs torg"
+   }
+  },
+  {
+   "id": "way/1092638240",
+   "lat": 55.603263,
+   "lng": 12.999953,
+   "tags": {
+    "name": "Epicuré",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.epicure.nu/",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/1092638242",
+   "lat": 55.603222,
+   "lng": 12.9996,
+   "tags": {
+    "name": "Fat Daves",
+    "amenity": "restaurant",
+    "cuisine": "burger;american",
+    "website": "https://fatdaves.se/",
+    "addr:housenumber": "47",
+    "addr:street": "Gustav Adolfs torg",
+    "addr:postcode": "21139"
+   }
+  },
+  {
+   "id": "way/1092638256",
+   "lat": 55.603162,
+   "lng": 12.998443,
+   "tags": {
+    "name": "Nguyen's Sandwiches",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese;sandwich",
+    "website": "https://vietnamesesandwiches.se/",
+    "opening_hours": "Mo-Fr 11:00-21:00; Sa 12:00-22:00; Su 12:00-17:00",
+    "addr:housenumber": "19",
+    "addr:street": "Engelbrektsgatan",
+    "addr:postcode": "211 33",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/1092638258",
+   "lat": 55.603317,
+   "lng": 12.998355,
+   "tags": {
+    "name": "Mrs Saigon",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "contact:website": "http://www.mrs-saigon.se",
+    "opening_hours": "Mo 11:30-15:00; Tu-Th 11:30-15:00, 17:30-23:00; Fr-Sa 11:30-15:00, 17:30-24:00"
+   }
+  },
+  {
+   "id": "way/1092638267",
+   "lat": 55.603733,
+   "lng": 12.997559,
+   "tags": {
+    "name": "Smör & bröd",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "way/1093128509",
+   "lat": 55.604707,
+   "lng": 13.001804,
+   "tags": {
+    "name": "Home Hotel Baltzar",
+    "tourism": "hotel",
+    "contact:website": "https://www.strawberry.se/hotell/sverige/malmo/home-hotel-baltzar/",
+    "addr:housenumber": "45",
+    "addr:street": "Baltzarsgatan"
+   }
+  },
+  {
+   "id": "way/1093128521",
+   "lat": 55.605375,
+   "lng": 13.000953,
+   "tags": {
+    "name": "Zócalo",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://www.zocalo.se/restaurangerna/sodergatan-3",
+    "opening_hours": "Mo-Fr 11:00-21:00; Sa 12:00-21:00; Su 12:00-19:00",
+    "addr:housenumber": "3",
+    "addr:street": "Södergatan",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/1093128526",
+   "lat": 55.604779,
+   "lng": 12.998717,
+   "tags": {
+    "name": "Drumbar",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "way/1093128529",
+   "lat": 55.603923,
+   "lng": 12.998427,
+   "tags": {
+    "name": "Home Hotel Temperance",
+    "tourism": "hotel",
+    "addr:housenumber": "16",
+    "addr:street": "Engelbrektsgatan",
+    "addr:postcode": "211 33",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/1093128533",
+   "lat": 55.604879,
+   "lng": 12.998071,
+   "tags": {
+    "name": "La Roche",
+    "amenity": "restaurant",
+    "cuisine": "spanish"
+   }
+  },
+  {
+   "id": "way/1093128534",
+   "lat": 55.604863,
+   "lng": 12.997908,
+   "tags": {
+    "name": "Osaka PokéRamen",
+    "amenity": "restaurant",
+    "cuisine": "ramen;asian"
+   }
+  },
+  {
+   "id": "way/1093128535",
+   "lat": 55.60485,
+   "lng": 12.997789,
+   "tags": {
+    "name": "Kazoku",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "addr:housenumber": "6",
+    "addr:street": "Engelbrektsgatan",
+    "addr:postcode": "211 33"
+   }
+  },
+  {
+   "id": "way/1330518680",
+   "lat": 55.593532,
+   "lng": 13.013544,
+   "tags": {
+    "name": "Mikkeller Pop Up | Moriskans Trädgård",
+    "amenity": "restaurant",
+    "cuisine": "burger",
+    "website": "https://moriskapaviljongen.se/mikkeller-moriskan/",
+    "opening_hours": "Mo-Th 15:00-23:00; Fr-Sa 12:00-00:00; Su 12:00-22:00",
+    "addr:housenumber": "2",
+    "addr:street": "Norra Parkgatan",
+    "addr:postcode": "214 22",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/1346394429",
+   "lat": 55.592586,
+   "lng": 13.014235,
+   "tags": {
+    "name": "Far i hatten",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "opening_hours": "Tu-Th 16:00-23:00, Fr 16:00-01:00, Sa 12:00-01:00, Su 12:00-21:00"
+   }
+  },
+  {
+   "id": "way/29784950",
+   "lat": 55.59635,
+   "lng": 13.001395,
+   "tags": {
+    "name": "Hotel Scandic Triangeln",
+    "tourism": "hotel",
+    "website": "https://www.scandichotels.se/hotell/sverige/malmo/scandic-triangeln",
+    "wikidata": "Q17457554",
+    "addr:housenumber": "2",
+    "addr:street": "Triangeln",
+    "addr:postcode": "21143",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/30407210",
+   "lat": 55.603719,
+   "lng": 12.996323,
+   "tags": {
+    "name": "Lemongrass",
+    "amenity": "restaurant",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/635556649",
+   "lat": 55.590668,
+   "lng": 12.997049,
+   "tags": {
+    "name": "Bloom in the Park",
+    "amenity": "restaurant",
+    "cuisine": "international",
+    "website": "https://www.bloominthepark.se/",
+    "addr:housenumber": "17",
+    "addr:street": "Pildammsvägen",
+    "addr:postcode": "214 66"
+   }
+  },
+  {
+   "id": "way/680437995",
+   "lat": 55.604496,
+   "lng": 12.997601,
+   "tags": {
+    "name": "Nam Do",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "opening_hours": "Mo-Th 11:30-14:00,17:00-21:30; Fr 11:30-14:00,17:00-22:30; Sa 11:30-22:30; Su 11:30-16:00,17:00-21:30",
+    "addr:housenumber": "11",
+    "addr:street": "Engelbrektsgatan"
+   }
+  }
+ ]
+}

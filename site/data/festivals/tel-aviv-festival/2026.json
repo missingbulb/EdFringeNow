@@ -1,0 +1,1959 @@
+{
+ "v": 1,
+ "festival": {
+  "id": "tel-aviv-festival",
+  "edition": "2026",
+  "ordinal": 2,
+  "name": "Tel Aviv Festival",
+  "nameLocal": "פסטיבל תל־אביב",
+  "city": "Tel Aviv",
+  "country": "IL",
+  "lat": 32.0775,
+  "lng": 34.78667,
+  "timezone": "Asia/Jerusalem",
+  "lang": "he",
+  "dir": "rtl",
+  "kind": "multi",
+  "defaultGenre": "music",
+  "site": "https://telavivfestival.co.il",
+  "firstDate": "2026-11-01",
+  "lastDate": "2026-11-08",
+  "ticketing": {
+   "notes": "The museum nights (4 and 5 November) are sold as a Night Pass (פס ערב במוזיאון תל־אביב לאמנות) at 159 ₪ for that evening: all the galleries, the sculpture garden and the shows in them, entry to the galleries on a space-available basis. One hall show a night is bought on top of the pass as an add-on (30-60 ₪), sold on Ticketmaster only as a combined pass + show ticket, so its price here is the pass plus the add-on. The opening, the Friday noon shows, the after party and the closing are sold separately; the Friday noon shows are also sold as an add-on to a Wednesday or Thursday pass. Digitel holders get benefits. Tickets are sold through Ticketmaster Israel.",
+   "currency": "ILS",
+   "source": "https://telavivfestival.co.il/program",
+   "model": "festival-pass",
+   "url": "https://telavivfestival.co.il/#tickets",
+   "passes": {
+    "nightPass": 159
+   }
+  }
+ },
+ "categories": [
+  {
+   "id": "closing",
+   "name": "מופע הנעילה"
+  },
+  {
+   "id": "fri-night",
+   "name": "AFTER PARTY"
+  },
+  {
+   "id": "fri-noon",
+   "name": "צהריים במוזיאון"
+  },
+  {
+   "id": "night-pass",
+   "name": "פס ערב במוזיאון תל־אביב לאמנות"
+  },
+  {
+   "id": "opening",
+   "name": "מופע הפתיחה"
+  }
+ ],
+ "venues": [
+  {
+   "id": "beit-ariela",
+   "name": "בית אריאלה",
+   "address": "שדרות שאול המלך 25, תל אביב",
+   "lat": 32.0767,
+   "lng": 34.7864,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {
+     "id": "auditorium",
+     "name": "אודיטוריום בית אריאלה",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "urban-salon",
+     "name": "הסלון העירוני, בית אריאלה",
+     "capacity": null,
+     "layout": null
+    }
+   ],
+   "accessibility": null,
+   "notes": "The Sha'ar Zion central library, next door to the museum; its shows are part of the museum night passes.",
+   "refs": [
+    "https://he.wikipedia.org/wiki/%D7%91%D7%99%D7%AA_%D7%90%D7%A8%D7%99%D7%90%D7%9C%D7%94"
+   ]
+  },
+  {
+   "id": "beit-radical",
+   "name": "בית רדיקל",
+   "address": "מרחב 3426, התחייה פינת הרצל, תל אביב-יפו",
+   "lat": 32.0487236,
+   "lng": 34.7688827,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "Radical's house in the 3426 compound, where the festival's after party plays.",
+   "refs": [
+    "https://radical.org.il/contact/"
+   ]
+  },
+  {
+   "id": "heichal-hatarbut",
+   "name": "היכל התרבות",
+   "address": "רחוב הוברמן 2, תל אביב",
+   "lat": 32.073643,
+   "lng": 34.779974,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {
+     "id": "lowy-hall",
+     "name": "אולם לאוי",
+     "capacity": null,
+     "layout": null
+    }
+   ],
+   "accessibility": null,
+   "notes": "Heichal HaTarbut (the Charles Bronfman Auditorium), home of the Israel Philharmonic.",
+   "refs": [
+    "https://en.wikipedia.org/wiki/Heichal_HaTarbut"
+   ]
+  },
+  {
+   "id": "tel-aviv-museum-of-art",
+   "name": "מוזיאון תל־אביב לאמנות",
+   "address": "שדרות שאול המלך 27, תל אביב",
+   "lat": 32.0775,
+   "lng": 34.78667,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {
+     "id": "recanati-hall",
+     "name": "אולם רקנאטי",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "asia-hall",
+     "name": "אולם אסיא",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "kaufmann-hall",
+     "name": "אולם קאופמן",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "yaglom-hall",
+     "name": "אולם סיימון ומרי יגלום",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "rickles-foyer",
+     "name": "מבואת ריקליס",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "rapaport-foyer",
+     "name": "מבואת רפפורט",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "photography-gallery",
+     "name": "גלריית הצילום",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "rubinstein-miniatures",
+     "name": "חדרי המיניאטורות של הלנה רובינשטיין",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "noma-bar-exhibition",
+     "name": "נומה בר: מצד שני",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "new-bones-exhibition",
+     "name": "חזון העצמות החדשות",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "year-zero-exhibition",
+     "name": "שנת אפס",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "sculpture-garden",
+     "name": "גן הפסלים",
+     "capacity": null,
+     "layout": "outdoor"
+    }
+   ],
+   "accessibility": null,
+   "notes": "The museum nights' home. The festival sells entry to its galleries on a space-available basis, and holds its open-air shows subject to the weather. Some rooms are exhibitions the show plays inside (נומה בר: מצד שני, חזון העצמות החדשות, שנת אפס) rather than named halls. No seat counts are published.",
+   "refs": [
+    "https://en.wikipedia.org/wiki/Tel_Aviv_Museum_of_Art",
+    "https://telavivfestival.co.il/program"
+   ]
+  },
+  {
+   "id": "tel-aviv-performing-arts-center",
+   "name": "המשכן לאמנויות הבמה",
+   "address": "שדרות שאול המלך 19, תל אביב",
+   "lat": 32.0764,
+   "lng": 34.7855,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "The Golda Centre, home of the Israeli Opera and the Cameri. The programme does not name the hall the opening plays.",
+   "refs": [
+    "https://he.wikipedia.org/wiki/%D7%94%D7%9E%D7%A9%D7%9B%D7%9F_%D7%9C%D7%90%D7%9E%D7%A0%D7%95%D7%99%D7%95%D7%AA_%D7%94%D7%91%D7%9E%D7%94_(%D7%AA%D7%9C_%D7%90%D7%91%D7%99%D7%91)"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "opening-muskat",
+   "title": "תמיר מוסקט I'm a Tribe",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/opening-muskat",
+   "genre": "music",
+   "categories": [
+    "opening"
+   ],
+   "blurb": "מאחורי מופע הפתיחה של פסטיבל תל אביב עומד המוזיקאי והמפיק המוזיקלי תמיר מוסקט –ממקימי וחבר להקת \"בלקן ביט בוקס\" ומפיק מוזיקלי בולט שחתום על אלבומים מרכזיים בסצנה המקומית (בהם של להקת הבילויים, חוה אלברשטיין, שלומי שבן ואסף אבידן), לצד היותו מייסד הלייבל APE RECORDS.\n\nבמופע \"I'm a Tribe\" שחוגג את היצירה והוורסטיליות שלו, הוא יארח על הבמה את אביתר בנאי, בלקן ביט בוקס, ״לא כוחות״ (גלעד כהנא), ויקטוריה חנה, שלומי שבן, תאיר חיים, SHOTNEZ ו-T&T, בלווי הקאמרטה הישראלית ירושלים ומקהלת \"נונה\".\n\nהמופע במסגרת סדרת ׳השתקפויות׳ בניהול שלומי שבן.",
+   "durationMin": 90,
+   "imageUrl": "https://telavivfestival.co.il/artists/opening-muskat.jpg"
+  },
+  {
+   "id": "wed-shimi",
+   "title": "שימי תבורי",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/wed-shimi",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "הקלאסיקות המרגשות בגוון הקול הייחודי של שימי תבורי, לצד האישיות הבימתית הכובשת שלו. עשרות להיטים על זמניים, בהם עוד סיפור אחד של אהבה, אתמול היית שונה, לילה בלי כוכב והלנה, ויכולת ווקאלית נדירה שממגנטת, מרגשת ומשמחת כאחד.\nמופע מיוחד לפסטיבל עם אורח בהפתעה.",
+   "durationMin": null,
+   "imageUrl": "https://telavivfestival.co.il/artists/wed-shimi.jpg"
+  },
+  {
+   "id": "wed-kuban",
+   "title": "30 שנה לקלרה הקדושה",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/wed-kuban",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "שיח של רוני קובן עם במאי הסרט ארי פולמן, והקרנת מיוחדת עם פסקול חי על הבמה של להקת קורדרוי, מארחים את שרי זק לוי\n\nשלושים שנה עברו מאז ש\"קלרה הקדושה\" נחת עלינו כמו מטאור, מאסטרפיס תרבותי מטלטל שעיצב דור שלם של חולמים, מורדים, וילדים שמחפשים משמעות באור הניאון המדברי.\n\nהמופע יהיה מורכב משני חלקים:\n\nרוני קובן וארי פולמן - 30 דקות על 30 שנה ל\"קלרה הקדושה\". העיתונאי רוני קובן בשיחה עם במאי הסרט ארי פולמן, אותו ביים יחד עם אורי סיון.\n\nהקרנת הסרט: כדי להחזיר את כל האנרגיה הזו לבמה, הקרנת הסרט המיוחדת הזו תלווה בביצוע חי ומכשף של פסקול הסרט המקורי, יצירת המופת המוזיקלית של ברי סחרוף בביצוע להקת הרוק הצעירה והמבטיחה קורדרוי תנגן בלייב ובסינכרון מושלם עם הפרייימים על המסך, כאילו הסרט נושם דרך הרמקולים. כדי להשלים את המסע אל לב הפסקול, תארח על הבמה את הזמרת שרי זק לוי",
+   "durationMin": null,
+   "imageUrl": "https://telavivfestival.co.il/artists/wed-kuban.jpg"
+  },
+  {
+   "id": "wed-tomer",
+   "title": "תומר ישעיהו",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/wed-tomer",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "תומר ישעיהו, זמר-יוצר, מפיק מוזיקלי, גיטריסט ונגן בוזוקי, בהופעת סולו אינטימית וייחודית. רק הוא, הגיטרה, הבוזוקי והקהל. עם קול חם ושירים שנוגעים ישר בלב, תומר לוקח את הקהל למסע בין סיפורים אישיים, צלילים שמרחפים וניגונים שמשאירים חותם. בלי תיווך, בלי מחיצות, פשוט מוזיקה אמיתית ברגע נדיר של קרבה.",
+   "durationMin": null,
+   "imageUrl": "https://telavivfestival.co.il/artists/wed-tomer.jpg"
+  },
+  {
+   "id": "wed-hanoch",
+   "title": "שלום חנוך",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/wed-hanoch",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "שלום חנוך, משה לוי ועומרי אגמון במופע מיוחד של יציאה, שנותן ביטוי לקשר העמוק של חנוך לתל־אביב: מיטב השירים שנכתבו על העיר והפכו לחלק מהפסקול שלה, לצד הקלאסיקות האהובות. גרסה בימתית אינטימית לרפרטואר עצום, שיוצרת בכל פעם מופע חד פעמי.",
+   "durationMin": 60,
+   "imageUrl": "https://telavivfestival.co.il/artists/wed-hanoch.jpg"
+  },
+  {
+   "id": "wed-echo",
+   "title": "אקו Playground",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/wed-echo",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "אחרי שנה של במות ומסיבות בעוצמה גבוהה, אקו מורידה לרגע את הווליום ומתקרבת אל השירים מחדש. במופע שנוצר במיוחד לפסטיבל היא עולה עם להקה מלאה ומפרקת את המוזיקה לגורמים: סמפלים מקבלים גוף בתופים, הסינתיסייזרים עוברים לקלידים ולבס, והראפ נשען על נגינה חיה. נשאר מקום לאלתור ולמה שקורה בחדר באותו ערב.",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "wed-reshaim",
+   "title": "שירים ורשעים",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/wed-reshaim",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "מופע מוזיקלי מופרע למדי, שמנסה להשיב קצת שליטה בחיים בעזרת שירים שנכתבו בידי רודנים ועל רודנים. הלהיטים הגדולים של סדאם חוסיין, סטלין, מאו וקים איל סונג, בביצוע יונתן בלומנפלד, אולי דנון, נדב הולנדר ויונדב הלוי. \nאורח מיוחד לכבוד הפסטיבל: ברק כהן.",
+   "durationMin": 60,
+   "imageUrl": "https://telavivfestival.co.il/artists/wed-reshaim.jpg"
+  },
+  {
+   "id": "thu-braashi",
+   "title": "זיו בראשי",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/thu-braashi",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "זיו בראשי, יוצרת, מפיקה ו-DJ מירושלים, עם סאונד אטמוספרי של ביטים, סינתיסייזרים, סמפלים ולופים. אהבת הוויניל שלה הפכה אותה לשם מוכר בסצנה התל־אביבית, עם סלקציה רחבה שנעה בין רגאיי, מוזיקה ברזילאית ומזרח תיכונית לטכנו ודיסקו.",
+   "durationMin": null,
+   "imageUrl": "https://telavivfestival.co.il/artists/thu-braashi.jpg"
+  },
+  {
+   "id": "wed-dunietz",
+   "title": "מאיה דוניץ ותזמורת ארמון בזמן",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/wed-dunietz",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "כל הקצוות הפתוחים, יצירה חדשה מאת מאיה דוניץ שנכתבה במיוחד עבור תזמורת ארמון בזמן, המשלבת כלים אקוסטיים ואלקטרוניים. מוזיקה ספקטרלית של רגשות עזים, תנודות טקטוניות ומקצבי ריקוד, שנעה ממוזיקה כתובה ומדויקת אל רגעי אלתור והתפרצויות אנרגיה.\n\nקומפוזיציה, סינטיסייזר ופסנתר: מאיה דוניץ\nסקסופון טנור: אייל נצר | קרן יער: עופר עציוני, צביקי מורן | חצוצרה: טל אברהם | טרומבון: ירון אוזנה | כלי הקשה: שלו נאמן | תופים: חגי פרשטמן | סינטיסייזר: מילטון מיכאלי \n\nצוות תזמורת ארמון בזמן: \nניהול אמנותי: מתן דסקל | הפקה: ליטל מאירזדה | בוקינג ושת\"פ: יותם מיכאל יוגב | סאונד: מאור פז | גרפיקה: דר לאור | דיגיטל: עמית ליכטמן",
+   "durationMin": null,
+   "imageUrl": "https://telavivfestival.co.il/artists/thu-dunietz.jpg"
+  },
+  {
+   "id": "wed-pinto",
+   "title": "החדר מאת ענבל פינטו",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/wed-pinto",
+   "genre": "dance",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "היצירה מבוססת על הפקת מקור של מרכז סוזן דלל",
+   "durationMin": null,
+   "imageUrl": "https://telavivfestival.co.il/artists/wed-pinto.jpg"
+  },
+  {
+   "id": "wed-bentzur",
+   "title": "שי בן צור ׳השהיה׳",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/wed-bentzur",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "ביצירה של שי בן צור נפגשות שתי מסורות שבהן הוא חי ופועל למעלה מעשרים שנה: השירה העברית והמוזיקה ההודית הקלאסית. כמו כן, בן צור יצר עם ג׳וני גרינווד את אלבומי Junun ו-Ranjha.\nקול, חליל, גיטרות, אפקטים ולופים חיים נשזרים לפסיפס של טקסטורות ואלתורים, והקהל מוזמן לשכב, לעצום עיניים ולהתמסר לצלילים בחדר החלימה.",
+   "durationMin": null,
+   "imageUrl": "https://telavivfestival.co.il/artists/wed-bentzur.jpg"
+  },
+  {
+   "id": "wed-solmonk",
+   "title": "SOL MONK",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/wed-solmonk",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "סול מונק (אביב כהן), מתופף ומפיק מהבולטים בסצנת הג׳אז והגרוב בישראל, במופע חי המבוסס על אלבומו החדש Sands Don't Sleep שיצא השנה בלייבל Raw Tapes. המוזיקה נעה בין ג׳אז עתידני, פאנק, האוס ואפרוביט, עם גרוב עמוק, ביטים אלקטרוניים ואלתור חופשי. עם תמוז דקל על גיטרה ודור סמוכה על בס.",
+   "durationMin": null,
+   "imageUrl": "https://telavivfestival.co.il/artists/wed-solmonk.jpg"
+  },
+  {
+   "id": "wed-tzitrin",
+   "title": "אלדד ציטרין",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/wed-tzitrin",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "אלדד ציטרין בפרשנות מוזיקלית חיה לתערוכה של נומה בר. ארבעה חדרים, מסדרון אחד, מוזיקאי אחד: יצירה שנבנית בזמן אמת בארבעה חללים במקביל, בכל חלל רובד אחר, כל אחד שלם בפני עצמו, אף אחד מהם אינו התמונה כולה. מה שנשמע בחדר אחד נעדר מן השני, ומה שנסתר יתגלה רק כשכל הרבדים ייפגשו במקום אחד.",
+   "durationMin": null,
+   "imageUrl": "https://telavivfestival.co.il/artists/wed-tzitrin.jpg"
+  },
+  {
+   "id": "wed-spector",
+   "title": "דניאלה ספקטור",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/wed-spector",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "האור שלו לא נעלם: מופע קצר וטקסי שנוצר לפסטיבל, בתוך חלל התערוכה חזון העצמות החדשות. חברי וחברות האנסמבל הקולי סונורה מקיפים את הקהל ואת דניאלה ושרים איתה את שיריה בעיבוד קולי שנוצר לערב הזה. השירה עוטפת את הקהל, והקול היחיד מתמזג והופך לקולות רבים.",
+   "durationMin": 25,
+   "imageUrl": "https://telavivfestival.co.il/artists/wed-spector.jpg"
+  },
+  {
+   "id": "wed-peleg",
+   "title": "פלג",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/wed-peleg",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": null,
+   "durationMin": null,
+   "imageUrl": "https://telavivfestival.co.il/artists/wed-peleg.jpg"
+  },
+  {
+   "id": "wed-menashe",
+   "title": "יובל מנשה",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/wed-menashe",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "טריו: מחשב, קלידים, גיטרה ותופים",
+   "durationMin": null,
+   "imageUrl": "https://telavivfestival.co.il/artists/wed-menashe.jpg"
+  },
+  {
+   "id": "wed-rada",
+   "title": "BILTEEZ",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/wed-rada",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "$1a",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "wed-tene",
+   "title": "זאב טנא",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/wed-tene",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": null,
+   "durationMin": null,
+   "imageUrl": "https://telavivfestival.co.il/artists/wed-tene.jpg"
+  },
+  {
+   "id": "wed-streett",
+   "title": "שאנן סטריט",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/wed-streett",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "אירוע חד פעמי של שאנן סטריט מול צופה אחד.ת מהקהל",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "wed-giagia",
+   "title": "גיאגיא מארח את נוגה",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/wed-giagia",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": null,
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "thu-amdursky",
+   "title": "אסף אמדורסקי",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/thu-amdursky",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "30  שנים לאחר צאתו של \"אסף אמדורסקי\",  האלבום השני והמשמעותי, חוזר אמדורסקי אל שבעת השירים שהרכיבו יצירה שלמה, נועזת ויוצאת דופן – במופע חד פעמי ומיוחד עבור פסטיבל תל אביב.\n\nהאלבום השני, שיצא ב-1996, הגיע אחרי שאסף קיבע את היסודות ליצירתו ועיצב את הקול האישי והמיוחד שלו. האלבום נע בחופשיות בין רוק לאינטימיות אקוסטית, בין פסנתר וגיטרות לבין הסינתיסייזרים והאלקטרוניקה, השפה המוזיקלית שהפכה למזוהה עם אמדורסקי והייתה לפורצת דרך במוזיקה המקומית. \n\nכמה משירי האלבום הפכו לחלק בלתי נפרד מפס הקול הישראלי: \"השמיים הכחולים\", \"מעיין\", \"הוא האמין לה\" ועוד – כולם יבוצעו במופע לצד עוד מספר פנינים מהרפרטואר העשיר.",
+   "durationMin": 75,
+   "imageUrl": "https://telavivfestival.co.il/artists/thu-amdursky.jpg"
+  },
+  {
+   "id": "thu-yaar",
+   "title": "תום יער: שותפים לפשע",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/thu-yaar",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "״שותפים לפשע״\nהפקת מקור לפסטיבל\nערב ללא טלפונים וללא תיעוד!\n\nאתם מוסרים וידויים אנונימיים לפני הערב,\nוהפאנל המכובד מתוודה בנושא בעצמו, מולכם בעילום שם.\n\n״אני לא אוהב את הבת שלי כמו את אחיה״\n״הרעלתי את הכלב של השכנים״\n״אני מצביע למפלגה שכל המשפחה שלי שונאת״\n״שכבתי עם המורה של הבן שלי״\n\nלא באנו לשפוט. באנו להצחיק.",
+   "durationMin": 60,
+   "imageUrl": "https://telavivfestival.co.il/artists/thu-yaar.jpg?v=mu1n6cgz"
+  },
+  {
+   "id": "wed-rocky",
+   "title": "מחווה לקולנוע פריז ״מופע הקולנוע של רוקי״",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/wed-rocky",
+   "genre": "film",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "הממלכה החשוכה ברחוב הירקון שהייתה הבית היחיד לסרטי פולחן מחתרתיים.\nהקרנת חצות של \"מופע הקולנוע של רוקי\",\nבגעגועים לקולנוע פריז ולטים קארי.\n\nהקרנת הסרט באורך מלא",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "thu-ruden",
+   "title": "מוטי רודן",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/thu-ruden",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "הופעת בכורה לאלבום מר בר רב אשי: חיי בית ולימוד, תפילין, ערב שבת וגמרא, בבליל של עברית, יידיש וארמית, פוגשים הרמוניה וקצב שמושפעים ממוזיקה ברזילאית, פולק ובלוז. מוטי והלהקה מנגנים את האלבום במלואו לצד שירים מהאלבומים הקודמים.",
+   "durationMin": null,
+   "imageUrl": "https://telavivfestival.co.il/artists/thu-ruden.jpg"
+  },
+  {
+   "id": "thu-nono",
+   "title": "נונו",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/thu-nono",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "הזמרת נונו תעלה מופע מקהלה מיוחד וראשון מסוגו לכבוד פסטיבל תל אביב. \nנונו , זמרת-יוצרת מקורית שפרצה לפני 5 שנים לשמי המוסיקה הישראלית ולקחה את הפופ צעד אחד קדימה.\n\nהוציאה 3 אלבומים מצליחים ומוערכים שזכו לביקורות משובחות והציבו אותה כאחת מהמוזיקאיות הגדולות של התקופה. \nבפסטיבל תל אביב תבצע את אלבומה השני פורץ הדרך ״מה חוץ מזה״ לראשונה בליווי מקהלת נונה, ובהפקה מוזיקלית של לא אחר מאשר - שוזין! \n\nנעמי (נונו), שגדלה כזמרת במקהלה קלאסית חוזרת למקורות במפגש יוצא דופן בו תקח אותנו למסע מרתק בין עולמות מוסיקליים, בימתיים ורגשיים. \nכל זה בנוסף לביצועים מיוחדים לשאר להיטיה הגדולים שכבשו את לבבות הקהל מאז פריצתה.",
+   "durationMin": 75,
+   "imageUrl": "https://telavivfestival.co.il/artists/thu-nono.jpg?v=mu1lvulk"
+  },
+  {
+   "id": "thu-ciam",
+   "title": "CIAM",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/thu-ciam",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "War and in between",
+   "durationMin": null,
+   "imageUrl": "https://telavivfestival.co.il/artists/thu-ciam.jpg"
+  },
+  {
+   "id": "thu-shaviv",
+   "title": "מיקי שביב X טנגו",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/thu-shaviv",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "מוזיקאי של מוזיקאים: נגן אולפנים מבוקש, מפיק ומכותבי הטקסטים המבריקים של המוזיקה הישראלית. היד שעל הבס והזרוע שעל הגיטרה אצל שלום חנוך, מאיר אריאל, שמוליק קראוס, אריק איינשטיין ויהודית רביץ, ומי שהמציא שפה עברית משלו בלהקת טנגו ובאלבומי הסולו.",
+   "durationMin": null,
+   "imageUrl": "https://telavivfestival.co.il/artists/thu-shaviv.jpg"
+  },
+  {
+   "id": "thu-agat",
+   "title": "AGAT",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/thu-agat",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "אגת מחברת בין היפ הופ אלטרנטיבי, אלקטרוניקה ניסיונית ורוק, בשפה אמנותית חדשנית וישירה. למוזיאון היא מגיעה עם מופע שנבנה במיוחד לפסטיבל: טריו חשמלי של גיטרות, תופים ואלקטרוניקה חיה, יחד עם אלון רנצר וגיא דקל, עיבודים חיים וגולמיים ושירים חדשים מאלבומה השני שבדרך.",
+   "durationMin": null,
+   "imageUrl": "https://telavivfestival.co.il/artists/thu-agat.jpg"
+  },
+  {
+   "id": "thu-castelbloom",
+   "title": "אורלי קסטל בלום, מאיה קוסובר, שרי שביט",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/thu-castelbloom",
+   "genre": "talk",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "הפקת מקור מיוחדת לפסטיבל בשיתוף ׳כאן הסכתים׳\nהקלטות של הסופרת אורלי קסטל בלום להסכת ״ספר אחד״ - מגיעות לחדר חלימה.\nאתם שוכבים על מזרונים וצוללים להאזנה בלייב לקטעים מתוך הרומן ״דולי סיטי״.\n\nבהשתתפות אורלי קסטל בלום, מאיה קוסובר ושרי שביט.\nבליווי מוזיקלי של עוזי רמירז.",
+   "durationMin": null,
+   "imageUrl": "https://telavivfestival.co.il/artists/thu-castelbloom.jpg"
+  },
+  {
+   "id": "thu-mor",
+   "title": "קרן מור",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/thu-mor",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "אירוע חד פעמי של קרן מור מול צופה אחד.ת מהקהל",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "thu-lagasa",
+   "title": "אברהם לגסה",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/thu-lagasa",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "הראפר והיוצר מעפולה לא מפסיק להכות גלים בכל פעם שהוא צץ, עם הפלואו הייחודי והעולם הדמיוני שמזוהים איתו. אנרגיה מתפרצת, נוכחות שאי אפשר להתעלם ממנה, ומוטיבציה וראייה משלו על העולם החיצוני והפנימי בכל שיר ועל כל במה. הופעה מלאה, חדה ומלאה באנרגיות.",
+   "durationMin": null,
+   "imageUrl": "https://telavivfestival.co.il/artists/thu-lagasa.jpg"
+  },
+  {
+   "id": "wed-djs",
+   "title": "צח בר",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/wed-djs",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "תקלוט בגן הפסלים",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "wed-ulman",
+   "title": "מאסטר קלאס עם היוצר עמית אולמן",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/wed-ulman",
+   "genre": "talk",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "כיתת אומן וסדנה של שירה מדוברת (ספוקן וורד) בה נדבר על מה זה בעצם שירה מדוברת, מה הקשר בינה לבין ראפ ולמה זה בעצם ז'אנר עתיק הרבה יותר ממה שחושבים. הכיתה תכלול התנסות בכתיבה של שירה מדוברת וגם ביצוע למי שירצה ובהתאם למה שיתאפשר.",
+   "durationMin": 60,
+   "imageUrl": "https://telavivfestival.co.il/artists/wed-ulman.jpg"
+  },
+  {
+   "id": "thu-raviv",
+   "title": "יסמין רביב",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/thu-raviv",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "קיקי מלינקי (יסמין רביב) בשנת שיא, עם האלבום המצליח ביותר שלה, לא אותו דבר. פרשנות חדשנית לסאונד הרוק הישראלי של שנות התשעים ותחילת האלפיים, יכולת מעוררת קנאה לכתיבת שירים קליטים על מערכות יחסים ופרידות, והופעת להקה עמוסה בהמנוני דיסטורשן רגישים.",
+   "durationMin": null,
+   "imageUrl": "https://telavivfestival.co.il/artists/thu-raviv.jpg"
+  },
+  {
+   "id": "wed-taani",
+   "title": "לירון תאני: #1 על המיקרופון",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/wed-taani",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "מספר אחד על המיקרופון. לירון תאני מכנס את טובי הראפרים לבחור את השיר המושלם והשורה האולטימטיבית בראפ הישראלי.",
+   "durationMin": 75,
+   "imageUrl": "https://telavivfestival.co.il/artists/wed-taani.jpg"
+  },
+  {
+   "id": "thu-drummer",
+   "title": "אורי דרומר",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/thu-drummer",
+   "genre": "talk",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "אוצר תערוכת ׳חזון העצמות החדשות׳ בשיח על התערוכה והשמעת תקליטים",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "wed-rap-anavim",
+   "title": "ראפ ענבים: תל אביב על הכוונת",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/wed-rap-anavim",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "19:00-21:00\nתקלוט מודרך- איתי ליברזון (ראפ ענבים) מארח את שרול בהאזנה מודרכת להיפהופ תל אביבי: חוזרים לאלבומים, מאזינים ומדברים על הסאונד שעשה את ההיפ הופ התל אביבי\n21:30 \nאיתי ליברזון (ראפ ענבים) מארח את כהן לשיחה שהיא מסע בזמן בין תל אביב של 2016 ל-2026\nראפ ענבים הוא בית תוכן בהובלת אלון קרול ואיתי ליברזון, שמתמקד בהיפ הופ הישראלי ותרבות המוזיקה\nהאלטרנטיבית בישראל. אנחנו קיימים כ4- שנים, כאשר תחתינו פועלים הפודקאסט ''ראפ ענבים'' בהנחייתנו ותכנית הרדיו ''ג'אם סשן'' ברדיו ''המחוגה''. בשנים האחרונות אירחנו וראיינו עשרות אמנים ודמויות בסצנת ההיפ הופ הישראלית. מטרת העל שלנו היא לספר את הסיפור של ההיפ הופ הישראלי מכמה שיותר זוויות. אמנים, מפיקים, מנהלי לייבלים, אנשי ארט ווידאו, אנשי סאונד, אנשי סושיאל ואפילו קהל המאזינים - כולם מהווים חלק מהרקמה של התרבות ומספרים את הסיפור שלה.",
+   "durationMin": null,
+   "imageUrl": "https://telavivfestival.co.il/artists/wed-rap-anavim.jpg"
+  },
+  {
+   "id": "thu-hillel",
+   "title": "הַלֵּל- שי צברי ופטריק סבג",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/thu-hillel",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "בכורה לפרויקט חדש ומשותף של שי צברי ופטריק סבג, נולד במדבר מחבר בין תפילה עתיקה, מסורת תימנית ואלקטרוניקה עכשווית\n\nשבעה קטעים מתוך תפילת ההלל הולחנו, עובדו והופקו על ידי שי צברי ופטריק סבג.\nהפרויקט  נולד בתוך אוטובוס ישן שהוסב לאולפן הקלטות במדבר. מסע מוזיקלי שמחבר בין תפילה בת אלפי שנים לסאונד עכשווי.\n\nשי צברי, מהקולות החד-פעמיים במוזיקה הישראלית, נע בין פיוט ותפילה, מוזיקה תימנית, רוק, גרוב ומוזיקה ישראלית חדשה. מאלבום הבכורה ״שחרית״ הוא אחד האמנים הבולטים במוזיקה הישראלית העכשווית. פטריק סבג, מוזיקאי, מפיק ויוצר, מביא עמו עולם הפקתי רחב ורגישות גדולה למפגש שבין מוזיקה שורשית לסאונד מודרני. \n\nמילים: מתוך סדר ההלל\nלחנים, עיבודים והפקה מוזיקלית: שי צברי ופטריק סבג\n\nהפרויקט הוקלט ב״מלכה במדבר״, בית השנטי, שדה בוקר ובהקלטות נוספות בתל אביב. הקלטה, מיקס ומאסטרינג: פטריק סבג.",
+   "durationMin": null,
+   "imageUrl": "https://telavivfestival.co.il/artists/thu-hillel.jpg"
+  },
+  {
+   "id": "thu-tapash",
+   "title": "טאפש - מופע סולו אקוסטי מיוחד",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/thu-tapash",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": null,
+   "durationMin": null,
+   "imageUrl": "https://telavivfestival.co.il/artists/thu-tapash.jpg"
+  },
+  {
+   "id": "thu-tahar",
+   "title": "טהר",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/thu-tahar",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "הציונות החדשה הוא פרויקט חדש ושאפתני של טהר. בין הלחנים הפשוטים והמילים המשעשעות מסתתרות אמירות נוקבות על החברה הישראלית, על היחסים בין הקבוצות בעם ועל המציאות שבין מלחמות לשלום ובין כאב לצחוק. הכל עטוף בהומור ומוגש באהבה, כמו שרק מוזיקה יודעת.",
+   "durationMin": null,
+   "imageUrl": "https://telavivfestival.co.il/artists/thu-tahar.jpg"
+  },
+  {
+   "id": "wed-messiaen",
+   "title": "רביעייה לאחרית הימים מאת אוליבייה מסייאן",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/wed-messiaen",
+   "genre": "music",
+   "categories": [
+    "fri-noon"
+   ],
+   "blurb": "$1b",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "thu-negusa",
+   "title": "טדי נגוסה",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/thu-negusa",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "מהראפרים האיכותיים והמסקרנים שפעילים בסצנה המקומית בשנים האחרונות. שורש היצירה שלו בעיר לוד, שבה גדל ובה הוא חי עד היום, והמוזיקה היא עבורו כלי לביטוי עצמי, מחאה ושינוי. ארבעה אלבומים עד כה, ובהם זה בדם שלי, נקודה ולמעלה.",
+   "durationMin": null,
+   "imageUrl": "https://telavivfestival.co.il/artists/thu-negusa.jpg"
+  },
+  {
+   "id": "thu-sharf",
+   "title": "יובל שרף",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/thu-sharf",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "מפגש חד פעמי של יובל שרף מול צופה אחד.ת מהקהל בפתיחת קלפי טארוט משותפת",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "thu-afaim",
+   "title": "הדיי עפאים",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/thu-afaim",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "אחד על אחד",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "thu-hunger",
+   "title": "מחווה לקולנוע פריז: ״הרעב״",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/thu-hunger",
+   "genre": "film",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "הממלכה החשוכה ברחוב הירקון שהייתה הבית היחיד לסרטי פולחן מחתרתיים.\nהקרנת חצות של הסרט \"הרעב\", סרט הביכורים של טוני סקוט.\nבסרט מככבים קתרין דנב, דייוויד בואי וסוזן סרנדון.\n\nהקרנת הסרט באורך מלא",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "thu-kaplan",
+   "title": "קוסטה קפלן",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/thu-kaplan",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "קוסטה קפלן הוא מוזיקאי, גיטריסט ומפיק מוזיקלי.\n\nבאלבום החדש, ״הכלב הכי כועס בעולם״ שיצא בלייבל קמ״ע, יחד עם המפיק אורי קוטנר, קוסטה משכלל את הכישרון הייחודי שלו שבלט כבר באלבומים הקודמים שלו – בטקסטים, בשירה, בנגינה ובניואנסים הדקים של ההפקה המוזיקלית. בהופעה ההגשה החדה של קוסטה חותכת דרך מסך הגיטרות החשמליות והבס-תופים האינטנסיבי שמשלב בין סאונד של רוק אלטרנטיבי למדיטטיביות של מוזיקה אלקטרונית והיפ הופ, כשבמרכז נמצאות המילים החדות והייחודיות, על הגבול הדק בין רגש חשוף להומור שחור.\n\nנגנים:\nאורי קוטנר - בס \nעדיאל גולדמן - תופים",
+   "durationMin": null,
+   "imageUrl": "https://telavivfestival.co.il/artists/thu-kaplan.jpg?v=mu1niuzy"
+  },
+  {
+   "id": "thu-liberman",
+   "title": "אסף ליברמן מארח.",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/thu-liberman",
+   "genre": "talk",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": "הפרק ה- 200\nהקלטת פרק לייב של הפודקאסט 1+1\nמבית כאן הסכתים",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "tba-wiesel",
+   "title": "שירה ויזל",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/tba-wiesel",
+   "genre": "music",
+   "categories": [
+    "night-pass"
+   ],
+   "blurb": null,
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "fri-caspi",
+   "title": "״תתחצף ותענה״ מנגנים מתי כספי",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/fri-caspi",
+   "genre": "music",
+   "categories": [
+    "fri-noon"
+   ],
+   "blurb": "$1c",
+   "durationMin": 60,
+   "imageUrl": "https://telavivfestival.co.il/artists/fri-caspi.jpg"
+  },
+  {
+   "id": "fri-kenan",
+   "title": "רונה קינן",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/fri-kenan",
+   "genre": "music",
+   "categories": [
+    "fri-noon"
+   ],
+   "blurb": "רונה קינן במופע סולו, עם שירים מתוך אלבומה השמיני שיוצא ממש בקרוב. מפגש קרוב ואינטימי: רונה מספרת על העבודה על האלבום החדש, מבצעת שירים נבחרים מתוכו ומארחת שותפים ותיקים לדרך.",
+   "durationMin": 60,
+   "imageUrl": "https://telavivfestival.co.il/artists/fri-kenan.jpg"
+  },
+  {
+   "id": "fri-twil",
+   "title": "רותי טוויל",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/fri-twil",
+   "genre": "music",
+   "categories": [
+    "fri-noon"
+   ],
+   "blurb": "סט DJ בגן הפסלים, 11:00 עד 13:00. קיום האירוע מותנה בתנאי מזג האוויר",
+   "durationMin": null,
+   "imageUrl": "https://telavivfestival.co.il/artists/fri-twil.jpg"
+  },
+  {
+   "id": "show-1790237640383",
+   "title": "בום פם",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/show-1790237640383",
+   "genre": "music",
+   "categories": [
+    "fri-noon"
+   ],
+   "blurb": "ההרכב הבין לאומי ששיתף פעולה בארץ עם מיטב האמנים ( ברי סחרוף, רביד פלוטניק, טריפונס ועוד) במופע שכולו שמחה וריקודים.\n\nקיום האירוע מותנה בתנאי מזג האוויר, הכניסה לגן הפסלים על בסיס מקום פנוי.",
+   "durationMin": null,
+   "imageUrl": "https://telavivfestival.co.il/artists/show-1790237640383.jpg?v=muf9l36s"
+  },
+  {
+   "id": "fri-radical",
+   "title": "AFTER PARTY",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/fri-radical",
+   "genre": "music",
+   "categories": [
+    "fri-night"
+   ],
+   "blurb": "פסטיבל תל אביב X בית רדיקל\n\nTamir Muskat &  Speical Guests\nלייב-סט לתוך תוך הלילה.",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "closing-michaeli",
+   "title": "רבקה מיכאלי: סיבה למסיבה",
+   "titleLocal": null,
+   "url": "https://telavivfestival.co.il/show/closing-michaeli",
+   "genre": "music",
+   "categories": [
+    "closing"
+   ],
+   "blurb": "הגברת הראשונה של הבידור הישראלי, רבקה מיכאלי, חוזרת לערב חד פעמי להגיש את \"סיבה למסיבה\" התכנית המיתולוגית שהיתה מדורת השבט הישראלי בין השנים 1984-1990. \nממש כמו בימים ההם, גם באירוע המיוחד הזה שיחתום את הפסטיבל, יתקיים בהיכל התרבות, תארח רבקל'ה כמה מהשמות הבולטים של הימים האלה: אלון עדר, גברי בנאי, ג'ימבו ג'יי, גיתית פישר, גלי עטרי, יאיר ניצני, ליאור שליין ועוד.\nניהול מוזיקלי: נדב הולנדר. עורכת: אתי אנטה-שגב.",
+   "durationMin": null,
+   "imageUrl": "https://telavivfestival.co.il/artists/closing-michaeli.jpg"
+  }
+ ],
+ "performances": [
+  {
+   "id": "opening-muskat/20:00",
+   "eventId": "opening-muskat",
+   "venueId": "tel-aviv-performing-arts-center",
+   "roomId": null,
+   "date": "2026-11-01",
+   "start": "20:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MIO14/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "wed-shimi/20:00",
+   "eventId": "wed-shimi",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "recanati-hall",
+   "date": "2026-11-04",
+   "start": "20:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMT18/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 209,
+   "priceMax": 209
+  },
+  {
+   "id": "wed-kuban/19:30",
+   "eventId": "wed-kuban",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "asia-hall",
+   "date": "2026-11-04",
+   "start": "19:30",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MES10/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 199,
+   "priceMax": 199
+  },
+  {
+   "id": "wed-tomer/20:00",
+   "eventId": "wed-tomer",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "kaufmann-hall",
+   "date": "2026-11-04",
+   "start": "20:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MKA06/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 189,
+   "priceMax": 189
+  },
+  {
+   "id": "wed-hanoch/22:15",
+   "eventId": "wed-hanoch",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "recanati-hall",
+   "date": "2026-11-04",
+   "start": "22:15",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMT19/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 219,
+   "priceMax": 219
+  },
+  {
+   "id": "wed-echo/22:30",
+   "eventId": "wed-echo",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "asia-hall",
+   "date": "2026-11-04",
+   "start": "22:30",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MES11/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 199,
+   "priceMax": 199
+  },
+  {
+   "id": "wed-reshaim/22:30",
+   "eventId": "wed-reshaim",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "kaufmann-hall",
+   "date": "2026-11-04",
+   "start": "22:30",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MKA07/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 189,
+   "priceMax": 189
+  },
+  {
+   "id": "thu-braashi/19:00",
+   "eventId": "thu-braashi",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "sculpture-garden",
+   "date": "2026-11-04",
+   "start": "19:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU18/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "thu-braashi/21:00",
+   "eventId": "thu-braashi",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "sculpture-garden",
+   "date": "2026-11-04",
+   "start": "21:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU18/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "wed-dunietz/19:00",
+   "eventId": "wed-dunietz",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "rickles-foyer",
+   "date": "2026-11-04",
+   "start": "19:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU18/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "wed-pinto/20:30",
+   "eventId": "wed-pinto",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "yaglom-hall",
+   "date": "2026-11-04",
+   "start": "20:30",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU18/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "wed-pinto/21:30",
+   "eventId": "wed-pinto",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "yaglom-hall",
+   "date": "2026-11-04",
+   "start": "21:30",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU18/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "wed-bentzur/20:00",
+   "eventId": "wed-bentzur",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "photography-gallery",
+   "date": "2026-11-04",
+   "start": "20:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU18/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "show-1789384834138/23:15",
+   "eventId": "wed-bentzur",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "photography-gallery",
+   "date": "2026-11-04",
+   "start": "23:15",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU18/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "wed-solmonk/20:00",
+   "eventId": "wed-solmonk",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "sculpture-garden",
+   "date": "2026-11-04",
+   "start": "20:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU18/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "wed-tzitrin/20:45",
+   "eventId": "wed-tzitrin",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "noma-bar-exhibition",
+   "date": "2026-11-04",
+   "start": "20:45",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU18/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "wed-tzitrin/22:45",
+   "eventId": "wed-tzitrin",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "noma-bar-exhibition",
+   "date": "2026-11-04",
+   "start": "22:45",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU18/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "wed-spector/19:45",
+   "eventId": "wed-spector",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "new-bones-exhibition",
+   "date": "2026-11-04",
+   "start": "19:45",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU18/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "wed-spector/21:15",
+   "eventId": "wed-spector",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "new-bones-exhibition",
+   "date": "2026-11-04",
+   "start": "21:15",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU18/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "wed-peleg/21:15",
+   "eventId": "wed-peleg",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "year-zero-exhibition",
+   "date": "2026-11-04",
+   "start": "21:15",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU18/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "wed-menashe/21:45",
+   "eventId": "wed-menashe",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "rapaport-foyer",
+   "date": "2026-11-04",
+   "start": "21:45",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU18/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "wed-menashe/23:45",
+   "eventId": "wed-menashe",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "rapaport-foyer",
+   "date": "2026-11-04",
+   "start": "23:45",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU18/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "wed-rada/22:00",
+   "eventId": "wed-rada",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "sculpture-garden",
+   "date": "2026-11-04",
+   "start": "22:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU18/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "wed-tene/22:45",
+   "eventId": "wed-tene",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "year-zero-exhibition",
+   "date": "2026-11-04",
+   "start": "22:45",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU18/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "wed-streett/22:30",
+   "eventId": "wed-streett",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "rubinstein-miniatures",
+   "date": "2026-11-04",
+   "start": "22:30",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU18/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "wed-giagia/23:45",
+   "eventId": "wed-giagia",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "rickles-foyer",
+   "date": "2026-11-04",
+   "start": "23:45",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU18/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "thu-amdursky/20:00",
+   "eventId": "thu-amdursky",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "recanati-hall",
+   "date": "2026-11-05",
+   "start": "20:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMT20/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 209,
+   "priceMax": 209
+  },
+  {
+   "id": "thu-yaar/20:15",
+   "eventId": "thu-yaar",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "asia-hall",
+   "date": "2026-11-05",
+   "start": "20:15",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MES12/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 199,
+   "priceMax": 199
+  },
+  {
+   "id": "wed-rocky/24:00",
+   "eventId": "wed-rocky",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "kaufmann-hall",
+   "date": "2026-11-04",
+   "start": "24:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU18/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "thu-ruden/20:15",
+   "eventId": "thu-ruden",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "kaufmann-hall",
+   "date": "2026-11-05",
+   "start": "20:15",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MKA08/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 189,
+   "priceMax": 189
+  },
+  {
+   "id": "thu-nono/22:30",
+   "eventId": "thu-nono",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "recanati-hall",
+   "date": "2026-11-05",
+   "start": "22:30",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMT21/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 209,
+   "priceMax": 209
+  },
+  {
+   "id": "thu-ciam/22:15",
+   "eventId": "thu-ciam",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "asia-hall",
+   "date": "2026-11-05",
+   "start": "22:15",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MES13/001/ALL/iw?",
+   "free": false,
+   "status": "sold-out",
+   "priceMin": 199,
+   "priceMax": 199
+  },
+  {
+   "id": "thu-shaviv/22:30",
+   "eventId": "thu-shaviv",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "kaufmann-hall",
+   "date": "2026-11-05",
+   "start": "22:30",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MKA09/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 189,
+   "priceMax": 189
+  },
+  {
+   "id": "thu-agat/21:30",
+   "eventId": "thu-agat",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "rapaport-foyer",
+   "date": "2026-11-05",
+   "start": "21:30",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU19/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "thu-dunietz/19:00",
+   "eventId": "wed-dunietz",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "rickles-foyer",
+   "date": "2026-11-05",
+   "start": "19:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU19/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "thu-castelbloom/21:00",
+   "eventId": "thu-castelbloom",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "photography-gallery",
+   "date": "2026-11-05",
+   "start": "21:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU19/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "show-1789391907100/22:45",
+   "eventId": "thu-castelbloom",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "photography-gallery",
+   "date": "2026-11-05",
+   "start": "22:45",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU19/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "thu-mor/20:30",
+   "eventId": "thu-mor",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "rubinstein-miniatures",
+   "date": "2026-11-04",
+   "start": "20:30",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU18/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "thu-tzitrin/20:30",
+   "eventId": "wed-tzitrin",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "noma-bar-exhibition",
+   "date": "2026-11-05",
+   "start": "20:30",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU19/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "thu-tzitrin/21:30",
+   "eventId": "wed-tzitrin",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "noma-bar-exhibition",
+   "date": "2026-11-05",
+   "start": "21:30",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU19/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "thu-tzitrin/23:00",
+   "eventId": "wed-tzitrin",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "noma-bar-exhibition",
+   "date": "2026-11-05",
+   "start": "23:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU19/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "thu-lagasa/19:15",
+   "eventId": "thu-lagasa",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "sculpture-garden",
+   "date": "2026-11-05",
+   "start": "19:15",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU19/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "wed-djs/20:00",
+   "eventId": "wed-djs",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "sculpture-garden",
+   "date": "2026-11-05",
+   "start": "20:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU19/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "wed-ulman/18:00",
+   "eventId": "wed-ulman",
+   "venueId": "beit-ariela",
+   "roomId": "auditorium",
+   "date": "2026-11-04",
+   "start": "18:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MRE01/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 189,
+   "priceMax": 189
+  },
+  {
+   "id": "thu-raviv/19:45",
+   "eventId": "thu-raviv",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "year-zero-exhibition",
+   "date": "2026-11-05",
+   "start": "19:45",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU19/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "wed-taani/20:00",
+   "eventId": "wed-taani",
+   "venueId": "beit-ariela",
+   "roomId": "auditorium",
+   "date": "2026-11-04",
+   "start": "20:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MRE02/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 189,
+   "priceMax": 189
+  },
+  {
+   "id": "thu-drummer/20:45",
+   "eventId": "thu-drummer",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "new-bones-exhibition",
+   "date": "2026-11-05",
+   "start": "20:45",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU19/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "thu-drummer/22:15",
+   "eventId": "thu-drummer",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "new-bones-exhibition",
+   "date": "2026-11-05",
+   "start": "22:15",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU19/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "thu-drummer/23:15",
+   "eventId": "thu-drummer",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "new-bones-exhibition",
+   "date": "2026-11-05",
+   "start": "23:15",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU19/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "wed-rap-anavim/19:00",
+   "eventId": "wed-rap-anavim",
+   "venueId": "beit-ariela",
+   "roomId": "urban-salon",
+   "date": "2026-11-04",
+   "start": "19:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU18/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "wed-rap-anavim/21:30",
+   "eventId": "wed-rap-anavim",
+   "venueId": "beit-ariela",
+   "roomId": "urban-salon",
+   "date": "2026-11-04",
+   "start": "21:30",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU18/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "thu-hillel/22:00",
+   "eventId": "thu-hillel",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "sculpture-garden",
+   "date": "2026-11-05",
+   "start": "22:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU19/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "thu-tapash/19:45",
+   "eventId": "thu-tapash",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "rapaport-foyer",
+   "date": "2026-11-05",
+   "start": "19:45",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU19/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "thu-tahar/21:45",
+   "eventId": "thu-tahar",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "year-zero-exhibition",
+   "date": "2026-11-05",
+   "start": "21:45",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU19/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "wed-messiaen/11:00",
+   "eventId": "wed-messiaen",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "asia-hall",
+   "date": "2026-11-06",
+   "start": "11:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MES14/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 149,
+   "priceMax": 149
+  },
+  {
+   "id": "thu-negusa/24:00",
+   "eventId": "thu-negusa",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "rickles-foyer",
+   "date": "2026-11-05",
+   "start": "24:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU19/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "thu-sharf/22:15",
+   "eventId": "thu-sharf",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "rubinstein-miniatures",
+   "date": "2026-11-05",
+   "start": "22:15",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU19/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "thu-afaim/20:15",
+   "eventId": "thu-afaim",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "rubinstein-miniatures",
+   "date": "2026-11-05",
+   "start": "20:15",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU19/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "thu-hunger/24:00",
+   "eventId": "thu-hunger",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "kaufmann-hall",
+   "date": "2026-11-05",
+   "start": "24:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU19/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "thu-kaplan/23:45",
+   "eventId": "thu-kaplan",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "rapaport-foyer",
+   "date": "2026-11-05",
+   "start": "23:45",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU19/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "thu-liberman/20:30",
+   "eventId": "thu-liberman",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "yaglom-hall",
+   "date": "2026-11-05",
+   "start": "20:30",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU19/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "tba-wiesel/23:15",
+   "eventId": "tba-wiesel",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "year-zero-exhibition",
+   "date": "2026-11-05",
+   "start": "23:15",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMU19/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 159,
+   "priceMax": 159
+  },
+  {
+   "id": "fri-caspi/12:30",
+   "eventId": "fri-caspi",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "recanati-hall",
+   "date": "2026-11-06",
+   "start": "12:30",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MMT22/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 209,
+   "priceMax": 209
+  },
+  {
+   "id": "show-1789622522068/24:30",
+   "eventId": "thu-ciam",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "asia-hall",
+   "date": "2026-11-05",
+   "start": "24:30",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MES17/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 199,
+   "priceMax": 199
+  },
+  {
+   "id": "fri-kenan/13:00",
+   "eventId": "fri-kenan",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "kaufmann-hall",
+   "date": "2026-11-06",
+   "start": "13:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MKA10/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 149,
+   "priceMax": 149
+  },
+  {
+   "id": "fri-twil/11:00",
+   "eventId": "fri-twil",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "sculpture-garden",
+   "date": "2026-11-06",
+   "start": "11:00",
+   "ticketUrl": null,
+   "free": true,
+   "status": "free",
+   "priceMin": 0,
+   "priceMax": 0
+  },
+  {
+   "id": "show-1790237640383/13:00",
+   "eventId": "show-1790237640383",
+   "venueId": "tel-aviv-museum-of-art",
+   "roomId": "sculpture-garden",
+   "date": "2026-11-06",
+   "start": "13:00",
+   "ticketUrl": null,
+   "free": true,
+   "status": "free",
+   "priceMin": 0,
+   "priceMax": 0
+  },
+  {
+   "id": "fri-radical/22:00",
+   "eventId": "fri-radical",
+   "venueId": "beit-radical",
+   "roomId": null,
+   "date": "2026-11-06",
+   "start": "22:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MRH01/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 139,
+   "priceMax": 139
+  },
+  {
+   "id": "closing-michaeli/20:00",
+   "eventId": "closing-michaeli",
+   "venueId": "heichal-hatarbut",
+   "roomId": "lowy-hall",
+   "date": "2026-11-08",
+   "start": "20:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/performance/MTA72/001/ALL/iw?",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": null,
+   "priceMax": null
+  }
+ ],
+ "sources": {
+  "festival": [
+   "festival.toml"
+  ],
+  "venues": [
+   "venues-research"
+  ],
+  "events": [
+   "festival-site"
+  ],
+  "performances": [
+   "festival-site"
+  ],
+  "availability": [
+   "festival-site"
+  ],
+  "prices": [
+   "festival-site"
+  ]
+ },
+ "provenance": {
+  "sources": {
+   "venues-research": {
+    "kind": "curated",
+    "path": "scraper/festivals/tel_aviv_festival/curated/venues.json"
+   },
+   "festival-site": {
+    "kind": "fetched",
+    "path": "data/festivals/tel-aviv-festival/2026/festival-site",
+    "fetchedAt": "2026-09-27T09:21:05Z",
+    "fetcher": "scraper/festivals/tel_aviv_festival/sources/festival-site/fetch.py",
+    "fetcherVersion": 1
+   }
+  },
+  "absent": [],
+  "fields": {
+   "categories.name": [
+    "festival-site"
+   ],
+   "events.blurb": [
+    "festival-site"
+   ],
+   "events.categories": [
+    "festival-site"
+   ],
+   "events.durationMin": [
+    "festival-site"
+   ],
+   "events.genre": [
+    "festival-site"
+   ],
+   "events.imageUrl": [
+    "festival-site"
+   ],
+   "events.title": [
+    "festival-site"
+   ],
+   "events.titleLocal": [
+    "festival-site"
+   ],
+   "events.url": [
+    "festival-site"
+   ],
+   "performances.date": [
+    "festival-site"
+   ],
+   "performances.eventId": [
+    "festival-site"
+   ],
+   "performances.free": [
+    "festival-site"
+   ],
+   "performances.priceMax": [
+    "festival-site"
+   ],
+   "performances.priceMin": [
+    "festival-site"
+   ],
+   "performances.roomId": [
+    "festival-site"
+   ],
+   "performances.start": [
+    "festival-site"
+   ],
+   "performances.status": [
+    "festival-site"
+   ],
+   "performances.ticketUrl": [
+    "festival-site"
+   ],
+   "performances.venueId": [
+    "festival-site"
+   ],
+   "venues.accessibility": [
+    "venues-research"
+   ],
+   "venues.address": [
+    "venues-research"
+   ],
+   "venues.capacity": [
+    "venues-research"
+   ],
+   "venues.lat": [
+    "venues-research"
+   ],
+   "venues.layout": [
+    "venues-research"
+   ],
+   "venues.lng": [
+    "venues-research"
+   ],
+   "venues.name": [
+    "venues-research"
+   ],
+   "venues.notes": [
+    "venues-research"
+   ],
+   "venues.refs": [
+    "venues-research"
+   ],
+   "venues.rooms": [
+    "venues-research"
+   ]
+  },
+  "skipped": {}
+ }
+}

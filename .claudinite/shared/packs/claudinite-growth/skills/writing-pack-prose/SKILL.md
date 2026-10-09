@@ -1,11 +1,15 @@
 ---
 name: writing-pack-prose
-description: How pack prose is written - RULES.md rules, SKILL.md bodies and check text in a Claudinite pack, local or canon - brevity, structure, triggerability, findability, the marker that names a rule's provenance file. Loaded for any edit of a pack's RULES.md or SKILL.md, and when landing a lesson as prose.
+description: How pack prose is written: brevity, structure, triggerability, the provenance marker, a pack's pitch. Loaded for any edit of a pack's RULES.md, SKILL.md or manifest, and when landing a lesson as prose.
 metadata:
   body: guidelines
+  usage:
+    expect: triggered
   force-load-on-file-edits-paths:
     - "**/packs/*/RULES.md"
     - "**/packs/*/skills/*/SKILL.md"
+    - "**/packs/*/pack.json"
+    - "**/packs/*/pack.mjs"
 ---
 
 # Writing pack prose
@@ -113,6 +117,24 @@ forever, whether or not it ever applies — so prose is rationed, and the ration
 - **Rewriting an existing rule** — carry the source's own strength forward. A rewrite must not
   weaken a rule, and it must not strengthen one either. (rewriting-existing-rule)
 
+## A pack's pitch
+
+- **Knowing who reads a pitch** - a developer whose repository does not run Claudinite, deciding
+  from this one paragraph on the claudinite.com dashboard whether the pack is worth adopting. No
+  session ever loads it, so it sells the pack rather than instructing anyone.
+
+- **Writing a pitch** - lead with what goes wrong in a repository without the pack, then what
+  the pack changes: its main skills by name and the process it runs by itself. Plain and
+  concrete, with no hype, no commands, no markdown, no links and no paths, inside the manifest's
+  word cap.
+
+- **Counting what a pack carries in its pitch** - in rounded words ("a few", "about a dozen",
+  "dozens"), only for the kinds the pack has, never an exact number: the pitch then survives the
+  pack's growth, and is rewritten only when what the pack is for changes.
+
+- **Pitching a stub pack** - say it starts empty and is where the repository's own lessons
+  about its subject collect; never promise content it does not carry.
+
 ## The provenance log - where a rule's rationale lives
 
 A pack keeps one file per element under `provenance/`, beside its `RULES.md`: an append-only
@@ -132,7 +154,7 @@ this skill adds is how a rule is written so the log can hold it.
   file's and carry none, until one's history diverges and it takes a marker and a file of its
   own; a workflow skill's steps carry none, the skill being the element. (ending-rule)
 - **Adding a rule** - write the brief rule and end it with its marker; create its file with a
-  `born` entry through `provenance.mjs append` (`mark` creates the file where none exists),
+  `born` entry through `cn provenance append` (`mark` creates the file where none exists),
   and put the reason there, never in the rule. A consequence the reader needs under pressure
   earns its clause; rationale the reader doesn't need at act time is the entry's. Write the
   entry so a future review can **reaffirm the rule from it** - `Retire when` is what would
@@ -152,7 +174,7 @@ this skill adds is how a rule is written so the log can hold it.
 The `provenance-integrity` check holds the mechanism together - every carrier names a live
 file, every file parses - and `provenance-change-recorded` holds the change: a carrier that
 changed lands with its entry. A pack not yet on the convention is put there by
-`provenance.mjs mark`, and its history filled by the
+`cn provenance mark`, and its history filled by the
 [backfilling-provenance](../backfilling-provenance/SKILL.md) skill; nothing here is done rule by
 rule.
 

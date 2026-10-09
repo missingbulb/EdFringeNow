@@ -1,0 +1,41 @@
+{
+ "about": "Hand-curated venue research for Challenge ISRAMAN, keyed by the code its festival-site adapter gives each place the schedule names. The schedule numbers its places on its map: (1) Isrotel Sport Club, (2) the expo compound in the Royal Garden's car park, (3) Royal Beach. Every figure is {value, source}, or null when nobody could cite it; coordinates carry the basis they rest on and their source.",
+ "researchedAt": "2026-10-02",
+ "venues": {
+  "royal-beach-hotel": {
+   "name": "Isrotel Royal Beach",
+   "address": null,
+   "coordinates": {"lat": 29.5495139, "lng": 34.9630063, "basis": "the hotel's OpenStreetMap outline (way 852999442)", "source": "https://www.openstreetmap.org/way/852999442"},
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {"id": "alon-ve-ela", "name": "Alon ve-Ela hall (אלון ואלה)", "capacity": null, "layout": null}
+   ],
+   "accessibility": null,
+   "notes": "The athletes' briefings, through the hotel's main entrance (the schedule)."
+  },
+  "royal-beach": {
+   "name": "Royal Beach (חוף רויאל)",
+   "address": null,
+   "coordinates": {"lat": 29.5482099, "lng": 34.9632751, "basis": "the beach's OpenStreetMap outline (way 853978689)", "source": "https://www.openstreetmap.org/way/853978689"},
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "The swim start, point (3) on the schedule's map, and the swim-course clinics."
+  },
+  "royal-garden": {
+   "name": "Isrotel Royal Garden",
+   "address": null,
+   "coordinates": {"lat": 29.5504301, "lng": 34.9633785, "basis": "the hotel's OpenStreetMap point (node 540901029)", "source": "https://www.openstreetmap.org/node/540901029"},
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {"id": "expo", "name": "Expo compound, car park", "capacity": null, "layout": null},
+    {"id": "wow", "name": "WOW hall", "capacity": null, "layout": null}
+   ],
+   "accessibility": null,
+   "notes": "The expo compound in the car park is point (2) on the schedule's map, where the race winners arrive."
+  }
+ }
+}

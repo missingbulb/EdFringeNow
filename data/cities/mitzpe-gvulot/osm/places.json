@@ -1,0 +1,49 @@
+{
+ "places": [
+  {
+   "id": "node/4401707000",
+   "lat": 31.281965,
+   "lng": 34.48266,
+   "tags": {
+    "name": "תל שרוחן",
+    "name:en": "Tel Sharuhen",
+    "tourism": "viewpoint",
+    "historic": "archaeological_site",
+    "wikidata": "Q1548392"
+   }
+  },
+  {
+   "id": "node/4859970825",
+   "lat": 31.205121,
+   "lng": 34.455433,
+   "tags": {
+    "name": "מצפה גבולות",
+    "tourism": "viewpoint",
+    "wikidata": "Q16340855"
+   }
+  },
+  {
+   "id": "node/4859984848",
+   "lat": 31.257319,
+   "lng": 34.544369,
+   "tags": {
+    "name": "באר שמע",
+    "name:en": "Be'er Shama",
+    "historic": "archaeological_site",
+    "wikidata": "Q6980263"
+   }
+  },
+  {
+   "id": "way/204719210",
+   "lat": 31.220911,
+   "lng": 34.522674,
+   "tags": {
+    "name": "הגשר התלוי מעל נחל הבשור",
+    "name:en": "Suspension bridge",
+    "tourism": "attraction",
+    "wikidata": "Q102309301",
+    "wikipedia": "he:הגשר התלוי מעל נחל הבשור"
+   }
+  }
+ ]
+}

@@ -1,0 +1,17 @@
+{
+ "festival": "edinburgh-art-festival",
+ "edition": "2026",
+ "source": "festival-site",
+ "fetchedAt": "2026-09-25T13:55:22Z",
+ "fetcher": "scraper/festivals/edinburgh_art_festival/sources/festival-site/fetch.py",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://edinburghartfestival.com/wp-json/wp/v2/event?event-tag=<festival-year tag>",
+  "https://edinburghartfestival.com/wp-json/wp/v2/event-tag",
+  "https://edinburghartfestival.com/wp-json/wp/v2/event-type"
+ ],
+ "files": [
+  "programme.json"
+ ],
+ "notes": "WP REST with ACF: every event and exhibition tagged festival2026, each with its embedded venue (coordinates, address, opening hours). Start times are read from the free-text time_info (parse.py); no prices (the ACF price fields are form defaults)."
+}

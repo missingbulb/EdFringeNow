@@ -1,0 +1,26 @@
+{
+ "places": [
+  {
+   "id": "node/278473225",
+   "lat": 33.2,
+   "lng": 35.65,
+   "tags": {
+    "name": "עין שחר",
+    "name:en": "Ein Sahar",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/9386606817",
+   "lat": 33.175323,
+   "lng": 35.594645,
+   "tags": {
+    "name": "תל נעמה",
+    "name:en": "En Na`ima",
+    "historic": "ruins",
+    "wikidata": "Q16131239",
+    "wikipedia": "he:תל נעמה"
+   }
+  }
+ ]
+}

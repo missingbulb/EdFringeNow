@@ -1,0 +1,305 @@
+{
+ "nearM": 8000,
+ "anchors": [
+  {
+   "festival": "iaem",
+   "venue": "avenue-airport-city",
+   "lat": 31.98597,
+   "lng": 34.91617
+  }
+ ],
+ "places": [
+  {
+   "id": "node/10069419066",
+   "lat": 31.94419,
+   "lng": 34.874364,
+   "tags": {
+    "name": "דוגמה",
+    "amenity": "restaurant",
+    "cuisine": "burger;regional",
+    "website": "yuumybox.com"
+   }
+  },
+  {
+   "id": "node/1052384884",
+   "lat": 32.027217,
+   "lng": 34.894982,
+   "tags": {
+    "name": "טאטי",
+    "name:en": "Tatti",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/1110713513",
+   "lat": 32.004125,
+   "lng": 34.873084,
+   "tags": {
+    "name": "Pizza Hut",
+    "name:en": "Pizza Hut",
+    "amenity": "restaurant",
+    "cuisine": "pizza"
+   }
+  },
+  {
+   "id": "node/11175426537",
+   "lat": 31.928078,
+   "lng": 34.867755,
+   "tags": {
+    "name": "האוכל של אתי",
+    "amenity": "restaurant",
+    "addr:street": "דני מס"
+   }
+  },
+  {
+   "id": "node/11181608237",
+   "lat": 31.928018,
+   "lng": 34.86765,
+   "tags": {
+    "name": "האוכל של אתי.",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/12547329542",
+   "lat": 32.005525,
+   "lng": 34.946868,
+   "tags": {
+    "name": "Pizza Hut",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://pizzahut.co.il",
+    "addr:housenumber": "161",
+    "addr:street": "שדרות עמק איילון",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/12547329544",
+   "lat": 32.004582,
+   "lng": 34.944193,
+   "tags": {
+    "name": "פיצה טוביה",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://pizzatuvia.co.il",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12557322215",
+   "lat": 31.998341,
+   "lng": 34.946852,
+   "tags": {
+    "name": "ReBar ריבר",
+    "amenity": "restaurant",
+    "cuisine": "frozen_yogurt;ice_cream;juice",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12593444378",
+   "lat": 32.036476,
+   "lng": 34.864294,
+   "tags": {
+    "name": "מי מה מו",
+    "name:en": "Mi Ma Mu",
+    "amenity": "restaurant",
+    "cuisine": "burger",
+    "website": "https://www.memamu.co.il/",
+    "opening_hours": "Su-Th 11:00-00:00, Fr 11:00-16:00, Sa 21:00-01:00",
+    "addr:street": "השדרה האקדמית"
+   }
+  },
+  {
+   "id": "node/12925401501",
+   "lat": 31.92584,
+   "lng": 34.874434,
+   "tags": {
+    "name": "אצל נאג'י",
+    "amenity": "restaurant",
+    "website": "https://israelbusinessguide.com/catalog/ramla/rest__/",
+    "addr:housenumber": "9",
+    "addr:street": "ז'בוטינסקי"
+   }
+  },
+  {
+   "id": "node/13436419207",
+   "lat": 32.022836,
+   "lng": 34.860262,
+   "tags": {
+    "name": "טורקיש גריל",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/13926609531",
+   "lat": 32.036244,
+   "lng": 34.864898,
+   "tags": {
+    "name": "Japanika Quick",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/13926658133",
+   "lat": 32.035055,
+   "lng": 34.865088,
+   "tags": {
+    "name": "ג'ירף",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/13926659016",
+   "lat": 32.036268,
+   "lng": 34.865232,
+   "tags": {
+    "name": "ברבוניה",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/2078901095",
+   "lat": 32.027762,
+   "lng": 34.884976,
+   "tags": {
+    "name": "אסתר",
+    "name:en": "Esther",
+    "amenity": "restaurant",
+    "website": "https://ester-rest.co.il/",
+    "addr:housenumber": "8",
+    "addr:street": "העצמאות"
+   }
+  },
+  {
+   "id": "node/2144611987",
+   "lat": 31.968437,
+   "lng": 34.842706,
+   "tags": {
+    "name": "שדות",
+    "name:en": "Sadot",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/3199609911",
+   "lat": 32.033143,
+   "lng": 34.878681,
+   "tags": {
+    "name": "Pizza Hut",
+    "name:en": "Pizza Hut",
+    "amenity": "restaurant",
+    "cuisine": "pizza"
+   }
+  },
+  {
+   "id": "node/4988160114",
+   "lat": 31.987965,
+   "lng": 34.910012,
+   "tags": {
+    "name": "אייר קפה",
+    "name:en": "AirCafe",
+    "amenity": "restaurant",
+    "opening_hours": "Su 00:00-24:00; Mo-Th 08:00-24:00; Fr 08:00-14:00; Sa 19:00-24:00",
+    "addr:street": "הירדן"
+   }
+  },
+  {
+   "id": "node/5389164824",
+   "lat": 32.003019,
+   "lng": 34.873029,
+   "tags": {
+    "name": "Moses Air",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/668898189",
+   "lat": 32.02695,
+   "lng": 34.851855,
+   "tags": {
+    "name": "מסעדת פארוק",
+    "name:en": "Faruk",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/7198609337",
+   "lat": 31.92577,
+   "lng": 34.872822,
+   "tags": {
+    "name": "סמיר",
+    "name:en": "Samir’s Restaurant",
+    "amenity": "restaurant",
+    "website": "https://samir1948.co.il",
+    "opening_hours": "Mo-We 09:00-18:00; Th 09:00-23:00; Fr 09:00-18:00; Sa 08:00-19:00",
+    "addr:housenumber": "7",
+    "addr:street": "קהילת דטרויט"
+   }
+  },
+  {
+   "id": "node/976471774",
+   "lat": 32.001376,
+   "lng": 34.870391,
+   "tags": {
+    "name": "Pizza Hut",
+    "name:en": "Pizza Hut",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "opening_hours": "24/7"
+   }
+  },
+  {
+   "id": "way/1021522747",
+   "lat": 31.986247,
+   "lng": 34.912859,
+   "tags": {
+    "name": "Le",
+    "amenity": "restaurant",
+    "cuisine": "asian;sushi",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/1021522749",
+   "lat": 31.986013,
+   "lng": 34.912644,
+   "tags": {
+    "name": "Gaston Steakhouse",
+    "amenity": "restaurant",
+    "cuisine": "burger;steak_house"
+   }
+  },
+  {
+   "id": "way/1021522750",
+   "lat": 31.985856,
+   "lng": 34.91315,
+   "tags": {
+    "name": "פיצה פורטו",
+    "amenity": "restaurant",
+    "cuisine": "italian;pasta;pizza",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/1360146855",
+   "lat": 32.021106,
+   "lng": 34.942126,
+   "tags": {
+    "name": "כפריית ברקת",
+    "amenity": "restaurant",
+    "cuisine": "kebab;chinese;steak_house"
+   }
+  },
+  {
+   "id": "way/367342242",
+   "lat": 32.02297,
+   "lng": 34.867651,
+   "tags": {
+    "name": "עובד בכפר",
+    "amenity": "restaurant"
+   }
+  }
+ ]
+}

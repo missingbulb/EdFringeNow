@@ -1,0 +1,777 @@
+{
+ "nearM": 10000,
+ "anchors": [
+  {
+   "festival": "kol-hamusica",
+   "venue": "beit-haam-kfar-blum",
+   "lat": 33.17222,
+   "lng": 35.60972
+  }
+ ],
+ "places": [
+  {
+   "id": "node/1519225267",
+   "lat": 33.2285,
+   "lng": 35.640948,
+   "tags": {
+    "name": "קוקיה",
+    "name:en": "Cookia",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.cookia-pizzatruck.com/",
+    "opening_hours": "Mo-Su 08:30-23:00",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1524467821",
+   "lat": 33.230417,
+   "lng": 35.621326,
+   "tags": {
+    "name": "דג על הדן",
+    "name:en": "Fish on the Dan",
+    "amenity": "restaurant",
+    "cuisine": "fish_and_chips",
+    "website": "https://www.dagaldan.co.il/restoraunt/",
+    "opening_hours": "Mo-Su 12:00+"
+   }
+  },
+  {
+   "id": "node/1831037546",
+   "lat": 33.200519,
+   "lng": 35.606872,
+   "tags": {
+    "name": "Cheese",
+    "name:en": "Cheese",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://cheeserestaurant.co.il/",
+    "opening_hours": "Su-Th 9:30-24:00; Fr 9:00-23:00",
+    "addr:street": "המייסדים"
+   }
+  },
+  {
+   "id": "node/2318762527",
+   "lat": 33.192871,
+   "lng": 35.570791,
+   "tags": {
+    "name": "פיצה האט",
+    "name:en": "Pizza Hut",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www1.pizzahut.co.il/סניף_קרית_שמונה",
+    "opening_hours": "Mo-Th, Su 11:00-22:30; Fr 11:00-16:00; Sa 20:20-22:30"
+   }
+  },
+  {
+   "id": "node/2318762536",
+   "lat": 33.192907,
+   "lng": 35.571015,
+   "tags": {
+    "name": "אצה",
+    "name:en": "Atza",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "website": "https://atza.co.il/he/branches/259",
+    "opening_hours": "Mo-Th, Su 11:00-23:00; Fr 11:00-14:30; Sa 18:00-23:00"
+   }
+  },
+  {
+   "id": "node/2406113339",
+   "lat": 33.210771,
+   "lng": 35.56987,
+   "tags": {
+    "name": "מלון הצפון",
+    "name:en": "North hotel",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/2430258140",
+   "lat": 33.195931,
+   "lng": 35.570507,
+   "tags": {
+    "name": "מאמא חלסה",
+    "name:en": "Mama Chalsa",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "website": "https://www.2eat.co.il/mama-chalsa/",
+    "opening_hours": "Su-Th 12:00+"
+   }
+  },
+  {
+   "id": "node/2552148682",
+   "lat": 33.218271,
+   "lng": 35.584204,
+   "tags": {
+    "name": "aliz",
+    "name:en": "aliz",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/4422257839",
+   "lat": 33.102409,
+   "lng": 35.55329,
+   "tags": {
+    "name": "אלומה בכפר",
+    "name:en": "Aluma Bakfar",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "node/4422257888",
+   "lat": 33.207624,
+   "lng": 35.570264,
+   "tags": {
+    "name": "ריקו",
+    "name:en": "Ricco",
+    "amenity": "restaurant",
+    "cuisine": "burger"
+   }
+  },
+  {
+   "id": "node/4432618964",
+   "lat": 33.245863,
+   "lng": 35.596615,
+   "tags": {
+    "name": "Grand Vista",
+    "name:en": "Grand Vista",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "node/4432618966",
+   "lat": 33.246353,
+   "lng": 35.596981,
+   "tags": {
+    "name": "אלוני חן",
+    "name:en": "Alonay Chen",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "node/4433201241",
+   "lat": 33.238535,
+   "lng": 35.604039,
+   "tags": {
+    "name": "אצל ננו",
+    "name:en": "Etzel Nanno",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "node/4433201243",
+   "lat": 33.237072,
+   "lng": 35.605165,
+   "tags": {
+    "name": "Kalimerra Romance",
+    "name:en": "Kalimerra Romance",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "node/4433201249",
+   "lat": 33.228048,
+   "lng": 35.645653,
+   "tags": {
+    "name": "פאוזה",
+    "name:en": "Pauza",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/4553569460",
+   "lat": 33.246884,
+   "lng": 35.550384,
+   "tags": {
+    "name": "סוף הדרך",
+    "name:en": "Sof Haderech",
+    "tourism": "guest_house",
+    "opening_hours": "24/7"
+   }
+  },
+  {
+   "id": "node/4553569469",
+   "lat": 33.195759,
+   "lng": 35.545904,
+   "tags": {
+    "name": "'מנרה לודג",
+    "name:en": "Manara Lodge",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "node/4554245679",
+   "lat": 33.233316,
+   "lng": 35.582694,
+   "tags": {
+    "name": "אכסניית אנ\"א תל חי",
+    "tourism": "hostel"
+   }
+  },
+  {
+   "id": "node/4892376817",
+   "lat": 33.124951,
+   "lng": 35.570355,
+   "tags": {
+    "name": "תנורין",
+    "name:en": "Tanureen",
+    "amenity": "restaurant",
+    "cuisine": "arab",
+    "opening_hours": "Mo-Su 12:00-22:00"
+   }
+  },
+  {
+   "id": "node/5114941335",
+   "lat": 33.220696,
+   "lng": 35.589019,
+   "tags": {
+    "name": "פסטה בסטה",
+    "name:en": "Pasta Basta",
+    "amenity": "restaurant",
+    "cuisine": "pasta;wine;italian",
+    "website": "https://pastabasta.co.il/",
+    "opening_hours": "Sa-Th 12:00-23:00; Fr 12:00-17:00"
+   }
+  },
+  {
+   "id": "node/5114958733",
+   "lat": 33.21269,
+   "lng": 35.570794,
+   "tags": {
+    "name": "פיצה וספה",
+    "name:en": "Pizza Vespa",
+    "amenity": "restaurant",
+    "cuisine": "italian_pizza;pizza",
+    "website": "http://pizza-vespa.co.il/",
+    "opening_hours": "24/7",
+    "addr:housenumber": "153",
+    "addr:street": "תל חי"
+   }
+  },
+  {
+   "id": "node/5115004882",
+   "lat": 33.196888,
+   "lng": 35.571174,
+   "tags": {
+    "name": "קייטרינג תדמית",
+    "name:en": "Tadmit",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/5115026597",
+   "lat": 33.205062,
+   "lng": 35.569124,
+   "tags": {
+    "name": "הפינה של עובד",
+    "name:en": "Corner of Oved",
+    "amenity": "restaurant",
+    "addr:housenumber": "10",
+    "addr:street": "סיני"
+   }
+  },
+  {
+   "id": "node/5115126898",
+   "lat": 33.212022,
+   "lng": 35.568868,
+   "tags": {
+    "name": "מקסיקנו טורטיה בר",
+    "name:en": "Mexicano tortilla BAR",
+    "amenity": "restaurant",
+    "cuisine": "tex-mex",
+    "opening_hours": "Su-We 12:00-02:30, Th 12:00-04:00, Sa 07:30-02:30",
+    "addr:housenumber": "16",
+    "addr:street": "המכבים"
+   }
+  },
+  {
+   "id": "node/5115162603",
+   "lat": 33.211898,
+   "lng": 35.570132,
+   "tags": {
+    "name": "השווארמה של ציון",
+    "name:en": "The Shawarma of Zion",
+    "amenity": "restaurant",
+    "cuisine": "shawarma"
+   }
+  },
+  {
+   "id": "node/5128936020",
+   "lat": 33.210237,
+   "lng": 35.568753,
+   "tags": {
+    "name": "פיצה מטריצה",
+    "name:en": "Pizza Matrix",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "opening_hours": "Su-Th 11:00-01:00, Sa 20:30-01:00",
+    "addr:housenumber": "15",
+    "addr:street": "ארלוזורוב"
+   }
+  },
+  {
+   "id": "node/5128940825",
+   "lat": 33.211508,
+   "lng": 35.57002,
+   "tags": {
+    "name": "הקבב של אשר",
+    "name:en": "Asher's Kabab",
+    "amenity": "restaurant",
+    "cuisine": "burger"
+   }
+  },
+  {
+   "id": "node/5137057777",
+   "lat": 33.211626,
+   "lng": 35.569519,
+   "tags": {
+    "name": "סנדוויצ'ה",
+    "name:en": "Sandwiches",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/5139796363",
+   "lat": 33.222303,
+   "lng": 35.625966,
+   "tags": {
+    "name": "לה לונה - פיצה",
+    "name:en": "La Luna - Pizza",
+    "amenity": "restaurant",
+    "cuisine": "pizza;italian",
+    "website": "https://lalunapizza.co.il/",
+    "opening_hours": "Su-Th 16:00-22:00; Sa 14:00-22:00"
+   }
+  },
+  {
+   "id": "node/5143538759",
+   "lat": 33.197943,
+   "lng": 35.57611,
+   "tags": {
+    "name": "בטעם הסיני",
+    "name:en": "Chinese Taste",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "http://bataam-hasini.inforu.mobi/",
+    "opening_hours": "Mo-Th, Su 11:00-22:30",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/5143557202",
+   "lat": 33.207478,
+   "lng": 35.568914,
+   "tags": {
+    "name": "בורגר בומבה",
+    "name:en": "Burger Bomba",
+    "amenity": "restaurant",
+    "cuisine": "burger"
+   }
+  },
+  {
+   "id": "node/5143582538",
+   "lat": 33.221137,
+   "lng": 35.575725,
+   "tags": {
+    "name": "שיפודי התקווה",
+    "amenity": "restaurant",
+    "website": "http://hatikva.rest.co.il/he/home/",
+    "opening_hours": "Su-Th 12:00+",
+    "addr:housenumber": "4",
+    "addr:street": "הנשיא"
+   }
+  },
+  {
+   "id": "node/5143595379",
+   "lat": 33.221544,
+   "lng": 35.575439,
+   "tags": {
+    "name": "איטליה הקטנה",
+    "name:en": "Little Italia",
+    "amenity": "restaurant",
+    "cuisine": "italian"
+   }
+  },
+  {
+   "id": "node/5147983274",
+   "lat": 33.170073,
+   "lng": 35.570518,
+   "tags": {
+    "name": "ארבורגר",
+    "name:en": "Arburger",
+    "amenity": "restaurant",
+    "cuisine": "meat;burger",
+    "website": "https://www.2eat.co.il/uma/",
+    "opening_hours": "Su-Sa 12:00-00:00"
+   }
+  },
+  {
+   "id": "node/5147983299",
+   "lat": 33.170067,
+   "lng": 35.570904,
+   "tags": {
+    "name": "שווארמה אלבאשא",
+    "name:en": "Shawarma Albasha",
+    "amenity": "restaurant",
+    "cuisine": "shawarma"
+   }
+  },
+  {
+   "id": "node/5147987288",
+   "lat": 33.17007,
+   "lng": 35.57062,
+   "tags": {
+    "name": "Uma",
+    "name:en": "Uma",
+    "amenity": "restaurant",
+    "cuisine": "asian;chinese;japanese;burger",
+    "website": "https://umarest.co.il",
+    "opening_hours": "Su-Sa 12:00-00:00",
+    "wikidata": "Q66827629"
+   }
+  },
+  {
+   "id": "node/5153572592",
+   "lat": 33.228301,
+   "lng": 35.641103,
+   "tags": {
+    "name": "Pizza Truck",
+    "name:en": "Pizza Truck",
+    "amenity": "restaurant",
+    "cuisine": "pizza"
+   }
+  },
+  {
+   "id": "node/5159500271",
+   "lat": 33.195875,
+   "lng": 35.658369,
+   "tags": {
+    "name": "שניצל עם חיוך",
+    "name:en": "Schnitzel With a Smile",
+    "amenity": "restaurant",
+    "cuisine": "schnitzel",
+    "opening_hours": "Mo-Th, Su 12:00-00:00"
+   }
+  },
+  {
+   "id": "node/5176327119",
+   "lat": 33.21088,
+   "lng": 35.569052,
+   "tags": {
+    "name": "השניצליה",
+    "name:en": "Shnitzel",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/5181482358",
+   "lat": 33.207435,
+   "lng": 35.570132,
+   "tags": {
+    "name": "גיגס בר אנטריקוט",
+    "name:en": "Giggs bar antrikot",
+    "amenity": "restaurant",
+    "cuisine": "meat",
+    "opening_hours": "Su-Th 11:00-23:00; Fr, Sa unknown \"please inquire\"",
+    "addr:housenumber": "77",
+    "addr:street": "תל חי"
+   }
+  },
+  {
+   "id": "node/5230830785",
+   "lat": 33.220768,
+   "lng": 35.590475,
+   "tags": {
+    "name": "בנג'ולינה",
+    "name:en": "Benjolina",
+    "amenity": "restaurant",
+    "website": "https://www.benjolina.co.il/",
+    "opening_hours": "Mo-Fr 12:00-22:30; Sa 12:00-21:30",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/5230844364",
+   "lat": 33.220769,
+   "lng": 35.590714,
+   "tags": {
+    "name": "טאלי",
+    "name:en": "Thali",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "opening_hours": "Su, Mo 12:00-22:00, Tu-Th 12:00-02:00, Fr 12:00-16:00"
+   }
+  },
+  {
+   "id": "node/5299579979",
+   "lat": 33.19696,
+   "lng": 35.572364,
+   "tags": {
+    "name": "קפה אילן",
+    "name:en": "Eilan Coffee",
+    "amenity": "restaurant",
+    "addr:street": "הפלדה"
+   }
+  },
+  {
+   "id": "node/5299594181",
+   "lat": 33.198691,
+   "lng": 35.576487,
+   "tags": {
+    "name": "אסתריקה",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/5390494182",
+   "lat": 33.195876,
+   "lng": 35.569914,
+   "tags": {
+    "name": "Amigos",
+    "name:en": "Amigos",
+    "amenity": "restaurant",
+    "cuisine": "meat",
+    "website": "http://www.amigos-rest.com/"
+   }
+  },
+  {
+   "id": "node/5743331521",
+   "lat": 33.19388,
+   "lng": 35.657262,
+   "tags": {
+    "name": "בכפר אירוח כפרי",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "node/5853761588",
+   "lat": 33.224181,
+   "lng": 35.614884,
+   "tags": {
+    "name": "השיפודיה בגן",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/5853761597",
+   "lat": 33.224,
+   "lng": 35.614799,
+   "tags": {
+    "name": "המכשפה והחלבן",
+    "name:en": "The Witch and The Milkman",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Su 09:00-22:30"
+   }
+  },
+  {
+   "id": "node/593121602",
+   "lat": 33.225936,
+   "lng": 35.63792,
+   "tags": {
+    "name": "דגי דפנה",
+    "name:en": "Dgei Dafna",
+    "amenity": "restaurant",
+    "cuisine": "fish",
+    "website": "http://www.dagei-dafna.co.il",
+    "opening_hours": "Mo-Su 12:00-21:00, Jun 21-Sep 21 Mo-Su 12:00-23:00"
+   }
+  },
+  {
+   "id": "node/6077181339",
+   "lat": 33.115745,
+   "lng": 35.573264,
+   "tags": {
+    "name": "גליאנו",
+    "name:en": "Galliano",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://galiano.rest.co.il/",
+    "opening_hours": "Su-Sa 12:00-00:00",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/6464242540",
+   "lat": 33.220699,
+   "lng": 35.58894,
+   "tags": {
+    "name": "טאבולה ראסה",
+    "name:en": "Tabula Rasa",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/6511522731",
+   "lat": 33.223383,
+   "lng": 35.615048,
+   "tags": {
+    "name": "Smoky bar",
+    "name:en": "Smoky bar",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/679411365",
+   "lat": 33.236092,
+   "lng": 35.672126,
+   "tags": {
+    "name": "בי'ס שדה חרמון",
+    "name:en": "Hermon Field School",
+    "tourism": "hostel"
+   }
+  },
+  {
+   "id": "node/6835215030",
+   "lat": 33.227349,
+   "lng": 35.639057,
+   "tags": {
+    "name": "מלון מטיילים ארץ דפנה",
+    "tourism": "hotel",
+    "website": "https://www.travelhotels.co.il/"
+   }
+  },
+  {
+   "id": "node/9152590049",
+   "lat": 33.186177,
+   "lng": 35.618188,
+   "tags": {
+    "name": "הווילג' מלון מטיילים על הירדן",
+    "name:en": "The Village Jordan Riverside TravelHotel",
+    "tourism": "hotel",
+    "website": "https://www.travelhotels.co.il/מלונות_מטיילים/The-Village-Jordan-Riverside-TravelHotel/"
+   }
+  },
+  {
+   "id": "node/924439486",
+   "lat": 33.170567,
+   "lng": 35.569954,
+   "tags": {
+    "name": "בית השף",
+    "name:en": "Bait Hashef",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Su 10:00-22:00+"
+   }
+  },
+  {
+   "id": "way/1036220417",
+   "lat": 33.187778,
+   "lng": 35.623031,
+   "tags": {
+    "name": "פיצה נחמיה",
+    "amenity": "restaurant",
+    "cuisine": "pizza"
+   }
+  },
+  {
+   "id": "way/1065053882",
+   "lat": 33.174759,
+   "lng": 35.611225,
+   "tags": {
+    "name": "פסטורל כפר בלום",
+    "name:en": "Pastoral Kfar Blum",
+    "tourism": "hotel",
+    "website": "https://www.kfarblum-hotel.co.il/?Lang=eng"
+   }
+  },
+  {
+   "id": "way/1184251351",
+   "lat": 33.125927,
+   "lng": 35.64755,
+   "tags": {
+    "name": "נופי גונן",
+    "name:en": "Nofey Gonen",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/1505630120",
+   "lat": 33.228711,
+   "lng": 35.640543,
+   "tags": {
+    "name": "קלומפוס",
+    "name:en": "Klompos",
+    "amenity": "restaurant",
+    "cuisine": "burger",
+    "website": "https://foccacia.co.il/clompus/",
+    "opening_hours": "12:00 - 23:00",
+    "wikidata": "Q64767028",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/601012794",
+   "lat": 33.222107,
+   "lng": 35.621303,
+   "tags": {
+    "name": "הגושרים מלון בטבע",
+    "name:en": "Hagoshrim Hotel and Nature",
+    "tourism": "hotel",
+    "website": "https://www.hagoshrim-hotel.co.il/",
+    "wikidata": "Q64769233",
+    "addr:postcode": "1222500"
+   }
+  },
+  {
+   "id": "way/704818142",
+   "lat": 33.260336,
+   "lng": 35.622642,
+   "tags": {
+    "name": "استراحة الجزيرة",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "way/794384867",
+   "lat": 33.117979,
+   "lng": 35.573135,
+   "tags": {
+    "name": "מלון גליליון",
+    "name:en": "Galilon Hotel",
+    "tourism": "hotel",
+    "website": "http://www.galilion.co.il/"
+   }
+  },
+  {
+   "id": "way/838936441",
+   "lat": 33.245659,
+   "lng": 35.574349,
+   "tags": {
+    "name": "מלון כפר גילעדי",
+    "name:en": "Kfar Giladi hotel",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/909175920",
+   "lat": 33.23516,
+   "lng": 35.672268,
+   "tags": {
+    "name": "בית ספר שדה חרמון",
+    "tourism": "hostel",
+    "website": "https://www.teva.org.il/field-school/hermon",
+    "wikidata": "Q6588816"
+   }
+  },
+  {
+   "id": "way/909893807",
+   "lat": 33.132063,
+   "lng": 35.68277,
+   "tags": {
+    "name": "איזבושקה",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/935781465",
+   "lat": 33.125303,
+   "lng": 35.647595,
+   "tags": {
+    "name": "נופי גונן",
+    "name:en": "Nofei Gonen",
+    "tourism": "hotel"
+   }
+  }
+ ]
+}

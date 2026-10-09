@@ -14,3 +14,22 @@
 export function showUrl(slug) {
   return slug ? `https://www.edfringe.com/tickets/whats-on/${encodeURIComponent(slug)}` : "";
 }
+
+/* The Fringe's ten headline genres, each with the small picture both planners
+ * draw beside a show of that genre; anything else falls back to a ticket. */
+export const GENRE_EMOJI = {
+  "Comedy": "😂",
+  "Theatre": "🎭",
+  "Cabaret and Variety": "🎪",
+  "Children's Shows": "🧸",
+  "Dance, Physical Theatre & Circus": "💃",
+  "Events": "✨",
+  "Exhibitions": "🖼️",
+  "Music": "🎵",
+  "Musicals and Opera": "🎶",
+  "Spoken Word": "🗣️",
+};
+
+export function genreEmoji(genre) {
+  return GENRE_EMOJI[genre] || "🎟️";
+}

@@ -1,0 +1,1125 @@
+{
+ "nearM": 1500,
+ "anchors": [
+  {
+   "festival": "outshine-lgbtq-film-festival",
+   "venue": "6aa99726170f9b1e5e61a9ac",
+   "lat": 26.13681,
+   "lng": -80.12135
+  },
+  {
+   "festival": "outshine-lgbtq-film-festival",
+   "venue": "6aa99726170f9b1e5e61a9af",
+   "lat": 26.11512,
+   "lng": -80.13825
+  }
+ ],
+ "places": [
+  {
+   "id": "node/10138586540",
+   "lat": 26.118334,
+   "lng": -80.137936,
+   "tags": {
+    "name": "Sushi Garage Las Olas",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "website": "https://www.sushigarage.com/",
+    "addr:housenumber": "500",
+    "addr:street": "East Las Olas Boulevard",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "node/11013030745",
+   "lat": 26.11934,
+   "lng": -80.141003,
+   "tags": {
+    "name": "Moxies",
+    "amenity": "restaurant",
+    "addr:housenumber": "201",
+    "addr:street": "East Las Olas Boulevard",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "node/11013030933",
+   "lat": 26.119091,
+   "lng": -80.133853,
+   "tags": {
+    "name": "Piazza Italia",
+    "amenity": "restaurant",
+    "addr:housenumber": "904",
+    "addr:street": "East Las Olas Boulevard",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "node/11013030934",
+   "lat": 26.119403,
+   "lng": -80.134675,
+   "tags": {
+    "name": "El Camino Fort Lauderdale",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://elcaminofla.com/",
+    "addr:housenumber": "817",
+    "addr:street": "East Las Olas Boulevard",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "node/11013030935",
+   "lat": 26.119375,
+   "lng": -80.136741,
+   "tags": {
+    "name": "Big City Tavern",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "website": "https://www.bigcitylasolas.com/",
+    "addr:housenumber": "609",
+    "addr:street": "East Las Olas Boulevard",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "node/11841769692",
+   "lat": 26.128308,
+   "lng": -80.137207,
+   "tags": {
+    "name": "SoFresh",
+    "amenity": "restaurant",
+    "website": "https://lovesofresh.com",
+    "addr:housenumber": "506",
+    "addr:street": "North Federal Highway",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "node/11848601907",
+   "lat": 26.125763,
+   "lng": -80.144577,
+   "tags": {
+    "name": "Home2 Suites",
+    "tourism": "hotel",
+    "website": "https://www.hilton.com/en/hotels/fllhtht-home2-suites-fort-lauderdale-downtown/",
+    "addr:housenumber": "315",
+    "addr:street": "Northwest 1st Avenue",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "node/11848607535",
+   "lat": 26.125759,
+   "lng": -80.144667,
+   "tags": {
+    "name": "Tru",
+    "tourism": "hotel",
+    "website": "https://www.hilton.com/en/hotels/fllruru-tru-fort-lauderdale-downtown/",
+    "addr:housenumber": "315",
+    "addr:street": "Northwest 1st Avenue",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "node/12148779166",
+   "lat": 26.12513,
+   "lng": -80.136744,
+   "tags": {
+    "name": "Suan",
+    "amenity": "restaurant",
+    "cuisine": "thai;japanese",
+    "addr:housenumber": "290"
+   }
+  },
+  {
+   "id": "node/12148779173",
+   "lat": 26.127556,
+   "lng": -80.136887,
+   "tags": {
+    "name": "Emmy Squared",
+    "amenity": "restaurant",
+    "cuisine": "pizza;burger",
+    "addr:housenumber": "468"
+   }
+  },
+  {
+   "id": "node/13315575869",
+   "lat": 26.137326,
+   "lng": -80.119701,
+   "tags": {
+    "name": "Big Louie's Pizzeria - Italian Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.biglouies.com/",
+    "opening_hours": "Mo-Th 11:00-22:00; Fr-Sa 11:00-23:00; Su 12:00-21:30",
+    "addr:housenumber": "1990",
+    "addr:street": "East Sunrise Boulevard",
+    "addr:postcode": "33304"
+   }
+  },
+  {
+   "id": "node/13432706989",
+   "lat": 26.142252,
+   "lng": -80.120484,
+   "tags": {
+    "name": "J Mark's",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/13831826740",
+   "lat": 26.119565,
+   "lng": -80.12964,
+   "tags": {
+    "name": "Baires Grill - Las Olas",
+    "amenity": "restaurant",
+    "cuisine": "argentinian;grill;barbecue",
+    "website": "https://www.bairesgrill.com/",
+    "opening_hours": "Su-Th 12:00-22:00; Fr-Sa 12:00-23:00",
+    "addr:housenumber": "1307",
+    "addr:street": "East Las Olas Boulevard",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "node/13836794475",
+   "lat": 26.112755,
+   "lng": -80.1367,
+   "tags": {
+    "name": "Fat Boyz BBQ Downtown Fort Lauderdale",
+    "amenity": "restaurant",
+    "cuisine": "american;barbecue",
+    "website": "https://www.fatboyzbarbecue.com/",
+    "opening_hours": "Mo-Sa 11:00-21:00; Su 12:00-21:00",
+    "addr:housenumber": "706",
+    "addr:street": "South Federal Highway",
+    "addr:postcode": "33316"
+   }
+  },
+  {
+   "id": "node/13842089732",
+   "lat": 26.11954,
+   "lng": -80.127612,
+   "tags": {
+    "name": "Bombay Darbar",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/13842089733",
+   "lat": 26.119533,
+   "lng": -80.12901,
+   "tags": {
+    "name": "Rocco's Tacos",
+    "amenity": "restaurant",
+    "website": "https://www.roccostacos.com",
+    "opening_hours": "Mo 11:30-22:00; Tu 11:30-01:00; We-Th 11:30-00:00; Fr 11:30-01:00; Sa 11:00-01:00; Sa 11:00-22:00",
+    "addr:housenumber": "1313",
+    "addr:street": "East Las Olas Boulevard",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "node/13842089734",
+   "lat": 26.119521,
+   "lng": -80.129799,
+   "tags": {
+    "name": "Gen Korean BBQ",
+    "amenity": "restaurant",
+    "cuisine": "korean;barbecue",
+    "website": "http://gendelivers.com/",
+    "opening_hours": "Mo-Su 11:00-23:00",
+    "addr:housenumber": "1301",
+    "addr:street": "East Las Olas Boulevard",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "node/13842089735",
+   "lat": 26.119098,
+   "lng": -80.132567,
+   "tags": {
+    "name": "Louie Bossi's Ristorante Bar Pizzeria",
+    "amenity": "restaurant",
+    "cuisine": "italian;pizza",
+    "website": "https://www.louiebossi.com/ft-lauderdale",
+    "opening_hours": "Mo-Fr 11:30-00:00; Sa-Su 10:00-00:00",
+    "addr:housenumber": "1032",
+    "addr:street": "East Las Olas Boulevard",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "node/13842089737",
+   "lat": 26.119039,
+   "lng": -80.135252,
+   "tags": {
+    "name": "Sixty Vines",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "website": "https://www.sixtyvines.com/",
+    "addr:housenumber": "800",
+    "addr:street": "East Las Olas Boulevard",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "node/13842089738",
+   "lat": 26.119391,
+   "lng": -80.135726,
+   "tags": {
+    "name": "Voodoo Bayou",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "website": "https://www.voodoobayou.com/",
+    "addr:housenumber": "715",
+    "addr:street": "East Las Olas Boulevard",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "node/13842089739",
+   "lat": 26.119352,
+   "lng": -80.136281,
+   "tags": {
+    "name": "Red Door Asian Bistro",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "website": "https://www.reddoorlasolas.com/",
+    "opening_hours": "Su-Th 11:00-23:00; Fr-Sa 11:00-00:00",
+    "addr:housenumber": "625",
+    "addr:street": "East Las Olas Boulevard",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "node/13842089740",
+   "lat": 26.119011,
+   "lng": -80.136734,
+   "tags": {
+    "name": "Hollywood Donuts",
+    "amenity": "restaurant",
+    "cuisine": "donut",
+    "website": "https://www.thehollywooddonutfactory.com/",
+    "opening_hours": "Mo-Su 06:00-22:00",
+    "addr:housenumber": "610",
+    "addr:street": "East Las Olas Boulevard",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "node/13842089741",
+   "lat": 26.119111,
+   "lng": -80.131332,
+   "tags": {
+    "name": "Casa Sensei",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "website": "https://casasensei.com/",
+    "addr:housenumber": "1200",
+    "addr:street": "East Las Olas Boulevard",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "node/13842089742",
+   "lat": 26.119416,
+   "lng": -80.134182,
+   "tags": {
+    "name": "Cavier Club",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/13873196373",
+   "lat": 26.118267,
+   "lng": -80.136254,
+   "tags": {
+    "name": "Boathouse At The Riverside",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "website": "https://www.boathouseriverside.com",
+    "opening_hours": "Mo-Su 11:00-22:00",
+    "addr:housenumber": "620",
+    "addr:street": "Southeast 4th Street",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "node/13875025195",
+   "lat": 26.114581,
+   "lng": -80.141837,
+   "tags": {
+    "name": "Darios Fort Lauderdale",
+    "amenity": "restaurant",
+    "cuisine": "pizza;italian",
+    "website": "https://dariosfortlauderdale.com",
+    "opening_hours": "Mo-Fr 07:30-17:30",
+    "addr:housenumber": "110",
+    "addr:street": "Southeast 6th Street",
+    "addr:postcode": "33301-5014"
+   }
+  },
+  {
+   "id": "node/13882934802",
+   "lat": 26.119108,
+   "lng": -80.133621,
+   "tags": {
+    "name": "Caffe Europa",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://caffeeuropalasolas.com/",
+    "opening_hours": "Mo-Su 10:00-22:00",
+    "addr:housenumber": "910",
+    "addr:street": "East Las Olas Boulevard",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "node/13886166037",
+   "lat": 26.119387,
+   "lng": -80.140737,
+   "tags": {
+    "name": "Fogo de Chão",
+    "amenity": "restaurant",
+    "cuisine": "brazilian;steak_house",
+    "website": "https://fogodechao.com/location/fort-lauderdale/",
+    "opening_hours": "Mo-Th 11:30-22:00; Fr-Sa 11:30-22:30; Su 11:30-21:00",
+    "addr:housenumber": "201",
+    "addr:street": "East Las Olas Boulevard",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "node/14049270767",
+   "lat": 26.11902,
+   "lng": -80.139634,
+   "tags": {
+    "name": "Sky Thai Sushi",
+    "amenity": "restaurant",
+    "cuisine": "sushi"
+   }
+  },
+  {
+   "id": "node/14090213501",
+   "lat": 26.118677,
+   "lng": -80.150038,
+   "tags": {
+    "name": "Pummarola Pizza Napoletana",
+    "amenity": "restaurant",
+    "cuisine": "italian_pizza",
+    "website": "https://www.pummarola.us/",
+    "opening_hours": "Su-Th 11:00-23:00; Fr-Sa 11:00-00:00",
+    "addr:housenumber": "620",
+    "addr:street": "West Las Olas Boulevard",
+    "addr:postcode": "33312"
+   }
+  },
+  {
+   "id": "node/14100157746",
+   "lat": 26.137064,
+   "lng": -80.121258,
+   "tags": {
+    "name": "Theos Estiatorio",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "website": "https://theosestiatorio.com/",
+    "opening_hours": "Tu-Th 17:00-21:30; Fr-Sa 17:00-22:30; Su 17:00-21:30",
+    "addr:housenumber": "1826",
+    "addr:street": "East Sunrise Boulevard",
+    "addr:postcode": "33304"
+   }
+  },
+  {
+   "id": "node/14100196417",
+   "lat": 26.136936,
+   "lng": -80.119261,
+   "tags": {
+    "name": "Serafina Waterfront Trattoria",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://serabythewater.com/",
+    "opening_hours": "Mo-Th 17:00-22:00; Fr 17:00-23:00; Sa 11:30-23:00; Su 11:30-22:00",
+    "addr:housenumber": "926",
+    "addr:street": "Northeast 20th Avenue",
+    "addr:postcode": "33304"
+   }
+  },
+  {
+   "id": "node/14170723621",
+   "lat": 26.123076,
+   "lng": -80.138173,
+   "tags": {
+    "name": "Sushi One",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "website": "https://sushione.website/",
+    "opening_hours": "Mo-Sa 11:00-20:00",
+    "addr:housenumber": "23",
+    "addr:street": "North Federal Highway",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "node/14174198929",
+   "lat": 26.140224,
+   "lng": -80.121028,
+   "tags": {
+    "name": "The Empanada's Fort Lauderdale",
+    "amenity": "restaurant",
+    "cuisine": "argentinian",
+    "website": "https://www.theempanadas.com/",
+    "opening_hours": "Su-Th 08:00-21:00; Fr-Sa 08:00-22:00",
+    "addr:housenumber": "1139",
+    "addr:street": "North Federal Highway",
+    "addr:postcode": "33304"
+   }
+  },
+  {
+   "id": "node/14174198930",
+   "lat": 26.138372,
+   "lng": -80.113433,
+   "tags": {
+    "name": "Lasso Gaucho Brazilian Steakhouse",
+    "amenity": "restaurant",
+    "cuisine": "brazilian;barbecue;steak_house",
+    "website": "https://lassogauchofll.com/",
+    "opening_hours": "Mo-Th 16:00-22:00; Fr 15:00-22:30; Sa 13:00-22:30; Sa 12:00-21:00",
+    "addr:housenumber": "2457",
+    "addr:street": "East Sunrise Boulevard",
+    "addr:postcode": "33304"
+   }
+  },
+  {
+   "id": "node/3217035506",
+   "lat": 26.139543,
+   "lng": -80.120445,
+   "tags": {
+    "name": "IHOP",
+    "amenity": "restaurant",
+    "cuisine": "breakfast;pancake",
+    "website": "https://restaurants.ihop.com/en-us/fl/ft-lauderdale/breakfast-1101-n-federal-highway-360155",
+    "opening_hours": "24/7",
+    "addr:housenumber": "1101",
+    "addr:street": "North Federal Highway",
+    "addr:postcode": "33304"
+   }
+  },
+  {
+   "id": "node/4269666389",
+   "lat": 26.101864,
+   "lng": -80.137454,
+   "tags": {
+    "name": "The Chocolate Hostel",
+    "tourism": "hostel"
+   }
+  },
+  {
+   "id": "node/4459828791",
+   "lat": 26.106085,
+   "lng": -80.137829,
+   "tags": {
+    "name": "IHOP",
+    "amenity": "restaurant",
+    "cuisine": "breakfast;pancake",
+    "website": "http://restaurants.ihop.com",
+    "opening_hours": "24/7",
+    "addr:housenumber": "1241",
+    "addr:street": "S Federal Hwy"
+   }
+  },
+  {
+   "id": "node/4459867789",
+   "lat": 26.106488,
+   "lng": -80.136706,
+   "tags": {
+    "name": "Tom Jenkins BBQ",
+    "amenity": "restaurant",
+    "cuisine": "barbecue;steak_house",
+    "website": "https://tomjenkinsbbq.net/",
+    "opening_hours": "Su-Mo 00:00-00:00; Fr-Sa 10:00-22:00; Tu-Th 11:00-20:30",
+    "addr:housenumber": "1236",
+    "addr:street": "South Federal Highway",
+    "addr:postcode": "33316"
+   }
+  },
+  {
+   "id": "node/4831611121",
+   "lat": 26.122629,
+   "lng": -80.135412,
+   "tags": {
+    "name": "The Katherine",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "website": "https://www.katherinerestaurant.com/",
+    "opening_hours": "Tu-Th 17:00-21:00; Fr-Sa 17:00-22:00; Su 17:00-21:00",
+    "addr:housenumber": "723",
+    "addr:street": "East Broward Boulevard",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "node/4831611123",
+   "lat": 26.127843,
+   "lng": -80.137195,
+   "tags": {
+    "name": "Doc B's Fresh Kitchen",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "website": "https://docbsfreshkitchen.com/",
+    "opening_hours": "Mo-Fr 11:00-22:00; Sa 11:00-23:00; Su 11:00-21:00",
+    "addr:housenumber": "452",
+    "addr:street": "North Federal Highway",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "node/5128820647",
+   "lat": 26.119419,
+   "lng": -80.13998,
+   "tags": {
+    "name": "Java & Jam",
+    "amenity": "restaurant",
+    "addr:housenumber": "301",
+    "addr:street": "East Las Olas Boulevard",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "node/5128820648",
+   "lat": 26.119414,
+   "lng": -80.138927,
+   "tags": {
+    "name": "Del Frisco's Double Eagle Steakhouse",
+    "amenity": "restaurant",
+    "cuisine": "steak_house",
+    "addr:housenumber": "501",
+    "addr:street": "East Las Olas Boulevard",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "node/5134249724",
+   "lat": 26.117503,
+   "lng": -80.143151,
+   "tags": {
+    "name": "The DownTowner",
+    "name:en": "The DownTowner",
+    "amenity": "restaurant",
+    "addr:housenumber": "10",
+    "addr:street": "South New River Drive East",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "node/5202393522",
+   "lat": 26.13705,
+   "lng": -80.120703,
+   "tags": {
+    "name": "Tipico",
+    "amenity": "restaurant",
+    "addr:street": "East Sunrise Boulevard"
+   }
+  },
+  {
+   "id": "node/5384763223",
+   "lat": 26.13789,
+   "lng": -80.10708,
+   "tags": {
+    "name": "Franco Vinny",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/5384763322",
+   "lat": 26.118408,
+   "lng": -80.128811,
+   "tags": {
+    "name": "Floridian",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/5918334985",
+   "lat": 26.119194,
+   "lng": -80.128774,
+   "tags": {
+    "name": "The Floridan Diner",
+    "amenity": "restaurant",
+    "cuisine": "american;diner",
+    "website": "https://thefloridiandiner.com/",
+    "opening_hours": "24/7",
+    "addr:housenumber": "1492",
+    "addr:street": "East Las Olas Boulevard",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "node/6110274386",
+   "lat": 26.119391,
+   "lng": -80.135563,
+   "tags": {
+    "name": "American Social",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "website": "https://americansocialbar.com/locations/ft-lauderdale/",
+    "addr:housenumber": "721",
+    "addr:street": "East Las Olas Boulevard",
+    "addr:postcode": "33301",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/6333766909",
+   "lat": 26.119523,
+   "lng": -80.129482,
+   "tags": {
+    "name": "Catch & Cut",
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "website": "https://catchandcut.com/",
+    "addr:housenumber": "1309",
+    "addr:street": "East Las Olas Boulevard",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "node/638073113",
+   "lat": 26.120363,
+   "lng": -80.145974,
+   "tags": {
+    "name": "Bandoleros Taqueria",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "addr:housenumber": "208",
+    "addr:street": "Southwest 2nd Avenue",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "node/6392749649",
+   "lat": 26.118409,
+   "lng": -80.143822,
+   "tags": {
+    "name": "Briny’s Riverfront Pub",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/6392749677",
+   "lat": 26.119016,
+   "lng": -80.136552,
+   "tags": {
+    "name": "Wild Sea",
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/6392749678",
+   "lat": 26.119001,
+   "lng": -80.136917,
+   "tags": {
+    "name": "The Cheesecake Factory",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "website": "https://locations.thecheesecakefactory.com/fl/fort-lauderdale-54.html",
+    "opening_hours": "Mo-Th 11:30-22:00; Fr 11:30-23:00; Sa 11:00-22:00; Su 10:00-22:00",
+    "addr:housenumber": "600",
+    "addr:street": "East Las Olas Boulevard",
+    "addr:postcode": "33301",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/8677560061",
+   "lat": 26.107385,
+   "lng": -80.144534,
+   "tags": {
+    "name": "China Panda",
+    "amenity": "restaurant",
+    "website": "https://www.chinapandafanggarden.com"
+   }
+  },
+  {
+   "id": "node/8707437914",
+   "lat": 26.137087,
+   "lng": -80.119786,
+   "tags": {
+    "name": "Heart Rock Sushi",
+    "amenity": "restaurant",
+    "cuisine": "sushi;thai",
+    "website": "https://www.heartrocksushithaifl.com/",
+    "opening_hours": "Su-Th 11:30-22:15; Fr-Sa 11:30-22:45",
+    "addr:housenumber": "1970",
+    "addr:street": "East Sunrise Boulevard",
+    "addr:postcode": "33304"
+   }
+  },
+  {
+   "id": "node/9792394399",
+   "lat": 26.128409,
+   "lng": -80.137202,
+   "tags": {
+    "name": "Tacocraft Taqueria & Tequila Bar",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://tacocraft.com/",
+    "addr:housenumber": "510",
+    "addr:street": "North Federal Highway"
+   }
+  },
+  {
+   "id": "node/9796646019",
+   "lat": 26.137736,
+   "lng": -80.127038,
+   "tags": {
+    "name": "Talkin' Tacos Fort Lauderdale",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://talkintacos.net/",
+    "opening_hours": "Mo-Su 11:00-02:00",
+    "addr:housenumber": "1619",
+    "addr:street": "Sunrise Boulevard",
+    "addr:postcode": "33304"
+   }
+  },
+  {
+   "id": "node/9796646020",
+   "lat": 26.139559,
+   "lng": -80.120959,
+   "tags": {
+    "name": "Cafe Vico - Italian Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://cafevicorestaurant.com/",
+    "opening_hours": "Sa-Th 16:00-22:00; Fr 11:00-22:00",
+    "addr:housenumber": "1125",
+    "addr:street": "North Federal Highway",
+    "addr:postcode": "33304"
+   }
+  },
+  {
+   "id": "node/9796646021",
+   "lat": 26.140573,
+   "lng": -80.120581,
+   "tags": {
+    "name": "Padrino's Cuban Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "cuban",
+    "website": "https://padrinos.com/locations/fort-lauderdale/",
+    "opening_hours": "Tu-Th 11:30-21:00; Fr 11:30-22:00; Sa 12:00-22:00; Su 12:00-21:00",
+    "addr:housenumber": "1135",
+    "addr:street": "North Federal Highway",
+    "addr:postcode": "33304"
+   }
+  },
+  {
+   "id": "relation/8488358",
+   "lat": 26.124817,
+   "lng": -80.143278,
+   "tags": {
+    "name": "Hampton Inn Ft. Lauderdale/Downtown Las Olas Area",
+    "tourism": "hotel",
+    "website": "https://www.hilton.com/en/hotels/flldnhx-hampton-ft-lauderdale-downtown-las-olas-area/",
+    "addr:housenumber": "250",
+    "addr:street": "North Andrews Avenue",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "way/1065503927",
+   "lat": 26.103559,
+   "lng": -80.13097,
+   "tags": {
+    "name": "Casa Cordova",
+    "tourism": "hotel",
+    "addr:housenumber": "1441",
+    "addr:street": "Cordova Road"
+   }
+  },
+  {
+   "id": "way/1066257570",
+   "lat": 26.105931,
+   "lng": -80.137267,
+   "tags": {
+    "name": "IHOP",
+    "amenity": "restaurant",
+    "cuisine": "breakfast;pancake",
+    "addr:housenumber": "1241",
+    "addr:street": "South Federal Highway",
+    "addr:postcode": "33316"
+   }
+  },
+  {
+   "id": "way/1091020321",
+   "lat": 26.137387,
+   "lng": -80.113059,
+   "tags": {
+    "name": "P.F. Chang's",
+    "amenity": "restaurant",
+    "cuisine": "asian"
+   }
+  },
+  {
+   "id": "way/255103882",
+   "lat": 26.126386,
+   "lng": -80.139414,
+   "tags": {
+    "name": "Mister O1 Extraordinary Pizza",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "opening_hours": "Su-Th 11:30-22:00; Fr-Sa 11:30-23:00",
+    "addr:housenumber": "415",
+    "addr:street": "Northeast 4th Street",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "way/255112791",
+   "lat": 26.120286,
+   "lng": -80.146599,
+   "tags": {
+    "name": "Original Fat Cats",
+    "amenity": "restaurant",
+    "addr:housenumber": "320",
+    "addr:street": "Himmarshee Street",
+    "addr:postcode": "33312"
+   }
+  },
+  {
+   "id": "way/272443514",
+   "lat": 26.131378,
+   "lng": -80.108092,
+   "tags": {
+    "name": "The Flamingo - Inn Amongst the Flowers",
+    "tourism": "hotel",
+    "website": "http://www.theflamingoresort.com/",
+    "addr:housenumber": "2727",
+    "addr:street": "Terramar Street",
+    "addr:postcode": "33304"
+   }
+  },
+  {
+   "id": "way/316330850",
+   "lat": 26.137619,
+   "lng": -80.130886,
+   "tags": {
+    "name": "Travelodge Ft. Lauderdale",
+    "tourism": "hotel",
+    "website": "http://www.travelodge.com/hotels/florida/fort-lauderdale/travelodge-fort-lauderdale/hotel-overview",
+    "addr:housenumber": "1251",
+    "addr:street": "East Sunrise Boulevard",
+    "addr:postcode": "33304"
+   }
+  },
+  {
+   "id": "way/382162108",
+   "lat": 26.107487,
+   "lng": -80.134257,
+   "tags": {
+    "name": "Mary's Crew House",
+    "tourism": "guest_house",
+    "addr:housenumber": "816",
+    "addr:street": "SE 12th Street",
+    "addr:postcode": "33316"
+   }
+  },
+  {
+   "id": "way/459630120",
+   "lat": 26.126363,
+   "lng": -80.136636,
+   "tags": {
+    "name": "Temple Street Eatery",
+    "amenity": "restaurant",
+    "addr:housenumber": "416",
+    "addr:street": "North Federal Highway",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "way/459630121",
+   "lat": 26.126518,
+   "lng": -80.136646,
+   "tags": {
+    "name": "Kitchen 420",
+    "amenity": "restaurant",
+    "addr:housenumber": "420",
+    "addr:street": "North Federal Highway",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "way/551457772",
+   "lat": 26.120583,
+   "lng": -80.147321,
+   "tags": {
+    "name": "OB House - Breakfast All day",
+    "amenity": "restaurant",
+    "cuisine": "breakfast;coffee;lunch",
+    "opening_hours": "Mo-Fr 07:00-13:00; Sa-Su 08:00-13:00",
+    "addr:housenumber": "333",
+    "addr:street": "Himmarshee Street",
+    "addr:postcode": "33312"
+   }
+  },
+  {
+   "id": "way/611265297",
+   "lat": 26.121844,
+   "lng": -80.136846,
+   "tags": {
+    "name": "Fairfield Inn & Suites Fort Lauderdale Downtown/Las Olas",
+    "tourism": "hotel",
+    "website": "https://www.marriott.com/fllld",
+    "addr:housenumber": "30",
+    "addr:street": "South Federal Highway",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "way/611265319",
+   "lat": 26.118781,
+   "lng": -80.13632,
+   "tags": {
+    "name": "Riverside Hotel",
+    "tourism": "hotel",
+    "website": "https://www.riversidehotel.com/",
+    "addr:housenumber": "620",
+    "addr:street": "East Las Olas Boulevard",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "way/612726358",
+   "lat": 26.119668,
+   "lng": -80.128875,
+   "tags": {
+    "name": "Luigi's Coal Oven Pizza",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www.luigiscoalovenpizza.com/",
+    "opening_hours": "Su-Th 11:30-22:30; Fr-Sa 11:30-23:30",
+    "addr:housenumber": "1415",
+    "addr:street": "East Las Olas Boulevard",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "way/738983622",
+   "lat": 26.124942,
+   "lng": -80.137932,
+   "tags": {
+    "name": "The Dalmar - Fort Lauderdale",
+    "tourism": "hotel",
+    "website": "https://www.marriott.com/en-us/hotels/flltx-the-dalmar-fort-lauderdale-a-tribute-portfolio-hotel/overview/",
+    "addr:housenumber": "299",
+    "addr:street": "North Federal Highway",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "way/741623802",
+   "lat": 26.137371,
+   "lng": -80.109259,
+   "tags": {
+    "name": "GALLERYone - a DoubleTree Suites by Hilton Hotel",
+    "tourism": "hotel",
+    "website": "https://www.hilton.com/en/hotels/flltsdt-galleryone-doubletree-suites/",
+    "addr:housenumber": "2670",
+    "addr:street": "East Sunrise Boulevard",
+    "addr:postcode": "33304-3206"
+   }
+  },
+  {
+   "id": "way/772690980",
+   "lat": 26.135922,
+   "lng": -80.119868,
+   "tags": {
+    "name": "Victoria Park Hotel",
+    "tourism": "hotel",
+    "website": "http://thevictoriaparkhotel.com/",
+    "addr:housenumber": "855",
+    "addr:street": "Northeast 20th Avenue",
+    "addr:postcode": "33304"
+   }
+  },
+  {
+   "id": "way/821994531",
+   "lat": 26.138049,
+   "lng": -80.130907,
+   "tags": {
+    "name": "The Big Coconut Guesthouse",
+    "tourism": "hotel",
+    "website": "http://thebigcoconutguesthouse.com/",
+    "addr:housenumber": "1021",
+    "addr:street": "Northeast 13th Avenue",
+    "addr:postcode": "33304"
+   }
+  },
+  {
+   "id": "way/822200934",
+   "lat": 26.105138,
+   "lng": -80.137386,
+   "tags": {
+    "name": "Budget Inn",
+    "tourism": "hotel",
+    "addr:housenumber": "1317",
+    "addr:street": "South Federal Highway",
+    "addr:postcode": "33316"
+   }
+  },
+  {
+   "id": "way/918111654",
+   "lat": 26.133864,
+   "lng": -80.10834,
+   "tags": {
+    "name": "Holiday Isle Yacht Club",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/918111655",
+   "lat": 26.133505,
+   "lng": -80.10846,
+   "tags": {
+    "name": "Holiday Isle Yacht Club 2",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/936260051",
+   "lat": 26.137317,
+   "lng": -80.10654,
+   "tags": {
+    "name": "Coconut Bay Resort",
+    "tourism": "hotel",
+    "addr:housenumber": "919",
+    "addr:street": "North Birch Road",
+    "addr:postcode": "33304"
+   }
+  },
+  {
+   "id": "way/936261406",
+   "lat": 26.107481,
+   "lng": -80.136208,
+   "tags": {
+    "name": "Oasis Hotel",
+    "tourism": "hotel",
+    "website": "https://www.oasishotelftl.com/",
+    "addr:housenumber": "1200",
+    "addr:street": "South Miami Road",
+    "addr:postcode": "33316"
+   }
+  },
+  {
+   "id": "way/973124954",
+   "lat": 26.124042,
+   "lng": -80.120309,
+   "tags": {
+    "name": "Aquamar",
+    "tourism": "guest_house"
+   }
+  }
+ ]
+}

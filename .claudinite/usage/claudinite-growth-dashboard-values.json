@@ -1,0 +1,71 @@
+{
+  "usage-findings": {
+    "value": 74,
+    "previous": 74,
+    "note": "2026-09-10 to 2026-10-07"
+  },
+  "usage-newest": {
+    "rows": [
+      {
+        "subject": "preferences-store-codeowners",
+        "rule": "check-never-fires",
+        "cause": "unknown",
+        "since": "2026-09-28"
+      },
+      {
+        "subject": "adoption-answers-pending",
+        "rule": "check-never-fires",
+        "cause": "unknown",
+        "since": "2026-09-26"
+      },
+      {
+        "subject": "catalog-completeness",
+        "rule": "check-never-fires",
+        "cause": "unknown",
+        "since": "2026-09-26"
+      },
+      {
+        "subject": "check-ships-with-test",
+        "rule": "check-never-fires",
+        "cause": "unknown",
+        "since": "2026-09-26"
+      },
+      {
+        "subject": "claudinite-lifecycle-declared",
+        "rule": "check-never-fires",
+        "cause": "unknown",
+        "since": "2026-09-26"
+      },
+      {
+        "subject": "cloudflare-site/beacon-token-is-not-committed",
+        "rule": "check-never-fires",
+        "cause": "unknown",
+        "since": "2026-09-26"
+      },
+      {
+        "subject": "cloudflare-site/no-second-publisher",
+        "rule": "check-never-fires",
+        "cause": "unknown",
+        "since": "2026-09-26"
+      },
+      {
+        "subject": "cloudflare-site/publishes-a-site-directory",
+        "rule": "check-never-fires",
+        "cause": "unknown",
+        "since": "2026-09-26"
+      },
+      {
+        "subject": "committing",
+        "rule": "skill-always-loaded",
+        "cause": "known",
+        "since": "2026-09-26"
+      },
+      {
+        "subject": "conformance-work-scope",
+        "rule": "check-never-fires",
+        "cause": "unknown",
+        "since": "2026-09-26"
+      }
+    ]
+  }
+}

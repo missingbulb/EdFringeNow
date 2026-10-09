@@ -1,0 +1,20 @@
+{
+ "festival": "haifa-iff",
+ "edition": "2026",
+ "source": "haifaff-site",
+ "fetchedAt": "2026-09-25T22:23:49Z",
+ "fetcher": "scraper/festivals/haifa_iff/sources/haifaff-site/fetch.py",
+ "fetcherVersion": 2,
+ "urls": [
+  "https://www.haifaff.co.il/eng/Screening_schedule",
+  "https://www.haifaff.co.il/%D7%9C%D7%95%D7%97_%D7%94%D7%A7%D7%A8%D7%A0%D7%95%D7%AA",
+  "https://www.haifaff.co.il/eng/Films",
+  "https://www.haifaff.co.il/eng/Films/grp|fwsa|<groupId>",
+  "https://www.haifaff.co.il/eng/Films/<id>",
+  "https://www.haifaff.co.il/eng/Events/<id>"
+ ],
+ "files": [
+  "programme.json"
+ ],
+ "notes": "The English schedule gives every screening; the Hebrew schedule gives Hebrew titles by film id; film pages give metadata, pictures and their own section; the section listings linked from /eng/Films give every other section a film sits in; event pages give event groups, pictures and the hall of an event the schedule files under its catch-all Events column (parse.py)."
+}

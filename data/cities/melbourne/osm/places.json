@@ -1,0 +1,2819 @@
+{
+ "places": [
+  {
+   "id": "node/10048415132",
+   "lat": -37.8156,
+   "lng": 144.964283,
+   "tags": {
+    "name": "The Art Of Dr Seuss",
+    "tourism": "gallery",
+    "fee": "no",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/10066689782",
+   "lat": -37.810458,
+   "lng": 145.001346,
+   "tags": {
+    "name": "Mayfield gallery",
+    "tourism": "gallery",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/10067707826",
+   "lat": -37.817045,
+   "lng": 145.001648,
+   "tags": {
+    "name": "Gleadell Street Market",
+    "amenity": "marketplace",
+    "opening_hours": "Sa 07:00-13:00",
+    "website": "https://www.yarracity.vic.gov.au/the-area/visiting-yarra/markets/gleadell-street-market"
+   }
+  },
+  {
+   "id": "node/10593623579",
+   "lat": -37.830263,
+   "lng": 144.887578,
+   "tags": {
+    "name": "Industrial Art Sign Co",
+    "tourism": "gallery",
+    "opening_hours": "Mo-Fr 09:00-17:00",
+    "addr:housenumber": "59",
+    "addr:street": "Hudsons Road",
+    "addr:postcode": "3015"
+   }
+  },
+  {
+   "id": "node/10593869813",
+   "lat": -37.842295,
+   "lng": 144.883909,
+   "tags": {
+    "name": "The Hart Gallery",
+    "tourism": "gallery",
+    "addr:housenumber": "34",
+    "addr:street": "Hall Street",
+    "addr:postcode": "3015"
+   }
+  },
+  {
+   "id": "node/10650446515",
+   "lat": -37.776782,
+   "lng": 144.960359,
+   "tags": {
+    "name": "Correspondences",
+    "tourism": "gallery",
+    "website": "https://www.correspondences.work/",
+    "addr:housenumber": "39",
+    "addr:street": "Sydney Road",
+    "addr:postcode": "3056"
+   }
+  },
+  {
+   "id": "node/10692278132",
+   "lat": -37.806095,
+   "lng": 144.986304,
+   "tags": {
+    "name": "ACAE Gallery",
+    "tourism": "gallery",
+    "website": "http://acaearts.com.au/",
+    "addr:housenumber": "82A",
+    "addr:street": "Wellington Street",
+    "addr:postcode": "3066"
+   }
+  },
+  {
+   "id": "node/10704438688",
+   "lat": -37.797663,
+   "lng": 144.960986,
+   "tags": {
+    "name": "The Treasury",
+    "tourism": "gallery",
+    "opening_hours": "Mo-Fr 10:00-17:00",
+    "website": "https://www.unimelb.edu.au/old-quad",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/10720264707",
+   "lat": -37.798169,
+   "lng": 144.958809,
+   "tags": {
+    "name": "The Dax Centre",
+    "tourism": "gallery",
+    "opening_hours": "We-Fr 11:00-15:30",
+    "website": "https://www.daxcentre.org/",
+    "addr:housenumber": "30",
+    "addr:street": "Royal Parade",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/10763099963",
+   "lat": -37.830644,
+   "lng": 144.883382,
+   "tags": {
+    "name": "Spotswood Slow Food Market",
+    "amenity": "marketplace"
+   }
+  },
+  {
+   "id": "node/10969952671",
+   "lat": -37.86476,
+   "lng": 144.901025,
+   "tags": {
+    "name": "Regional Farmers Markets",
+    "amenity": "marketplace",
+    "opening_hours": "Su[2] 09:00-14:00",
+    "website": "http://www.rfm.net.au/"
+   }
+  },
+  {
+   "id": "node/11002942905",
+   "lat": -37.770457,
+   "lng": 144.971742,
+   "tags": {
+    "name": "Faux Gallery",
+    "tourism": "gallery",
+    "website": "https://www.fauxgallery.com.au/",
+    "addr:housenumber": "267",
+    "addr:street": "Lygon Street"
+   }
+  },
+  {
+   "id": "node/11137678198",
+   "lat": -37.774826,
+   "lng": 144.95324,
+   "tags": {
+    "name": "Hidden Temple Gallery",
+    "tourism": "gallery",
+    "opening_hours": "24/7",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/11168844123",
+   "lat": -37.819386,
+   "lng": 144.953914,
+   "tags": {
+    "name": "Batman's Hill",
+    "tourism": "attraction",
+    "wikidata": "Q4869331",
+    "wikipedia": "en:Batman's Hill",
+    "addr:street": "Collins Street"
+   }
+  },
+  {
+   "id": "node/11466834914",
+   "lat": -37.814893,
+   "lng": 144.973054,
+   "tags": {
+    "name": "Arc One",
+    "tourism": "gallery",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/11610094118",
+   "lat": -37.804861,
+   "lng": 144.971471,
+   "tags": {
+    "name": "Dome Promenade",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/11702730224",
+   "lat": -37.80031,
+   "lng": 144.964539,
+   "tags": {
+    "name": "Science Gallery",
+    "tourism": "gallery",
+    "opening_hours": "We-Sa 11:00-17:00",
+    "website": "https://melbourne.sciencegallery.com/",
+    "addr:housenumber": "114",
+    "addr:street": "Grattan Street",
+    "addr:postcode": "3053",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/11804233625",
+   "lat": -37.797564,
+   "lng": 144.958814,
+   "tags": {
+    "name": "Tiegs Museum",
+    "tourism": "museum",
+    "opening_hours": "\"By appointment only\"",
+    "website": "https://biosciences.unimelb.edu.au/engage/tiegs-museum",
+    "addr:housenumber": "33",
+    "addr:street": "Medical Road",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/11804270582",
+   "lat": -37.797031,
+   "lng": 144.96367,
+   "tags": {
+    "name": "Ed Muirhead Physics Museum",
+    "tourism": "museum",
+    "website": "https://physics.unimelb.edu.au/engage/ed-muirhead-physics-museum",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/11804276971",
+   "lat": -37.798769,
+   "lng": 144.962761,
+   "tags": {
+    "name": "George Paton Gallery",
+    "tourism": "gallery",
+    "opening_hours": "Mo-Fr 11:00-17:00 \"during semesters\"",
+    "website": "https://umsu.unimelb.edu.au/express-yourself/gallery/",
+    "addr:housenumber": "15",
+    "addr:street": "Monash Road",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/11804296914",
+   "lat": -37.79757,
+   "lng": 144.959495,
+   "tags": {
+    "name": "Arts West Gallery",
+    "tourism": "gallery",
+    "opening_hours": "Mo-Fr 10:00-16:00",
+    "website": "https://arts.unimelb.edu.au/about/arts-west-gallery",
+    "addr:street": "Professors Walk",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/11804304720",
+   "lat": -37.798208,
+   "lng": 144.959302,
+   "tags": {
+    "name": "Noel Shaw Gallery",
+    "tourism": "gallery",
+    "opening_hours": "Mo-Fr 10:00-17:00",
+    "website": "https://library.unimelb.edu.au/asc/whats-on/exhibitions/noel-shaw-gallery",
+    "addr:housenumber": "11",
+    "addr:street": "Professors Walk",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12346885624",
+   "lat": -37.799913,
+   "lng": 144.985832,
+   "tags": {
+    "name": "Centre for Contemporary Photography",
+    "tourism": "gallery",
+    "opening_hours": "We-Sa 11:00-17:00",
+    "website": "https://ccp.org.au",
+    "addr:street": "Perry Street",
+    "addr:postcode": "3066"
+   }
+  },
+  {
+   "id": "node/12353573102",
+   "lat": -37.822537,
+   "lng": 145.036479,
+   "tags": {
+    "name": "National Communications Museum",
+    "tourism": "museum",
+    "website": "https://ncm.org.au/"
+   }
+  },
+  {
+   "id": "node/12511018155",
+   "lat": -37.813615,
+   "lng": 144.93883,
+   "tags": {
+    "name": "IS Artworks",
+    "tourism": "gallery",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12511025142",
+   "lat": -37.813529,
+   "lng": 144.938799,
+   "tags": {
+    "name": "DansDelusion",
+    "tourism": "gallery",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12608930864",
+   "lat": -37.770995,
+   "lng": 144.960423,
+   "tags": {
+    "name": "Blak Dot Gallery",
+    "tourism": "gallery",
+    "website": "https://blakdot.com.au/"
+   }
+  },
+  {
+   "id": "node/1279107005",
+   "lat": -37.772125,
+   "lng": 144.961037,
+   "tags": {
+    "name": "Counihan Gallery",
+    "tourism": "gallery",
+    "opening_hours": "We-Sa 11:00-17:00; Su 13:00-17:00; Mo-Tu,PH off",
+    "website": "https://www.merri-bek.vic.gov.au/exploring-merri-bek/arts-merri-bek/counihan-gallery/",
+    "addr:housenumber": "233",
+    "addr:street": "Sydney Road"
+   }
+  },
+  {
+   "id": "node/13068097579",
+   "lat": -37.799424,
+   "lng": 144.989936,
+   "tags": {
+    "name": "Gallery Midlandia",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/13100044913",
+   "lat": -37.825339,
+   "lng": 144.966276,
+   "tags": {
+    "name": "Print Council of Australia",
+    "tourism": "gallery",
+    "opening_hours": "Tu-Fr 10:00-16:00; Sa-Mo closed",
+    "website": "https://www.printcouncil.org.au/",
+    "addr:housenumber": "152",
+    "addr:street": "Sturt Street"
+   }
+  },
+  {
+   "id": "node/13197097301",
+   "lat": -37.811862,
+   "lng": 144.972137,
+   "tags": {
+    "name": "Street Art",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/13295864721",
+   "lat": -37.768345,
+   "lng": 144.958611,
+   "tags": {
+    "name": "Metropolitain",
+    "tourism": "gallery",
+    "addr:housenumber": "307",
+    "addr:street": "Albert Street",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/13608646484",
+   "lat": -37.795691,
+   "lng": 144.978121,
+   "tags": {
+    "name": "Fitzroy Market",
+    "amenity": "marketplace",
+    "opening_hours": "Sa 10:00-15:00; Su 09:00-15:00",
+    "website": "https://www.fitzroymarket.com/",
+    "addr:housenumber": "75",
+    "addr:street": "Rose Street",
+    "addr:postcode": "3065"
+   }
+  },
+  {
+   "id": "node/13626510201",
+   "lat": -37.821326,
+   "lng": 144.968458,
+   "tags": {
+    "name": "Arts Centre Melbourne (Theatres Building)",
+    "tourism": "attraction",
+    "amenity": "arts_centre",
+    "website": "https://www.artscentremelbourne.com.au/",
+    "wikidata": "Q4801443",
+    "wikipedia": "en:Arts Centre Melbourne"
+   }
+  },
+  {
+   "id": "node/13704794918",
+   "lat": -37.810453,
+   "lng": 144.963145,
+   "tags": {
+    "name": "Shot Tower Museum",
+    "tourism": "museum",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/13706473901",
+   "lat": -37.820018,
+   "lng": 144.96752,
+   "tags": {
+    "name": "Hamer Hall - Rooftop Viewing Platform",
+    "tourism": "viewpoint",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/13721990301",
+   "lat": -37.808161,
+   "lng": 144.964889,
+   "tags": {
+    "name": "Ngarara Place",
+    "leisure": "garden",
+    "opening_hours": "24/7",
+    "website": "https://www.rmit.edu.au/about/our-values/respect-for-australian-indigenous-cultures/indigenous-sites-at-rmit",
+    "addr:street": "Chemistry Lane",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/13739870317",
+   "lat": -37.819899,
+   "lng": 144.96791,
+   "tags": {
+    "name": "Australian Museum of Performing Arts",
+    "tourism": "museum",
+    "website": "https://www.artscentremelbourne.com.au/ampa"
+   }
+  },
+  {
+   "id": "node/13778410273",
+   "lat": -37.812171,
+   "lng": 144.957084,
+   "tags": {
+    "name": "Hellenic Museum",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 10:00-16:00",
+    "website": "https://www.hellenic.org.au/",
+    "wikidata": "Q15961629",
+    "addr:housenumber": "280",
+    "addr:street": "William Street",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/13783336411",
+   "lat": -37.821252,
+   "lng": 144.948532,
+   "tags": {
+    "name": "Fox Classic Car Museum",
+    "tourism": "museum",
+    "opening_hours": "Th-Sa 10:00-14:00",
+    "website": "https://www.foxcollection.org.au/",
+    "addr:housenumber": "749-755",
+    "addr:street": "Collins Street",
+    "addr:postcode": "3008",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/13783844598",
+   "lat": -37.81472,
+   "lng": 144.957279,
+   "tags": {
+    "name": "Pinot & Picasso",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/13837748415",
+   "lat": -37.842728,
+   "lng": 144.946378,
+   "tags": {
+    "name": "Gasworks Farmers' Market",
+    "amenity": "marketplace",
+    "opening_hours": "Sa[3] 08:00-13:00",
+    "website": "https://gasworks.org.au/whats-on/gasworks-famers-market/"
+   }
+  },
+  {
+   "id": "node/13963850159",
+   "lat": -37.806646,
+   "lng": 144.982804,
+   "tags": {
+    "name": "Smith + Gertrude",
+    "tourism": "gallery",
+    "website": "https://www.smithandgertrude.au/",
+    "addr:housenumber": "73",
+    "addr:street": "Smith Street",
+    "addr:postcode": "3065"
+   }
+  },
+  {
+   "id": "node/1655792445",
+   "lat": -37.81462,
+   "lng": 144.965932,
+   "tags": {
+    "name": "Century Building",
+    "tourism": "attraction",
+    "building": "office",
+    "wikidata": "Q66767681",
+    "addr:housenumber": "125",
+    "addr:street": "Swanston Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/2138423704",
+   "lat": -37.788709,
+   "lng": 145.017841,
+   "tags": {
+    "name": "Wurundjeri Spur Lookout",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/2317952078",
+   "lat": -37.811058,
+   "lng": 144.974875,
+   "tags": {
+    "name": "Federal Oak",
+    "historic": "memorial",
+    "wikidata": "Q54859018"
+   }
+  },
+  {
+   "id": "node/2337234744",
+   "lat": -37.799567,
+   "lng": 144.959233,
+   "tags": {
+    "name": "Harry Brookes Allen Museum of Anatomy & Pathology",
+    "tourism": "museum",
+    "opening_hours": "Mo-Fr 09:00-17:00",
+    "website": "https://harrybrookesallenmuseum.mdhs.unimelb.edu.au/",
+    "addr:housenumber": "270",
+    "addr:street": "Grattan Street",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/2337234746",
+   "lat": -37.799253,
+   "lng": 144.964415,
+   "tags": {
+    "name": "The Henry Forman Atkinson Dental Museum",
+    "tourism": "museum",
+    "website": "https://henryformanatkinsondentalmuseum.mdhs.unimelb.edu.au/home",
+    "addr:housenumber": "714-736",
+    "addr:street": "Swanston Street",
+    "addr:postcode": "3053",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2362721081",
+   "lat": -37.855087,
+   "lng": 145.018435,
+   "tags": {
+    "name": "Scott Livesy",
+    "tourism": "gallery",
+    "addr:street": "High Street",
+    "addr:postcode": "3143"
+   }
+  },
+  {
+   "id": "node/2421613409",
+   "lat": -37.819463,
+   "lng": 144.965237,
+   "tags": {
+    "name": "Evan Walker Bridge Lookout",
+    "tourism": "viewpoint",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2542608228",
+   "lat": -37.809021,
+   "lng": 144.963914,
+   "tags": {
+    "name": "RMIT First Site Gallery",
+    "tourism": "gallery",
+    "opening_hours": "Tu-Fr 11:00-17:00",
+    "website": "https://www.rmit.edu.au/about/schools-colleges/college-of-design-and-social-context/engagement/cultural-engagement/galleries/first-site-gallery-eoi",
+    "addr:housenumber": "344",
+    "addr:street": "Swanston Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/2960619133",
+   "lat": -37.81566,
+   "lng": 144.970061,
+   "tags": {
+    "name": "Flinders Lane Gallery",
+    "tourism": "gallery",
+    "website": "https://flg.com.au/",
+    "addr:housenumber": "137-139",
+    "addr:street": "Flinders Lane",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/3101319430",
+   "lat": -37.806299,
+   "lng": 144.962475,
+   "tags": {
+    "name": "RMIT Design Archives",
+    "tourism": "museum",
+    "opening_hours": "\"by appointment only\"",
+    "website": "https://www.designcollection.rmit.edu.au/",
+    "addr:housenumber": "154",
+    "addr:street": "Victoria Street",
+    "addr:postcode": "3053",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/3105262652",
+   "lat": -37.812155,
+   "lng": 144.964479,
+   "tags": {
+    "name": "Street Art",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/31435738",
+   "lat": -37.79716,
+   "lng": 145.001088,
+   "tags": {
+    "name": "Dights Falls",
+    "tourism": "attraction",
+    "website": "https://parkweb.vic.gov.au/",
+    "wikidata": "Q5275695",
+    "wikipedia": "en:Dights Falls",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/3362701007",
+   "lat": -37.796855,
+   "lng": 145.001023,
+   "tags": {
+    "name": "Dights Falls",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/3408627870",
+   "lat": -37.819336,
+   "lng": 144.935671,
+   "tags": {
+    "name": "Alma Doepel Restoration Project",
+    "tourism": "museum",
+    "website": "https://www.almadoepel.com.au/"
+   }
+  },
+  {
+   "id": "node/3412531090",
+   "lat": -37.821688,
+   "lng": 144.968523,
+   "tags": {
+    "name": "Australian Music Vault",
+    "tourism": "museum",
+    "website": "https://www.australianmusicvault.com.au/",
+    "addr:housenumber": "100",
+    "addr:street": "St Kilda Road"
+   }
+  },
+  {
+   "id": "node/3661002076",
+   "lat": -37.847337,
+   "lng": 144.916941,
+   "tags": {
+    "name": "Sandridge Lookout",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/3716720525",
+   "lat": -37.777146,
+   "lng": 144.997319,
+   "tags": {
+    "name": "Ruckers Hill View of City Skyline",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/3781566398",
+   "lat": -37.782787,
+   "lng": 145.002981,
+   "tags": {
+    "name": "Northcote Gorge Lookout",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/3850493157",
+   "lat": -37.785708,
+   "lng": 144.93202,
+   "tags": {
+    "name": "City Skyline Views",
+    "tourism": "viewpoint",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/4197289860",
+   "lat": -37.766683,
+   "lng": 144.960404,
+   "tags": {
+    "name": "beinArt Gallery",
+    "tourism": "gallery",
+    "opening_hours": "We-Th, Su 10:00-16:00; Fr-Sa 10:00-17:00; Mo-Tu closed",
+    "website": "https://beinart.org/",
+    "addr:housenumber": "307",
+    "addr:street": "Victoria Street"
+   }
+  },
+  {
+   "id": "node/4469523089",
+   "lat": -37.813665,
+   "lng": 144.974352,
+   "tags": {
+    "name": "Sir William John Clarke",
+    "historic": "memorial",
+    "wikidata": "Q38681530"
+   }
+  },
+  {
+   "id": "node/4469617901",
+   "lat": -37.818871,
+   "lng": 144.98435,
+   "tags": {
+    "name": "The Australian Sports Museum",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 10:00-17:00",
+    "website": "https://www.australiansportsmuseum.org.au/",
+    "wikidata": "Q4315039",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/4470702093",
+   "lat": -37.869757,
+   "lng": 145.009838,
+   "tags": {
+    "name": "Labassa",
+    "tourism": "attraction",
+    "website": "https://www.nationaltrust.org.au/places/labassa/",
+    "wikidata": "Q56746612",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/448810461",
+   "lat": -37.827188,
+   "lng": 145.02443,
+   "tags": {
+    "name": "Melbourne Tram Museum",
+    "tourism": "attraction",
+    "opening_hours": "Sa[2],Sa[4] 11:00-17:00; PH Sa[2],Sa[4] 11:00-17:00; Dec Sa[4] off",
+    "website": "https://www.hawthorntramdepot.org.au/",
+    "wikidata": "Q5685529",
+    "wikipedia": "en:Hawthorn tram depot"
+   }
+  },
+  {
+   "id": "node/4637139110",
+   "lat": -37.808793,
+   "lng": 144.943684,
+   "tags": {
+    "name": "Melbourne Goods Yard Viewing Platform",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/4690264755",
+   "lat": -37.797254,
+   "lng": 145.000825,
+   "tags": {
+    "name": "Dights Falls",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/4795093767",
+   "lat": -37.812802,
+   "lng": 144.937731,
+   "tags": {
+    "name": "ArtVo",
+    "tourism": "gallery",
+    "opening_hours": "Mo-Su 10:00-18:00",
+    "website": "https://artvo.com.au/",
+    "addr:housenumber": "26",
+    "addr:street": "Star Crescent",
+    "addr:postcode": "3008"
+   }
+  },
+  {
+   "id": "node/4842838841",
+   "lat": -37.831679,
+   "lng": 144.894704,
+   "tags": {
+    "name": "The Pumping Station",
+    "tourism": "museum",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/4881272056",
+   "lat": -37.803889,
+   "lng": 144.977342,
+   "tags": {
+    "name": "BSIDE Gallery",
+    "tourism": "gallery",
+    "website": "https://bsidegallery.com/",
+    "addr:housenumber": "Upstairs 121",
+    "addr:street": "Brunswick Street",
+    "addr:postcode": "3065"
+   }
+  },
+  {
+   "id": "node/4908335081",
+   "lat": -37.80338,
+   "lng": 145.042048,
+   "tags": {
+    "name": "Springthorpe Memorial",
+    "historic": "memorial",
+    "website": "https://vhd.heritagecouncil.vic.gov.au/places/6021/download-report",
+    "wikidata": "Q7581192"
+   }
+  },
+  {
+   "id": "node/4935347722",
+   "lat": -37.865958,
+   "lng": 144.974259,
+   "tags": {
+    "name": "St Kilda Esplanade Market",
+    "amenity": "marketplace",
+    "opening_hours": "Su 10:00-17:00",
+    "website": "https://www.stkildaesplanademarket.com.au/",
+    "addr:street": "Esplanade"
+   }
+  },
+  {
+   "id": "node/4957928425",
+   "lat": -37.820735,
+   "lng": 144.958257,
+   "tags": {
+    "name": "Sea Life Melbourne Aquarium",
+    "tourism": "aquarium",
+    "opening_hours": "Mo-Su 09:30-18:00",
+    "website": "https://www.melbourneaquarium.com.au/",
+    "addr:street": "King Street"
+   }
+  },
+  {
+   "id": "node/4957928427",
+   "lat": -37.809065,
+   "lng": 144.963855,
+   "tags": {
+    "name": "RMIT Gallery",
+    "tourism": "gallery",
+    "opening_hours": "Tu-Fr 11:00-17:00; Sa 12:00-16:00",
+    "website": "https://www.rmit.edu.au/about/schools-colleges/college-of-design-and-social-context/engagement/cultural-engagement/galleries",
+    "addr:housenumber": "344",
+    "addr:street": "Swanston Street",
+    "addr:postcode": "3000",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/501544041",
+   "lat": -37.79653,
+   "lng": 145.010055,
+   "tags": {
+    "name": "Galatea Point Lookout",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/5045698980",
+   "lat": -37.804124,
+   "lng": 144.988782,
+   "tags": {
+    "name": "neospace",
+    "tourism": "gallery",
+    "website": "https://www.neospace.com.au/",
+    "addr:housenumber": "7",
+    "addr:street": "Campbell Street",
+    "addr:postcode": "3066"
+   }
+  },
+  {
+   "id": "node/5305688021",
+   "lat": -37.818413,
+   "lng": 144.977815,
+   "tags": {
+    "name": "William Barak Bridge",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/5401067976",
+   "lat": -37.853896,
+   "lng": 144.981385,
+   "tags": {
+    "name": "Geoffrey Kaye Museum of Anaesthetic History",
+    "tourism": "museum",
+    "opening_hours": "Mo-Fr 10:00-16:00",
+    "website": "https://www.geoffreykayemuseum.org.au/",
+    "addr:housenumber": "630",
+    "addr:street": "St Kilda Road",
+    "addr:postcode": "3004"
+   }
+  },
+  {
+   "id": "node/5479217021",
+   "lat": -37.819827,
+   "lng": 144.967284,
+   "tags": {
+    "name": "Skyline view",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/5575774648",
+   "lat": -37.802557,
+   "lng": 145.003641,
+   "tags": {
+    "name": "Food Market (4th Saturday)",
+    "amenity": "marketplace"
+   }
+  },
+  {
+   "id": "node/566701872",
+   "lat": -37.861028,
+   "lng": 144.905685,
+   "tags": {
+    "name": "HMAS Castlemaine",
+    "tourism": "museum",
+    "website": "https://www.hmascastlemaine.org.au/",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/571316287",
+   "lat": -37.881944,
+   "lng": 144.976209,
+   "tags": {
+    "name": "Point Ormond Lookout",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/5724989221",
+   "lat": -37.818157,
+   "lng": 144.969102,
+   "tags": {
+    "name": "Koorie Heritage Trust",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 10:00-17:00; PH closed",
+    "website": "https://kht.org.au/",
+    "wikidata": "Q53700558",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/594365265",
+   "lat": -37.813199,
+   "lng": 144.974355,
+   "tags": {
+    "name": "Old Treasury Building Museum",
+    "tourism": "museum",
+    "opening_hours": "Su-Fr 10:00-16:00",
+    "website": "https://www.oldtreasurybuilding.org.au/",
+    "addr:housenumber": "20",
+    "addr:street": "Spring Street",
+    "addr:postcode": "3002",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/595504813",
+   "lat": -37.808597,
+   "lng": 144.975452,
+   "tags": {
+    "name": "Fire Services Museum",
+    "tourism": "museum",
+    "opening_hours": "Th-Fr 09:00-15:00; Su 10:00-16:00",
+    "website": "https://www.fsmv.net.au/",
+    "wikidata": "Q5330187",
+    "addr:housenumber": "39",
+    "addr:street": "Gisborne Street",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/6017236262",
+   "lat": -37.751432,
+   "lng": 145.00158,
+   "tags": {
+    "name": "Gertrude Contemporary",
+    "tourism": "gallery",
+    "website": "https://gertrude.org.au/",
+    "addr:housenumber": "21-31",
+    "addr:street": "High Street",
+    "addr:postcode": "3072"
+   }
+  },
+  {
+   "id": "node/6033552235",
+   "lat": -37.803277,
+   "lng": 144.977184,
+   "tags": {
+    "name": "Fort Delta",
+    "tourism": "gallery",
+    "website": "https://www.fortdelta.com.au/",
+    "addr:housenumber": "Rear 143",
+    "addr:street": "Brunswick Street",
+    "addr:postcode": "3065"
+   }
+  },
+  {
+   "id": "node/6097151167",
+   "lat": -37.802792,
+   "lng": 145.00295,
+   "tags": {
+    "name": "c3 Contemporary Art Gallery",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/6097151168",
+   "lat": -37.802581,
+   "lng": 145.00314,
+   "tags": {
+    "name": "St Heliers Street Gallery",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/6110707063",
+   "lat": -37.765793,
+   "lng": 144.983406,
+   "tags": {
+    "name": "Ceres Makers and Flea Market",
+    "amenity": "marketplace",
+    "opening_hours": "Sa 09:00-14:00",
+    "website": "https://ceres.org.au/makers-and-flea-market/",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/611984584",
+   "lat": -37.816627,
+   "lng": 144.961869,
+   "tags": {
+    "name": "ANZ Banking Museum",
+    "tourism": "museum",
+    "opening_hours": "Mo-Fr 09:30-16:00",
+    "website": "https://www.anz.com/shareholder/centre/about/history/banking-museum/",
+    "wikidata": "Q53695886",
+    "addr:housenumber": "380",
+    "addr:street": "Collins Street",
+    "addr:postcode": "3000",
+    "fee": "no",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/6145105448",
+   "lat": -37.814693,
+   "lng": 144.966436,
+   "tags": {
+    "name": "Melbourne City Gallery",
+    "tourism": "gallery",
+    "website": "https://www.melbourne.vic.gov.au/arts-and-culture/city-gallery/Pages/city-gallery.aspx",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/628257496",
+   "lat": -37.79593,
+   "lng": 144.977223,
+   "tags": {
+    "name": "Rose Street Artist Market",
+    "amenity": "marketplace",
+    "opening_hours": "Sa-Su 10:00-16:00",
+    "website": "https://www.rosestmarket.com.au/",
+    "addr:housenumber": "60",
+    "addr:street": "Rose Street",
+    "addr:postcode": "3065",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/642333245",
+   "lat": -37.811719,
+   "lng": 144.971211,
+   "tags": {
+    "name": "Pellegrini's",
+    "tourism": "attraction",
+    "amenity": "cafe",
+    "wikidata": "Q58481453",
+    "addr:housenumber": "66",
+    "addr:street": "Bourke Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/6501413459",
+   "lat": -37.801801,
+   "lng": 144.977329,
+   "tags": {
+    "name": "Daine Singer",
+    "tourism": "gallery",
+    "website": "https://www.dainesinger.com/",
+    "addr:housenumber": "90",
+    "addr:street": "Moor Street",
+    "addr:postcode": "3065"
+   }
+  },
+  {
+   "id": "node/6515021014",
+   "lat": -37.798906,
+   "lng": 144.968043,
+   "tags": {
+    "name": "Museo Italiano",
+    "tourism": "museum",
+    "opening_hours": "Tu-Fr 09:00-17:00; Sa 12:00-17:00",
+    "website": "https://www.coasit.com.au/museoitaliano",
+    "addr:housenumber": "199",
+    "addr:street": "Faraday Street",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/6566702955",
+   "lat": -37.768217,
+   "lng": 144.961294,
+   "tags": {
+    "name": "TCB Art Inc.",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/663479931",
+   "lat": -37.825261,
+   "lng": 144.967831,
+   "tags": {
+    "name": "VCA Artspace",
+    "tourism": "gallery",
+    "opening_hours": "Tu-Th 12:00-17:00; Fr 12:00-15:00",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/663479932",
+   "lat": -37.825511,
+   "lng": 144.967941,
+   "tags": {
+    "name": "Fiona & Sidney Myer Gallery",
+    "tourism": "gallery",
+    "opening_hours": "Tu-Sa 12:00-17:00",
+    "website": "https://finearts-music.unimelb.edu.au/about-us/fiona-and-sidney-myer-gallery",
+    "addr:housenumber": "40",
+    "addr:street": "Dodds Street",
+    "addr:postcode": "3006",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/6679657169",
+   "lat": -37.867629,
+   "lng": 144.979076,
+   "tags": {
+    "name": "Art Yarramunua",
+    "tourism": "gallery",
+    "addr:housenumber": "92b",
+    "addr:street": "Acland Street"
+   }
+  },
+  {
+   "id": "node/6690121785",
+   "lat": -37.790783,
+   "lng": 144.972961,
+   "tags": {
+    "name": "Carlton Farmers Market",
+    "amenity": "marketplace",
+    "opening_hours": "Sa 08:00-13:00",
+    "website": "https://mfm.com.au/"
+   }
+  },
+  {
+   "id": "node/6747910686",
+   "lat": -37.768074,
+   "lng": 144.980264,
+   "tags": {
+    "name": "Ok Violet",
+    "tourism": "gallery",
+    "website": "https://www.okviolet.com/",
+    "addr:housenumber": "114",
+    "addr:street": "Nicholson Street",
+    "addr:postcode": "3057"
+   }
+  },
+  {
+   "id": "node/6919554980",
+   "lat": -37.769266,
+   "lng": 144.961605,
+   "tags": {
+    "name": "Harlow Gallery",
+    "tourism": "gallery",
+    "addr:housenumber": "355",
+    "addr:street": "Sydney Road"
+   }
+  },
+  {
+   "id": "node/7018038979",
+   "lat": -37.799921,
+   "lng": 144.991557,
+   "tags": {
+    "name": "Tacit Galleries Collingwood",
+    "tourism": "gallery",
+    "opening_hours": "We-Su 11:00-17:00",
+    "website": "https://www.tacitart.com.au/",
+    "addr:housenumber": "189",
+    "addr:street": "Johnston Street",
+    "addr:postcode": "3066"
+   }
+  },
+  {
+   "id": "node/7265300594",
+   "lat": -37.820616,
+   "lng": 144.968414,
+   "tags": {
+    "name": "Sunday Market",
+    "amenity": "marketplace",
+    "opening_hours": "Su 10:00-16:00; Mo-Sa closed",
+    "website": "https://www.artscentremelbourne.com.au/visit/sunday-market"
+   }
+  },
+  {
+   "id": "node/8195514061",
+   "lat": -37.837701,
+   "lng": 145.003852,
+   "tags": {
+    "name": "Como House",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/8972336355",
+   "lat": -37.826656,
+   "lng": 144.971918,
+   "tags": {
+    "name": "Marquis of Linlithgow",
+    "historic": "memorial",
+    "wikidata": "Q56207086"
+   }
+  },
+  {
+   "id": "node/9135519890",
+   "lat": -37.810036,
+   "lng": 144.985179,
+   "tags": {
+    "name": "Brew Tower Museum",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "node/9232875752",
+   "lat": -37.867685,
+   "lng": 144.977647,
+   "tags": {
+    "name": "St Kilda Twilight Market",
+    "amenity": "marketplace"
+   }
+  },
+  {
+   "id": "node/9401734425",
+   "lat": -37.76508,
+   "lng": 144.947091,
+   "tags": {
+    "name": "Vic Street Gallery",
+    "tourism": "gallery",
+    "addr:housenumber": "465",
+    "addr:street": "Victoria Street",
+    "addr:postcode": "3055"
+   }
+  },
+  {
+   "id": "node/9488437664",
+   "lat": -37.830733,
+   "lng": 144.974011,
+   "tags": {
+    "name": "Shrine of Remembrance Education Centre",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "node/9706507717",
+   "lat": -37.805224,
+   "lng": 144.98303,
+   "tags": {
+    "name": "Fitzroy Public Gallery",
+    "tourism": "gallery",
+    "website": "https://fitzroypublicgallery.com",
+    "addr:housenumber": "125",
+    "addr:street": "Smith Street",
+    "addr:postcode": "3065"
+   }
+  },
+  {
+   "id": "relation/13605129",
+   "lat": -37.80245,
+   "lng": 144.963255,
+   "tags": {
+    "name": "Bali Memorial",
+    "historic": "memorial",
+    "wikidata": "Q2480133"
+   }
+  },
+  {
+   "id": "relation/17140476",
+   "lat": -37.824065,
+   "lng": 144.968824,
+   "tags": {
+    "name": "Buxton Contemporary (868)",
+    "tourism": "museum",
+    "building": "university",
+    "opening_hours": "Tu-Sa 11:00-17:00",
+    "website": "https://buxtoncontemporary.com/",
+    "addr:housenumber": "156",
+    "addr:street": "Southbank Boulevard",
+    "addr:postcode": "3006",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "relation/18892045",
+   "lat": -37.797291,
+   "lng": 144.958434,
+   "tags": {
+    "name": "Grainger Museum",
+    "tourism": "museum",
+    "building": "university",
+    "opening_hours": "\"by appointment\"",
+    "wikidata": "Q5593518",
+    "addr:housenumber": "48",
+    "addr:street": "Royal Parade",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "relation/6592679",
+   "lat": -37.821771,
+   "lng": 144.971382,
+   "tags": {
+    "name": "Arts Centre Melbourne",
+    "tourism": "attraction",
+    "website": "https://www.artscentremelbourne.com.au/",
+    "wikidata": "Q4801443",
+    "wikipedia": "en:Arts Centre Melbourne"
+   }
+  },
+  {
+   "id": "relation/6595830",
+   "lat": -37.797171,
+   "lng": 144.961881,
+   "tags": {
+    "name": "University Plaza",
+    "amenity": "marketplace",
+    "opening_hours": "24/7"
+   }
+  },
+  {
+   "id": "relation/6614802",
+   "lat": -37.804231,
+   "lng": 144.971567,
+   "tags": {
+    "name": "Carlton Gardens",
+    "leisure": "park",
+    "wikidata": "Q829338",
+    "wikipedia": "en:Carlton Gardens"
+   }
+  },
+  {
+   "id": "way/10629894",
+   "lat": -37.774351,
+   "lng": 144.953285,
+   "tags": {
+    "name": "Temple Park",
+    "leisure": "park",
+    "wikidata": "Q21971021"
+   }
+  },
+  {
+   "id": "way/10848330",
+   "lat": -37.769389,
+   "lng": 144.964627,
+   "tags": {
+    "name": "Randazzo Park",
+    "leisure": "park",
+    "wikidata": "Q21971067"
+   }
+  },
+  {
+   "id": "way/10937073",
+   "lat": -37.769454,
+   "lng": 144.975976,
+   "tags": {
+    "name": "Fleming Park",
+    "leisure": "park",
+    "wikidata": "Q21970845"
+   }
+  },
+  {
+   "id": "way/1098427843",
+   "lat": -37.817766,
+   "lng": 144.969305,
+   "tags": {
+    "name": "Federation Square",
+    "tourism": "attraction",
+    "opening_hours": "24/7",
+    "website": "https://fedsquare.com/",
+    "wikidata": "Q923304",
+    "wikipedia": "en:Federation Square",
+    "addr:street": "Swanston Street"
+   }
+  },
+  {
+   "id": "way/11182590",
+   "lat": -37.774523,
+   "lng": 144.97744,
+   "tags": {
+    "name": "Balfe Park",
+    "leisure": "park",
+    "wikidata": "Q21970356"
+   }
+  },
+  {
+   "id": "way/112653660",
+   "lat": -37.786132,
+   "lng": 144.949765,
+   "tags": {
+    "name": "Royal Park",
+    "leisure": "park",
+    "wikidata": "Q7374687"
+   }
+  },
+  {
+   "id": "way/113434071",
+   "lat": -37.80749,
+   "lng": 144.957712,
+   "tags": {
+    "name": "Queen Victoria Market",
+    "tourism": "attraction",
+    "amenity": "marketplace",
+    "opening_hours": "Tu 06:00-14:00; Th 06:00-14:00; Fr 06:00-18:00; Sa 06:00-15:00; Su 09:00-16:00",
+    "website": "https://qvm.com.au/",
+    "wikidata": "Q860621",
+    "wikipedia": "en:Queen Victoria Market",
+    "addr:street": "Queen Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "way/1136400433",
+   "lat": -37.829678,
+   "lng": 144.886926,
+   "tags": {
+    "name": "Angela Sparks Gallery",
+    "tourism": "gallery",
+    "building": "yes",
+    "addr:housenumber": "50",
+    "addr:street": "Hudsons Road",
+    "addr:postcode": "3015"
+   }
+  },
+  {
+   "id": "way/1207376442",
+   "lat": -37.809325,
+   "lng": 144.976307,
+   "tags": {
+    "name": "Victorian Artists' Society",
+    "tourism": "gallery",
+    "building": "yes",
+    "website": "https://victorianartistssociety.com.au/",
+    "addr:housenumber": "428-430",
+    "addr:street": "Albert Street",
+    "addr:postcode": "3002"
+   }
+  },
+  {
+   "id": "way/12273713",
+   "lat": -37.841329,
+   "lng": 144.981476,
+   "tags": {
+    "name": "Fawkner Park",
+    "leisure": "park",
+    "wikidata": "Q1837660",
+    "wikipedia": "en:Fawkner Park, Melbourne"
+   }
+  },
+  {
+   "id": "way/128952467",
+   "lat": -37.837938,
+   "lng": 145.003685,
+   "tags": {
+    "name": "Como Historic House",
+    "tourism": "attraction",
+    "historic": "mansion",
+    "building": "residential",
+    "website": "https://www.nationaltrust.org.au/",
+    "wikidata": "Q4348856",
+    "addr:street": "Williams Road",
+    "addr:postcode": "3141",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/13145019",
+   "lat": -37.759961,
+   "lng": 144.978167,
+   "tags": {
+    "name": "Allard Park",
+    "leisure": "park",
+    "wikidata": "Q21971047"
+   }
+  },
+  {
+   "id": "way/131707394",
+   "lat": -37.819727,
+   "lng": 144.984138,
+   "tags": {
+    "name": "Yarra Park",
+    "leisure": "park",
+    "website": "https://www.mcg.org.au/Yarra%20Park.aspx",
+    "wikidata": "Q8049504",
+    "wikipedia": "en:Yarra Park"
+   }
+  },
+  {
+   "id": "way/13306836",
+   "lat": -37.823331,
+   "lng": 144.958697,
+   "tags": {
+    "name": "Crown Melbourne",
+    "tourism": "attraction",
+    "amenity": "casino",
+    "building": "yes",
+    "website": "https://www.crownmelbourne.com.au/",
+    "wikidata": "Q1145115",
+    "wikipedia": "en:Crown Melbourne",
+    "addr:housenumber": "8",
+    "addr:street": "Whiteman Street",
+    "addr:postcode": "3006"
+   }
+  },
+  {
+   "id": "way/1364444691",
+   "lat": -37.784606,
+   "lng": 144.951953,
+   "tags": {
+    "name": "Melbourne Zoological Gardens",
+    "tourism": "zoo",
+    "opening_hours": "Mo-Su 09:00-17:00",
+    "website": "https://www.zoo.org.au/MelbourneZoo",
+    "wikidata": "Q578027",
+    "wikipedia": "en:Melbourne Zoo",
+    "addr:housenumber": "1",
+    "addr:street": "Elliott Avenue",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/13815924",
+   "lat": -37.787676,
+   "lng": 144.982858,
+   "tags": {
+    "name": "Edinburgh Gardens",
+    "leisure": "park",
+    "wikidata": "Q5338199"
+   }
+  },
+  {
+   "id": "way/14251243",
+   "lat": -37.819117,
+   "lng": 144.960397,
+   "tags": {
+    "name": "Immigration Museum",
+    "tourism": "museum",
+    "historic": "building",
+    "building": "yes",
+    "opening_hours": "Mo-Su 10:00-17:00",
+    "website": "https://museumsvictoria.com.au/immigrationmuseum/",
+    "wikidata": "Q2694295",
+    "wikipedia": "en:Immigration Museum, Melbourne",
+    "addr:housenumber": "400",
+    "addr:street": "Flinders Street",
+    "addr:postcode": "3000",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/1511273068",
+   "lat": -37.824054,
+   "lng": 144.954845,
+   "tags": {
+    "name": "Skyline Precinct Melbourne",
+    "tourism": "theme_park",
+    "website": "https://www.skylinemelbourne.com.au/"
+   }
+  },
+  {
+   "id": "way/15477129",
+   "lat": -37.868031,
+   "lng": 144.976749,
+   "tags": {
+    "name": "Luna Park",
+    "tourism": "theme_park",
+    "opening_hours": "Sa-Su 11:00-18:00",
+    "website": "https://www.lunapark.com.au/",
+    "wikidata": "Q2750308",
+    "wikipedia": "en:Luna Park, Melbourne",
+    "addr:housenumber": "18",
+    "addr:street": "Lower Esplanade",
+    "addr:postcode": "3182"
+   }
+  },
+  {
+   "id": "way/15479037",
+   "lat": -37.870843,
+   "lng": 144.983973,
+   "tags": {
+    "name": "St Kilda Botanic Gardens",
+    "leisure": "park",
+    "website": "https://www.portphillip.vic.gov.au/st_kilda_botanic.htm",
+    "wikidata": "Q7593903"
+   }
+  },
+  {
+   "id": "way/15865305",
+   "lat": -37.847123,
+   "lng": 144.971893,
+   "tags": {
+    "name": "Albert Park",
+    "leisure": "park",
+    "website": "https://parkweb.vic.gov.au/explore/parks/albert-park",
+    "wikidata": "Q4710971",
+    "wikipedia": "en:Albert Park and Lake"
+   }
+  },
+  {
+   "id": "way/160180163",
+   "lat": -37.829319,
+   "lng": 145.022136,
+   "tags": {
+    "name": "Burnley Gardens",
+    "leisure": "garden",
+    "wikidata": "Q56241286"
+   }
+  },
+  {
+   "id": "way/166222594",
+   "lat": -37.861075,
+   "lng": 144.90568,
+   "tags": {
+    "name": "HMAS Castlemaine",
+    "tourism": "museum",
+    "historic": "ship",
+    "building": "yes",
+    "wikipedia": "en:HMAS Castlemaine"
+   }
+  },
+  {
+   "id": "way/18043576",
+   "lat": -37.861575,
+   "lng": 144.970976,
+   "tags": {
+    "name": "Catani Gardens",
+    "leisure": "park",
+    "wikidata": "Q56246961"
+   }
+  },
+  {
+   "id": "way/21420462",
+   "lat": -37.788824,
+   "lng": 144.993806,
+   "tags": {
+    "name": "Mayors Park",
+    "leisure": "park",
+    "wikidata": "Q21971159",
+    "addr:street": "Turnbull Street",
+    "addr:postcode": "3068"
+   }
+  },
+  {
+   "id": "way/218039396",
+   "lat": -37.864947,
+   "lng": 144.973903,
+   "tags": {
+    "name": "Alfred Square",
+    "leisure": "park",
+    "wikidata": "Q17985475"
+   }
+  },
+  {
+   "id": "way/218961379",
+   "lat": -37.802862,
+   "lng": 144.993201,
+   "tags": {
+    "name": "Yarra Sculpture Gallery",
+    "tourism": "gallery",
+    "building": "yes",
+    "website": "http://www.yarrasculpturegallery.com.au/",
+    "addr:housenumber": "117",
+    "addr:street": "Vere Street",
+    "addr:postcode": "3067"
+   }
+  },
+  {
+   "id": "way/226713137",
+   "lat": -37.802851,
+   "lng": 144.992914,
+   "tags": {
+    "name": "Collingwood Sailors and Soldiers Memorial Hall",
+    "tourism": "museum",
+    "building": "yes",
+    "addr:housenumber": "152A",
+    "addr:street": "Hoddle Street",
+    "addr:postcode": "3067"
+   }
+  },
+  {
+   "id": "way/22780369",
+   "lat": -37.765926,
+   "lng": 144.983965,
+   "tags": {
+    "name": "CERES Environment Park",
+    "tourism": "attraction",
+    "leisure": "park",
+    "website": "https://ceres.org.au/",
+    "wikidata": "Q5010349",
+    "wikipedia": "en:CERES Community Environment Park",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/22963243",
+   "lat": -37.817539,
+   "lng": 144.969971,
+   "tags": {
+    "name": "Ian Potter Centre: NGV Australia",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Mo-Su 10:00-17:00",
+    "website": "https://www.ngv.vic.gov.au/",
+    "wikidata": "Q4350417",
+    "addr:street": "Federation Square",
+    "addr:postcode": "3000",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/22963244",
+   "lat": -37.817461,
+   "lng": 144.969117,
+   "tags": {
+    "name": "ACMI",
+    "tourism": "museum",
+    "opening_hours": "10:00-17:00; Apr 25 13:00-17:00; Dec 25 off",
+    "website": "https://www.acmi.net.au/",
+    "wikidata": "Q4823962",
+    "wikipedia": "en:ACMI (museum)",
+    "addr:street": "Federation Square",
+    "addr:postcode": "3000",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/23000753",
+   "lat": -37.776182,
+   "lng": 145.009446,
+   "tags": {
+    "name": "Johnson Park",
+    "leisure": "park",
+    "wikidata": "Q21970219"
+   }
+  },
+  {
+   "id": "way/23144072",
+   "lat": -37.83157,
+   "lng": 144.893908,
+   "tags": {
+    "name": "Scienceworks",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 08:00-16:30",
+    "website": "https://museumsvictoria.com.au/scienceworks",
+    "wikidata": "Q7433721",
+    "wikipedia": "en:Scienceworks (Melbourne)",
+    "addr:housenumber": "2",
+    "addr:street": "Booker Street",
+    "addr:postcode": "3015",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/234053530",
+   "lat": -37.806748,
+   "lng": 144.984672,
+   "tags": {
+    "name": "Australian Galleries Stock Rooms",
+    "tourism": "gallery",
+    "building": "yes",
+    "opening_hours": "Mo-Su 10:00-18:00",
+    "website": "https://www.australiangalleries.com.au/stockrooms",
+    "addr:housenumber": "28",
+    "addr:street": "Derby Street",
+    "addr:postcode": "3066"
+   }
+  },
+  {
+   "id": "way/23764181",
+   "lat": -37.822715,
+   "lng": 144.968671,
+   "tags": {
+    "name": "National Gallery of Victoria",
+    "tourism": "gallery",
+    "amenity": "arts_centre",
+    "opening_hours": "Mo-Su 10:00-17:00",
+    "website": "https://www.ngv.vic.gov.au",
+    "wikidata": "Q1464509",
+    "wikipedia": "en:National Gallery of Victoria",
+    "addr:housenumber": "130-180",
+    "addr:street": "St Kilda Road",
+    "addr:postcode": "3006",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/23909867",
+   "lat": -37.821986,
+   "lng": 144.97153,
+   "tags": {
+    "name": "Queen Victoria Gardens",
+    "leisure": "park",
+    "wikidata": "Q7270534",
+    "wikipedia": "en:Queen Victoria Gardens"
+   }
+  },
+  {
+   "id": "way/240503854",
+   "lat": -37.86716,
+   "lng": 144.904997,
+   "tags": {
+    "name": "Rotary Park",
+    "leisure": "park",
+    "wikidata": "Q21971052"
+   }
+  },
+  {
+   "id": "way/24590190",
+   "lat": -37.830532,
+   "lng": 144.973445,
+   "tags": {
+    "name": "Shrine of Remembrance",
+    "tourism": "attraction",
+    "historic": "monument",
+    "building": "yes",
+    "wikidata": "Q1369544",
+    "wikipedia": "en:Shrine of Remembrance"
+   }
+  },
+  {
+   "id": "way/24591396",
+   "lat": -37.860124,
+   "lng": 144.995432,
+   "tags": {
+    "name": "Alma Park East",
+    "leisure": "park",
+    "wikidata": "Q21971033"
+   }
+  },
+  {
+   "id": "way/24593719",
+   "lat": -37.821242,
+   "lng": 144.97263,
+   "tags": {
+    "name": "Alexandra Gardens",
+    "leisure": "park",
+    "wikidata": "Q4720648",
+    "wikipedia": "en:Alexandra Gardens, Melbourne"
+   }
+  },
+  {
+   "id": "way/24593825",
+   "lat": -37.825893,
+   "lng": 144.97475,
+   "tags": {
+    "name": "Kings Domain",
+    "leisure": "park",
+    "wikidata": "Q6412904",
+    "wikipedia": "en:Kings Domain"
+   }
+  },
+  {
+   "id": "way/25467961",
+   "lat": -37.807019,
+   "lng": 144.956949,
+   "tags": {
+    "name": "Queen Victoria Market",
+    "amenity": "marketplace",
+    "wikidata": "Q860621"
+   }
+  },
+  {
+   "id": "way/25467962",
+   "lat": -37.806859,
+   "lng": 144.958953,
+   "tags": {
+    "name": "Queen Victoria Market",
+    "amenity": "marketplace",
+    "opening_hours": "Tu,Th 06:00-14:00; Fr 06:00-17:00; Sa 06:00-15:00; Su 09:00-16:00"
+   }
+  },
+  {
+   "id": "way/25739077",
+   "lat": -37.7719,
+   "lng": 144.93531,
+   "tags": {
+    "name": "Ormond Park",
+    "leisure": "park",
+    "wikidata": "Q21971103"
+   }
+  },
+  {
+   "id": "way/25739520",
+   "lat": -37.786501,
+   "lng": 144.937258,
+   "tags": {
+    "name": "Debneys Park",
+    "leisure": "park",
+    "wikidata": "Q21970873"
+   }
+  },
+  {
+   "id": "way/25841606",
+   "lat": -37.798239,
+   "lng": 144.996585,
+   "tags": {
+    "name": "Victoria Park",
+    "leisure": "park",
+    "wikidata": "Q7926918"
+   }
+  },
+  {
+   "id": "way/26104523",
+   "lat": -37.832303,
+   "lng": 144.956536,
+   "tags": {
+    "name": "South Melbourne Market",
+    "amenity": "marketplace",
+    "building": "commercial",
+    "opening_hours": "We, Sa-Su 08:00-16:00; Fr 08:00-17:00",
+    "website": "https://www.southmelbournemarket.com.au/",
+    "wikidata": "Q7567936",
+    "wikipedia": "en:South Melbourne market",
+    "addr:housenumber": "322-326",
+    "addr:street": "Coventry Street",
+    "addr:postcode": "3205"
+   }
+  },
+  {
+   "id": "way/26114605",
+   "lat": -37.773182,
+   "lng": 144.899238,
+   "tags": {
+    "name": "Fairbairn Park",
+    "leisure": "park",
+    "wikidata": "Q21970852"
+   }
+  },
+  {
+   "id": "way/26564392",
+   "lat": -37.807812,
+   "lng": 144.965125,
+   "tags": {
+    "name": "Old Melbourne Gaol",
+    "tourism": "attraction",
+    "building": "yes",
+    "opening_hours": "09:30-17:00; Dec 25 closed; easter -2 days closed",
+    "website": "https://www.oldmelbournegaol.com.au",
+    "wikidata": "Q2018436",
+    "wikipedia": "en:Old Melbourne Gaol",
+    "addr:housenumber": "377",
+    "addr:street": "Russell Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "way/267164272",
+   "lat": -37.75452,
+   "lng": 144.980727,
+   "tags": {
+    "name": "Islamic Museum of Australia",
+    "tourism": "museum",
+    "building": "yes",
+    "website": "https://www.islamicmuseum.org.au/",
+    "wikidata": "Q16251084",
+    "addr:housenumber": "15A",
+    "addr:street": "Anderson Road",
+    "addr:postcode": "3071"
+   }
+  },
+  {
+   "id": "way/27086581",
+   "lat": -37.820723,
+   "lng": 144.958344,
+   "tags": {
+    "name": "SEA LIFE Melbourne Aquarium",
+    "tourism": "aquarium",
+    "building": "yes",
+    "opening_hours": "Mo-Fr 10:00-17:30; Sa-Su 09:30-18:00",
+    "website": "https://www.melbourneaquarium.com.au/",
+    "wikidata": "Q1321392",
+    "wikipedia": "en:Sea Life Melbourne Aquarium",
+    "addr:street": "King Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "way/27246421",
+   "lat": -37.805161,
+   "lng": 145.011373,
+   "tags": {
+    "name": "Villa Alba Museum",
+    "tourism": "museum",
+    "wikidata": "Q106958839",
+    "wikipedia": "en:Villa Alba Museum"
+   }
+  },
+  {
+   "id": "way/27462510",
+   "lat": -37.821795,
+   "lng": 144.9566,
+   "tags": {
+    "name": "Batman Park",
+    "leisure": "park",
+    "wikidata": "Q2191993",
+    "wikipedia": "en:Batman Park"
+   }
+  },
+  {
+   "id": "way/27527691",
+   "lat": -37.767993,
+   "lng": 145.005424,
+   "tags": {
+    "name": "All Nations Park",
+    "leisure": "park",
+    "wikidata": "Q21970922"
+   }
+  },
+  {
+   "id": "way/27549948",
+   "lat": -37.838984,
+   "lng": 144.955005,
+   "tags": {
+    "name": "St Vincent Gardens",
+    "leisure": "park",
+    "wikidata": "Q7595614"
+   }
+  },
+  {
+   "id": "way/27675492",
+   "lat": -37.871749,
+   "lng": 145.029781,
+   "tags": {
+    "name": "Caulfield Park",
+    "leisure": "park",
+    "wikidata": "Q21970936"
+   }
+  },
+  {
+   "id": "way/27703382",
+   "lat": -37.763983,
+   "lng": 145.02443,
+   "tags": {
+    "name": "John Cain Memorial Park",
+    "leisure": "park",
+    "wikidata": "Q21970223"
+   }
+  },
+  {
+   "id": "way/27730869",
+   "lat": -37.749788,
+   "lng": 144.956043,
+   "tags": {
+    "name": "Palazzolo Park",
+    "leisure": "park",
+    "wikidata": "Q21970377"
+   }
+  },
+  {
+   "id": "way/27772268",
+   "lat": -37.831328,
+   "lng": 144.907589,
+   "tags": {
+    "name": "Westgate Park",
+    "leisure": "park",
+    "website": "https://parkweb.vic.gov.au/explore/parks/westgate-park",
+    "wikidata": "Q21970989"
+   }
+  },
+  {
+   "id": "way/27784473",
+   "lat": -37.888225,
+   "lng": 144.985265,
+   "tags": {
+    "name": "Elwood Park",
+    "leisure": "park",
+    "wikidata": "Q21970856"
+   }
+  },
+  {
+   "id": "way/27858621",
+   "lat": -37.879744,
+   "lng": 144.999055,
+   "tags": {
+    "name": "Rippon Lea Estate",
+    "leisure": "garden",
+    "website": "https://www.ripponleaestate.com.au/",
+    "wikidata": "Q7335741",
+    "wikipedia": "en:Rippon Lea Estate",
+    "addr:housenumber": "192",
+    "addr:street": "Hotham Street",
+    "addr:postcode": "3185",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/27925061",
+   "lat": -37.850724,
+   "lng": 145.010864,
+   "tags": {
+    "name": "Orrong Park",
+    "leisure": "park",
+    "wikidata": "Q21971101"
+   }
+  },
+  {
+   "id": "way/28315750",
+   "lat": -37.803365,
+   "lng": 145.004647,
+   "tags": {
+    "name": "Collingwood Children's Farm",
+    "tourism": "zoo",
+    "opening_hours": "Mo-Su 09:15-16:45",
+    "website": "https://www.farm.org.au/",
+    "addr:housenumber": "6-24",
+    "addr:street": "St Heliers Street",
+    "addr:postcode": "3067",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/28375613",
+   "lat": -37.75712,
+   "lng": 145.017959,
+   "tags": {
+    "name": "Hayes Park",
+    "leisure": "park",
+    "wikidata": "Q21970247"
+   }
+  },
+  {
+   "id": "way/28376037",
+   "lat": -37.7546,
+   "lng": 145.007321,
+   "tags": {
+    "name": "Penders Park",
+    "leisure": "park",
+    "wikidata": "Q21971092"
+   }
+  },
+  {
+   "id": "way/28460882",
+   "lat": -37.839949,
+   "lng": 145.048816,
+   "tags": {
+    "name": "Anderson Park",
+    "leisure": "park",
+    "wikidata": "Q21970955",
+    "addr:housenumber": "3 - 11",
+    "addr:street": "Anderson Road"
+   }
+  },
+  {
+   "id": "way/28755549",
+   "lat": -37.836053,
+   "lng": 145.003905,
+   "tags": {
+    "name": "Como Park",
+    "leisure": "park",
+    "wikidata": "Q21970885"
+   }
+  },
+  {
+   "id": "way/29122348",
+   "lat": -37.867884,
+   "lng": 144.909613,
+   "tags": {
+    "name": "Point Gellibrand Coastal Heritage Park",
+    "leisure": "park",
+    "wikidata": "Q21924263"
+   }
+  },
+  {
+   "id": "way/29173083",
+   "lat": -37.805482,
+   "lng": 144.877176,
+   "tags": {
+    "name": "Anders Park",
+    "leisure": "park",
+    "website": "http://internalreserves.blogspot.com.au/2013/02/anders-park-anders-triangle-west.html",
+    "wikidata": "Q21970365",
+    "addr:street": "Exhibition Street"
+   }
+  },
+  {
+   "id": "way/30968287",
+   "lat": -37.774761,
+   "lng": 145.035819,
+   "tags": {
+    "name": "Rockbeare Park",
+    "leisure": "park",
+    "wikidata": "Q21971056"
+   }
+  },
+  {
+   "id": "way/31009823",
+   "lat": -37.841016,
+   "lng": 145.035941,
+   "tags": {
+    "name": "Sir Zelman Cowen Park",
+    "leisure": "park",
+    "wikidata": "Q21970257"
+   }
+  },
+  {
+   "id": "way/317151452",
+   "lat": -37.830422,
+   "lng": 144.97624,
+   "tags": {
+    "name": "The Ian Potter Foundation Children's Garden",
+    "leisure": "garden",
+    "wikidata": "Q62024020"
+   }
+  },
+  {
+   "id": "way/317310595",
+   "lat": -37.793752,
+   "lng": 144.923773,
+   "tags": {
+    "name": "Bayswater Road Park",
+    "leisure": "park",
+    "wikidata": "Q21971165"
+   }
+  },
+  {
+   "id": "way/32324746",
+   "lat": -37.801581,
+   "lng": 144.979897,
+   "tags": {
+    "name": "Whitlam Place",
+    "leisure": "park",
+    "wikidata": "Q134269292",
+    "addr:housenumber": "209-217",
+    "addr:street": "Napier Street"
+   }
+  },
+  {
+   "id": "way/32656612",
+   "lat": -37.811314,
+   "lng": 144.975188,
+   "tags": {
+    "name": "Burston Reserve",
+    "leisure": "park",
+    "wikidata": "Q139384675"
+   }
+  },
+  {
+   "id": "way/33117835",
+   "lat": -37.821448,
+   "lng": 145.002926,
+   "tags": {
+    "name": "Dame Nellie Melba Memorial Park",
+    "leisure": "park",
+    "wikidata": "Q21970877",
+    "addr:housenumber": "98-104",
+    "addr:street": "Coppin Street"
+   }
+  },
+  {
+   "id": "way/379065029",
+   "lat": -37.829638,
+   "lng": 145.027222,
+   "tags": {
+    "name": "Fairview Park",
+    "leisure": "park",
+    "wikidata": "Q21973007"
+   }
+  },
+  {
+   "id": "way/41098463",
+   "lat": -37.773452,
+   "lng": 144.986029,
+   "tags": {
+    "name": "Sumner Park",
+    "leisure": "park",
+    "wikidata": "Q21971027"
+   }
+  },
+  {
+   "id": "way/41411230",
+   "lat": -37.797624,
+   "lng": 144.923655,
+   "tags": {
+    "name": "J.J. Holland Park",
+    "leisure": "park",
+    "website": "http://www.thatsmelbourne.com.au/Placestogo/ParksandGardens/AllParksandGardens/Pages/4443.aspx",
+    "wikidata": "Q6104138",
+    "wikipedia": "en:J.J. Holland Park"
+   }
+  },
+  {
+   "id": "way/41841390",
+   "lat": -37.846065,
+   "lng": 144.992593,
+   "tags": {
+    "name": "Prahran Market",
+    "tourism": "attraction",
+    "amenity": "marketplace",
+    "building": "retail",
+    "opening_hours": "Mo,Tu 07:00-17:00; We,Th 00:00-00:00; Fr,Sa 07:00-17:00; Su 08:00-15:00",
+    "website": "https://www.prahranmarket.com.au/",
+    "wikidata": "Q7237731",
+    "addr:housenumber": "163",
+    "addr:street": "Commercial Road",
+    "addr:postcode": "3141"
+   }
+  },
+  {
+   "id": "way/45422277",
+   "lat": -37.829489,
+   "lng": 144.979551,
+   "tags": {
+    "name": "Royal Botanic Gardens",
+    "leisure": "garden",
+    "opening_hours": "07:30-17:30; Oct 01-Mar 31 07:30-19:30",
+    "website": "https://www.rbg.vic.gov.au/",
+    "wikidata": "Q101433843",
+    "wikipedia": "en:Royal Botanic Gardens Victoria"
+   }
+  },
+  {
+   "id": "way/45461060",
+   "lat": -37.826682,
+   "lng": 144.967075,
+   "tags": {
+    "name": "Australian Centre for Contemporary Art",
+    "tourism": "gallery",
+    "building": "yes",
+    "opening_hours": "Tu-Fr 10:00-17:00; Sa-Su 11:00-17:00; Mo closed",
+    "website": "https://acca.melbourne/",
+    "wikidata": "Q781373",
+    "addr:housenumber": "111",
+    "addr:street": "Sturt Street",
+    "addr:postcode": "3006",
+    "fee": "donation"
+   }
+  },
+  {
+   "id": "way/45480189",
+   "lat": -37.825105,
+   "lng": 144.976044,
+   "tags": {
+    "name": "Pioneer Women's Memorial Garden",
+    "leisure": "garden",
+    "wikidata": "Q25183819"
+   }
+  },
+  {
+   "id": "way/45792871",
+   "lat": -37.793276,
+   "lng": 144.906519,
+   "tags": {
+    "name": "Footscray Park",
+    "leisure": "park",
+    "wikidata": "Q5466572"
+   }
+  },
+  {
+   "id": "way/45842709",
+   "lat": -37.776407,
+   "lng": 144.894517,
+   "tags": {
+    "name": "Pipemaker's Park",
+    "leisure": "park",
+    "wikidata": "Q18166356"
+   }
+  },
+  {
+   "id": "way/46142201",
+   "lat": -37.812327,
+   "lng": 144.974063,
+   "tags": {
+    "name": "Gordon Reserve",
+    "leisure": "park",
+    "wikidata": "Q56686337"
+   }
+  },
+  {
+   "id": "way/46194494",
+   "lat": -37.810711,
+   "lng": 144.97233,
+   "tags": {
+    "name": "Princess Theatre",
+    "tourism": "attraction",
+    "amenity": "theatre",
+    "building": "yes",
+    "website": "https://marrinergroup.com.au/princess-theatre",
+    "wikidata": "Q7244850",
+    "wikipedia": "en:Princess Theatre (Melbourne)",
+    "addr:housenumber": "163",
+    "addr:street": "Spring Street",
+    "addr:postcode": "3000",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/46197639",
+   "lat": -37.810741,
+   "lng": 144.969211,
+   "tags": {
+    "name": "Chinese Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Mo-Su 10:00-16:00",
+    "website": "https://www.chinesemuseum.com.au/",
+    "wikidata": "Q5100547",
+    "addr:housenumber": "22",
+    "addr:street": "Cohen Place",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "way/46330961",
+   "lat": -37.819082,
+   "lng": 144.973463,
+   "tags": {
+    "name": "Birrarung Marr",
+    "leisure": "park",
+    "wikidata": "Q2904546",
+    "wikipedia": "en:Birrarung Marr, Melbourne"
+   }
+  },
+  {
+   "id": "way/479009831",
+   "lat": -37.809736,
+   "lng": 144.897462,
+   "tags": {
+    "name": "Polish Museum and Archives in Australia",
+    "tourism": "museum",
+    "building": "yes",
+    "website": "https://polishmuseumarchives.org.au/",
+    "addr:housenumber": "296",
+    "addr:street": "Nicholson Street"
+   }
+  },
+  {
+   "id": "way/4817020",
+   "lat": -37.812957,
+   "lng": 144.980466,
+   "tags": {
+    "name": "Fitzroy Gardens",
+    "leisure": "park",
+    "wikidata": "Q3444049",
+    "wikipedia": "en:Fitzroy Gardens",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/4817059",
+   "lat": -37.804668,
+   "lng": 144.971499,
+   "tags": {
+    "name": "Royal Exhibition Building",
+    "tourism": "attraction",
+    "historic": "building",
+    "building": "yes",
+    "website": "https://museumsvictoria.com.au/reb/",
+    "wikidata": "Q695935",
+    "wikipedia": "en:Royal Exhibition Building",
+    "addr:housenumber": "9",
+    "addr:street": "Nicholson Street",
+    "addr:postcode": "3053"
+   }
+  },
+  {
+   "id": "way/4817074",
+   "lat": -37.803237,
+   "lng": 144.9717,
+   "tags": {
+    "name": "Melbourne Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Mo-Su 10:00-17:00,09:00-17:00",
+    "website": "https://museumsvictoria.com.au/melbournemuseum/",
+    "wikidata": "Q1353869",
+    "wikipedia": "en:Melbourne Museum",
+    "addr:housenumber": "11",
+    "addr:street": "Nicholson Street",
+    "addr:postcode": "3053",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/4817082",
+   "lat": -37.810488,
+   "lng": 144.954424,
+   "tags": {
+    "name": "Flagstaff Gardens",
+    "tourism": "attraction",
+    "leisure": "park",
+    "wikidata": "Q5457014",
+    "wikipedia": "en:Flagstaff Gardens"
+   }
+  },
+  {
+   "id": "way/4817097",
+   "lat": -37.813988,
+   "lng": 144.97598,
+   "tags": {
+    "name": "Treasury Gardens",
+    "leisure": "park",
+    "wikidata": "Q7836802",
+    "wikipedia": "en:Treasury Gardens"
+   }
+  },
+  {
+   "id": "way/481756982",
+   "lat": -37.824702,
+   "lng": 144.953426,
+   "tags": {
+    "name": "Polly Woodside",
+    "tourism": "attraction",
+    "historic": "ship",
+    "building": "yes",
+    "opening_hours": "10:00-16:00",
+    "website": "http://www.pollywoodside.com.au",
+    "wikidata": "Q2102199",
+    "addr:housenumber": "21",
+    "addr:street": "South Wharf Promenade",
+    "addr:postcode": "3006"
+   }
+  },
+  {
+   "id": "way/48531586",
+   "lat": -37.832111,
+   "lng": 144.991448,
+   "tags": {
+    "name": "Charles Evans Reserve",
+    "leisure": "park",
+    "wikidata": "Q5184113",
+    "addr:housenumber": "196",
+    "addr:street": "Cubitt Street"
+   }
+  },
+  {
+   "id": "way/4965315",
+   "lat": -37.784913,
+   "lng": 144.96149,
+   "tags": {
+    "name": "Princes Park",
+    "leisure": "park",
+    "wikidata": "Q4810325"
+   }
+  },
+  {
+   "id": "way/5067096",
+   "lat": -37.771361,
+   "lng": 144.973285,
+   "tags": {
+    "name": "Methven Park",
+    "leisure": "park",
+    "wikidata": "Q21971145"
+   }
+  },
+  {
+   "id": "way/543435406",
+   "lat": -37.785362,
+   "lng": 144.981736,
+   "tags": {
+    "name": "Red Gallery",
+    "tourism": "gallery",
+    "building": "yes",
+    "opening_hours": "Th-Fr 11:00-18:00, Sa-Su 12:00-17:00",
+    "website": "https://www.redgallery.com.au/",
+    "addr:housenumber": "157",
+    "addr:street": "St Georges Road",
+    "addr:postcode": "3068"
+   }
+  },
+  {
+   "id": "way/54454055",
+   "lat": -37.781221,
+   "lng": 144.990283,
+   "tags": {
+    "name": "Rushall Garden",
+    "leisure": "garden",
+    "website": "https://rushallgarden.wordpress.com/",
+    "wikidata": "Q7380767"
+   }
+  },
+  {
+   "id": "way/549122151",
+   "lat": -37.823241,
+   "lng": 145.039178,
+   "tags": {
+    "name": "Gallery Elysium",
+    "tourism": "gallery",
+    "building": "yes",
+    "opening_hours": "Mo-Fr 09:30-17:30; Sa 10:00-16:00",
+    "website": "https://www.galleryelysium.com.au",
+    "addr:housenumber": "440-444",
+    "addr:street": "Burwood Road",
+    "addr:postcode": "3122"
+   }
+  },
+  {
+   "id": "way/5800919",
+   "lat": -37.762565,
+   "lng": 144.923858,
+   "tags": {
+    "name": "Queens Park",
+    "leisure": "park",
+    "wikidata": "Q7270791"
+   }
+  },
+  {
+   "id": "way/62673026",
+   "lat": -37.816431,
+   "lng": 145.015425,
+   "tags": {
+    "name": "Pridmore Park",
+    "leisure": "park",
+    "wikidata": "Q21971079"
+   }
+  },
+  {
+   "id": "way/666237472",
+   "lat": -37.837765,
+   "lng": 145.00395,
+   "tags": {
+    "name": "Como House and Garden",
+    "leisure": "garden",
+    "website": "https://www.nationaltrust.org.au/places/como-house-and-garden/",
+    "wikidata": "Q4348856",
+    "wikipedia": "en:Como House",
+    "addr:postcode": "3141",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/666248750",
+   "lat": -37.810451,
+   "lng": 144.963147,
+   "tags": {
+    "name": "Coop's Shot Tower",
+    "tourism": "attraction",
+    "wikidata": "Q5167700",
+    "wikipedia": "en:Coop's Shot Tower",
+    "fee": "no",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/666255789",
+   "lat": -37.81449,
+   "lng": 144.97945,
+   "tags": {
+    "name": "Cooks' Cottage",
+    "tourism": "attraction",
+    "historic": "yes",
+    "building": "yes",
+    "opening_hours": "Mo-Su 09:00-17:00",
+    "wikidata": "Q1129647",
+    "wikipedia": "en:Cooks' Cottage",
+    "fee": "yes",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/815758596",
+   "lat": -37.831585,
+   "lng": 144.976027,
+   "tags": {
+    "name": "La Trobe’s Cottage",
+    "tourism": "attraction",
+    "historic": "yes",
+    "building": "detached",
+    "opening_hours": "Oct-Apr Su 13:00-16:00",
+    "website": "https://www.nationaltrust.org.au/places/la-trobes-cottage/",
+    "wikidata": "Q6465528",
+    "addr:housenumber": "37",
+    "addr:street": "Dallas Brooks Drive",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/93169474",
+   "lat": -37.764505,
+   "lng": 144.924059,
+   "tags": {
+    "name": "Moonee Ponds Court House Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "addr:housenumber": "770",
+    "addr:street": "Mount Alexander Road"
+   }
+  },
+  {
+   "id": "way/972303149",
+   "lat": -37.820205,
+   "lng": 144.959505,
+   "tags": {
+    "name": "Enterprize Park",
+    "leisure": "park",
+    "wikidata": "Q125439164"
+   }
+  },
+  {
+   "id": "way/976551742",
+   "lat": -37.749091,
+   "lng": 144.956419,
+   "tags": {
+    "name": "Palazzolo Park",
+    "leisure": "park",
+    "wikidata": "Q21970377"
+   }
+  },
+  {
+   "id": "way/976551743",
+   "lat": -37.748362,
+   "lng": 144.956331,
+   "tags": {
+    "name": "Palazzolo Park",
+    "leisure": "park",
+    "wikidata": "Q21970377"
+   }
+  },
+  {
+   "id": "way/97811471",
+   "lat": -37.7519,
+   "lng": 144.936329,
+   "tags": {
+    "name": "Paul Huckin Park",
+    "leisure": "park",
+    "wikidata": "Q21971094"
+   }
+  },
+  {
+   "id": "way/999753812",
+   "lat": -37.800415,
+   "lng": 144.979454,
+   "tags": {
+    "name": "Sutton Gallery Project Space",
+    "tourism": "gallery",
+    "building": "commercial",
+    "addr:housenumber": "230",
+    "addr:street": "Young Street"
+   }
+  }
+ ]
+}

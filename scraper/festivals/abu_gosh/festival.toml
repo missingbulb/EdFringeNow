@@ -1,0 +1,67 @@
+# The Abu Gosh Music Festival: its identity, its editions, and the sources an
+# edition's information block is assembled from. Every key follows the contract
+# in scraper/festivals/README.md.
+
+id = "abu-gosh"
+name = "Abu Gosh Music Festival"
+name_local = "פסטיבל המוזיקה אבו גוש"
+city = "Abu Ghosh"
+country = "IL"
+# Abu Ghosh (en.wikipedia.org/wiki/Abu_Ghosh), for the festival timeline and the
+# travel maths between cities. Venues carry their own coordinates; the opening
+# day plays the Tel Aviv Museum of Art.
+lat = 31.804722
+lng = 35.110833
+timezone = "Asia/Jerusalem"
+# The English pages carry every card; each card's Hebrew title is served beside
+# it as `titleLocal`.
+lang = "en"
+dir = "ltr"
+kind = "music"
+subtypes = ["music-classical", "music-vocal"]
+default_genre = "music"
+site = "https://abugoshfestival.co.il"
+wikidata = "Q12410646"
+
+# Every concert has its own price, printed on its page and served per
+# performance; the outdoor courtyard sets are free.
+[ticketing]
+model = "central-box-office"
+url = "https://agfestival.smarticket.co.il/"
+notes = "Tickets for every concert are sold through the festival's Smarticket box office (agfestival.smarticket.co.il; phone +972-3-9385058), one price per concert. The outdoor courtyard performances at Kiryat Ye'arim Church are free admission."
+currency = "ILS"
+source = "https://abugoshfestival.co.il/en/%d7%9c%d7%95%d7%97-%d7%a7%d7%95%d7%a0%d7%a6%d7%a8%d7%98%d7%99%d7%9d/"
+
+# The festival runs twice a year, at Shavuot and at Sukkot; an edition id is
+# only a year, so this 2026 edition is the Sukkot one, the programme the site
+# carries now. Its first day is the Tel Aviv Museum concerts (29 September).
+# ordinal: the About page dates the tradition to 1957 but numbers no edition.
+[[edition]]
+id = "2026"
+format = "block"
+first = "2026-09-29"
+last = "2026-10-03"
+sources = ["abugosh-site", "venues-research"]
+
+[[source]]
+id = "abugosh-site"
+kind = "fetched"
+roles = ["events", "performances", "venues", "availability", "prices"]
+required = true
+fetcher = "sources/abugosh-site/fetch.py"
+adapter = "abu_gosh/abugosh_site.py"
+
+[[source]]
+id = "venues-research"
+kind = "curated"
+roles = ["venues"]
+required = true
+path = "curated/venues.json"
+adapter = "abu_gosh/venues_research.py"
+
+# Field precedence per section: for each field, the first source listed here that
+# supplies it wins.
+[merge]
+venues = ["venues-research", "abugosh-site"]
+events = ["abugosh-site"]
+performances = ["abugosh-site"]

@@ -1,0 +1,20 @@
+{
+ "about": "Hand-curated venue research for the ISRA annual conference, keyed by the code the eventact-agenda adapter gives the conference hotel. Not tied to an edition, because a hotel outlives a programme. Every figure is {value, source}, or null when nobody could cite it; coordinates carry the basis they rest on.",
+ "researchedAt": "2026-09-27",
+ "venues": {
+  "davids-harp-galilee": {
+   "name": "David's Harp Galilee Resort",
+   "address": {"value": "Kfar Nahum (Capernaum), Sea of Galilee", "source": "https://davidsharphotels.com/galilee/contact/"},
+   "coordinates": {"lat": 32.88043, "lng": 35.57356, "basis": "the map pin on the hotel's own contact page"},
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {"id": "hall-a", "name": "Hall A", "capacity": null, "layout": null},
+    {"id": "hall-b", "name": "Hall B", "capacity": null, "layout": null},
+    {"id": "hall-c", "name": "Hall C", "capacity": null, "layout": null}
+   ],
+   "accessibility": null,
+   "notes": "The conference hotel, above the northwest shore of the Sea of Galilee (the conference site's Home and Accommodation pages name it). The programme runs in three halls, A, B and C, which it does not map onto the hotel's own halls: the hotel lists the Agam hall (475 theatre-style, divisible into Agam A and Agam B, 200 each), four meeting rooms of 15 to 110 and a 700-seat amphitheatre (davidsharphotels.com/galilee/events/), so no seat count is served for a programme hall. Registration, breaks, lunch and the evening social events are listed across all three halls."
+  }
+ }
+}

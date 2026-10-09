@@ -1,0 +1,46 @@
+{
+ "results": [
+  {
+   "query": "200 N Broadway, Wichita, KS 67202, USA",
+   "matched": "200 N Broadway, Wichita, KS 67202, USA",
+   "lat": 37.688059,
+   "lng": -97.335459
+  },
+  {
+   "query": "3210 E Osie St, Wichita, KS 67218",
+   "matched": "3210 E Osie St, Wichita, KS 67218",
+   "lat": 37.663481,
+   "lng": -97.298516
+  },
+  {
+   "query": "334 N Mead St, Wichita, KS 67202",
+   "matched": "334 N Mead St, Wichita, KS 67202",
+   "lat": 37.690788,
+   "lng": -97.328688
+  },
+  {
+   "query": "353 N Mead St, Wichita, KS 67202",
+   "matched": "353 N Mead St, Wichita, KS 67202",
+   "lat": 37.691129,
+   "lng": -97.329321
+  },
+  {
+   "query": "3803 E Harry St Ste 121, Wichita, KS 67218",
+   "matched": "3803 E Harry St, Wichita, KS 67218",
+   "lat": 37.662842,
+   "lng": -97.291181
+  },
+  {
+   "query": "429 S Hydraulic, Wichita, KS 67211",
+   "matched": "429 S Hydraulic, Wichita, KS 67211",
+   "lat": 37.639407,
+   "lng": -97.31711
+  },
+  {
+   "query": "E 2nd St N, Wichita, KS 67213",
+   "matched": "E 2nd St N, Wichita, KS 67213",
+   "lat": 37.68978,
+   "lng": -97.335588
+  }
+ ]
+}

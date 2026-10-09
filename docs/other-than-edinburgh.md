@@ -190,7 +190,7 @@ engine change, that is a signal the descriptor is missing a field.
 
 Four separable problems, routinely conflated:
 
-**a. UI strings.** The festival planner has one — `site/planJerusalem/i18n/`, a
+**a. UI strings.** The festival planner has one — `site/planNG/i18n/`, a
 keyed catalogue in ICU MessageFormat with a pixel budget per key, four languages
 and a direction that follows the reader's. The Now page and the Fringe planner
 do not: every label there is still a literal in `site/js/app.js`,

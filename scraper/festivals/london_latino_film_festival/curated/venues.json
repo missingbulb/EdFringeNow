@@ -1,0 +1,14 @@
+{
+ "about": "Hand research for the venues the festival's Eventive box office lists without an address the geocoder can place, keyed by the box office's venue id. Each pin is the OpenStreetMap feature named in its basis.",
+ "researchedAt": "2026-10-02",
+ "venues": {
+  "6a85bfe35028a5bbeb374a8e": {
+   "name": "Instituto Cervantes - Sala Luis Cernuda",
+   "coordinates": {
+    "lat": 51.5129079,
+    "lng": -0.11275,
+    "basis": "OpenStreetMap's Instituto Cervantes of London (node 12653300025)"
+   }
+  }
+ }
+}

@@ -1,0 +1,31 @@
+/*
+ * How the reader is getting to the festival: the answer the travel blocks
+ * either side of the trip ask for, stored as `arrive` on the saved origin.
+ *
+ * Pure: no DOM, no fetch.
+ */
+
+/** Living there, driving their own car, taking the train, flying. */
+export const ARRIVALS = ["local", "drive", "train", "fly"];
+
+/** How the saved origin says the reader arrives; null while it hasn't said.
+ * An origin saved before the question asked this is read by where it placed
+ * the reader: their home in the festival's city as living there, abroad as
+ * flying, and anything vaguer as not yet said. */
+export function arrivalOf(origin) {
+  if (!origin) return null;
+  if (ARRIVALS.includes(origin.arrive)) return origin.arrive;
+  if (origin.kind === "city") return "local";
+  if (origin.kind === "abroad") return "fly";
+  return null;
+}
+
+/** Between the airport and town, for a reader who flies: a taxi or transfer,
+ * the train, or a hire car. */
+export const GROUND = ["taxi", "train", "car"];
+
+/** Whether the reader has a car with them: they drove their own, or hire one
+ * at the airport. */
+export function hasCar(arrive, ground) {
+  return arrive === "drive" || (arrive === "fly" && ground === "car");
+}
