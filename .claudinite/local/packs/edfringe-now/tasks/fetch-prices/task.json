@@ -1,5 +1,4 @@
 {
-  "$schema": "../../../../../shared/packs/claudinite-tasks/task.schema.json",
   "id": "fetch-prices",
   "description": "Prices every performance of every paid show into the fetch-once cache data/prices.json, folds the prices into the site data and commits both; a pass too long for one run continues on its own item until every show is priced.",
   "trigger": "request",

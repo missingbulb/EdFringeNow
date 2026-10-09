@@ -1,5 +1,4 @@
 {
-  "$schema": "../../../../../shared/packs/claudinite-tasks/task.schema.json",
   "id": "festival-refresh",
   "description": "Stage 4 of the data lifecycle beyond the Fringe: re-runs the ticket-availability tools of every festival edition near or in its run, and delivers what moved beyond fetch times.",
   "schedule_after": [

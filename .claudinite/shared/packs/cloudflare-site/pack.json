@@ -1,6 +1,6 @@
 {
-  "version": "60928.1",
-  "minEngineVersion": "60928.1",
+  "version": "1.61005.1",
+  "minEngineVersion": "1.61001.1",
   "ruleRoutingGuidance": {
     "belongs": "serving a static site from Cloudflare: the published tree, custom domains, the nightly release that uploads it",
     "excludes": "Workers runtime and bindings — cloudflare-workers; the version scheme and the page stamp — public-website; markup — html"
