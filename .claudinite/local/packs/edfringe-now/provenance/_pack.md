@@ -14,7 +14,7 @@
 - **Actor:** @missingbulb (owner).
 - **Model:** Claude
 - **Mechanism:** the same manifest at `.claudinite/local/packs/edfringe/`.
-- **Landed:** #101
+- **Landed:** #101, Refs missingbulb/Claudinite#394
 
 ## 2026-07-27 · scope-changed · the data pipeline split out as edfringe-data (#116)
 - **Source:** the weekly growth-discover-packs run (slot w2026-07-26), distilled from
@@ -50,7 +50,7 @@
 - **Landed:** #316, Closes #313
 
 ## 2026-09-05 · merged · edfringe, edfringe-data and edfringe-requirements become edfringe-now (#613)
-- **Source:** the fleet-wide one-local-pack-per-repo consolidation.
+- **Source:** the fleet-wide one-local-pack-per-repo consolidation, missingbulb/Claudinite#1691.
 - **Reason:** all three were declared by hand and none was fingerprinted, so a session loaded all
   three together on every turn; three manifests separated only which file a rule was typed into. The
   merged RULES.md (about 940 lines) was recorded on #612 as a known cost, its three surface headings
