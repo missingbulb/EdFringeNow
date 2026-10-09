@@ -1182,12 +1182,10 @@ def write_derived_outputs(master: list[dict], venues: dict, venues_path: Path,
 
     A withdrawn show (reconcile_withdrawn) stays in the master but is excluded
     from `active_shows(master)` below — the set that reaches the day files and
-    shows.min.json, the two surfaces a visitor can be sent to a 404 from. It
-    also feeds the availability sidecar, not just for that reason but because
-    its `k` join fingerprint has to be computed over exactly the shows
-    shows.min.json carries — a fingerprint built from a wider set than the
-    catalogue it is paired with would never match what the client recomputes
-    from its own copy (#309).
+    shows.min.json, the two surfaces a visitor can be sent to a 404 from. The
+    availability sidecar is built from it too: its `k` join fingerprint has to
+    cover exactly the shows shows.min.json carries, or it would never match
+    what the client recomputes from its own copy (#309).
 
     Also writes manifest.json (build_manifest) naming every file below by its
     hash, so a client can tell exactly which of them changed since it last
@@ -1236,8 +1234,8 @@ def write_derived_outputs(master: list[dict], venues: dict, venues_path: Path,
     # Compact planner payload (packed against the lookups just written), and the
     # two things it deliberately leaves behind: the availability that the
     # ticket refresh rewrites, and the descriptions too bulky to block on.
-    # All three are built from `active` — descriptions is the one exception,
-    # see build_descriptions's own call below.
+    # The catalogue and the availability sidecar are built from `active`;
+    # descriptions is the exception, explained at its call below.
     tracked(master_min_path, minify_master(active, genre_ix, room_ix, sub_ix,
                                            age_ix, venues))
     tracked(availability_path, build_availability(active))
