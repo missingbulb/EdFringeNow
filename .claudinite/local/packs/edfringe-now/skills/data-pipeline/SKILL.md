@@ -1,6 +1,6 @@
 ---
 name: data-pipeline
-description: EdFringeNow's data pipeline - getting show data out of edfringe.com into the committed files the site serves, and the wire format the pages decode. Use before touching scraper/, data/, site/data/, the scrape and price tasks, or the site code that decodes, prices or times performances.
+description: EdFringeNow's data pipeline from edfringe.com to the files the site serves, and the wire format pages decode. Use before touching scraper/, data/, site/data/ or the scrape and price tasks.
 metadata:
   body: guidelines
   force-load-on-file-edits-paths:

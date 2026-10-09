@@ -16,6 +16,7 @@ import (
 //	site/data/venues.json
 //	site/data/days/<YYYY-MM-DD>.json + site/data/days/index.json
 //	data/normalized/shows.json                   the master, which no page fetches
+//	site/data/manifest.json                      every file above with its content hash
 //
 // Both trees are scanned, because the hazard is the same on either side of
 // the publish boundary — worse on the published one, where an unowned file
@@ -45,6 +46,10 @@ var dataRoots = []string{"site/data/", "data/"}
 // stay strict for everything else. Do not add to this list — new data
 // comes from the normalizer.
 var allowedDataFiles = []string{"site/data/venues.json", "data/shows.json"}
+
+// normalizerFiles are normalize.py's outputs that fit no per-artefact
+// shape, so they are named: a lookalike beside one still trips the rule.
+var normalizerFiles = []string{"site/data/manifest.json"}
 
 // produced is a committed data file and the script in this repo that
 // writes it.
@@ -569,7 +574,7 @@ func producedFiles(ps []produced) []string {
 }
 
 func dataDirAllowed(f string) bool {
-	if contains(allowedDataFiles, f) || contains(producedFiles(allowedInputs), f) || contains(producedFiles(allowedOutputs), f) {
+	if contains(allowedDataFiles, f) || contains(normalizerFiles, f) || contains(producedFiles(allowedInputs), f) || contains(producedFiles(allowedOutputs), f) {
 		return true
 	}
 	for _, re := range allowedDataPatterns {
@@ -608,7 +613,7 @@ func dataDirIsGeneratorOutput(repo checksdk.Repo) []checksdk.Finding {
 			continue
 		}
 		finding.Fix = "delete " + f + " — everything under site/data/ and data/ is scraper/normalize.py's output " +
-			"(site/data/venues.json, site/data/normalized/*.json, site/data/days/*.json, data/normalized/shows.json), " +
+			"(site/data/venues.json, site/data/normalized/*.json, site/data/days/*.json, data/normalized/shows.json, site/data/manifest.json), " +
 			"plus the named scraper inputs (" + strings.Join(producedFiles(allowedInputs), ", ") + ") " +
 			"and the named outputs of this repo's other generators (" + strings.Join(producedFiles(allowedOutputs), ", ") + "). " +
 			"A probe informs the normalizer, it does not feed it: fix scraper/normalize.py and re-run it instead. " +

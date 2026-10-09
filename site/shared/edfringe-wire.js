@@ -6,26 +6,16 @@
  * generations. Both planners read Edinburgh through it: the Fringe planner
  * (plan/plan.js) and the festival planner, via shared/festival-catalogue.js.
  *
- * The three are split the way they are so each can be cached for as long as its
- * contents actually last (shared/data-cache.js):
- *
- *  - the catalogue is the bulkiest blocking download (3.0 MB, 948 KB gzipped)
- *    and carries nothing that changes through the day, so four days of reuse
- *    costs a returning visitor only the shows added since;
- *  - availability is the one file that changes through the festival, so a day
- *    is the most it can be trusted — and it is far smaller than the catalogue,
- *    so the daily re-download is cheap;
- *  - venues.json is small and its lookup lists are append-only, so refetching
- *    it daily keeps it at least as new as any cached catalogue that indexes
- *    into it.
+ * Whether a cached copy of each may be reused is decided by data/manifest.json
+ * (shared/data-cache.js): a file is re-fetched exactly when its published hash
+ * has moved. That is why availability is split out of the catalogue — the
+ * catalogue is the bulkiest blocking download and carries nothing that changes
+ * through the day, so it is only re-downloaded when a show is actually added or
+ * changed, while availability's own hash moves with the ticket refresh.
  */
 
-import { cachedFetchJson, evictCached, DAY_MS } from "./data-cache.js";
+import { cachedFetchJson, evictCached, fetchManifest } from "./data-cache.js";
 import { rehydrateShows, joinFingerprint } from "../plan/lib/hydrate.js";
-
-export const CATALOGUE_TTL_MS = 4 * DAY_MS;
-export const AVAILABILITY_TTL_MS = DAY_MS;
-export const LOOKUPS_TTL_MS = DAY_MS;
 
 /* What each file has to look like before we'll build a planner out of it.
  *
@@ -44,11 +34,11 @@ const isAvailabilitySidecar = (d) =>
 /* How much of the catalogue must come back with a ticket status before we are
  * willing to draw it.
  *
- * The catalogue is cached for four days and the sidecar for one, so they are
- * routinely joined across generations, and a few misses are the honest cost of
- * that: a show that added or dropped a date since the catalogue was packed
- * finds no status, which is exactly what the date-and-time naming scheme was
- * designed to do. Real drift over four days is a fraction of a percent.
+ * A cached catalogue can still be joined to a sidecar from another publish
+ * (see loadEdfringeWire), and a few misses are the honest cost of that: a show
+ * that added or dropped a date since the catalogue was packed finds no status,
+ * which is exactly what the date-and-time naming scheme was designed to do.
+ * Real drift between publishes is a fraction of a percent.
  *
  * A systematic key change is a different animal. #274 corrected every start
  * time by an hour, and the next day's sidecar matched 6% of the previous day's
@@ -111,22 +101,26 @@ function joinIsSound(wire, availability, catalogue) {
  * a festival that is very much on sale (#309).
  *
  * The retry is the substance. A generation disagreement is not a network failure
- * and not a corrupt file — it is two perfectly good files that have drifted
- * apart on their separate TTLs, and the fix is simply to go and get today's, so
- * that is what happens. Only if freshly-downloaded copies *still* disagree is
- * this a real failure: at that point we genuinely don't know what's bookable,
- * and a wrong plan is worse than no plan.
+ * and not a corrupt file — the manifest narrows when this can even happen (both
+ * files are re-fetched together the moment either one's hash moves), but
+ * doesn't rule it out: a deploy landing between the manifest fetch and the data
+ * fetches it drives can still hand back a pair from two different publishes.
+ * The fix is simply to go and get today's — a fresh manifest and fresh copies
+ * of both. Only if that *still* disagrees is this a real failure: at that point
+ * we genuinely don't know what's bookable, and a wrong plan is worse than no
+ * plan.
  *
- * @param {{catalogue: string, lookups: string, availability: string}} urls
+ * @param {{catalogue: string, lookups: string, availability: string, manifest: string}} urls
  * @param {{year: number, onNote?: (err: unknown, url: string) => void}} opts
  * @returns {Promise<{lookups: object, catalogue: object[]}>}
  */
 export async function loadEdfringeWire(urls, { year, onNote } = {}) {
   for (const attempt of [1, 2]) {
+    const manifest = await fetchManifest(urls.manifest, onNote);
     const [wire, lookups, availability] = await Promise.all([
-      cachedFetchJson(urls.catalogue, CATALOGUE_TTL_MS, onNote, isCatalogue),
-      cachedFetchJson(urls.lookups, LOOKUPS_TTL_MS, onNote, isLookups),
-      cachedFetchJson(urls.availability, AVAILABILITY_TTL_MS, onNote, isAvailabilitySidecar),
+      cachedFetchJson(urls.catalogue, manifest, onNote, isCatalogue),
+      cachedFetchJson(urls.lookups, manifest, onNote, isLookups),
+      cachedFetchJson(urls.availability, manifest, onNote, isAvailabilitySidecar),
     ]);
     const catalogue = rehydrateShows(wire, lookups, year, availability);
     const verdict = joinIsSound(wire, availability, catalogue);
@@ -138,9 +132,8 @@ export async function loadEdfringeWire(urls, { year, onNote } = {}) {
       );
     }
     // Drop both and go again. Which of the two is stale isn't knowable from
-    // here — the catalogue's four-day TTL makes it the usual suspect, but a
-    // sidecar can be the stale one too — and this costs one extra download of
-    // each on a path that only runs when they've already disagreed.
+    // here, and this costs one extra download of each on a path that only
+    // runs when they've already disagreed.
     console.warn("Fringe catalogue/availability mismatch, refetching both —", verdict.why);
     await Promise.all([evictCached(urls.catalogue), evictCached(urls.availability)]);
   }

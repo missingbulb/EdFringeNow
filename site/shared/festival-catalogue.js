@@ -18,6 +18,7 @@
 
 import { showUrl } from "./edfringe.js";
 import { loadEdfringeWire } from "./edfringe-wire.js";
+import { manifestUrlFor } from "./data-cache.js";
 
 export const SCHEMA_VERSION = 1;
 export const INDEX_URL = "/data/festivals/index.json";
@@ -49,7 +50,12 @@ export async function loadEdition(festivalEntry, edition, { onNote } = {}) {
   if (edition.format === "block") return loadFestival(edition.dataUrl);
   if (edition.format === "edfringe-wire") {
     const { catalogue, lookups } = await loadEdfringeWire(
-      { catalogue: edition.dataUrl, lookups: edition.wire.lookups, availability: edition.wire.availability },
+      {
+        catalogue: edition.dataUrl,
+        lookups: edition.wire.lookups,
+        availability: edition.wire.availability,
+        manifest: manifestUrlFor(edition.dataUrl),
+      },
       { year: Number(edition.id), onNote }
     );
     return adaptEdfringe({ catalogue, lookups }, festivalEntry, edition);

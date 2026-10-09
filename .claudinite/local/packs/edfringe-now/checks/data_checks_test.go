@@ -227,6 +227,12 @@ func TestDataDirIsGeneratorOutput(t *testing.T) {
 	expect(t, "a lookalike of the named input", fs, "data/prices.backup.json")
 	saysAll(t, "the fix names the allowed inputs", fs, "data/prices.json")
 
+	// manifest.json is written by normalize.py itself, named rather than
+	// shaped: a sibling beside it still trips the rule.
+	expect(t, "the normalizer's manifest", run(t, dataDirIsGeneratorOutput, plus("site/data/manifest.json")), "")
+	expect(t, "a lookalike of the manifest", run(t, dataDirIsGeneratorOutput,
+		plus("site/data/manifest.backup.json")), "site/data/manifest.backup.json")
+
 	expect(t, "a second generator's named output", run(t, dataDirIsGeneratorOutput,
 		plus("site/data/festivals/jerusalem-comedy/2026.json")), "")
 	fs = run(t, dataDirIsGeneratorOutput, plus("site/data/festivals/jerusalem-comedy/2027.json"))

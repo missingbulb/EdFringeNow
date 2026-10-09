@@ -1,6 +1,6 @@
 ---
 name: requirements-harness
-description: How EdFringeNow runs product/requirements.md as tests under a real headless Chromium - writing leaves and goldens, the harness's determinism traps, the frozen fixtures and golden approval. Use before editing product/requirements.md or anything under product/requirements/.
+description: How EdFringeNow runs product/requirements.md as tests in headless Chromium: leaves, goldens, determinism traps, fixtures and approval. Use before editing product/requirements.md or product/requirements/.
 metadata:
   body: guidelines
   force-load-on-file-edits-paths:
@@ -95,6 +95,11 @@ and the local approval and fixture policy.
 
 - **Capturing a floating popup** — set `viewportOnly: true`: a full-page capture scrolls, and
   scrolling dismisses tips, legends and pops. (floating-popup-dies)
+
+- **Shooting a frame after an earlier step scrolled the page** (an animated/saga sequence) — a
+  full-page shot paints the sticky `.site-header` wherever the scroll left it, over the content
+  below; go through `capture-tools.js`'s `clip()`/`shootInFlow`, which pins it back into flow for
+  the shot, rather than calling `page.screenshot` directly. (header-paints-after-scroll)
 
 - **Waiting for a page to be ready** — wait on the observable state the pages settle into (the
   footer version popup's text, the search placeholder's show count; `case-helpers.js`) plus

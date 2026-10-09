@@ -16,3 +16,10 @@
 - **Model:** Claude Opus 5.5
 - **Mechanism:** the force-load paths swap the two deleted workflows for the two data-writing task
   folders and `worker-lib.sh`.
+
+## 2026-10-09 · trigger-changed · description cut to the 30-word limit
+- **Reason:** `basics/skill-description-length` flagged the description as running past 30 words,
+  which every session pays for whether the skill loads or not.
+- **Actor:** @missingbulb (owner), asking for the open issues and findings to be cleaned up.
+- **Mechanism:** the description keeps only what decides whether to reach for the skill; the
+  force-load paths are unchanged.
