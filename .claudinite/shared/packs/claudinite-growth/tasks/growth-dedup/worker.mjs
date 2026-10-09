@@ -21,10 +21,7 @@
 // is the whole life the brief has. A standing issue would outlive it by a week and
 // then hold a stale window.
 
-import { writeFileSync } from 'node:fs';
-import { pathToFileURL } from 'node:url';
-import { makeGh } from '../../../claudinite-tasks/public/github.mjs';
-import { loadConfig } from '../../../../engine/checks/helpers/repo-context.mjs';
+import { git, github, packs } from '@claudinite/sdk';
 
 const log = (s) => console.log(`growth-dedup code_work: ${s}`);
 
@@ -77,7 +74,7 @@ export function addedCheckIds(patch) {
 
 /**
  * What the declared canon packs gained in the window. Pure over the commit
- * records (`{ sha, message, files: [{ filename, patch }] }`) the API returns.
+ * records (`{ sha, files: [{ filename, patch }] }`) the window's commits yield.
  *
  * ADDITIONS ONLY. A line the canon REMOVED can never justify a prune — coverage
  * the canon just dropped is coverage that is gone, and a local item carrying it
@@ -98,7 +95,7 @@ export function summarizeCanonWindow(commits, declaredPacks) {
       const entry = (packs[pack] ??= { files: {}, newCheckIds: [] });
       const file = entry.files[f.filename] ?? (fileCount += 1, entry.files[f.filename] = { added: [], patchUnavailable: false });
 
-      // GitHub omits `patch` on a very large diff. Say so rather than record the
+      // A binary diff carries no `patch`. Say so rather than record the
       // file as having added nothing — "the canon did not move here" is the one
       // claim this brief must never make falsely.
       if (typeof f.patch !== 'string') { file.patchUnavailable = true; continue; }
@@ -151,7 +148,7 @@ export function renderBrief(summary, { sinceIso }) {
     }
     push('Files that moved:', '');
     for (const [path, file] of Object.entries(files)) {
-      const note = file.patchUnavailable ? ' — no patch (diff too large); read the file whole'
+      const note = file.patchUnavailable ? ' — no text patch (a binary diff); read the file whole'
         : file.added.length ? '' : ' — removals only, nothing added to prune against';
       push(`- \`${path}\`${note}`);
     }
@@ -201,47 +198,64 @@ export function handoffDetail(summary) {
 
 // --- the I/O shell -----------------------------------------------------------
 
-// Every window commit with its files resolved — the per-commit read is what
-// carries `patch`, which the listing does not.
-async function windowCommits(gh, repo, branch, sinceIso) {
-  const listed = await gh(`/repos/${repo}/commits?sha=${encodeURIComponent(branch)}&since=${sinceIso}&per_page=100`);
-  if (listed.status !== 200) throw new Error(`commit listing unreadable: GET commits returned ${listed.status}`);
+/** A `git diff`'s files as the commit records carry them, `patch` absent for a binary. */
+export function filesOfDiff(diff) {
   const out = [];
-  for (const c of listed.json ?? []) {
-    const { status, json } = await gh(`/repos/${repo}/commits/${c.sha}`);
-    if (status !== 200) continue; // one unreadable commit is a thinner brief, never a failed run
-    out.push({ sha: c.sha, message: json?.commit?.message ?? '', files: json?.files ?? [] });
+  for (const section of diff.split(/^(?=diff --git )/m)) {
+    const header = /^diff --git a\/.+? b\/(.+)$/m.exec(section);
+    if (!header) continue;
+    const binary = /^Binary files .* differ$/m.test(section);
+    out.push({ filename: header[1], ...(binary ? {} : { patch: section }) });
   }
   return out;
 }
 
-async function main() {
-  const repo = process.env.GITHUB_REPOSITORY || process.env.CLAUDINITE_REPO;
-  if (!repo || !repo.includes('/')) throw new Error('GITHUB_REPOSITORY is not set (owner/repo)');
-  if (!process.env.GITHUB_TOKEN) throw new Error('GITHUB_TOKEN is not set — the scheduler always provides it');
-  const root = process.env.CLAUDINITE_REPO_ROOT || process.cwd();
-  const branch = process.env.CLAUDINITE_DEFAULT_BRANCH || 'main';
-  const gh = makeGh();
+// Every window commit with the files it changed against its first parent. The
+// run's checkout may be shallow, so the branch is fetched back to the window and
+// one commit past it, the oldest window commit's parent; a commit whose parent is
+// still out of reach is a thinner brief, never a failed run, and never its whole
+// tree read as added.
+async function windowCommits(branch, sinceIso) {
+  const fetchBranch = (...args) => git('fetch', '--quiet', ...args, 'origin', branch);
+  const failed = (r) => new Error(`could not fetch ${branch}: ${r.stderr.trim()}`);
+  if ((await git('rev-parse', '--is-shallow-repository')).stdout.trim() === 'true') {
+    const back = await fetchBranch(`--shallow-since=${sinceIso}`);
+    // git refuses a shallow-since that selects nothing: the window holds no commit.
+    if (back.code !== 0 && /no commits selected/.test(back.stderr)) return [];
+    if (back.code !== 0) throw failed(back);
+    const parent = await fetchBranch('--deepen=1');
+    if (parent.code !== 0) throw failed(parent);
+  } else {
+    const plain = await fetchBranch();
+    if (plain.code !== 0) throw failed(plain);
+  }
+  const listed = await git('log', `--since=${sinceIso}`, '--format=%H', 'FETCH_HEAD');
+  if (listed.code !== 0) throw new Error(`commit listing unreadable: git log returned ${listed.code}: ${listed.stderr.trim()}`);
+  const out = [];
+  for (const sha of listed.stdout.split('\n').filter(Boolean)) {
+    const diff = await git('-c', 'core.quotePath=false', 'diff', '--no-color', '--no-ext-diff', '--no-renames', `${sha}^1`, sha);
+    if (diff.code !== 0) continue;
+    out.push({ sha, files: filesOfDiff(diff.stdout) });
+  }
+  return out;
+}
+
+export async function worker({ defaultBranch, item: workItem, log }) {
+  const branch = defaultBranch ?? 'main';
 
   const sinceIso = new Date(Date.now() - WINDOW_DAYS * 86400000).toISOString();
   // The repo's OWN declaration decides which packs are the yardstick: a canon
   // pack it does not declare contributes no prose, no checks and no coverage.
-  // `loadConfig` normalizes a local pack's `local/<id>` token to the bare id, so
-  // this list mixes both kinds — and needs no filter, since the mount roots
-  // `canonPackOf` matches exclude the local tree outright.
-  const declared = loadConfig(root).packs ?? [];
-  const summary = summarizeCanonWindow(await windowCommits(gh, repo, branch, sinceIso), declared);
+  // The engine's list holds local packs too, by bare id, and needs no filter,
+  // since the mount roots `canonPackOf` matches exclude the local tree outright.
+  const declared = (await packs()).map((p) => p.id);
+  const summary = summarizeCanonWindow(await windowCommits(branch, sinceIso), declared);
 
-  // The brief, onto the run's OWN work item. `CLAUDINITE_ITEM` is the number the
-  // queue hands every code-work run; without it there is nowhere to put the brief
-  // and the agentic phase would start from nothing, so this is a hard failure.
-  const item = process.env.CLAUDINITE_ITEM;
-  if (!item) throw new Error('CLAUDINITE_ITEM is not set — nowhere to post the window brief');
-  const posted = await gh(`/repos/${repo}/issues/${item}/comments`, {
-    method: 'POST',
-    body: { body: renderBrief(summary, { sinceIso }) },
-  });
-  if (posted.status >= 300) throw new Error(`could not post the window brief to #${item}: POST returned ${posted.status}`);
+  // The brief, onto the run's OWN work item. The queue hands every code-work run its
+  // number; without it there is nowhere to put the brief and the agentic phase would
+  // start from nothing, so this is a hard failure.
+  const item = workItem.number;
+  await github.createComment({ issue: item, body: renderBrief(summary, { sinceIso }) });
   const detail = handoffDetail(summary);
   log(`window brief posted to work item #${item} — ${detail}`);
 
@@ -249,15 +263,7 @@ async function main() {
   // empty canon window still leaves the repo's fresh local items to re-check, so
   // there is no condition here to re-litigate — only work code-work cannot do:
   // judging whether an added canon line genuinely covers a local item.
-  const requestPath = process.env.CLAUDINITE_REQUEST_AGENT;
-  if (!requestPath) throw new Error('CLAUDINITE_REQUEST_AGENT is not set — cannot hand off to the agentic phase');
   // No `delivered`: the brief is a comment on the item the agentic phase is already
   // reading, so there is no artifact identity this run has to hand over.
-  writeFileSync(requestPath, JSON.stringify({
-    reason: { code: 'canon-window-diff', detail },
-  }));
-}
-
-if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  main().catch((e) => { console.error(`growth-dedup code_work failed: ${e.message}`); process.exit(1); });
+  return { requestAgent: { reason: { code: 'canon-window-diff', detail } } };
 }

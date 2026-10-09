@@ -1,0 +1,1337 @@
+{
+ "v": 1,
+ "city": {
+  "id": "santa-ana",
+  "name": "Santa Ana",
+  "country": "US",
+  "lat": 33.7455,
+  "lng": -117.8677,
+  "timezone": "America/Los_Angeles"
+ },
+ "places": [
+  {
+   "id": "osm:way/144689623",
+   "name": "Santa Ana Zoo at Prentice Park",
+   "nameEn": null,
+   "kind": "zoo",
+   "lat": 33.743745,
+   "lng": -117.842009,
+   "address": "1801 East Chestnut Avenue, 92701",
+   "website": null,
+   "wikidata": "Q7419178",
+   "wikipedia": null,
+   "description": "zoo in Santa Ana, California",
+   "image": "Santa Ana Zoo Ibis.jpg",
+   "notability": 4,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/144686934",
+   "name": "Adams Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 33.716347,
+   "lng": -117.89704,
+   "address": "2302 South Raitt Street, 92704",
+   "website": "https://www.santa-ana.org/adams-park/",
+   "wikidata": "Q49471878",
+   "wikipedia": null,
+   "description": "park in Orange County, California, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/206232556",
+   "name": "Avila's El Ranchito",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 33.786232,
+   "lng": -117.852351,
+   "address": "182 South Orange Street, 92866",
+   "website": null,
+   "wikidata": "Q5452476",
+   "wikipedia": "en:First Baptist Church of Orange",
+   "description": "church building in California, United States of America",
+   "image": "First Baptist Church of Orange.jpg",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/144688671",
+   "name": "Birch Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 33.746694,
+   "lng": -117.871607,
+   "address": null,
+   "website": "https://www.santa-ana.org/birch-park/",
+   "wikidata": "Q49474826",
+   "wikipedia": null,
+   "description": "park in Orange County, California, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/144689809",
+   "name": "Cabrillo Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 33.751708,
+   "lng": -117.839787,
+   "address": null,
+   "website": "https://www.santa-ana.org/cabrillo-park/",
+   "wikidata": "Q49476472",
+   "wikipedia": null,
+   "description": "park in Orange County, California, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/144687095",
+   "name": "Carl Thornton Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 33.709586,
+   "lng": -117.893363,
+   "address": null,
+   "website": "https://www.santa-ana.org/carl-thornton-park/",
+   "wikidata": "Q49476964",
+   "wikipedia": null,
+   "description": "park in Orange County, California, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/166973043",
+   "name": "Centennial Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 33.72232,
+   "lng": -117.819505,
+   "address": "14722 Devonshire Avenue, 92780",
+   "website": "https://www.tustinca.org/Facilities/Facility/Details/Centennial-Park-12",
+   "wikidata": "Q49477416",
+   "wikipedia": null,
+   "description": "park in Tustin, California",
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/1189757785",
+   "name": "Columbus Tustin Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 33.74976,
+   "lng": -117.821415,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49479424",
+   "wikipedia": null,
+   "description": "park in Orange County, California, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/144688386",
+   "name": "Delhi Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 33.714907,
+   "lng": -117.860848,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49482651",
+   "wikipedia": null,
+   "description": "park in Orange County, California, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/144690737",
+   "name": "Fisher Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 33.771318,
+   "lng": -117.875038,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49489567",
+   "wikipedia": null,
+   "description": "park in Orange County, California, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/211229233",
+   "name": "Flower Street Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 33.744921,
+   "lng": -117.875409,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49489994",
+   "wikipedia": null,
+   "description": "park in Orange County, California, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/144689123",
+   "name": "French Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 33.752994,
+   "lng": -117.864292,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49491975",
+   "wikipedia": null,
+   "description": "park in Orange County, California, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/166974304",
+   "name": "Frontier Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 33.732324,
+   "lng": -117.818699,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49492250",
+   "wikipedia": null,
+   "description": "park in Orange County, California, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/144682154",
+   "name": "Hart Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 33.777427,
+   "lng": -117.850926,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49498495",
+   "wikipedia": null,
+   "description": "park in Orange County, California, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/206873457",
+   "name": "Hilbert Museum of California Art",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 33.788992,
+   "lng": -117.856599,
+   "address": null,
+   "website": "https://hilbertmuseum.org/",
+   "wikidata": "Q96381044",
+   "wikipedia": "en:Hilbert Museum of California Art",
+   "description": "contemporary art museum in Orange, California",
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": "We-Su 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/144688101",
+   "name": "Lillie King Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 33.704034,
+   "lng": -117.874171,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49516668",
+   "wikipedia": null,
+   "description": "park in Orange County, California, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/144689917",
+   "name": "Mabury Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 33.755046,
+   "lng": -117.842722,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49520403",
+   "wikipedia": null,
+   "description": "park in Orange County, California, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/144690842",
+   "name": "Morrison Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 33.775242,
+   "lng": -117.879493,
+   "address": "2801 Westwood Avenue, 92706",
+   "website": null,
+   "wikidata": "Q49515970",
+   "wikipedia": null,
+   "description": "park in Orange County, California, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/166974509",
+   "name": "Pepper Tree Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 33.744962,
+   "lng": -117.825517,
+   "address": "230 South C Street, 92780",
+   "website": null,
+   "wikidata": "Q49541317",
+   "wikipedia": null,
+   "description": "park in the United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/144682395",
+   "name": "Plaza Square Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 33.78788,
+   "lng": -117.853099,
+   "address": "99 Plaza Square, 92866",
+   "website": null,
+   "wikidata": "Q49544084",
+   "wikipedia": null,
+   "description": "park in Orange County, California, United States of America",
+   "image": "Park in the center of Old Town Orange in Orange County, California LCCN2013633273.tif",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/144690182",
+   "name": "Portola Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 33.765777,
+   "lng": -117.843836,
+   "address": "1700 East Santa Clara Avenue, 92705",
+   "website": null,
+   "wikidata": "Q49473263",
+   "wikipedia": null,
+   "description": "park in Orange County, California, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/144682568",
+   "name": "Santa Fe Depot Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 33.788264,
+   "lng": -117.857197,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49557694",
+   "wikipedia": null,
+   "description": "park in the United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/112268504",
+   "name": "Santiago Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 33.773553,
+   "lng": -117.860921,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49557858",
+   "wikipedia": null,
+   "description": "park in Orange County, California, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/144688973",
+   "name": "Sasscer Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 33.748239,
+   "lng": -117.873257,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49557989",
+   "wikipedia": null,
+   "description": "park in Orange County, California, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/144690998",
+   "name": "William W Eldridge Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 33.777829,
+   "lng": -117.876944,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49581157",
+   "wikipedia": null,
+   "description": "park in Orange County, California, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/394467028",
+   "name": "Discovery Science Center",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 33.770497,
+   "lng": -117.868103,
+   "address": "2500 Main Street, 92706",
+   "website": "https://discoverycube.org/",
+   "wikidata": "Q5281966",
+   "wikipedia": "en:Discovery Cube Orange County",
+   "description": "science museum in Santa Ana, California, United States",
+   "image": "Disc-ext2.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/58560759",
+   "name": "Madison Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 33.727937,
+   "lng": -117.857421,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49520616",
+   "wikipedia": null,
+   "description": "park in Orange County, California, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/7350741",
+   "name": "Bowers Museum of Cultural Art",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 33.76338,
+   "lng": -117.868245,
+   "address": "2002 North Main Street, 92706",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6422834065",
+   "name": "Bristol Warner Marketplace",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 33.717886,
+   "lng": -117.885975,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9432239682",
+   "name": "Chemers Art Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 33.758662,
+   "lng": -117.827951,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/986013306",
+   "name": "City of Orange Historic Fire Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 33.785874,
+   "lng": -117.845116,
+   "address": "800 East Almond Avenue, 92866",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9330257478",
+   "name": "Grand Central Art Center",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 33.746066,
+   "lng": -117.869011,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/741080732",
+   "name": "Heritage Museum of Orange County",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 33.721848,
+   "lng": -117.90954,
+   "address": "3101 West Harvard Street, 92704",
+   "website": "https://heritagemuseumoc.org",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/440953526",
+   "name": "Marconi Automotive Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 33.720974,
+   "lng": -117.831378,
+   "address": "1302 Industrial Drive, 92780",
+   "website": "https://marconimuseum.org/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Sa 09:00 - 16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/9435349183",
+   "name": "Noah Fine Art",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 33.774785,
+   "lng": -117.867003,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9330257486",
+   "name": "Orange County Center for Contemporary Art",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 33.746127,
+   "lng": -117.868428,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9435349182",
+   "name": "Seeds Fine Art Exhibits",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 33.786845,
+   "lng": -117.85328,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11984476850",
+   "name": "Tustin Historical Society",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 33.742333,
+   "lng": -117.823467,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/839528256",
+   "name": "Tustin Legacy Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 33.705514,
+   "lng": -117.838659,
+   "address": "92780",
+   "website": "https://www.tustinca.org/Facilities/Facility/Details/Tustin-Legacy-Park-7",
+   "wikidata": "Q140968434",
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/558632569",
+   "name": "Veterans Sports Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 33.716192,
+   "lng": -117.82814,
+   "address": "15445 Lansdowne Road, 92782",
+   "website": "https://tustinca.org/1136/Veterans-Sports-Park",
+   "wikidata": "Q140971107",
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  }
+ ],
+ "near": "venues",
+ "stay": [
+  {
+   "id": "osm:way/348506469",
+   "name": "Santa Ana Travel Inn",
+   "nameEn": null,
+   "kind": "motel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 33.762771,
+   "lng": -117.867175,
+   "address": "2005 North Main Street, 92706",
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 118,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/932758278",
+   "name": "Golden West Lodge",
+   "nameEn": null,
+   "kind": "motel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 33.766488,
+   "lng": -117.867866,
+   "address": "2222 North Main Street, 92706",
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 348,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:relation/6143784",
+   "name": "Red Roof Inn Santa Ana",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 33.77179,
+   "lng": -117.868345,
+   "address": "2600 North Main Street, 92705",
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 936,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/932754035",
+   "name": "El Cortez Lodge",
+   "nameEn": null,
+   "kind": "motel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 33.746199,
+   "lng": -117.848446,
+   "address": "1503 East 1st Street, 92701",
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 1568,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:way/992333312",
+   "name": "Holiday Inn Express",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 33.744807,
+   "lng": -117.846781,
+   "address": "1600 East 1st Street, 92701",
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 1747,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:way/932758974",
+   "name": "Civic Center Inn",
+   "nameEn": null,
+   "kind": "motel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 33.774258,
+   "lng": -117.853708,
+   "address": "2720 North Grand Avenue, 92705",
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 1808,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:way/932753455",
+   "name": "Motel 6 Santa Ana, CA",
+   "nameEn": null,
+   "kind": "motel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 33.745989,
+   "lng": -117.845504,
+   "address": "1623 East 1st Street, 92701",
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 1841,
+   "venuesNear": 0
+  }
+ ],
+ "eat": [
+  {
+   "id": "osm:node/13309075297",
+   "name": "Sivar Treats",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "mexican"
+   ],
+   "lat": 33.748172,
+   "lng": -117.866044,
+   "address": "201 East 4th Street, 92701-4688",
+   "website": "https://sivartreats.com/",
+   "wikidata": null,
+   "openingHours": "Mo 11:00-14:00; Fr-Sa 11:00-21:00; Su,Tu,We,Th 11:00-20:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "14:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "21:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su",
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "20:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 74,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/5368978005",
+   "name": "4th Street Market",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "american",
+    "asian",
+    "burger",
+    "chicken",
+    "chinese",
+    "coffee_shop",
+    "greek",
+    "ice_cream",
+    "international",
+    "kebab",
+    "mexican",
+    "pizza",
+    "sandwich",
+    "seafood",
+    "thai"
+   ],
+   "lat": 33.747648,
+   "lng": -117.866747,
+   "address": "201 East 4th Street, 92701",
+   "website": "https://www.4thstreetmarket.com",
+   "wikidata": null,
+   "openingHours": "Mo-Th, Su 11:00-21:00;Fr-Sa 11:00-22:00",
+   "hours": null,
+   "toVenueM": 148,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/14155582301",
+   "name": "Tacos Los Cholos",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "mexican"
+   ],
+   "lat": 33.748224,
+   "lng": -117.86686,
+   "address": "113 East 4th Street, 92701",
+   "website": "https://www.tacosloscholos.net/santaana.html",
+   "wikidata": null,
+   "openingHours": "Mo-Th 11:00-24:00; Fr-Sa 11:00-25:00; Su 11:00-22:00",
+   "hours": null,
+   "toVenueM": 149,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/14222546801",
+   "name": "Fat of the Land",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "spanish"
+   ],
+   "lat": 33.75086,
+   "lng": -117.867769,
+   "address": "700 North Main Street, 92701",
+   "website": "https://www.fatofthelandbar.com/",
+   "wikidata": null,
+   "openingHours": "Su 16:00-21:00; Mo-We 17:00-22:00; Th 16:00-22:00; Fr-Sa 16:00-23:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "16:00",
+       "21:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we"
+     ],
+     "spans": [
+      [
+       "17:00",
+       "22:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "th"
+     ],
+     "spans": [
+      [
+       "16:00",
+       "22:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "16:00",
+       "23:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 384,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/14155567601",
+   "name": "Loosies Pizza",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "pizza"
+   ],
+   "lat": 33.747763,
+   "lng": -117.86548,
+   "address": "300 East 4th Street, 92701",
+   "website": null,
+   "wikidata": null,
+   "openingHours": "We,Th 12:00-22:00; Fr,Sa 12:00-24:00; Su 12:00-20:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "22:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "24:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "20:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 44,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/3195181710",
+   "name": "Playground",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": null,
+   "lat": 33.747853,
+   "lng": -117.865747,
+   "address": null,
+   "website": "http://playgrounddtsa.com/",
+   "wikidata": null,
+   "openingHours": "Tu-Th 17:00-22:00; Fr,Sa 17:00-24:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "17:00",
+       "22:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "17:00",
+       "24:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 54,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/4931685695",
+   "name": "Tangata At The Bowers Museum",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "sandwich"
+   ],
+   "lat": 33.76325,
+   "lng": -117.868189,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 14,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/5351859458",
+   "name": "Taquerias Guadalajara",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "mexican"
+   ],
+   "lat": 33.74812,
+   "lng": -117.865449,
+   "address": "305 East 4th Street, 92701",
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 18,
+   "venuesNear": 1
+  }
+ ],
+ "trips": [
+  {
+   "name": "Orange",
+   "page": "Orange (California)",
+   "url": "https://en.wikivoyage.org/wiki/Orange_%28California%29",
+   "description": null,
+   "lat": 33.803,
+   "lng": -117.822,
+   "km": 8
+  },
+  {
+   "name": "Costa Mesa",
+   "page": "Costa Mesa",
+   "url": "https://en.wikivoyage.org/wiki/Costa_Mesa",
+   "description": null,
+   "lat": 33.665,
+   "lng": -117.9122,
+   "km": 10
+  },
+  {
+   "name": "Anaheim",
+   "page": "Anaheim",
+   "url": "https://en.wikivoyage.org/wiki/Anaheim",
+   "description": "Anaheim location of Disneyland",
+   "lat": 33.83,
+   "lng": -117.92,
+   "km": 11
+  },
+  {
+   "name": "Buena Park",
+   "page": "Buena Park",
+   "url": "https://en.wikivoyage.org/wiki/Buena_Park",
+   "description": "Buena Park location of Knott's Berry Farm",
+   "lat": 33.8538,
+   "lng": -117.9927,
+   "km": 17
+  }
+ ],
+ "guide": {
+  "page": "Santa Ana (California)",
+  "url": "https://en.wikivoyage.org/wiki/Santa_Ana_%28California%29"
+ },
+ "licences": {
+  "osm": {
+   "name": "ODbL",
+   "url": "https://opendatacommons.org/licenses/odbl/",
+   "attribution": "© OpenStreetMap contributors",
+   "credit": "https://www.openstreetmap.org/copyright"
+  },
+  "wikidata": {
+   "name": "CC0",
+   "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "attribution": "Wikidata"
+  },
+  "wikivoyage": {
+   "name": "CC BY-SA 4.0",
+   "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "attribution": "Wikivoyage contributors"
+  }
+ },
+ "provenance": {
+  "osm": {
+   "fetchedAt": "2026-10-02T20:38:00Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikidata": {
+   "fetchedAt": "2026-10-02T20:38:00Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "amenities": {
+   "fetchedAt": "2026-10-02T20:38:59Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikivoyage": {
+   "fetchedAt": "2026-10-02T20:39:05Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  }
+ }
+}

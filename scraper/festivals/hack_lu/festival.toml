@@ -1,0 +1,61 @@
+# hack.lu: who it is, its editions, and the sources an edition's information
+# block is assembled from. The contract every key follows is
+# scraper/festivals/README.md.
+#
+# The CIRCL-run computer security conference, every year at the Parc Hotel in
+# Dommeldange.
+
+id = "hack-lu"
+name = "hack.lu"
+city = "Luxembourg"
+country = "LU"
+# The city's centre, for the festival timeline and travel maths between
+# cities; the venue carries its own coordinates.
+lat = 49.6116
+lng = 6.1319
+timezone = "Europe/Luxembourg"
+lang = "en"
+dir = "ltr"
+kind = "academic"
+subtypes = ["academic-computer-security"]
+default_genre = "talk"
+site = "https://hack.lu"
+wikidata = "Q5637157"
+
+[ticketing]
+model = "festival-pass"
+url = "https://pretix.eu/circl/2026.hack.lu/"
+notes = "One conference ticket, sold on pretix, covers every talk and workshop; the info page links the shop."
+
+[[edition]]
+id = "2026"
+# hack.lu's own blog announces the 2026 agenda as "the 20th Edition".
+ordinal = 20
+format = "block"
+# The schedule export's own start and end.
+first = "2026-10-20"
+last = "2026-10-23"
+sources = ["venues-research", "pretalx"]
+
+# Where the building is: the schedule knows only its rooms.
+[[source]]
+id = "venues-research"
+kind = "curated"
+roles = ["venues"]
+required = true
+path = "curated/venues.json"
+adapter = "hack_lu/venues_research.py"
+
+[[source]]
+id = "pretalx"
+kind = "fetched"
+roles = ["events", "performances", "venues"]
+required = true
+fetcher = "sources/pretalx/fetch.py"
+adapter = "hack_lu/pretalx.py"
+
+# The research names and places the building, pretalx its rooms.
+[merge]
+venues = ["venues-research", "pretalx"]
+events = ["pretalx"]
+performances = ["pretalx"]

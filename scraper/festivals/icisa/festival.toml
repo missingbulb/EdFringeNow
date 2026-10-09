@@ -1,0 +1,60 @@
+# ICISA, the international conference of the Israel Society of Anesthesiologists:
+# its identity, its editions, and the sources an edition's information block is
+# assembled from. Every key follows the contract in scraper/festivals/README.md.
+
+id = "icisa"
+name = "ICISA, International Conference of the Israel Society of Anesthesiologists"
+name_local = "הכנס הבינלאומי של איגוד הרופאים המרדימים"
+city = "Tel Aviv"
+country = "IL"
+# The David InterContinental, the 2026 venue (OSM way 90846147), for the
+# festival timeline and the travel maths between cities.
+lat = 32.0654
+lng = 34.7637
+timezone = "Asia/Jerusalem"
+# The programme is published in English.
+lang = "en"
+dir = "ltr"
+kind = "academic"
+subtypes = ["academic-medicine"]
+default_genre = "talk"
+site = "https://www.icisa2026.com/"
+
+# Admission is a conference registration; no session is sold on its own, so
+# performance prices stay null.
+[ticketing]
+model = "festival-pass"
+url = "https://icisa2026-reg.forms-wizard.biz/users/new"
+notes = "Registration through the conference's local and international registration forms (forms-wizard.biz); the site publishes payment terms and a cancellation policy, and no session is sold on its own."
+source = "https://www.icisa2026.com/localregistration"
+
+[[edition]]
+id = "2026"
+format = "block"
+# ordinal: the site prints none.
+first = "2026-11-17"
+last = "2026-11-19"
+sources = ["programme-pdf", "venues-research"]
+
+[[source]]
+id = "programme-pdf"
+kind = "fetched"
+roles = ["events", "performances", "venues"]
+required = true
+fetcher = "sources/programme-pdf/fetch.py"
+adapter = "icisa/programme_pdf.py"
+
+[[source]]
+id = "venues-research"
+kind = "curated"
+roles = ["venues"]
+required = true
+path = "curated/venues.json"
+adapter = "platforms/curated_venues.py"
+
+# Field precedence per section: for each field, the first source listed here that
+# supplies it wins.
+[merge]
+venues = ["venues-research", "programme-pdf"]
+events = ["programme-pdf"]
+performances = ["programme-pdf"]

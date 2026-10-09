@@ -1,0 +1,62 @@
+# Electricity & Energy, the annual convention of SEEEI (the Society of Electrical
+# and Electronics Engineers in Israel), in Eilat: its identity, its editions, and
+# the sources an edition's information block is assembled from. Every key
+# follows the contract in scraper/festivals/README.md.
+
+id = "seeei-electricity-energy"
+name = "Electricity & Energy, the SEEEI Annual Convention"
+name_local = "חשמל ואנרגיה, הכנס השנתי של אגודת מהנדסי החשמל והאלקטרוניקה בישראל"
+city = "Eilat"
+country = "IL"
+# The Herods Boutique hotel (OSM way 852999384), where most sessions meet, for
+# the festival timeline and the travel maths between cities.
+lat = 29.5492
+lng = 34.9675
+timezone = "Asia/Jerusalem"
+# The programme is published in English.
+lang = "en"
+dir = "ltr"
+kind = "academic"
+subtypes = ["academic-engineering"]
+default_genre = "talk"
+site = "https://www.electricity2026.com/en"
+
+# Admission is a convention registration; no session is sold on its own, so
+# performance prices stay null.
+[ticketing]
+model = "festival-pass"
+url = "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en"
+notes = "Registration through the convention's EventAct form, with hotel packages for full participants; on-site registration at the Herods Palace and Dan Eilat desks costs more. The site's fee page still shows the 2025 convention's text, so no figure is quoted here."
+source = "https://www.electricity2026.com/en/%D7%94%D7%A8%D7%A9%D7%9E%D7%94"
+
+[[edition]]
+id = "2026"
+format = "block"
+# ordinal: the only count the site prints ("held for the 25th time") sits in
+# text left over from the 2025 convention.
+first = "2026-11-10"
+last = "2026-11-13"
+sources = ["programme-pdf", "venues-research"]
+
+[[source]]
+id = "programme-pdf"
+kind = "fetched"
+roles = ["events", "performances", "venues"]
+required = true
+fetcher = "sources/programme-pdf/fetch.py"
+adapter = "seeei/programme_pdf.py"
+
+[[source]]
+id = "venues-research"
+kind = "curated"
+roles = ["venues"]
+required = true
+path = "curated/venues.json"
+adapter = "platforms/curated_venues.py"
+
+# Field precedence per section: for each field, the first source listed here that
+# supplies it wins.
+[merge]
+venues = ["venues-research", "programme-pdf"]
+events = ["programme-pdf"]
+performances = ["programme-pdf"]

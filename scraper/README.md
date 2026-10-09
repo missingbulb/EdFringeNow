@@ -14,6 +14,15 @@ Three scripts, on three different clocks:
 | `fetch_prices.py` | real ticket amounts, per performance | **once** — prices don't move; see below |
 | `normalize.py` | turns both into the committed site data | after either of the above |
 
+The festival planner (`/planNG/`) reads these same files for the Fringe, through
+its registry entry in [`festivals/edfringe/`](festivals/edfringe/festival.toml).
+The other festivals use a separate, festival-generic layer:
+the fetchers under [`festivals/`](festivals/README.md), run by the `festival-update`
+and `festival-refresh` tasks or by hand, write per-edition raw
+into `data/festivals/`, and [`convert/`](convert/to_serving.py) turns it into
+`site/data/festivals/`. Its contract — fetcher vs raw vs converter, adding an
+edition or a source — is [festivals/README.md](festivals/README.md).
+
 ## How edfringe.com serves listings
 
 The "What's On" listing (`/tickets/whats-on?page=N`) is a **Next.js single-page
@@ -109,24 +118,23 @@ Why once, and why it is *not* on the nightly path:
   performance costing *different* money from its neighbour is not the price
   moving — that is the schedule, and it is fetched once like everything else.)
 - **The pass is resumable.** Shows already priced per performance are skipped, so `--limit
-  N` takes the festival in bites and `--force` re-prices deliberately. The cache
-  is rewritten every 25 shows, so a mid-run crash loses at most that many —
-  but note what "resumable" is measured against: **the cache file on disk**. On
-  a runner that file is only durable once the workflow's commit step pushes it,
-  which it does at the end of the job (including when the fetch step failed).
-  Against a *script* failure that is enough; against the runner itself dying,
-  nothing in the job runs and the whole run is lost. If that matters, chunk the
-  festival with `limit` — each run commits what it got.
+  N` or `--time-budget SECONDS` takes the festival in bites and `--force` re-prices
+  deliberately. The cache is rewritten every 25 shows, so a mid-run crash loses at
+  most that many — but note what "resumable" is measured against: **the cache file
+  on disk**. On a runner that file is only durable once it is committed and pushed,
+  so the `fetch-prices` task prices for a time budget, commits what it got (even
+  after a failed fetch), and continues in a fresh run; a runner dying mid-bite
+  loses that bite alone.
 - **Free shows are skipped**, not called: there is nothing to price, and
   `normalize.py` already reads £0 off the listing's `free` flag.
 - **A missing show means the price is unknown, not free.** The festival keeps
   adding shows after the price run, so gaps are normal and permanent. Every
   consumer treats unknown as its own state (`site/shared/price.js`).
 
-Run it on a runner via the **`Fetch ticket prices (one-off)`** workflow
-(`.github/workflows/prices.yml`), which fetches, regenerates and commits — though
-that workflow is currently inert, so a dispatch reports the switch and fetches
-nothing. The script itself still runs by hand.
+Run it on a runner through the **`fetch-prices`** task, which fetches, regenerates
+and commits in time-bounded bites until every show is priced — though scraping is
+currently switched off, so its item declines and fetches nothing. The script itself
+still runs by hand.
 
 ## normalize.py — turn the raw scrape into website data
 
@@ -219,8 +227,8 @@ python3 scraper/normalize.py --merge
 
 `--merge` upserts the new shows into the existing master (by id) and regenerates
 the venue and per-day files. It is the **`refresh-shows`** task's work (see *How
-the data refreshes run* below); the full rebuild stays a manual workflow,
-**`Scrape edfringe shows (full)`** (`.github/workflows/scrape.yml`). Both commit
+the data refreshes run* below); the full rebuild is the **`full-scrape`** task,
+run from a hand-created item. Both commit
 the updated data back to the repo — and both are currently switched off, so
 neither runs until they are turned back on.
 
@@ -232,7 +240,7 @@ switched off twice over. They are declared `manual` — a manual task has no
 occurrence, so the Claudinite scheduler
 (`.github/workflows/claudinite-scheduler.yml`, the repo's only cron) never
 instantiates one — and this repository names them both in
-`taskScheduler.disabledTasks` (`.claudinite-settings.json`), which says the repo
+the Claudinite settings' `tasks.disabled` list, which says the repo
 does not run them at all: the scheduler skips them before instantiating anything
 and closes a sleeping work item that names one. Turning a refresh back on is
 taking it off that list and restoring its cadence.
@@ -310,6 +318,6 @@ Two invariants hold this up, and breaking either is silent:
 
 `equhost.com` must be reachable from wherever you run this. Claude Code web
 sessions sit behind an egress proxy that may block it; in that case run the
-script locally. The **`Scrape edfringe shows (full)`** GitHub Action
-(`.github/workflows/scrape.yml`) would otherwise run it on a GitHub-hosted runner
-with open network access, but it is currently inert.
+script locally. The **`full-scrape`** task would otherwise run it on a
+GitHub-hosted runner with open network access, but scraping is currently switched
+off.

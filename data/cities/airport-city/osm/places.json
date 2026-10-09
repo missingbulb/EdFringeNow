@@ -1,0 +1,100 @@
+{
+ "places": [
+  {
+   "id": "node/1083552229",
+   "lat": 31.968456,
+   "lng": 34.945843,
+   "tags": {
+    "name": "אנדרטה לחללי חיל התחזוקה",
+    "name:en": "Logistics corps Memorial",
+    "historic": "memorial",
+    "wikidata": "Q30527422",
+    "wikipedia": "he:אתר ההנצחה לחללי חיל הלוגיסטיקה"
+   }
+  },
+  {
+   "id": "node/2467107746",
+   "lat": 31.990713,
+   "lng": 34.902709,
+   "tags": {
+    "name": "אנדרטת חטיבה 8",
+    "name:en": "Memorial of the 8th Brigade",
+    "historic": "monument",
+    "wikidata": "Q16132668",
+    "wikipedia": "he:אנדרטה לחללי חטיבה 8"
+   }
+  },
+  {
+   "id": "node/4315645107",
+   "lat": 31.955627,
+   "lng": 34.903484,
+   "tags": {
+    "name": "פסיפס לוד",
+    "name:en": "Lod Mosaic",
+    "historic": "archaeological_site",
+    "wikidata": "Q1503102"
+   }
+  },
+  {
+   "id": "node/742674169",
+   "lat": 31.99319,
+   "lng": 34.955327,
+   "tags": {
+    "name": "גבעת הספלולים",
+    "name:en": "Giv'at HaSaflulim;Saflulim Viewpoint",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/9986337738",
+   "lat": 31.96085,
+   "lng": 34.943429,
+   "tags": {
+    "name": "גג מאגר המים",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "way/1011987739",
+   "lat": 31.955813,
+   "lng": 34.903413,
+   "tags": {
+    "name": "Lod Mosaic Center",
+    "tourism": "museum",
+    "building": "yes"
+   }
+  },
+  {
+   "id": "way/1355762800",
+   "lat": 32.006174,
+   "lng": 34.944167,
+   "tags": {
+    "name": "מצפה אחיעד",
+    "tourism": "viewpoint",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/187883717",
+   "lat": 31.954379,
+   "lng": 34.900421,
+   "tags": {
+    "name": "חאן חילו",
+    "name:en": "Khan Hilo",
+    "historic": "ruins",
+    "building": "yes",
+    "wikidata": "Q7035712"
+   }
+  },
+  {
+   "id": "way/417173123",
+   "lat": 31.95489,
+   "lng": 34.8983,
+   "tags": {
+    "name": "שוק לוד",
+    "name:en": "Lod Market",
+    "amenity": "marketplace"
+   }
+  }
+ ]
+}

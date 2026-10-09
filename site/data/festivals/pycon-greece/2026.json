@@ -1,0 +1,1573 @@
+{
+ "v": 1,
+ "festival": {
+  "id": "pycon-greece",
+  "edition": "2026",
+  "ordinal": 2,
+  "name": "PyCon Greece",
+  "nameLocal": null,
+  "city": "Athens",
+  "country": "GR",
+  "lat": 37.9838,
+  "lng": 23.7275,
+  "timezone": "Europe/Athens",
+  "lang": "en",
+  "dir": "ltr",
+  "kind": "academic",
+  "defaultGenre": "talk",
+  "site": "https://2026.pycon.gr",
+  "firstDate": "2026-10-12",
+  "lastDate": "2026-10-13",
+  "ticketing": {
+   "model": "festival-pass",
+   "url": "https://pretix.eu/pygreece/pycon-gr-2026/",
+   "notes": "One conference ticket, sold on pretix from the site's Get tickets link."
+  }
+ },
+ "categories": [
+  {
+   "id": "7097-automations-quality-assurance",
+   "name": "Automations & Quality Assurance"
+  },
+  {
+   "id": "7098-data",
+   "name": "Data"
+  },
+  {
+   "id": "7099-artificial-intelligence-ai",
+   "name": "Artificial Intelligence (AI)"
+  },
+  {
+   "id": "7100-pen-source-software-communities",
+   "name": "Οpen-Source Software & Communities"
+  },
+  {
+   "id": "7101-python-internals-best-practices",
+   "name": "Python Internals & Best Practices"
+  },
+  {
+   "id": "7102-responsible-ai",
+   "name": "Responsible AI"
+  },
+  {
+   "id": "7104-web-development",
+   "name": "Web Development"
+  },
+  {
+   "id": "7107-other-topic",
+   "name": "Other topic"
+  },
+  {
+   "id": "7110-art-creative-coding",
+   "name": "Art & Creative Coding"
+  },
+  {
+   "id": "type-informational",
+   "name": "Informational"
+  },
+  {
+   "id": "type-keynote",
+   "name": "Keynote"
+  },
+  {
+   "id": "type-social-activity",
+   "name": "Social activity"
+  }
+ ],
+ "venues": [
+  {
+   "id": "technopolis",
+   "name": "Technopolis City of Athens",
+   "address": "Pireos 100, 118 54 Athens",
+   "lat": 37.9779377,
+   "lng": 23.7136361,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {
+     "id": "auditorium-miltiadis-evert",
+     "name": "Auditorium \"Miltiadis Evert\"",
+     "capacity": 300,
+     "layout": null
+    },
+    {
+     "id": "exhibit-hall-b",
+     "name": "Exhibit Hall B",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "exhibit-hall-c",
+     "name": "Exhibit Hall C",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "exhibit-hall-d",
+     "name": "Exhibit Hall D",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "exhibit-hall-e",
+     "name": "Exhibit Hall E",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "exhibit-hall-f",
+     "name": "Exhibit Hall F",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "innovathens-tutorial-room",
+     "name": "Innovathens - Tutorial room",
+     "capacity": 25,
+     "layout": null
+    },
+    {
+     "id": "purifier-stage",
+     "name": "Purifier Stage",
+     "capacity": 75,
+     "layout": null
+    }
+   ],
+   "accessibility": null,
+   "notes": "The city's arts centre in a former gasworks in Gazi; the auditorium, the stage, Innovathens' tutorial room and the exhibit halls are the schedule's own rooms.",
+   "refs": [
+    "https://2026.pycon.gr/en/"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "UTAWZ3",
+   "title": "Opening Remarks",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/UTAWZ3/",
+   "genre": "talk",
+   "categories": [
+    "type-informational"
+   ],
+   "blurb": "Opening of PyCon Greece 2026!",
+   "durationMin": 15,
+   "imageUrl": null
+  },
+  {
+   "id": "NGEV9F",
+   "title": "Keynote Speech by Cristián Maureira-Fredes",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/NGEV9F/",
+   "genre": "talk",
+   "categories": [
+    "type-keynote"
+   ],
+   "blurb": "First keynote",
+   "durationMin": 45,
+   "imageUrl": null
+  },
+  {
+   "id": "NKSZ8V",
+   "title": "The Hidden Representational Dangers of Proprietary Embedding Models",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/NKSZ8V/",
+   "genre": "talk",
+   "categories": [
+    "7099-artificial-intelligence-ai"
+   ],
+   "blurb": "As developers rapidly adopt generative AI, a dangerous misconception has emerged: the belief that vector embeddings are easily interchangeable, \"plug and play\" components. This poster challenges that myth by exploring the hidden dependencies created when embedding layers are integrated into production environments. While managed APIs accelerate initial development, persisting these vectors at scale introduces a profound structural vulnerability tied to proprietary vendor lifecycles, immediately exposing systems to unpredictable token pricing and sudden usage limits. \n\nWe examine how this architectural coupling fundamentally differs from standard operational API lock-in, silently jeopardizing system stability, retrieval behavior, and data portability. Furthermore, we analyse hidden overheads that require developers to not only pay to re-embed their entire dataset, but to rigorously re-evaluate baseline retrieval accuracy and system latency from scratch. Finally, the presentation offers high-level strategic frameworks for evaluating embedding infrastructure, empowering engineering teams to reclaim control over their core data layers and build resilient, vendor-agnostic systems.\n\nSpeakers: Vassiliki Dalakiari, Katerina Xagorari",
+   "durationMin": 445,
+   "imageUrl": null
+  },
+  {
+   "id": "VXF9GV",
+   "title": "CyberSentinel Py: Lightweight AI Threat Detection with FastAPI",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/VXF9GV/",
+   "genre": "talk",
+   "categories": [
+    "7104-web-development"
+   ],
+   "blurb": "CyberSentinel Py is a lightweight AI-powered threat detection system built with Python & FastAPI.\n\nThis poster explores phishing detection workflows, URL risk analysis, API architecture, and responsible AI approaches for building practical cybersecurity tooling.\n\nFeaturing:\n- FastAPI microservices\n- Threat scoring systems\n- Phishing heuristics\n- Lightweight AI workflows\n- Digital safety tooling\n\nSpeakers: Eyitayo Alimi",
+   "durationMin": 445,
+   "imageUrl": null
+  },
+  {
+   "id": "3PCBDJ",
+   "title": "From tokens to meaning: the hidden linguistics behind AI",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/3PCBDJ/",
+   "genre": "talk",
+   "categories": [
+    "7099-artificial-intelligence-ai"
+   ],
+   "blurb": "Language models — both generative and classical — base their learning, operation, and evaluation on linguistic structures and principles: they generate valid syntax, map meanings in vector spaces, and respond with pragmatic coherence. Yet linguistics rarely appears as part of the stack. In the current era of generative and agentic AI, this relationship has grown even stronger, to the point where neither can be fully understood without the other. This talk explores how grammatical structures emerge, what meaning embeddings encode, and why a well-crafted prompt functions as a speech act. Through Python examples, we will examine how syntax, morphology, semantics, and pragmatics lie at the core — even as technical discourse conceals them beneath layers of tokens and attention.\n\nSpeakers: Esther Fernández Carbayo",
+   "durationMin": 445,
+   "imageUrl": null
+  },
+  {
+   "id": "TTUJLA",
+   "title": "Agentic Hypergraph Search for Ontology-Grounded Medical Reasoning",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/TTUJLA/",
+   "genre": "talk",
+   "categories": [
+    "7099-artificial-intelligence-ai"
+   ],
+   "blurb": "LLMs are great at answering medical questions. Ask one why, and you get a confident paragraph that may or may not have anything to do with how it actually arrived at the answer. That's a problem when the stakes are high.\n\nWe built a small Python system that gives an LLM something to reason over, not just from. The LLM reads a medical textbook and extracts a hypergraph of entities and the multi-way relationships between them. Then an agent traverses that hypergraph with three tools to answer USMLE-style questions, leaving a trace you can actually read and debug. No SNOMED, no symbolic reasoner, no Prolog. Just Python, embeddings, and an LLM calling its own tools.\n\nOn MedQA it matches a frontier model. But the more interesting finding is that the same setup hurts smaller models, and we think the reason matters for anyone building agent systems.\n\nSpeakers: Seungwoo Schin",
+   "durationMin": 445,
+   "imageUrl": null
+  },
+  {
+   "id": "V7BXMU",
+   "title": "Stop Watching, Start Building: The Power of Project-Based Learning in Python",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/V7BXMU/",
+   "genre": "talk",
+   "categories": [
+    "7107-other-topic"
+   ],
+   "blurb": "In the age of abundant online tutorials, many new programmers become trapped in “Tutorial Hell”: the ability to follow instructions without being able to build something of their own. This poster presents the value of hands-on training and Project-Based Learning (PBL) in Python, supported by recent data and statistics from the job market.\n\nThe poster serves as a “Mentor Corner,” offering visitors statistical insights that highlight the importance of portfolio building, along with practical advice on how to turn theory into code. Its goal is to inspire participants to focus on active learning and begin their own journey of creating projects.\n\nSpeakers: Alexandra Athanasakou, Ανδρέας Στασινάκης",
+   "durationMin": 445,
+   "imageUrl": null
+  },
+  {
+   "id": "MJPATL",
+   "title": "Inside uv’s dependency resolver",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/MJPATL/",
+   "genre": "talk",
+   "categories": [
+    "7101-python-internals-best-practices"
+   ],
+   "blurb": "Package dependency resolution is one of those problems that looks simple until it isn’t. Under the hood, it is a Boolean Satisfiability (SAT) problem. Uv, an extremely fast Python package and project manager written in Rust, brings a whole new level of sophistication to solving it.\n\nIn this talk, we will explore how uv’s resolver actually works and the algorithms that power it. Along the way, we will look at some surprising use cases where uv’s resolver behaviour challenges our assumptions about how Python packaging works. We’ll also see some creative ways you can use SAT solvers in practice.\n\nWhether you’re a packaging enthusiast, a library maintainer, an algo lover, or someone who’s stared at a dependency conflict at 2 AM, this talk is for you.\n\nSpeakers: Olga Matoula",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "9T8VZT",
+   "title": "Introduction to Data Analysis Using Pandas",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/9T8VZT/",
+   "genre": "talk",
+   "categories": [
+    "7098-data"
+   ],
+   "blurb": "Working with data can be challenging: it often doesn’t come in the best format for analysis, and understanding it well enough to extract insights requires both time and the skills to filter, aggregate, reshape, and visualize it. This session will equip you with the knowledge you need to effectively use pandas – a powerful library for data analysis in Python – to make this process easier.\n\nPandas makes it possible to work with tabular data and perform all parts of the analysis from collection and manipulation through aggregation and visualization. While most of this session focuses on pandas, during our discussion of visualization, we will also introduce at a high level Matplotlib (the library that pandas uses for its visualization features, which when used directly makes it possible to create custom layouts, add annotations, etc.) and Seaborn (another plotting library, which features additional plot types and the ability to visualize long-format data).\n\nSpeakers: Stefanie Molin",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "T9B7EP",
+   "title": "From YAML to Adventure: Gamifying Kubernetes Through a Retro Python Game",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/T9B7EP/",
+   "genre": "talk",
+   "categories": [
+    "7110-art-creative-coding"
+   ],
+   "blurb": "Kubernetes is powerful, but learning it often involves repetitive YAML files, static tutorials, and disconnected command-line exercises. To make the learning experience more interactive and engaging, I built **Project Yellow Olive** - a _retro-styled_, _gamified Terminal User Interface (TUI_) in Python that teaches Kubernetes concepts through hands-on gameplay and real cluster interactions.\n\nIn this talk, I’ll walk through the architecture and design of the project, including how Python’s **Textual framework** was used to build a retro game-like TUI experience, how challenge validation systems were implemented, and how the application interacts with real Kubernetes environments using Python and Minikube.\n\nWe’ll explore how Kubernetes concepts such as Pods, labels, liveness probes, resource limits, and deployments were transformed into interactive game mechanics and progressive challenges. The session will also cover integrating shell commands, validation engines, and real-time feedback loops into a Python-based TUI application.\n\nBeyond the technical implementation, the talk also explores why gamification matters in developer education. Complex infrastructure concepts are often difficult to retain through traditional documentation-heavy learning methods. By combining retro gaming mechanics with interactive feedback systems, Project Yellow Olive aims to make cloud-native learning more immersive, memorable, and approachable.\n\nFinally, I’ll share the long-term vision for expanding this gamified learning model beyond Kubernetes into broader cloud and platform engineering concepts - including infrastructure, DevOps workflows, and distributed systems education through interactive Python-powered experiences.\n\nAttendees will leave with practical insights into:\n\ni) Building advanced TUIs in Python using Textual\nii) Designing gamified technical learning systems\niii) Integrating Python applications with Kubernetes clusters\niv) Structuring challenge-validation workflows for interactive developer tools\nv) Combining retro game design principles with modern cloud-native education\n\nSpeakers: Anubhav Sanyal",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "RNVVNZ",
+   "title": "Python Dicts: Past, Present, and Free-Threaded Future",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/RNVVNZ/",
+   "genre": "talk",
+   "categories": [
+    "7101-python-internals-best-practices"
+   ],
+   "blurb": "Python dicts are everywhere! They back module namespaces, instance attributes, **kwargs, and of course actual dictionaries. But have you ever wondered how they work under the hood? And more importantly, what happens to them now that free-threaded Python is here?\n\nIn this talk, we'll start by exploring the internals of CPython's dict implementation: how hashing works, the compact table layout that gives you insertion order, and how lookups, insertions, and deletions actually play out in memory. Then we'll see what had to change for free-threading: how reads remain fast without acquiring locks, what the per-object lock is and when it kicks in, and why making a dict thread-safe is harder than it sounds.\n\nFinally, we'll look at the ongoing effort to document CPython's thread-safety guarantees for built-in types and what the resulting documentation means for a Python developer writing concurrent code.\n\nThe audience will leave with a deep understanding of how Python's most important data structure works, how it's been adapted for a free-threaded world, and what they can (or can't) safely do with dicts across threads.\n\nSpeakers: Lysandros Nikolaou",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "HPK7PV",
+   "title": "How to evaluate AI Agent to be robust Intelligence",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/HPK7PV/",
+   "genre": "talk",
+   "categories": [
+    "7099-artificial-intelligence-ai"
+   ],
+   "blurb": "Building AI Agents is accessible, but ensuring their reliability in production is a major engineering challenge. Unlike deterministic software, Agents are probabilistic. A binary \"Pass/Fail\" test is often insufficient to capture the nuances of an agent's reasoning process.\n\nIn this talk, we explore \"Evaluation-Driven Development\"—a paradigm shift for Python engineers building AI systems. We will focus on measuring the quality of agent trajectories using Python tools and visualizations.\n\nThe session covers:\n\n- From Testing to Evaluation: Why we need to move beyond standard assertions to probabilistic scoring (0.0 to 1.0) for Generative AI.\n- Metrics as Code: Implementing specific evaluation metrics in Python:\n  - Faithfulness: Scoring whether the answer is grounded in the retrieved context to detect hallucinations.\n  - Tool Selection Accuracy: Evaluating if the agent chose the correct tool (e.g., search vs. calculation) for the user's intent.\n  - Answer Relevancy: Using embedding similarity to measure if the response actually answers the prompt.\n- Visualizing the Black Box: A live demo using Streamlit. We will showcase a custom dashboard that runs these evaluations, allowing developers to visualize the \"reasoning trace\" and identify exactly where the agent failed (Retrieval layer vs. Generation layer).\n- The Feedback Loop: How to use these evaluation scores to iteratively improve prompts and context retrieval logic.\n\nSpeakers: Sho Tanaka",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "CTGFRF",
+   "title": "LLM or Regex? Choosing Tools for Text Problems in Python",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/CTGFRF/",
+   "genre": "talk",
+   "categories": [
+    "7104-web-development"
+   ],
+   "blurb": "Every web team in 2026 has had the same meeting: \"We have a text problem: should we call an LLM?\" Getting it wrong is expensive in money, latency, and reliability.\n\nThis talk is a decision framework for text problems in production Python web apps: when a regex is enough, when classical ML fits, when an LLM earns its cost, and when to chain them together.\n\nI co-maintain alt-profanity-check (a scikit-learn classifier, ~186,000 monthly downloads on PyPI) and ship LLM integrations in production Django apps. Same problem space, opposite ends of the spectrum.\n\nYou'll leave with a framework for scoring any text problem on the dimensions that actually matter in production, latency, cost, failure mode, and three more, and a clearer sense of when \"just use an LLM\" is right, lazy, or actively dangerous.\n\nSpeakers: Menelaos Kotoglou",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "77FHAM",
+   "title": "Cache Me If You Can:  Unlocking Python's Built-in Caching",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/77FHAM/",
+   "genre": "talk",
+   "categories": [
+    "7101-python-internals-best-practices"
+   ],
+   "blurb": "This talk introduces caching in Python, a simple but powerful way to make programs faster by saving and reusing results of slow operations. Caching is useful when working with repeated calculations or reading the same data many times.\n\nThe talk is structured in clear steps. First, we start with a basic explanation of what caching is and why it is important. Then, we look at simple methods like dictionary-based caching. After that, we explore Python’s built-in tools such as @lru_cache, @cache, and @cached_property. Each part includes simple examples to help understanding.\n\nThe topic is explained in a practical and easy way, focusing on real use cases. Participants will learn how to choose the right caching method, how to use it correctly, and what common mistakes to avoid. The talk will also explain how improper use of LRU cache can lead to memory leaks, why this happens, and how to fix it using techniques like weak references.\n\nBy the end of the talk, they will have the knowledge to apply caching in their own Python projects and improve performance.\n\nSpeakers: Kader Miyanyedi",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "D3MEH8",
+   "title": "PyLadies Lunch - Sponsored by HRT",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/D3MEH8/",
+   "genre": "other",
+   "categories": [
+    "type-social-activity"
+   ],
+   "blurb": "The PyLadies Lunch is a great opportunity for women and allies attending the conference who love Python and meet other like-minded folks in a fun, relaxed environment. We would like to invite you to join us and make new friends (or catch up with familiar faces), share your experiences with folks from Greece, Europe and afar.\n\nPlease register via our attendee form [here](https://forms.gle/t3VqNQaGgkaCBrFh9).",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "D93MUG",
+   "title": "Python and Freedom and Bias",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/D93MUG/",
+   "genre": "talk",
+   "categories": [
+    "7100-pen-source-software-communities"
+   ],
+   "blurb": "Guido van Rossum described Python as \"an experiment in how much freedom programmers need.\" That framing made sense when humans were the ones writing every line. But what happens to that freedom when the code is increasingly being written for us?\n\nThe Zen of Python was never just a style guide. It was an attempt to encode values: clarity, explicitness, readability as a form of respect. Those values don't disappear when we stop typing, they shift. The question is whether we can recognise them, and push back when they're missing.\n\nDrawing on Douglas Hofstadter's Gödel, Escher, Bach book, this talk explores how meaning is layered, how freedom implies responsibility, and how our biases shape what we see and what we miss. Our blind spots are reminders that the things we can't see don't stop existing. Let's see if we can perceive how large those spots are through an experiment.\n\nIn 2024, I gave this talk about code. Now, this is about something much bigger: who holds the values when the code writes itself?\n\nSpeakers: Lais Carvalho",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "CEEGYR",
+   "title": "From Data to Insights - A Hands-On Introduction to Machine Learning and Clustering with Python",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/CEEGYR/",
+   "genre": "talk",
+   "categories": [
+    "7099-artificial-intelligence-ai"
+   ],
+   "blurb": "How do you find structure in data when you don't know what you are looking for? This workshop, drawn from the teaching experience of the AstroStat Academy (astrostat.academy), offers a practical, beginner-friendly introduction to unsupervised machine learning with a focus on clustering, using Python and scikit-learn.\n\nWe believe that in an era of easy access to information, what matters most is the understanding that comes from applying tools and learning alongside other people. This workshop is designed to train exactly those deeper skills: interpretability, critical thinking, and problem solving — not just familiarity with an API.\n\nParticipants will work through a hands-on Jupyter notebook, progressing from first principles to real-world application. We begin with a short and concise introduction to machine learning: what it is, why it works, and where it fits in the broader landscape of data analysis. We then dive into clustering, showcasing the K-means and DBSCAN algorithms as examples: how they work, why they are good, when they fail, how they compare. \n\nInitially we will play and experiment with synthetic datasets, by tuning the number of clusters, and critically evaluating results using multiple metrics. The session concludes with the application to real scientific datasets from astrophysics, where clustering reveals meaningful structures in the data.\n\nAll materials are openly available on GitHub. No prior ML experience is required, just comfort with Python. Whether you work in science, engineering, or any data-rich domain, the skills practiced here transfer directly to your own problems.\n\nSpeakers: Grigoris Maravelias",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "VPQ9SM",
+   "title": "Making Music from Math with Python",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/VPQ9SM/",
+   "genre": "talk",
+   "categories": [
+    "7110-art-creative-coding"
+   ],
+   "blurb": "This talk explores Bytebeat by building a sound generator from scratch in Python. We'll cover the history of its accidental discovery, understand how bitwise operations create musical patterns, implement a Bytebeat Player, and conclude with a live demo creating music in real-time. Whether you're interested in creative coding, algorithmic art, procedural generation, understanding low-level operations in an accessible way, or just want to make weird music with math, this talk will show you how constraints breed creativity and simple code can produce surprising complexity.\n\nSpeakers: Sangarshanan",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "PZGHXT",
+   "title": "LLMs: from 0 to 0.1",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/PZGHXT/",
+   "genre": "talk",
+   "categories": [
+    "7099-artificial-intelligence-ai"
+   ],
+   "blurb": "You've probably called an LLM API this week. Maybe you've fine-tuned one, or argued with a coworker about which model is \"best.\" But how much of what's actually happening between your prompt and the response do you understand?\n\nThis talk is for Python developers who use LLMs but haven't looked under the hood. We'll cover just enough of the machinery to make you a more informed user and a more skeptical one.\n\nWe'll start with tokenization, walk through the transformer, and look at how the training pipeline actually shapes the model you end up talking to. Then we'll spend real time on the part most introductions skip: how evaluations work, and why benchmark numbers are harder to interpret than they look. We'll walk through how evaluations are actually scored, and where the gaps between those scoring choices and real-world performance come from. By the end, you'll have a clearer picture of what a benchmark result is really measuring.\n\nYou won't walk out an expert, but you'll have a working mental model of how these systems work and a better read on the numbers people share about them.\n\nSpeakers: Alexandros Liapatis",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "XEZSXR",
+   "title": "Reusable data tooling at GRNET: From scanning to registries",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/XEZSXR/",
+   "genre": "talk",
+   "categories": [
+    "7098-data"
+   ],
+   "blurb": "Working with non-uniform data sets at scale is challenging; operations must be fast, correct, resistant to failures, and still offer support for diverse features.  \n\nTo meet such demands, we have developed two Python frameworks: (a) \"scanning\", which supports high-performance, high-integrity database migrations and (b) \"registries\", which generalizes dataset definition and handling with a high-level, expressive UX. \n\nWe showcase how both frameworks are used in internal and external projects at GRNET, including the Gov.gr digital services platform.\n\nSpeakers: George Fourtounis, Giorgos Korfiatis",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "QJBXGP",
+   "title": "Sponsored talk by Elastic - Sophia Means Wisdom: A Multi-Tenant AI Engineering Assistant Using Elasticsearch as RAG",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/QJBXGP/",
+   "genre": "talk",
+   "categories": [
+    "7099-artificial-intelligence-ai"
+   ],
+   "blurb": "When organizations scale, engineering velocity is affected by team inter-dependencies and scattered insights across different sources and spaces: GitHub repositories and issues, Slack, Confluence; documents and threads of all kinds. But for engineering teams to be successful they have to be able to act fast and accurately. How can we use LLMs and agentic workflows to bridge the gap?\n\nLet's talk about what we did in Elastic, to automate and speed up daily routine tasks by surfacing actionable insights through AI workflows. A story about creating a platform using Elasticsearch as a RAG (Retrieval-Augmented Generation) system with Python microservices on Kubernetes. How ingesters capture knowledge from different sources into Elasticsearch vector indices, then use embeddings, LLMs and Elastic's Agent Builder to deliver grounded, cited answers through a Slack bot, REST API and MCP, all from a FastAPI server. Furthermore, we will discuss how we created a common contract for orchestrating independent remote MCP (Model Context Protocol) servers, transforming the platform's capabilities from static \"search engine\" to a dynamic investigation and decision hub.\n\nFinally, we will also cover the real engineering challenges: multi-tenant isolation to avoid data poisoning, token budget management for context windows, document-aware chunking that respects documentation structure, as well as open questions about sandboxing the platform's capabilities.\n\nBuilt on Python 3.14 with FastAPI, pydantic-ai, slack-bolt, Elasticsearch, and other libraries. Sophia means wisdom in greek. This wisdom is not sterile and generic, but grounded in real knowledge, sometimes hidden in some doc or some thread. Let's talk about making engineers wiser as a service!\n\nSpeakers: Nikos Fotiou",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "EFDJ79",
+   "title": "The Hidden Python Behind Every Typeface: Engineering Variable Fonts",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/EFDJ79/",
+   "genre": "talk",
+   "categories": [
+    "7107-other-topic"
+   ],
+   "blurb": "Modern fonts look like static design assets, but they are actually complex software packages. Inside every `.ttf` and `.otf` file is a structured database of geometry, lookup tables, and rendering rules. The global type industry like Google Fonts, Adobe, and many independent foundries relies on Python to build, inspect, and automate these fonts.\n\nThis talk takes a practical, engineering-first look at how Python powers modern typography. Using the open-source FontTools library, I will show how glyphs are stored as contours and Bezier points, how font binaries can be decompiled into editable XML, and how changes can be compiled back into a working font. We will also look at the interpolation math that allows Variable Fonts to morph smoothly between weights such as Thin and Bold.\n\nBy the end, attendees will understand how Python fits into real font production pipelines and how these tools can automate or extend their own design and engineering work.\n\nSpeakers: Daksh P. Jain",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "UKYLXE",
+   "title": "Replacing Manual Document Reviews with Python and LLMs",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/UKYLXE/",
+   "genre": "talk",
+   "categories": [
+    "7099-artificial-intelligence-ai"
+   ],
+   "blurb": "In regulated fintech, every new customer must prove their address. For us at Plum, that meant human agents manually reviewing 150–300 documents per day — utility bills, bank statements, rental agreements — across the UK and 9 EU countries. Each review takes around 5 minutes, but documents were waiting hours in the queue. We built a Python pipeline that automates this end-to-end.\n\nThe pipeline has five stages. The first validates uploaded files using basic checks — detecting corrupt or password-protected documents before any LLM call is made. The next three are LLM-powered: classifying how the document was captured, extracting structured entities — customer name, address, issue date, document type — directly from the raw PDF or image, and comparing those entities against our database records using jurisdiction-specific matching rules. All results feed into a deterministic decision engine that produces specific, actionable rejection reasons.\n\nThe decision engine is where the interesting engineering lives. It's a rule tree, not a model — it produces specific, actionable rejection reasons (\"the document is expired\", \"the name doesn't match\", \"this is not an accepted document type\"). Customers get a clear next step, not a generic failure. We'll walk through how we designed this tree to be auditable by compliance and tunable by engineers via threshold configuration.\n\nWe'll also cover the parts nobody talks about: building a human-in-the-loop system so agents review a declining sample of automated decisions, handling transient LLM failures via structured output schema validation and retry patterns, and the eval framework we use to monitor and improve the system as document formats change across countries. All Python, no ML frameworks, no OCR libraries.\n\nSpeakers: Thodoris Karnaros",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "STP3KW",
+   "title": "Sponsored workshop by Kiefer Tech - Teaching a Small Model to Speak Greek: Fine-Tuning an SLM for Conversational Greek",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/STP3KW/",
+   "genre": "talk",
+   "categories": [
+    "7099-artificial-intelligence-ai"
+   ],
+   "blurb": "Small language models speak bad Greek: broken tokenization, English leaking into replies, a stiff translated tone. In this hands-on workshop we fully fine-tune a sub-1B open-weights model into a Greek chat assistant that's small enough to run on a phone. We cover building the Greek dataset, the training run on a single consumer GPU, and checking whether the model actually improved.\n\nSpeakers: KIROUANE AYOUB",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "L8F9BX",
+   "title": "WTF Is a Data Model, Anyway?",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/L8F9BX/",
+   "genre": "talk",
+   "categories": [
+    "7098-data"
+   ],
+   "blurb": "As I continue teaching data science and work with statistics students, it becomes more clear that we in the data community are not reaching the rest of the world, and often not the rest of the programming community, in the precise definition of a model. In this talk, I attempt to shine some light into this black box.\n\nStarting with classical statistics and the linear regression, I explain in detail what a basic model is, in a way that is accessible to those without a technical technical background. Building on this concept, I move to basic machine learning, including how we select and train models. The topic of generative AI, specifically LLMs, rounds out the talk.\n\nAt every level, I talk about the capabilities and limitations of our models. And, rather than remaining theoretical, we find practical applications from economics, logistics, and, naturally, an LLM. None of these things are magic. So let's follow my favorite economics professor and try to turn this black box into a grey box!\n\nSpeakers: James Donahue",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "KR8Q8Q",
+   "title": "What's Inside a NumPy Array? A Learning Journey into C Extensions",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/KR8Q8Q/",
+   "genre": "talk",
+   "categories": [
+    "7107-other-topic"
+   ],
+   "blurb": "You've used numpy arrays hundreds of times, but have you ever wondered what actually lives under the hood? What does an ndarray look like in memory? What are strides, and why do they matter?\n\nI had the same questions, so I did what made sense to me: I tried to build the tiniest possible version myself. The result was a small personal project: a rough C extension implementing a 0D and 1D array of a single dtype. This was just my learning exercise to force myself to understand what numpy is actually doing.\n\nIn this talk I'll share what I learned along the way: how shape and strides describe a view into a flat block of memory, what dtype really means at the byte level, and how Python objects wrap C structs under the hood. The goal is to give you a mental model of what numpy is doing every time you create an array or perform an operation on one. Along the way, you'll also pick up some intuition for how C extensions fit into the Python ecosystem\n\nSpeakers: Iason Krommydas",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "WDSCUU",
+   "title": "Python on the Edge: Serverless WASM with Pyodide",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/WDSCUU/",
+   "genre": "talk",
+   "categories": [
+    "7104-web-development"
+   ],
+   "blurb": "In this talk, I'll dive into the engineering that makes the Cloudflare Python Workers viable. We'll explore Pyodide boots, how dynamic linking works across WASM modules, how memory snapshots eliminate cold starts, and why `uv` became our package management of choice. We'll build and deploy a real Python Worker live.\n\nTarget Audience: Python developers, cloud engineers, WebAssembly enthusiasts, and anyone building serverless applications.\n\nKey Takeaways:\n\n- How Pyodide compiles CPython to WASM and what that means for serverless\n- Why cold starts were the the biggest problem and how memory snapshots solve them\n- How dynamic linking enables numpy, pandas, and other native packages at the edge\n- What a modern `uv`-first Python deployment workflow looks like on Workers\n\nSpeakers: Vasileios Giotsas",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "3XSKQX",
+   "title": "Resurrecting Pyo - Bringing Python's DSP toolkit back to life",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/3XSKQX/",
+   "genre": "talk",
+   "categories": [
+    "7110-art-creative-coding"
+   ],
+   "blurb": "Pyo is a Digital Signal Processing (DSP) toolkit for Python, enabling audio scripting straight into our favorite programming language. Since its initiation in 2010, it has seen a lot of development and has reached a state of a mature and complete toolkit for DSP. Unfortunately, since a year at the time of writing, Pyo is abandonware, but not all hope is lost. Being open source, it enabled a small group of its user community to fork its source and resurect it, bringing it back to being actively maintained. This action has sparked a lively discussion within Pyo's community and has even drawn the attention of the main developer of Pyo, who has now joined our group. Further development of this module has already started and Pyo is expected to be officially released again, supporting the latest Python versions.\nIn this talk, I will present the basic features of Pyo, together with a few showcases of projects from our community. I will talk about its flexibility, its embeddedness in other programming languages, and its adaptivity to the greater Python ecosystem, a unique feature among DSP programming languages.\n\nSpeakers: Alexandros Drymonitis",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "HNHAEP",
+   "title": "What Does Cooking Teach Us About Architecture?",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/HNHAEP/",
+   "genre": "talk",
+   "categories": [
+    "7107-other-topic"
+   ],
+   "blurb": "It is 8:47 PM on a Saturday. Twelve orders are on the rail. The lamb just ran out. A line cook is in the weeds and the expediter is calling out tickets faster than anyone can plate them. Nobody panics. Service keeps moving.\n\nHow? Because a restaurant kitchen is a distributed system that has been in production for two hundred years, and it solves problems your Python services are still arguing about in design docs.\n\nWhen the lamb runs out, the kitchen does not crash. The server is told, the menu shrinks, and the room never knows. That is graceful degradation, done cleanly. An ingredient with hours left to live is a TTL, and the kitchen runs an eviction policy on it: feature it tonight, prep it for tomorrow, or eat the loss. The walk-in, the prep cooler, and the pass are a tiered cache where latency is measured in steps to the line. A line cook calling for backup is human failover with role elasticity.\n\nThis talk takes the brigade system seriously as an architectural reference. I will walk through three Python systems from my own production experience and show the kitchen pattern each one quietly converged on. A batch ML system that found its rhythm in prep-and-batch logic a chef would recognize. A high-throughput messaging pipeline where choosing a compression level was the same call as deciding which order to fire first under load. A test infrastructure that worked because every station had one job and a clean handoff.\n\nThen the part that matters in 2026. As LLMs commoditize the writing of code, the scarce skill becomes what every chef already knows: taste, prioritization, knowing when to pull a dish from the menu. A chef who cannot judge does not survive a Saturday night. The same logic, soon, for engineers.\n\nCome hungry.\n\nSpeakers: Georgios Kalaitzis",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "BSAAXM",
+   "title": "Lightning talks",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/BSAAXM/",
+   "genre": "talk",
+   "categories": [
+    "type-informational"
+   ],
+   "blurb": "5-minute lightning talks submitted on-site",
+   "durationMin": 40,
+   "imageUrl": null
+  },
+  {
+   "id": "DXZK9X",
+   "title": "Social Event - Sponsored by Yodeck",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/DXZK9X/",
+   "genre": "other",
+   "categories": [
+    "7107-other-topic"
+   ],
+   "blurb": "We’re excited to wrap up the first day of PyCon Greece 2026 with a special social gathering, proudly sponsored by Yodeck!\n\nAfter a full day of sessions, this is your chance to unwind, meet new people, and spend a friendly evening with the community. Expect refreshing cocktails, beers, mocktails, along with a slice of pizza, while mingling with fellow participants.\n\nThe Wheelie team will be there, serving drinks and keeping the good vibes flowing.",
+   "durationMin": 180,
+   "imageUrl": null
+  },
+  {
+   "id": "JMQEVG",
+   "title": "Keynote Speech by Mai Gimenez",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/JMQEVG/",
+   "genre": "talk",
+   "categories": [
+    "type-keynote"
+   ],
+   "blurb": "Third Keynote",
+   "durationMin": 45,
+   "imageUrl": null
+  },
+  {
+   "id": "ATP78B",
+   "title": "Teaching Statistics and Machine Learning: Lessons from the AstroStat Academy",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/ATP78B/",
+   "genre": "talk",
+   "categories": [
+    "7100-pen-source-software-communities"
+   ],
+   "blurb": "The AstroStat Academy (astrostat.academy) is dedicated to advancing education in statistics, machine learning, and AI — particularly, but not exclusively, in astrophysics. Since our first school in Crete in 2019, we have run eight intensive on-site events across Greece and beyond, training 240+ students selected from a pool of 700+ applicants worldwide.\n\nPython is at the heart of everything we do. Our curriculum (including topics such as classical statistics, Bayesian inference, MCMC, Machine & Deep Learning, time series, simulation-based inference) is delivered entirely through Jupyter notebooks, blending theory with hands-on, immediately reusable code. Every notebook is written to be practical and self-contained, so students can apply the code to their own research. All materials are openly published on GitHub, in the spirit of open science and reproducibility.\n\nIn an era of easy access to information, we believe what matters most is not exposure to tools, but the understanding that comes from applying them and learning alongside others. Our goal is to train deeper skills: interpretability, critical thinking, and problem solving — capacities that no tutorial alone can build. That is why we deliberately select small cohorts (~30 participants). They foster deep tutor–student and peer-to-peer interaction, and create a genuinely collaborative atmosphere. The on-site intensity, along with social events and informal impromptu discussions, is something we regard as irreplaceable.\n\nLooking ahead, we are expanding our reach beyond astrophysics to any data-rich scientific domain, building a global network of practitioners who share a rigorous, Python-first approach to data analysis. We are also exploring structured training offerings for research institutions and industry teams who need applied statistics, data science skills, ML and AI expertise grounded in scientific best practices.\n\nIn this talk we share what has worked and how the Python ecosystem has shaped our teaching, with the hope of inspiring similar initiatives across the community.\n\nSpeakers: Grigoris Maravelias",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "NNJP9A",
+   "title": "Evaluating RAG Systems: From Metrics to Decisions",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/NNJP9A/",
+   "genre": "talk",
+   "categories": [
+    "7099-artificial-intelligence-ai"
+   ],
+   "blurb": "Retrieval-Augmented Generation (RAG) systems are now a default architecture for many LLM applications, yet evaluating them remains surprisingly difficult. Teams often track a growing set of metrics while still struggling to make basic decisions: Is this system good enough to ship? Where is it failing? What should we improve next?\n\nThis tutorial focuses on how to design RAG evaluations that effectively support engineering and product decisions. Starting from setting a clear and concrete decision goal for the evaluation, participants will learn:\n\n- How to identify which system components and evaluation dimensions of a RAG system matter for a given decision\n- How to choose existing metrics, or develop custom ones, to obtain reliable, interpretable and informative signals.\n- How to select or synthesize evaluation data that reflects realistic usage and failure modes.\n- How to develop effective LLM-based judges that can scale evaluation while remaining reliable and trustworthy.\n\nThroughout the tutorial, concepts will be illustrated with live coding walk-throughs in Jupyter notebooks using Python. We will implement simple evaluation pipelines for retrieval and generation components, explore common pitfalls, and discuss trade-offs between automatic metrics and judgment-based evaluation.\n\nThe tutorial is intended for AI engineers, applied ML engineers, and technical leads who build, operate, or maintain RAG-based systems. Participants are expected to be familiar with the basic RAG architecture and LLM-based applications, but no prior experience with evaluation frameworks or specific tooling is required.\n\nSpeakers: Panos Alexopoulos",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "MATWX8",
+   "title": "Bias Isn’t a Bug: Auditing AI Systems with Python",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/MATWX8/",
+   "genre": "talk",
+   "categories": [
+    "7102-responsible-ai"
+   ],
+   "blurb": "Over the past several years, through leadership roles in tech communities and conversations around inclusion, governance and emerging technology, I kept encountering the same question:\n\nWhat does \"responsible AI\" actually look like in practice for developers building real systems?\n\nDiscussions around AI bias and ethics are often either highly theoretical or reduced to broad principles, but much harder to translate into day-to-day engineering decisions.\n\nIn this talk, I’ll walk through building and auditing a small machine learning system in Python to explore how bias can emerge even in models that appear highly accurate. Using tools such as scikit-learn, Fairlearn, and SHAP we’ll examine:\n\n- how hidden bias appears in datasets\n- why accuracy alone can be misleading\n- practical fairness metrics developers can apply\n- the limits of explainability\n- where human oversight still matters\n\nRather than presenting AI ethics as a solved problem, this session focuses on the tradeoffs, ambiguities, and practical challenges involved in building more transparent and accountable systems.\n\nI’ll also share insights from both the technical side of the experiment and broader conversations around diversity, governance, and societal impact in technology.\n\nThis talk is designed for Python developers, engineers, and technologists who want a more grounded and practical introduction to responsible AI development.\n\nSpeakers: Naomi Freeman",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "KAZDKS",
+   "title": "Data Morph: A Cautionary Tale of Summary Statistics",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/KAZDKS/",
+   "genre": "talk",
+   "categories": [
+    "7098-data"
+   ],
+   "blurb": "Statistics do not come intuitively to humans; they always try to find simple ways to describe complex things. Given a complex dataset, they may feel tempted to use simple summary statistics like the mean, median, or standard deviation to describe it. However, these numbers are not a replacement for visualizing the distribution.\n\nTo illustrate this fact, researchers have generated many datasets that are very different visually, but share the same summary statistics. In this talk, I will discuss [Data Morph](https://github.com/stefmolin/data-morph), an open source package that builds on previous research using simulated annealing to perturb an arbitrary input dataset into a variety of shapes, while preserving the mean, standard deviation, and correlation to multiple decimal points. I will showcase how it works, discuss the challenges faced during development, and explore the limitations of this approach.\n\nSpeakers: Stefanie Molin",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "W7HTNK",
+   "title": "What Building Self-Attention from Scratch Taught Me About My Own Code",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/W7HTNK/",
+   "genre": "talk",
+   "categories": [
+    "7099-artificial-intelligence-ai"
+   ],
+   "blurb": "I use LLMs at work every day but until recently I couldn't explain how they actually work. Not in a hand-wavy \"attention lets the model focus on relevant tokens\" way, but in a \"here is what this function does and why\" way. That kinda bothered me, so I implemented the self-attention mechanism from scratch in Python and PyTorch.\n\nSelf-attention is the core of every transformer model. In retrospect, it's also not that complicated. The whole thing is about 20 lines of code. In this talk I'll walk through the code step by step: building query, key and value matrices, computing attention scores with a scaled dot product, applying softmax, and producing the output. I'll run the code on real text and show what the attention weights actually look like.\n\nThe useful thing about doing this isn't the implementation itself. It's that afterwards you stop treating transformer models as black boxes. You can read a model architecture diagram and know what it means. You can look at a config file and understand why the number of heads matters. It doesn't make you an ML researcher, but it does make you a better engineer.\n\nThe talk assumes you're comfortable with Python and have used LLMs in some capacity.\n\nSpeakers: Efstratios Marinos",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "ZQVFNE",
+   "title": "Community Organizers Panel",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/ZQVFNE/",
+   "genre": "talk",
+   "categories": [
+    "7100-pen-source-software-communities"
+   ],
+   "blurb": "Panel discussion and Q&A with PyCon Greece organizers\n\nSpeakers: Thanasis Daglis, Panagiotis Skias, Christianna Vaso, Lena Lekkou",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "LDVLEA",
+   "title": "From Prompt to Proof: Building Auditable and Compliant AI Systems in Python",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/LDVLEA/",
+   "genre": "talk",
+   "categories": [
+    "7102-responsible-ai"
+   ],
+   "blurb": "LLM applications are easy to demo and hard to govern.\n\nIn regulated environments such as insurance, healthcare, finance, and enterprise platforms, AI systems must be able to prove what happened: who made the request, what data was used, whether PII was processed, which model and prompt version generated the output, which policy allowed the action, who approved it, and how the result can be reviewed later.\n\nThis talk shows how to build the missing control plane around AI applications using Python. We will cover FastAPI-based service boundaries, RBAC and separation of duties, policy-as-code, PII-aware model routing, human approval workflows, structured audit trails, data lineage, model provenance, and OpenTelemetry-based traceability.\n\nRather than focusing on a single vendor or model, the talk focuses on durable engineering patterns: how to make AI actions permissioned, explainable, reproducible, observable, and auditable.\n\nBy the end, attendees will have a concrete blueprint for building AI features that can move beyond prototypes and operate safely in real-world regulated systems.\n\nSpeakers: Petros Savvakis",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "JLCPZE",
+   "title": "Learn Quantum Computing with QiliSDK",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/JLCPZE/",
+   "genre": "talk",
+   "categories": [
+    "7100-pen-source-software-communities"
+   ],
+   "blurb": "Quantum computing is often introduced either through high-level circuit abstractions or through heavy theoretical formalism. Developers can struggle to connect textbook concepts with actual quantum programs they can build, simulate, and inspect. This 90-minute tutorial provides a practical, hands-on introduction to quantum computing using QiliSDK, a Python framework for expressing and executing quantum workflows through a clean and modular API.\n\nThe session begins with the foundations: qubits, quantum states, gates, circuits, and measurement. Participants will implement basic quantum circuits and learn how quantum programs are constructed, simulated, and interpreted. From there, we will introduce simple algorithmic patterns, including parameterized circuits and variational workflows, showing how these ideas can be expressed naturally in Python.\n\nThe focus of the tutorial is practical understanding. Attendees will build and simulate circuits, inspect measurement results, and learn how different execution backends fit into a quantum software workflow. We will also introduce the basic idea of noise-aware simulation, helping participants understand why ideal circuit behavior differs from realistic execution on quantum devices.\n\nBy the end of the tutorial, participants will have:\n\n* A clear understanding of core quantum computing concepts.\n* Hands-on experience building and simulating quantum circuits with QiliSDK.\n* Familiarity with parameterized circuits and introductory variational workflows.\n* A basic understanding of measurement results and noise-aware simulation.\n* A practical view of how quantum programs are structured in Python.\n\nThis tutorial is designed for developers, students, and researchers who want an accessible but technically grounded entry point into quantum computing. Prior experience with Python is required. No prior quantum computing knowledge is assumed, though basic linear algebra familiarity is helpful.\n\nSpeakers: Vyron Vasileiadis",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "MLGUHC",
+   "title": "Building a Thriving Ecosystem: The Role of Communities in Growth and Inclusion",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/MLGUHC/",
+   "genre": "talk",
+   "categories": [
+    "7100-pen-source-software-communities"
+   ],
+   "blurb": "The global tech ecosystem continues to grow, yet challenges like limited mentorship, a lack of role models, and fragmented community support hinder progress, especially for underrepresented groups. PyLadies offers a powerful model for bridging these gaps. This talk explores how PyLadies chapters worldwide foster technical growth, increase mentorship opportunities, and drive collaboration to create a more inclusive and sustainable global tech community.\nWe can contribute to the growth of the global tech ecosystem by leveraging the PyLadies model of an inclusive and sustainable community.\n\nSpeakers: Gertrude Abagale",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "DA7TBE",
+   "title": "The 3 Best Features of FastAPI",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/DA7TBE/",
+   "genre": "talk",
+   "categories": [
+    "7104-web-development"
+   ],
+   "blurb": "An asynchronous web framework with automatically generated documentation and dependency injection, FastAPI has made huge gains in popularity and overtook Flask in the 2025 Stack Overflow Annual Developer Survey. FastAPI’s features are impressive and picking it up is easy, but what are its best features? And are there any areas to be wary of?\n\nSpeakers: Graham Lyons",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "BJA7DX",
+   "title": "Sponsored talk by Yodeck - How to get more context out of Python for LLMs",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/BJA7DX/",
+   "genre": "talk",
+   "categories": [
+    "7099-artificial-intelligence-ai"
+   ],
+   "blurb": "LLMs are pretty good at writing Python that works. The problem is that working code isn’t necessarily maintainable, efficient, or even solving the right business problem.\nThis talk argues that the quality of AI-native development depends heavily on how the repository is designed as an operating environment. Using a production Django backend as the case study, it walks through several practical layers of that idea: pinning the stack, a layered architecture where a file's location is a promise about its contents, using strict mypy to make contracts explicit, enforcing app boundaries with import-linter, giving developers and agents the same deterministic verification scripts, and treating documentation as a linted graph rather than prose.\nThe idea is simple: take conventions and domain knowledge that normally live in people’s heads and turn them into rules the repository can enforce. If a machine can detect when a rule is broken, an LLM has a much better chance of correcting itself.\n\nSpeakers: Klajdi Bodurri",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "HG7PWJ",
+   "title": "Less painful Open Source code contributions",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/HG7PWJ/",
+   "genre": "talk",
+   "categories": [
+    "7100-pen-source-software-communities"
+   ],
+   "blurb": "There are good chances that most of the third party code you interact with on a daily basis is Open Source. If you are lucky it’s also maintained. You may also have contributed to some Open Source projects or at least you tried: by the number of stale pull requests on Open Source repositories I guess it’s not a happy experience for a lot of people.\n\nHopefully we can save some needless pain to some of you!\n\nLet’s go through a list of mistakes you can avoid to make Open Source maintainers life easier and your experience in contributing code to Open Source software more pleasant. One day you may be on the other side.\n\nSpeakers: Riccardo Magliocchetti",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "AP8BZJ",
+   "title": "Build, deploy, monetize: the future of the AI-powered developer economy",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/AP8BZJ/",
+   "genre": "talk",
+   "categories": [
+    "7097-automations-quality-assurance"
+   ],
+   "blurb": "AI models are only as good as the data you feed them. Someone has to build the tools that get that data - and with Apify, that someone can earn a serious passive income doing it.\n\nThis talk walks through the full journey in 4 steps:\n\nDevelopment\nWe'll build Actors in Python, combining scraping libraries like crawlee-python and playwright with AI SDKs to create something more powerful than a traditional scraper. Instead of brittle CSS selectors, you describe what you want and let an LLM extract it. We'll live-code a Python Actor that scrapes a site and uses an AI model to return clean, structured data.\nPublication and monetization\nPublishing to Apify Store takes minutes. AI-powered Actors command higher prices because buyers - analysts, researchers, product teams - don't want raw HTML, they want ready-to-use data. We'll set up pricing and cover what makes a listing stand out.\nTesting\nAI outputs aren't deterministic, so testing looks different. We'll cover how to validate structure and coverage rather than exact matches, and how to catch regressions before your users do.\nPromotion\nA great Actor nobody finds earns nothing. We'll cover Store SEO, writing descriptions that rank, and using the Apify Discord to get your first users.\nLive demo: Full workflow with the Apify CLI - from apify create to a published Actor in minutes.\n\nTo close: Real developers earning thousands monthly in Apify Store. The tools are here, the market is here - let's talk about what you can build.\n\nSpeakers: Saurav Jain, Matyáš Cimbulka",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "7XWDAJ",
+   "title": "The AI Landscape Is Moving Too Fast, And That's Okay",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/7XWDAJ/",
+   "genre": "talk",
+   "categories": [
+    "7099-artificial-intelligence-ai"
+   ],
+   "blurb": "Six months ago I started building an AI agent-project on the side. By the time I returned to it, half of the libraries I used had been restructured, one had been renamed, and a new protocol had appeared that made my tool-calling code look totally old school.\n\nThis talk is about surviving that chaos.\n\nLangChain, LangGraph,  CrewAI, MCP — the agent ecosystem in Python is evolving at a great pace. Every other week there is a new abstraction, a breaking change, or a \"this is now the right way\" blog post/reel (this is a thing now) that changes the way we should built things.\nBut here is what I grasped from all these: the libraries change fast, the concepts pretty much stay the same. State machines, graph-based execution,  tool interfaces — these ideas are with us for a long time. When you see LangGraph as a state machine and MCP as an RPC interface, the chaos becomes somehow manageable (or not 😄).\n\nIn this talk, we will cover:\n* An honest timeline of how fast things actually changed (with proof)\n* Why agents, LangGraph, and MCP are actually familiar CS stuff\n* What to learn deeply and what not.\n\nIf you have ever felt like you blinked and everything broke, this talk is for you.\n\nSpeakers: Nina Siaminou",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "SBYG83",
+   "title": "The Maintenance Gap: Bridging Upstream Python and Downstream on Linux",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/SBYG83/",
+   "genre": "talk",
+   "categories": [
+    "7100-pen-source-software-communities"
+   ],
+   "blurb": "Most developers focus on the creation of Python packages, but the lifecycle within a Linux distribution is where the real work begins. This talk explores the productization aspect of open-source software, focusing on how downstream maintainers handle security vulnerabilities (CVEs), strict versioning requirements, and dependency constraints. We’ll look at the critical interplay between upstream projects and the distributions that deliver them to users, providing a roadmap for better package sustainability.\n\nSpeakers: Priscila Gutierres",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "9RAZHK",
+   "title": "Building a Data Platform for Remote Field Sensors in Python",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/9RAZHK/",
+   "genre": "talk",
+   "categories": [
+    "7098-data"
+   ],
+   "blurb": "Across dozens of remote field sites in the Netherlands, instruments measure greenhouse gas fluxes, soil properties, weather conditions and other parameters necessary for environmental research. Each site has its own hardware, file formats, and protocols for getting data off the device. To make any of this useful, the data has to be reliably retrieved from the field, parsed, validated, structured and visualized, while the pipeline keeps running as new sites and new sensors come online.\n\nThis talk walks through the architecture we built to handle that: a time-series data layer (PostgreSQL with TimescaleDB), ingestion scripts that pull and parse data from each source, an orchestration layer (Prefect) coordinating multiple independent jobs, API endpoints (FastAPI) for data access, and Grafana dashboards for researchers to see the data. \n\nThe patterns apply whenever you're ingesting data from sources you don't fully control. Schema design for evolving sensors, orchestration across independent feeds, and exposing the same data through both dashboards and APIs. You'll leave with a concrete reference architecture you can adapt to your own domain.\n\nSpeakers: Aris Nivorlis",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "Z9VXC8",
+   "title": "Built for Reality. Not Linkedin - How Little LLM Can You Get Away With?",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/Z9VXC8/",
+   "genre": "talk",
+   "categories": [
+    "7099-artificial-intelligence-ai"
+   ],
+   "blurb": "**Title**: Built for Reality. Not Linkedin - How Little LLM Can You Get Away With? \n**Subtitle**: Lessons from putting AI into a 30-year-old ERP\n\n**Description**\nLawyers and production systems are where “mostly right” goes to die. This talk equips you with the engineering patterns to turn the \"vibes\" of an LLM into structured data that is reliably right. We’ll treat LLMs as a last-mile component inside a deterministic Python pipeline. You’ll learn how to combine filtering, structured validation, and retry loops to transform LLM outputs from best guesses into strict contracts.\n1. **Less LLM, More Software**: LLMs are the most expensive \"if-statements\" you’ll ever deploy. We will discuss why production requires 99% accuracy, not 80%, and how to get there by treating LLMs as a last-mile component. Learn to use filtering, model hierarchies, and custom context to do the heavy lifting before reaching for the big APIs.\n2. **The Self-Healing Harness**: A deep dive into the **Instructor** library and **Pydantic**. We will demonstrate how to define \"The Law\" for your data and implement automated retry loops. We’ll show how to turn validation errors into a feedback loop that forces the LLM to self-correct its own mistakes before the data ever touches your System.\n3. **Earning Trust Gradually**: AI is never \"done\" until it earns trust. We’ll look at the \"Shadow Mode\" deployment strategy: how to deploy incrementally and use Python to compare AI outputs against human reality, ensuring your users are part of the journey rather than victims of the automation.\n\nFocusing on the harness software before letting your agent walk is like cleaning your data before analysis.\n\n**Objectives**\n- Decide which parts of their pipeline should not be an LLM call. Most shouldn't.\n- Design multi-stage pipelines that minimize model calls\n- Use Pydantic to validate and enforce structured LLM outputs\n- Implement retry loops that improve correctness automatically\n- Run a rollout that earns trust so that the users want more\n\nSpeakers: Jasper Castell",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "GLPQS9",
+   "title": "Keynote Speech by Yiannis Kranidiotis",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/GLPQS9/",
+   "genre": "talk",
+   "categories": [
+    "type-keynote"
+   ],
+   "blurb": "Second Keynote",
+   "durationMin": 45,
+   "imageUrl": null
+  },
+  {
+   "id": "XETGH3",
+   "title": "Closing Remarks",
+   "titleLocal": null,
+   "url": "https://pretalx.com/pycongr26/talk/XETGH3/",
+   "genre": "talk",
+   "categories": [
+    "type-informational"
+   ],
+   "blurb": "Closing remarks for PyCon GR 2026 🥹",
+   "durationMin": 30,
+   "imageUrl": null
+  }
+ ],
+ "performances": [
+  {
+   "id": "UTAWZ3/2026-10-12T09:45",
+   "eventId": "UTAWZ3",
+   "venueId": "technopolis",
+   "roomId": "auditorium-miltiadis-evert",
+   "date": "2026-10-12",
+   "start": "09:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "NGEV9F/2026-10-12T10:00",
+   "eventId": "NGEV9F",
+   "venueId": "technopolis",
+   "roomId": "auditorium-miltiadis-evert",
+   "date": "2026-10-12",
+   "start": "10:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "NKSZ8V/2026-10-12T10:45",
+   "eventId": "NKSZ8V",
+   "venueId": "technopolis",
+   "roomId": "exhibit-hall-b",
+   "date": "2026-10-12",
+   "start": "10:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "VXF9GV/2026-10-12T10:45",
+   "eventId": "VXF9GV",
+   "venueId": "technopolis",
+   "roomId": "exhibit-hall-c",
+   "date": "2026-10-12",
+   "start": "10:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "3PCBDJ/2026-10-12T10:45",
+   "eventId": "3PCBDJ",
+   "venueId": "technopolis",
+   "roomId": "exhibit-hall-d",
+   "date": "2026-10-12",
+   "start": "10:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "TTUJLA/2026-10-12T10:45",
+   "eventId": "TTUJLA",
+   "venueId": "technopolis",
+   "roomId": "exhibit-hall-e",
+   "date": "2026-10-12",
+   "start": "10:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "V7BXMU/2026-10-12T10:45",
+   "eventId": "V7BXMU",
+   "venueId": "technopolis",
+   "roomId": "exhibit-hall-f",
+   "date": "2026-10-12",
+   "start": "10:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "MJPATL/2026-10-12T11:10",
+   "eventId": "MJPATL",
+   "venueId": "technopolis",
+   "roomId": "auditorium-miltiadis-evert",
+   "date": "2026-10-12",
+   "start": "11:10",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "9T8VZT/2026-10-12T11:10",
+   "eventId": "9T8VZT",
+   "venueId": "technopolis",
+   "roomId": "innovathens-tutorial-room",
+   "date": "2026-10-12",
+   "start": "11:10",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "T9B7EP/2026-10-12T11:10",
+   "eventId": "T9B7EP",
+   "venueId": "technopolis",
+   "roomId": "purifier-stage",
+   "date": "2026-10-12",
+   "start": "11:10",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "RNVVNZ/2026-10-12T11:50",
+   "eventId": "RNVVNZ",
+   "venueId": "technopolis",
+   "roomId": "auditorium-miltiadis-evert",
+   "date": "2026-10-12",
+   "start": "11:50",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "HPK7PV/2026-10-12T11:50",
+   "eventId": "HPK7PV",
+   "venueId": "technopolis",
+   "roomId": "purifier-stage",
+   "date": "2026-10-12",
+   "start": "11:50",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "CTGFRF/2026-10-12T12:30",
+   "eventId": "CTGFRF",
+   "venueId": "technopolis",
+   "roomId": "auditorium-miltiadis-evert",
+   "date": "2026-10-12",
+   "start": "12:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "77FHAM/2026-10-12T12:30",
+   "eventId": "77FHAM",
+   "venueId": "technopolis",
+   "roomId": "purifier-stage",
+   "date": "2026-10-12",
+   "start": "12:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "D3MEH8/2026-10-12T13:00",
+   "eventId": "D3MEH8",
+   "venueId": "technopolis",
+   "roomId": "innovathens-tutorial-room",
+   "date": "2026-10-12",
+   "start": "13:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "D93MUG/2026-10-12T14:00",
+   "eventId": "D93MUG",
+   "venueId": "technopolis",
+   "roomId": "auditorium-miltiadis-evert",
+   "date": "2026-10-12",
+   "start": "14:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "CEEGYR/2026-10-12T14:00",
+   "eventId": "CEEGYR",
+   "venueId": "technopolis",
+   "roomId": "innovathens-tutorial-room",
+   "date": "2026-10-12",
+   "start": "14:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "VPQ9SM/2026-10-12T14:00",
+   "eventId": "VPQ9SM",
+   "venueId": "technopolis",
+   "roomId": "purifier-stage",
+   "date": "2026-10-12",
+   "start": "14:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "PZGHXT/2026-10-12T14:40",
+   "eventId": "PZGHXT",
+   "venueId": "technopolis",
+   "roomId": "auditorium-miltiadis-evert",
+   "date": "2026-10-12",
+   "start": "14:40",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "XEZSXR/2026-10-12T14:40",
+   "eventId": "XEZSXR",
+   "venueId": "technopolis",
+   "roomId": "purifier-stage",
+   "date": "2026-10-12",
+   "start": "14:40",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "QJBXGP/2026-10-12T15:20",
+   "eventId": "QJBXGP",
+   "venueId": "technopolis",
+   "roomId": "auditorium-miltiadis-evert",
+   "date": "2026-10-12",
+   "start": "15:20",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "EFDJ79/2026-10-12T15:20",
+   "eventId": "EFDJ79",
+   "venueId": "technopolis",
+   "roomId": "purifier-stage",
+   "date": "2026-10-12",
+   "start": "15:20",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "UKYLXE/2026-10-12T16:10",
+   "eventId": "UKYLXE",
+   "venueId": "technopolis",
+   "roomId": "auditorium-miltiadis-evert",
+   "date": "2026-10-12",
+   "start": "16:10",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "STP3KW/2026-10-12T16:10",
+   "eventId": "STP3KW",
+   "venueId": "technopolis",
+   "roomId": "innovathens-tutorial-room",
+   "date": "2026-10-12",
+   "start": "16:10",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "L8F9BX/2026-10-12T16:10",
+   "eventId": "L8F9BX",
+   "venueId": "technopolis",
+   "roomId": "purifier-stage",
+   "date": "2026-10-12",
+   "start": "16:10",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "KR8Q8Q/2026-10-12T16:50",
+   "eventId": "KR8Q8Q",
+   "venueId": "technopolis",
+   "roomId": "auditorium-miltiadis-evert",
+   "date": "2026-10-12",
+   "start": "16:50",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "WDSCUU/2026-10-12T16:50",
+   "eventId": "WDSCUU",
+   "venueId": "technopolis",
+   "roomId": "purifier-stage",
+   "date": "2026-10-12",
+   "start": "16:50",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "3XSKQX/2026-10-12T17:30",
+   "eventId": "3XSKQX",
+   "venueId": "technopolis",
+   "roomId": "auditorium-miltiadis-evert",
+   "date": "2026-10-12",
+   "start": "17:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "HNHAEP/2026-10-12T17:30",
+   "eventId": "HNHAEP",
+   "venueId": "technopolis",
+   "roomId": "purifier-stage",
+   "date": "2026-10-12",
+   "start": "17:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "BSAAXM/2026-10-12T18:10",
+   "eventId": "BSAAXM",
+   "venueId": "technopolis",
+   "roomId": "auditorium-miltiadis-evert",
+   "date": "2026-10-12",
+   "start": "18:10",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "DXZK9X/2026-10-12T19:00",
+   "eventId": "DXZK9X",
+   "venueId": "technopolis",
+   "roomId": "auditorium-miltiadis-evert",
+   "date": "2026-10-12",
+   "start": "19:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "JMQEVG/2026-10-13T10:00",
+   "eventId": "JMQEVG",
+   "venueId": "technopolis",
+   "roomId": "auditorium-miltiadis-evert",
+   "date": "2026-10-13",
+   "start": "10:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "ATP78B/2026-10-13T11:10",
+   "eventId": "ATP78B",
+   "venueId": "technopolis",
+   "roomId": "auditorium-miltiadis-evert",
+   "date": "2026-10-13",
+   "start": "11:10",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "NNJP9A/2026-10-13T11:10",
+   "eventId": "NNJP9A",
+   "venueId": "technopolis",
+   "roomId": "innovathens-tutorial-room",
+   "date": "2026-10-13",
+   "start": "11:10",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "MATWX8/2026-10-13T11:10",
+   "eventId": "MATWX8",
+   "venueId": "technopolis",
+   "roomId": "purifier-stage",
+   "date": "2026-10-13",
+   "start": "11:10",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "KAZDKS/2026-10-13T11:50",
+   "eventId": "KAZDKS",
+   "venueId": "technopolis",
+   "roomId": "auditorium-miltiadis-evert",
+   "date": "2026-10-13",
+   "start": "11:50",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "W7HTNK/2026-10-13T11:50",
+   "eventId": "W7HTNK",
+   "venueId": "technopolis",
+   "roomId": "purifier-stage",
+   "date": "2026-10-13",
+   "start": "11:50",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "ZQVFNE/2026-10-13T12:30",
+   "eventId": "ZQVFNE",
+   "venueId": "technopolis",
+   "roomId": "auditorium-miltiadis-evert",
+   "date": "2026-10-13",
+   "start": "12:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "LDVLEA/2026-10-13T12:30",
+   "eventId": "LDVLEA",
+   "venueId": "technopolis",
+   "roomId": "purifier-stage",
+   "date": "2026-10-13",
+   "start": "12:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "JLCPZE/2026-10-13T13:40",
+   "eventId": "JLCPZE",
+   "venueId": "technopolis",
+   "roomId": "innovathens-tutorial-room",
+   "date": "2026-10-13",
+   "start": "13:40",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "MLGUHC/2026-10-13T14:00",
+   "eventId": "MLGUHC",
+   "venueId": "technopolis",
+   "roomId": "auditorium-miltiadis-evert",
+   "date": "2026-10-13",
+   "start": "14:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "DA7TBE/2026-10-13T14:00",
+   "eventId": "DA7TBE",
+   "venueId": "technopolis",
+   "roomId": "purifier-stage",
+   "date": "2026-10-13",
+   "start": "14:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "BJA7DX/2026-10-13T14:40",
+   "eventId": "BJA7DX",
+   "venueId": "technopolis",
+   "roomId": "auditorium-miltiadis-evert",
+   "date": "2026-10-13",
+   "start": "14:40",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "HG7PWJ/2026-10-13T14:40",
+   "eventId": "HG7PWJ",
+   "venueId": "technopolis",
+   "roomId": "purifier-stage",
+   "date": "2026-10-13",
+   "start": "14:40",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "AP8BZJ/2026-10-13T15:15",
+   "eventId": "AP8BZJ",
+   "venueId": "technopolis",
+   "roomId": "innovathens-tutorial-room",
+   "date": "2026-10-13",
+   "start": "15:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "7XWDAJ/2026-10-13T15:20",
+   "eventId": "7XWDAJ",
+   "venueId": "technopolis",
+   "roomId": "auditorium-miltiadis-evert",
+   "date": "2026-10-13",
+   "start": "15:20",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "SBYG83/2026-10-13T15:20",
+   "eventId": "SBYG83",
+   "venueId": "technopolis",
+   "roomId": "purifier-stage",
+   "date": "2026-10-13",
+   "start": "15:20",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "9RAZHK/2026-10-13T16:10",
+   "eventId": "9RAZHK",
+   "venueId": "technopolis",
+   "roomId": "auditorium-miltiadis-evert",
+   "date": "2026-10-13",
+   "start": "16:10",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "Z9VXC8/2026-10-13T16:10",
+   "eventId": "Z9VXC8",
+   "venueId": "technopolis",
+   "roomId": "purifier-stage",
+   "date": "2026-10-13",
+   "start": "16:10",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "GLPQS9/2026-10-13T16:50",
+   "eventId": "GLPQS9",
+   "venueId": "technopolis",
+   "roomId": "auditorium-miltiadis-evert",
+   "date": "2026-10-13",
+   "start": "16:50",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "XETGH3/2026-10-13T17:35",
+   "eventId": "XETGH3",
+   "venueId": "technopolis",
+   "roomId": "auditorium-miltiadis-evert",
+   "date": "2026-10-13",
+   "start": "17:35",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  }
+ ],
+ "sources": {
+  "festival": [
+   "festival.toml"
+  ],
+  "venues": [
+   "pretalx",
+   "venues-research"
+  ],
+  "events": [
+   "pretalx"
+  ],
+  "performances": [
+   "pretalx"
+  ],
+  "availability": [],
+  "prices": []
+ },
+ "provenance": {
+  "sources": {
+   "venues-research": {
+    "kind": "curated",
+    "path": "scraper/festivals/pycon_greece/curated/venues.json"
+   },
+   "pretalx": {
+    "kind": "fetched",
+    "path": "data/festivals/pycon-greece/2026/pretalx",
+    "fetchedAt": "2026-10-02T18:34:19Z",
+    "fetcher": "scraper/festivals/pycon_greece/sources/pretalx/fetch.py",
+    "fetcherVersion": 1
+   }
+  },
+  "absent": [],
+  "fields": {
+   "categories.name": [
+    "pretalx"
+   ],
+   "events.blurb": [
+    "pretalx"
+   ],
+   "events.categories": [
+    "pretalx"
+   ],
+   "events.durationMin": [
+    "pretalx"
+   ],
+   "events.genre": [
+    "pretalx"
+   ],
+   "events.imageUrl": [
+    "pretalx"
+   ],
+   "events.title": [
+    "pretalx"
+   ],
+   "events.url": [
+    "pretalx"
+   ],
+   "performances.date": [
+    "pretalx"
+   ],
+   "performances.eventId": [
+    "pretalx"
+   ],
+   "performances.roomId": [
+    "pretalx"
+   ],
+   "performances.start": [
+    "pretalx"
+   ],
+   "performances.ticketUrl": [
+    "pretalx"
+   ],
+   "performances.venueId": [
+    "pretalx"
+   ],
+   "venues.address": [
+    "venues-research"
+   ],
+   "venues.lat": [
+    "venues-research"
+   ],
+   "venues.lng": [
+    "venues-research"
+   ],
+   "venues.name": [
+    "venues-research"
+   ],
+   "venues.notes": [
+    "venues-research"
+   ],
+   "venues.refs": [
+    "venues-research"
+   ],
+   "venues.rooms": [
+    "pretalx"
+   ]
+  },
+  "skipped": {}
+ }
+}

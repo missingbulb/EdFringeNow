@@ -1,0 +1,15 @@
+{
+ "festival": "acco",
+ "edition": "2026",
+ "source": "street-programme",
+ "fetchedAt": "2026-09-25T20:55:20Z",
+ "fetcher": "scraper/festivals/acco/sources/street-programme/fetch.py",
+ "fetcherVersion": 2,
+ "urls": [
+  "https://akko-festival-shows.vercel.app"
+ ],
+ "files": [
+  "programme.json"
+ ],
+ "notes": "Cards grouped under the page's own zone headings; chips, blurbs and credits untranslated."
+}

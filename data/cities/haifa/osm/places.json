@@ -1,0 +1,550 @@
+{
+ "places": [
+  {
+   "id": "node/10291962384",
+   "lat": 32.821203,
+   "lng": 34.976998,
+   "tags": {
+    "name": "תצפית שמעון פרס",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/11151920167",
+   "lat": 32.776163,
+   "lng": 35.043025,
+   "tags": {
+    "name": "Art studio RIMONIM Workroom",
+    "tourism": "gallery",
+    "addr:housenumber": "15",
+    "addr:street": "התעשיה",
+    "addr:postcode": "36601"
+   }
+  },
+  {
+   "id": "node/11454119276",
+   "lat": 32.756737,
+   "lng": 35.019802,
+   "tags": {
+    "name": "מצפור נחל גלים",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/13201516371",
+   "lat": 32.778965,
+   "lng": 35.013904,
+   "tags": {
+    "name": "עראק א-זע'אן",
+    "name:en": "‘Iraq ez-Zighan",
+    "historic": "ruins",
+    "wikidata": "Q7035361",
+    "wikipedia": "he:קיר העורבים"
+   }
+  },
+  {
+   "id": "node/13798447802",
+   "lat": 32.808212,
+   "lng": 34.99953,
+   "tags": {
+    "name": "Изготовление картин и рам",
+    "tourism": "gallery",
+    "addr:housenumber": "27,29",
+    "addr:street": "נורדאו"
+   }
+  },
+  {
+   "id": "node/14105039693",
+   "lat": 32.789426,
+   "lng": 34.99899,
+   "tags": {
+    "name": "מבצר ראש מיה",
+    "historic": "ruins",
+    "wikidata": "Q6588844",
+    "wikipedia": "he:מבצר ראש מיה"
+   }
+  },
+  {
+   "id": "node/14105133110",
+   "lat": 32.779334,
+   "lng": 35.015869,
+   "tags": {
+    "name": "מוזיאון המודלים והמיניאטורות גריף",
+    "name:en": "Greif Miniature Model Museum",
+    "tourism": "museum",
+    "website": "https://www.greif-mmm.com/",
+    "addr:housenumber": "25",
+    "addr:street": "אדם הכהן"
+   }
+  },
+  {
+   "id": "node/14107140446",
+   "lat": 32.772884,
+   "lng": 35.00576,
+   "tags": {
+    "name": "מצפור זייד",
+    "name:en": "Zeid Observatory",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/14124770619",
+   "lat": 32.770307,
+   "lng": 35.01955,
+   "tags": {
+    "name": "מצפור גלית",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/2089885925",
+   "lat": 32.828083,
+   "lng": 34.970002,
+   "tags": {
+    "name": "מצפור סן פרנסיסקו",
+    "name:en": "San Francisco Viewpoint",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/2104654725",
+   "lat": 32.763218,
+   "lng": 35.018062,
+   "tags": {
+    "name": "מוזיאון הכט לארכאולוגיה של א\"י",
+    "name:en": "Hecht archaeology museum",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "node/2546650693",
+   "lat": 32.811508,
+   "lng": 34.985229,
+   "tags": {
+    "name": "הגנים הבהאים",
+    "name:en": "Baha'i Gardens viewpoint",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/429882269",
+   "lat": 32.829951,
+   "lng": 34.969301,
+   "tags": {
+    "name": "מערת אליהו",
+    "name:en": "Elijah's Cave",
+    "tourism": "attraction",
+    "opening_hours": "summer Su-Th 08:00-18:00; winter Su-Th 08:00-17:00; Fr 08:00-13:00; PH off",
+    "wikidata": "Q5054952"
+   }
+  },
+  {
+   "id": "node/4624806711",
+   "lat": 32.772434,
+   "lng": 34.993634,
+   "tags": {
+    "name": "עין עובדיה",
+    "name:en": "Ein Ovadia",
+    "tourism": "attraction",
+    "wikidata": "Q26766911"
+   }
+  },
+  {
+   "id": "node/4717819409",
+   "lat": 32.771622,
+   "lng": 34.988686,
+   "tags": {
+    "name": "המרפסת",
+    "name:en": "The Balcony",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/4717819411",
+   "lat": 32.778624,
+   "lng": 34.979158,
+   "tags": {
+    "name": "מחנה פרויד",
+    "name:en": "Freud Treehouse",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/5016280657",
+   "lat": 32.815131,
+   "lng": 34.984332,
+   "tags": {
+    "name": "מצפור דוד שטסל",
+    "name:en": "David Stössel Overlook Terrace",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/5116024883",
+   "lat": 32.75774,
+   "lng": 35.027366,
+   "tags": {
+    "name": "מצפה המפרץ",
+    "name:en": "Gulf viewpoint",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/5730227160",
+   "lat": 32.80262,
+   "lng": 34.969974,
+   "tags": {
+    "name": "בוסתן כיאט",
+    "name:en": "Chiat Orchard",
+    "leisure": "garden",
+    "wikidata": "Q6850674",
+    "wikipedia": "he:בוסתן כיאט"
+   }
+  },
+  {
+   "id": "node/6179376242",
+   "lat": 32.81135,
+   "lng": 34.984881,
+   "tags": {
+    "name": "Wilhelm II Obelisk",
+    "name:en": "Wilhelm II Obelisk",
+    "historic": "memorial",
+    "wikidata": "Q6987916"
+   }
+  },
+  {
+   "id": "node/7600781632",
+   "lat": 32.775219,
+   "lng": 35.001448,
+   "tags": {
+    "name": "מצפור תמר",
+    "name:en": "Tamar Viewpoint",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/7699976185",
+   "lat": 32.800833,
+   "lng": 35.019167,
+   "tags": {
+    "name": "תל אבו הואם",
+    "name:en": "Tell Abu Hawam",
+    "historic": "archaeological_site",
+    "wikidata": "Q694326"
+   }
+  },
+  {
+   "id": "node/8583546417",
+   "lat": 32.815104,
+   "lng": 34.992697,
+   "tags": {
+    "name": "מוזיאון חיפה לאמנות",
+    "name:en": "Haifa Museum of Art",
+    "tourism": "museum",
+    "website": "https://www.hms.org.il/",
+    "wikidata": "Q597398",
+    "addr:housenumber": "26",
+    "addr:street": "שבתאי לוי"
+   }
+  },
+  {
+   "id": "node/8677519123",
+   "lat": 32.824044,
+   "lng": 34.977019,
+   "tags": {
+    "name": "מצפור אליהו פבר",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/9828265270",
+   "lat": 32.830075,
+   "lng": 34.971421,
+   "tags": {
+    "name": "מוזיאון ההעפלה וחיל הים",
+    "name:en": "Clandestine Immigration and Naval",
+    "tourism": "museum",
+    "wikidata": "Q2376302"
+   }
+  },
+  {
+   "id": "relation/14340956",
+   "lat": 32.811936,
+   "lng": 35.002934,
+   "tags": {
+    "name": "שוק הפשפשים",
+    "name:en": "Flea market",
+    "amenity": "marketplace"
+   }
+  },
+  {
+   "id": "way/1070996296",
+   "lat": 32.83028,
+   "lng": 34.970436,
+   "tags": {
+    "name": "אח\"י דקר",
+    "name:en": "Ahi Dakar",
+    "historic": "monument",
+    "building": "ship",
+    "wikidata": "Q1139953",
+    "wikipedia": "en:INS Dakar"
+   }
+  },
+  {
+   "id": "way/1071661050",
+   "lat": 32.807905,
+   "lng": 34.987149,
+   "tags": {
+    "name": "מוזיאון מאנה-כץ",
+    "name:en": "Mane-Katz Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q45002",
+    "wikipedia": "he:מוזיאון מאנה-כץ"
+   }
+  },
+  {
+   "id": "way/1119264264",
+   "lat": 32.809943,
+   "lng": 34.996368,
+   "tags": {
+    "name": "מדעטק - המוזיאון הלאומי למדע",
+    "name:en": "Madatech - National Science Museum",
+    "tourism": "museum",
+    "wikidata": "Q2904377",
+    "wikipedia": "en:Israel National Museum of Science, Technology, and Space",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/116751953",
+   "lat": 32.80657,
+   "lng": 34.985233,
+   "tags": {
+    "name": "גן החיות הלימודי חיפה",
+    "name:en": "Haifa educational zoo",
+    "tourism": "zoo",
+    "website": "https://www.haifazoo.co.il/",
+    "wikidata": "Q12404972"
+   }
+  },
+  {
+   "id": "way/119021462",
+   "lat": 32.766613,
+   "lng": 35.027357,
+   "tags": {
+    "name": "פארק נשר",
+    "leisure": "park",
+    "wikidata": "Q6984946"
+   }
+  },
+  {
+   "id": "way/135405901",
+   "lat": 32.809349,
+   "lng": 34.985385,
+   "tags": {
+    "name": "מוזיאון טיקוטין לאמנות יפנית",
+    "name:en": "Tikotin Museum of Japanese Art",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q2623739"
+   }
+  },
+  {
+   "id": "way/1551835566",
+   "lat": 32.810528,
+   "lng": 35.003441,
+   "tags": {
+    "name": "פירמידה",
+    "tourism": "gallery",
+    "building": "yes"
+   }
+  },
+  {
+   "id": "way/171785181",
+   "lat": 32.828984,
+   "lng": 34.972337,
+   "tags": {
+    "name": "המוזיאון הימי",
+    "name:en": "National Maritime museum",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q2904556"
+   }
+  },
+  {
+   "id": "way/179233930",
+   "lat": 32.828074,
+   "lng": 34.970067,
+   "tags": {
+    "name": "רכבל חיפה",
+    "name:en": "Haifa cable car",
+    "tourism": "attraction",
+    "building": "yes",
+    "wikidata": "Q713926"
+   }
+  },
+  {
+   "id": "way/182975385",
+   "lat": 32.818581,
+   "lng": 34.955871,
+   "tags": {
+    "name": "פארק שקמונה",
+    "name:en": "Shikmona park",
+    "leisure": "park",
+    "wikidata": "Q2919810"
+   }
+  },
+  {
+   "id": "way/188631535",
+   "lat": 32.808757,
+   "lng": 35.002682,
+   "tags": {
+    "name": "שוק תלפיות - השוק המקורה",
+    "name:en": "Talpiot (interior) Market - historic building",
+    "amenity": "marketplace",
+    "building": "yes"
+   }
+  },
+  {
+   "id": "way/196342330",
+   "lat": 32.811172,
+   "lng": 35.006688,
+   "tags": {
+    "name": "מוזיאון הרכבת",
+    "name:en": "Railway Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q1674686",
+    "wikipedia": "en:Israel Railway Museum"
+   }
+  },
+  {
+   "id": "way/34395280",
+   "lat": 32.813524,
+   "lng": 34.986595,
+   "tags": {
+    "name": "הגנים הבהאים",
+    "name:en": "Baha'i Gardens",
+    "leisure": "garden",
+    "opening_hours": "Mo-Su 09:00-17:00",
+    "website": "https://ganbahai.org.il/",
+    "wikidata": "Q4843069",
+    "wikipedia": "ar:حدائق البهائيين",
+    "fee": "no",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/369629284",
+   "lat": 32.75347,
+   "lng": 35.010911,
+   "tags": {
+    "name": "חי-בר כרמל",
+    "name:en": "Chai-Bar Carmel",
+    "tourism": "zoo",
+    "website": "https://www.parks.org.il/reserve-park/שמורת-טבע-חי-בר-בכרמל/",
+    "wikidata": "Q1058886",
+    "wikipedia": "he:חי-בר כרמל",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/67227526",
+   "lat": 32.785488,
+   "lng": 35.013379,
+   "tags": {
+    "name": "גבעת השבשבת",
+    "name:en": "Shavshevet Hill",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "way/71809217",
+   "lat": 32.816345,
+   "lng": 34.981652,
+   "tags": {
+    "name": "גן פסלי אורסולה מלבין",
+    "name:en": "Ursula Malbin Sculpture Garden",
+    "leisure": "park",
+    "wikidata": "Q121133495",
+    "wikipedia": "ru:Сад скульптур (Хайфа)"
+   }
+  },
+  {
+   "id": "way/72030363",
+   "lat": 32.81773,
+   "lng": 34.955714,
+   "tags": {
+    "name": "פארק הכט",
+    "name:en": "Hecht Park",
+    "leisure": "park",
+    "wikidata": "Q16129527"
+   }
+  },
+  {
+   "id": "way/91970948",
+   "lat": 32.814595,
+   "lng": 34.987142,
+   "tags": {
+    "name": "כיפת הבאב",
+    "name:en": "Shrine of the Bab",
+    "tourism": "attraction",
+    "amenity": "place_of_worship",
+    "building": "shrine",
+    "wikidata": "Q1462314"
+   }
+  },
+  {
+   "id": "way/91970954",
+   "lat": 32.811517,
+   "lng": 34.988681,
+   "tags": {
+    "name": "מרכז ההוראה הבינלאומי",
+    "name:en": "International Teaching Center",
+    "tourism": "attraction",
+    "building": "yes",
+    "wikidata": "Q1477440",
+    "wikipedia": "en:ITC",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/91970958",
+   "lat": 32.81156,
+   "lng": 34.987459,
+   "tags": {
+    "name": "בית הצדק העולמי",
+    "name:en": "Universal House of Justice",
+    "tourism": "attraction",
+    "building": "yes",
+    "wikidata": "Q1163783",
+    "wikipedia": "ar:بيت العدل البهائي"
+   }
+  },
+  {
+   "id": "way/96623732",
+   "lat": 32.822443,
+   "lng": 34.996152,
+   "tags": {
+    "name": "מוזיאון דגון",
+    "name:en": "Dagon Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q6965002"
+   }
+  },
+  {
+   "id": "way/97851263",
+   "lat": 32.778196,
+   "lng": 35.024896,
+   "tags": {
+    "name": "טכניון הגן האקולוגי",
+    "name:en": "Technion Ecological Garden",
+    "leisure": "garden",
+    "wikidata": "Q113643896"
+   }
+  }
+ ]
+}

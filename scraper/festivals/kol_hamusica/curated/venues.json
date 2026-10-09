@@ -1,0 +1,94 @@
+{
+ "about": "Hand-curated venue research for Kol HaMusica, keyed by the codes its smarticket adapter gives the box office's place names. Every figure is {value, source}, or null when nobody could cite it; coordinates carry the basis they rest on and their source.",
+ "researchedAt": "2026-10-02",
+ "venues": {
+  "beit-haam-kfar-blum": {
+   "name": "בית העם כפר בלום",
+   "address": null,
+   "coordinates": {
+    "lat": 33.172222,
+    "lng": 35.609722,
+    "basis": "approximate: Kfar Blum's own coordinates, the kibbutz the venue is in",
+    "source": "https://en.wikipedia.org/wiki/Kfar_Blum"
+   },
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "Kfar Blum's community hall. The box office says parking is in the Emek HaHula high school car park only."
+  },
+  "klor-centre": {
+   "name": "מרכז קלור לאומנויות הבמה",
+   "address": null,
+   "coordinates": {
+    "lat": 33.172222,
+    "lng": 35.609722,
+    "basis": "approximate: Kfar Blum's own coordinates, the kibbutz the venue is in",
+    "source": "https://en.wikipedia.org/wiki/Kfar_Blum"
+   },
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {
+     "id": "hall",
+     "name": "אולם מרכז קלור",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "theatre",
+     "name": "אולם תיאטרון מרכז קלור",
+     "capacity": null,
+     "layout": null
+    }
+   ],
+   "accessibility": null,
+   "notes": "The Klor Centre for the Performing Arts in Kfar Blum; the box office names two of its halls, its hall (morning concerts) and its theatre hall (unreserved seating)."
+  },
+  "pastoral-hotel": {
+   "name": "מלון פסטורל, כפר בלום",
+   "address": null,
+   "coordinates": {
+    "lat": 33.172222,
+    "lng": 35.609722,
+    "basis": "approximate: Kfar Blum's own coordinates, the kibbutz the venue is in",
+    "source": "https://en.wikipedia.org/wiki/Kfar_Blum"
+   },
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "The Pastoral hotel in Kfar Blum, the festival's home: its lawns and halls hold the Café Concert, the Work in Focus talks and the evening concerts. The box office names no hall."
+  },
+  "jordan-bank": {
+   "name": "שפת הירדן",
+   "address": null,
+   "coordinates": {
+    "lat": 33.172222,
+    "lng": 35.609722,
+    "basis": "approximate: Kfar Blum's own coordinates, the kibbutz the venue is in",
+    "source": "https://en.wikipedia.org/wiki/Kfar_Blum"
+   },
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "The family picnic plays outdoors on the bank of the Jordan; the box office gives its place only as \"outside\" and names no meeting point."
+  },
+  "domus-galilaeae": {
+   "name": "דומוס גלילאה",
+   "address": null,
+   "coordinates": {
+    "lat": 32.902164,
+    "lng": 35.551778,
+    "basis": "the article's coordinates on English Wikipedia",
+    "source": "https://en.wikipedia.org/wiki/Domus_Galilaeae"
+   },
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "Domus Galilaeae, the Neocatechumenal centre on the Mount of Beatitudes above the Sea of Galilee, about 35 km south of Kfar Blum."
+  }
+ }
+}

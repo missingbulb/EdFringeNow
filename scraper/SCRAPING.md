@@ -24,9 +24,8 @@ These grant read access to the same public listing everyone sees. Send
 You **can't** hit the API from a web session: the egress proxy blocks
 `equhost.com` with a 403 at the CONNECT. That block is policy — do **not** route
 around it by creating ad-hoc CI workflows. Anything that touches the live API
-runs through a sanctioned workflow: the `Scrape edfringe shows (full)` workflow,
-`Fetch ticket prices (one-off)`, or the `refresh-shows` scheduled task (all on
-GitHub-hosted runners, under the Claudinite scheduler).
+runs through a sanctioned task: `full-scrape`, `fetch-prices`, `price-probe` or
+`refresh-shows` (all on GitHub-hosted runners, under the Claudinite scheduler).
 
 This file is the API reference (field lists via GraphQL introspection:
 `__type` / `__schema`) precisely so that nothing needs to re-fetch it. If it

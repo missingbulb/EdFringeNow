@@ -1,0 +1,31 @@
+{
+ "places": [
+  {
+   "id": "node/14084809164",
+   "lat": 35.208236,
+   "lng": -82.237402,
+   "tags": {
+    "name": "Upstairs Artspace",
+    "tourism": "gallery",
+    "opening_hours": "We-Su 12:00-17:00",
+    "website": "https://upstairsartspace.org",
+    "addr:housenumber": "49",
+    "addr:street": "South Trade Street",
+    "addr:postcode": "28782"
+   }
+  },
+  {
+   "id": "way/762018547",
+   "lat": 35.20926,
+   "lng": -82.238527,
+   "tags": {
+    "name": "Tryon Historical Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "addr:housenumber": "26",
+    "addr:street": "Maple Street",
+    "addr:postcode": "28782"
+   }
+  }
+ ]
+}

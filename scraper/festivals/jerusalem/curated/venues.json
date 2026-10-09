@@ -1,0 +1,58 @@
+{
+ "about": "Hand-curated venue research for the Jerusalem Comedy Festival, keyed by the festival site's own venue key. Not edition-specific: a room outlives a programme. Every figure carries the URL it was read from; a figure nobody could cite is null, never estimated.",
+ "researchedAt": "2026-09-24",
+ "venues": {
+  "בית-הקפה-נוקטורנו-ירושלים": {
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "Bar/café stage; no published seat count found."
+  },
+  "בית-מזיא-ירושלים": {
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "Theatre; venue listings seen (funinjerusalem.com) give address and hours but no seat count."
+  },
+  "בסרביה-בר": {
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "Bar; no published seat count found."
+  },
+  "היכל-התרבות-בית-העם-ירושלים": {
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {
+     "id": "gerard-behar-hall",
+     "name": "Gérard Behar Hall",
+     "capacity": {
+      "value": 500,
+      "source": "https://www.itraveljerusalem.com/attraction/gerard-behar-center"
+     },
+     "layout": null
+    }
+   ],
+   "accessibility": null,
+   "notes": "The building has more than one hall and the festival site does not say which one a performance uses, so the building's capacity stays null and no performance is assigned a room."
+  },
+  "סטודיו-למשחק-ניסן-נתיב-ירושלים": {
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "Acting-school studio at the Menora 3 arts campus; no published seat count found."
+  },
+  "קולנוע-סם-שפיגל": {
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "The Sam Spiegel film school's cinema at the Menora 3 arts campus; no published seat count found."
+  }
+ }
+}

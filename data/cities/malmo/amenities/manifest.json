@@ -1,0 +1,14 @@
+{
+ "city": "malmo",
+ "source": "amenities",
+ "fetchedAt": "2026-10-02T20:05:23Z",
+ "fetcher": "scraper/cities/fetch.py",
+ "fetcherVersion": 2,
+ "urls": [
+  "https://overpass-api.de/api/interpreter"
+ ],
+ "files": [
+  "places.json"
+ ],
+ "notes": "Hotels, guest houses, hostels, motels and restaurants within nearM of an anchor: a festival venue, or the centre where no programme is served. One Overpass query around 1 cells."
+}

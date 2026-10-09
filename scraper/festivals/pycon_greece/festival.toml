@@ -1,0 +1,59 @@
+# PyCon Greece: who it is, its editions, and the sources an edition's information
+# block is assembled from. The contract every key follows is
+# scraper/festivals/README.md.
+#
+# The Greek Python community's conference, at Technopolis in Gazi.
+
+id = "pycon-greece"
+name = "PyCon Greece"
+city = "Athens"
+country = "GR"
+# The city's centre, for the festival timeline and travel maths between
+# cities; the venue carries its own coordinates.
+lat = 37.9838
+lng = 23.7275
+timezone = "Europe/Athens"
+lang = "en"
+dir = "ltr"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+default_genre = "talk"
+site = "https://2026.pycon.gr"
+
+[ticketing]
+model = "festival-pass"
+url = "https://pretix.eu/pygreece/pycon-gr-2026/"
+notes = "One conference ticket, sold on pretix from the site's Get tickets link."
+
+[[edition]]
+id = "2026"
+# The site calls it "the 2nd PyCon Conference in Greece".
+ordinal = 2
+format = "block"
+# The schedule export's own start and end.
+first = "2026-10-12"
+last = "2026-10-13"
+sources = ["venues-research", "pretalx"]
+
+# Where the building is: the schedule knows only its rooms.
+[[source]]
+id = "venues-research"
+kind = "curated"
+roles = ["venues"]
+required = true
+path = "curated/venues.json"
+adapter = "pycon_greece/venues_research.py"
+
+[[source]]
+id = "pretalx"
+kind = "fetched"
+roles = ["events", "performances", "venues"]
+required = true
+fetcher = "sources/pretalx/fetch.py"
+adapter = "pycon_greece/pretalx.py"
+
+# The research names and places the building, pretalx its rooms.
+[merge]
+venues = ["venues-research", "pretalx"]
+events = ["pretalx"]
+performances = ["pretalx"]

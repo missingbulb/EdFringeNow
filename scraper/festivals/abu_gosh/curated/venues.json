@@ -1,0 +1,51 @@
+{
+ "about": "Hand-curated venue research for the Abu Gosh Music Festival, keyed by the venue id abugosh_site.py derives from each card's place. Not edition-specific: a church outlives a programme. Every figure is {value, source} with the URL it was read from, and coordinates also say what the pin is of (basis); a figure nobody could cite is null, never estimated.",
+ "researchedAt": "2026-09-27",
+ "venues": {
+  "kiryat-yearim-church": {
+   "name": "Kiryat Ye'arim Church (Notre-Dame de l'Arche d'Alliance)",
+   "address": "Kiryat Ye'arim Church, Abu Ghosh",
+   "coordinates": {
+    "value": {"lat": 31.808572, "lng": 35.103834},
+    "source": "https://abugoshfestival.co.il/en/%d7%94%d7%92%d7%a2%d7%94-%d7%95%d7%99%d7%a6%d7%99%d7%a8%d7%aa-%d7%a7%d7%a9%d7%a8/",
+    "basis": "the festival's own Waze pin for the church, linked from its Contact & Directions page"
+   },
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {"id": "cafe-terrace", "name": "The Café Terrace", "capacity": null, "layout": {"value": "outdoor", "source": "https://abugoshfestival.co.il/en/outside/"}},
+    {"id": "patio", "name": "The Patio", "capacity": null, "layout": {"value": "outdoor", "source": "https://abugoshfestival.co.il/en/outside/"}}
+   ],
+   "accessibility": null,
+   "notes": "Our Lady of the Ark of the Covenant, on the hilltop at the north-western edge of Abu Ghosh; the festival's main venue. The free outdoor performances play the Café Terrace (the festival café 'located in the church courtyard', per the Outdoor Performances page) and the Patio, which the site places no further than the festival grounds at the church; both are open-air ('under the open sky')."
+  },
+  "benedictine-crypt": {
+   "name": "The Crypt, Benedictine Monastery",
+   "address": null,
+   "coordinates": {
+    "value": {"lat": 31.80742778, "lng": 35.10738611},
+    "source": "https://en.wikipedia.org/wiki/Benedictine_monastery_in_Abu_Ghosh",
+    "basis": "the Benedictine monastery's pin, whose Crusader church holds the crypt"
+   },
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "The crypt of the Crusader Church of the Resurrection in the Benedictine monastery (St Mary of the Resurrection Abbey), in the village below Kiryat Ye'arim Church. The festival's Contact & Directions page gives a separate parking pin for the crypt concerts."
+  },
+  "tel-aviv-museum-of-art": {
+   "name": "Tel Aviv Museum of Art",
+   "address": "27 Shaul HaMelech Blvd, Tel Aviv",
+   "coordinates": {
+    "value": {"lat": 32.0775, "lng": 34.786667},
+    "source": "https://en.wikipedia.org/wiki/Tel_Aviv_Museum_of_Art",
+    "basis": "the museum's pin on Wikipedia"
+   },
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "The festival's Tel Aviv day. The address is the museum's own (tamuseum.org.il/en/visit/). The Hebrew programme places the morning concert in the museum's Recanati Hall (אולם רקאנטי); the other cards name no hall."
+  }
+ }
+}

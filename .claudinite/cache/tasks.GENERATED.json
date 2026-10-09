@@ -1,0 +1,350 @@
+{
+  "version": 1,
+  "tasks": {
+    "basics/ci-performance": {
+      "path": ".claudinite/shared/packs/basics/tasks/ci-performance/task.json",
+      "declaration": {
+        "id": "ci-performance",
+        "description": "Reads where this repository's CI time goes from the Actions run history, keeps a standing record of each workflow's median, and hands an agent a real regression already localised to a workflow and a before-and-after delta.",
+        "trigger": "schedule",
+        "preconditions": [
+          "schedule:at-most-weekly",
+          "substantive-change || prs-touched",
+          "last-run-not-parked"
+        ],
+        "expected_outcome": "fresh_pr",
+        "automerge": "anything",
+        "code_worker_mjs": "worker.mjs",
+        "code_work_timeout": 300,
+        "agent_model": "sonnet",
+        "agent_instructions": "task.md",
+        "agent_execution_timeout": 3600
+      }
+    },
+    "basics/improve-comments": {
+      "path": ".claudinite/shared/packs/basics/tasks/improve-comments/task.json",
+      "declaration": {
+        "id": "improve-comments",
+        "description": "Reads a slice of the repository's code as comments, deletes the ones that restate the code, corrects the ones that drifted, and adds the why only a reader's guess carried.",
+        "trigger": "schedule",
+        "preconditions": [
+          "schedule:at-most-weekly",
+          "substantive-change",
+          "commits-outside:.claudinite/shared/"
+        ],
+        "expected_outcome": "amend_existing_or_create_new_pr",
+        "automerge": [
+          "comment-only-changes",
+          "readme-changes"
+        ],
+        "agent_model": "opus",
+        "agent_instructions": "task.md",
+        "agent_execution_timeout": 1800
+      }
+    },
+    "claudinite-growth/growth-dedup": {
+      "path": ".claudinite/shared/packs/claudinite-growth/tasks/growth-dedup/task.json",
+      "declaration": {
+        "id": "growth-dedup",
+        "description": "The growth lifecycle's pruning stage: reconciles this repository's local packs against the canon it mounts, removing local items the canon now covers and keeping those the canon states too generally.",
+        "trigger": "schedule",
+        "preconditions": [
+          "schedule:at-most-weekly",
+          "mount-moved || commits-under:.claudinite/local"
+        ],
+        "expected_outcome": "supersede_existing_pr",
+        "automerge": [
+          "under:.claudinite/local"
+        ],
+        "code_worker_mjs": "worker.mjs",
+        "code_work_timeout": 600,
+        "agent_model": "opus",
+        "agent_instructions": "task.md",
+        "agent_execution_timeout": 1800
+      }
+    },
+    "claudinite-growth/growth-extract": {
+      "path": ".claudinite/shared/packs/claudinite-growth/tasks/growth-extract/task.json",
+      "declaration": {
+        "id": "growth-extract",
+        "description": "The growth lifecycle's capture stage: mines the window's repository activity and the captured conversation logs for durable lessons, folds them into this repository's local packs, and runs prose-to-checks over what it wrote.",
+        "schedule_after": [
+          "engine/update"
+        ],
+        "trigger": "schedule",
+        "preconditions": [
+          "schedule:at-most-daily",
+          "substantive-change"
+        ],
+        "expected_outcome": "amend_existing_or_create_new_pr",
+        "automerge": [
+          "under:.claudinite/local"
+        ],
+        "agent_model": "opus",
+        "agent_instructions": "task.md",
+        "agent_execution_timeout": 2700
+      }
+    },
+    "claudinite-growth/logs-prune": {
+      "path": ".claudinite/shared/packs/claudinite-growth/tasks/logs-prune/task.json",
+      "declaration": {
+        "id": "logs-prune",
+        "description": "Retention on the conversation-logs branch: deletes capture files older than the configured window so the branch stays bounded.",
+        "trigger": "request",
+        "preconditions": [
+          "log-past-retention"
+        ],
+        "expected_outcome": "no_code_changes",
+        "code_work": "cn growth prune",
+        "code_work_timeout": 60
+      }
+    },
+    "claudinite-growth/prose-to-checks-sweep": {
+      "path": ".claudinite/shared/packs/claudinite-growth/tasks/prose-to-checks-sweep/task.json",
+      "declaration": {
+        "id": "prose-to-checks-sweep",
+        "description": "Mines this repository's existing pack prose for always-testable rules the conversion missed and converts the strongest ones into checks.",
+        "trigger": "schedule",
+        "preconditions": [
+          "schedule:at-most-weekly",
+          "repo-active"
+        ],
+        "expected_outcome": "amend_existing_or_create_new_pr",
+        "automerge": [
+          "under:.claudinite/local"
+        ],
+        "agent_model": "opus",
+        "agent_instructions": "task.md",
+        "agent_execution_timeout": 2700
+      }
+    },
+    "claudinite-growth/rule-revalidation": {
+      "path": ".claudinite/shared/packs/claudinite-growth/tasks/rule-revalidation/task.json",
+      "declaration": {
+        "id": "rule-revalidation",
+        "description": "Re-probes the pack rules whose truth lives outside this repository, such as what the harness rejects or which tools exist, and corrects the ones the platform has moved under.",
+        "trigger": "schedule",
+        "preconditions": [
+          "schedule:at-most-weekly",
+          "repo-active"
+        ],
+        "expected_outcome": "supersede_existing_pr",
+        "automerge": [
+          "under:.claudinite/local"
+        ],
+        "agent_model": "opus",
+        "agent_instructions": "task.md",
+        "agent_execution_timeout": 2700
+      }
+    },
+    "claudinite-growth/usage-review": {
+      "path": ".claudinite/shared/packs/claudinite-growth/tasks/usage-review/task.json",
+      "declaration": {
+        "id": "usage-review",
+        "description": "Compares what each skill declares about its own usage against what the record shows, by a file of readable rule declarations, and writes the findings with their causes and recommendations. Changes nothing it reviews.",
+        "schedule_after": [
+          "claudinite-tasks/usage-fold",
+          "engine/usage-fold"
+        ],
+        "trigger": "schedule",
+        "preconditions": [
+          "schedule:at-most-daily",
+          "fold-moved-since-review",
+          "window-has-sessions:10"
+        ],
+        "expected_outcome": "amend_existing_or_create_new_pr",
+        "automerge": "nothing",
+        "code_worker_mjs": "worker.mjs",
+        "code_work_timeout": 900
+      }
+    },
+    "claudinite-growth/usage-triage": {
+      "path": ".claudinite/shared/packs/claudinite-growth/tasks/usage-triage/task.json",
+      "declaration": {
+        "id": "usage-triage",
+        "description": "Turns a usage-review finding that has stood two weeks into a proposed change to this repo's own local packs - the edit itself, one pull request per subject, for the owner to merge or decline.",
+        "trigger": "schedule",
+        "preconditions": [
+          "schedule:at-most-weekly",
+          "lasting-usage-finding"
+        ],
+        "expected_outcome": "fresh_pr",
+        "automerge": "nothing",
+        "agent_model": "opus",
+        "agent_instructions": "task.md",
+        "agent_execution_timeout": 2700
+      }
+    },
+    "claudinite-lifecycle/adopt-requested-packs": {
+      "path": ".claudinite/shared/packs/claudinite-lifecycle/tasks/adopt-requested-packs/task.json",
+      "declaration": {
+        "id": "adopt-requested-packs",
+        "description": "The member half of the fleet fan-out: adopts the packs an add-packs work list asks for, in this repository, by this repository's own agent.",
+        "trigger": "request",
+        "expected_outcome": "fresh_pr",
+        "automerge": [
+          "claudinite-shared-packs",
+          "claudinite-settings-updates",
+          "generated-file-changes"
+        ],
+        "agent_model": "sonnet",
+        "agent_instructions": "task.md",
+        "agent_execution_timeout": 3600
+      }
+    },
+    "cloudflare-site/site-release": {
+      "path": ".claudinite/shared/packs/cloudflare-site/tasks/site-release/task.json",
+      "declaration": {
+        "id": "site-release",
+        "description": "Cuts the next site version, stamps it into the published pages and uploads the site tree to Cloudflare so the claimed domain serves what the default branch says. The bump lands on the branch before the upload, so the repo never records a release that did not go out.",
+        "trigger": "schedule",
+        "preconditions": [
+          "schedule:at-most-daily",
+          "unreleased-commits"
+        ],
+        "expected_outcome": "no_code_changes",
+        "on_interrupt": "needs-human",
+        "code_worker_mjs": "worker.mjs",
+        "code_work_timeout": 900,
+        "code_work_required_secrets": [
+          "CLOUDFLARE_API_TOKEN",
+          "CLOUDFLARE_ACCOUNT_ID"
+        ],
+        "agent_model": "none"
+      }
+    },
+    "local/edfringe-now/festival-refresh": {
+      "path": ".claudinite/local/packs/edfringe-now/tasks/festival-refresh/task.json",
+      "declaration": {
+        "id": "festival-refresh",
+        "description": "Stage 4 of the data lifecycle beyond the Fringe: re-runs the ticket-availability tools of every festival edition near or in its run, and delivers what moved beyond fetch times.",
+        "schedule_after": [
+          "edfringe-now/festival-update"
+        ],
+        "trigger": "schedule",
+        "preconditions": [
+          "festival-in-refresh-window"
+        ],
+        "expected_outcome": "supersede_existing_pr",
+        "automerge": [
+          "under:data/festivals",
+          "under:site/data/festivals"
+        ],
+        "code_worker_mjs": "worker.mjs",
+        "code_work_timeout": 1800,
+        "agent_model": "none"
+      }
+    },
+    "local/edfringe-now/festival-update": {
+      "path": ".claudinite/local/packs/edfringe-now/tasks/festival-update/task.json",
+      "declaration": {
+        "id": "festival-update",
+        "description": "Stage 3 of the data lifecycle: runs every due festival edition's declared tools and converts its programme, delivering the changed raw and serving data, and fails naming the festivals whose tools broke.",
+        "trigger": "schedule",
+        "preconditions": [
+          "schedule:at-most-daily",
+          "festival-edition-upcoming"
+        ],
+        "expected_outcome": "supersede_existing_pr",
+        "automerge": [
+          "under:data/festivals",
+          "under:site/data/festivals"
+        ],
+        "code_worker_mjs": "worker.mjs",
+        "code_work_timeout": 3300,
+        "agent_model": "none"
+      }
+    },
+    "local/edfringe-now/fetch-prices": {
+      "path": ".claudinite/local/packs/edfringe-now/tasks/fetch-prices/task.json",
+      "declaration": {
+        "id": "fetch-prices",
+        "description": "Prices every performance of every paid show into the fetch-once cache data/prices.json, folds the prices into the site data and commits both; a pass too long for one run continues on its own item until every show is priced.",
+        "trigger": "request",
+        "preconditions": [
+          "scraping-switched-on"
+        ],
+        "expected_outcome": "no_code_changes",
+        "code_work": "bash worker.sh",
+        "code_work_timeout": 3300,
+        "agent_model": "none"
+      }
+    },
+    "local/edfringe-now/full-scrape": {
+      "path": ".claudinite/local/packs/edfringe-now/tasks/full-scrape/task.json",
+      "declaration": {
+        "id": "full-scrape",
+        "description": "Full rebuild of the show data: downloads every show from the edfringe.com ticketing API, rebuilds the normalized master and every derived site file from scratch, and commits the result straight to the default branch.",
+        "trigger": "request",
+        "preconditions": [
+          "scraping-switched-on"
+        ],
+        "expected_outcome": "no_code_changes",
+        "code_work": "bash worker.sh",
+        "code_work_timeout": 3300,
+        "agent_model": "none"
+      }
+    },
+    "local/edfringe-now/price-probe": {
+      "path": ".claudinite/local/packs/edfringe-now/tasks/price-probe/task.json",
+      "declaration": {
+        "id": "price-probe",
+        "description": "Prints one show's raw performancePrices payload, fees and all, for questions about how the API composes a price. Prices nothing else, writes no cache file and commits nothing.",
+        "trigger": "request",
+        "expected_outcome": "no_code_changes",
+        "code_work": "bash worker.sh",
+        "code_work_timeout": 600,
+        "agent_model": "none"
+      }
+    },
+    "local/edfringe-now/refresh-shows": {
+      "path": ".claudinite/local/packs/edfringe-now/tasks/refresh-shows/task.json",
+      "declaration": {
+        "id": "refresh-shows",
+        "description": "Fetches Fringe shows added or updated in the last seven days from the ticketing API, merges them into the normalized master, regenerates the venue and per-day files, and commits any changes straight to the default branch.",
+        "trigger": "request",
+        "expected_outcome": "no_code_changes",
+        "code_work": "bash worker.sh",
+        "code_work_timeout": 1800,
+        "agent_model": "none"
+      }
+    },
+    "local/edfringe-now/refresh-tickets": {
+      "path": ".claudinite/local/packs/edfringe-now/tasks/refresh-tickets/task.json",
+      "declaration": {
+        "id": "refresh-tickets",
+        "description": "Refreshes ticket availability status for today onward through the normalized master, regenerating every derived file from that one source, and commits any changes straight to the default branch.",
+        "schedule_after": [
+          "edfringe/refresh-shows"
+        ],
+        "trigger": "schedule",
+        "preconditions": [
+          "in-festival"
+        ],
+        "expected_outcome": "no_code_changes",
+        "code_work": "bash worker.sh",
+        "code_work_timeout": 900,
+        "agent_model": "none"
+      }
+    },
+    "product-wiki/wiki-growth": {
+      "path": ".claudinite/shared/packs/product-wiki/tasks/wiki-growth/task.json",
+      "declaration": {
+        "id": "wiki-growth",
+        "description": "One research-and-refine pass over the repository's product wikis: reads what each wiki already knows, researches only what its own backlog flags, and writes the findings back cited. Most runs find nothing new, and that is the documented good outcome.",
+        "trigger": "schedule",
+        "preconditions": [
+          "schedule:at-most-weekly",
+          "repo-active"
+        ],
+        "expected_outcome": "amend_existing_or_create_new_pr",
+        "automerge": [
+          "under:product-wiki/ && doc-changes"
+        ],
+        "agent_model": "opus",
+        "agent_instructions": "task.md",
+        "agent_execution_timeout": 2700
+      }
+    }
+  }
+}

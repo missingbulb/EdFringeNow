@@ -3,6 +3,8 @@ name: writing-tests
 description: Practices for writing tests you can trust. Use before writing or changing any test — see-it-fail discipline, snapshot/golden rules, CI-only and heavy-browser tests, fuzzy-metric gating.
 metadata:
   body: guidelines
+  usage:
+    expect: triggered
   force-load-on-file-edits-paths:
     - "**/*.test.*"
     - "**/*.spec.*"
@@ -32,11 +34,16 @@ A consuming repo's own test *mechanics* — runner, layout, which suites exist �
   (test-dereferences-path)
 - **Never test that a value is set.** A test that reads a value someone declared — a config or manifest field (`assert.equal(task.expected_outcome, 'fresh_pr')`), an exported constant or default object (`assert.deepEqual(DEFAULTS, {…})`), a settings file naming a pack, a workflow's `run:` line, a frontmatter key — and asserts it is the literal it was set to restates the file under test in a second file. It can only fail when someone changes the value **on purpose**, so it catches no defect and instead taxes every deliberate change with a mirrored edit — and teaches that the value is load-bearing prose to be restated, which is how one setting ends up copied into a comment, a worker doc, a README table and a test, so flipping it becomes a five-file diff. The see-it-fail test exposes it: to make the assertion go red you must break the thing it asserts, which is not a bug. "It exists", "it has the right shape" and "it is one of these" are the same test in a looser coat. Test the **behaviour the value drives** instead: feed the real code the declared value and assert what the code does with it — a task declared `weekly` is planned once across a fourteen-day clock, a check declared over `**/*.mjs` fires on a fixture `.mjs` and stays silent on a `.md`, a default object yields the documented output when nothing overrides it. Where no code reads the value there is nothing to test; if a declaration genuinely must not change without deliberation, that is a review concern, not a test. What *does* earn an assertion on declared data is a claim spanning two artifacts that could drift independently: the doc a field *names* exists; every signal the code reads is declared; two implementations of the same list agree; a value the runtime constrains is inside its legal set — proven by running the constraint, not by re-listing the set.
   (test-value-set)
+- **Naming the thing a fixture stands for** - invent the name (`acme-pack`, `acme-user`,
+  `acme.example`) wherever the case holds for any name at all, and keep a real one only where that
+  entity is what the case asserts about: a borrowed name reads as meaningful, collides with the
+  real thing's own cases, and makes every later rename an edit of tests that were never about it.
+  (fixture-names-invented)
 - **Testing a task's precondition or declaration** — assert only the pack's own code: a
   task-local term's decisions, a worker's behaviour, or a composition it designed; a plain
   built-in term or a validated declaration is the scheduler's own mechanism, proved once by its
   own suite. (testing-tasks-precondition)
-- **Asserting on a record the code under test produced** — a finding, a parsed spec, a normalized declaration — assert the fields that code **computed**, and leave the ones it copied straight through from its own declaration or from your setup. A check selected by its id whose test then reads `finding.rule` back, or restates the `severity` its declaration set, is asserting the selector: it stays green however wrong the matching is, and goes red only when someone deliberately renames or re-grades the rule. One computed field identifies a record — the rest is your setup talking back to you.
+- **Asserting on a record the code under test produced** - a finding, a parsed spec, a normalized declaration - assert the fields that code **computed**, and leave the ones it copied straight through from its own declaration or from your setup. A check selected by its id whose test then reads `finding.rule` back, or restates the `on_fail` its declaration set, is asserting the selector: it stays green however wrong the matching is, and goes red only when someone deliberately renames or re-grades the rule. One computed field identifies a record - the rest is your setup talking back to you.
   (asserting-record-code)
 - **A coupling that must hold for every member of a set** — each task's id matching the directory it is discovered by, each check's `doc:` pointer resolving, each declaration validating — assert it once in a sweep that reads the whole set out of the tree, never in each member's own suite. The per-member copy only ever holds the members that happen to have a suite, so it under-covers and taxes at the same time: the shape is billed to each suite that has one while the members without one go unguarded.
   (coupling-must-hold)

@@ -1,0 +1,19 @@
+{
+ "festival": "jerusalem-comedy",
+ "edition": "2026",
+ "source": "nominatim",
+ "fetchedAt": null,
+ "fetcher": "pre-registry Jerusalem scrape @ f47d749",
+ "fetcherVersion": null,
+ "urls": [
+  "https://nominatim.openstreetmap.org/search"
+ ],
+ "files": [
+  "geocode.json"
+ ],
+ "notes": "Re-homed, not re-fetched: comedy-festival.co.il was unreachable from the session that moved this festival onto the registry. The bytes are site/data/jerusalem/shows.json as committed at 340544a, first written in f47d749 by the pre-registry Jerusalem scrape, the fetch.py this source's fetcher grew from (committed 2026-09-16); that run's fetch time was not recorded, so fetchedAt is null. geocode.json is that file's venue coordinates, one record per distinct address, as the original run's Nominatim answers (first hit, rounded to 6 dp).",
+ "rehomedFrom": {
+  "path": "site/data/jerusalem/shows.json",
+  "commit": "340544a"
+ }
+}

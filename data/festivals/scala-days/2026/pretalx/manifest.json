@@ -1,0 +1,15 @@
+{
+ "festival": "scala-days",
+ "edition": "2026",
+ "source": "pretalx",
+ "fetchedAt": "2026-10-02T18:34:14Z",
+ "fetcher": "scraper/festivals/scala_days/sources/pretalx/fetch.py",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://cfp.scaladays.org/scala26/schedule/export/schedule.json"
+ ],
+ "files": [
+  "programme.json"
+ ],
+ "notes": "pretalx's public schedule export, unauthenticated. One record per scheduled talk; date and start are the conference's wall clock (scraper/festivals/platforms/pretalx.py)."
+}

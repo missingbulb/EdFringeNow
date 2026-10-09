@@ -55,12 +55,16 @@ function planPrefs(overrides = {}) {
   return { "edfringe.plan.prefs.v1": JSON.stringify(overrides) };
 }
 
-// Festival planner (/planJerusalem): a starred list, under that page's own
-// storage prefix. The cast spans what Part V asserts — a free late-night that
-// repeats on four evenings, two runs that play twice in one evening, a film,
-// two shows half an hour apart at different venues (so the schedule draws a
-// travel leg), and a clash that cannot be fitted (so the grid shows a verdict
-// other than "Scheduled").
+// Festival planner (/planNG), focused on the Jerusalem Comedy Festival: a
+// starred list, under that page's own storage prefix. The page pools several
+// festivals, so it names a show `<festival>/<its own id>`; the helpers below
+// take the festival's own ids and write them the way the page does.
+//
+// The cast spans what Part V asserts — a free late-night that repeats on four
+// evenings, two runs that play twice in one evening, a film, two shows half an
+// hour apart at different venues (so the schedule draws a travel leg), and a
+// clash that cannot be fitted (so the grid shows a verdict other than
+// "Scheduled").
 const JERUSALEM_STARRED = [
   "opening",
   "poetry-slam",
@@ -71,21 +75,295 @@ const JERUSALEM_STARRED = [
   "neighbor",
 ];
 
+const JERUSALEM = "jerusalem-comedy";
+const JERUSALEM_EDITION = "jerusalem-comedy@2026";
+// The festival's own nights. The legacy date window counted positions in
+// these, which is how a case still states one (`d0`, `d1`, 1-based).
+const JERUSALEM_NIGHTS = ["2026-10-18", "2026-10-19", "2026-10-20", "2026-10-21", "2026-10-22"];
+const inJerusalem = (id) => `${JERUSALEM}/${id}`;
+
 function jerusalemStarred(slugs = JERUSALEM_STARRED) {
-  return { "jerusalemPlan.starred": JSON.stringify(slugs) };
+  return { "planNG.starred": JSON.stringify(slugs.map(inJerusalem)) };
 }
 
 // The three verdicts that are not "favourite" — that one is the starred list
 // above, which predates them and keeps its own key.
 function jerusalemVerdicts({ locked = {}, noTime = [], noShow = [] } = {}) {
-  return { "jerusalemPlan.verdicts": JSON.stringify({ locked, noTime, noShow }) };
+  return {
+    "planNG.verdicts": JSON.stringify({
+      locked: Object.fromEntries(Object.entries(locked).map(([slug, key]) => [inJerusalem(slug), key])),
+      noTime: noTime.map(inJerusalem),
+      noShow: noShow.map(inJerusalem),
+    }),
+  };
+}
+
+// The Haifa trip, which reaches Acco, with shows locked in both festivals: two
+// Haifa films on its one box office, a play Acco sells through its own seller
+// and a free concert. The checkout's cases (32) read the same four.
+const CHECKOUT_LOCKS = {
+  "haifa-iff/film-13484": "2026-09-27T13:45",
+  "haifa-iff/film-13421": "2026-09-27T10:45",
+  "acco/theatre/האמת השלישית": "2026-09-27T17:00",
+  "acco/theatre/טריו ג'אז": "2026-09-27T21:00",
+};
+function checkoutLocks() {
+  return { "planNG.verdicts": JSON.stringify({ locked: CHECKOUT_LOCKS, noTime: [], noShow: [] }) };
 }
 
 // The answers to the preference questions, as the page stores them. Only the
 // fields a case actually states are seeded; the page fills the rest with the
 // defaults a first visit gets.
 function jerusalemPrefs(overrides = {}) {
-  return { "jerusalemPlan.prefs": JSON.stringify(overrides) };
+  const { d0, d1, interests, ...rest } = overrides;
+  const prefs = { ...rest };
+  if (interests) prefs.interests = interests.map(inJerusalem);
+  if (d0 || d1) {
+    prefs.windows = {
+      [JERUSALEM_EDITION]: {
+        from: JERUSALEM_NIGHTS[(d0 || 1) - 1],
+        to: JERUSALEM_NIGHTS[(d1 || JERUSALEM_NIGHTS.length) - 1],
+      },
+    };
+  }
+  return { "planNG.prefs": JSON.stringify(prefs) };
+}
+
+// The Jerusalem trip with the day a first draft keeps already cleared by the
+// reader: every day drafts shows, for a case whose story is on the day the
+// page would otherwise keep for rest.
+function jerusalemAllDays() {
+  return {
+    "planNG.days": JSON.stringify({ kept: {}, own: [], seededFor: "2026-10-17/2026-10-23", mealDates: [] }),
+  };
+}
+
+// Where the reader said they are coming from, as the page stores it.
+function plannerOrigin(origin) {
+  return { "planNG.origin": JSON.stringify(origin) };
+}
+
+/* The site's fare service (api/fares.js), answering the page for real — the
+ * shipped handler, with a token — against the partner's answers committed under
+ * fixtures/fares/, one file per route (`partner-<from>-<to>.json`). A route
+ * with no file is a partner that found nothing. Returns the questions the page
+ * asked, as URLSearchParams, in order. */
+async function routeFares(page) {
+  const { handleFares } = await import("../../../api/fares.js");
+  const asked = [];
+  const partner = async (url) => {
+    const q = new URL(url).searchParams;
+    const file = path.join(FIXTURES_DIR, "fares", `partner-${q.get("origin").toLowerCase()}-${q.get("destination").toLowerCase()}.json`);
+    const body = fs.existsSync(file) ? fs.readFileSync(file, "utf8") : JSON.stringify({ success: true, data: [], currency: q.get("currency") });
+    return new Response(body, { status: 200, headers: { "content-type": "application/json" } });
+  };
+  await page.route("**/api/fares?**", async (route) => {
+    const url = route.request().url();
+    asked.push(new URL(url).searchParams);
+    const res = await handleFares(new Request(url), { TRAVELPAYOUTS_TOKEN: "fixture-token" }, partner);
+    await route.fulfill({ status: res.status, contentType: "application/json", body: await res.text() });
+  });
+  return asked;
+}
+
+/* The site's where-from service, answering as Cloudflare's edge would for a
+ * visitor connecting from `country` (null: an edge that could not tell). */
+async function routeWhere(page, country) {
+  const { handleWhere } = await import("../../../api/where.js");
+  await page.route("**/api/where", async (route) => {
+    const request = Object.assign(new Request(route.request().url()), { cf: country ? { country } : {} });
+    const res = handleWhere(request);
+    await route.fulfill({ status: res.status, contentType: "application/json", body: await res.text() });
+  });
+}
+
+/* Both flight blocks settled: each has an answer (found or none) or has nothing
+ * to look for. */
+async function flightsSettled(page) {
+  await page.waitForFunction(
+    () => [...document.querySelectorAll(".flight[data-fares]")].every((f) => f.dataset.fares !== "wait"),
+    null,
+    { timeout: 20000 }
+  );
+  await settle(page);
+}
+
+/* Three more of Edinburgh's August festivals beside the Fringe the fixture
+ * registry already has, none with a programme published: the registry the
+ * page is served becomes the fixture's plus these, so the Fringe's city holds
+ * four festivals. */
+const EDINBURGH_MORE = [
+  ["edinburgh-international-festival", "Edinburgh International Festival", "multi", "2026-08-07", "2026-08-30"],
+  ["edinburgh-book-festival", "Edinburgh International Book Festival", "multi", "2026-08-15", "2026-08-30"],
+  ["edinburgh-film-festival", "Edinburgh International Film Festival", "film", "2026-08-13", "2026-08-19"],
+].map(([id, name, kind, firstDate, lastDate]) => ({
+  id,
+  name,
+  nameLocal: null,
+  city: "Edinburgh",
+  country: "GB",
+  lat: 55.9533,
+  lng: -3.1883,
+  timezone: "Europe/London",
+  lang: "en",
+  dir: "ltr",
+  kind,
+  site: "https://example.org",
+  editions: [{ id: "2026", ordinal: null, firstDate, lastDate, format: "block", dataUrl: null }],
+}));
+
+async function routeEdinburghFestivals(page) {
+  const registry = JSON.parse(fs.readFileSync(path.join(FIXTURES_DIR, "data", "festivals", "index.json"), "utf8"));
+  registry.festivals.push(...EDINBURGH_MORE);
+  await page.route("**/data/festivals/index.json", (route) =>
+    route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify(registry) })
+  );
+}
+
+/* Choose a festival on the strip, as a reader does from the keyboard: a
+ * travel picture may sit over its pill, covering it from the pointer. One
+ * sharing its country's pill with a festival that leads it is reached by
+ * narrowing the place menu to that country, then widened back. */
+async function chooseOnStrip(page, festivalId) {
+  const item = `.tl-item[data-festival="${festivalId}"]`;
+  const choose = async () => {
+    await page.focus(item);
+    await page.keyboard.press("Enter");
+  };
+  if (await page.locator(item).count()) {
+    await choose();
+    return;
+  }
+  const country = await page.evaluate(
+    async (id) => (await (await fetch("/data/festivals/index.json")).json()).festivals.find((f) => f.id === id).country,
+    festivalId
+  );
+  await page.selectOption('[data-filter="place"]', country);
+  await choose();
+  await page.selectOption('[data-filter="place"]', "");
+}
+
+/* Say how you are getting here, as a reader does: a picture beside the trip
+ * opens the question (or, once answered, the travel card and its "change"),
+ * then where you live, then, living elsewhere, how you travel. `home` is
+ * "local" for the festival's own city, else a country code or "*". */
+async function answerTravel(page, { home, way = null }) {
+  await page.click(".tl-way--from:not([hidden]), .tl-way--to:not([hidden]) >> nth=0");
+  if (await page.isVisible('#originCard [data-origin="change"]')) await page.click('#originCard [data-origin="change"]');
+  if (home === "local") {
+    await page.click('#originCard [data-origin="local"]');
+    return;
+  }
+  await page.selectOption("#originCountry", home);
+  await page.click('#originCard [data-origin="next"]');
+  await page.click(`#originCard [data-origin="${way}"]`);
+  // Off the card, whose fares arrive under where the pointer pressed.
+  await page.mouse.move(0, 0);
+}
+
+/* Press a festival's pill on the year, where a reader would: on the pill,
+ * clear of the trip's end handles, whose lines run across every row. */
+async function pressPill(page, festivalId) {
+  const bar = page.locator(`.tl-item[data-festival="${festivalId}"] .tl-bar`);
+  const box = await bar.boundingBox();
+  const handles = await page.$$eval(".tl-handle", (els) =>
+    els.map((el) => {
+      const r = el.getBoundingClientRect();
+      return { left: r.left, right: r.right };
+    })
+  );
+  const clear = (x) => handles.every((h) => x < h.left - 1 || x > h.right + 1);
+  const spots = [0.5, 0.2, 0.8, 0.08, 0.92].map((f) => box.x + box.width * f);
+  const x = spots.find(clear);
+  if (x === undefined) throw new Error(`${festivalId}'s pill lies wholly under the trip's handles`);
+  await bar.click({ position: { x: x - box.x, y: box.height / 2 } });
+}
+
+/* Move one end of the trip to a day, as a reader does from the keyboard: the
+ * handle, stepped a day at a time. */
+async function moveTripEnd(page, end, iso) {
+  const handle = page.locator(`.tl-handle--${end}`);
+  const now = await handle.getAttribute("data-date");
+  const days = Math.round((Date.parse(iso) - Date.parse(now)) / 86400000);
+  await handle.focus();
+  const rtl = await page.evaluate(() => getComputedStyle(document.documentElement).direction === "rtl");
+  const key = (days > 0) !== rtl ? "ArrowRight" : "ArrowLeft";
+  for (let i = 0; i < Math.abs(days); i++) await page.keyboard.press(key);
+  await page.waitForFunction(([e, d]) => document.querySelector(`.tl-handle--${e}`)?.dataset.date === d, [end, iso], { timeout: 20000 });
+}
+
+/* The fixtures' year plus two hundred and forty more festivals across the
+ * world, of every type, at dates spread over the whole year and each searched
+ * a different amount: far more than the strip's rows hold. None has a
+ * programme, so nothing else on the page changes. */
+const CROWD_TOWNS = [
+  ["Paris", "FR", 48.9, 2.4],
+  ["Berlin", "DE", 52.5, 13.4],
+  ["Madrid", "ES", 40.4, -3.7],
+  ["Rome", "IT", 41.9, 12.5],
+  ["Amsterdam", "NL", 52.4, 4.9],
+  ["Lisbon", "PT", 38.7, -9.1],
+  ["Dublin", "IE", 53.3, -6.3],
+  ["Vienna", "AT", 48.2, 16.4],
+  ["Austin", "US", 30.3, -97.7],
+  ["Tokyo", "JP", 35.7, 139.7],
+  ["Melbourne", "AU", -37.8, 145],
+  ["Montreal", "CA", 45.5, -73.6],
+];
+const CROWD_KINDS = ["music", "film", "theatre", "dance", "comedy", "art", "fringe", "sports", "academic", "literature"];
+const CROWD_DAYS = [3, 5, 10, 2, 21, 4, 8, 1, 14, 6];
+const isoDay = (t) => new Date(t).toISOString().slice(0, 10);
+
+async function routeCrowdedYear(page) {
+  const registry = JSON.parse(fs.readFileSync(path.join(FIXTURES_DIR, "data", "festivals", "index.json"), "utf8"));
+  for (let i = 0; i < 240; i++) {
+    const [city, country, lat, lng] = CROWD_TOWNS[i % CROWD_TOWNS.length];
+    const first = Date.UTC(2026, 6, 4) + ((i * 37) % 340) * 86400000;
+    registry.festivals.push({
+      id: `crowd-${i}`,
+      name: `${city} Festival ${i + 1}`,
+      nameLocal: null,
+      city,
+      country,
+      lat,
+      lng,
+      timezone: "Europe/Paris",
+      lang: "en",
+      dir: "ltr",
+      kind: CROWD_KINDS[i % CROWD_KINDS.length],
+      defaultGenre: CROWD_KINDS[i % CROWD_KINDS.length],
+      site: "https://example.org",
+      ticketing: { model: "per-event-seller", url: null },
+      popularity: ((i * 53) % 97) * 10 + 5,
+      editions: [
+        {
+          id: "2027",
+          ordinal: null,
+          firstDate: isoDay(first),
+          lastDate: isoDay(first + (CROWD_DAYS[i % CROWD_DAYS.length] - 1) * 86400000),
+          format: "block",
+          dataUrl: null,
+        },
+      ],
+    });
+  }
+  await page.route("**/data/festivals/index.json", (route) =>
+    route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify(registry) })
+  );
+}
+
+// The calendar re-planned across a trip: its first and last column are the
+// trip's first and last day.
+async function calendarSpans(page, from, to) {
+  await page.waitForFunction(
+    ([f, t]) => {
+      const cols = [...document.querySelectorAll("#schedule .sch-day")];
+      return cols.length > 0 && cols[0].dataset.date === f && cols[cols.length - 1].dataset.date === t;
+    },
+    [from, to],
+    { timeout: 20000 }
+  );
+  await settle(page);
 }
 
 // Every meal switched on, at the page's own default hours — what the "three
@@ -112,15 +390,53 @@ async function openDrawer(page) {
   await settle(page);
 }
 
-/* Hand a contested hour on: click the band the stack of beaten cards leaves
- * showing past the winner's edge, which is where a reader's pointer lands.
- * Scrolled into view first — the band is addressed by viewport coordinates,
- * and a slot below the fold would otherwise be clicked at thin air. */
-async function clickStackBand(page, slot) {
-  const beaten = slot.locator(".sch-beaten").last();
-  await beaten.scrollIntoViewIfNeeded();
-  const box = await beaten.boundingBox();
-  await page.mouse.click(box.x + box.width - 4, box.y + box.height / 2);
+/* The show search, opened: it is the second line of the kinds question's
+ * panel, folded away until asked for. */
+async function openShowSearch(page) {
+  await page.evaluate(() => {
+    if (document.getElementById("panel-interests").hidden) {
+      document.querySelector("[data-open='interests']").click();
+    }
+    document.getElementById("eventFilters").open = true;
+  });
+  await settle(page);
+}
+
+/* Rest the pointer on a calendar card until its popup opens: the popup waits
+ * for the pointer to rest, so a bare hover captures the calendar without it. */
+async function openCard(page, block) {
+  await (typeof block === "string" ? page.locator(block) : block).hover();
+  await page.waitForSelector("#calPreview:not([hidden])");
+  await settle(page);
+}
+
+/* The first travel leg the pointer can actually rest on (a stacked card may
+ * cover a short one), marked so a case can name it. */
+async function reachableLeg(page, slot = "leg.travel") {
+  const found = await page.evaluate((slot) => {
+    for (const leg of document.querySelectorAll(`#schedule .sch-leg[data-i18n-slot="${slot}"]`)) {
+      leg.scrollIntoView({ block: "center" });
+      const box = leg.getBoundingClientRect();
+      const hit = document.elementFromPoint(box.left + box.width / 2, box.top + box.height / 2);
+      if (hit && leg.contains(hit)) {
+        leg.dataset.probe = "leg";
+        return true;
+      }
+    }
+    return false;
+  }, slot);
+  if (!found) throw new Error(`no reachable ${slot} leg on the calendar`);
+  return '[data-probe="leg"]';
+}
+
+/* Open a contested hour's list the way a pointer does: by resting on the lane
+ * of rivals beside its card. Scrolled into view first — the pointer is moved in
+ * viewport coordinates, and a card below the fold would otherwise be hovered at
+ * thin air. */
+async function openOthers(page, slot) {
+  const others = slot.locator(".sch-rivals");
+  await others.scrollIntoViewIfNeeded();
+  await others.hover();
   await page.waitForSelector("#calRivals .pop-rival");
 }
 
@@ -287,11 +603,41 @@ async function planReady(page) {
 // The festival planner is ready once the programme has landed (the board has
 // either its browse list or its lanes) and the page's scripts have put the
 // version in the footer popup.
+// The festival planner focused on a festival that may have no programme yet:
+// its theme is on the page and its calendar has a column per day. A festival
+// with a programme wants jerusalemReady (or its like) as well.
+async function plannerReady(page, festivalId) {
+  await page.waitForSelector(`html[data-festival="${festivalId}"]`, { state: "attached", timeout: 20000 });
+  await page.waitForSelector("#schedule .sch-day", { state: "attached", timeout: 20000 });
+  await page.waitForFunction(() => {
+    const pop = document.querySelector("#footerVersion .version-pop");
+    return pop && pop.textContent.includes("v0.0.0-spec");
+  }, { timeout: 20000 });
+  await cityGuideSettled(page);
+  await settle(page);
+}
+
+// The city's drawer loads beside the programme: it has settled once it says
+// whether it is shown, and a capture taken before that could go either way.
+function cityGuideSettled(page) {
+  return page.waitForSelector("#cityGuide[data-state]", { state: "attached", timeout: 20000 });
+}
+
+// The calendar's days, first to last, as ISO dates.
+function calendarDays(page) {
+  return page.$$eval("#schedule .sch-day", (cols) => cols.map((c) => c.dataset.date));
+}
+
 async function jerusalemReady(page) {
   // `attached`, not `visible`: the browse list and the grid are the board's two
   // states and exactly one of them is on screen, so a visibility wait on both
   // can only ever resolve against the hidden one.
-  await page.waitForSelector("#browseList .ss-row, #lanes .lane", { state: "attached", timeout: 20000 });
+  // A pool too long to browse (a period reaching a neighbouring festival) asks
+  // for a search instead of listing, which is its own settled state.
+  await page.waitForSelector("#browseList .ss-row, #lanes .lane, #browseMore .browse-search-first", {
+    state: "attached",
+    timeout: 20000,
+  });
   // The calendar is the page's own surface and is drafted from the programme
   // rather than from anything stored, so it renders in every state.
   await page.waitForSelector(".sch-show", { timeout: 20000 });
@@ -299,13 +645,7 @@ async function jerusalemReady(page) {
     const pop = document.querySelector("#footerVersion .version-pop");
     return pop && pop.textContent.includes("v0.0.0-spec");
   }, { timeout: 20000 });
-  // The window's two blockers are slid onto the boundaries of the columns they
-  // hold, which needs the calendar laid out; capturing before that catches
-  // them both stacked at the track's inline start.
-  await page.waitForFunction(() => {
-    const edge = document.querySelector(".sch-dateedge--end");
-    return edge && edge.style.insetInlineStart !== "";
-  }, { timeout: 20000 });
+  await cityGuideSettled(page);
   await settle(page);
 }
 
@@ -466,8 +806,28 @@ module.exports = {
   jerusalemVerdicts,
   jerusalemPrefs,
   jerusalemMeals,
+  jerusalemAllDays,
+  checkoutLocks,
+  plannerOrigin,
+  plannerReady,
+  routeFares,
+  routeWhere,
+  flightsSettled,
+  answerTravel,
+  moveTripEnd,
+  routeCrowdedYear,
+  routeEdinburghFestivals,
+  chooseOnStrip,
+  pressPill,
+  calendarDays,
+  calendarSpans,
+  JERUSALEM,
+  JERUSALEM_EDITION,
   openDrawer,
-  clickStackBand,
+  openShowSearch,
+  openCard,
+  reachableLeg,
+  openOthers,
   JERUSALEM_STARRED,
   nowReady,
   planReady,

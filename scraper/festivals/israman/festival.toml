@@ -1,0 +1,59 @@
+# Challenge ISRAMAN, Eilat's triathlon weekend: its identity, its editions, and
+# the sources an edition's information block is assembled from. Every key
+# follows the contract in scraper/festivals/README.md.
+
+id = "israman"
+name = "Challenge ISRAMAN"
+name_local = "צ'אלנג' ישראמן"
+city = "Eilat"
+country = "IL"
+# Royal Beach, the swim start (OSM way 853978689), for the festival timeline
+# and the travel maths between cities.
+lat = 29.5482
+lng = 34.9633
+timezone = "Asia/Jerusalem"
+lang = "he"
+dir = "rtl"
+kind = "sports"
+subtypes = ["sports-triathlon"]
+default_genre = "other"
+site = "https://israman.co.il/"
+
+# Racing is by entry, per race; watching, the expo and the swim clinics are open.
+[ticketing]
+model = "other"
+url = "https://israman.co.il/?page_id=33067"
+notes = "Race entry through the organiser's registration page until 4 Jan 2027 or until the 1,500 places fill. Late entry (9 Sep 2026 - 4 Jan 2027): ₪2,730 for CHALLENGE ISRAMAN 226, ₪1,890 for 113; a relay member ₪840 or ₪650. Charged in dollars at the day's rate. Spectators need no ticket."
+currency = "ILS"
+source = "https://israman.co.il/?page_id=33067"
+
+[[edition]]
+id = "2027"
+format = "block"
+# ordinal: the site prints none.
+first = "2027-01-27"
+last = "2027-01-30"
+sources = ["festival-site", "venues-research"]
+
+[[source]]
+id = "festival-site"
+kind = "fetched"
+roles = ["events", "performances", "venues"]
+required = true
+fetcher = "sources/festival-site/fetch.py"
+adapter = "israman/festival_site.py"
+
+[[source]]
+id = "venues-research"
+kind = "curated"
+roles = ["venues"]
+required = true
+path = "curated/venues.json"
+adapter = "platforms/curated_venues.py"
+
+# Field precedence per section: for each field, the first source listed here that
+# supplies it wins.
+[merge]
+venues = ["venues-research", "festival-site"]
+events = ["festival-site"]
+performances = ["festival-site"]

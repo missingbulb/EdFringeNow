@@ -1,5 +1,5 @@
 "use strict";
-const { clickStackBand, jerusalemReady } = require("../../shared/case-helpers");
+const { openOthers, jerusalemReady } = require("../../shared/case-helpers");
 
 const EDINBURGH_KEYS = ["edfringe.plan.favourites.v1", "edfringe.plan.prefs.v1"];
 
@@ -18,10 +18,10 @@ function draftedAt(page, date, time) {
 
 module.exports = {
   description: "the four verdicts survive a reload, under the festival's own storage prefix",
-  page: "/planJerusalem/",
+  page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   async verify(page, { origin, assert }) {
-    await page.goto(`${origin}/planJerusalem/`, { waitUntil: "load" });
+    await page.goto(`${origin}/planNG/?festival=jerusalem-comedy`, { waitUntil: "load" });
     await jerusalemReady(page);
 
     // Two verdicts that pull in opposite directions, so a reload that dropped
@@ -44,10 +44,10 @@ module.exports = {
     const replacement = await draftedAt(page, refusedNight, "20:00");
     assert.ok(replacement && replacement !== refused, "the hour goes to the next contender");
 
-    // Clicking the band the stack leaves showing is how the hour is handed on.
-    const stacked = page.locator('.sch-slot:has(.sch-stack)').first();
+    // Resting on a contested card's lane lists the hour's other shows, and taking one hands it on.
+    const stacked = page.locator('.sch-slot--contested').first();
     const lockedNight = await stacked.evaluate((el) => el.closest(".sch-day").dataset.date);
-    await clickStackBand(page, stacked);
+    await openOthers(page, stacked);
     await page.click("#calRivals .pop-rival");
     await page.waitForSelector(`.sch-day[data-date="${lockedNight}"] .sch-show--locked`);
     const locked = await page
@@ -76,7 +76,7 @@ module.exports = {
     assert.deepEqual(leaked, [], "the Fringe planner's keys must stay untouched");
     const owned = await page.evaluate(() => Object.keys(localStorage));
     assert.deepEqual(
-      owned.filter((k) => !k.startsWith("jerusalemPlan.")),
+      owned.filter((k) => !k.startsWith("planNG.")),
       [],
       "everything this page stores lives under its own prefix"
     );

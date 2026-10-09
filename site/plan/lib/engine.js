@@ -212,6 +212,9 @@ function toMinutes(value) {
  * @property {string|null} venueName
  * @property {number|null} venueLat
  * @property {number|null} venueLng
+ * @property {boolean} online a stream: no journey to or from it
+ * @property {boolean} placeAssumed venueLat/venueLng are the catalogue's default
+ *   location, not the venue's own
  * @property {string|null} room
  * @property {string|null} image
  * @property {string|null} blurb
@@ -228,6 +231,11 @@ function lookupVenueCoord(venueCoords, code) {
   const v = venueCoords instanceof Map ? venueCoords.get(key) : venueCoords[key];
   if (!v || v.lat == null || v.lng == null) return null;
   return { lat: v.lat, lng: v.lng };
+}
+
+/** A {lat,lng} with both parts known, or null. */
+function coordOf(c) {
+  return c && c.lat != null && c.lng != null ? { lat: c.lat, lng: c.lng } : null;
 }
 
 /**
@@ -255,11 +263,18 @@ export function eligibleSlots(shows, options = {}) {
 
   const out = new Map();
   for (const show of shows || []) {
-    const coord = lookupVenueCoord(venueCoords, show.venue);
+    // A show whose venue has no known place is at its catalogue's default
+    // location, when the catalogue gives one.
+    const own = lookupVenueCoord(venueCoords, show.venue);
+    const placed = own ?? coordOf(show.defaultLocation);
     const dur = show.duration || 0;
     const slots = [];
     for (const perf of show.performances || []) {
       if (!isAvailable(perf)) continue;
+      // An online performance is nowhere, and is named by its own venue (a
+      // show can play a hall and stream the same evening).
+      const online = perf.online ?? Boolean(show.online);
+      const coord = online ? null : placed;
       const start = dateTimeToMinutes(perf.date, perf.start);
       const end = show.duration ? start + show.duration : start;
       const realStartMinute = timeToMinutesOfDay(perf.start);
@@ -289,10 +304,12 @@ export function eligibleSlots(shows, options = {}) {
         startMinuteOfDay,
         endMinuteOfDay,
         status: perf.status ?? null,
-        venueCode: show.venue ?? null,
-        venueName: show.venueName ?? null,
+        venueCode: (online ? perf.venue : null) ?? show.venue ?? null,
+        venueName: (online ? perf.venueName : null) ?? show.venueName ?? null,
         venueLat: coord ? coord.lat : null,
         venueLng: coord ? coord.lng : null,
+        online,
+        placeAssumed: Boolean(coord && !own),
         room: show.room ?? null,
         image: show.image ?? show.smallImage ?? null,
         blurb: show.blurb ?? null,
@@ -366,7 +383,8 @@ export function withinDayWindow(slot, win = {}) {
 }
 
 /**
- * Minutes required between two slots. Same known venue → the same-venue buffer
+ * Minutes required between two slots. Either one online → none: there is
+ * nowhere to travel to or from. Same known venue → the same-venue buffer
  * (a double bill needs no travel). Different venues → the greater of the
  * different-venue buffer (a floor, also the value used when coordinates are
  * unknown) and the estimated door-to-door travel time by the chosen mode, so
@@ -380,6 +398,7 @@ export function withinDayWindow(slot, win = {}) {
 export function requiredGapMinutes(a, b, options = {}) {
   const minGapSameVenue = options.minGapSameVenue ?? DEFAULT_MIN_GAP_SAME_VENUE;
   const minGapDifferentVenue = options.minGapDifferentVenue ?? DEFAULT_MIN_GAP_DIFFERENT_VENUE;
+  if (a.online || b.online) return 0; // watched from wherever the reader already is
   if (a.venueCode && b.venueCode && a.venueCode === b.venueCode) {
     return minGapSameVenue;
   }
@@ -405,6 +424,54 @@ export function compatible(a, b, options = {}) {
   return later.start >= earlier.end + requiredGapMinutes(earlier, later, options);
 }
 
+// --- spreading a capped day ------------------------------------------------
+
+/**
+ * Which part of its day a slot starts in, when a day is held to `maxPerDay`
+ * shows: the hours the slots' starts span that day are cut into one part per
+ * place. Left to the clock alone, a short day would fill from the morning.
+ * @param {Iterable<Slot>} slots every slot the day could take
+ * @param {number} maxPerDay
+ * @returns {((slot: Slot) => number)|null} null when the day is uncapped
+ */
+export function dayParts(slots, maxPerDay) {
+  if (!Number.isFinite(maxPerDay) || maxPerDay <= 0) return null;
+  const spans = new Map();
+  for (const s of slots) {
+    const span = spans.get(s.date);
+    if (!span) spans.set(s.date, { first: s.startMinuteOfDay, last: s.startMinuteOfDay });
+    else {
+      span.first = Math.min(span.first, s.startMinuteOfDay);
+      span.last = Math.max(span.last, s.startMinuteOfDay);
+    }
+  }
+  return (slot) => {
+    const span = spans.get(slot.date);
+    if (!span) return 0;
+    const part = Math.floor(((slot.startMinuteOfDay - span.first) * maxPerDay) / (span.last - span.first + 1));
+    return Math.max(0, Math.min(maxPerDay - 1, part));
+  };
+}
+
+/**
+ * Takes candidates ranked scarcest first a run of equal `freedom` at a time,
+ * each run twice: first only into the parts of a day nothing holds yet, then
+ * into whatever room is left — so the spread never leaves a day short and never
+ * outranks scarcity.
+ * @param {Array<{freedom: number}>} list ranked candidates
+ * @param {(run: object[], spread: boolean) => void} take
+ */
+export function takeSpread(list, take) {
+  for (let i = 0; i < list.length; ) {
+    let j = i;
+    while (j < list.length && list[j].freedom === list[i].freedom) j++;
+    const run = list.slice(i, j);
+    take(run, true);
+    take(run, false);
+    i = j;
+  }
+}
+
 // --- building an itinerary from the eligible slots ------------------------
 
 /**
@@ -419,6 +486,9 @@ export function compatible(a, b, options = {}) {
  * skipped (one-per-show), and a candidate is dropped if its day is already at
  * the per-day cap. Ties break deterministically (earliest start, then slug),
  * so the same inputs always yield the same plan — no wall-clock/random state.
+ * Under a per-day cap, the scarcest shows rank first and each day's places are
+ * spread across its hours (`dayParts`, `takeSpread`); earliest finish then
+ * orders only shows equally scarce.
  *
  * `forcedSlugs` are must-see shows placed in a first pass before the greedy
  * fill: each takes its earliest-finishing performance that doesn't clash with
@@ -572,25 +642,35 @@ export function buildSchedule(shows, options = {}) {
   }
 
   // --- Pass 2: greedy earliest-finish for everything else ------------------
+  // A capped day is spread across its hours (dayParts), and then the show with
+  // the fewest performances left to it ranks first, so the spread never takes
+  // a scarce show's only hour from it.
+  const partOf = dayParts([...slotsByShow.values()].flat(), maxPerDay);
   const candidates = [];
   for (const [slug, slots] of slotsByShow) {
     if (forcedSlugs.has(slug)) continue; // handled in pass 1
-    for (const slot of slots) candidates.push(slot);
+    for (const slot of slots) candidates.push({ slot, freedom: partOf ? slots.length : 0 });
   }
   candidates.sort(
     (a, b) =>
-      a.end - b.end ||
-      a.start - b.start ||
-      a.slug.localeCompare(b.slug) ||
-      a.date.localeCompare(b.date)
+      a.freedom - b.freedom ||
+      a.slot.end - b.slot.end ||
+      a.slot.start - b.slot.start ||
+      a.slot.slug.localeCompare(b.slot.slug) ||
+      a.slot.date.localeCompare(b.slot.date)
   );
-  for (const slot of candidates) {
-    if (placedShows.has(slot.slug)) continue; // one performance per show
-    const sameDay = perDay.get(slot.date) || [];
-    if (sameDay.length >= maxPerDay) continue; // day already full
-    if (!sameDay.every((c) => compatible(c, slot, gapOpts))) continue; // clash
-    place(slot, false);
-  }
+  const take = (list, spread) => {
+    for (const { slot } of list) {
+      if (placedShows.has(slot.slug)) continue; // one performance per show
+      const sameDay = perDay.get(slot.date) || [];
+      if (sameDay.length >= maxPerDay) continue; // day already full
+      if (spread && sameDay.some((c) => partOf(c) === partOf(slot))) continue;
+      if (!sameDay.every((c) => compatible(c, slot, gapOpts))) continue; // clash
+      place(slot, false);
+    }
+  };
+  if (partOf) takeSpread(candidates, take);
+  else take(candidates, false);
 
   // Post-pass: drop under-populated days (min-per-day preference), but never a
   // day that holds a forced show.

@@ -1,0 +1,112 @@
+{
+ "results": [
+  {
+   "query": "1A Dryden Terrace, Edinburgh, EH7 4NB",
+   "matched": "address",
+   "lat": 55.963784,
+   "lng": -3.183836
+  },
+  {
+   "query": "354 Castlehill, Edinburgh EH1 2NE",
+   "matched": "address",
+   "lat": 55.948743,
+   "lng": -3.195875
+  },
+  {
+   "query": "43-45 High St, Edinburgh EH1 1SR",
+   "matched": "address",
+   "lat": 55.95042,
+   "lng": -3.1857
+  },
+  {
+   "query": "49 Albany St, Edinburgh EH1 3QY",
+   "matched": "address",
+   "lat": 55.957333,
+   "lng": -3.189649
+  },
+  {
+   "query": "Bobby’s Sandwich Shop, 4 Greyfrairs Place, EH1 2QQ",
+   "matched": "postcode",
+   "lat": 55.946655,
+   "lng": -3.191374
+  },
+  {
+   "query": "Canongate, Edinburgh EH8 8DX",
+   "matched": "address",
+   "lat": 55.951533,
+   "lng": -3.179198
+  },
+  {
+   "query": "Castlehill, Edinburgh EH1 2NG",
+   "matched": "address",
+   "lat": 55.948897,
+   "lng": -3.195431
+  },
+  {
+   "query": "Chambers St, Edinburgh EH1 1JF",
+   "matched": "address",
+   "lat": 55.947417,
+   "lng": -3.189924
+  },
+  {
+   "query": "City Observatory, 38 Calton Hill, Edinburgh EH7 5AA",
+   "matched": "address",
+   "lat": 55.955,
+   "lng": -3.183526
+  },
+  {
+   "query": "Edinburgh",
+   "matched": null,
+   "lat": null,
+   "lng": null
+  },
+  {
+   "query": "Holyroodhouse, Canongate The Royal Mile, Edinburgh, EH8 8DX",
+   "matched": "address",
+   "lat": 55.952695,
+   "lng": -3.171613
+  },
+  {
+   "query": "Inverleith House, Royal Botanic Garden Edinburgh Arboretum Place Edinburgh EH3 5NZ",
+   "matched": "postcode",
+   "lat": 55.964358,
+   "lng": -3.212464
+  },
+  {
+   "query": "Mansion House, Edinburgh Zoo, 134 Corstorphine Rd Edinburgh EH12 6TS",
+   "matched": "postcode",
+   "lat": 55.945119,
+   "lng": -3.269594
+  },
+  {
+   "query": "Queen’s Drive, Edinburgh, EH8 8HG",
+   "matched": "address",
+   "lat": 55.951717,
+   "lng": -3.16535
+  },
+  {
+   "query": "Scottish Seabird Centre North Berwick EH39 4SS",
+   "matched": "address",
+   "lat": 56.061313,
+   "lng": -2.717338
+  },
+  {
+   "query": "The Mound, Edinburgh, EH2 2EL",
+   "matched": "address",
+   "lat": 55.951643,
+   "lng": -3.195676
+  },
+  {
+   "query": "Unit 3, 83 Craighall Rd, Edinburgh EH6 4RR, UK",
+   "matched": "postcode",
+   "lat": 55.976453,
+   "lng": -3.196679
+  },
+  {
+   "query": "University of Edinburgh, South Bridge, Edinburgh EH8 9YL",
+   "matched": "address",
+   "lat": 55.947415,
+   "lng": -3.187256
+  }
+ ]
+}

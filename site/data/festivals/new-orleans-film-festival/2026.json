@@ -1,0 +1,3794 @@
+{
+ "v": 1,
+ "festival": {
+  "id": "new-orleans-film-festival",
+  "edition": "2026",
+  "ordinal": 37,
+  "name": "New Orleans Film Festival",
+  "nameLocal": null,
+  "city": "New Orleans",
+  "country": "US",
+  "lat": 29.9511,
+  "lng": -90.0715,
+  "timezone": "America/Chicago",
+  "lang": "en",
+  "dir": "ltr",
+  "kind": "film",
+  "defaultGenre": "film",
+  "site": "https://neworleansfilmsociety.org",
+  "firstDate": "2026-10-22",
+  "lastDate": "2026-10-27",
+  "ticketing": {
+   "model": "central-box-office",
+   "url": "https://nofs.eventive.org",
+   "notes": "Sold on nofs.eventive.org, where every screening has its own ticket page; passes cover most screenings. Prices are each screening's public ticket types.",
+   "currency": "USD"
+  }
+ },
+ "categories": [
+  {
+   "id": "6a39e37e92d00e2e70824122",
+   "name": "Conference Event"
+  },
+  {
+   "id": "6a39e37e92d00e2e7082412a",
+   "name": "LGBTQ+"
+  },
+  {
+   "id": "6a39e37e92d00e2e70824131",
+   "name": "Parties/Events"
+  },
+  {
+   "id": "6ab6e426e2996f2198473933",
+   "name": "Q&A"
+  },
+  {
+   "id": "6abe9e6fa66e030f1cb219f2",
+   "name": "Pay What You Will"
+  }
+ ],
+ "venues": [
+  {
+   "id": "6a39e37e92d00e2e708240e9",
+   "name": "The MBS Black Box Theater at the Contemporary Arts Center",
+   "address": "900 Camp Street, New Orleans, LA 70130",
+   "lat": 29.943778,
+   "lng": -90.070853,
+   "online": false,
+   "capacity": 141,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6a39e37e92d00e2e708240ea",
+   "name": "Festival Hub at the Contemporary Arts Center",
+   "address": "900 Camp Street, New Orleans, LA 70130",
+   "lat": 29.943778,
+   "lng": -90.070853,
+   "online": false,
+   "capacity": 400,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6a39e37e92d00e2e708240eb",
+   "name": "The Broad Theater 4",
+   "address": "636 N Broad St, New Orleans, LA 70119",
+   "lat": 29.969705,
+   "lng": -90.083531,
+   "online": false,
+   "capacity": 123,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6a39e37e92d00e2e708240ec",
+   "name": "The Broad Theater 1",
+   "address": "636 N Broad St, New Orleans, LA 70119",
+   "lat": 29.969705,
+   "lng": -90.083531,
+   "online": false,
+   "capacity": 64,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6a39e37e92d00e2e708240ee",
+   "name": "Worklight Pictures Warehouse Theater at the Contemporary Arts Center",
+   "address": "900 Camp Street, New Orleans, LA 70130",
+   "lat": 29.943778,
+   "lng": -90.070853,
+   "online": false,
+   "capacity": 300,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6a39e37e92d00e2e708240f1",
+   "name": "Prytania Theatre Uptown",
+   "address": "5339 Prytania St, New Orleans, LA 70115",
+   "lat": 29.925183,
+   "lng": -90.113172,
+   "online": false,
+   "capacity": 220,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6a39e37e92d00e2e708240f4",
+   "name": "The Historic New Orleans Collection",
+   "address": "Williams Research Center, 410 Chartres St, New Orleans, LA 70130",
+   "lat": 29.955143,
+   "lng": -90.06559,
+   "online": false,
+   "capacity": 75,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6a39e37e92d00e2e708240f6",
+   "name": "The Filmmaker Conference Stage at the Contemporary Arts Center",
+   "address": "900 Camp Street, New Orleans, LA 70130",
+   "lat": 29.943778,
+   "lng": -90.070853,
+   "online": false,
+   "capacity": 60,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6a39e37e92d00e2e708240fa",
+   "name": "The Broadside",
+   "address": "600 N Broad St, New Orleans, LA 70119",
+   "lat": 29.969216,
+   "lng": -90.083954,
+   "online": false,
+   "capacity": 300,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aa2c2d0b32bbcbe865ef77b",
+   "name": "The Broad Theater 2",
+   "address": "636 N Broad St, New Orleans, LA 70119",
+   "lat": 29.969705,
+   "lng": -90.083531,
+   "online": false,
+   "capacity": 64,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aa336b30cc6635654be5d85",
+   "name": "Gallier Hall",
+   "address": "545 St Charles Ave, New Orleans, LA 70130",
+   "lat": 29.948571,
+   "lng": -90.071357,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aa337a23b82a886b9626ee6",
+   "name": "Dew Drop Inn Hotel & Lounge",
+   "address": "2836 Lasalle St, New Orleans, LA 70115",
+   "lat": 29.93749,
+   "lng": -90.091308,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aa33cc9289b3eb73f61b88a",
+   "name": "Contemporary Arts Center - The Library",
+   "address": "900 Camp Street, New Orleans, LA 70130",
+   "lat": 29.943778,
+   "lng": -90.070853,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aa44e60e39ea675d0345545",
+   "name": "Rooftop at the Contemporary Arts Center, Accessed from the 4th Floor",
+   "address": "900 Camp St, New Orleans, LA 70130",
+   "lat": 29.943778,
+   "lng": -90.070853,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aab1c0940563174f8c87b89",
+   "name": "Sunnies",
+   "address": "4917 Freret St, New Orleans, LA 70115",
+   "lat": 29.935048,
+   "lng": -90.107771,
+   "online": false,
+   "capacity": 200,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6abab9a2ae88013628ff1b48",
+   "name": "Contemporary Arts Center - The Shop",
+   "address": "900 Camp Street, New Orleans, LA 70130",
+   "lat": 29.943778,
+   "lng": -90.070853,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6abbf77a59a4b14a158fbc78",
+   "name": "Broad Theater Patio",
+   "address": "600 Broad Street, New Orleans, LA 70119",
+   "lat": 29.969216,
+   "lng": -90.083954,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  }
+ ],
+ "events": [
+  {
+   "id": "films-6a849c2479f706f304c727c9",
+   "title": "Victory",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2479f706f304c727c9",
+   "genre": "film",
+   "categories": [],
+   "blurb": "The Q&A following the film will be livestreamed from the Worklight Pictures Warehouse Theater at the Contemporary Arts Center.\n\nJoin us after as we second line to Gallier Hall!",
+   "durationMin": 74,
+   "imageUrl": "https://static-a.eventive.org/1787099585334temp-1787099585144-still.jpg"
+  },
+  {
+   "id": "6abfde2cd6790d19e3a0a085",
+   "title": "Opening Night Party",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6abfde2cd6790d19e3a0a085",
+   "genre": "other",
+   "categories": [
+    "6a39e37e92d00e2e70824131"
+   ],
+   "blurb": "Following the New Orleans Film Festival’s opening‑night premiere of Ben Chace’s Victory, guests will step into the beautiful Gallier Hall for a late‑night party that celebrates the start of the New Orleans Film Festival. Set in the historic former New Orleans City Hall, the evening features local food, cocktails and live music by Cha Wa that mirror the heart and excitement of the city. This is an exclusive chance to celebrate opening night with artists, filmmakers and fans.\n\nSponsored by:",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790384452986temp-1790384452972-cover.jpg"
+  },
+  {
+   "id": "6aa32f637f6e1456dcde4f9e",
+   "title": "A Hands-On Introduction to 35mm Filmmaking, presented by Shawscope - Part I",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa32f637f6e1456dcde4f9e",
+   "genre": "talk",
+   "categories": [
+    "6a39e37e92d00e2e70824122"
+   ],
+   "blurb": "In Part I of this workshop, you’ll get a crash course in shooting celluloid film, and then in Part II (pre-registration required) you'll get your hands on 35mm movie cameras used on films like “Queen and Slim”, “City of God”, “A Clockwork Orange”, and “For The Grind” (screening at NOFF!). Each workshop participant will get a chance to shoot a shot on 35mm, and receive a downloadable digital file of the workshop footage for their own use.\n\nSponsored by:",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790789999924temp-1790789999911-cover.jpg"
+  },
+  {
+   "id": "6aa32fd5e574f9f008ba31c6",
+   "title": "A Hands-On Introduction to 35mm Filmmaking, presented by Shawscope - Part II",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa32fd5e574f9f008ba31c6",
+   "genre": "talk",
+   "categories": [
+    "6a39e37e92d00e2e70824122"
+   ],
+   "blurb": "In Part I of this workshop, you’ll get a crash course in shooting celluloid film, and then in Part II (pre-registration required) you'll get your hands on 35mm movie cameras used on films like “Queen and Slim”, “City of God”, “A Clockwork Orange”, and “For The Grind” (screening at NOFF!). Each workshop participant will get a chance to shoot a shot on 35mm, and receive a downloadable digital file of the workshop footage for their own use.\n\n**Attendees must pre-register and attend Part I**\n\nSponsored by:",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790790015314temp-1790790015297-cover.jpg"
+  },
+  {
+   "id": "6aa3311642db00a86c80ee87",
+   "title": "Virtual Production in Practice: Making the Impossible Shot Possible",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa3311642db00a86c80ee87",
+   "genre": "talk",
+   "categories": [
+    "6a39e37e92d00e2e70824122"
+   ],
+   "blurb": "OPEN TO NOFF ALL ACCESS PASSHOLDERS!! NO REGISTRATION REQUIRED.\n\nProducer Erik Weaver (USC ETC) and director C. Craig Patterson (Fathead, ChikaBOOM!) trade notes on building worlds inside LED volume stages. They'll unpack how virtual production lets filmmakers build impossible worlds and turn creative constraints into visionary opportunities.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790308184740temp-1790308184720-cover.jpg"
+  },
+  {
+   "id": "6abadba55f73e05fab2e393c",
+   "title": "Lunch & Learn: Mindfulness for Filmmakers",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6abadba55f73e05fab2e393c",
+   "genre": "talk",
+   "categories": [
+    "6a39e37e92d00e2e70824122"
+   ],
+   "blurb": "Film sets demand long hours, early call times, constant problem-solving, standing on your feet, unpredictable meals, and the ability to stay focused and creative under pressure.\n\nDrawing from his book Sadhana: A Modern Spiritual Routine for a Healthier, Happier Life, Mark Berger will share practical mindfulness, movement, breath, and spiritual practices that actors, directors, producers, and production crews can use before call time, between setups, during meal breaks, and after wrap. We’ll explore simple ways to manage stress and anxiety, maintain energy, support physical health, and avoid letting the demands of production take over your well-being.\n\nDesigned specifically for the realities of working in the film industry, this lunch-and-learn offers tools that can be practiced in five minutes or woven into your entire day on set.\n\nSponsored by:",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790632026836temp-1790632026823-cover.jpg"
+  },
+  {
+   "id": "6abc80b2583463608cef4cc8",
+   "title": "NOFF37 Ribbon Cutting",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6abc80b2583463608cef4cc8",
+   "genre": "talk",
+   "categories": [
+    "6a39e37e92d00e2e70824122"
+   ],
+   "blurb": "FREE AND OPEN TO THE PUBLIC\n\nThe Ribbon Cutting Ceremony marks the official opening of the Festival Hub at the Contemporary Arts Center and the start of the 37th New Orleans Film Festival presented by Andscape. Filmmakers, civic and business leaders, area chambers of commerce, press, and festival guests gather as NOFS leadership welcomes the city into the Hub and honors the year's Cultural Ambassadors. The ceremony flows directly into South Pitch Narrative, so the Hub is full and buzzing from the first moment.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790789253272temp-1790789253258-cover.jpg"
+  },
+  {
+   "id": "6aa31a94ca58764e96ec051b",
+   "title": "South Pitch Narrative Competition",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa31a94ca58764e96ec051b",
+   "genre": "talk",
+   "categories": [
+    "6a39e37e92d00e2e70824122"
+   ],
+   "blurb": "Admission is free and open to the public.\n\nSouth Pitch is a high-energy showcase of the distinctive stories and filmmaking talent emerging from the American South.\n\nNow in its 16th season, South Pitch is one of the New Orleans Film Festival’s signature industry programs, connecting Southern filmmakers with the funding, mentorship, and industry access to help move ambitious projects forward. Each year, five documentary and five narrative teams take the stage for five minutes to pitch their works-in-progress before a panel of industry leaders, who provide feedback and award additional funding to selected projects.\n\n-----\n\nIn preparation for the pitch, every participating team receives one-on-one pitch training, a minimum $1,500 grant, travel support, and All-Access passes to the New Orleans Film Festival. The industry panel selects a winner and runner-up in both the documentary and narrative categories for additional funding, while audience members get a voice of their own, awarding a $500 Audience Award in each category.\n\nPitchers include:\n\nGerard Clarke and Rashielle Clarke (Acworth, Georgia) - Landfall: An immigrant girl must survive until dawn as Hurricane Andrew claws her family’s home open.\n\nNana Kumi (Natchez, Mississippi) - Blood for Soil: A woman awakens in a remote town with no recollection of how she arrived. She races to escape before its obscured past consumes her.\n\nChristian Meola (Austin, Texas) - Other Days: Four college guy friends shatter their group dynamic when they realize a deeper need to be closer to each other across three stories.\n\nNolam Plaas (New Orleans, Louisiana) and Louis Anania (New York) - pecan: Junie and his father, Kenny, attempt to live up to expectations of being men.\n\nIvan Rome (Columbus, Georgia) - Hallelujah Night: A pastor's kid and his two best friends sneak out for their first Halloween party.\n\nSponsored by:",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790308469700temp-1790308469688-cover.jpg"
+  },
+  {
+   "id": "6aa3315de72f03bea2d1f65a",
+   "title": "Stewards of History: Local Archive Collections & Their Hidden Treasures",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa3315de72f03bea2d1f65a",
+   "genre": "talk",
+   "categories": [
+    "6a39e37e92d00e2e70824122"
+   ],
+   "blurb": "OPEN TO NOFF ALL ACCESS PASSHOLDERS!! NO REGISTRATION REQUIRED.\n\nJoin local organizations for a conversation exploring the vital work of collecting, preserving, and protecting the documents that tell our region's story. Come learn what's in the archives, how to access them, and how this work anchors a community's identity.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790790065386temp-1790790065373-cover.jpg"
+  },
+  {
+   "id": "6abab25c2c47a53b88b6b299",
+   "title": "Calling Back Our Disappearing Acts: Working with Personal Archives",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6abab25c2c47a53b88b6b299",
+   "genre": "talk",
+   "categories": [
+    "6a39e37e92d00e2e70824122"
+   ],
+   "blurb": "OPEN TO NOFF ALL ACCESS PASSHOLDERS!! NO REGISTRATION REQUIRED.\n\nThis panel takes a closer look at films that farm the personal past in order to gain new perspectives on inherited (her)stories and reclaim them as our own. Together we will contemplate personal, familial archives as living, creative partners in conversation with our filmmaking practices.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790790090857temp-1790790090844-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c726c0-6a849c2379f706f304c726c8-6a849c2379f706f304c726da-6a849c2479f706f304c726f4-6a99d756542aaa8cc1192fdc-6a99d756542aaa8cc1192fe0",
+   "title": "Doc Shorts: Everyday Legacies",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa3146dfee2aef4d3ea963e",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "Shorts Block Sponsored by:",
+   "durationMin": 185,
+   "imageUrl": "https://static-a.eventive.org/1787082603411temp-1787082603212-still.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c726be",
+   "title": "Zenón and the Rebel Boats",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2379f706f304c726be",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "A biographical documentary about the life of fisherman, Carlos \"Taso\" Zenón who led the fishermen movement in Vieques to halt US Navy war games in the Caribbean Sea.",
+   "durationMin": 93,
+   "imageUrl": "https://static-a.eventive.org/1787085198639temp-1787085198589-still.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c72739",
+   "title": "Three Times (Tres Tiempos)",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2479f706f304c72739",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "In a house between the mountains, facing a mirrored lake, Emma and her teenage granddaughter Alicia live together. Emma instills her passion for dance and raises Alicia as a mother, but Alicia falls prey to her controlling upbringing. The unexpected arrival of Barbara, Alicia’s mother and Emma’s daughter, accompanied by her caregiver, disrupts the routine of their small world.",
+   "durationMin": 99,
+   "imageUrl": "https://static-a.eventive.org/1787084097423temp-1787084097273-still.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c7267a-6a849c2379f706f304c7267c-6a849c2379f706f304c72682-6a849c2379f706f304c72684-6a849c2379f706f304c72686-6a849c2379f706f304c72688-6a849c2379f706f304c7268a-6a849c2379f706f304c7268e-6a849c2379f706f304c72690-6a849c2379f706f304c72692",
+   "title": "Animated Shorts: Tactile Visions",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa31b67025006cbc2063a93",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "This year’s block showcases a variety of mediums, broadening our conception of the animated film. From embroidered rituals, to journeys in clay, to the blobbiest and most colorful of brushstroke encounters, these beauties almost beckon you to reach out and touch.",
+   "durationMin": 102,
+   "imageUrl": "https://static-a.eventive.org/1789166314968temp-1789166314903-cover.jpg"
+  },
+  {
+   "id": "6aa331da5324c28b11a59be6",
+   "title": "Reel Connections: Industry Speed Dating with Actor's Apothecary",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa331da5324c28b11a59be6",
+   "genre": "talk",
+   "categories": [
+    "6a39e37e92d00e2e70824122"
+   ],
+   "blurb": "OPEN TO NOFF ALL ACCESS PASSHOLDERS!! NO REGISTRATION REQUIRED.\n\nWriters, directors, producers, cinematographers, actors, and more will have the opportunity to sit down, pair up, and make quick connections. Every few minutes you’ll meet a new collaborator. Think of it as speed dating, but for your next great project!",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790790107127temp-1790790107111-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c72698",
+   "title": "Daughters of the Forest",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2379f706f304c72698",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933",
+    "6abe9e6fa66e030f1cb219f2"
+   ],
+   "blurb": "This screening is offered as PAY WHAT YOU WILL. Everyone is welcome. No one is turned away. Whether you’re able to give a little, a lot, or nothing at all, we’re glad you’re here.\n\nNOFF Passholders may still use their pass to scan in. NOFS Members may pay any amount in lieu of their traditional discount.\n\nLimit of 2 tickets per person.",
+   "durationMin": 95,
+   "imageUrl": "https://static-a.eventive.org/1787078489022temp-1787078488887-still.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c726bc",
+   "title": "You Don't Know My Name",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2379f706f304c726bc",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "Separated from his incarcerated mother at birth, the filmmaker searches for her identity. As he gets closer to this life-altering truth, he navigates his way through systems designed to keep him in the dark.",
+   "durationMin": 115,
+   "imageUrl": "https://static-a.eventive.org/1787085143559temp-1787085143265-still.jpg"
+  },
+  {
+   "id": "6abff25010c40295f3e936f2",
+   "title": "NOLA Slate Social",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6abff25010c40295f3e936f2",
+   "genre": "other",
+   "categories": [
+    "6a39e37e92d00e2e70824131"
+   ],
+   "blurb": "FREE AND OPEN TO THE PUBLIC\n\nHang out with the NOLA Slate Social for a casual networking happy hour in the festival hub, bringing together local filmmakers, actors, writers, crew, and film lovers to connect and celebrate the city’s film community.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790384615183temp-1790384615169-cover.jpg"
+  },
+  {
+   "id": "6abff2b910c40295f3e99474",
+   "title": "Copy of NOLA Slate Social",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6abff2b910c40295f3e99474",
+   "genre": "other",
+   "categories": [
+    "6a39e37e92d00e2e70824131"
+   ],
+   "blurb": "FREE AND OPEN TO THE PUBLIC\n\nHang out with the NOLA Slate Social for a casual networking happy hour in the festival hub, bringing together local filmmakers, actors, writers, crew, and film lovers to connect and celebrate the city’s film community.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790384615183temp-1790384615169-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c726b8",
+   "title": "White Lightning",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2379f706f304c726b8",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "A gritty, funny, and uniquely Southern story about second chances, legacy, and what it takes to outrun your past. This documentary follows the rise and fall of underground track legend Casey Combest (aka White Lightning) and his son King’s effort to break his father’s 25-year-old national high school record.",
+   "durationMin": 96,
+   "imageUrl": "https://static-a.eventive.org/1787084739217temp-1787084738914-still.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c726b6",
+   "title": "Unseen Olympiad",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2379f706f304c726b6",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "Presented in 35mm.",
+   "durationMin": 54,
+   "imageUrl": "https://static-a.eventive.org/1787084341705temp-1787084341364-still.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c7272a",
+   "title": "Junkie",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2479f706f304c7272a",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "A meth-addicted mom embarks on an odyssey through the underbelly of the South in an attempt to evade rehab and redeem herself in the eyes of her son.",
+   "durationMin": 105,
+   "imageUrl": "https://static-a.eventive.org/1787080127634temp-1787080127501-still.jpg"
+  },
+  {
+   "id": "films-6aa32993c7a854b4d200417c",
+   "title": "More Than Bike Life",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6aa32993c7a854b4d200417c",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "This film follows the rise of 1UP Bike Life through the eyes of four young riders whose commitment to the movement reflects something deeper than tricks or wheelies.",
+   "durationMin": 58,
+   "imageUrl": "https://static-a.eventive.org/1789078124583temp-1789078124293-still.jpg"
+  },
+  {
+   "id": "6abab2cb7ebde9377674a942",
+   "title": "Playing with Shadow: An Overhead Projector Shadow Puppet Workshop + Demo",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6abab2cb7ebde9377674a942",
+   "genre": "talk",
+   "categories": [
+    "6a39e37e92d00e2e70824122"
+   ],
+   "blurb": "OPEN TO NOFF ALL ACCESS PASSHOLDERS!! NO REGISTRATION REQUIRED.\n\nJoin Playdoh Kolo (Mother Mary - screening at NOFF) for an inside look at their creative process and a chance to create your very own shadow puppets!\n\nAll materials provided. No experience necessary.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790790135542temp-1790790135527-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c727c1",
+   "title": "A Talent for Murder",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2479f706f304c727c1",
+   "genre": "film",
+   "categories": [],
+   "blurb": "A mysterious young man from a New York publisher is sent to Switzerland to persuade the renowned writer Patricia Highsmith to write one final installment of the Ripley anthology.",
+   "durationMin": 106,
+   "imageUrl": "https://static-a.eventive.org/1787085284702temp-1787085284644-still.jpg"
+  },
+  {
+   "id": "films-6a9b53ec9f95bf0198a26c83",
+   "title": "Serious Play",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a9b53ec9f95bf0198a26c83",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "To learn a new juggling trick, you fail—a lot. A film crew tries to keep up with performers attending the 77th International Jugglers’ Association Festival.",
+   "durationMin": 95,
+   "imageUrl": "https://static-a.eventive.org/1788896454293temp-1788896453287-still.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c7271c-6a849c2479f706f304c7274b-6a849c2479f706f304c72765-6a849c2479f706f304c7277d-6a849c2479f706f304c7278f-6a849c2479f706f304c72799-6a849c2479f706f304c7279b-6a849c2479f706f304c7279d",
+   "title": "Louisiana Shorts: Jump / Scare",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa31baead29e3184f4dd6b7",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "It’s spooky season in the uncontested spookiest state! Unsurprisingly, our local filmmakers aren’t afraid of the dark. Join us for this idiosyncratic program of hometown haunts, which vary from sweet and silly to stone-cold scary. Place aux frissons!",
+   "durationMin": 90,
+   "imageUrl": "https://static-a.eventive.org/1789166046897temp-1789166046845-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c72741-6a849c2479f706f304c72759-6a849c2479f706f304c72767-6a849c2479f706f304c72771-6a849c2479f706f304c727b9-6a849c2479f706f304c727bd",
+   "title": "Narrative Shorts: Cobwebs",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa31e9bb58cf908f50e2a0f",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933",
+    "6abe9e6fa66e030f1cb219f2"
+   ],
+   "blurb": "This screening is offered as PAY WHAT YOU WILL. Everyone is welcome. No one is turned away. Whether you’re able to give a little, a lot, or nothing at all, we’re glad you’re here.\n\nNOFF Passholders may still use their pass to scan in. NOFS Members may pay any amount in lieu of their traditional discount.\n\nLimit of 2 tickets per person.\n\nThis program probes the shadowiest corners of the human psyche, from eerie curiosities in dusty homes to otherworldly beings seeking restitution. In turn, these specters reveal the basest of our human impulses, as well as the earthly evils that oftentimes provoke them.",
+   "durationMin": 98,
+   "imageUrl": "https://static-a.eventive.org/1789164423820temp-1789164423770-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c726b2",
+   "title": "The Haunting of Pennhurst",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2379f706f304c726b2",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "For over 70 years, Pennhurst State School & Hospital was called a place of care. What happened inside killed over half its population. After closing in 1987, it left behind unmarked graves and an unresolved history. Today, on those same grounds, disabled performers prepare to scare visitors at the Pennhurst Asylum haunted attraction.",
+   "durationMin": 82,
+   "imageUrl": "https://static-a.eventive.org/1787097337768temp-1787097337729-still.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c72735",
+   "title": "The Peril at Pincer Point",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2479f706f304c72735",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "On a quest to prove his competency, an inept sound recordist finds himself entangled in a nautical prophecy on the spectral island of Pincer Point.",
+   "durationMin": 83,
+   "imageUrl": "https://static-a.eventive.org/1787083632315temp-1787083632190-still.jpg"
+  },
+  {
+   "id": "6aa3370d1e6ecd258297d3d4",
+   "title": "Fri-YAY Bounce Party",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa3370d1e6ecd258297d3d4",
+   "genre": "other",
+   "categories": [
+    "6a39e37e92d00e2e70824131"
+   ],
+   "blurb": "FREE FOR NOFF ALL ACCESS PASSHOLDERS!!\n\nKick off your Friday at the HUB with the Fri-YAY Bounce Party. A variety show featuring the cast of \"Serious Play\" - which has its World Premiere at NOFF37 - opens the night, then DJ Jubilee, the \"King of Bounce,\" brings his signature New Orleans sound to the dance floor. Grab a drink, find your people, and let the night carry you.\n\nTicket includes food and drink.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790308846779temp-1790308846762-cover.jpg"
+  },
+  {
+   "id": "6aa3320dc7a854b4d202462f",
+   "title": "Behind the Stunts of Descendants: Rise of Red",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa3320dc7a854b4d202462f",
+   "genre": "talk",
+   "categories": [
+    "6a39e37e92d00e2e70824122"
+   ],
+   "blurb": "OPEN TO NOFF ALL ACCESS PASSHOLDERS!! NO REGISTRATION REQUIRED.\n\nBring your kids to this fun, interactive workshop with the stunt team behind Disney's Descendants: Rise of Red. Under their guidance, kids will have the opportunity to safely perform some exciting stunts of their own.\n\nOpen to ages 8 - 14, children must be supervised by an adult.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790790149926temp-1790790149912-cover.jpg"
+  },
+  {
+   "id": "6aa33d0898755e1d85069316",
+   "title": "Meet the Programmers Coffee",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa33d0898755e1d85069316",
+   "genre": "talk",
+   "categories": [
+    "6a39e37e92d00e2e70824122"
+   ],
+   "blurb": "Join a myriad of festival programmers and film curators for coffee and learn more about their curatorial process!",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790789380287temp-1790789380275-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c726b0",
+   "title": "The Brittney Griner Story",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2379f706f304c726b0",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "This doc chronicles basketball star Brittney Griner’s Russian imprisonment and the international efforts to secure her freedom.",
+   "durationMin": 105,
+   "imageUrl": "https://static-a.eventive.org/1787083323070temp-1787083322888-still.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c726c2-6a849c2379f706f304c726dc-6a849c2379f706f304c726e0-6a849c2379f706f304c726f0-6a849c2479f706f304c72706-6a849c2479f706f304c72708",
+   "title": "Louisiana Music Shorts",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa31c1facb05803e8803182",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "Meet the musicians who give South Louisiana its singular sound: from legendary performers and beloved local figures to a new generation of artists carrying the region’s musical traditions forward.\n\nShorts Block Sponsored by:",
+   "durationMin": 90,
+   "imageUrl": "https://static-a.eventive.org/1789165604979temp-1789165604799-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c7269e",
+   "title": "Kabouk",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2379f706f304c7269e",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933",
+    "6abe9e6fa66e030f1cb219f2"
+   ],
+   "blurb": "This screening is offered as PAY WHAT YOU WILL. Everyone is welcome. No one is turned away. Whether you’re able to give a little, a lot, or nothing at all, we’re glad you’re here.\n\nNOFF Passholders may still use their pass to scan in. NOFS Members may pay any amount in lieu of their traditional discount.\n\nLimit of 2 tickets per person.",
+   "durationMin": 88,
+   "imageUrl": "https://static-a.eventive.org/1787080158934temp-1787080158874-still.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c726a6",
+   "title": "Matininó",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2379f706f304c726a6",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "In Puerto Rico, a multi-generational group of women confront violence and abuse through a shared creative fantasy rich in color, mythology and play in this kaleidoscopic documentary.",
+   "durationMin": 89,
+   "imageUrl": "https://static-a.eventive.org/1787080638863temp-1787080638730-still.jpg"
+  },
+  {
+   "id": "6aa332335f44613fb06a6106",
+   "title": "Emerging Voices Directors Lab Showcase, presented by Andscape",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa332335f44613fb06a6106",
+   "genre": "talk",
+   "categories": [
+    "6a39e37e92d00e2e70824122"
+   ],
+   "blurb": "OPEN TO NOFF ALL ACCESS PASSHOLDERS!! NO REGISTRATION REQUIRED.\n\nThis year's Emerging Voices Directors Lab Fellows will take the stage to share the works-in-progress they've been developing over the last six months of the fellowship and answer audience questions.\n\nThe Emerging Voices Directors Lab, presented by the New Orleans Film Society, is a six-month fellowship that invests in five emerging Louisiana-based film directors whose projects elevate stories, experiences, and creative perspectives that have historically been overlooked or underrepresented in film.\n\nFellows include: Elvira Castillo, Zain Hashmat, Jordan Joseph, Shea Stephens, and Joshua Williams.\n\nSponsored by:",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790308935975temp-1790308935963-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c7273b",
+   "title": "Whistle Down Wind",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2479f706f304c7273b",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "Across three chapters of childhood, adolescence, and adulthood, this film follows two girls from a happenstance meet cute to the drunken teenage kiss that propels their quirky friendship into a hidden love affair.",
+   "durationMin": 86,
+   "imageUrl": "https://static-a.eventive.org/1787084652682temp-1787084652341-still.jpg"
+  },
+  {
+   "id": "films-6aab075561f13a2c8dde26eb",
+   "title": "Strangers on a Train",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6aab075561f13a2c8dde26eb",
+   "genre": "film",
+   "categories": [],
+   "blurb": "A charming psychopath tries to coerce a tennis star into his theory that two strangers can commit the perfect crime by exchanging murders—each killing the other’s most-hated person.",
+   "durationMin": 101,
+   "imageUrl": "https://static-a.eventive.org/1790198296431temp-1790198296395-still.jpg"
+  },
+  {
+   "id": "6abbf7d5870435d43a0e256c",
+   "title": "Cinema Reset: Cyanotype Animation!",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6abbf7d5870435d43a0e256c",
+   "genre": "talk",
+   "categories": [
+    "6a39e37e92d00e2e70824122"
+   ],
+   "blurb": "This hands-on workshop combines the beautiful 19th century cyanotype photographic process with stop-motion animation. Using paper pre-coated with emulsion, we’ll arrange stencils, objects, and 16mm negatives, expose contact prints to sunlight, and process the images with water. They’ll then be scanned and incorporated into a collaborative animation which will be projected at the Independent Filmmaker Party on Monday night. You keep your cyanotype prints!\n\nAll ages welcome (though children must be supervised by an adult), no experience necessary. Bring small items to create your own animated silhouettes!\n\nWorkshop Facilitated by Rachel Lynn Weaver and Tacie Jones\n\nCinema Reset is the NOFF expanded media showcase. Founded in 2011, the showcases groundbreaking projects at the intersections film, art, technology, and performance. We also offer workshops to share unique creative resources with the New Orleans community. Cinema Reset is curated by Rachel Lin Weaver.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790790186460temp-1790790186446-cover.jpg"
+  },
+  {
+   "id": "6aa332589d9fac6cbca0e29c",
+   "title": "Aesthetics of Sunlight: Filmmaking in the Caribbean",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa332589d9fac6cbca0e29c",
+   "genre": "talk",
+   "categories": [
+    "6a39e37e92d00e2e70824122"
+   ],
+   "blurb": "OPEN TO NOFF ALL ACCESS PASSHOLDERS!! NO REGISTRATION REQUIRED.\n\nThis panel brings together some of the Caribbean filmmakers featured in this year's festival line up for a raw and honest conversation around the challenges, opportunities, and light that shapes stories from the Caribbean and rooted in Caribbean identity.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790308992908temp-1790308992895-cover.jpg"
+  },
+  {
+   "id": "6aa31b09d08b9d911def25fa",
+   "title": "South Pitch Documentary Competition",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa31b09d08b9d911def25fa",
+   "genre": "talk",
+   "categories": [
+    "6a39e37e92d00e2e70824122"
+   ],
+   "blurb": "Admission is free and open to the public.\n\nSouth Pitch is a high-energy showcase of the distinctive stories and filmmaking talent emerging from the American South.\n\nNow in its 16th season, South Pitch is one of the New Orleans Film Festival’s signature industry programs, connecting Southern filmmakers with the funding, mentorship, and industry access to help move ambitious projects forward. Each year, five documentary and five narrative teams take the stage for five minutes to pitch their works-in-progress before a panel of industry leaders, who provide feedback and award additional funding to selected projects.\n\n-----\n\nIn preparation for the pitch, every participating team receives one-on-one pitch training, a minimum $1,500 grant, travel support, and All-Access passes to the New Orleans Film Festival. The industry panel selects a winner and runner-up in both the documentary and narrative categories for additional funding, while audience members get a voice of their own, awarding a $500 Audience Award in each category.\n\nPitchers include:\n\nLuisa Dantas (New Orleans, Louisiana) and Tr'Vel Lyons (Los Angeles, California) - Backwards, Sideways, Forward: “If the world is a dumpster fire, what’s your bucket of water?”, asks Tr’Vel Lyons as he builds community in the hills, streets, and classrooms of Los Angeles, New Orleans and beyond.\n\nAdam Forrester and Artemis Fannin (Atlanta, Georgia) - Our Wicked City: A filmmaker returns to his hometown to confront a legacy of corruption and violence.\n\nAn-Phuong Ly (Washington, D.C.) - Untitled: In his search for Bigfoot, Steve finds himself on a path towards self-discovery and healing.\n\nAmy M. Martinez and Chelsea Hernandez (Austin, Texas) - The School of Hope: At the U.S.-Mexico border, a one-room school becomes a lifeline for three asylum-seeking children.\n\nSienna Pinderhughes and Carlus Henderson (New Orleans, Louisiana) - Shady Side: An Act of Remembrance: Seven cousins gather for a meal on their grandparents' farm before the property is sold.\n\nPresented by:\n\nConcordia",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790308968620temp-1790308968611-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c7275f-6a849c2479f706f304c72779-6a849c2479f706f304c72787-6a849c2479f706f304c72797-6a849c2479f706f304c727a1-6a849c2479f706f304c727bb",
+   "title": "Narrative Shorts: Regrowth",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa3201c903b3816eba2950b",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933",
+    "6abe9e6fa66e030f1cb219f2"
+   ],
+   "blurb": "This screening is offered as PAY WHAT YOU WILL. Everyone is welcome. No one is turned away. Whether you’re able to give a little, a lot, or nothing at all, we’re glad you’re here.\n\nNOFF Passholders may still use their pass to scan in. NOFS Members may pay any amount in lieu of their traditional discount.\n\nLimit of 2 tickets per person.\n\nEach parent-child relationship is uniquely complex. From a daughter’s emerging sexuality, to a father’s new spiritual delusion, to complications arising from money trouble and poor health, this block never shies away from the thorniest and most fascinating of intergenerational bonds.",
+   "durationMin": 94,
+   "imageUrl": "https://static-a.eventive.org/1789164437224temp-1789164437178-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c72720",
+   "title": "Danny is My Boyfriend",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2479f706f304c72720",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "When Lucy's new boyfriend Danny asks her to dogsit while he’s out of town, it feels like a major milestone. But the illusion shatters when a stranger on the street, Mechi, recognizes the dog… as HER boyfriend Danny’s dog. Fueled by betrayal and questionable judgment, the two launch a mission to get even.",
+   "durationMin": 100,
+   "imageUrl": "https://static-a.eventive.org/1787085600287temp-1787085600173-still.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c7269c-6a849c2379f706f304c726d0",
+   "title": "Harvest + Everybody Eats",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa324104714637bd7fa48ae",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "Feature Documentary \"Harvest\" preceded by short film \"Everybody Eats.\"",
+   "durationMin": 111,
+   "imageUrl": "https://static-a.eventive.org/1787079561010temp-1787079560967-still.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c726d8-6a849c2479f706f304c726fc-6a849c2479f706f304c72700",
+   "title": "Doc Shorts: Southern Politics",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa316199798fad71d9b569e",
+   "genre": "film",
+   "categories": [
+    "6a39e37e92d00e2e7082412a"
+   ],
+   "blurb": "What happens when people who have been shut out of the political system decide to fight from within it? Three shorts about reproductive rights, criminal justice, and women challenging patriarchal power in the South.",
+   "durationMin": 60,
+   "imageUrl": "https://static-a.eventive.org/1787083532851temp-1787083532738-still.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c727c3",
+   "title": "Gentle Monster",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2479f706f304c727c3",
+   "genre": "film",
+   "categories": [],
+   "blurb": "A renowned pianist relocates with her family to the countryside, where she uncovers a life-shattering truth that forces her to confront the complexities of love, trust, and deception.",
+   "durationMin": 114,
+   "imageUrl": "https://static-a.eventive.org/1787098998886temp-1787098998773-still.jpg"
+  },
+  {
+   "id": "6abab4014e230609cd81c0a4",
+   "title": "I Made A Short Film, Now What?",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6abab4014e230609cd81c0a4",
+   "genre": "talk",
+   "categories": [
+    "6a39e37e92d00e2e70824122"
+   ],
+   "blurb": "OPEN TO NOFF ALL ACCESS PASSHOLDERS!! NO REGISTRATION REQUIRED.\n\nThe short is done, but the journey's just beginning. This panel unpacks what comes after the final cut: from navigating the short film festival circuit and catching a programmer's eye to turning your short into momentum for what you build next.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790308992908temp-1790308992895-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c726b4",
+   "title": "Thibodeauxville - The Story of the Thibodaux Massacre: Race, Riot, and Resilience",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2379f706f304c726b4",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "In a Southern town where silence has long shrouded history, a native daughter unearths the depths of trauma, loss, resistance, and resilience to reveal one of America’s bloodiest labor massacres - and its enduring legacy across generations.",
+   "durationMin": 62,
+   "imageUrl": "https://static-a.eventive.org/1787083980310temp-1787083980187-still.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c726c0-6a849c2379f706f304c726c8-6a849c2379f706f304c726da-6a849c2479f706f304c726f4-6a99d756542aaa8cc1192fe0",
+   "title": "Doc Shorts: Everyday Legacies",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa320431b7c61ff1e2ded08",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933",
+    "6abe9e6fa66e030f1cb219f2"
+   ],
+   "blurb": "This screening is offered as PAY WHAT YOU WILL. Everyone is welcome. No one is turned away. Whether you’re able to give a little, a lot, or nothing at all, we’re glad you’re here.\n\nNOFF Passholders may still use their pass to scan in. NOFS Members may pay any amount in lieu of their traditional discount.\n\nLimit of 2 tickets per person.\n\nThe quiet choices that shape a life can become something bigger: five portraits of people building community and a future in unexpected ways.\n\nShorts Block Sponsored by:",
+   "durationMin": 98,
+   "imageUrl": "https://static-a.eventive.org/1789164874589temp-1789164873990-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c7275b-6a849c2479f706f304c72763-6a849c2479f706f304c72781-6a849c2479f706f304c72789-6a849c2479f706f304c727b5",
+   "title": "Queer South Shorts",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa31c5cdf178748dab2aa4c",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "From dazzling drag shows to intimate house parties, this vivid and unapologetic shorts program spills the sweet tea on the various realities, challenges, and joys of existing queer (and surviving) in the Southern heat.",
+   "durationMin": 81,
+   "imageUrl": "https://static-a.eventive.org/1789164241033temp-1789164240834-cover.jpg"
+  },
+  {
+   "id": "6aa33276a25fcb303383470b",
+   "title": "Beneath the Surface: A Fireside Chat with film critic Angelica Jade Bastién, presented by GILEAD",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa33276a25fcb303383470b",
+   "genre": "talk",
+   "categories": [
+    "6a39e37e92d00e2e70824122"
+   ],
+   "blurb": "OPEN TO NOFF ALL ACCESS PASSHOLDERS!! NO REGISTRATION REQUIRED.\n\nBoasting 20k+ followers on Letterboxd and over 9k on Substack, Angelica Jade Bastién (New York Magazine, Vulture) shines a light on how films handle race, madness, gender, and desire. With a Black Southern lens, she deconstructs cinema and culture. Join us for an in-depth conversation about her journey, experience, and \"hot takes.\"\n\nSponsored by:",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790309019630temp-1790309019618-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c726ca-6a849c2379f706f304c726d2-6a849c2379f706f304c726e6-6a85f1bf52b542b996541081",
+   "title": "Doc Shorts: Skin Deep",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa31f1ed937e5cdd1864e1a",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "What does it mean to live unapologetically in your own skin? Four documentaries about desire, identity, aging, gender, and the choices we make to become more fully ourselves.",
+   "durationMin": 79,
+   "imageUrl": "https://static-a.eventive.org/1789165206583temp-1789165206402-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c72743-6a849c2479f706f304c72751-6a849c2479f706f304c72769-6a849c2479f706f304c727a7-6a849c2479f706f304c727b1-6a849c2479f706f304c727bf",
+   "title": "Narrative Shorts: Love Letters",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa324407e9624a25991099e",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "A series of lyrical meditations that bear loving witness to land, memory, and change. Each film lingers long enough to see its subject in full, holding space for beauty, complexity, and contradiction. These offerings of sustained attention become a series of love letters.",
+   "durationMin": 88,
+   "imageUrl": "https://static-a.eventive.org/1787085117479temp-1787085117317-still.jpg"
+  },
+  {
+   "id": "films-6aa3297c71c94c7923a5e407",
+   "title": "I Play Rocky",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6aa3297c71c94c7923a5e407",
+   "genre": "film",
+   "categories": [],
+   "blurb": "The electrifying true story about an unknown actor with an unshakable belief that he wasn't just meant to write Rocky—he was meant to be Rocky Balboa.",
+   "durationMin": 128,
+   "imageUrl": "https://static-a.eventive.org/1790197942882temp-1790197942342-still.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c726ba-6a849c2379f706f304c726ea",
+   "title": "Y Vân: The Lost Sounds of Saigon & Not Dead Yet (Chưa Chết, Mà)",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa3166a33909805b4c440f3",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "Feature Documentary \"Y Vân: The Lost Sounds of Saigon\" preceded by short film \"Not Dead Yet (Chưa Chết, Mà).\"",
+   "durationMin": 102,
+   "imageUrl": "https://static-a.eventive.org/1787085079278temp-1787085078969-still.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c726c4-6a849c2379f706f304c726e4-6a849c2379f706f304c726ec",
+   "title": "Doc Shorts: The Gay Archive",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa31c8f62d08a72c4f0072f",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "What gets memorialized, who gets erased, and what survives? These three shorts dig into queer history through forgotten stories, archival fragments, and the act of remembering.\n\nShorts block sponsored by:",
+   "durationMin": 81,
+   "imageUrl": "https://static-a.eventive.org/1789165075828temp-1789165075672-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c7272e",
+   "title": "Other Houses",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2479f706f304c7272e",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933",
+    "6abe9e6fa66e030f1cb219f2"
+   ],
+   "blurb": "This screening is offered as PAY WHAT YOU WILL. Everyone is welcome. No one is turned away. Whether you’re able to give a little, a lot, or nothing at all, we’re glad you’re here.\n\nNOFF Passholders may still use their pass to scan in. NOFS Members may pay any amount in lieu of their traditional discount.\n\nLimit of 2 tickets per person.",
+   "durationMin": 95,
+   "imageUrl": "https://static-a.eventive.org/1787081598552temp-1787081598360-still.jpg"
+  },
+  {
+   "id": "6aa3329cf24b5c4e961caa88",
+   "title": "Cinema Reset: Time According to Sweet Wreath",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa3329cf24b5c4e961caa88",
+   "genre": "talk",
+   "categories": [
+    "6a39e37e92d00e2e70824122"
+   ],
+   "blurb": "OPEN TO NOFF ALL ACCESS PASSHOLDERS!! NO REGISTRATION REQUIRED.\n\nA mythopoetic tale about media, memory, and the constellation of artists & freethinkers in central Alabama known as Sweet Wreath. This expanded cinema performance by Jasper Lee weaves live scoring & spoken word with montages of super8 footage, photographs, drawings, videos, and music from the Sweet Wreath archives.\n\nSweet Wreath is a project based in Alabama since 2016 which presents performances and publishes music, maps and books by artists working in the American underground & beyond. Notable releases include Johnny Coley's Mister Sweet Whisper, Silica Gel's Wooden Shoe, & Sun Ra's Magic City: A Cosmo-Mythic Map of Birmingham, among others. More info at www.sweetwreath.com.\n\nJasper Lee's work with sound & media includes performing in groups (with Johnny Coley, Vernal Scuzz, Silica Gel), making experimental films, and creating multimedia installations. Lee's work with the moving image includes art films and music videos which have screened at festivals internationally. His work with sound includes making instruments, radio art broadcasts, film scores and an array of recorded releases.\n\nCinema Reset is the NOFF expanded media showcase. Founded in 2011, the showcases groundbreaking projects at the intersections film, art, technology, and performance. We also offer workshops to share unique creative resources with the New Orleans community.\n\nCinema Reset is curated by Rachel Lin Weaver.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1789154550393temp-1789154550329-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c72737",
+   "title": "The Tropic Sun and His Eyes (Soley Twopikal Ak De Je Li)",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2479f706f304c72737",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "A despondent young man embarks on a journey to reconnect with his estranged father. Accompanied by an inquisitive street kid, he races against time to share his father's parting words before it's too late.",
+   "durationMin": 80,
+   "imageUrl": "https://static-a.eventive.org/1787097409650temp-1787097409423-still.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c72755-6a849c2479f706f304c7275d-6a849c2479f706f304c72761",
+   "title": "Narrative Shorts: Del Mar y el Sol",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa4861b69cb106e083d5e1a",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "All filmed in Puerto Rico, these three sun-soaked shorts evoke the taste of sea salt and the feeling of sand between your toes, alongside the nostalgia of leaving/coming home, and how place shapes who you are.\n\nShorts Block Sponsored by:",
+   "durationMin": 54,
+   "imageUrl": "https://static-a.eventive.org/1789167469547temp-1789167469481-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c7272c",
+   "title": "Loves Company",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2479f706f304c7272c",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "A faded gameshow personality is rescued after a car crash by his #1 (and only) fan left, a Florida outcast who he believes has trapped him in her creepy, Everglades home. However, she quickly learns he’s not the bubbly, fun personality she knows from TV.",
+   "durationMin": 94,
+   "imageUrl": "https://static-a.eventive.org/1787080509347temp-1787080509297-still.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c727cc",
+   "title": "La Bola Negra",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2479f706f304c727cc",
+   "genre": "film",
+   "categories": [],
+   "blurb": "La Bola Negra tells the story of three men whose lives are intimately connected through desire, pain and inheritance, across three different eras - 1932, 1937, and 2017",
+   "durationMin": 155,
+   "imageUrl": "https://static-a.eventive.org/1787182360881temp-1787182360752-still.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c72726-6a849c2479f706f304c7274d",
+   "title": "Heaven Above Rowen + Bleu",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa316a2853834e7768924ee",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "Feature film \"Heaven Above Rowen\" preceded by short film \"Bleu.\"",
+   "durationMin": 78,
+   "imageUrl": "https://static-a.eventive.org/1787079594405temp-1787079594269-still.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c726aa-6a849c2479f706f304c72704",
+   "title": "Pinball + This is the House: If I Don't See You, I Love You",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa3208a1b7c61ff1e2dfa9a",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933",
+    "6abe9e6fa66e030f1cb219f2"
+   ],
+   "blurb": "This screening is offered as PAY WHAT YOU WILL. Everyone is welcome. No one is turned away. Whether you’re able to give a little, a lot, or nothing at all, we’re glad you’re here.\n\nNOFF Passholders may still use their pass to scan in. NOFS Members may pay any amount in lieu of their traditional discount.\n\nLimit of 2 tickets per person.\n\nFeature Documentary \"Pinball\" preceded by short film \"This is the House: If I Don't See You, I Love You.\"",
+   "durationMin": 100,
+   "imageUrl": "https://static-a.eventive.org/1787081768327temp-1787081768127-still.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c7267e-6a849c2379f706f304c72680-6a849c2379f706f304c7268c-6a849c2479f706f304c72795-6a849c2479f706f304c727a3",
+   "title": "Late Night Shorts: Creeps & Crawlies",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa31fcd5f75f20e93527730",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Forget your standard eye of newt and toe of frog. Join us for a veritable witches’ brew of the stickiest, slimiest films in our lineup: those that flirt with the perverse, delve into the degenerate, and dwell in darkness. Double, double, cauldron bubble indeed.",
+   "durationMin": 78,
+   "imageUrl": "https://static-a.eventive.org/1787081816563temp-1787081816436-still.jpg"
+  },
+  {
+   "id": "6aa337382e23e8c1d1838c47",
+   "title": "Saturday Night Andscape Party",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa337382e23e8c1d1838c47",
+   "genre": "other",
+   "categories": [
+    "6a39e37e92d00e2e70824131"
+   ],
+   "blurb": "EXCLUSIVE FOR NOFF ALL ACCESS PASSHOLDERS!!\n\nJoin us for the New Orleans Film Festival's Saturday night bash, presented by Andscape — this year heading Uptown to Sunnies for a change of scenery. Kick things off poolside with a cocktail hour before the night unfolds, with entertainment to keep the energy going. Expect drinks and great company as the festival's energy carries into the night — this is the one you build your Saturday around.\n\nSponsored by:",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790384452986temp-1790384452972-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c72696",
+   "title": "burn, scar",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2379f706f304c72696",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "When a prescribed burn set by the Forest Service accidentally ignites the largest wildfire in New Mexican history, two sides of a centuries-old conflict collide.",
+   "durationMin": 90,
+   "imageUrl": "https://static-a.eventive.org/1787096588427temp-1787096588227-still.jpg"
+  },
+  {
+   "id": "films-6a85f1c052b542b9965410af",
+   "title": "The Debut",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a85f1c052b542b9965410af",
+   "genre": "film",
+   "categories": [],
+   "blurb": "A shy woman is unexpectedly cast in a local production of an original musical. Under the spell of the strong-willed and enigmatic director, she loses herself in the role of a community theater production.",
+   "durationMin": 105,
+   "imageUrl": "https://static-a.eventive.org/1787168889597temp-1787168889476-still.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c727c7",
+   "title": "Tender Loving Care",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2479f706f304c727c7",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Amy, a government child protection worker, moves back with her upbeat best friend Rosie, a social services officer facing daily anger and resentment. Amy's aging parents worry about her happiness while dealing with their own crisis.",
+   "durationMin": 107,
+   "imageUrl": "https://static-a.eventive.org/1787098991445temp-1787098991258-still.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c726c6-6a849c2379f706f304c726cc-6a849c2379f706f304c726e2-6a849c2379f706f304c726e8-6a849c2479f706f304c726fe",
+   "title": "Doc Shorts: Living History",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa3222db8208307d7104411",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "What connects a sharpshooter, a pioneering scientist, a disappearing language, a Navajo radio station, and a lifelong football fan? Five stories about what we preserve, what we remember, and what the past means to us now.",
+   "durationMin": 80,
+   "imageUrl": "https://static-a.eventive.org/1789164399243temp-1789164398966-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c72724-6a84fe1de0c8c11cdee984c4",
+   "title": "Frogtown + A Paradox of Quantum Superposition",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa320a99d9fac6cbc9e83d8",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933",
+    "6abe9e6fa66e030f1cb219f2"
+   ],
+   "blurb": "This screening is offered as PAY WHAT YOU WILL. Everyone is welcome. No one is turned away. Whether you’re able to give a little, a lot, or nothing at all, we’re glad you’re here.\n\nNOFF Passholders may still use their pass to scan in. NOFS Members may pay any amount in lieu of their traditional discount.\n\nLimit of 2 tickets per person.",
+   "durationMin": 94,
+   "imageUrl": "https://static-a.eventive.org/1789154947059temp-1789154946860-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c726ac-6a849c2479f706f304c72702",
+   "title": "Show Me the Line + This is Not a Heartbeat",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa324cb32ce05107a231edf",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "Feature Documentary \"Show Me the Line\" precded by short film \"This is Not a Heartbeat.\"",
+   "durationMin": 108,
+   "imageUrl": "https://static-a.eventive.org/1787097224824temp-1787097224692-still.jpg"
+  },
+  {
+   "id": "6aa332bcd261ac5259d31411",
+   "title": "The Sound of the Screen: Composers on Their Practice",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa332bcd261ac5259d31411",
+   "genre": "talk",
+   "categories": [
+    "6a39e37e92d00e2e70824122"
+   ],
+   "blurb": "OPEN TO NOFF ALL ACCESS PASSHOLDERS!! NO REGISTRATION REQUIRED.\n\nJoin some of the composers featured in this year's festival line up as they pull back the curtain on how a score comes to life and what it takes to serve a story through music.\n\nPresented by:",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790309053283temp-1790309053271-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c726a0",
+   "title": "King of the Chitlin Circuit",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2379f706f304c726a0",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "At 92, Bobby Rush is still on the road — still climbing onstage, still testifying through his music. This intimate documentary allows Rush's story to emerge the way memory actually works: in fragments, echoes, and sudden, gutting clarity.",
+   "durationMin": 84,
+   "imageUrl": "https://static-a.eventive.org/1787080213372temp-1787080213180-still.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c726d4-6a849c2379f706f304c726d6-6a849c2379f706f304c726de-6a849c2479f706f304c726f6-6a849c2479f706f304c726f8",
+   "title": "Doc Shorts: What Remains",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa31cec62d08a72c4f01d10",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "From the Yucatán to Gaza to the Mississippi River, these five films explore what it means to hold onto home when the ground beneath you is shifting.",
+   "durationMin": 88,
+   "imageUrl": "https://static-a.eventive.org/1789165449248temp-1789165449107-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c726f2-6a849c2479f706f304c726fa",
+   "title": "Louisiana Shorts: Forgotten Histories",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa328a8f569f210f5b6021f",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "What can a place tell you about the people who came before? These two films travel through Louisiana’s schools, coastlines, and family histories to uncover stories of Black education and Filipino settlement that deserve to be remembered.\n\nShorts Block Sponsored by:",
+   "durationMin": 42,
+   "imageUrl": "https://static-a.eventive.org/1789165963299temp-1789165963269-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c72712-6a849c2479f706f304c72753-6a849c2479f706f304c7276d-6a849c2479f706f304c7278b-6a849c2479f706f304c7279f-6a849c2479f706f304c727ad-6a849c2479f706f304c727b7",
+   "title": "Narrative Shorts: Silver Linings",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa320cdf599c29659a54a73",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933",
+    "6abe9e6fa66e030f1cb219f2"
+   ],
+   "blurb": "This screening is offered as PAY WHAT YOU WILL. Everyone is welcome. No one is turned away. Whether you’re able to give a little, a lot, or nothing at all, we’re glad you’re here.\n\nNOFF Passholders may still use their pass to scan in. NOFS Members may pay any amount in lieu of their traditional discount.\n\nLimit of 2 tickets per person.\n\nCaustic, paradoxical: the comedy in tragedy, the sweet with the spicy. These films conjure up a singular yet delicious combination of pathos and humor. Don’t let your family, your job, or your tech get you down… When things are at their dimmest, you can always find the light.",
+   "durationMin": 76,
+   "imageUrl": "https://static-a.eventive.org/1789164506265temp-1789164506074-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c726a8",
+   "title": "Mexicanamerican",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2379f706f304c726a8",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "Using present-day interviews and the VHS home movies his family once sent across the border, a filmmaker explores how and why his parents migrated to the US from Mexico, revealing a personal mosaic of one family's struggle to reconcile two cultures between two generations.",
+   "durationMin": 98,
+   "imageUrl": "https://static-a.eventive.org/1787080809269temp-1787080809124-still.jpg"
+  },
+  {
+   "id": "6aa332ddf569f210f5b8b6aa",
+   "title": "Lighting the Fuse: Films as Catalysts",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa332ddf569f210f5b8b6aa",
+   "genre": "talk",
+   "categories": [
+    "6a39e37e92d00e2e70824122"
+   ],
+   "blurb": "OPEN TO NOFF ALL ACCESS PASSHOLDERS!! NO REGISTRATION REQUIRED.\n\nFilms have the power to provoke and inspire. This panel explores how filmmakers are using cinema as an agent of change, and what it takes to make work that doesn't just reflect the world, but reshapes it.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790309076341temp-1790309076329-cover.jpg"
+  },
+  {
+   "id": "films-6aa48470225f42d85391dcf5",
+   "title": "Windows of Time",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6aa48470225f42d85391dcf5",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "Filmmaker Hubert Taylor spent forty years capturing hundreds of hours of footage celebrating Black life in South Georgia, weaving an extraordinary archive into an intimate portrait of his father, the legendary gospel singer Brother Theotis Taylor.",
+   "durationMin": 87,
+   "imageUrl": "https://static-a.eventive.org/1789166752658temp-1789166752483-still.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c7270e-6a849c2479f706f304c7273f-6a849c2479f706f304c72747-6a849c2479f706f304c7276f-6a849c2479f706f304c7277b-6a849c2479f706f304c7277f-6a849c2479f706f304c72791",
+   "title": "Louisiana Shorts: Chicory",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa328ca7ddbe669d5bc92d9",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "Deeply rooted in time and place, these films traverse tragic histories and ghostly ancestries, while others explore modern realities; hurricanes and electricity shut-offs. Cooking with complexly regional flavours, they each contribute something distinct to our cinematic landscape.",
+   "durationMin": 94,
+   "imageUrl": "https://static-a.eventive.org/1789165758799temp-1789165758708-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c726ae",
+   "title": "Singing the Shapes: Songs of the Enduring Sacred Harp",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2379f706f304c726ae",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "One of America's oldest living musical traditions, Sacred Harp singers form a curious subculture where participation gives rise to unexpected harmony across generations, beliefs, and ways of life.",
+   "durationMin": 98,
+   "imageUrl": "https://static-a.eventive.org/1787082538285temp-1787082538106-still.jpg"
+  },
+  {
+   "id": "films-6a85f1be52b542b996541045",
+   "title": "Club Kid",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a85f1be52b542b996541045",
+   "genre": "film",
+   "categories": [],
+   "blurb": "The life of washed-up underground party promoter Peter takes an unexpected turn when he is forced to care for Arlo, a 10-year old son he never knew he had.",
+   "durationMin": 122,
+   "imageUrl": "https://static-a.eventive.org/1790882412435temp-1790882412159-still.jpg"
+  },
+  {
+   "id": "6aa33316f24b5c4e961cc1af",
+   "title": "Michael Murphy Retrospective",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa33316f24b5c4e961cc1af",
+   "genre": "talk",
+   "categories": [
+    "6a39e37e92d00e2e70824122"
+   ],
+   "blurb": "OPEN TO NOFF ALL ACCESS PASSHOLDERS!! NO REGISTRATION REQUIRED.\n\nJoin us for a look at the 35+ year careers of Emmy winners Michael Murphy & Cilista Eberle. Michael Murphy Productions is known for creating documentaries that spotlight New Orleans culture & music. Their films have been distributed Sony Pictures, Universal Music Group, and PBS. Their most recent film - The Dew Drop Inn: Resistance & Resilience - will have its world premiere at this years New Orleans Film Festival.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790309097351temp-1790309097339-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c726f4-6a849c2479f706f304c72728",
+   "title": "Isle Child + Sole (얼)",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa32106d2f3ad89d8409ff8",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "Feature film 'Isle Child' preceded by short film \"Sole.\"",
+   "durationMin": 105,
+   "imageUrl": "https://static-a.eventive.org/1787080029928temp-1787080029776-still.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c7271e-6a849c2479f706f304c7274f",
+   "title": "Caity + Blue",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa322c11cd532d62cb95ec8",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933",
+    "6abe9e6fa66e030f1cb219f2"
+   ],
+   "blurb": "This screening is offered as PAY WHAT YOU WILL. Everyone is welcome. No one is turned away. Whether you’re able to give a little, a lot, or nothing at all, we’re glad you’re here.\n\nNOFF Passholders may still use their pass to scan in. NOFS Members may pay any amount in lieu of their traditional discount.\n\nLimit of 2 tickets per person.\n\nFeature film \"Caity\" preceded by short film \"Blue.\"",
+   "durationMin": 108,
+   "imageUrl": "https://static-a.eventive.org/1787085493314temp-1787085493087-still.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c7273d-6a849c2479f706f304c72775-6a849c2479f706f304c72793-6a849c2479f706f304c727ab-6a849c2479f706f304c727af-6a95b710e5cb2fa33e04e4f9",
+   "title": "Narrative Shorts: Queer Imaginaries",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa324f532ce05107a232be1",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "Queer politics and art allow us to scrutinize and restructure the limits of our shared realities. These shorts draw on their characters’ fantasies, hopes, and anxieties about the future (and the now), using the camera lens to transform dreams into tangible cinematic worlds.",
+   "durationMin": 91,
+   "imageUrl": "https://static-a.eventive.org/1787084142403temp-1787084142089-still.jpg"
+  },
+  {
+   "id": "films-6a9b51bc430be036d67368fd",
+   "title": "The Welcome Table",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a9b51bc430be036d67368fd",
+   "genre": "film",
+   "categories": [],
+   "blurb": "People from all over the world displaced by climate change and extreme weather are invited to a single table on the levee in New Orleans to meet, talk to each other, and heal.",
+   "durationMin": 131,
+   "imageUrl": "https://static-a.eventive.org/1788564228370temp-1788564228225-still.jpg"
+  },
+  {
+   "id": "6aa33331fb5fdc8b1526b86c",
+   "title": "Singing the Shapes: Workshop & Group Sing",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa33331fb5fdc8b1526b86c",
+   "genre": "talk",
+   "categories": [
+    "6a39e37e92d00e2e70824122"
+   ],
+   "blurb": "OPEN TO NOFF ALL ACCESS PASSHOLDERS!! NO REGISTRATION REQUIRED.\n\nJoin us at the conference stage after the World Premiere of SINGING THE SHAPES for a shape singing workshop and group sing.\n\nShape-note singing is one of America’s oldest forms of music. The notation system—shape notes—is unique, and so is the four-part “dispersed harmony” that gives the music its distinctive force, often defying the expectations of modern choral sound.\n\nNo experience necessary.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790789640699temp-1790789640687-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c7270a-6a849c2479f706f304c7270c-6a849c2479f706f304c72710-6a849c2479f706f304c72714-6a849c2479f706f304c72716-6a849c2479f706f304c72718-6a849c2479f706f304c7271a",
+   "title": "Experimental Shorts: Wakeful Nature",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa3227cbb25a79da7c8bbcf",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "When words fail us, these films explore the secrets of modern society alongside the mysteries of the natural world, and where they converge. From outer space to deep within the body, this program shows us what it means to be human (or not) with voices from around the globe.",
+   "durationMin": 101,
+   "imageUrl": "https://static-a.eventive.org/1787079027132temp-1787079027006-still.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c7269a",
+   "title": "Dew Drop Inn: Resistance and Resilience",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2379f706f304c7269a",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "Opening in 1939, The “Drop” helped launch the careers of iconic national and New Orleans artists. It was a critical stop on the Chitlin circuit; providing a safe haven for the Black community during segregation. This is a story of one man and his hotel and music venue that became symbols of resistance and resilience during the struggle for civil rights.",
+   "durationMin": 60,
+   "imageUrl": "https://static-a.eventive.org/1787078546079temp-1787078545953-still.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c72732",
+   "title": "She Keeps Me Young",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2479f706f304c72732",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933",
+    "6abe9e6fa66e030f1cb219f2"
+   ],
+   "blurb": "This screening is offered as PAY WHAT YOU WILL. Everyone is welcome. No one is turned away. Whether you’re able to give a little, a lot, or nothing at all, we’re glad you’re here.\n\nNOFF Passholders may still use their pass to scan in. NOFS Members may pay any amount in lieu of their traditional discount.\n\nLimit of 2 tickets per person.",
+   "durationMin": 91,
+   "imageUrl": "https://static-a.eventive.org/1787082468606temp-1787082468554-still.jpg"
+  },
+  {
+   "id": "films-6a7e1b723ce7b9e4a79aaea6",
+   "title": "Test",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a7e1b723ce7b9e4a79aaea6",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "An amateur bodybuilder in rural Ohio must confront a dysfunctional family, substance abuse, and his own emerging sexuality on his quest to become a champion.",
+   "durationMin": 113,
+   "imageUrl": "https://static-a.eventive.org/1787083103545temp-1787083103391-still.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c72694",
+   "title": "A City in the Forest",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2379f706f304c72694",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "In Atlanta, a decentralized resistance movement rallies to defend an urban forest from the construction of Cop City, the United States’ largest police training facility.",
+   "durationMin": 99,
+   "imageUrl": "https://static-a.eventive.org/1787076111996temp-1787076111936-still.jpg"
+  },
+  {
+   "id": "6aa34367473b3306661bbb43",
+   "title": "Paramount Presents: From Screen to Stage at The Dew Drop Inn",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa34367473b3306661bbb43",
+   "genre": "other",
+   "categories": [
+    "6a39e37e92d00e2e70824131"
+   ],
+   "blurb": "FREE FOR NOFF ALL ACCESS PASSHOLDERS!!\n\nJoin us at the historic Dew Drop Inn on Sunday night of the festival. Start the evening poolside for a laid-back cocktail hour, then settle in for live performances as the night unfolds — featuring a set from legend Bobby Rush. It's old-school cool at its finest, in a room steeped in New Orleans music history.\n\nSponsored by Paramount.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790384493249temp-1790384493235-cover.jpg"
+  },
+  {
+   "id": "6aa3334fbf67610359135ab3",
+   "title": "Write It Bad",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa3334fbf67610359135ab3",
+   "genre": "talk",
+   "categories": [
+    "6a39e37e92d00e2e70824122"
+   ],
+   "blurb": "OPEN TO NOFF ALL ACCESS PASSHOLDERS!! NO REGISTRATION REQUIRED.\n\nWhat if, instead of trying to write the right scene, you tried to write the absolute worst one? Join us for our first live screenwriting game!\n\nPull a prompt, give it a twist, and we'll set the clock to 10 minutes while you write a glorious mess. Chip away at writer's block by adding a wildly inappropriate character, making the stakes absurd, or completely derailing the scene. Then, with the help of some actors, we’ll bring a few of these “bad” scenes to life onstage and explore what surprisingly useful material might be hidden inside the chaos. Bring a scene from your own project or start from scratch.\n\nOur only rule: no perfectionism allowed.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790790225331temp-1790790225319-cover.jpg"
+  },
+  {
+   "id": "6abadb2e72685ecc3d339c32",
+   "title": "Lunch & Learn: Protecting Your Artistic Investment",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6abadb2e72685ecc3d339c32",
+   "genre": "talk",
+   "categories": [
+    "6a39e37e92d00e2e70824122"
+   ],
+   "blurb": "In this session, Max will walk you through securing rights, getting licenses, managing co-ownership issues among collaborators, and any other legal issue you can envision around your creative practice! Bring your questions!\n\nLunch will be provided.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790632066127temp-1790632066115-cover.jpg"
+  },
+  {
+   "id": "films-6ab802771ebb71e303c78f1b",
+   "title": "Purple Noon (Plein Soleil)",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6ab802771ebb71e303c78f1b",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Tom Ripley is a talented mimic, moocher, forger and all-around criminal improviser; but there's more to Tom Ripley than even he can guess.",
+   "durationMin": 118,
+   "imageUrl": "https://static-a.eventive.org/1790695215821temp-1790695215696-still.jpg"
+  },
+  {
+   "id": "6abab623feb5758e0eaa6de8",
+   "title": "The Louisiana Actor Experience, presented by SAGindie",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6abab623feb5758e0eaa6de8",
+   "genre": "talk",
+   "categories": [
+    "6a39e37e92d00e2e70824122"
+   ],
+   "blurb": "OPEN TO NOFF ALL ACCESS PASSHOLDERS!! NO REGISTRATION REQUIRED.\n\nLouisiana-based union actors sit down for a raw and honest conversation about what it means to be an actor based here - the opportunities, the struggles, and what union membership really means for your career.\n\nSponsored by:",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790789683689temp-1790789683678-cover.jpg"
+  },
+  {
+   "id": "6aa33375bf67610359137472",
+   "title": "Filmmaking in Louisiana: A Town Hall Discussion",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa33375bf67610359137472",
+   "genre": "talk",
+   "categories": [
+    "6a39e37e92d00e2e70824122"
+   ],
+   "blurb": "OPEN TO NOFF ALL ACCESS PASSHOLDERS!! NO REGISTRATION REQUIRED.\n\nHow can Louisiana filmmakers become better storytellers? What resources are at their disposal? In this town hall–style event, we bring together industry representatives from across Louisiana for an in-depth conversation about the current state of the independent film industry here.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790309153439temp-1790309153427-cover.jpg"
+  },
+  {
+   "id": "films-6abbcab11d200b4834398f8e",
+   "title": "Ripley's Game",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6abbcab11d200b4834398f8e",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Tom Ripley - cool, urbane, wealthy, and murderous - lives in a villa in the Veneto with Luisa, his harpsichord-playing girlfriend. A former business associate from Berlin's underworld pays a call asking Ripley's help in killing a rival. Ripley - ever a student of human nature - initiates a game to turn a mild and innocent local picture framer into a hit man. The artisan, Jonathan Trevanny, who's dying of cancer, has a wife, young son, and little to leave them. If Ripley draws Jonathan into the game, can Ripley maintain control? Does it stop at one killing? What if Ripley develops a conscience?",
+   "durationMin": 110,
+   "imageUrl": "https://static-a.eventive.org/1790721715095temp-1790721715057-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c72757-6a849c2479f706f304c7276b-6a849c2479f706f304c72783-6a849c2479f706f304c72785-6a849c2479f706f304c727a5-6a849c2479f706f304c727b3",
+   "title": "Louisiana Shorts: Encounters",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa31d47fee2aef4d3eb3f3e",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "Featuring five World Premiers, these Louisiana short films showcase the most intriguing of human confrontations: from the magical to the mundane; the procedural to the personal; and the seemingly banal to the straight-up bizarre.\n\nShorts Block Sponsored by:",
+   "durationMin": 96,
+   "imageUrl": "https://static-a.eventive.org/1789165849724temp-1789165849669-cover.jpg"
+  },
+  {
+   "id": "6abf478dd6b1b0c2bfc2c37d",
+   "title": "Pet Adoption Fair Before SCRIM Screening",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6abf478dd6b1b0c2bfc2c37d",
+   "genre": "other",
+   "categories": [],
+   "blurb": "Bring the whole family to the Broadside for a special outdoor screening of the new film \"Scrim: New Orleans' Most Famous Dog.\" And come early, from 6 to 7 PM for a pet adoption fair with local rescue organizations, where dogs and cats of all ages will be looking for their forever homes. You may leave with a new best friend of your own.\n\nA NOFF Pass or Pay What You Will tickets to the Scrim screening required.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790920988399temp-1790920988385-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c726ee",
+   "title": "Scrim:  New Orleans' Most Famous Dog",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2379f706f304c726ee",
+   "genre": "film",
+   "categories": [
+    "6abe9e6fa66e030f1cb219f2"
+   ],
+   "blurb": "This screening is offered as PAY WHAT YOU WILL. Everyone is welcome. No one is turned away. Whether you’re able to give a little, a lot, or nothing at all, we’re glad you’re here.\n\nNOFF Passholders may still use their pass to scan in. NOFS Members may pay any amount in lieu of their traditional discount.\n\nLimit of 2 tickets per person.",
+   "durationMin": 15,
+   "imageUrl": "https://static-a.eventive.org/1787082226231temp-1787082226089-still.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c727cf",
+   "title": "Wild Horse Nine",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2479f706f304c727cf",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Shortly before the 1973 Chilean coup, CIA agents Chris (John Malkovich) and Lee (Sam Rockwell) are dispatched from Santiago to Easter Island by their bureau chief, MJ (Steve Buscemi). Amongst the Island's iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris's newfound bond with a pair of rebellious students (Mariana di Girolamo and Ailín Salas) threatens to send everyone’s trip to this remote paradise sideways.",
+   "durationMin": 118,
+   "imageUrl": "https://static-a.eventive.org/1787099321517temp-1787099321404-still.jpg"
+  },
+  {
+   "id": "films-6a99d756542aaa8cc1192fdc",
+   "title": "The Oldest Person in the World",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a99d756542aaa8cc1192fdc",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "A decade-long global odyssey chronicles the ever-changing record holders of the title of oldest person alive. What begins as a portrait of longevity becomes a poignant meditation on the passage of time, the randomness of fate and the joy and profound human experience of being alive.",
+   "durationMin": 87,
+   "imageUrl": "https://static-a.eventive.org/1790112847578temp-1790112847438-still.jpg"
+  },
+  {
+   "id": "films-6a99d756542aaa8cc1192fde",
+   "title": "On the Last Day of Christmas",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a99d756542aaa8cc1192fde",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "On Christmas Eve, a mother must protect her teenage son when their apartment building is overrun by demonic beings that begin hunting the residents.",
+   "durationMin": 108,
+   "imageUrl": "https://static-a.eventive.org/1788467173831temp-1788467173489-still.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c72730",
+   "title": "Seahorse",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2479f706f304c72730",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933",
+    "6abe9e6fa66e030f1cb219f2"
+   ],
+   "blurb": "This screening is offered as PAY WHAT YOU WILL. Everyone is welcome. No one is turned away. Whether you’re able to give a little, a lot, or nothing at all, we’re glad you’re here.\n\nNOFF Passholders may still use their pass to scan in. NOFS Members may pay any amount in lieu of their traditional discount.\n\nLimit of 2 tickets per person.",
+   "durationMin": 84,
+   "imageUrl": "https://static-a.eventive.org/1787082373942temp-1787082373885-still.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c72722",
+   "title": "Ephemera",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2479f706f304c72722",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "On her last night in Shanghai, Chinese-American actress Asher asks out her hip-hop dance teacher Tori, sparking an electric, city-wide romance that must end by sunrise.",
+   "durationMin": 83,
+   "imageUrl": "https://static-a.eventive.org/1787078813820temp-1787078813772-still.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c726a2",
+   "title": "Last Night at the Palm Court",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2379f706f304c726a2",
+   "genre": "film",
+   "categories": [],
+   "blurb": "For 35 years, the Palm Court served traditional New Orleans jazz music and creole cuisine in the French Quarter. In May 2024, the restaurant closed its doors. This film tells the story of the staff, the players, and the music that made the club an international destination for fans of traditional jazz.",
+   "durationMin": 90,
+   "imageUrl": "https://static-a.eventive.org/1787080374845temp-1787080374794-still.jpg"
+  },
+  {
+   "id": "6abeb73061d940136cb81d5b",
+   "title": "Dial Up Trivia: Soundtrack Attack",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6abeb73061d940136cb81d5b",
+   "genre": "other",
+   "categories": [
+    "6a39e37e92d00e2e70824131"
+   ],
+   "blurb": "FREE FOR NOFF ALL ACCESS PASSHOLDERS!!\n\nHoney Tangerine Productions presents Dial Up Trivia: Soundtrack Attack - a one-of-a-kind audio trivia night for film lovers! Think you can recognize a movie just by the score? Show us your skills at Dial Up Trivia: Soundtrack Attack! Prizes and bragging rights to the winners.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790384534686temp-1790384534669-cover.jpg"
+  },
+  {
+   "id": "6aa34335adc790860311b07f",
+   "title": "Independent Filmmaker Party",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa34335adc790860311b07f",
+   "genre": "other",
+   "categories": [
+    "6a39e37e92d00e2e70824131"
+   ],
+   "blurb": "FREE FOR NOFF ALL ACCESS PASSHOLDERS!!\n\nWrap up the weekend at the Broadside for a night that celebrates everything great about Louisiana and independent film. Under the open sky, mingle with filmmakers and friends over live music, local bites, and drinks aplenty. It's the kind of night that brings culture, community, and creativity together — a fitting close to the weekend.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790384534686temp-1790384534669-cover.jpg"
+  },
+  {
+   "id": "6abadc27a85308cd5e0ff0cc",
+   "title": "Lunch & Learn: Louisiana Film Prize",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6abadc27a85308cd5e0ff0cc",
+   "genre": "talk",
+   "categories": [
+    "6a39e37e92d00e2e70824122"
+   ],
+   "blurb": "Join us for a Lunch & Learn focused on filmmaking in Louisiana and the opportunities available through the Louisiana Film Prize. We’ll explore how the Film Prize brings filmmakers and creative professionals together, supports local storytelling, and creates opportunities to connect with others working in the industry, all while offering the world’s largest cash prize for a narrative short film.\n\nWe'll focus on the importance of building and growing your filmmaking network—from finding collaborators and crew to connecting with other filmmakers, industry professionals, and local resources. Whether you’re an emerging filmmaker or an experienced creator, this will be an opportunity to learn more about Louisiana’s film community, discover ways to get involved, and make meaningful connections that can help move your next project forward.\n\nLunch will be provided.\n\nSponsored by:",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790632082284temp-1790632082230-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2479f706f304c72745-6a849c2479f706f304c72749-6a849c2479f706f304c72773-6a849c2479f706f304c72777-6a849c2479f706f304c7278d-6a849c2479f706f304c727a9",
+   "title": "Louisiana Student Shorts: NOLA Next Gen",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa32934cabf87c1fabe4aa7",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "Introducing a curated selection of the next generation of New Orleans filmmaking talent! Totally unique in genre, subject matter and approach, these short films come from emerging directors out of Dillard, Loyola, Tulane, and the University of New Orleans (LSU).\n\nShorts Block Sponsored by:",
+   "durationMin": 83,
+   "imageUrl": "https://static-a.eventive.org/1789166181055temp-1789166180931-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c726ce",
+   "title": "Champions of Change",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2379f706f304c726ce",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933",
+    "6abe9e6fa66e030f1cb219f2"
+   ],
+   "blurb": "This screening is offered as PAY WHAT YOU WILL. Everyone is welcome. No one is turned away. Whether you’re able to give a little, a lot, or nothing at all, we’re glad you’re here.\n\nNOFF Passholders may still use their pass to scan in. NOFS Members may pay any amount in lieu of their traditional discount.\n\nLimit of 2 tickets per person.",
+   "durationMin": 26,
+   "imageUrl": "https://static-a.eventive.org/1787078030379temp-1787078030225-still.jpg"
+  },
+  {
+   "id": "films-6a8632ede0b25a91012564f6",
+   "title": "Vindication to Victory",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a8632ede0b25a91012564f6",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933"
+   ],
+   "blurb": "After a wrongful incarceration lands him behind bars for nearly 40 years, Raymond Flanks must adjust to life in the 21st century and chart his future in a world that's remarkably different from the one he remembers.",
+   "durationMin": 45,
+   "imageUrl": "https://static-a.eventive.org/1787179967786temp-1787179967653-still.jpg"
+  },
+  {
+   "id": "6aa344d6500c87073116606a",
+   "title": "Closing Night Cocktail Hour",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/schedule/6aa344d6500c87073116606a",
+   "genre": "other",
+   "categories": [
+    "6a39e37e92d00e2e70824131"
+   ],
+   "blurb": "FREE AND OPEN TO THE PUBLIC\n\nWe're closing out the festival with a low-key, feel-good evening at our Tuesday Night Closer Party. This intimate cocktail gathering is the perfect spot to unwind, toast to the week, and soak in one last moment with the festival crowd. Join filmmakers, friends, and fellow festival-goers for a warm send-off to this year's New Orleans Film Festival.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790384615183temp-1790384615169-cover.jpg"
+  },
+  {
+   "id": "films-6a849c2379f706f304c726a4",
+   "title": "Maestro",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a849c2379f706f304c726a4",
+   "genre": "film",
+   "categories": [
+    "6ab6e426e2996f2198473933",
+    "6abe9e6fa66e030f1cb219f2"
+   ],
+   "blurb": "This screening is offered as PAY WHAT YOU WILL. Everyone is welcome. No one is turned away. Whether you’re able to give a little, a lot, or nothing at all, we’re glad you’re here.\n\nNOFF Passholders may still use their pass to scan in. NOFS Members may pay any amount in lieu of their traditional discount.\n\nLimit of 2 tickets per person.\n\nThe Q&A following the film will be livestreamed from the Worklight Pictures Warehouse Theater at the Contemporary Arts Center.",
+   "durationMin": 90,
+   "imageUrl": "https://static-a.eventive.org/1787080592270temp-1787080592152-still.jpg"
+  },
+  {
+   "id": "films-6a8665e54a660fbf89e310f0",
+   "title": "Beware the Box Folk",
+   "titleLocal": null,
+   "url": "https://nofs.eventive.org/films/6a8665e54a660fbf89e310f0",
+   "genre": "film",
+   "categories": [
+    "6abe9e6fa66e030f1cb219f2"
+   ],
+   "blurb": "This screening is offered as PAY WHAT YOU WILL. Everyone is welcome. No one is turned away. Whether you’re able to give a little, a lot, or nothing at all, we’re glad you’re here.\n\nNOFF Passholders may still use their pass to scan in. NOFS Members may pay any amount in lieu of their traditional discount.\n\nLimit of 2 tickets per person.",
+   "durationMin": 138,
+   "imageUrl": "https://static-a.eventive.org/1787193097799temp-1787193097687-still.jpg"
+  }
+ ],
+ "performances": [
+  {
+   "id": "6aa3137a460cdbf38760f347",
+   "eventId": "films-6a849c2479f706f304c727c9",
+   "venueId": "6a39e37e92d00e2e708240e9",
+   "roomId": null,
+   "date": "2026-10-22",
+   "start": "19:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa3137a460cdbf38760f347",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 40.0,
+   "priceMax": 40.0
+  },
+  {
+   "id": "6aa318524abd6cd1a31931c8",
+   "eventId": "films-6a849c2479f706f304c727c9",
+   "venueId": "6a39e37e92d00e2e708240ee",
+   "roomId": null,
+   "date": "2026-10-22",
+   "start": "19:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa318524abd6cd1a31931c8",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 40.0,
+   "priceMax": 40.0
+  },
+  {
+   "id": "6abfde2cd6790d19e3a0a085",
+   "eventId": "6abfde2cd6790d19e3a0a085",
+   "venueId": "6aa336b30cc6635654be5d85",
+   "roomId": null,
+   "date": "2026-10-22",
+   "start": "21:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6abfde2cd6790d19e3a0a085",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6aa32f637f6e1456dcde4f9e",
+   "eventId": "6aa32f637f6e1456dcde4f9e",
+   "venueId": "6a39e37e92d00e2e708240f6",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "10:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa32f637f6e1456dcde4f9e",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa32fd5e574f9f008ba31c6",
+   "eventId": "6aa32fd5e574f9f008ba31c6",
+   "venueId": "6aa44e60e39ea675d0345545",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "11:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa32fd5e574f9f008ba31c6",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6aa3311642db00a86c80ee87",
+   "eventId": "6aa3311642db00a86c80ee87",
+   "venueId": "6a39e37e92d00e2e708240f6",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "12:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa3311642db00a86c80ee87",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6abadba55f73e05fab2e393c",
+   "eventId": "6abadba55f73e05fab2e393c",
+   "venueId": "6abab9a2ae88013628ff1b48",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "12:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6abadba55f73e05fab2e393c",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6abc80b2583463608cef4cc8",
+   "eventId": "6abc80b2583463608cef4cc8",
+   "venueId": "6a39e37e92d00e2e708240f6",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "13:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6abc80b2583463608cef4cc8",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6aa31a94ca58764e96ec051b",
+   "eventId": "6aa31a94ca58764e96ec051b",
+   "venueId": "6a39e37e92d00e2e708240ee",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "13:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa31a94ca58764e96ec051b",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6aa3315de72f03bea2d1f65a",
+   "eventId": "6aa3315de72f03bea2d1f65a",
+   "venueId": "6a39e37e92d00e2e708240f6",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "13:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa3315de72f03bea2d1f65a",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6abab25c2c47a53b88b6b299",
+   "eventId": "6abab25c2c47a53b88b6b299",
+   "venueId": "6a39e37e92d00e2e708240f6",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "15:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6abab25c2c47a53b88b6b299",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa3146dfee2aef4d3ea963e",
+   "eventId": "films-6a849c2379f706f304c726c0-6a849c2379f706f304c726c8-6a849c2379f706f304c726da-6a849c2479f706f304c726f4-6a99d756542aaa8cc1192fdc-6a99d756542aaa8cc1192fe0",
+   "venueId": "6a39e37e92d00e2e708240e9",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "15:15",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa3146dfee2aef4d3ea963e",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa32486da9fc145ff627bd6",
+   "eventId": "films-6a849c2379f706f304c726be",
+   "venueId": "6a39e37e92d00e2e708240eb",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "15:20",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa32486da9fc145ff627bd6",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa321c2bb25a79da7c850f7",
+   "eventId": "films-6a849c2479f706f304c72739",
+   "venueId": "6aa2c2d0b32bbcbe865ef77b",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "15:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa321c2bb25a79da7c850f7",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa31b67025006cbc2063a93",
+   "eventId": "films-6a849c2379f706f304c7267a-6a849c2379f706f304c7267c-6a849c2379f706f304c72682-6a849c2379f706f304c72684-6a849c2379f706f304c72686-6a849c2379f706f304c72688-6a849c2379f706f304c7268a-6a849c2379f706f304c7268e-6a849c2379f706f304c72690-6a849c2379f706f304c72692",
+   "venueId": "6a39e37e92d00e2e708240ee",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "15:45",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa31b67025006cbc2063a93",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa331da5324c28b11a59be6",
+   "eventId": "6aa331da5324c28b11a59be6",
+   "venueId": "6a39e37e92d00e2e708240f6",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "16:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa331da5324c28b11a59be6",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa31e6732d29953503e8678",
+   "eventId": "films-6a849c2379f706f304c72698",
+   "venueId": "6a39e37e92d00e2e708240ec",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "17:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa31e6732d29953503e8678",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa3239b9d9fac6cbc9f73d9",
+   "eventId": "films-6a849c2379f706f304c726bc",
+   "venueId": "6a39e37e92d00e2e708240eb",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "17:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa3239b9d9fac6cbc9f73d9",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6abff25010c40295f3e936f2",
+   "eventId": "6abff25010c40295f3e936f2",
+   "venueId": "6a39e37e92d00e2e708240ea",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "17:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6abff25010c40295f3e936f2",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6abff2b910c40295f3e99474",
+   "eventId": "6abff2b910c40295f3e99474",
+   "venueId": "6a39e37e92d00e2e708240ea",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "17:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6abff2b910c40295f3e99474",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6aa314b079885f4c63aa7e5b",
+   "eventId": "films-6a849c2379f706f304c726b8",
+   "venueId": "6a39e37e92d00e2e708240e9",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "17:45",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa314b079885f4c63aa7e5b",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa327e9ed01b3cc08960654",
+   "eventId": "films-6a849c2379f706f304c726b6",
+   "venueId": "6a39e37e92d00e2e708240f1",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "17:45",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa327e9ed01b3cc08960654",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa321f2e7a7d51f50fda0bf",
+   "eventId": "films-6a849c2479f706f304c7272a",
+   "venueId": "6aa2c2d0b32bbcbe865ef77b",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "18:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa321f2e7a7d51f50fda0bf",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa32af2e72f03bea2d19608",
+   "eventId": "films-6aa32993c7a854b4d200417c",
+   "venueId": "6a39e37e92d00e2e708240ee",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "18:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa32af2e72f03bea2d19608",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6abab2cb7ebde9377674a942",
+   "eventId": "6abab2cb7ebde9377674a942",
+   "venueId": "6a39e37e92d00e2e708240f6",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "18:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6abab2cb7ebde9377674a942",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa3280fa607319c604b8a94",
+   "eventId": "films-6a849c2479f706f304c727c1",
+   "venueId": "6a39e37e92d00e2e708240f1",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "19:45",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa3280fa607319c604b8a94",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6aa314e02fb6b48931dbc662",
+   "eventId": "films-6a9b53ec9f95bf0198a26c83",
+   "venueId": "6a39e37e92d00e2e708240e9",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "20:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa314e02fb6b48931dbc662",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa31baead29e3184f4dd6b7",
+   "eventId": "films-6a849c2479f706f304c7271c-6a849c2479f706f304c7274b-6a849c2479f706f304c72765-6a849c2479f706f304c7277d-6a849c2479f706f304c7278f-6a849c2479f706f304c72799-6a849c2479f706f304c7279b-6a849c2479f706f304c7279d",
+   "venueId": "6a39e37e92d00e2e708240ee",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "20:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa31baead29e3184f4dd6b7",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa31e9bb58cf908f50e2a0f",
+   "eventId": "films-6a849c2479f706f304c72741-6a849c2479f706f304c72759-6a849c2479f706f304c72767-6a849c2479f706f304c72771-6a849c2479f706f304c727b9-6a849c2479f706f304c727bd",
+   "venueId": "6a39e37e92d00e2e708240ec",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "20:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa31e9bb58cf908f50e2a0f",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa323c880519b81e135d907",
+   "eventId": "films-6a849c2379f706f304c726b2",
+   "venueId": "6a39e37e92d00e2e708240eb",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "20:15",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa323c880519b81e135d907",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa3220bd3aa1c2fb909f038",
+   "eventId": "films-6a849c2479f706f304c72735",
+   "venueId": "6aa2c2d0b32bbcbe865ef77b",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "20:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa3220bd3aa1c2fb909f038",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa3370d1e6ecd258297d3d4",
+   "eventId": "6aa3370d1e6ecd258297d3d4",
+   "venueId": "6a39e37e92d00e2e708240ea",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "22:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa3370d1e6ecd258297d3d4",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 40.0,
+   "priceMax": 40.0
+  },
+  {
+   "id": "6aa3320dc7a854b4d202462f",
+   "eventId": "6aa3320dc7a854b4d202462f",
+   "venueId": "6a39e37e92d00e2e708240f6",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "09:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa3320dc7a854b4d202462f",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa33d0898755e1d85069316",
+   "eventId": "6aa33d0898755e1d85069316",
+   "venueId": "6aa33cc9289b3eb73f61b88a",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "10:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa33d0898755e1d85069316",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6aa316018b5fc9a86f7f5b74",
+   "eventId": "films-6a849c2379f706f304c726b0",
+   "venueId": "6a39e37e92d00e2e708240e9",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "11:15",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa316018b5fc9a86f7f5b74",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa31c1facb05803e8803182",
+   "eventId": "films-6a849c2379f706f304c726c2-6a849c2379f706f304c726dc-6a849c2379f706f304c726e0-6a849c2379f706f304c726f0-6a849c2479f706f304c72706-6a849c2479f706f304c72708",
+   "venueId": "6a39e37e92d00e2e708240ee",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "11:15",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa31c1facb05803e8803182",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa31fff42db00a86c7e75b4",
+   "eventId": "films-6a849c2379f706f304c7269e",
+   "venueId": "6a39e37e92d00e2e708240ec",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "11:15",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa31fff42db00a86c7e75b4",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa323e46aebe51011ea3e4c",
+   "eventId": "films-6a849c2379f706f304c726a6",
+   "venueId": "6a39e37e92d00e2e708240eb",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "11:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa323e46aebe51011ea3e4c",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa332335f44613fb06a6106",
+   "eventId": "6aa332335f44613fb06a6106",
+   "venueId": "6a39e37e92d00e2e708240f6",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "11:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa332335f44613fb06a6106",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa31ee8acb05803e880702c",
+   "eventId": "films-6a849c2479f706f304c7273b",
+   "venueId": "6aa2c2d0b32bbcbe865ef77b",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "11:45",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa31ee8acb05803e880702c",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6ab6d801d065d293b06f9041",
+   "eventId": "films-6aab075561f13a2c8dde26eb",
+   "venueId": "6a39e37e92d00e2e708240f1",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "12:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6ab6d801d065d293b06f9041",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6abbf7d5870435d43a0e256c",
+   "eventId": "6abbf7d5870435d43a0e256c",
+   "venueId": "6abbf77a59a4b14a158fbc78",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "12:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6abbf7d5870435d43a0e256c",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6aa332589d9fac6cbca0e29c",
+   "eventId": "6aa332589d9fac6cbca0e29c",
+   "venueId": "6a39e37e92d00e2e708240f6",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "13:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa332589d9fac6cbca0e29c",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa31b09d08b9d911def25fa",
+   "eventId": "6aa31b09d08b9d911def25fa",
+   "venueId": "6a39e37e92d00e2e708240ee",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "13:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa31b09d08b9d911def25fa",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6aa3201c903b3816eba2950b",
+   "eventId": "films-6a849c2479f706f304c7275f-6a849c2479f706f304c72779-6a849c2479f706f304c72787-6a849c2479f706f304c72797-6a849c2479f706f304c727a1-6a849c2479f706f304c727bb",
+   "venueId": "6a39e37e92d00e2e708240ec",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "13:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa3201c903b3816eba2950b",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa31f07f1b874fd873e8ed5",
+   "eventId": "films-6a849c2479f706f304c72720",
+   "venueId": "6aa2c2d0b32bbcbe865ef77b",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "13:45",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa31f07f1b874fd873e8ed5",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa324104714637bd7fa48ae",
+   "eventId": "films-6a849c2379f706f304c7269c-6a849c2379f706f304c726d0",
+   "venueId": "6a39e37e92d00e2e708240eb",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "13:45",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa324104714637bd7fa48ae",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa316199798fad71d9b569e",
+   "eventId": "films-6a849c2379f706f304c726d8-6a849c2479f706f304c726fc-6a849c2479f706f304c72700",
+   "venueId": "6a39e37e92d00e2e708240e9",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "14:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa316199798fad71d9b569e",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa328316aebe51011eb87cc",
+   "eventId": "films-6a849c2479f706f304c727c3",
+   "venueId": "6a39e37e92d00e2e708240f1",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "14:15",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa328316aebe51011eb87cc",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6abab4014e230609cd81c0a4",
+   "eventId": "6abab4014e230609cd81c0a4",
+   "venueId": "6a39e37e92d00e2e708240f6",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "14:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6abab4014e230609cd81c0a4",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa315de8b5fc9a86f7f4de0",
+   "eventId": "films-6a849c2379f706f304c726b4",
+   "venueId": "6a39e37e92d00e2e708240e9",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "15:45",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa315de8b5fc9a86f7f4de0",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa320431b7c61ff1e2ded08",
+   "eventId": "films-6a849c2379f706f304c726c0-6a849c2379f706f304c726c8-6a849c2379f706f304c726da-6a849c2479f706f304c726f4-6a99d756542aaa8cc1192fe0",
+   "venueId": "6a39e37e92d00e2e708240ec",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "15:45",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa320431b7c61ff1e2ded08",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa31c5cdf178748dab2aa4c",
+   "eventId": "films-6a849c2479f706f304c7275b-6a849c2479f706f304c72763-6a849c2479f706f304c72781-6a849c2479f706f304c72789-6a849c2479f706f304c727b5",
+   "venueId": "6a39e37e92d00e2e708240ee",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "16:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa31c5cdf178748dab2aa4c",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa33276a25fcb303383470b",
+   "eventId": "6aa33276a25fcb303383470b",
+   "venueId": "6a39e37e92d00e2e708240f6",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "16:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa33276a25fcb303383470b",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa31f1ed937e5cdd1864e1a",
+   "eventId": "films-6a849c2379f706f304c726ca-6a849c2379f706f304c726d2-6a849c2379f706f304c726e6-6a85f1bf52b542b996541081",
+   "venueId": "6aa2c2d0b32bbcbe865ef77b",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "16:15",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa31f1ed937e5cdd1864e1a",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa324407e9624a25991099e",
+   "eventId": "films-6a849c2479f706f304c72743-6a849c2479f706f304c72751-6a849c2479f706f304c72769-6a849c2479f706f304c727a7-6a849c2479f706f304c727b1-6a849c2479f706f304c727bf",
+   "venueId": "6a39e37e92d00e2e708240eb",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "16:15",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa324407e9624a25991099e",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa32aa832ce05107a240c38",
+   "eventId": "films-6aa3297c71c94c7923a5e407",
+   "venueId": "6a39e37e92d00e2e708240f1",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "16:45",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa32aa832ce05107a240c38",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6aa3166a33909805b4c440f3",
+   "eventId": "films-6a849c2379f706f304c726ba-6a849c2379f706f304c726ea",
+   "venueId": "6a39e37e92d00e2e708240e9",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "17:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa3166a33909805b4c440f3",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa31c8f62d08a72c4f0072f",
+   "eventId": "films-6a849c2379f706f304c726c4-6a849c2379f706f304c726e4-6a849c2379f706f304c726ec",
+   "venueId": "6a39e37e92d00e2e708240ee",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "18:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa31c8f62d08a72c4f0072f",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa32073a33870027c5fd98f",
+   "eventId": "films-6a849c2479f706f304c7272e",
+   "venueId": "6a39e37e92d00e2e708240ec",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "18:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa32073a33870027c5fd98f",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa3329cf24b5c4e961caa88",
+   "eventId": "6aa3329cf24b5c4e961caa88",
+   "venueId": "6a39e37e92d00e2e708240f6",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "18:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa3329cf24b5c4e961caa88",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa31fb6a8f10f6dbf344bfc",
+   "eventId": "films-6a849c2479f706f304c72737",
+   "venueId": "6aa2c2d0b32bbcbe865ef77b",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "18:15",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa31fb6a8f10f6dbf344bfc",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa4861b69cb106e083d5e1a",
+   "eventId": "films-6a849c2479f706f304c72755-6a849c2479f706f304c7275d-6a849c2479f706f304c72761",
+   "venueId": "6a39e37e92d00e2e708240eb",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "18:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa4861b69cb106e083d5e1a",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa328464c4994324657f009",
+   "eventId": "films-6a849c2479f706f304c7272c",
+   "venueId": "6a39e37e92d00e2e708240f1",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "19:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa328464c4994324657f009",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa31cb217797521988623c1",
+   "eventId": "films-6a849c2479f706f304c727cc",
+   "venueId": "6a39e37e92d00e2e708240ee",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "20:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa31cb217797521988623c1",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6aa316a2853834e7768924ee",
+   "eventId": "films-6a849c2479f706f304c72726-6a849c2479f706f304c7274d",
+   "venueId": "6a39e37e92d00e2e708240e9",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "20:15",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa316a2853834e7768924ee",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa3208a1b7c61ff1e2dfa9a",
+   "eventId": "films-6a849c2379f706f304c726aa-6a849c2479f706f304c72704",
+   "venueId": "6a39e37e92d00e2e708240ec",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "20:15",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa3208a1b7c61ff1e2dfa9a",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aac132b1b8982d2aa9f85eb",
+   "eventId": "films-6a849c2379f706f304c726be",
+   "venueId": "6a39e37e92d00e2e708240eb",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "20:15",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aac132b1b8982d2aa9f85eb",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa31fcd5f75f20e93527730",
+   "eventId": "films-6a849c2379f706f304c7267e-6a849c2379f706f304c72680-6a849c2379f706f304c7268c-6a849c2479f706f304c72795-6a849c2479f706f304c727a3",
+   "venueId": "6aa2c2d0b32bbcbe865ef77b",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "20:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa31fcd5f75f20e93527730",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa337382e23e8c1d1838c47",
+   "eventId": "6aa337382e23e8c1d1838c47",
+   "venueId": "6aab1c0940563174f8c87b89",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "21:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa337382e23e8c1d1838c47",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6aa317446b62f71fe083d5ae",
+   "eventId": "films-6a849c2379f706f304c72696",
+   "venueId": "6a39e37e92d00e2e708240e9",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "12:45",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa317446b62f71fe083d5ae",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa31ccd813c683730f4853b",
+   "eventId": "films-6a85f1c052b542b9965410af",
+   "venueId": "6a39e37e92d00e2e708240ee",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "13:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa31ccd813c683730f4853b",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6aa32890ef5087f9815ad7d1",
+   "eventId": "films-6a849c2479f706f304c727c7",
+   "venueId": "6a39e37e92d00e2e708240f1",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "13:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa32890ef5087f9815ad7d1",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6aa3222db8208307d7104411",
+   "eventId": "films-6a849c2379f706f304c726c6-6a849c2379f706f304c726cc-6a849c2379f706f304c726e2-6a849c2379f706f304c726e8-6a849c2479f706f304c726fe",
+   "venueId": "6aa2c2d0b32bbcbe865ef77b",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "13:15",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa3222db8208307d7104411",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa320a99d9fac6cbc9e83d8",
+   "eventId": "films-6a849c2479f706f304c72724-6a84fe1de0c8c11cdee984c4",
+   "venueId": "6a39e37e92d00e2e708240ec",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "13:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa320a99d9fac6cbc9e83d8",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa324cb32ce05107a231edf",
+   "eventId": "films-6a849c2379f706f304c726ac-6a849c2479f706f304c72702",
+   "venueId": "6a39e37e92d00e2e708240eb",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "13:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa324cb32ce05107a231edf",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa332bcd261ac5259d31411",
+   "eventId": "6aa332bcd261ac5259d31411",
+   "venueId": "6a39e37e92d00e2e708240f6",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "14:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa332bcd261ac5259d31411",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa3176bb58cf908f50ce8a7",
+   "eventId": "films-6a849c2379f706f304c726a0",
+   "venueId": "6a39e37e92d00e2e708240e9",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "15:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa3176bb58cf908f50ce8a7",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa31cec62d08a72c4f01d10",
+   "eventId": "films-6a849c2379f706f304c726d4-6a849c2379f706f304c726d6-6a849c2379f706f304c726de-6a849c2479f706f304c726f6-6a849c2479f706f304c726f8",
+   "venueId": "6a39e37e92d00e2e708240ee",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "15:15",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa31cec62d08a72c4f01d10",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa328a8f569f210f5b6021f",
+   "eventId": "films-6a849c2479f706f304c726f2-6a849c2479f706f304c726fa",
+   "venueId": "6a39e37e92d00e2e708240f1",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "15:15",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa328a8f569f210f5b6021f",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa320cdf599c29659a54a73",
+   "eventId": "films-6a849c2479f706f304c72712-6a849c2479f706f304c72753-6a849c2479f706f304c7276d-6a849c2479f706f304c7278b-6a849c2479f706f304c7279f-6a849c2479f706f304c727ad-6a849c2479f706f304c727b7",
+   "venueId": "6a39e37e92d00e2e708240ec",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "15:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa320cdf599c29659a54a73",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa322635dd05dee6c3d81f1",
+   "eventId": "films-6a849c2379f706f304c726a8",
+   "venueId": "6aa2c2d0b32bbcbe865ef77b",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "15:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa322635dd05dee6c3d81f1",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa332ddf569f210f5b8b6aa",
+   "eventId": "6aa332ddf569f210f5b8b6aa",
+   "venueId": "6a39e37e92d00e2e708240f6",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "16:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa332ddf569f210f5b8b6aa",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aab68d2be44aef90c6ad1a0",
+   "eventId": "films-6aa48470225f42d85391dcf5",
+   "venueId": "6a39e37e92d00e2e708240eb",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "16:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aab68d2be44aef90c6ad1a0",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa328ca7ddbe669d5bc92d9",
+   "eventId": "films-6a849c2479f706f304c7270e-6a849c2479f706f304c7273f-6a849c2479f706f304c72747-6a849c2479f706f304c7276f-6a849c2479f706f304c7277b-6a849c2479f706f304c7277f-6a849c2479f706f304c72791",
+   "venueId": "6a39e37e92d00e2e708240f1",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "17:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa328ca7ddbe669d5bc92d9",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa3178e32d29953503d74b0",
+   "eventId": "films-6a849c2379f706f304c726ae",
+   "venueId": "6a39e37e92d00e2e708240e9",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "17:15",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa3178e32d29953503d74b0",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa31d18bcd493f866aec15b",
+   "eventId": "films-6a85f1be52b542b996541045",
+   "venueId": "6a39e37e92d00e2e708240ee",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "17:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa31d18bcd493f866aec15b",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6aa33316f24b5c4e961cc1af",
+   "eventId": "6aa33316f24b5c4e961cc1af",
+   "venueId": "6a39e37e92d00e2e708240f6",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "17:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa33316f24b5c4e961cc1af",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa32106d2f3ad89d8409ff8",
+   "eventId": "films-6a849c2479f706f304c726f4-6a849c2479f706f304c72728",
+   "venueId": "6aa2c2d0b32bbcbe865ef77b",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "17:45",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa32106d2f3ad89d8409ff8",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa322c11cd532d62cb95ec8",
+   "eventId": "films-6a849c2479f706f304c7271e-6a849c2479f706f304c7274f",
+   "venueId": "6a39e37e92d00e2e708240ec",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "17:45",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa322c11cd532d62cb95ec8",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa324f532ce05107a232be1",
+   "eventId": "films-6a849c2479f706f304c7273d-6a849c2479f706f304c72775-6a849c2479f706f304c72793-6a849c2479f706f304c727ab-6a849c2479f706f304c727af-6a95b710e5cb2fa33e04e4f9",
+   "venueId": "6a39e37e92d00e2e708240eb",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "18:15",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa324f532ce05107a232be1",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa32782a8f10f6dbf3579c1",
+   "eventId": "films-6a9b51bc430be036d67368fd",
+   "venueId": "6a39e37e92d00e2e708240fa",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "18:45",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa32782a8f10f6dbf3579c1",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa33331fb5fdc8b1526b86c",
+   "eventId": "6aa33331fb5fdc8b1526b86c",
+   "venueId": "6a39e37e92d00e2e708240f6",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "19:15",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa33331fb5fdc8b1526b86c",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa3227cbb25a79da7c8bbcf",
+   "eventId": "films-6a849c2479f706f304c7270a-6a849c2479f706f304c7270c-6a849c2479f706f304c72710-6a849c2479f706f304c72714-6a849c2479f706f304c72716-6a849c2479f706f304c72718-6a849c2479f706f304c7271a",
+   "venueId": "6a39e37e92d00e2e708240e9",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "19:45",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa3227cbb25a79da7c8bbcf",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa31d30ad29e3184f4e3a74",
+   "eventId": "films-6a849c2379f706f304c7269a",
+   "venueId": "6a39e37e92d00e2e708240ee",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "20:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa31d30ad29e3184f4e3a74",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa317a58b64f654897a48c3",
+   "eventId": "films-6a849c2479f706f304c72732",
+   "venueId": "6a39e37e92d00e2e708240ec",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "20:15",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa317a58b64f654897a48c3",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa3211c0026a832af714910",
+   "eventId": "films-6a7e1b723ce7b9e4a79aaea6",
+   "venueId": "6aa2c2d0b32bbcbe865ef77b",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "20:15",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa3211c0026a832af714910",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa325297f6e1456dcdcb388",
+   "eventId": "films-6a849c2379f706f304c72694",
+   "venueId": "6a39e37e92d00e2e708240eb",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "20:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa325297f6e1456dcdcb388",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa34367473b3306661bbb43",
+   "eventId": "6aa34367473b3306661bbb43",
+   "venueId": "6aa337a23b82a886b9626ee6",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "21:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa34367473b3306661bbb43",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 25.0,
+   "priceMax": 25.0
+  },
+  {
+   "id": "6aa3334fbf67610359135ab3",
+   "eventId": "6aa3334fbf67610359135ab3",
+   "venueId": "6a39e37e92d00e2e708240f6",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "11:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa3334fbf67610359135ab3",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa32b4e1e6ecd2582969750",
+   "eventId": "films-6a849c2479f706f304c726f2-6a849c2479f706f304c726fa",
+   "venueId": "6a39e37e92d00e2e708240f4",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "12:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa32b4e1e6ecd2582969750",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6abadb2e72685ecc3d339c32",
+   "eventId": "6abadb2e72685ecc3d339c32",
+   "venueId": "6abab9a2ae88013628ff1b48",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "12:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6abadb2e72685ecc3d339c32",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6abbd62b64baea9122dc1f9d",
+   "eventId": "films-6ab802771ebb71e303c78f1b",
+   "venueId": "6a39e37e92d00e2e708240ee",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "12:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6abbd62b64baea9122dc1f9d",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aab40457a46cd970fc46a5a",
+   "eventId": "films-6a849c2379f706f304c726d4-6a849c2379f706f304c726d6-6a849c2379f706f304c726de-6a849c2479f706f304c726f6-6a849c2479f706f304c726f8",
+   "venueId": "6a39e37e92d00e2e708240e9",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "13:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aab40457a46cd970fc46a5a",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6abab623feb5758e0eaa6de8",
+   "eventId": "6abab623feb5758e0eaa6de8",
+   "venueId": "6a39e37e92d00e2e708240f6",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "13:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6abab623feb5758e0eaa6de8",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa32b7f7ddbe669d5bcfea0",
+   "eventId": "films-6a849c2379f706f304c726b4",
+   "venueId": "6a39e37e92d00e2e708240f4",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "14:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa32b7f7ddbe669d5bcfea0",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aab40a1e77e9563512807e2",
+   "eventId": "films-6a849c2479f706f304c7271c-6a849c2479f706f304c7274b-6a849c2479f706f304c72765-6a849c2479f706f304c7277d-6a849c2479f706f304c7278f-6a849c2479f706f304c72799-6a849c2479f706f304c7279b-6a849c2479f706f304c7279d",
+   "venueId": "6a39e37e92d00e2e708240ee",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "15:15",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aab40a1e77e9563512807e2",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa33375bf67610359137472",
+   "eventId": "6aa33375bf67610359137472",
+   "venueId": "6a39e37e92d00e2e708240f6",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "15:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa33375bf67610359137472",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aab40c11bc2fb474dd9f152",
+   "eventId": "films-6a9b53ec9f95bf0198a26c83",
+   "venueId": "6a39e37e92d00e2e708240e9",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "15:45",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aab40c11bc2fb474dd9f152",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6abc0639373313377b35edc9",
+   "eventId": "films-6abbcab11d200b4834398f8e",
+   "venueId": "6a39e37e92d00e2e708240f1",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "17:15",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6abc0639373313377b35edc9",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa31d47fee2aef4d3eb3f3e",
+   "eventId": "films-6a849c2479f706f304c72757-6a849c2479f706f304c7276b-6a849c2479f706f304c72783-6a849c2479f706f304c72785-6a849c2479f706f304c727a5-6a849c2479f706f304c727b3",
+   "venueId": "6a39e37e92d00e2e708240ee",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "17:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa31d47fee2aef4d3eb3f3e",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa325524ba410c313d18075",
+   "eventId": "films-6a849c2379f706f304c7267a-6a849c2379f706f304c7267c-6a849c2379f706f304c72682-6a849c2379f706f304c72684-6a849c2379f706f304c72686-6a849c2379f706f304c72688-6a849c2379f706f304c7268a-6a849c2379f706f304c7268e-6a849c2379f706f304c72690-6a849c2379f706f304c72692",
+   "venueId": "6a39e37e92d00e2e708240eb",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "17:45",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa325524ba410c313d18075",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa317b9a3ebd7501616a071",
+   "eventId": "films-6a849c2479f706f304c72735",
+   "venueId": "6a39e37e92d00e2e708240e9",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "18:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa317b9a3ebd7501616a071",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa321392e23e8c1d17e52b5",
+   "eventId": "films-6a849c2379f706f304c726b2",
+   "venueId": "6a39e37e92d00e2e708240ec",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "18:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa321392e23e8c1d17e52b5",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa322e1b20659f23a97c787",
+   "eventId": "films-6a849c2379f706f304c726c4-6a849c2379f706f304c726e4-6a849c2379f706f304c726ec",
+   "venueId": "6aa2c2d0b32bbcbe865ef77b",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "18:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa322e1b20659f23a97c787",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6abf478dd6b1b0c2bfc2c37d",
+   "eventId": "6abf478dd6b1b0c2bfc2c37d",
+   "venueId": "6a39e37e92d00e2e708240fa",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "18:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6abf478dd6b1b0c2bfc2c37d",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6aa327adadc79086030cd859",
+   "eventId": "films-6a849c2379f706f304c726ee",
+   "venueId": "6a39e37e92d00e2e708240fa",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "19:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa327adadc79086030cd859",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa3290ef749cedfee72f886",
+   "eventId": "films-6a849c2479f706f304c727cf",
+   "venueId": "6a39e37e92d00e2e708240f1",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "19:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa3290ef749cedfee72f886",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6aa317cff54fbb856daa065d",
+   "eventId": "films-6a99d756542aaa8cc1192fdc",
+   "venueId": "6a39e37e92d00e2e708240e9",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "19:45",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa317cff54fbb856daa065d",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa31d7bd44c105a96e25c1e",
+   "eventId": "films-6a99d756542aaa8cc1192fde",
+   "venueId": "6a39e37e92d00e2e708240ee",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "19:45",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa31d7bd44c105a96e25c1e",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa3214e8d2fa1fd0f62864f",
+   "eventId": "films-6a849c2479f706f304c72730",
+   "venueId": "6a39e37e92d00e2e708240ec",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "19:45",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa3214e8d2fa1fd0f62864f",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa32319671179390aaad5ac",
+   "eventId": "films-6a849c2479f706f304c72722",
+   "venueId": "6aa2c2d0b32bbcbe865ef77b",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "20:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa32319671179390aaad5ac",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa3259913eb266f7aa8e17e",
+   "eventId": "films-6a849c2379f706f304c726a2",
+   "venueId": "6a39e37e92d00e2e708240eb",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "20:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa3259913eb266f7aa8e17e",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6abeb73061d940136cb81d5b",
+   "eventId": "6abeb73061d940136cb81d5b",
+   "venueId": "6a39e37e92d00e2e708240fa",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "20:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6abeb73061d940136cb81d5b",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6aa34335adc790860311b07f",
+   "eventId": "6aa34335adc790860311b07f",
+   "venueId": "6a39e37e92d00e2e708240fa",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "21:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa34335adc790860311b07f",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 25.0,
+   "priceMax": 25.0
+  },
+  {
+   "id": "6abadc27a85308cd5e0ff0cc",
+   "eventId": "6abadc27a85308cd5e0ff0cc",
+   "venueId": "6abab9a2ae88013628ff1b48",
+   "roomId": null,
+   "date": "2026-10-27",
+   "start": "12:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6abadc27a85308cd5e0ff0cc",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aab40e50b999be3c3ba58d1",
+   "eventId": "films-6a849c2379f706f304c726a8",
+   "venueId": "6a39e37e92d00e2e708240e9",
+   "roomId": null,
+   "date": "2026-10-27",
+   "start": "13:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aab40e50b999be3c3ba58d1",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa344587060893d9ab2461c",
+   "eventId": "films-6a849c2479f706f304c7270e-6a849c2479f706f304c7273f-6a849c2479f706f304c72747-6a849c2479f706f304c7276f-6a849c2479f706f304c7277b-6a849c2479f706f304c7277f-6a849c2479f706f304c72791",
+   "venueId": "6a39e37e92d00e2e708240ee",
+   "roomId": null,
+   "date": "2026-10-27",
+   "start": "15:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa344587060893d9ab2461c",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aab40fa544f2e2f87b747ff",
+   "eventId": "films-6a849c2379f706f304c726ba-6a849c2379f706f304c726ea",
+   "venueId": "6a39e37e92d00e2e708240e9",
+   "roomId": null,
+   "date": "2026-10-27",
+   "start": "15:45",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aab40fa544f2e2f87b747ff",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa32934cabf87c1fabe4aa7",
+   "eventId": "films-6a849c2479f706f304c72745-6a849c2479f706f304c72749-6a849c2479f706f304c72773-6a849c2479f706f304c72777-6a849c2479f706f304c7278d-6a849c2479f706f304c727a9",
+   "venueId": "6a39e37e92d00e2e708240f1",
+   "roomId": null,
+   "date": "2026-10-27",
+   "start": "17:15",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa32934cabf87c1fabe4aa7",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa31d94bcd493f866af0f62",
+   "eventId": "films-6a849c2379f706f304c726ce",
+   "venueId": "6a39e37e92d00e2e708240ee",
+   "roomId": null,
+   "date": "2026-10-27",
+   "start": "17:45",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa31d94bcd493f866af0f62",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa325c0adc79086030c0c0a",
+   "eventId": "films-6a849c2379f706f304c726c2-6a849c2379f706f304c726dc-6a849c2379f706f304c726e0-6a849c2379f706f304c726f0-6a849c2479f706f304c72706-6a849c2479f706f304c72708",
+   "venueId": "6a39e37e92d00e2e708240eb",
+   "roomId": null,
+   "date": "2026-10-27",
+   "start": "17:45",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa325c0adc79086030c0c0a",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa317ec8b5fc9a86f7fc98a",
+   "eventId": "films-6a8632ede0b25a91012564f6",
+   "venueId": "6a39e37e92d00e2e708240e9",
+   "roomId": null,
+   "date": "2026-10-27",
+   "start": "18:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa317ec8b5fc9a86f7fc98a",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa321688d2fa1fd0f628a80",
+   "eventId": "films-6a849c2479f706f304c7275b-6a849c2479f706f304c72763-6a849c2479f706f304c72781-6a849c2479f706f304c72789-6a849c2479f706f304c727b5",
+   "venueId": "6a39e37e92d00e2e708240ec",
+   "roomId": null,
+   "date": "2026-10-27",
+   "start": "18:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa321688d2fa1fd0f628a80",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa32334f0ae1109edd9f637",
+   "eventId": "films-6a849c2479f706f304c7272c",
+   "venueId": "6aa2c2d0b32bbcbe865ef77b",
+   "roomId": null,
+   "date": "2026-10-27",
+   "start": "18:15",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa32334f0ae1109edd9f637",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6aa344d6500c87073116606a",
+   "eventId": "6aa344d6500c87073116606a",
+   "venueId": "6a39e37e92d00e2e708240ea",
+   "roomId": null,
+   "date": "2026-10-27",
+   "start": "18:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa344d6500c87073116606a",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6aa3180944f01bab489e9bd5",
+   "eventId": "films-6a849c2379f706f304c726a4",
+   "venueId": "6a39e37e92d00e2e708240e9",
+   "roomId": null,
+   "date": "2026-10-27",
+   "start": "19:45",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa3180944f01bab489e9bd5",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa31de479885f4c63ac7b79",
+   "eventId": "films-6a849c2379f706f304c726a4",
+   "venueId": "6a39e37e92d00e2e708240ee",
+   "roomId": null,
+   "date": "2026-10-27",
+   "start": "19:45",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa31de479885f4c63ac7b79",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aa321a8dc3c979c11535657",
+   "eventId": "films-6a8665e54a660fbf89e310f0",
+   "venueId": "6a39e37e92d00e2e708240ec",
+   "roomId": null,
+   "date": "2026-10-27",
+   "start": "20:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6aa321a8dc3c979c11535657",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6abfea68f14a1d9a3ad97568",
+   "eventId": "films-6a849c2479f706f304c72739",
+   "venueId": "6a39e37e92d00e2e708240eb",
+   "roomId": null,
+   "date": "2026-10-27",
+   "start": "20:00",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6abfea68f14a1d9a3ad97568",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  },
+  {
+   "id": "6abfeaa7284fe397f9237422",
+   "eventId": "films-6a849c2379f706f304c7267e-6a849c2379f706f304c72680-6a849c2379f706f304c7268c-6a849c2479f706f304c72795-6a849c2479f706f304c727a3",
+   "venueId": "6aa2c2d0b32bbcbe865ef77b",
+   "roomId": null,
+   "date": "2026-10-27",
+   "start": "20:30",
+   "ticketUrl": "https://nofs.eventive.org/schedule/6abfeaa7284fe397f9237422",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 16.0,
+   "priceMax": 16.0
+  }
+ ],
+ "sources": {
+  "festival": [
+   "festival.toml"
+  ],
+  "venues": [
+   "eventive",
+   "nominatim"
+  ],
+  "events": [
+   "eventive"
+  ],
+  "performances": [
+   "eventive"
+  ],
+  "availability": [
+   "eventive"
+  ],
+  "prices": [
+   "eventive"
+  ]
+ },
+ "provenance": {
+  "sources": {
+   "eventive": {
+    "kind": "fetched",
+    "path": "data/festivals/new-orleans-film-festival/2026/eventive",
+    "fetchedAt": "2026-10-02T18:07:14Z",
+    "fetcher": "scraper/festivals/new_orleans_film_festival/sources/eventive/fetch.py",
+    "fetcherVersion": 1
+   },
+   "nominatim": {
+    "kind": "fetched",
+    "path": "data/festivals/new-orleans-film-festival/2026/nominatim",
+    "fetchedAt": "2026-10-02T18:32:54Z",
+    "fetcher": "scraper/festivals/new_orleans_film_festival/sources/nominatim/fetch.py",
+    "fetcherVersion": 3
+   }
+  },
+  "absent": [],
+  "fields": {
+   "categories.name": [
+    "eventive"
+   ],
+   "events.blurb": [
+    "eventive"
+   ],
+   "events.categories": [
+    "eventive"
+   ],
+   "events.durationMin": [
+    "eventive"
+   ],
+   "events.genre": [
+    "eventive"
+   ],
+   "events.imageUrl": [
+    "eventive"
+   ],
+   "events.title": [
+    "eventive"
+   ],
+   "events.url": [
+    "eventive"
+   ],
+   "performances.date": [
+    "eventive"
+   ],
+   "performances.eventId": [
+    "eventive"
+   ],
+   "performances.free": [
+    "eventive"
+   ],
+   "performances.priceMax": [
+    "eventive"
+   ],
+   "performances.priceMin": [
+    "eventive"
+   ],
+   "performances.start": [
+    "eventive"
+   ],
+   "performances.status": [
+    "eventive"
+   ],
+   "performances.ticketUrl": [
+    "eventive"
+   ],
+   "performances.venueId": [
+    "eventive"
+   ],
+   "venues.address": [
+    "eventive"
+   ],
+   "venues.capacity": [
+    "eventive"
+   ],
+   "venues.lat": [
+    "nominatim"
+   ],
+   "venues.lng": [
+    "nominatim"
+   ],
+   "venues.name": [
+    "eventive"
+   ],
+   "venues.online": [
+    "eventive"
+   ]
+  },
+  "skipped": {}
+ }
+}

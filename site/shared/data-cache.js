@@ -30,9 +30,9 @@
  * own, so the manifest hash each entry was fetched under is kept beside it as a
  * small localStorage map of url -> hash.
  *
- * Pure of any page: both index.html (js/app.js) and the planner (plan/plan.js)
- * resolve their relative data urls against the same origin, so they share one
- * cache and one stamp map, and a file fetched by either is reused by the other.
+ * Pure of any page: index.html (js/app.js) and the planners (plan/plan.js, and
+ * planNG through shared/edfringe-wire.js) resolve their data urls against the
+ * same origin, so they share one cache and one stamp map.
  */
 
 const CACHE_NAME = "edfringe-data-v1";
@@ -86,6 +86,20 @@ export function dataRelativeKey(url) {
   }
   const i = stack.indexOf("data");
   return i === -1 ? null : stack.slice(i + 1).join("/");
+}
+
+/**
+ * Where the manifest lives for a data url, spelled the way that url is: the
+ * same climb (or root) up to its "data" segment, then manifest.json — the
+ * one file build_manifest writes at the root of site/data/.
+ *
+ * @param {string} url
+ * @returns {string|null} null for a url with no "data" segment
+ */
+export function manifestUrlFor(url) {
+  const segs = url.split("/");
+  const i = segs.indexOf("data");
+  return i === -1 ? null : [...segs.slice(0, i + 1), "manifest.json"].join("/");
 }
 
 /* The manifest hash each cached URL was fetched under. A plain localStorage

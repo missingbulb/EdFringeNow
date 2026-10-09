@@ -1,0 +1,15 @@
+{
+ "festival": "edinburgh-deaf-festival",
+ "edition": "2026",
+ "source": "nominatim",
+ "fetchedAt": "2026-09-25T14:00:34Z",
+ "fetcher": "scraper/festivals/edinburgh_deaf_festival/sources/nominatim/fetch.py",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://nominatim.openstreetmap.org/search"
+ ],
+ "files": [
+  "geocode.json"
+ ],
+ "notes": "One free-text query per distinct venue address from festival-site, retried on the postcode alone; addresses without a postcode are not queried. First hit, rounded to 6 dp."
+}

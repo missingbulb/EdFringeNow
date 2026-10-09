@@ -1,0 +1,62 @@
+# The Israeli Association for Emergency Medicine's annual scientific assembly:
+# its identity, its editions, and the sources an edition's information block is
+# assembled from. Every key follows the contract in scraper/festivals/README.md.
+
+id = "iaem"
+name = "Israeli Association for Emergency Medicine Annual Scientific Assembly"
+name_local = "הכנס השנתי של האיגוד הישראלי לרפואה דחופה"
+city = "Airport City"
+country = "IL"
+# Avenue Conference & Events Center, the 2026 venue (OSM way 175196857), for
+# the festival timeline and the travel maths between cities.
+lat = 31.9860
+lng = 34.9162
+timezone = "Asia/Jerusalem"
+# The agenda's titles are bilingual; the sessions themselves are in English.
+lang = "en"
+dir = "ltr"
+kind = "academic"
+subtypes = ["academic-medicine"]
+default_genre = "talk"
+site = "https://emergencymedicine-2026.forms-wizard.biz/"
+
+# Admission is a conference registration; no session is sold on its own, so
+# performance prices stay null. The paid pre-conference workshops of the week
+# before, at other venues, are not part of the edition.
+[ticketing]
+model = "festival-pass"
+url = "https://emergencymedicine-2026.forms-wizard.biz/users/new"
+notes = "Registration through the conference site. Late rates (1 Sep - 18 Oct 2026): ₪500 for association members, ₪750 for other specialists, ₪400 for interns, nurses and pensioners, ₪350 for EM nurses, physician assistants, paramedics and reservists, ₪300 for medical students, ₪850 for other guests; ₪50 more on the morning of the conference. Includes refreshments and lunch."
+currency = "ILS"
+source = "https://emergencymedicine-2026.forms-wizard.biz/"
+
+[[edition]]
+id = "2026"
+format = "block"
+# ordinal: the site prints none.
+first = "2026-10-21"
+last = "2026-10-21"
+sources = ["forms-wizard", "venues-research"]
+
+[[source]]
+id = "forms-wizard"
+kind = "fetched"
+roles = ["events", "performances", "venues"]
+required = true
+fetcher = "sources/forms-wizard/fetch.py"
+adapter = "iaem/forms_wizard.py"
+
+[[source]]
+id = "venues-research"
+kind = "curated"
+roles = ["venues"]
+required = true
+path = "curated/venues.json"
+adapter = "platforms/curated_venues.py"
+
+# Field precedence per section: for each field, the first source listed here that
+# supplies it wins.
+[merge]
+venues = ["venues-research", "forms-wizard"]
+events = ["forms-wizard"]
+performances = ["forms-wizard"]

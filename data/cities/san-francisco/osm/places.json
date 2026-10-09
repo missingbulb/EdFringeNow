@@ -1,0 +1,4098 @@
+{
+ "places": [
+  {
+   "id": "node/10016621434",
+   "lat": 37.786344,
+   "lng": -122.417112,
+   "tags": {
+    "name": "Book & Job Gallery",
+    "tourism": "gallery",
+    "addr:housenumber": "838",
+    "addr:street": "Geary Street"
+   }
+  },
+  {
+   "id": "node/10087741500",
+   "lat": 37.806195,
+   "lng": -122.423189,
+   "tags": {
+    "name": "Col Gallery",
+    "tourism": "gallery",
+    "addr:housenumber": "887",
+    "addr:street": "Beach Street",
+    "addr:postcode": "94109"
+   }
+  },
+  {
+   "id": "node/10103442907",
+   "lat": 37.785633,
+   "lng": -122.399241,
+   "tags": {
+    "name": "Berggruen Gallery",
+    "tourism": "gallery",
+    "addr:housenumber": "10",
+    "addr:street": "Hawthorne Street"
+   }
+  },
+  {
+   "id": "node/10179921398",
+   "lat": 37.779183,
+   "lng": -122.397319,
+   "tags": {
+    "name": "Andrea Schwartz Gallery",
+    "tourism": "gallery",
+    "website": "http://www.asgallery.com/",
+    "addr:housenumber": "545",
+    "addr:street": "4th Street",
+    "addr:postcode": "94107"
+   }
+  },
+  {
+   "id": "node/10239425288",
+   "lat": 37.788321,
+   "lng": -122.409068,
+   "tags": {
+    "name": "Chloe Gallery",
+    "tourism": "gallery",
+    "website": "http://www.chloegallery.com"
+   }
+  },
+  {
+   "id": "node/10543783374",
+   "lat": 37.79588,
+   "lng": -122.403254,
+   "tags": {
+    "name": "Foster Gwin Gallery",
+    "tourism": "gallery",
+    "website": "https://www.fostergwin.com/",
+    "addr:housenumber": "712",
+    "addr:street": "Montgomery Street"
+   }
+  },
+  {
+   "id": "node/10602156460",
+   "lat": 37.787965,
+   "lng": -122.417597,
+   "tags": {
+    "name": "Smaart Gallery & Studio",
+    "tourism": "gallery",
+    "website": "https://www.smaartstudio.com/",
+    "addr:housenumber": "1045",
+    "addr:street": "Sutter Street"
+   }
+  },
+  {
+   "id": "node/10623964563",
+   "lat": 37.784334,
+   "lng": -122.418254,
+   "tags": {
+    "name": "Modernism",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/10651024023",
+   "lat": 37.795275,
+   "lng": -122.39237,
+   "tags": {
+    "name": "Ferry Plaza Farmers Market",
+    "amenity": "marketplace",
+    "opening_hours": "Tu 10:00-14:00; Th 10:00-14:00; Sa 08:00-14:00",
+    "website": "https://foodwise.org/markets/ferry-plaza-farmers-market/"
+   }
+  },
+  {
+   "id": "node/10656556517",
+   "lat": 37.764144,
+   "lng": -122.411165,
+   "tags": {
+    "name": "Vista Point",
+    "tourism": "gallery",
+    "website": "https://www.vistapointstudio.com/",
+    "addr:housenumber": "405",
+    "addr:street": "Florida Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/10656580601",
+   "lat": 37.755457,
+   "lng": -122.416988,
+   "tags": {
+    "name": "House of Seiko",
+    "tourism": "gallery",
+    "opening_hours": "Mo-Th off; Fr-Su 11:00-18:00",
+    "website": "https://houseofseiko.info/",
+    "addr:housenumber": "3109",
+    "addr:street": "22nd Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/10656846904",
+   "lat": 37.75288,
+   "lng": -122.409539,
+   "tags": {
+    "name": "Sirron Norris Studio & Gallery",
+    "tourism": "gallery",
+    "opening_hours": "\"by appointment\"",
+    "website": "http://www.sirronnorris.com/studiogallery",
+    "addr:housenumber": "2860",
+    "addr:street": "24th Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1067969795",
+   "lat": 37.794483,
+   "lng": -122.389766,
+   "tags": {
+    "name": "Bay Bridge and Treasure Island Viewpoint",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/10695669958",
+   "lat": 37.781934,
+   "lng": -122.410365,
+   "tags": {
+    "name": "Luggage Store Gallery",
+    "tourism": "gallery",
+    "opening_hours": "We-Sa 12:00-17:00",
+    "website": "https://luggagestoregallerysf.org/",
+    "addr:housenumber": "1007",
+    "addr:street": "Market Street",
+    "addr:postcode": "94103"
+   }
+  },
+  {
+   "id": "node/10733880549",
+   "lat": 37.758402,
+   "lng": -122.394971,
+   "tags": {
+    "name": "Maracuja Gallery",
+    "tourism": "gallery",
+    "opening_hours": "\"By appointment\"",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/10833332996",
+   "lat": 37.778095,
+   "lng": -122.406447,
+   "tags": {
+    "name": "Siy Gallery",
+    "tourism": "gallery",
+    "addr:housenumber": "1026",
+    "addr:street": "Folsom Street"
+   }
+  },
+  {
+   "id": "node/10917024146",
+   "lat": 37.776525,
+   "lng": -122.397043,
+   "tags": {
+    "name": "63 Bluxome Gallery",
+    "tourism": "gallery",
+    "addr:housenumber": "63",
+    "addr:street": "Bluxome Street"
+   }
+  },
+  {
+   "id": "node/10991177405",
+   "lat": 37.808409,
+   "lng": -122.413211,
+   "tags": {
+    "name": "Museum of 3D Illusions",
+    "tourism": "museum",
+    "website": "https://sfillusions.com/",
+    "addr:housenumber": "55-61",
+    "addr:street": "Jefferson Street",
+    "addr:postcode": "94133"
+   }
+  },
+  {
+   "id": "node/11008350407",
+   "lat": 37.785527,
+   "lng": -122.399109,
+   "tags": {
+    "name": "Crown Point Press",
+    "tourism": "gallery",
+    "opening_hours": "Mo-Fr 09:00-17:00",
+    "website": "https://crownpoint.com/",
+    "wikidata": "Q60740068",
+    "addr:housenumber": "20",
+    "addr:street": "Hawthorne Street",
+    "addr:postcode": "94105"
+   }
+  },
+  {
+   "id": "node/11009374817",
+   "lat": 37.78626,
+   "lng": -122.471244,
+   "tags": {
+    "name": "Avenue 12 Gallery",
+    "tourism": "gallery",
+    "website": "https://avenue12gallery.com",
+    "addr:housenumber": "1101",
+    "addr:street": "Lake Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/11074188905",
+   "lat": 37.770295,
+   "lng": -122.436681,
+   "tags": {
+    "name": "Cityc",
+    "name:en": "City center skyline",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/11269658286",
+   "lat": 37.792158,
+   "lng": -122.401525,
+   "tags": {
+    "name": "Mellow Mercado",
+    "amenity": "marketplace",
+    "addr:housenumber": "332",
+    "addr:street": "Pine Street"
+   }
+  },
+  {
+   "id": "node/11283438662",
+   "lat": 37.808132,
+   "lng": -122.416591,
+   "tags": {
+    "name": "Fisherman's Wharf",
+    "tourism": "attraction",
+    "website": "https://fishermanswharf.org/",
+    "wikidata": "Q1324280",
+    "wikipedia": "en:Fisherman's Wharf, San Francisco"
+   }
+  },
+  {
+   "id": "node/11296125208",
+   "lat": 37.772423,
+   "lng": -122.425827,
+   "tags": {
+    "name": "Community Garden",
+    "leisure": "garden",
+    "opening_hours": "sunrise-sunset",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/11423890645",
+   "lat": 37.80873,
+   "lng": -122.413413,
+   "tags": {
+    "name": "Skystar Wheel - Fisherman’s Wharf",
+    "tourism": "theme_park",
+    "opening_hours": "Mo-Su 10:00-22:00",
+    "website": "https://skystarwheel.com",
+    "wikidata": "Q124367032",
+    "wikipedia": "en:SkyStar Wheel",
+    "addr:housenumber": "2860",
+    "addr:street": "Taylor Street",
+    "addr:postcode": "94133",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/11495567280",
+   "lat": 37.80119,
+   "lng": -122.407623,
+   "tags": {
+    "name": "Berz Gallery Of African Art",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/11511552469",
+   "lat": 37.794467,
+   "lng": -122.421344,
+   "tags": {
+    "name": "Gallery-O-Rama",
+    "tourism": "gallery",
+    "opening_hours": "Fr-Su 03:00-19:00",
+    "website": "https://www.galleryorama.com/",
+    "addr:housenumber": "1920",
+    "addr:postcode": "94109"
+   }
+  },
+  {
+   "id": "node/1155753228",
+   "lat": 37.773103,
+   "lng": -122.441484,
+   "tags": {
+    "name": "William McKinley Memorial",
+    "historic": "memorial",
+    "wikidata": "Q110404720"
+   }
+  },
+  {
+   "id": "node/11579822221",
+   "lat": 37.803571,
+   "lng": -122.414006,
+   "tags": {
+    "name": "Paul Thiebaud Gallery",
+    "tourism": "gallery",
+    "website": "https://www.paulthiebaudgallery.com/"
+   }
+  },
+  {
+   "id": "node/11590449585",
+   "lat": 37.767908,
+   "lng": -122.38891,
+   "tags": {
+    "name": "Misalignment Museum",
+    "tourism": "museum",
+    "opening_hours": "Th-Fr 16:00-20:00; Sa-Su 14:00-17:00",
+    "website": "https://misalignmentmuseum.com/",
+    "addr:housenumber": "1699",
+    "addr:street": "3rd Street",
+    "addr:postcode": "94158"
+   }
+  },
+  {
+   "id": "node/11725811776",
+   "lat": 37.788944,
+   "lng": -122.411638,
+   "tags": {
+    "name": "688 Gallery",
+    "tourism": "gallery",
+    "addr:housenumber": "688",
+    "addr:street": "Sutter Street"
+   }
+  },
+  {
+   "id": "node/11806415041",
+   "lat": 37.751406,
+   "lng": -122.418202,
+   "tags": {
+    "name": "Antojitos Patry",
+    "amenity": "marketplace",
+    "opening_hours": "Mo-Su 08:30-18:30",
+    "addr:housenumber": "2853",
+    "addr:street": "Mission Street"
+   }
+  },
+  {
+   "id": "node/11991078747",
+   "lat": 37.807601,
+   "lng": -122.472601,
+   "tags": {
+    "name": "Battery East",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/1206800348",
+   "lat": 37.810017,
+   "lng": -122.417676,
+   "tags": {
+    "name": "Pier 45",
+    "tourism": "attraction",
+    "wikidata": "Q66080037"
+   }
+  },
+  {
+   "id": "node/1250280509",
+   "lat": 37.784531,
+   "lng": -122.402253,
+   "tags": {
+    "name": "Martin Luther King, Jr. Memorial",
+    "name:en": "Martin Luther King, Jr. Memorial",
+    "historic": "memorial",
+    "wikidata": "Q118533599"
+   }
+  },
+  {
+   "id": "node/12550746942",
+   "lat": 37.80838,
+   "lng": -122.413661,
+   "tags": {
+    "name": "Made in San Francisco",
+    "tourism": "gallery",
+    "opening_hours": "Fr-Tu 10:00-18:00",
+    "website": "https://www.madeinsfgallery.com/",
+    "addr:housenumber": "91",
+    "addr:street": "Jefferson Street",
+    "addr:postcode": "94133"
+   }
+  },
+  {
+   "id": "node/12550746946",
+   "lat": 37.808024,
+   "lng": -122.416337,
+   "tags": {
+    "name": "Eden Fine Art",
+    "tourism": "gallery",
+    "opening_hours": "Mo-Su 10:00-19:00",
+    "website": "https://www.eden-gallery.com/",
+    "addr:housenumber": "223",
+    "addr:street": "Jefferson Street",
+    "addr:postcode": "94133"
+   }
+  },
+  {
+   "id": "node/12637192282",
+   "lat": 37.77234,
+   "lng": -122.429418,
+   "tags": {
+    "name": "Hailey Malaika Olympia Clarke",
+    "tourism": "gallery",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/12637859034",
+   "lat": 37.757822,
+   "lng": -122.388904,
+   "tags": {
+    "name": "hugomento: Storied Art & Objects",
+    "tourism": "gallery",
+    "opening_hours": "We-Fr 13:00-18:00; Sa-Su 13:00-17:00",
+    "website": "https://www.hugomento.com/",
+    "addr:housenumber": "795",
+    "addr:street": "22nd Street",
+    "addr:postcode": "94107"
+   }
+  },
+  {
+   "id": "node/12816785358",
+   "lat": 37.782979,
+   "lng": -122.409737,
+   "tags": {
+    "name": "Jonathan Carver Moore",
+    "tourism": "gallery",
+    "website": "https://www.jonathancarvermoore.com/",
+    "addr:housenumber": "966",
+    "addr:street": "Market Street"
+   }
+  },
+  {
+   "id": "node/12863098201",
+   "lat": 37.787746,
+   "lng": -122.404297,
+   "tags": {
+    "name": "Fraenkel Gallery",
+    "tourism": "gallery",
+    "website": "https://fraenkelgallery.com/",
+    "addr:housenumber": "49",
+    "addr:street": "Geary Street"
+   }
+  },
+  {
+   "id": "node/12964918428",
+   "lat": 37.784591,
+   "lng": -122.444312,
+   "tags": {
+    "name": "John Wickett Museum of Exotica",
+    "tourism": "museum",
+    "addr:housenumber": "2671",
+    "addr:street": "Sutter Street"
+   }
+  },
+  {
+   "id": "node/12996561466",
+   "lat": 37.766263,
+   "lng": -122.406812,
+   "tags": {
+    "name": "Hosfelt Gallery",
+    "tourism": "gallery",
+    "addr:housenumber": "260",
+    "addr:street": "Utah Street"
+   }
+  },
+  {
+   "id": "node/12996561467",
+   "lat": 37.766353,
+   "lng": -122.40682,
+   "tags": {
+    "name": "Catharine Clark Gallery",
+    "tourism": "gallery",
+    "opening_hours": "Mo,Su off; Tu-Sa 11:00-18:00",
+    "website": "https://cclarkgallery.com",
+    "addr:housenumber": "248",
+    "addr:street": "Utah Street"
+   }
+  },
+  {
+   "id": "node/13058206962",
+   "lat": 37.786371,
+   "lng": -122.418038,
+   "tags": {
+    "name": "Moth Belly Gallery",
+    "tourism": "gallery",
+    "opening_hours": "Fr-Sa 13:00-18:00",
+    "website": "https://www.mothbelly.org/",
+    "addr:housenumber": "912",
+    "addr:street": "Larkin Street",
+    "addr:postcode": "94109"
+   }
+  },
+  {
+   "id": "node/1306296013",
+   "lat": 37.738099,
+   "lng": -122.372922,
+   "tags": {
+    "name": "Heron's Head Park Bird Blinds",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/1308317902",
+   "lat": 37.795699,
+   "lng": -122.407349,
+   "tags": {
+    "name": "Golden Gate Fortune Cookie Factory",
+    "tourism": "attraction",
+    "website": "https://www.goldengatefortunecookies.com/",
+    "wikidata": "Q5579450",
+    "addr:housenumber": "56",
+    "addr:street": "Ross Alley"
+   }
+  },
+  {
+   "id": "node/13109439483",
+   "lat": 37.79189,
+   "lng": -122.420765,
+   "tags": {
+    "name": "Antique Vibrator Museum",
+    "tourism": "museum",
+    "website": "https://www.goodvibes.com/content/c/antique-vibrators"
+   }
+  },
+  {
+   "id": "node/13154200801",
+   "lat": 37.751692,
+   "lng": -122.418244,
+   "tags": {
+    "name": "Et al. Gallery and Bookshop",
+    "tourism": "gallery",
+    "opening_hours": "We-Sa 12:00-18:00",
+    "website": "https://etaletc.com/",
+    "addr:housenumber": "2831A",
+    "addr:street": "Mission Street",
+    "addr:postcode": "94110",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/1350854580",
+   "lat": 37.77224,
+   "lng": -122.466749,
+   "tags": {
+    "name": "Miguel de Cervantes",
+    "historic": "memorial",
+    "wikidata": "Q96657990"
+   }
+  },
+  {
+   "id": "node/1350891714",
+   "lat": 37.771802,
+   "lng": -122.45883,
+   "tags": {
+    "name": "President Garfield",
+    "historic": "monument",
+    "wikidata": "Q96657699"
+   }
+  },
+  {
+   "id": "node/13666699035",
+   "lat": 37.806384,
+   "lng": -122.421561,
+   "tags": {
+    "name": "Real Old Paper",
+    "tourism": "gallery",
+    "opening_hours": "Tu-Su 11:00-17:00; Mo 12:00-17:00",
+    "website": "https://realoldpaper.com",
+    "addr:housenumber": "777",
+    "addr:street": "Beach Street",
+    "addr:postcode": "94109"
+   }
+  },
+  {
+   "id": "node/13702829029",
+   "lat": 37.786194,
+   "lng": -122.408131,
+   "tags": {
+    "name": "tiat",
+    "tourism": "gallery",
+    "opening_hours": "Th-Fr 12:00-18:00; Sa 12:00-17:00",
+    "website": "https://www.tiat.place/",
+    "addr:housenumber": "151",
+    "addr:street": "Powell Street"
+   }
+  },
+  {
+   "id": "node/13719706299",
+   "lat": 37.753122,
+   "lng": -122.418404,
+   "tags": {
+    "name": "Win Yen Co.",
+    "amenity": "marketplace",
+    "addr:housenumber": "2747",
+    "addr:street": "Mission Street"
+   }
+  },
+  {
+   "id": "node/13719706300",
+   "lat": 37.753193,
+   "lng": -122.418413,
+   "tags": {
+    "name": "Mega Trading Co.",
+    "amenity": "marketplace",
+    "addr:housenumber": "2743",
+    "addr:street": "Mission Street"
+   }
+  },
+  {
+   "id": "node/13724354404",
+   "lat": 37.757085,
+   "lng": -122.42129,
+   "tags": {
+    "name": "Artists Television Access",
+    "tourism": "gallery",
+    "website": "https://www.atasite.org/",
+    "addr:housenumber": "992",
+    "addr:street": "Valencia Street"
+   }
+  },
+  {
+   "id": "node/13731317563",
+   "lat": 37.760617,
+   "lng": -122.421633,
+   "tags": {
+    "name": "Incline Gallery",
+    "tourism": "gallery",
+    "opening_hours": "Sa-Su 13:00-17:00",
+    "website": "https://www.inclinegallerysf.com/",
+    "addr:housenumber": "766",
+    "addr:street": "Valencia Street"
+   }
+  },
+  {
+   "id": "node/13756518071",
+   "lat": 37.756446,
+   "lng": -122.419833,
+   "tags": {
+    "name": "Nelson Duni",
+    "tourism": "gallery",
+    "website": "https://nelsonduni.com/",
+    "addr:housenumber": "35",
+    "addr:street": "Bartlett Street"
+   }
+  },
+  {
+   "id": "node/13762262896",
+   "lat": 37.792195,
+   "lng": -122.40599,
+   "tags": {
+    "name": "Blue Stream Gallery & Wine",
+    "tourism": "gallery",
+    "addr:housenumber": "555",
+    "addr:street": "Grant Avenue",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/13986477183",
+   "lat": 37.78709,
+   "lng": -122.409214,
+   "tags": {
+    "name": "Art Thou Gallery",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/14085937952",
+   "lat": 37.768049,
+   "lng": -122.398233,
+   "tags": {
+    "name": "CCA Wattis Institute for Contemporary Arts",
+    "tourism": "museum",
+    "opening_hours": "We-Sa 12:00-18:00",
+    "website": "https://wattis.org/",
+    "addr:housenumber": "145",
+    "addr:street": "Hooper Street",
+    "addr:postcode": "94107",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/140982962",
+   "lat": 37.801638,
+   "lng": -122.47461,
+   "tags": {
+    "name": "Fort Winfield Scott",
+    "historic": "fort",
+    "wikidata": "Q122566778"
+   }
+  },
+  {
+   "id": "node/1417635914",
+   "lat": 37.810636,
+   "lng": -122.41158,
+   "tags": {
+    "name": "Pier 39 Sea Lions",
+    "tourism": "attraction",
+    "website": "https://www.pier39.com/sealions/",
+    "wikidata": "Q121818212",
+    "wikipedia": "en:Pier 39#Sea lions"
+   }
+  },
+  {
+   "id": "node/1417639584",
+   "lat": 37.791624,
+   "lng": -122.410408,
+   "tags": {
+    "name": "Top of the Mark",
+    "tourism": "viewpoint",
+    "amenity": "bar",
+    "opening_hours": "We-Sa 17:00-21:30 open \"appetizers available\" || We-Sa 16:30-23:30 open; Su,Mo-Tu off",
+    "website": "https://www.ihg.com/intercontinental/hotels/us/en/san-francisco/sfoha/hoteldetail/top-of-the-mark",
+    "wikidata": "Q7824679",
+    "wikipedia": "en:Top of the Mark",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/14240947865",
+   "lat": 37.751667,
+   "lng": -122.418243,
+   "tags": {
+    "name": "Sin Miedo Gallery",
+    "tourism": "gallery",
+    "website": "https://www.sinmiedo.gallery/",
+    "addr:housenumber": "2831",
+    "addr:street": "Mission Street"
+   }
+  },
+  {
+   "id": "node/1478520965",
+   "lat": 37.806167,
+   "lng": -122.431566,
+   "tags": {
+    "name": "Fort Mason Farmer's Market",
+    "amenity": "marketplace"
+   }
+  },
+  {
+   "id": "node/1526523442",
+   "lat": 37.825263,
+   "lng": -122.421361,
+   "tags": {
+    "name": "Alcatraz",
+    "tourism": "viewpoint",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/1543815833",
+   "lat": 37.787305,
+   "lng": -122.405119,
+   "tags": {
+    "name": "Wessling Contemporary",
+    "tourism": "gallery",
+    "addr:housenumber": "39",
+    "addr:street": "Grant Avenue",
+    "addr:postcode": "94108"
+   }
+  },
+  {
+   "id": "node/1612808193",
+   "lat": 37.785414,
+   "lng": -122.404326,
+   "tags": {
+    "name": "The View Lounge",
+    "tourism": "viewpoint",
+    "amenity": "bar",
+    "opening_hours": "Mo-Su 16:00-24:00",
+    "website": "https://www.sfmarquis.com/theview",
+    "addr:housenumber": "55",
+    "addr:street": "4th Street",
+    "addr:postcode": "94103"
+   }
+  },
+  {
+   "id": "node/1901905716",
+   "lat": 37.778901,
+   "lng": -122.418538,
+   "tags": {
+    "name": "Abraham Lincoln",
+    "historic": "memorial",
+    "wikidata": "Q20011487"
+   }
+  },
+  {
+   "id": "node/1948074360",
+   "lat": 37.768668,
+   "lng": -122.475512,
+   "tags": {
+    "name": "Strawberry Hill",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/1990455819",
+   "lat": 37.770143,
+   "lng": -122.44514,
+   "tags": {
+    "name": "Psychedelic SF",
+    "tourism": "gallery",
+    "addr:housenumber": "1399",
+    "addr:street": "Haight Street",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2026996113",
+   "lat": 37.787416,
+   "lng": -122.399331,
+   "tags": {
+    "name": "111 Minna",
+    "tourism": "gallery",
+    "addr:housenumber": "111",
+    "addr:street": "Minna Street"
+   }
+  },
+  {
+   "id": "node/2321299145",
+   "lat": 37.759767,
+   "lng": -122.434754,
+   "tags": {
+    "name": "Queer Arts Featured",
+    "tourism": "gallery",
+    "opening_hours": "Th-Su 12:00-19:00",
+    "website": "https://www.queerartsfeatured.com/",
+    "addr:housenumber": "575",
+    "addr:street": "Castro Street",
+    "addr:postcode": "94114"
+   }
+  },
+  {
+   "id": "node/2321383070",
+   "lat": 37.760766,
+   "lng": -122.435607,
+   "tags": {
+    "name": "GLBT History Museum",
+    "tourism": "museum",
+    "opening_hours": "11:00-18:00; Su 12:00-17:00; Tu closed",
+    "website": "https://www.glbthistory.org/museum/",
+    "wikidata": "Q5513611",
+    "wikipedia": "en:GLBT Historical Society",
+    "addr:housenumber": "4127",
+    "addr:street": "18th Street",
+    "addr:postcode": "94114"
+   }
+  },
+  {
+   "id": "node/2365845678",
+   "lat": 37.810114,
+   "lng": -122.410326,
+   "tags": {
+    "name": "Magowan's Infinite Mirror Maze",
+    "tourism": "attraction",
+    "website": "https://www.magowansinfinitemirrormaze.com/",
+    "wikidata": "Q118622836",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/2496738466",
+   "lat": 37.792019,
+   "lng": -122.40549,
+   "tags": {
+    "name": "Sun Yat-sen's statue",
+    "historic": "memorial",
+    "wikidata": "Q40732369",
+    "wikipedia": "en:Statue of Sun Yat-sen (San Francisco)"
+   }
+  },
+  {
+   "id": "node/2627794649",
+   "lat": 37.788071,
+   "lng": -122.403921,
+   "tags": {
+    "name": "Gallery Paule Anglim",
+    "tourism": "gallery",
+    "website": "https://www.gallerypauleanglim.com/",
+    "wikidata": "Q5518998",
+    "addr:housenumber": "14",
+    "addr:street": "Geary Street",
+    "addr:postcode": "94108"
+   }
+  },
+  {
+   "id": "node/281555367",
+   "lat": 37.798608,
+   "lng": -122.477965,
+   "tags": {
+    "name": "World War II Memorial",
+    "historic": "monument",
+    "wikidata": "Q7984818",
+    "wikipedia": "en:West Coast Memorial to the Missing of World War II"
+   }
+  },
+  {
+   "id": "node/3170592640",
+   "lat": 37.745517,
+   "lng": -122.426721,
+   "tags": {
+    "name": "Lehr's German Specialties",
+    "amenity": "marketplace",
+    "addr:housenumber": "1581",
+    "addr:street": "Church Street"
+   }
+  },
+  {
+   "id": "node/317081601",
+   "lat": 37.8,
+   "lng": -122.459616,
+   "tags": {
+    "name": "California Society of Pioneers Museum and Library",
+    "tourism": "museum",
+    "website": "https://www.californiapioneers.org/",
+    "wikidata": "Q7552409",
+    "addr:housenumber": "101",
+    "addr:street": "Montgomery Street",
+    "addr:postcode": "94129",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/3297579562",
+   "lat": 37.771684,
+   "lng": -122.466043,
+   "tags": {
+    "name": "General John J. Pershing",
+    "historic": "memorial",
+    "wikidata": "Q73563613"
+   }
+  },
+  {
+   "id": "node/3297583624",
+   "lat": 37.771259,
+   "lng": -122.465905,
+   "tags": {
+    "name": "Goethe & Schiller",
+    "historic": "memorial",
+    "wikidata": "Q96657723"
+   }
+  },
+  {
+   "id": "node/332786657",
+   "lat": 37.792223,
+   "lng": -122.458262,
+   "tags": {
+    "name": "Inspiration Point",
+    "tourism": "viewpoint",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/358803219",
+   "lat": 37.768871,
+   "lng": -122.426806,
+   "tags": {
+    "name": "California Volunteers Memorial",
+    "historic": "monument",
+    "wikidata": "Q21593039"
+   }
+  },
+  {
+   "id": "node/358803277",
+   "lat": 37.801745,
+   "lng": -122.421081,
+   "tags": {
+    "name": "George Sterling Memorial",
+    "historic": "memorial",
+    "wikidata": "Q49493469",
+    "wikipedia": "ceb:George Sterling Memorial",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/358803325",
+   "lat": 37.791284,
+   "lng": -122.399213,
+   "tags": {
+    "name": "Mechanics Monument",
+    "historic": "monument",
+    "wikidata": "Q17021242"
+   }
+  },
+  {
+   "id": "node/358803503",
+   "lat": 37.777152,
+   "lng": -122.434971,
+   "tags": {
+    "name": "Alamo Square Historic District",
+    "tourism": "attraction",
+    "historic": "district",
+    "wikidata": "Q49472048"
+   }
+  },
+  {
+   "id": "node/358803681",
+   "lat": 37.722477,
+   "lng": -122.413672,
+   "tags": {
+    "name": "Louis Sutter Playground",
+    "leisure": "park",
+    "website": "https://sfrecpark.org/Facilities/Facility/Details/Louis-Sutter-Playground-254",
+    "wikidata": "Q49519583"
+   }
+  },
+  {
+   "id": "node/358857214",
+   "lat": 37.776944,
+   "lng": -122.447778,
+   "tags": {
+    "name": "Ulrich Field",
+    "leisure": "park",
+    "wikidata": "Q49573025"
+   }
+  },
+  {
+   "id": "node/358857215",
+   "lat": 37.776944,
+   "lng": -122.448056,
+   "tags": {
+    "name": "Benedetti Diamond",
+    "leisure": "park",
+    "wikidata": "Q49474355"
+   }
+  },
+  {
+   "id": "node/3661044804",
+   "lat": 37.794425,
+   "lng": -122.402942,
+   "tags": {
+    "name": "The Shops at 550",
+    "amenity": "marketplace",
+    "website": "https://theshopsat550.com/",
+    "addr:housenumber": "550",
+    "addr:street": "Montgomery Street",
+    "addr:postcode": "94111"
+   }
+  },
+  {
+   "id": "node/368166365",
+   "lat": 37.809246,
+   "lng": -122.415794,
+   "tags": {
+    "name": "Musée Mécanique",
+    "name:en": "Musée Mécanique",
+    "tourism": "museum",
+    "leisure": "amusement_arcade",
+    "opening_hours": "Mo-Su,PH 10:00-20:00",
+    "website": "https://museemecanique.com/",
+    "wikidata": "Q3329291",
+    "wikipedia": "en:Musée Mécanique",
+    "addr:housenumber": "Pier 45",
+    "addr:street": "Fishermans Wharf",
+    "addr:postcode": "94133",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/368173914",
+   "lat": 37.769485,
+   "lng": -122.465976,
+   "tags": {
+    "name": "Steinhart Aquarium",
+    "tourism": "aquarium",
+    "website": "https://www.calacademy.org/exhibits/steinhart-aquarium",
+    "wikidata": "Q98594806"
+   }
+  },
+  {
+   "id": "node/368173972",
+   "lat": 37.806595,
+   "lng": -122.420249,
+   "tags": {
+    "name": "Truhlsen-Marmor Museum of the Eye",
+    "tourism": "museum",
+    "opening_hours": "We-Su 11:00-16:30",
+    "website": "https://www.aao.org/museum-of-the-eye",
+    "wikidata": "Q125195286",
+    "addr:housenumber": "645",
+    "addr:street": "Beach Street",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/368173975",
+   "lat": 37.785207,
+   "lng": -122.44136,
+   "tags": {
+    "name": "Museum of Russian Culture",
+    "tourism": "museum",
+    "opening_hours": "We,Sa 12:00-17:00",
+    "website": "http://www.mrcsf.org/home/",
+    "addr:housenumber": "2450",
+    "addr:street": "Sutter Street",
+    "addr:postcode": "94115",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/368173977",
+   "lat": 37.794275,
+   "lng": -122.403612,
+   "tags": {
+    "name": "San Francisco Historical Society Museum",
+    "tourism": "museum",
+    "opening_hours": "Tu-Sa 10:00-16:00",
+    "website": "https://www.sfhistory.org",
+    "addr:housenumber": "608",
+    "addr:street": "Commercial Street",
+    "addr:postcode": "94111"
+   }
+  },
+  {
+   "id": "node/3790822670",
+   "lat": 37.765538,
+   "lng": -122.450054,
+   "tags": {
+    "name": "Simple",
+    "amenity": "marketplace",
+    "opening_hours": "Mo,We-Fr 11:00-18:00; Tu off; Sa-Su 11:00-17:00",
+    "addr:housenumber": "915",
+    "addr:street": "Cole Street",
+    "addr:postcode": "94117",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/386573810",
+   "lat": 37.78909,
+   "lng": -122.401843,
+   "tags": {
+    "name": "Admission Day Monument",
+    "historic": "monument",
+    "wikidata": "Q16001844"
+   }
+  },
+  {
+   "id": "node/386591692",
+   "lat": 37.793802,
+   "lng": -122.393674,
+   "tags": {
+    "name": "San Francisco Railway Museum",
+    "tourism": "museum",
+    "opening_hours": "Tu-Su 12:00-17:00",
+    "website": "https://www.streetcar.org/museum/",
+    "wikidata": "Q7414098",
+    "addr:housenumber": "77",
+    "addr:street": "Steuart Street",
+    "addr:postcode": "94105",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4022645781",
+   "lat": 37.806968,
+   "lng": -122.431417,
+   "tags": {
+    "name": "Museo Italo Americano",
+    "tourism": "museum",
+    "opening_hours": "Tu-Sa 12:00-16:00; Su 10:00-14:00",
+    "website": "https://museoitaloamericano.org/",
+    "wikidata": "Q11073602",
+    "addr:housenumber": "2",
+    "addr:street": "Marina Boulevard",
+    "addr:postcode": "94123",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/4046025013",
+   "lat": 37.787747,
+   "lng": -122.414159,
+   "tags": {
+    "name": "John Pence Gallery",
+    "tourism": "gallery",
+    "website": "https://www.johnpence.com/",
+    "addr:housenumber": "750",
+    "addr:street": "Post Street",
+    "addr:postcode": "94109"
+   }
+  },
+  {
+   "id": "node/4057348983",
+   "lat": 37.756927,
+   "lng": -122.387959,
+   "tags": {
+    "name": "Museum of Craft and Design",
+    "tourism": "museum",
+    "website": "https://sfmcd.org/",
+    "wikidata": "Q55464119"
+   }
+  },
+  {
+   "id": "node/415567011",
+   "lat": 37.786873,
+   "lng": -122.401522,
+   "tags": {
+    "name": "California Historical Society Museum & Bookstore",
+    "tourism": "museum",
+    "website": "https://californiahistoricalsociety.org/",
+    "wikidata": "Q14053",
+    "addr:housenumber": "678",
+    "addr:street": "Mission Street"
+   }
+  },
+  {
+   "id": "node/415567060",
+   "lat": 37.786469,
+   "lng": -122.401473,
+   "tags": {
+    "name": "Museum of the African Diaspora",
+    "tourism": "museum",
+    "opening_hours": "We-Sa 11:00-18:00; Su 12:00-17:00",
+    "website": "https://www.moadsf.org/",
+    "wikidata": "Q6941067",
+    "addr:housenumber": "685",
+    "addr:street": "Mission Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/417275631",
+   "lat": 37.807468,
+   "lng": -122.42618,
+   "tags": {
+    "name": "San Francisco Sea Scout Base",
+    "tourism": "museum",
+    "website": "https://sites.google.com/view/sf-seascouts/"
+   }
+  },
+  {
+   "id": "node/4202269447",
+   "lat": 37.804013,
+   "lng": -122.4767,
+   "tags": {
+    "name": "Golden Gate Overlook",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/4207307534",
+   "lat": 37.80082,
+   "lng": -122.477962,
+   "tags": {
+    "name": "Pacific Overlook",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/4265327050",
+   "lat": 37.723191,
+   "lng": -122.424541,
+   "tags": {
+    "name": "Watertower View",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/434700934",
+   "lat": 37.80082,
+   "lng": -122.410013,
+   "tags": {
+    "name": "Benjamin Franklin",
+    "historic": "memorial",
+    "wikidata": "Q23016654",
+    "wikipedia": "en:Statue of Benjamin Franklin (San Francisco)"
+   }
+  },
+  {
+   "id": "node/4359145394",
+   "lat": 37.769937,
+   "lng": -122.44677,
+   "tags": {
+    "name": "Counterculture Museum",
+    "tourism": "museum",
+    "opening_hours": "Mo-Tu off; We-Su 11:00-18:00",
+    "website": "https://counterculturemuseum.org",
+    "addr:housenumber": "1485",
+    "addr:street": "Haight Street",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4370295596",
+   "lat": 37.777063,
+   "lng": -122.409438,
+   "tags": {
+    "name": "Langton Labs",
+    "tourism": "gallery",
+    "addr:housenumber": "32",
+    "addr:street": "Langton Street",
+    "addr:postcode": "94103"
+   }
+  },
+  {
+   "id": "node/4370393289",
+   "lat": 37.777056,
+   "lng": -122.410832,
+   "tags": {
+    "name": "Alter Space",
+    "tourism": "gallery",
+    "addr:housenumber": "1158",
+    "addr:street": "Howard Street",
+    "addr:postcode": "94103"
+   }
+  },
+  {
+   "id": "node/4618046867",
+   "lat": 37.770288,
+   "lng": -122.445703,
+   "tags": {
+    "name": "Amal's Deli",
+    "amenity": "marketplace",
+    "building": "retail",
+    "opening_hours": "Mo-Th 10:30-24:00, Fr,Sa 10:30-02:00, Su 10:30-24:00",
+    "addr:housenumber": "1416",
+    "addr:street": "Haight Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4625205008",
+   "lat": 37.788509,
+   "lng": -122.406072,
+   "tags": {
+    "name": "Speciality Shops Art Gallery",
+    "tourism": "gallery",
+    "addr:housenumber": "251",
+    "addr:street": "Post Street"
+   }
+  },
+  {
+   "id": "node/4628517640",
+   "lat": 37.784494,
+   "lng": -122.416631,
+   "tags": {
+    "name": "Tuong Phong",
+    "amenity": "marketplace"
+   }
+  },
+  {
+   "id": "node/4628571737",
+   "lat": 37.788308,
+   "lng": -122.409172,
+   "tags": {
+    "name": "Gallery 444",
+    "tourism": "gallery",
+    "opening_hours": "10:00-17:00",
+    "addr:housenumber": "444",
+    "addr:street": "Post Street"
+   }
+  },
+  {
+   "id": "node/4631688566",
+   "lat": 37.784763,
+   "lng": -122.414607,
+   "tags": {
+    "name": "Amigos",
+    "amenity": "marketplace",
+    "addr:housenumber": "500",
+    "addr:street": "Ellis Street"
+   }
+  },
+  {
+   "id": "node/4659836677",
+   "lat": 37.804932,
+   "lng": -122.468617,
+   "tags": {
+    "name": "House of Air",
+    "tourism": "theme_park",
+    "opening_hours": "Su-Mo 10:00-20:00; Tu-Th 14:00-21:00; Fr-Sa 10:00-22:00",
+    "website": "https://www.houseofair.com/",
+    "wikidata": "Q5914641",
+    "addr:housenumber": "926",
+    "addr:street": "Mason Street",
+    "addr:postcode": "94129"
+   }
+  },
+  {
+   "id": "node/4972243722",
+   "lat": 37.80212,
+   "lng": -122.418716,
+   "tags": {
+    "name": "Lombard Street",
+    "tourism": "attraction",
+    "opening_hours": "24/7",
+    "wikidata": "Q930276",
+    "wikipedia": "en:Lombard Street (San Francisco)",
+    "addr:street": "Lombard Street"
+   }
+  },
+  {
+   "id": "node/5038430321",
+   "lat": 37.806377,
+   "lng": -122.421787,
+   "tags": {
+    "name": "Cartoon Art Museum",
+    "tourism": "museum",
+    "opening_hours": "Mo-Tu, Th-Su 11:00-17:00; Jan 01 off; Jul 04 off; Nov Th[4] off; Dec 25 off",
+    "website": "https://www.cartoonart.org/",
+    "wikidata": "Q1045990",
+    "addr:housenumber": "781",
+    "addr:street": "Beach Street",
+    "addr:postcode": "94109",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/5128563699",
+   "lat": 37.759331,
+   "lng": -122.411463,
+   "tags": {
+    "name": "Southern Exposure",
+    "tourism": "museum",
+    "website": "https://www.soex.org/",
+    "wikidata": "Q14684020",
+    "wikipedia": "en:Southern Exposure (art space)",
+    "addr:housenumber": "3030",
+    "addr:street": "20th Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/5134506932",
+   "lat": 37.781457,
+   "lng": -122.410738,
+   "tags": {
+    "name": "International Art Museum of America",
+    "tourism": "museum",
+    "website": "https://www.iamasf.org/",
+    "wikidata": "Q18325665",
+    "wikipedia": "en:International Art Museum of America",
+    "addr:housenumber": "1025",
+    "addr:street": "Market Street",
+    "addr:postcode": "94103",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/5134621034",
+   "lat": 37.783915,
+   "lng": -122.414121,
+   "tags": {
+    "name": "Tenderloin Museum",
+    "tourism": "museum",
+    "website": "https://www.tenderloinmuseum.org/",
+    "addr:housenumber": "398",
+    "addr:street": "Eddy Street",
+    "addr:postcode": "94102"
+   }
+  },
+  {
+   "id": "node/5135754623",
+   "lat": 37.769166,
+   "lng": -122.468342,
+   "tags": {
+    "name": "Verdi",
+    "name:en": "Verdi",
+    "historic": "memorial",
+    "wikidata": "Q96657722"
+   }
+  },
+  {
+   "id": "node/5135797823",
+   "lat": 37.770896,
+   "lng": -122.474304,
+   "tags": {
+    "name": "Pioneer Mother Monument",
+    "name:en": "Pioneer Mother Monument",
+    "historic": "monument",
+    "wikidata": "Q96658126"
+   }
+  },
+  {
+   "id": "node/5213680421",
+   "lat": 37.798241,
+   "lng": -122.413636,
+   "tags": {
+    "name": "Skyline",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/5423524022",
+   "lat": 37.800252,
+   "lng": -122.418395,
+   "tags": {
+    "name": "Coit Tower & East Bay",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/5423541521",
+   "lat": 37.798486,
+   "lng": -122.417235,
+   "tags": {
+    "name": "3-way Russian Hill view",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/5423541522",
+   "lat": 37.799418,
+   "lng": -122.417401,
+   "tags": {
+    "name": "Coit Tower & Bay Bridge view",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/5427706522",
+   "lat": 37.794149,
+   "lng": -122.394787,
+   "tags": {
+    "name": "Autodesk Gallery",
+    "tourism": "gallery",
+    "website": "https://www.autodesk.com/gallery/overview"
+   }
+  },
+  {
+   "id": "node/5581588797",
+   "lat": 37.798064,
+   "lng": -122.406184,
+   "tags": {
+    "name": "The Beat Museum",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 10:00-19:00; Tu off; We off",
+    "website": "https://www.kerouac.com/",
+    "wikidata": "Q43080164",
+    "addr:housenumber": "540",
+    "addr:street": "Broadway",
+    "addr:postcode": "94133"
+   }
+  },
+  {
+   "id": "node/5613333166",
+   "lat": 37.766055,
+   "lng": -122.419627,
+   "tags": {
+    "name": "Fida Market",
+    "amenity": "marketplace"
+   }
+  },
+  {
+   "id": "node/5735235209",
+   "lat": 37.739051,
+   "lng": -122.415423,
+   "tags": {
+    "name": "Inclusions Gallery",
+    "tourism": "gallery",
+    "opening_hours": "We-Sa 13:00-19:00; Su 13:00-18:00",
+    "website": "https://www.inclusionsgallery.com/",
+    "addr:housenumber": "627",
+    "addr:street": "Cortland Avenue"
+   }
+  },
+  {
+   "id": "node/599157316",
+   "lat": 37.75493,
+   "lng": -122.446642,
+   "tags": {
+    "name": "Christmas Tree Point",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/6032494975",
+   "lat": 37.752579,
+   "lng": -122.414808,
+   "tags": {
+    "name": "Adobe Books and Arts Cooperative",
+    "tourism": "gallery",
+    "opening_hours": "Mo-Su 12:00-19:00",
+    "website": "http://www.adobebooks.com/",
+    "addr:housenumber": "3130",
+    "addr:street": "24th Street",
+    "addr:postcode": "94110",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/6064744363",
+   "lat": 37.797464,
+   "lng": -122.465119,
+   "tags": {
+    "name": "National Cemetery Overlook",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/621529017",
+   "lat": 37.800898,
+   "lng": -122.398526,
+   "tags": {
+    "name": "Exploratorium",
+    "tourism": "museum",
+    "opening_hours": "Tu-Su 10:00-17:00; Jun 19 - Sep 4 Mo-Su 10:00-17:00, Fr 10:00-21:00",
+    "website": "https://www.exploratorium.edu/",
+    "wikidata": "Q206518",
+    "wikipedia": "en:Exploratorium",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/6242792043",
+   "lat": 37.788679,
+   "lng": -122.413807,
+   "tags": {
+    "name": "Hashimoto Contemporary",
+    "tourism": "gallery",
+    "website": "https://www.hashimotocontemporary.com/",
+    "addr:housenumber": "804",
+    "addr:street": "Sutter Street",
+    "addr:postcode": "94109"
+   }
+  },
+  {
+   "id": "node/633021125",
+   "lat": 37.738453,
+   "lng": -122.453181,
+   "tags": {
+    "name": "Mt. Davidson Vista Point",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/6463327128",
+   "lat": 37.771436,
+   "lng": -122.471004,
+   "tags": {
+    "name": "T.G. Masaryk",
+    "historic": "memorial",
+    "wikidata": "Q47516821"
+   }
+  },
+  {
+   "id": "node/6465902729",
+   "lat": 37.779894,
+   "lng": -122.415985,
+   "tags": {
+    "name": "Ashurbanipal",
+    "historic": "memorial",
+    "wikidata": "Q14660880"
+   }
+  },
+  {
+   "id": "node/6468753208",
+   "lat": 37.77225,
+   "lng": -122.465489,
+   "tags": {
+    "name": "Robert Burns",
+    "historic": "memorial",
+    "wikidata": "Q96482951"
+   }
+  },
+  {
+   "id": "node/6468763557",
+   "lat": 37.772287,
+   "lng": -122.466282,
+   "tags": {
+    "name": "Thomas Starr King",
+    "historic": "memorial",
+    "wikidata": "Q105677147"
+   }
+  },
+  {
+   "id": "node/6468818536",
+   "lat": 37.770723,
+   "lng": -122.468457,
+   "tags": {
+    "name": "Roman Gladiator",
+    "historic": "memorial",
+    "wikidata": "Q50808703"
+   }
+  },
+  {
+   "id": "node/6471124710",
+   "lat": 37.751364,
+   "lng": -122.431239,
+   "tags": {
+    "name": "Art Haus",
+    "tourism": "gallery",
+    "opening_hours": "Mo-Fr 10:00-18:00",
+    "website": "https://www.arthaussf.com/",
+    "addr:housenumber": "3977",
+    "addr:street": "24th Street"
+   }
+  },
+  {
+   "id": "node/65328703",
+   "lat": 37.790688,
+   "lng": -122.405594,
+   "tags": {
+    "name": "Dragon Gate",
+    "name:en": "Dragon Gate",
+    "tourism": "attraction",
+    "wikidata": "Q40729318",
+    "wikipedia": "en:Dragon Gate (San Francisco)",
+    "addr:housenumber": "401",
+    "addr:street": "Grant Avenue"
+   }
+  },
+  {
+   "id": "node/6550499869",
+   "lat": 37.772239,
+   "lng": -122.465138,
+   "tags": {
+    "name": "Chaplain William D. McKinnon",
+    "historic": "memorial",
+    "wikidata": "Q96477749"
+   }
+  },
+  {
+   "id": "node/6604085460",
+   "lat": 37.778926,
+   "lng": -122.415593,
+   "tags": {
+    "name": "Mr. and Mrs. George F. Jewett, Jr. Exhibit Gallery",
+    "tourism": "gallery",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/665689214",
+   "lat": 37.796168,
+   "lng": -122.477875,
+   "tags": {
+    "name": "Immigrant Point Overlook",
+    "tourism": "viewpoint",
+    "website": "https://presidio.gov/explore/attractions/immigrant-point-overlook"
+   }
+  },
+  {
+   "id": "node/6693646147",
+   "lat": 37.785738,
+   "lng": -122.429451,
+   "tags": {
+    "name": "Japantown Peace Gallery",
+    "tourism": "museum",
+    "opening_hours": "Mo-Fr 12:00-17:00",
+    "website": "https://www.njahs.org/",
+    "addr:housenumber": "1684",
+    "addr:street": "Post Street",
+    "addr:postcode": "94115",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/6923605960",
+   "lat": 37.741179,
+   "lng": -122.394951,
+   "tags": {
+    "name": "The SF Market",
+    "amenity": "marketplace",
+    "opening_hours": "Mo-Fr 03:00-09:00 || Mo-Fr 03:00+ open \"some businesses\" || Sa 03:00+ open \"some businesses\"",
+    "website": "https://www.thesfmarket.org/"
+   }
+  },
+  {
+   "id": "node/6960882346",
+   "lat": 37.791187,
+   "lng": -122.405606,
+   "tags": {
+    "name": "Heaven Art Gallery",
+    "tourism": "gallery",
+    "addr:housenumber": "444",
+    "addr:street": "Grant Avenue",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/6960892851",
+   "lat": 37.791814,
+   "lng": -122.404487,
+   "tags": {
+    "name": "\"Comfort Women\" Column of Strength",
+    "tourism": "artwork",
+    "historic": "memorial",
+    "wikidata": "Q54958600",
+    "wikipedia": "en:San Francisco Comfort Women Memorial"
+   }
+  },
+  {
+   "id": "node/6960980687",
+   "lat": 37.793272,
+   "lng": -122.406371,
+   "tags": {
+    "name": "WWII Pacific War Memorial Hall",
+    "tourism": "museum",
+    "opening_hours": "Th-Su 10:00-16:00; Mo-We off",
+    "website": "https://www.sfpacificwar.org/",
+    "wikidata": "Q80382835",
+    "addr:housenumber": "809",
+    "addr:street": "Sacramento Street",
+    "addr:postcode": "94108"
+   }
+  },
+  {
+   "id": "node/7045575485",
+   "lat": 37.807502,
+   "lng": -122.420543,
+   "tags": {
+    "name": "San Francisco Maritime Visitor Center",
+    "tourism": "museum",
+    "opening_hours": "Fr-Su 10:00-17:00",
+    "website": "https://www.nps.gov/safr/planyourvisit/the-visitor-center.htm",
+    "wikidata": "Q108325087",
+    "addr:housenumber": "499",
+    "addr:street": "Jefferson Street",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/7216367686",
+   "lat": 37.80348,
+   "lng": -122.420047,
+   "tags": {
+    "name": "View on Golden Gate Bridge & Richardson Bay",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/7221410485",
+   "lat": 37.792841,
+   "lng": -122.446487,
+   "tags": {
+    "name": "Lyon Steps",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/7283489385",
+   "lat": 37.8035,
+   "lng": -122.42168,
+   "tags": {
+    "name": "Alcatraz and Hyde St Pier ships",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/806240639",
+   "lat": 37.793857,
+   "lng": -122.40882,
+   "tags": {
+    "name": "Chinese Historical Society of America",
+    "tourism": "museum",
+    "opening_hours": "We-Su 11:00-16:00; Jan 1 off, Jun 19 off, Jul 4 off, Nov Th[4] off, Dec 24-25 off",
+    "website": "https://www.chsa.org/",
+    "addr:housenumber": "965",
+    "addr:street": "Clay Street",
+    "addr:postcode": "94108",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/822484002",
+   "lat": 37.776224,
+   "lng": -122.432786,
+   "tags": {
+    "name": "Painted Ladies",
+    "name:en": "Painted Ladies",
+    "tourism": "attraction",
+    "wikidata": "Q1418042",
+    "wikipedia": "en:Painted ladies",
+    "addr:street": "Steiner Street",
+    "addr:postcode": "94117"
+   }
+  },
+  {
+   "id": "node/8727307961",
+   "lat": 37.792844,
+   "lng": -122.40614,
+   "tags": {
+    "name": "Jessica Silverman",
+    "tourism": "gallery",
+    "website": "https://jessicasilvermangallery.com/",
+    "addr:housenumber": "621",
+    "addr:street": "Grant Avenue",
+    "addr:postcode": "94108"
+   }
+  },
+  {
+   "id": "node/8973091799",
+   "lat": 37.759825,
+   "lng": -122.388244,
+   "tags": {
+    "name": "Letterform Archive",
+    "tourism": "museum",
+    "opening_hours": "Th 13:00-20:00; Fr-Su 11:00-18:00",
+    "website": "https://letterformarchive.org/",
+    "wikidata": "Q41168759",
+    "wikipedia": "en:Letterform Archive",
+    "addr:housenumber": "2325",
+    "addr:street": "3rd Street"
+   }
+  },
+  {
+   "id": "node/9322450624",
+   "lat": 37.7853,
+   "lng": -122.410933,
+   "tags": {
+    "name": "Cityscape Lounge",
+    "tourism": "viewpoint",
+    "amenity": "bar",
+    "opening_hours": "Mo-Su 16:00-24:00",
+    "website": "https://www.cityscapesf.com/",
+    "addr:housenumber": "333",
+    "addr:street": "O'Farrell Street"
+   }
+  },
+  {
+   "id": "node/9339899670",
+   "lat": 37.789485,
+   "lng": -122.407407,
+   "tags": {
+    "name": "Sin Titulo",
+    "tourism": "gallery",
+    "addr:housenumber": "418",
+    "addr:street": "Sutter Street",
+    "fee": "no",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/9339899671",
+   "lat": 37.7892,
+   "lng": -122.4079,
+   "tags": {
+    "name": "Montague Gallery",
+    "tourism": "gallery",
+    "opening_hours": "Tu-Sa 11:00-17:00 || \"by appointment\"",
+    "website": "https://montaguegallery.com/",
+    "addr:housenumber": "445",
+    "addr:street": "Sutter Street",
+    "addr:postcode": "94108"
+   }
+  },
+  {
+   "id": "node/9398686060",
+   "lat": 37.795574,
+   "lng": -122.407421,
+   "tags": {
+    "name": "41ross",
+    "tourism": "gallery",
+    "opening_hours": "We-Sa 11:00-16:00",
+    "website": "https://www.41ross.org/",
+    "addr:housenumber": "41",
+    "addr:street": "Ross Alley",
+    "addr:postcode": "94108"
+   }
+  },
+  {
+   "id": "node/9408415650",
+   "lat": 37.788274,
+   "lng": -122.415429,
+   "tags": {
+    "name": "Vanitas Contemporary",
+    "tourism": "gallery",
+    "opening_hours": "Fr-Sa 12:00-17:00; Tu-Th \"by appointment\"",
+    "website": "https://www.vanitascontemporary.com/",
+    "addr:housenumber": "909",
+    "addr:street": "Sutter Street"
+   }
+  },
+  {
+   "id": "node/9408415651",
+   "lat": 37.78828,
+   "lng": -122.415368,
+   "tags": {
+    "name": "Soft Times",
+    "tourism": "gallery",
+    "opening_hours": "We-Fr 12:00-17:00; Sa 11:00-16:00",
+    "website": "https://www.softtimesgallery.com/",
+    "addr:housenumber": "905",
+    "addr:street": "Sutter Street",
+    "addr:postcode": "94109"
+   }
+  },
+  {
+   "id": "node/9544205106",
+   "lat": 37.790349,
+   "lng": -122.405733,
+   "tags": {
+    "name": "Serge Sorokko Gallery",
+    "tourism": "gallery",
+    "website": "https://www.sorokko.com/",
+    "addr:housenumber": "365",
+    "addr:street": "Grant Avenue",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/9569949544",
+   "lat": 37.78748,
+   "lng": -122.391329,
+   "tags": {
+    "name": "Bay Lights Viewpoint",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/9590578299",
+   "lat": 37.789249,
+   "lng": -122.405489,
+   "tags": {
+    "name": "Gefen Gallery",
+    "tourism": "gallery",
+    "website": "https://gefengallery.com/315-grant-ave/"
+   }
+  },
+  {
+   "id": "node/9659806925",
+   "lat": 37.786585,
+   "lng": -122.415253,
+   "tags": {
+    "name": "Mini Mart",
+    "tourism": "gallery",
+    "website": "https://www.minimartsf.com/",
+    "addr:housenumber": "720",
+    "addr:street": "Geary Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/9672970883",
+   "lat": 37.77478,
+   "lng": -122.422729,
+   "tags": {
+    "name": "Tint Gallery",
+    "tourism": "gallery",
+    "opening_hours": "We-Sa 13:00-19:00; Su 13:00-17:00",
+    "website": "https://www.thetintgallery.com/",
+    "addr:housenumber": "149",
+    "addr:street": "Gough Street",
+    "addr:postcode": "94102"
+   }
+  },
+  {
+   "id": "node/9849528027",
+   "lat": 37.788732,
+   "lng": -122.413378,
+   "tags": {
+    "name": "Rebecca Camacho Presents",
+    "tourism": "gallery",
+    "addr:housenumber": "794",
+    "addr:street": "Sutter Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/9849528031",
+   "lat": 37.788672,
+   "lng": -122.413852,
+   "tags": {
+    "name": "Glass Rice",
+    "tourism": "gallery",
+    "addr:housenumber": "808",
+    "addr:street": "Sutter Street"
+   }
+  },
+  {
+   "id": "node/9854608515",
+   "lat": 37.804147,
+   "lng": -122.421056,
+   "tags": {
+    "name": "Sue & Phil Marineau View Terrace",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/9996421217",
+   "lat": 37.78806,
+   "lng": -122.41866,
+   "tags": {
+    "name": "Modern Eden Gallery",
+    "tourism": "gallery",
+    "website": "https://www.moderneden.com/",
+    "addr:housenumber": "1100",
+    "addr:street": "Sutter Street",
+    "addr:postcode": "94109"
+   }
+  },
+  {
+   "id": "relation/13790250",
+   "lat": 37.795939,
+   "lng": -122.3966,
+   "tags": {
+    "name": "Sue Bierman Park",
+    "leisure": "park",
+    "website": "https://sfrecpark.org/Facilities/Facility/Details/Sue-Bierman-Park-378",
+    "wikidata": "Q19605769",
+    "wikipedia": "en:Sue Bierman Park"
+   }
+  },
+  {
+   "id": "relation/1652482",
+   "lat": 37.771498,
+   "lng": -122.46872,
+   "tags": {
+    "name": "de Young Museum",
+    "tourism": "museum",
+    "building": "museum",
+    "opening_hours": "Tu-Su 09:30-17:15; Mo off",
+    "website": "https://www.famsf.org/",
+    "wikidata": "Q1470276",
+    "wikipedia": "en:De Young Museum",
+    "addr:housenumber": "50",
+    "addr:street": "Hagiwara Tea Garden Drive",
+    "addr:postcode": "94118",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "relation/16800880",
+   "lat": 37.738779,
+   "lng": -122.45479,
+   "tags": {
+    "name": "Mount Davidson Park",
+    "leisure": "park",
+    "wikidata": "Q49528904",
+    "addr:housenumber": "150",
+    "addr:street": "Dalewood Way",
+    "addr:postcode": "94127"
+   }
+  },
+  {
+   "id": "relation/1735771",
+   "lat": 37.780141,
+   "lng": -122.41389,
+   "tags": {
+    "name": "United Nations Plaza",
+    "tourism": "attraction",
+    "wikidata": "Q1311705",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "relation/17413960",
+   "lat": 37.75246,
+   "lng": -122.447586,
+   "tags": {
+    "name": "Twin Peaks",
+    "tourism": "attraction",
+    "wikidata": "Q1344297",
+    "wikipedia": "en:Twin Peaks (San Francisco)",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "relation/20197830",
+   "lat": 37.826729,
+   "lng": -122.423004,
+   "tags": {
+    "name": "Alcatraz Island",
+    "leisure": "park",
+    "website": "https://www.nps.gov/alca/",
+    "wikidata": "Q131354",
+    "wikipedia": "en:Alcatraz Island"
+   }
+  },
+  {
+   "id": "relation/3307684",
+   "lat": 37.759413,
+   "lng": -122.457282,
+   "tags": {
+    "name": "Mount Sutro Open Space Reserve",
+    "leisure": "nature_reserve",
+    "website": "https://www.ucsf.edu/about/locations/mount-sutro-open-space-reserve",
+    "wikidata": "Q49332492",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "relation/6260731",
+   "lat": 37.797637,
+   "lng": -122.481836,
+   "tags": {
+    "name": "Baker Beach (Clothing-Optional Area)",
+    "tourism": "attraction",
+    "website": "https://nudebeachmap.com/places/baker-beach/",
+    "wikidata": "Q684879",
+    "wikipedia": "en:Baker Beach"
+   }
+  },
+  {
+   "id": "relation/6260732",
+   "lat": 37.793153,
+   "lng": -122.48474,
+   "tags": {
+    "name": "Baker Beach",
+    "tourism": "attraction",
+    "wikidata": "Q684879",
+    "wikipedia": "en:Baker Beach"
+   }
+  },
+  {
+   "id": "relation/8346137",
+   "lat": 37.798916,
+   "lng": -122.466182,
+   "tags": {
+    "name": "Presidio of San Francisco",
+    "name:en": "Presidio of San Francisco",
+    "leisure": "park",
+    "website": "https://www.presidio.gov/",
+    "wikidata": "Q1755360",
+    "wikipedia": "en:Presidio of San Francisco"
+   }
+  },
+  {
+   "id": "way/1065401157",
+   "lat": 37.769668,
+   "lng": -122.462224,
+   "tags": {
+    "name": "National AIDS Memorial Grove",
+    "historic": "memorial",
+    "website": "https://www.aidsmemorial.org",
+    "wikidata": "Q293541",
+    "wikipedia": "en:AIDS Memorial Grove"
+   }
+  },
+  {
+   "id": "way/1078027190",
+   "lat": 37.803662,
+   "lng": -122.455761,
+   "tags": {
+    "name": "Field Station",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Mo-Tu off; We-Fr 11:00-16:00; Sa-Su 10:00-17:00",
+    "addr:housenumber": "601",
+    "addr:street": "Mason Street"
+   }
+  },
+  {
+   "id": "way/114151111",
+   "lat": 37.801107,
+   "lng": -122.416915,
+   "tags": {
+    "name": "Michelangelo Playground",
+    "leisure": "park",
+    "wikidata": "Q49525837"
+   }
+  },
+  {
+   "id": "way/114151121",
+   "lat": 37.798226,
+   "lng": -122.413298,
+   "tags": {
+    "name": "Ina Coolbrith Park",
+    "leisure": "park",
+    "opening_hours": "Mo-Su 05:00-24:00",
+    "website": "https://sfrecpark.org/Facilities/Facility/Details/Ina-Coolbrith-Park-175",
+    "wikidata": "Q49504637",
+    "wikipedia": "ceb:Ina Coolbrith Park"
+   }
+  },
+  {
+   "id": "way/115433818",
+   "lat": 37.764932,
+   "lng": -122.433457,
+   "tags": {
+    "name": "Noe & Beaver Mini Park Community Garden",
+    "leisure": "park",
+    "website": "https://sfrecpark.org/destination/noe-beaver-mini-park/",
+    "wikidata": "Q49531880",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/116771007",
+   "lat": 37.756228,
+   "lng": -122.39692,
+   "tags": {
+    "name": "Potrero Hill Recreation Center",
+    "leisure": "park",
+    "website": "https://www.sfparksalliance.org/our-parks/parks/potrero-hill-playground-rec-center",
+    "wikidata": "Q49545419",
+    "addr:housenumber": "801",
+    "addr:street": "Arkansas Street",
+    "addr:postcode": "94107"
+   }
+  },
+  {
+   "id": "way/1189071442",
+   "lat": 37.794942,
+   "lng": -122.392693,
+   "tags": {
+    "name": "Fog City Flea Trading Post",
+    "amenity": "marketplace",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/120479804",
+   "lat": 37.772056,
+   "lng": -122.471293,
+   "tags": {
+    "name": "Rose Garden",
+    "tourism": "attraction",
+    "leisure": "garden",
+    "wikidata": "Q96376966"
+   }
+  },
+  {
+   "id": "way/120480164",
+   "lat": 37.767369,
+   "lng": -122.471632,
+   "tags": {
+    "name": "San Francisco Botanical Garden",
+    "tourism": "attraction",
+    "leisure": "garden",
+    "website": "https://www.sfbg.org/",
+    "wikidata": "Q589884",
+    "wikipedia": "en:San Francisco Botanical Garden",
+    "addr:housenumber": "1199",
+    "addr:street": "9th Avenue",
+    "addr:postcode": "94122",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/1280748838",
+   "lat": 37.808675,
+   "lng": -122.40686,
+   "tags": {
+    "name": "SS Jeremiah O'Brien",
+    "tourism": "attraction",
+    "historic": "ship",
+    "building": "ship",
+    "opening_hours": "Mo-Su 10:00-16:00; Nov Th[4] off; Dec 24 off; Dec 25 off; Jan 01 off",
+    "website": "https://www.ssjeremiahobrien.org/",
+    "wikidata": "Q2464180"
+   }
+  },
+  {
+   "id": "way/147777246",
+   "lat": 37.759389,
+   "lng": -122.422158,
+   "tags": {
+    "name": "Mission Playground",
+    "leisure": "park",
+    "wikidata": "Q49527146"
+   }
+  },
+  {
+   "id": "way/1501253434",
+   "lat": 37.740776,
+   "lng": -122.377465,
+   "tags": {
+    "name": "City Grazing Goat Cuddle Zone",
+    "tourism": "zoo",
+    "website": "https://www.citygrazing.org/",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/153905784",
+   "lat": 37.773254,
+   "lng": -122.426733,
+   "tags": {
+    "name": "Koshland Park",
+    "leisure": "park",
+    "opening_hours": "05:00-24:00",
+    "website": "https://sfrecpark.org/facilities/facility/details/koshlandpark-181",
+    "wikidata": "Q49511993"
+   }
+  },
+  {
+   "id": "way/158602261",
+   "lat": 37.769397,
+   "lng": -122.482024,
+   "tags": {
+    "name": "Golden Gate Park",
+    "leisure": "park",
+    "wikidata": "Q635559",
+    "wikipedia": "en:Golden Gate Park"
+   }
+  },
+  {
+   "id": "way/162518010",
+   "lat": 37.78007,
+   "lng": -122.465013,
+   "tags": {
+    "name": "Muriel Leff Mini Park",
+    "leisure": "park",
+    "opening_hours": "05:00-24:00",
+    "wikidata": "Q49472861",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/165579428",
+   "lat": 37.810361,
+   "lng": -122.42279,
+   "tags": {
+    "name": "Alma",
+    "tourism": "attraction",
+    "historic": "ship",
+    "building": "ship",
+    "wikidata": "Q2156353",
+    "wikipedia": "en:Alma (1891)"
+   }
+  },
+  {
+   "id": "way/165601339",
+   "lat": 37.809957,
+   "lng": -122.416401,
+   "tags": {
+    "name": "USS Pampanito",
+    "tourism": "museum",
+    "historic": "ship",
+    "building": "ship",
+    "opening_hours": "Mo-Su 10:00-18:00",
+    "website": "https://maritime.org/pamphome.htm",
+    "wikidata": "Q2548504",
+    "wikipedia": "en:USS Pampanito",
+    "fee": "yes",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/16751151",
+   "lat": 37.772309,
+   "lng": -122.44742,
+   "tags": {
+    "name": "Panhandle",
+    "leisure": "park",
+    "wikidata": "Q7131005"
+   }
+  },
+  {
+   "id": "way/16751737",
+   "lat": 37.791181,
+   "lng": -122.437674,
+   "tags": {
+    "name": "Alta Plaza Park",
+    "leisure": "park",
+    "opening_hours": "05:00-24:00",
+    "website": "https://sfrecpark.org/destination/alta-plaza-park/",
+    "wikidata": "Q4735994",
+    "wikipedia": "en:Alta Plaza Park"
+   }
+  },
+  {
+   "id": "way/16751838",
+   "lat": 37.791554,
+   "lng": -122.427632,
+   "tags": {
+    "name": "Lafayette Park",
+    "leisure": "park",
+    "wikidata": "Q6471488",
+    "wikipedia": "en:Lafayette Park (San Francisco)"
+   }
+  },
+  {
+   "id": "way/16752188",
+   "lat": 37.743424,
+   "lng": -122.413507,
+   "tags": {
+    "name": "Bernal Heights Park",
+    "leisure": "park",
+    "opening_hours": "Mo-Su 05:00-00:00",
+    "website": "https://sfrecpark.org/facilities/facility/details/Bernal-Heights-Park-151",
+    "wikidata": "Q49474489"
+   }
+  },
+  {
+   "id": "way/16752409",
+   "lat": 37.737213,
+   "lng": -122.419946,
+   "tags": {
+    "name": "Holly Park",
+    "leisure": "park",
+    "wikidata": "Q48790355"
+   }
+  },
+  {
+   "id": "way/16761472",
+   "lat": 37.806599,
+   "lng": -122.439129,
+   "tags": {
+    "name": "Marina Green",
+    "leisure": "park",
+    "wikidata": "Q3293150"
+   }
+  },
+  {
+   "id": "way/172250597",
+   "lat": 37.789312,
+   "lng": -122.405985,
+   "tags": {
+    "name": "Caldwell Synder Gallery",
+    "tourism": "gallery",
+    "building": "yes",
+    "addr:housenumber": "341",
+    "addr:street": "Sutter Street",
+    "fee": "no",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/173886707",
+   "lat": 37.781292,
+   "lng": -122.40271,
+   "tags": {
+    "name": "American Bookbinders Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Tu-Sa 10:00-16:00",
+    "website": "https://www.bookbindersmuseum.org/",
+    "wikidata": "Q65072545"
+   }
+  },
+  {
+   "id": "way/174999601",
+   "lat": 37.795329,
+   "lng": -122.392396,
+   "tags": {
+    "name": "Mohandas K. Gandhi",
+    "historic": "memorial",
+    "wikidata": "Q17011318",
+    "wikipedia": "en:Statue of Mahatma Gandhi (San Francisco)"
+   }
+  },
+  {
+   "id": "way/18583270",
+   "lat": 37.800846,
+   "lng": -122.410123,
+   "tags": {
+    "name": "Washington Square Park",
+    "leisure": "park",
+    "wikidata": "Q7972206",
+    "wikipedia": "en:Washington Square (San Francisco)"
+   }
+  },
+  {
+   "id": "way/186071977",
+   "lat": 37.789482,
+   "lng": -122.387731,
+   "tags": {
+    "name": "Pier 24",
+    "tourism": "museum",
+    "building": "yes",
+    "website": "https://www.pier24.org/",
+    "wikidata": "Q25831311",
+    "addr:housenumber": "94105",
+    "addr:street": "The Embarcadero",
+    "addr:postcode": "94105",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/206662303",
+   "lat": 37.798328,
+   "lng": -122.421948,
+   "tags": {
+    "name": "Alhambra Theatre",
+    "tourism": "attraction",
+    "building": "yes",
+    "wikidata": "Q4724449",
+    "wikipedia": "en:Alhambra Theatre (San Francisco)",
+    "addr:housenumber": "2330",
+    "addr:street": "Polk Street",
+    "addr:postcode": "94109"
+   }
+  },
+  {
+   "id": "way/219036309",
+   "lat": 37.762345,
+   "lng": -122.436147,
+   "tags": {
+    "name": "Pink Triangle Memorial",
+    "leisure": "park",
+    "website": "https://pinktrianglememorial.org/",
+    "wikidata": "Q1893618",
+    "wikipedia": "en:Pink Triangle Park"
+   }
+  },
+  {
+   "id": "way/222822105",
+   "lat": 37.746277,
+   "lng": -122.418101,
+   "tags": {
+    "name": "Coso Square",
+    "leisure": "park",
+    "wikidata": "Q49480299"
+   }
+  },
+  {
+   "id": "way/224941774",
+   "lat": 37.802747,
+   "lng": -122.405678,
+   "tags": {
+    "name": "Pioneer Park",
+    "leisure": "park",
+    "website": "https://sfrecpark.org/destination/telegraph-hill-pioneer-park/",
+    "wikidata": "Q7196747",
+    "wikipedia": "en:Pioneer Park (San Francisco)"
+   }
+  },
+  {
+   "id": "way/225182880",
+   "lat": 37.764769,
+   "lng": -122.438898,
+   "tags": {
+    "name": "Corona Heights Park",
+    "leisure": "park",
+    "wikidata": "Q5172129",
+    "wikipedia": "en:Corona Heights Park",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/225526801",
+   "lat": 37.762275,
+   "lng": -122.435692,
+   "tags": {
+    "name": "Harvey Milk Plaza",
+    "leisure": "park",
+    "website": "https://www.harveymilkplaza.org/",
+    "wikidata": "Q43401507",
+    "wikipedia": "en:Harvey Milk Plaza"
+   }
+  },
+  {
+   "id": "way/226290099",
+   "lat": 37.733551,
+   "lng": -122.447502,
+   "tags": {
+    "name": "Sunnyside Playground",
+    "leisure": "park",
+    "wikidata": "Q49567634"
+   }
+  },
+  {
+   "id": "way/23750468",
+   "lat": 37.780853,
+   "lng": -122.388179,
+   "tags": {
+    "name": "South Beach Park",
+    "leisure": "park",
+    "wikidata": "Q118478411"
+   }
+  },
+  {
+   "id": "way/23750483",
+   "lat": 37.764329,
+   "lng": -122.399626,
+   "tags": {
+    "name": "Jackson Park",
+    "leisure": "park",
+    "wikidata": "Q49506183"
+   }
+  },
+  {
+   "id": "way/23871270",
+   "lat": 37.759762,
+   "lng": -122.427132,
+   "tags": {
+    "name": "Mission Dolores Park",
+    "leisure": "park",
+    "opening_hours": "Mo-Su 06:00-22:00",
+    "website": "https://sfrecpark.org/destination/mission-dolores-park/",
+    "wikidata": "Q11519",
+    "wikipedia": "en:Mission Dolores Park",
+    "addr:postcode": "94114"
+   }
+  },
+  {
+   "id": "way/23881517",
+   "lat": 37.749833,
+   "lng": -122.406228,
+   "tags": {
+    "name": "Rolph Playground",
+    "leisure": "park",
+    "wikidata": "Q49553318"
+   }
+  },
+  {
+   "id": "way/23908184",
+   "lat": 37.747073,
+   "lng": -122.412043,
+   "tags": {
+    "name": "Precita Park",
+    "leisure": "park",
+    "wikidata": "Q49474490"
+   }
+  },
+  {
+   "id": "way/23916482",
+   "lat": 37.797514,
+   "lng": -122.399026,
+   "tags": {
+    "name": "Sydney G. Walton Square",
+    "leisure": "park",
+    "wikidata": "Q7660214"
+   }
+  },
+  {
+   "id": "way/24052083",
+   "lat": 37.781591,
+   "lng": -122.393971,
+   "tags": {
+    "name": "South Park",
+    "leisure": "park",
+    "wikidata": "Q3492264",
+    "wikipedia": "en:South Park, San Francisco"
+   }
+  },
+  {
+   "id": "way/24222973",
+   "lat": 37.795166,
+   "lng": -122.402786,
+   "tags": {
+    "name": "Transamerica Pyramid",
+    "name:en": "Transamerica Pyramid",
+    "tourism": "attraction",
+    "building": "yes",
+    "opening_hours": "Mo-Sa 11:00-17:00; Su 12:00-18:00",
+    "website": "https://transamericapyramid.com",
+    "wikidata": "Q216865",
+    "wikipedia": "en:Transamerica Pyramid",
+    "addr:housenumber": "600",
+    "addr:street": "Montgomery Street",
+    "addr:postcode": "94111",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/24253472",
+   "lat": 37.750217,
+   "lng": -122.412254,
+   "tags": {
+    "name": "Garfield Square",
+    "leisure": "park",
+    "wikidata": "Q5523101"
+   }
+  },
+  {
+   "id": "way/24445970",
+   "lat": 37.750457,
+   "lng": -122.40513,
+   "tags": {
+    "name": "Potrero Del Sol Park",
+    "leisure": "park",
+    "wikidata": "Q49545414"
+   }
+  },
+  {
+   "id": "way/24547834",
+   "lat": 37.758961,
+   "lng": -122.404772,
+   "tags": {
+    "name": "McKinley Square",
+    "leisure": "park",
+    "website": "https://sfrecpark.org/Facilities/Facility/Details/McKinley-Square-352",
+    "wikidata": "Q49523840"
+   }
+  },
+  {
+   "id": "way/24562831",
+   "lat": 37.724891,
+   "lng": -122.444405,
+   "tags": {
+    "name": "Balboa Park",
+    "leisure": "park",
+    "wikidata": "Q3624755"
+   }
+  },
+  {
+   "id": "way/24562854",
+   "lat": 37.769848,
+   "lng": -122.433401,
+   "tags": {
+    "name": "Duboce Park",
+    "leisure": "park",
+    "website": "https://sfrecpark.org/Facilities/Facility/Details/Duboce-Park-164",
+    "wikidata": "Q5311049",
+    "wikipedia": "en:Duboce Park"
+   }
+  },
+  {
+   "id": "way/24562872",
+   "lat": 37.802134,
+   "lng": -122.43315,
+   "tags": {
+    "name": "Moscone Recreation Center",
+    "leisure": "park",
+    "wikidata": "Q14683416"
+   }
+  },
+  {
+   "id": "way/24563073",
+   "lat": 37.785596,
+   "lng": -122.402101,
+   "tags": {
+    "name": "Yerba Buena Center for the Arts Gallery",
+    "tourism": "museum",
+    "building": "yes",
+    "website": "https://www.ybca.org/",
+    "wikidata": "Q1884883"
+   }
+  },
+  {
+   "id": "way/24588037",
+   "lat": 37.780245,
+   "lng": -122.415998,
+   "tags": {
+    "name": "Asian Art Museum of San Francisco",
+    "name:en": "Asian Art Museum of San Francisco",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Th 13:00-20:00; Fr-Mo 10:00-17:00",
+    "wikidata": "Q727277",
+    "wikipedia": "en:Asian Art Museum (San Francisco)",
+    "addr:housenumber": "200",
+    "addr:street": "Larkin Street",
+    "addr:postcode": "94102",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/25278818",
+   "lat": 37.787934,
+   "lng": -122.407517,
+   "tags": {
+    "name": "Union Square",
+    "leisure": "park",
+    "wikidata": "Q49573226",
+    "wikipedia": "en:Union Square, San Francisco"
+   }
+  },
+  {
+   "id": "way/256442765",
+   "lat": 37.764185,
+   "lng": -122.426812,
+   "tags": {
+    "name": "Old Mission Dolores",
+    "amenity": "place_of_worship",
+    "historic": "church",
+    "building": "yes",
+    "website": "https://www.missiondolores.org/old-mission",
+    "wikidata": "Q1000321",
+    "wikipedia": "en:Mission San Francisco de Asís",
+    "addr:housenumber": "320",
+    "addr:street": "Dolores Street"
+   }
+  },
+  {
+   "id": "way/256993595",
+   "lat": 37.793279,
+   "lng": -122.424963,
+   "tags": {
+    "name": "Haas-Lilienthal House",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "24/7 off",
+    "website": "https://www.haas-lilienthalhouse.org/",
+    "wikidata": "Q5636548",
+    "wikipedia": "en:Haas–Lilienthal House",
+    "addr:housenumber": "2007",
+    "addr:street": "Franklin Street",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/257035814",
+   "lat": 37.777259,
+   "lng": -122.406571,
+   "tags": {
+    "name": "Community Garden",
+    "leisure": "garden",
+    "opening_hours": "07:00-21:00",
+    "website": "https://sfrecpark.org/destination/victoria-manalo-draves-park/victoria-manalo-draves-community-garden/",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/257344295",
+   "lat": 37.766193,
+   "lng": -122.386127,
+   "tags": {
+    "name": "Agua Vista Park",
+    "leisure": "park",
+    "wikidata": "Q49471956"
+   }
+  },
+  {
+   "id": "way/25751184",
+   "lat": 37.802655,
+   "lng": -122.401338,
+   "tags": {
+    "name": "Levi's Plaza",
+    "leisure": "park",
+    "wikidata": "Q6535334"
+   }
+  },
+  {
+   "id": "way/261129576",
+   "lat": 37.751753,
+   "lng": -122.455382,
+   "tags": {
+    "name": "Midtown Terrace Park and Sutro Recreation Center",
+    "leisure": "park",
+    "website": "https://sfrecpark.org/Facilities/Facility/Details/Midtown-Terrace-Playground-258",
+    "wikidata": "Q49526103"
+   }
+  },
+  {
+   "id": "way/262577281",
+   "lat": 37.790414,
+   "lng": -122.44623,
+   "tags": {
+    "name": "Swedenborgian Church of San Francisco",
+    "amenity": "place_of_worship",
+    "historic": "church",
+    "building": "yes",
+    "wikidata": "Q182435",
+    "wikipedia": "en:Swedenborgian Church (San Francisco, California)",
+    "addr:housenumber": "2107",
+    "addr:street": "Lyon Street"
+   }
+  },
+  {
+   "id": "way/26278429",
+   "lat": 37.759866,
+   "lng": -122.447581,
+   "tags": {
+    "name": "Tank Hill",
+    "leisure": "park",
+    "opening_hours": "Mo-Su 05:00-00:00",
+    "wikidata": "Q7683479",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/263823315",
+   "lat": 37.772799,
+   "lng": -122.438285,
+   "tags": {
+    "name": "Mish House",
+    "tourism": "attraction",
+    "building": "yes",
+    "wikidata": "Q115320151",
+    "wikipedia": "en:Mish House",
+    "addr:housenumber": "1153",
+    "addr:street": "Oak Street"
+   }
+  },
+  {
+   "id": "way/27092661",
+   "lat": 37.762601,
+   "lng": -122.451498,
+   "tags": {
+    "name": "Grattan Playground",
+    "leisure": "park",
+    "wikidata": "Q49495457",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/27104863",
+   "lat": 37.805871,
+   "lng": -122.422949,
+   "tags": {
+    "name": "Ghirardelli Square",
+    "tourism": "attraction",
+    "historic": "landmark",
+    "opening_hours": "11:00-21:00",
+    "wikidata": "Q5556730"
+   }
+  },
+  {
+   "id": "way/27146063",
+   "lat": 37.794901,
+   "lng": -122.394648,
+   "tags": {
+    "name": "Embarcadero Plaza",
+    "leisure": "park",
+    "wikidata": "Q49486854"
+   }
+  },
+  {
+   "id": "way/27239292",
+   "lat": 37.753971,
+   "lng": -122.383324,
+   "tags": {
+    "name": "Warm Water Cove Park",
+    "leisure": "park",
+    "wikidata": "Q7969580",
+    "wikipedia": "en:Warm Water Cove"
+   }
+  },
+  {
+   "id": "way/273575059",
+   "lat": 37.783602,
+   "lng": -122.449617,
+   "tags": {
+    "name": "Gadar Memorial",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "We 10:00-13:00",
+    "website": "https://www.cgisf.gov.in/page/gadar-memorial-hall/",
+    "wikidata": "Q59769856",
+    "addr:housenumber": "5",
+    "addr:street": "Wood Street",
+    "addr:postcode": "94118"
+   }
+  },
+  {
+   "id": "way/27656676",
+   "lat": 37.776131,
+   "lng": -122.388496,
+   "tags": {
+    "name": "China Basin Park",
+    "leisure": "park",
+    "opening_hours": "06:00-22:00",
+    "wikidata": "Q125997100"
+   }
+  },
+  {
+   "id": "way/27657304",
+   "lat": 37.749483,
+   "lng": -122.421997,
+   "tags": {
+    "name": "Juri Commons",
+    "leisure": "park",
+    "wikidata": "Q49509077"
+   }
+  },
+  {
+   "id": "way/27996789",
+   "lat": 37.826321,
+   "lng": -122.42192,
+   "tags": {
+    "name": "Warden's House",
+    "historic": "ruins",
+    "building": "ruins",
+    "wikidata": "Q1142648",
+    "wikipedia": "en:Warden's House (Alcatraz Island)"
+   }
+  },
+  {
+   "id": "way/284764947",
+   "lat": 37.779489,
+   "lng": -122.41761,
+   "tags": {
+    "name": "Civic Center Plaza",
+    "leisure": "park",
+    "wikidata": "Q49478335"
+   }
+  },
+  {
+   "id": "way/28671926",
+   "lat": 37.738942,
+   "lng": -122.372201,
+   "tags": {
+    "name": "Heron's Head Park",
+    "leisure": "park",
+    "wikidata": "Q23016936"
+   }
+  },
+  {
+   "id": "way/28695389",
+   "lat": 37.769827,
+   "lng": -122.466092,
+   "tags": {
+    "name": "California Academy of Sciences",
+    "tourism": "museum",
+    "building": "museum",
+    "opening_hours": "Mo-Sa 09:30-17:00; Su 11:00-17:00",
+    "website": "https://www.calacademy.org/",
+    "wikidata": "Q134486471",
+    "addr:housenumber": "55",
+    "addr:street": "Music Concourse Drive",
+    "addr:postcode": "94118",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/28716696",
+   "lat": 37.717554,
+   "lng": -122.418106,
+   "tags": {
+    "name": "John McLaren Park",
+    "leisure": "park",
+    "wikidata": "Q14683311",
+    "wikipedia": "en:John McLaren Park"
+   }
+  },
+  {
+   "id": "way/28824850",
+   "lat": 37.802377,
+   "lng": -122.405834,
+   "tags": {
+    "name": "Coit Tower",
+    "tourism": "viewpoint",
+    "historic": "building",
+    "building": "yes",
+    "opening_hours": "Apr-Oct Mo-Su 10:00-06:00; Nov-Mar Mo-Su 10:00-05:00; Dec Th[4] off; Dec 25 off; Jan 1 off",
+    "website": "https://coittower.org",
+    "wikidata": "Q1107297",
+    "wikipedia": "en:Coit Tower",
+    "fee": "yes",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/288340246",
+   "lat": 37.801369,
+   "lng": -122.45871,
+   "tags": {
+    "name": "Walt Disney Family Museum",
+    "tourism": "museum",
+    "building": "museum",
+    "opening_hours": "Th-Su 10:00-17:30; Dec 24,Dec 31 10:00-16:00; Nov Th[4] off; Dec 25 off; Jan 01 off",
+    "website": "https://waltdisney.org/",
+    "wikidata": "Q2415048",
+    "addr:housenumber": "104",
+    "addr:street": "Montgomery Street",
+    "addr:postcode": "94129",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/288365549",
+   "lat": 37.805428,
+   "lng": -122.467059,
+   "tags": {
+    "name": "Greater Farallones Marine Sanctuary Visitor Center",
+    "tourism": "museum",
+    "historic": "maritime",
+    "building": "museum",
+    "website": "https://farallones.noaa.gov/about/",
+    "addr:housenumber": "1903",
+    "addr:street": "Marine Drive"
+   }
+  },
+  {
+   "id": "way/288371295",
+   "lat": 37.802918,
+   "lng": -122.448385,
+   "tags": {
+    "name": "Palace of Fine Arts",
+    "tourism": "attraction",
+    "building": "temple",
+    "wikidata": "Q966263",
+    "wikipedia": "en:Palace of Fine Arts",
+    "addr:housenumber": "3301",
+    "addr:street": "Lyon Street",
+    "addr:postcode": "94123"
+   }
+  },
+  {
+   "id": "way/288376862",
+   "lat": 37.802831,
+   "lng": -122.462707,
+   "tags": {
+    "name": "Military Intelligence Service Historic Learning Center",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Sa-Su 12:00-17:00",
+    "website": "https://www.njahs.org/building-640/",
+    "addr:housenumber": "640",
+    "addr:street": "Mason Street"
+   }
+  },
+  {
+   "id": "way/288396169",
+   "lat": 37.808792,
+   "lng": -122.409333,
+   "tags": {
+    "name": "Aquarium of the Bay",
+    "tourism": "aquarium",
+    "building": "yes",
+    "opening_hours": "Mo-Su 09:00-20:00",
+    "website": "https://www.aquariumofthebay.org/",
+    "wikidata": "Q4782760",
+    "wikipedia": "en:Aquarium of the Bay",
+    "addr:postcode": "94133"
+   }
+  },
+  {
+   "id": "way/28841124",
+   "lat": 37.792042,
+   "lng": -122.405009,
+   "tags": {
+    "name": "Saint Mary's Square",
+    "leisure": "park",
+    "wikidata": "Q40731422",
+    "wikipedia": "en:Saint Mary's Square"
+   }
+  },
+  {
+   "id": "way/28842443",
+   "lat": 37.78465,
+   "lng": -122.402404,
+   "tags": {
+    "name": "Yerba Buena Gardens",
+    "leisure": "park",
+    "opening_hours": "Mo-Su,PH sunrise-22:00",
+    "website": "https://www.yerbabuenagardens.com",
+    "wikidata": "Q2600143",
+    "wikipedia": "en:Yerba Buena Gardens",
+    "addr:housenumber": "750",
+    "addr:street": "Howard Street",
+    "addr:postcode": "94103"
+   }
+  },
+  {
+   "id": "way/288473102",
+   "lat": 37.807982,
+   "lng": -122.41542,
+   "tags": {
+    "name": "Ripley's Believe it or Not",
+    "name:en": "Ripley's Believe it or Not",
+    "tourism": "museum",
+    "building": "yes",
+    "addr:housenumber": "175",
+    "addr:street": "Jefferson Street",
+    "addr:postcode": "94133",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/288511103",
+   "lat": 37.792532,
+   "lng": -122.403024,
+   "tags": {
+    "name": "Institute of Contemporary Art San Francisco",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "We, Fr-Su 11:00-17:00; Th 11:00-19:00",
+    "website": "https://www.icasf.org",
+    "addr:housenumber": "345",
+    "addr:street": "Montgomery Street",
+    "addr:postcode": "94104",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/288716388",
+   "lat": 37.783073,
+   "lng": -122.40168,
+   "tags": {
+    "name": "Children's Creativity Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "website": "https://creativity.org/",
+    "wikidata": "Q8069802",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/29285191",
+   "lat": 37.732924,
+   "lng": -122.403138,
+   "tags": {
+    "name": "Silver Terrace Playground",
+    "leisure": "park",
+    "website": "https://sfrecpark.org/Facilities/Facility/Details/Silver-Terrace-Playground-267",
+    "wikidata": "Q49561796"
+   }
+  },
+  {
+   "id": "way/30029681",
+   "lat": 37.794885,
+   "lng": -122.41192,
+   "tags": {
+    "name": "Cable Car Powerhouse and Barn",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Tu-Th 10:00-16:00; Fr-Su 10:00-17:00; Mo 00:00-24:00",
+    "website": "http://www.cablecarmuseum.org",
+    "wikidata": "Q5496957",
+    "wikipedia": "en:San Francisco Cable Car Museum",
+    "addr:housenumber": "1201",
+    "addr:street": "Mason Street",
+    "addr:postcode": "94108"
+   }
+  },
+  {
+   "id": "way/30675038",
+   "lat": 37.772615,
+   "lng": -122.460224,
+   "tags": {
+    "name": "Conservatory of Flowers",
+    "tourism": "attraction",
+    "amenity": "arts_centre",
+    "historic": "building",
+    "building": "conservatory",
+    "opening_hours": "Mo-Tu,Th-Su 10:00-16:30; We off",
+    "website": "https://conservatoryofflowers.org/",
+    "wikidata": "Q5163145",
+    "wikipedia": "en:Conservatory of Flowers",
+    "addr:housenumber": "100",
+    "addr:street": "John F Kennedy Drive",
+    "addr:postcode": "94118-4504"
+   }
+  },
+  {
+   "id": "way/30896932",
+   "lat": 37.769876,
+   "lng": -122.468569,
+   "tags": {
+    "name": "Spreckels Temple of Music",
+    "tourism": "attraction",
+    "amenity": "theatre",
+    "building": "yes",
+    "wikidata": "Q110559749"
+   }
+  },
+  {
+   "id": "way/30899551",
+   "lat": 37.770548,
+   "lng": -122.467628,
+   "tags": {
+    "name": "Music Concourse",
+    "leisure": "park",
+    "wikidata": "Q6941496",
+    "wikipedia": "en:Music Concourse"
+   }
+  },
+  {
+   "id": "way/30900516",
+   "lat": 37.770343,
+   "lng": -122.470052,
+   "tags": {
+    "name": "Japanese Tea Garden",
+    "tourism": "attraction",
+    "leisure": "garden",
+    "website": "https://gggp.org/japanese-tea-garden/",
+    "wikidata": "Q3270367",
+    "wikipedia": "en:Japanese Tea Garden (San Francisco)",
+    "addr:housenumber": "75",
+    "addr:street": "Hagiwara Tea Garden Drive",
+    "addr:postcode": "94118",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/32839638",
+   "lat": 37.807004,
+   "lng": -122.423462,
+   "tags": {
+    "name": "Aquatic Park Historic District",
+    "leisure": "park",
+    "historic": "district",
+    "wikidata": "Q2475631",
+    "wikipedia": "en:Aquatic Park Historic District"
+   }
+  },
+  {
+   "id": "way/32839686",
+   "lat": 37.80641,
+   "lng": -122.4239,
+   "tags": {
+    "name": "National Maritime Museum",
+    "name:en": "National Maritime Museum",
+    "tourism": "museum",
+    "historic": "building",
+    "building": "yes",
+    "opening_hours": "We-Su,PH 10:00-16:00; Mo-Tu off; Jan 01 off; Nov Th[4] off; Dec 25 off",
+    "website": "https://www.nps.gov/safr/planyourvisit/maritime-museum.htm"
+   }
+  },
+  {
+   "id": "way/32857635",
+   "lat": 37.800463,
+   "lng": -122.410651,
+   "tags": {
+    "name": "Marini Plaza",
+    "leisure": "park",
+    "wikidata": "Q49521779"
+   }
+  },
+  {
+   "id": "way/32858754",
+   "lat": 37.797635,
+   "lng": -122.406573,
+   "tags": {
+    "name": "City Lights Booksellers",
+    "name:en": "City Lights Booksellers",
+    "tourism": "attraction",
+    "building": "yes",
+    "opening_hours": "Mo-Su 12:00-20:00",
+    "website": "https://citylights.com/bookstore/",
+    "wikidata": "Q2394278",
+    "wikipedia": "en:City Lights Bookstore",
+    "addr:housenumber": "261",
+    "addr:street": "Columbus Avenue",
+    "addr:postcode": "94133",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/32862802",
+   "lat": 37.791219,
+   "lng": -122.389609,
+   "tags": {
+    "name": "Rincon Park",
+    "leisure": "park",
+    "wikidata": "Q50824363"
+   }
+  },
+  {
+   "id": "way/32946958",
+   "lat": 37.792174,
+   "lng": -122.412177,
+   "tags": {
+    "name": "Huntington Park",
+    "leisure": "park",
+    "wikidata": "Q49504137",
+    "wikipedia": "en:Huntington Park (San Francisco)"
+   }
+  },
+  {
+   "id": "way/33619301",
+   "lat": 37.784499,
+   "lng": -122.412119,
+   "tags": {
+    "name": "Boeddeker Park",
+    "leisure": "park",
+    "opening_hours": "09:00-19:00",
+    "wikidata": "Q48817891",
+    "addr:housenumber": "240",
+    "addr:street": "Eddy Street",
+    "addr:postcode": "94102"
+   }
+  },
+  {
+   "id": "way/35050562",
+   "lat": 37.785407,
+   "lng": -122.418221,
+   "tags": {
+    "name": "Sergeant John Macaulay Park",
+    "leisure": "park",
+    "opening_hours": "Mo-Su 07:00-08:00",
+    "website": "https://sfrecpark.org/Facilities/Facility/Details/Sgt-John-Macaulay-Park-204",
+    "wikidata": "Q49533810",
+    "wikipedia": "ceb:O'Farrell-Larkin Mini-Park"
+   }
+  },
+  {
+   "id": "way/35065721",
+   "lat": 37.802492,
+   "lng": -122.412159,
+   "tags": {
+    "name": "Joe DiMaggio Playground",
+    "leisure": "park",
+    "website": "http://dimaggioplayground.org/",
+    "wikidata": "Q49532201",
+    "addr:housenumber": "651",
+    "addr:street": "Lombard Street",
+    "addr:postcode": "94133"
+   }
+  },
+  {
+   "id": "way/353551814",
+   "lat": 37.75177,
+   "lng": -122.464916,
+   "tags": {
+    "name": "J.P. Murphy Playground",
+    "leisure": "park",
+    "website": "https://sfrecpark.org/Facilities/Facility/Details/JP-Murphy-Playground-246",
+    "wikidata": "Q49529856"
+   }
+  },
+  {
+   "id": "way/35800082",
+   "lat": 37.740365,
+   "lng": -122.44383,
+   "tags": {
+    "name": "Glen Canyon Park",
+    "leisure": "park",
+    "opening_hours": "Mo-Su 05:00-00:00",
+    "website": "https://www.sfrecpark.org/Facilities/Facility/Details/Glen-Canyon-Park-336",
+    "wikidata": "Q5567631"
+   }
+  },
+  {
+   "id": "way/362162006",
+   "lat": 37.783098,
+   "lng": -122.461226,
+   "tags": {
+    "name": "Clement St. Farmers Market",
+    "amenity": "marketplace",
+    "opening_hours": "Su 09:00-14:00"
+   }
+  },
+  {
+   "id": "way/367545863",
+   "lat": 37.768833,
+   "lng": -122.466904,
+   "tags": {
+    "name": "Shakespeare Garden",
+    "leisure": "garden",
+    "wikidata": "Q49560283",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/367586034",
+   "lat": 37.735973,
+   "lng": -122.410044,
+   "tags": {
+    "name": "Alemany Farmers Market",
+    "amenity": "marketplace",
+    "website": "https://www.sf.gov/location--alemany-farmers-market"
+   }
+  },
+  {
+   "id": "way/36950438",
+   "lat": 37.785769,
+   "lng": -122.446799,
+   "tags": {
+    "name": "San Francisco Fire Department Pioneer Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Th-Su 13:00-16:00",
+    "website": "https://guardiansofthecity.org/",
+    "addr:housenumber": "655",
+    "addr:street": "Presidio Avenue",
+    "addr:postcode": "94115",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/381074858",
+   "lat": 37.738465,
+   "lng": -122.416177,
+   "tags": {
+    "name": "Bernal Recreation Center",
+    "leisure": "park",
+    "wikidata": "Q49474492"
+   }
+  },
+  {
+   "id": "way/38224213",
+   "lat": 37.766298,
+   "lng": -122.448806,
+   "tags": {
+    "name": "Sunset Tunnel Park",
+    "leisure": "park",
+    "wikidata": "Q49568050"
+   }
+  },
+  {
+   "id": "way/39997532",
+   "lat": 37.729346,
+   "lng": -122.409802,
+   "tags": {
+    "name": "Palega Recreation Center",
+    "leisure": "park",
+    "wikidata": "Q49545272"
+   }
+  },
+  {
+   "id": "way/401354283",
+   "lat": 37.787247,
+   "lng": -122.469449,
+   "tags": {
+    "name": "Mountain Lake Park",
+    "leisure": "park",
+    "wikidata": "Q6925042",
+    "wikipedia": "Mountain Lake Park"
+   }
+  },
+  {
+   "id": "way/401508551",
+   "lat": 37.738631,
+   "lng": -122.44934,
+   "tags": {
+    "name": "Miraloma Playground",
+    "leisure": "park",
+    "wikidata": "Q49527052"
+   }
+  },
+  {
+   "id": "way/402061421",
+   "lat": 37.75645,
+   "lng": -122.47184,
+   "tags": {
+    "name": "Grand View Park",
+    "leisure": "park",
+    "wikidata": "Q5595236"
+   }
+  },
+  {
+   "id": "way/402111597",
+   "lat": 37.802108,
+   "lng": -122.418808,
+   "tags": {
+    "name": "Lombard Street",
+    "name:en": "Lombard Street",
+    "tourism": "attraction",
+    "wikidata": "Q930276",
+    "wikipedia": "en:Lombard Street (San Francisco)"
+   }
+  },
+  {
+   "id": "way/414033716",
+   "lat": 37.732887,
+   "lng": -122.383494,
+   "tags": {
+    "name": "Hilltop Park",
+    "leisure": "park",
+    "wikidata": "Q49501755"
+   }
+  },
+  {
+   "id": "way/41692824",
+   "lat": 37.785936,
+   "lng": -122.400629,
+   "tags": {
+    "name": "San Francisco Museum of Modern Art",
+    "name:en": "San Francisco Museum of Modern Art",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Mo-Tu,Fr-Su 10:00-17:00; Th 12:00-20:00; May 27-Sep 4 10:00-20:00; Dec 25 off",
+    "website": "https://www.sfmoma.org/",
+    "wikidata": "Q913672",
+    "wikipedia": "en:San Francisco Museum of Modern Art",
+    "addr:housenumber": "151",
+    "addr:street": "3rd Street",
+    "addr:postcode": "94103",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/421294976",
+   "lat": 37.79402,
+   "lng": -122.482624,
+   "tags": {
+    "name": "Battery Chamberlin",
+    "historic": "ruins",
+    "building": "bunker",
+    "wikidata": "Q4869826",
+    "wikipedia": "en:Battery Chamberlin",
+    "addr:housenumber": "1621",
+    "addr:street": "Battery Chamberlin Road"
+   }
+  },
+  {
+   "id": "way/444230154",
+   "lat": 37.772036,
+   "lng": -122.468327,
+   "tags": {
+    "name": "Hamon Tower",
+    "tourism": "viewpoint",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/52243885",
+   "lat": 37.784843,
+   "lng": -122.484559,
+   "tags": {
+    "name": "Rochambeau Playground",
+    "leisure": "park",
+    "wikidata": "Q49552361"
+   }
+  },
+  {
+   "id": "way/545408838",
+   "lat": 37.78299,
+   "lng": -122.435204,
+   "tags": {
+    "name": "Raymond Kimbell Playground",
+    "leisure": "park",
+    "opening_hours": "05:00-24:00",
+    "website": "https://sfrecpark.org/destination/raymond-kimbell-playground/",
+    "wikidata": "Q49510784"
+   }
+  },
+  {
+   "id": "way/550601226",
+   "lat": 37.779703,
+   "lng": -122.41595,
+   "tags": {
+    "name": "Pioneer Monument",
+    "historic": "monument",
+    "website": "https://siris-artinventories.si.edu/ipac20/ipac.jsp?uri=full=3100001~!13942!0",
+    "wikidata": "Q14683658"
+   }
+  },
+  {
+   "id": "way/558731934",
+   "lat": 37.795538,
+   "lng": -122.39343,
+   "tags": {
+    "name": "San Francisco Ferry Building",
+    "tourism": "attraction",
+    "amenity": "ferry_terminal",
+    "historic": "landmark",
+    "building": "terminal",
+    "opening_hours": "Mo-Fr 07:00-22:00; Sa 07:00-22:00; Su 07:00-22:00",
+    "website": "https://www.ferrybuildingmarketplace.com/",
+    "wikidata": "Q1408117",
+    "addr:housenumber": "1",
+    "addr:street": "The Embarcadero",
+    "addr:postcode": "94111",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/605977669",
+   "lat": 37.779077,
+   "lng": -122.42085,
+   "tags": {
+    "name": "San Francisco Veterans Memorial",
+    "historic": "memorial",
+    "wikidata": "Q60747186"
+   }
+  },
+  {
+   "id": "way/616479962",
+   "lat": 37.787935,
+   "lng": -122.40752,
+   "tags": {
+    "name": "Dewey Monument",
+    "historic": "monument",
+    "wikidata": "Q5268201"
+   }
+  },
+  {
+   "id": "way/676621358",
+   "lat": 37.770854,
+   "lng": -122.390055,
+   "tags": {
+    "name": "Boom & Bust Course",
+    "tourism": "theme_park",
+    "leisure": "miniature_golf",
+    "opening_hours": "Mo 11:00-16:00; Tu-Su 11:00-21:00",
+    "website": "https://www.stagecoachgreens.com/",
+    "addr:housenumber": "1379",
+    "addr:street": "4th Street",
+    "addr:postcode": "94158"
+   }
+  },
+  {
+   "id": "way/68705976",
+   "lat": 37.797466,
+   "lng": -122.427661,
+   "tags": {
+    "name": "Allyne Park",
+    "leisure": "park",
+    "website": "https://sfrecpark.org/destination/allyne-park/",
+    "wikidata": "Q49472265",
+    "addr:housenumber": "2609",
+    "addr:street": "Gough Street",
+    "addr:postcode": "94123"
+   }
+  },
+  {
+   "id": "way/688747551",
+   "lat": 37.769836,
+   "lng": -122.411909,
+   "tags": {
+    "name": "SoMa StrEat Food Park",
+    "amenity": "marketplace",
+    "opening_hours": "Mo-Fr 11:00-15:00,17:00-21:00; Sa 11:00-22:00, Su 11:00-17:00",
+    "website": "http://www.somastreatfoodpark.com",
+    "addr:housenumber": "428",
+    "addr:street": "11th Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/68883459",
+   "lat": 37.731034,
+   "lng": -122.383942,
+   "tags": {
+    "name": "Adam Rodgers Park",
+    "leisure": "park",
+    "website": "https://sfrecpark.org/destination/adam-rodgers-park/",
+    "wikidata": "Q49471862",
+    "addr:postcode": "94124"
+   }
+  },
+  {
+   "id": "way/69060030",
+   "lat": 37.795765,
+   "lng": -122.420665,
+   "tags": {
+    "name": "Helen Wills Park",
+    "leisure": "park",
+    "wikidata": "Q49499676",
+    "addr:postcode": "94109"
+   }
+  },
+  {
+   "id": "way/690982876",
+   "lat": 37.759896,
+   "lng": -122.436556,
+   "tags": {
+    "name": "Eureka Valley Recreation Center",
+    "leisure": "park",
+    "website": "https://sfrecpark.org/destination/eureka-valley-rec-center/",
+    "wikidata": "Q49487648",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/705309578",
+   "lat": 37.764391,
+   "lng": -122.438183,
+   "tags": {
+    "name": "Randall Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Tu-Sa 10:00-17:00; Jan 1 off; Jun 19 off; Jul 4 off; Nov 11 off; Nov Th[4] off; Nov Th[4] +1 day off; Dec 25 off",
+    "website": "https://randallmuseum.org/",
+    "wikidata": "Q7291583",
+    "addr:housenumber": "199",
+    "addr:street": "Museum Way",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/745183964",
+   "lat": 37.776361,
+   "lng": -122.434696,
+   "tags": {
+    "name": "Alamo Square",
+    "tourism": "attraction",
+    "leisure": "park",
+    "opening_hours": "Mo-Fr 08:00-17:00",
+    "wikidata": "Q118533801",
+    "wikipedia": "en:Alamo Square, San Francisco",
+    "addr:postcode": "94117"
+   }
+  },
+  {
+   "id": "way/7459901",
+   "lat": 37.76834,
+   "lng": -122.441104,
+   "tags": {
+    "name": "Buena Vista Park",
+    "leisure": "park",
+    "wikidata": "Q2749189"
+   }
+  },
+  {
+   "id": "way/772905204",
+   "lat": 37.80396,
+   "lng": -122.42088,
+   "tags": {
+    "name": "Francisco Park",
+    "leisure": "park",
+    "opening_hours": "Mo-Su 06:00-22:00",
+    "website": "https://www.franciscopark.org/",
+    "wikidata": "Q112061568"
+   }
+  },
+  {
+   "id": "way/82207054",
+   "lat": 37.806331,
+   "lng": -122.428996,
+   "tags": {
+    "name": "Fort Mason",
+    "leisure": "park",
+    "website": "https://www.nps.gov/goga/index.htm",
+    "wikidata": "Q948933"
+   }
+  },
+  {
+   "id": "way/82480067",
+   "lat": 37.725973,
+   "lng": -122.393244,
+   "tags": {
+    "name": "Bayview Playground",
+    "leisure": "park",
+    "wikidata": "Q49473933"
+   }
+  },
+  {
+   "id": "way/853562207",
+   "lat": 37.762834,
+   "lng": -122.386969,
+   "tags": {
+    "name": "Crane Cove Park",
+    "leisure": "park",
+    "website": "https://sfport.com/parks#tab-12315-pane-6",
+    "wikidata": "Q108550863"
+   }
+  },
+  {
+   "id": "way/85684053",
+   "lat": 37.747849,
+   "lng": -122.438795,
+   "tags": {
+    "name": "Douglass Playground",
+    "leisure": "park",
+    "website": "https://sfrecpark.org/destination/douglass-playground/",
+    "wikidata": "Q49484017"
+   }
+  },
+  {
+   "id": "way/85686582",
+   "lat": 37.733879,
+   "lng": -122.439459,
+   "tags": {
+    "name": "Dorothy W. Erskine Park",
+    "leisure": "park",
+    "wikidata": "Q49483857"
+   }
+  },
+  {
+   "id": "way/85796801",
+   "lat": 37.773387,
+   "lng": -122.486939,
+   "tags": {
+    "name": "Fulton Playground",
+    "leisure": "park",
+    "wikidata": "Q49492447"
+   }
+  },
+  {
+   "id": "way/85796807",
+   "lat": 37.78514,
+   "lng": -122.478128,
+   "tags": {
+    "name": "Richmond Playground",
+    "leisure": "park",
+    "wikidata": "Q49550024"
+   }
+  },
+  {
+   "id": "way/85880982",
+   "lat": 37.743635,
+   "lng": -122.439866,
+   "tags": {
+    "name": "George Christopher Playground",
+    "leisure": "park",
+    "wikidata": "Q49493370"
+   }
+  },
+  {
+   "id": "way/85891396",
+   "lat": 37.740634,
+   "lng": -122.434376,
+   "tags": {
+    "name": "Walter Haas Playground",
+    "leisure": "park",
+    "wikidata": "Q49576583"
+   }
+  },
+  {
+   "id": "way/85891397",
+   "lat": 37.741323,
+   "lng": -122.433195,
+   "tags": {
+    "name": "Billy Goat Hill",
+    "leisure": "park",
+    "wikidata": "Q49474817"
+   }
+  },
+  {
+   "id": "way/86124597",
+   "lat": 37.779418,
+   "lng": -122.47771,
+   "tags": {
+    "name": "Argonne Playground",
+    "leisure": "park",
+    "wikidata": "Q49472859",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/86303734",
+   "lat": 37.738746,
+   "lng": -122.384601,
+   "tags": {
+    "name": "Youngblood-Coleman Playground",
+    "leisure": "park",
+    "wikidata": "Q49583755",
+    "addr:housenumber": "1398",
+    "addr:street": "Hudson Avenue",
+    "addr:postcode": "94124"
+   }
+  },
+  {
+   "id": "way/91114607",
+   "lat": 37.802895,
+   "lng": -122.456293,
+   "tags": {
+    "name": "Presidio Tunnel Tops",
+    "leisure": "park",
+    "website": "https://www.presidiotunneltops.gov/",
+    "wikidata": "Q121870410",
+    "addr:housenumber": "210",
+    "addr:street": "Lincoln Boulevard",
+    "addr:postcode": "94129"
+   }
+  },
+  {
+   "id": "way/941913562",
+   "lat": 37.779039,
+   "lng": -122.421074,
+   "tags": {
+    "name": "War Memorial Court",
+    "leisure": "park",
+    "wikidata": "Q49524679"
+   }
+  },
+  {
+   "id": "way/996538295",
+   "lat": 37.785051,
+   "lng": -122.431261,
+   "tags": {
+    "name": "Tokaido Arts",
+    "tourism": "gallery",
+    "opening_hours": "We-Sa 12:00-18:00; Su 11:00-17:00",
+    "website": "https://tokaidoarts.com/",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/99687084",
+   "lat": 37.788475,
+   "lng": -122.449617,
+   "tags": {
+    "name": "Presidio Heights Playground",
+    "leisure": "park",
+    "wikidata": "Q49546034"
+   }
+  },
+  {
+   "id": "way/99687086",
+   "lat": 37.783977,
+   "lng": -122.450944,
+   "tags": {
+    "name": "Laurel Hill Playground",
+    "leisure": "park",
+    "wikidata": "Q49515005"
+   }
+  }
+ ]
+}

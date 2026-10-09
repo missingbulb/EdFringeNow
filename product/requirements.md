@@ -627,7 +627,7 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   🔧 _Logic leaf._ <!-- req-gallery:14.6 -->
   </details>
 
-- `14.7` Everything else is packed greedily, earliest finish first, with fully deterministic tie-breaks — the same inputs always give the same plan.
+- `14.7` Everything else is packed greedily, earliest finish first (within a capped day's spread, `14.11`), with fully deterministic tie-breaks — the same inputs always give the same plan.
 
   <details><summary>Proof</summary>
 
@@ -653,6 +653,26 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   <details><summary>Proof</summary>
 
   🔧 _Logic leaf._ <!-- req-gallery:14.10 -->
+  </details>
+
+- `14.11` A day held to fewer shows than it could fit spreads them across its hours, rather than packing the earliest.
+
+  <details><summary>Proof</summary>
+
+  🔧 _Logic leaf._ <!-- req-gallery:14.11 -->
+  </details>
+
+  <details><summary>Notes</summary>
+
+  The per-day maximum is a question of pace, not of when the day ends: a
+  reader who asks for two shows a day has not asked to be done by lunch. So
+  the hours the day's shows span are shared out between its places, and each
+  part of the day takes a show before any takes a second. Scarcity comes
+  first — a show with fewer performances left to it takes its hour whatever
+  part of the day it is in, and earliest finish orders only shows equally
+  scarce — and a reader who wants the day to end early says so with the day's
+  end, which the spread then works within. The same rule as the festival
+  planner's `20.22`, from the same shared code.
   </details>
 
 ## 15. Preferences and the schedule
@@ -910,7 +930,14 @@ trips, so the experience can be played with before any of it touches live data.
 
 ---
 
-# Part V — the Jerusalem Comedy Festival planner (`/planJerusalem`)
+# Part V — the festival planner (`/planNG`)
+
+One page plans every festival in the registry (`site/data/festivals/index.json`)
+on an open calendar: a year's timeline across the top chooses which festival to
+zoom in on (section 23), and the period, the pool of performances, the theme and
+the trip links follow from that choice. Sections 18–21 were written against the
+Jerusalem Comedy Festival and still prove the page with that programme focused;
+nothing in them is Jerusalem's alone.
 
 ## 18. A second festival on the same board
 
@@ -918,22 +945,24 @@ A five-night festival in Jerusalem whose programme is in Hebrew, planned from
 the calendar rather than from a list: section 20 is the page's own model, and
 the Edinburgh planner's grid survives beneath it as a drawer. The page is
 festival-shaped rather than Jerusalem-shaped: everything that differs between
-the two — the city, the dates, the storage keys, the palette, the partner
-links — comes from one descriptor, so a third festival is a descriptor and a
-theme rather than a third page.
+festivals — the city, the dates, the palette, the partner links — comes from the
+registry and one presentation entry per festival, so another festival is data
+and a theme rather than another page.
 
-- `18.1` The page chrome: the festival's own wordmark, the three-way site nav with **Jerusalem** active, and the festival's dates.
+- `18.1` The page chrome is the site's own and the same for every festival: the **EdFringeNow** wordmark and the three-way site nav with **Festivals** active.
 
   ![jerusalem-chrome.18.1](requirements/screen/cases/jerusalem-chrome.18.1.png) <!-- req-gallery:18.1 -->
 
   <details><summary>Notes</summary>
 
-  The nav links are `Now` (`../`), `Plan` (`../plan/`) and `Jerusalem`
-  (`./`, active). The header hint reads the festival's own run, not
-  Edinburgh's.
+  The nav links are `Now` (`/`), `Plan` (`/plan/`) and `Festivals` (`./`,
+  active). The bar names no festival and shows no dates, and keeps the house
+  palette whichever festival is in focus: the picture is the header on
+  Jerusalem above the header on Haifa. Which festival the page plans is the
+  timeline's and the page title's to say.
   </details>
 
-- `18.2` The programme, listed to browse and search, inside the drawer beneath the calendar.
+- `18.2` The programme, listed to browse, inside the drawer beneath the calendar.
 
   ![jerusalem-board.18.2](requirements/screen/cases/jerusalem-board.18.2.png) <!-- req-gallery:18.2 -->
 
@@ -943,6 +972,7 @@ theme rather than a third page.
   calendar drafts from the whole programme there is nothing a reader must star
   before the page is useful. The list is therefore a way to reach a particular
   show, not the way in: it lives in the drawer, opened from under the calendar.
+  Searching it is What you are here for's Find a show line (`21.24`).
   </details>
 
 - `18.3` A Hebrew show name renders in Hebrew, right-to-left, wherever the page names a show.
@@ -984,24 +1014,26 @@ theme rather than a third page.
   zero.
   </details>
 
-- `18.6` "Find a bed" opens Booking.com's Hebrew edition for Jerusalem, on the window's own nights.
+- `18.6` The bed link for Jerusalem is Booking.com's Hebrew edition, in shekels, on the nights it is given.
 
-  🚩 _Behavior leaf._ <!-- req-gallery:18.6 -->
+  🔧 _Logic leaf._ <!-- req-gallery:18.6 -->
 
   <details><summary>Notes</summary>
 
-  Asserted as the URL the link carries, never followed: the `searchresults.he.html`
-  path, `ss=Jerusalem`, `selected_currency=ILS`, and the check-in/check-out
-  taken from the date window.
+  Proved against the trip-link builder in `site/planNG/festivals.js`, since the
+  page shows no trip links today; where they will sit is still to be decided.
+  Asserted as the URL, never followed: the `searchresults.he.html` path,
+  `ss=Jerusalem`, `selected_currency=ILS`, and the check-in/check-out it was
+  handed.
   </details>
 
-- `18.7` "Getting here" offers the paid airport transfer and the train beside it.
+- `18.7` Getting to Jerusalem from abroad offers the paid airport transfer and the train beside it.
 
-  🚩 _Behavior leaf._ <!-- req-gallery:18.7 -->
+  🔧 _Logic leaf._ <!-- req-gallery:18.7 -->
 
   <details><summary>Notes</summary>
 
-  Two links, both asserted as URLs. Israel Railways runs no referral
+  Two links from the trip-link builder, both asserted as URLs. Israel Railways runs no referral
   programme; it is offered anyway because it is the cheapest way in from the
   airport, and it ships untagged.
   </details>
@@ -1137,7 +1169,7 @@ in one translations file that carries, per key, the width its slot can afford.
 
 - `19.9` Every language's page is served already in that language, before any script runs.
 
-  <table><thead><tr><th align="left">URL</th><th align="left">Language</th><th align="left">html lang</th><th align="left">Direction</th></tr></thead><tbody><tr><td>/planJerusalem/</td><td>English</td><td>en</td><td>ltr</td></tr><tr><td>/planJerusalem/he/</td><td>עברית</td><td>he</td><td>rtl</td></tr><tr><td>/planJerusalem/ru/</td><td>Русский</td><td>ru</td><td>ltr</td></tr><tr><td>/planJerusalem/ja/</td><td>日本語</td><td>ja</td><td>ltr</td></tr></tbody></table> <!-- req-gallery:19.9 -->
+  <table><thead><tr><th align="left">URL</th><th align="left">Language</th><th align="left">html lang</th><th align="left">Direction</th></tr></thead><tbody><tr><td>/planNG/</td><td>English</td><td>en</td><td>ltr</td></tr><tr><td>/planNG/he/</td><td>עברית</td><td>he</td><td>rtl</td></tr><tr><td>/planNG/ru/</td><td>Русский</td><td>ru</td><td>ltr</td></tr><tr><td>/planNG/ja/</td><td>日本語</td><td>ja</td><td>ltr</td></tr></tbody></table> <!-- req-gallery:19.9 -->
 
   <details><summary>Notes</summary>
 
@@ -1166,6 +1198,19 @@ in one translations file that carries, per key, the width its slot can afford.
   over the committed HTML, both directions: every alternate resolves to a page
   that exists, and every page that exists is listed by all the others.
 
+- `19.11` The planner never changes the mouse cursor: every part of the page shows the browser's own.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:19.11 -->
+
+  <details><summary>Notes</summary>
+
+  Asserted as every element's computed `cursor` matching the one the browser
+  gives it with the page's stylesheets off, at rest and while the pointer
+  rests on a timeline handle, an empty hour and a calendar block, which are
+  places that used to swap it for a resize arrow, a copy mark or a hand. The
+  Edinburgh planner, `/plan/`, keeps its own cursors.
+  </details>
+
 ## 20. Deciding in the calendar
 
 The page's own model, and the one thing it does that the Edinburgh planner does
@@ -1175,8 +1220,8 @@ watching, and which of them will you not get another chance at?" The scarcest
 contender takes the hour — a show with one night beats a show with three,
 because the three-night show can be caught tomorrow.
 
-A contested hour is drawn as what it is: the card that won, in front of the
-cards it beat. The face of a card carries only the show — its name, its hour,
+A contested hour is drawn as what it is: the card that won, with a lane beside
+it drawing each show it beat at that show's own times. The face of a card carries only the show — its name, its hour,
 its venue, and a mark when the reader has locked it. Everything the page has to
 say *about* that card, and the four answers back — **lock this night**,
 **favourite the show**, **not this night**, **not this show** — are in the
@@ -1190,33 +1235,58 @@ rather than as a control panel.
   <details><summary>Notes</summary>
 
   Rendered with empty storage — no favourites, no verdicts — which is the state
-  a first visit lands in. Under the old model that state was an empty schedule
-  and a prompt to go and star something; here it is a full week.
+  a first visit lands in once a festival is chosen (23.34). Under the old model
+  that state was an empty schedule and a prompt to go and star something; here
+  it is a full week.
   </details>
 
-- `20.2` A contested hour is drawn as a stack: the card that won, in front of the ones it beat.
+- `20.2` A contested card has a lane beside it drawing each show it beat as a bar capped at that show's own start and its own end.
 
   ![jerusalem-scarcest.20.2](requirements/screen/cases/jerusalem-scarcest.20.2.png) <!-- req-gallery:20.2 -->
 
   <details><summary>Notes</summary>
 
-  The cards behind are the shows the scarcity rule turned down for that hour,
-  one edge each, so how contested an hour was is something the calendar shows
-  rather than something it says. An uncontested hour is a single card.
+  A few rivals are packed side by side, so how each overlaps the pick shows at
+  a glance; past three rows they are drawn thinner, which is `20.15`.
+  Bars stop at the neighbouring cards, so none is read as belonging to another
+  hour; an end cut off there, or one nobody published (such a show is drawn
+  for the hour the draft assumes it runs), fades out instead of taking a cap.
+  An uncontested hour is a card with no lane.
   </details>
 
-- `20.3` Clicking the stack offers the hour to one of the shows behind it.
+- `20.3` Resting on the lane lists the hour's shows, our pick first, and offers to lock any of the others in its place.
 
   ![jerusalem-contenders.20.3](requirements/screen/cases/jerusalem-contenders.20.3.png) <!-- req-gallery:20.3 -->
 
   <details><summary>Notes</summary>
 
-  Each is named with the count of nights that lost it the hour, and taking one
-  is the same act as locking a night: it holds the hour from then on. Only
-  shows that could really take it are offered — see `20.11`.
+  The lane is one target rather than a bar each, so it is as easy to reach on a
+  busy hour as a quiet one. Each show is named with its hour, its venue and
+  the count of nights that lost it the hour, and taking one is the same act as
+  locking a night: it holds the hour from then on. The pick it displaces gets
+  no verdict of its own, so it goes back into the running for its other
+  nights. Only shows that could really take the hour are offered — see
+  `20.11`. A click opens the same list, for a touch screen.
   </details>
 
-- `20.4` Hovering a card opens everything about it: how rare the show is, every night it plays, and the four verdicts.
+- `20.15` An hour with more rivals than fit side by side still draws each as its own bar capped at its own start and end, in thinner rows across a wider lane.
+
+  ![planng-crowd.20.15](requirements/screen/cases/planng-crowd.20.15.png) <!-- req-gallery:20.15 -->
+
+  <details><summary>Notes</summary>
+
+  Past three rows the lane widens, up to a quarter of the slot, and its rows
+  narrow to fit them all, alternating two shades so neighbouring rows stay
+  apart (only the tiniest columns merge them into one strip), and every
+  rival keeps the bar and caps of `20.2`: where each starts and stops reads
+  off the calendar however busy the hour. No count: the bars are the count.
+  The bars of a crowded lane are painted by one element however many shows,
+  so a whole Fringe stays inside the page's budget (`26.2`). Resting on it
+  opens the same list as `20.3`, which names the scarcest few and counts the
+  rest.
+  </details>
+
+- `20.4` Resting on a card opens everything about it: the four verdicts first, as pictures, then its picture, its name, where and when, a few lines about it with a link to the festival's page, how rare it is, and every night it plays.
 
   ![jerusalem-preview.20.4](requirements/screen/cases/jerusalem-preview.20.4.png) <!-- req-gallery:20.4 -->
 
@@ -1317,39 +1387,138 @@ rather than as a control panel.
   rest. Read top to bottom it is the whole selection rule.
   </details>
 
+- `20.12` Only a lock overrides how full a day and your day hours; a favourite is held to both, though not to what you are here for.
+
+  <table><thead><tr><th align="left">Verdict</th><th align="left">How full a day</th><th align="left">Your day hours</th><th align="left">What you are here for</th></tr></thead><tbody><tr><td>Lock this night</td><td>placed anyway</td><td>placed anyway</td><td>placed anyway</td></tr><tr><td>Favourite the show</td><td>held to it</td><td>held to it</td><td>placed anyway</td></tr><tr><td>No verdict</td><td>held to it</td><td>held to it</td><td>held to it</td></tr></tbody></table> <!-- req-gallery:20.12 -->
+
+  <details><summary>Notes</summary>
+
+  A table generated from the shipped drafter: for each verdict, which of the
+  reader's answers can drop the show from a night. Starring a show says you
+  want it, not that it outranks the day you described — so asking for one show
+  a day leaves one starred show a day, and the rest move to other nights or
+  wait. A lock is an hour asked for by name, and is the one verdict that holds
+  against every answer.
+  </details>
+
+- `20.22` A day held to fewer shows than it could fit spreads them across its hours, rather than packing the earliest.
+
+  🔧 _Logic leaf._ <!-- req-gallery:20.22 -->
+
+  <details><summary>Notes</summary>
+
+  How many shows a day takes is a question of pace, not of when the day ends:
+  a reader who asks for two shows a day has not asked to be done by lunch. So
+  among shows equally scarce, the hours the day's programme spans are shared
+  out between its places, and each part of the day takes a show before any
+  takes a second. Scarcity still comes first — a show with fewer nights
+  takes its hour whatever part of the day it is in — and a reader who wants the
+  day to end early says so with the day's end, which the spread then works
+  within.
+  </details>
+
+- `20.13` A show with no picture leads its popup with its kind's emoji on its festival's colour.
+
+  ![planng-no-picture.20.13](requirements/screen/cases/planng-no-picture.20.13.png) <!-- req-gallery:20.13 -->
+
+  <details><summary>Notes</summary>
+
+  A Haifa film: Haifa's programme publishes no pictures.
+  </details>
+
+- `20.14` A picture that does not load gives way to the same emoji rather than a broken image.
+
+  ![jerusalem-picture-fails.20.14](requirements/screen/cases/jerusalem-picture-fails.20.14.png) <!-- req-gallery:20.14 -->
+
+  <details><summary>Notes</summary>
+
+  Pictures come from each festival's own site, which may refuse them to
+  another site or be down.
+  </details>
+
+- `20.16` The popup waits for the pointer to rest on a card for half a second, and closes once the pointer has left both the card and the popup.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:20.16 -->
+
+  <details><summary>Notes</summary>
+
+  A pointer crossing the calendar on its way somewhere else opens nothing. The
+  popup survives the short trip from the card into it, because its buttons are
+  the point, and it closes when the pointer moves on to empty calendar, not
+  only when it leaves the calendar altogether. A keyboard opens it at once.
+  </details>
+
+- `20.17` Resting on a verdict names what it does, in the page's own label rather than the browser's tooltip.
+
+  ![planng-verdict-tip.20.17](requirements/screen/cases/planng-verdict-tip.20.17.png) <!-- req-gallery:20.17 -->
+
+- `20.18` Until a first verdict is given, the popup says what its four buttons are for.
+
+  ![planng-verdict-hint.20.18](requirements/screen/cases/planng-verdict-hint.20.18.png) <!-- req-gallery:20.18 -->
+
+- `20.19` Giving any verdict drops that hint for good.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:20.19 -->
+
+  <details><summary>Notes</summary>
+
+  Driven: the hint is there on a first visit, a verdict is given, and the next
+  popup and a reload both come without it. A reader who already has verdicts
+  from before the hint existed never sees it.
+  </details>
+
+- `20.20` Resting on the travel between two shows says it in words: how, how long, from which venue to which, and how much time it leaves.
+
+  ![planng-leg-card.20.20](requirements/screen/cases/planng-leg-card.20.20.png) <!-- req-gallery:20.20 -->
+
+- `20.21` Nothing on the planner leans on the browser's own tooltip.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:20.21 -->
+
+  <details><summary>Notes</summary>
+
+  The browser's tooltip opens late, can't be styled or read by touch, and
+  cuts long text. Every explanation the page has is its own label, opened by
+  resting on or focusing the thing it explains.
+  </details>
+
 ## 21. Saying what you want
 
 The calendar drafts before the reader has said anything, so what they say is
-not a form standing in front of it: it is a row of questions above the
-calendar, each asked in one line and answered by picking a picture, and four
-blockers on the calendar itself. A question that has a finer answer behind it
-opens to show it — the picture is the short way to a setting, never the only
-way. Nothing above the calendar explains the calendar.
+not a form standing in front of it: it is one slim row of chips between the
+year's strip and the calendar, each naming its current answer, and the
+day's two hour lines on the calendar itself. A chip opens a panel that floats over the
+calendar with the pictures and the exact numbers behind them — the picture is
+the short way to a setting, never the only way — so however much a question
+holds, the calendar never moves. Nothing above the calendar explains the
+calendar.
 
-- `21.1` Four questions above the calendar: what you are here for, how full a day, how you get around, how you eat.
+- `21.1` One row of chips between the year's strip and the calendar: who's coming, which festivals, what kinds, how full a day, how you get around, how you eat.
 
   ![jerusalem-prefs.21.1](requirements/screen/cases/jerusalem-prefs.21.1.png) <!-- req-gallery:21.1 -->
 
   <details><summary>Notes</summary>
 
-  Each question is one line and two to five picture answers, and the row is the
-  whole of the page's chrome above the calendar: the panel's heading, the
-  paragraph that explained contention and the "N shows across N nights" summary
-  are all gone. Rendered with nothing stored, so the golden is the set of
-  answers a first visit opens on.
+  Each chip is the question in small type over its current answer, with a
+  caret: one line tall whatever the answer is, so the row never grows and the
+  calendar always starts at the same height. Rendered with nothing stored, so
+  the golden is the row a first visit opens on — nobody said yet, every
+  festival, every kind, the middle pace, on foot, and food left to the reader.
   </details>
 
-- `21.2` A question opens on the exact numbers behind its pictures.
+- `21.2` A chip opens a panel over the calendar holding its pictures and the exact numbers behind them.
 
   ![jerusalem-prefs-open.21.2](requirements/screen/cases/jerusalem-prefs-open.21.2.png) <!-- req-gallery:21.2 -->
 
   <details><summary>Notes</summary>
 
-  "How full a day?" opened: the three pictures still selected as before, with
-  the shows-per-day count and the rest between shows they stand for now
-  editable underneath. A picture is a shortcut to a pair of numbers rather than
-  a coarser control than them, so opening the question never discards the
-  answer already given.
+  "How full a day?" opened on a pair of numbers that is none of the three
+  pictures: no picture is lit, and the shows-per-day count and the rest
+  between shows are editable right under them. A picture is a shortcut to a
+  pair of numbers rather than a coarser control than them, so the panel never
+  discards the answer already given. The panel floats over the calendar rather
+  than pushing it down; one panel is open at a time, and a click outside or
+  Escape closes it.
   </details>
 
 - `21.3` A kind you are here for outranks one you are not, and a day takes at most one show from outside them.
@@ -1375,28 +1544,25 @@ way. Nothing above the calendar explains the calendar.
 
   How much of the festival outside your own taste you want is the question that
   should set the cap in `21.3`, and the rule that answers it has not been
-  decided. It is drawn where it belongs — behind "what are you here for?",
-  which is the question it refines — marked as not yet wired and refusing to be
+  decided. It is drawn where it belongs — in the kinds chip's panel, under
+  the question it refines — marked as not yet wired and refusing to be
   answered, rather than left out and added later, and rather than drawn live
   over a rule that ignores it, which is the shape that would lie.
   </details>
 
-- `21.5` A meal you asked for is a band the calendar drafts around; sorting food out yourself leaves the day clear.
+- `21.5` How you eat puts a meal on every day, which the calendar drafts around; sorting food out yourself leaves the days clear.
 
   ![jerusalem-food.21.5](requirements/screen/cases/jerusalem-food.21.5.png) <!-- req-gallery:21.5 -->
 
   <details><summary>Notes</summary>
 
   The same two nights twice, stitched: once with breakfast, lunch and dinner
-  asked for — each a band nothing is drafted through, carrying the place when
-  the reader has named one — and once with "I'll sort it out myself", which
-  draws no bands at all and is the reader's signal to stop crowding the
-  calendar with food.
-
-  Naming the place is the reader's own for now. Choosing it for them — from
-  what is open, close enough to reach between the shows either side, and in
-  the style and price they said they wanted — is the question this row is
-  shaped for and does not yet answer.
+  asked for — each a block on each day, nothing drafted through it, carrying
+  the place when the reader has named one — and once with "I'll sort it out
+  myself", which puts none on the calendar. The answer seeds the blocks: each
+  is the reader's to move, resize or remove on its own day (`28.7`), and
+  answering the question again lays them out afresh. There are no longer
+  bands at the same hour every day.
   </details>
 
 - `21.6` Where your day starts and ends are blockers on the calendar, dragged to where you want them.
@@ -1407,12 +1573,9 @@ way. Nothing above the calendar explains the calendar.
 
   Two draggable lines with the shut-out hours shaded behind them, on the
   calendar rather than in a strip above it: the constraint is drawn against the
-  hours it applies to, so what it rules out is visible beside it. The axis
-  covers the evening the festival actually runs and stretches only an hour
-  beyond it towards a slack boundary, which is then drawn on the axis edge with
-  the hour it really holds on its flag; a day genuinely that long — three meals
-  asked for, say — draws its hours shorter instead, so the calendar stays a
-  calendar rather than a screen of empty morning.
+  hours it applies to, so what it rules out is visible beside it. The hours
+  themselves are fixed (`21.19`), so a line moved past the calendar's edge is
+  drawn on that edge with the hour it really holds on its flag.
   </details>
 
 - `21.7` Dragging the day's end earlier drops what no longer fits.
@@ -1426,17 +1589,75 @@ way. Nothing above the calendar explains the calendar.
   redrawing rather than a number changing.
   </details>
 
-- `21.8` The first and last nights are the same kind of blocker, on the same calendar.
+- `21.15` A show is never drawn past the day's end, however short it is.
 
-  ![jerusalem-window.21.8](requirements/screen/cases/jerusalem-window.21.8.png) <!-- req-gallery:21.8 -->
+  ![planng-dayend-short.21.15](requirements/screen/cases/planng-dayend-short.21.15.png) <!-- req-gallery:21.15 -->
 
   <details><summary>Notes</summary>
 
-  Every night of the festival is a column whether or not the reader's window
-  takes it; the nights outside it are shaded like the hours outside the day,
-  with a draggable edge at each end of the window. The date window therefore
-  lives on the calendar with the other three constraints, rather than on a rail
-  over the drawer's grid.
+  A short show is drawn taller than it runs, so its name and verdicts fit;
+  the last show of a day stops that at the day's end line, as it already
+  stops at the next show's start. Shown on the Haifa trip's day at Acco with
+  the day ending at 20:55 and a twenty-minute street show at 20:15.
+  </details>
+
+- `21.16` Dragging the day's start or end holds every day at its width, an empty day's sliver included.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:21.16 -->
+
+  <details><summary>Notes</summary>
+
+  The widths the days had when the drag began are kept until it ends, so a
+  day that empties part-way does not fold under the pointer, and a folded one
+  does not spring open. What changed is settled once the line is let go.
+  </details>
+
+- `21.17` A show the calendar gains or loses fades in or out where it stands, and one that moves slides to its new place; asked for reduced motion, nothing moves.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:21.17 -->
+
+  <details><summary>Notes</summary>
+
+  Every redraw of the calendar compares what was on it with what is: a show
+  still there animates from where it was, a new one grows in from nothing,
+  and one that left is drawn once more where it stood and shrinks away. A
+  day whose width changes eases to its new width.
+  </details>
+
+- `21.18` How full a day takes any whole number of shows from zero up.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:21.18 -->
+
+- `21.19` Every day runs from 08:00 to 01:00 whatever is on it, and a big plus above the hours opens the night from 23:00 the evening before.
+
+  ![planng-night.21.19](requirements/screen/cases/planng-night.21.19.png) <!-- req-gallery:21.19 -->
+
+  <details><summary>Notes</summary>
+
+  Animated: the calendar as it opens, with the night folded, and again with
+  the plus pressed. Most readers sleep through the night, so it starts
+  folded; a reader planning it opens it once and it stays open. Folded, the
+  button counts what the night holds, so a breakfast or an early show is
+  never silently hidden. Only something drafted past 01:00 stretches the
+  bottom, to the hour it ends in.
+  </details>
+
+- `21.20` Moving the day's start or end never changes the calendar's height, and the night stays opened or folded after a reload.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:21.20 -->
+
+- `21.14` A show whose length the festival does not publish counts as an hour against the day's end and against every block of the reader's own.
+
+  <table><thead><tr><th align="left">A show with no length, starting</th><th align="left">Day ends 20:30</th><th align="left">Dinner 21:00–22:00</th></tr></thead><tbody><tr><td>19:30</td><td>drafted: an hour ends at 20:30</td><td>drafted</td></tr><tr><td>20:00</td><td>not drafted: an hour runs past 20:30</td><td>drafted: it ends as dinner starts</td></tr><tr><td>20:30</td><td>not drafted</td><td>not drafted: it runs into dinner</td></tr></tbody></table> <!-- req-gallery:21.14 -->
+
+  <details><summary>Notes</summary>
+
+  Some Acco shows publish a start time only (the foyer concerts, several street
+  acts). Taken at its word, a show starting at 20:00
+  would end at 20:00 and fit under a day that ends at 20:30, then be drawn
+  running past the line. An hour is what the calendar draws such a show as,
+  near enough, so what the day's end rules out is what the reader sees cross
+  it.
   </details>
 
 - `21.9` Every preference survives a reload.
@@ -1445,10 +1666,1080 @@ way. Nothing above the calendar explains the calendar.
 
   <details><summary>Notes</summary>
 
-  Driven: state an interest, open a question and change a number, ask for
-  dinner, move the day's end and the first night, reload, and all of it comes
-  back — stored under the festival's own prefix like everything else this page
+  Driven: state an interest, require a tag, change a number, ask for dinner,
+  move the day's end, reload, and all of it comes back —
+  stored under the festival's own prefix like everything else this page
   remembers.
+  </details>
+
+- `21.10` Opening a chip, or answering in it, leaves the calendar where it was.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:21.10 -->
+
+  <details><summary>Notes</summary>
+
+  Driven: the calendar's top edge is measured, every chip is opened in turn and
+  an answer is given in the kinds panel (whose list is the longest), and the
+  calendar's top edge is measured again after each — it has not moved a pixel.
+  This is the complaint the chip row answers: a question card that grew with
+  its answers pushed the calendar off the screen.
+  </details>
+
+- `21.11` The kinds are the same eight for every festival, with each festival's own tags beneath them to require or rule out.
+
+  ![planng-kinds.21.11](requirements/screen/cases/planng-kinds.21.11.png) <!-- req-gallery:21.11 -->
+
+  <details><summary>Notes</summary>
+
+  Film, comedy, theatre, dance, music, family, talk and other — the data
+  pipeline's own genre vocabulary, which every festival's events carry and
+  Edinburgh's genres map onto — so a theatre show is a theatre show whichever
+  festival it comes from. Under them, each festival the trip reaches lists the
+  categories it files its own shows under, as tags behind that festival's
+  colour. A tag is clicked through three states: neutral, "only these" (✓) and
+  "not these" (⊘). Shown on the Haifa trip, which pools Haifa and Acco, with
+  Double Feature required and The Family Show ruled out. The list scrolls and a box above it
+  filters it by name; merging two festivals' tags that mean the same thing is
+  not done yet.
+  </details>
+
+- `21.12` A required tag keeps only the shows filed under it, a ruled-out tag drops the shows filed under it, and a festival left out drops all of its shows.
+
+  <table><thead><tr><th align="left">Filter</th><th align="left">Kept</th></tr></thead><tbody><tr><td>None</td><td>every show</td></tr><tr><td>A tag required</td><td>only the shows filed under it</td></tr><tr><td>Two tags required</td><td>the shows filed under either</td></tr><tr><td>A tag ruled out</td><td>every show not filed under it</td></tr><tr><td>A tag both required and ruled out on one show</td><td>not that show: ruled out wins</td></tr><tr><td>A festival left out</td><td>none of that festival's shows</td></tr></tbody></table> <!-- req-gallery:21.12 -->
+
+  <details><summary>Notes</summary>
+
+  These are filters, not preferences: unlike a kind you are here for (`21.3`),
+  a show a filter drops is never drafted, whatever the hour. Several required
+  tags keep a show filed under any of them; a ruled-out tag wins over a
+  required one on the same show. The drawer's programme stays whole, so a show
+  a filter hides can still be found and ruled on there.
+  </details>
+
+- `21.24` What you are here for has a second line, Find a show, closed until opened: the search box first, then the genre, sub-genre and venue filters, which narrow what it finds.
+
+  ![planng-find-a-show.21.24](requirements/screen/cases/planng-find-a-show.21.24.png) <!-- req-gallery:21.24 -->
+
+  <details><summary>Notes</summary>
+
+  Shown on Jerusalem: the kinds panel as it opens, with Find a show folded
+  away under the eight kinds, then opened with Theatre ticked under genre, the
+  results listing only theatre. The genres are the eight shared kinds; the
+  sub-genres are the categories each festival files its own shows under; the
+  venues are the ones the period's shows play. The search box leads the line on
+  a row of its own, so its results and each filter's options run the line's
+  full width. These narrow the search only, never the draft: starring a result
+  is what puts it on the calendar.
+  </details>
+
+- `21.21` A show whose festival publishes no place for it is placed at the festival's own location, so a show elsewhere before or after it is kept a journey away.
+
+  <table><thead><tr><th align="left">First show</th><th align="left">Then, by car</th><th align="left">Drafted</th></tr></thead><tbody><tr><td>Haifa, a venue in the city, 18:00–19:00</td><td>Acco, no venue, 19:40</td><td>not both: Acco is a 45′ drive away</td></tr><tr><td>Haifa, a venue in the city, 18:00–19:00</td><td>Acco, no venue, 19:50</td><td>both</td></tr><tr><td>Acco, no venue, 18:00–19:00</td><td>Acco, no venue, 19:40</td><td>both: the same town</td></tr></tbody></table> <!-- req-gallery:21.21 -->
+
+- `21.22` An online show needs no travel time before or after it.
+
+  <table><thead><tr><th align="left">First show, ends 19:00</th><th align="left">Next show, starts 19:00</th><th align="left">Drafted</th></tr></thead><tbody><tr><td>at a venue</td><td>online</td><td>both</td></tr><tr><td>online</td><td>at a venue</td><td>both</td></tr><tr><td>at a venue</td><td>at a venue across town</td><td>not both: the journey needs time</td></tr></tbody></table> <!-- req-gallery:21.22 -->
+
+- `21.23` Leaving out online shows takes every streamed performance off the calendar, and nothing else.
+
+  <table><thead><tr><th align="left">Online shows</th><th align="left">Kept</th></tr></thead><tbody><tr><td>kept</td><td>every show, every performance</td></tr><tr><td>left out</td><td>every show but the online ones</td></tr><tr><td>left out, a show that plays a hall and streams</td><td>the show, at the hall only</td></tr></tbody></table> <!-- req-gallery:21.23 -->
+
+- `21.13` The festivals chip lists every festival the trip reaches, each with the stripe its shows carry and how far away it is, and can leave any of them out.
+
+  ![planng-festivals.21.13](requirements/screen/cases/planng-festivals.21.13.png) <!-- req-gallery:21.13 -->
+
+  <details><summary>Notes</summary>
+
+  The Haifa trip, with Acco left out: its row unticked, and the chip's answer
+  naming the one festival still in. The stripe is the one each show's block
+  carries on the calendar, in the colour its festival's own theme uses. A
+  festival other than the one leading the trip says how far it is and whether
+  all its nights or only some are in reach; a festival too far to reach is
+  listed too, greyed out with nothing to tick (`23.5`). None of this is drawn
+  above the calendar, where a trip reaching several festivals would push the
+  calendar down a line for each.
+  </details>
+
+## 23. The year's festivals, and the trip's dates
+
+The top of the page is the year: every festival edition the registry knows,
+drawn at its dates, the most searched on rows of their own and the rest faint
+behind them, and the reader's trip banded across it. The trip's first and last day are the reader's to set,
+by dragging either end of the band or the whole band along the year, and a
+festival is only a shortcut to its own run and a day either side. Nothing below
+is tied to one festival: the pool the calendar drafts from is every
+performance, from any festival in the same country (and state, where both name
+one), that falls inside the trip and can be reached from the festival that
+leads it: the one the reader chose, while the trip still reaches it, and
+otherwise the one it covers most.
+
+- `23.1` A full-width timeline of the coming year, each festival a bar on rows of its own with its name beside it, and the trip's dates banded across it.
+
+  ![planng-timeline.23.1](requirements/screen/cases/planng-timeline.23.1.png) <!-- req-gallery:23.1 -->
+
+  <details><summary>Notes</summary>
+
+  Twelve months from the start of the month before today. Bars are never
+  drawn over one another, and a festival's name runs beside its bar only while
+  the year draws ten festivals or fewer and every name fits the rows (23.38
+  covers a crowded year). An edition whose programme is not published yet is
+  drawn hollow, and is still chosen like any other. The bar of the festival
+  that leads the trip is lit. Nothing sits beneath the year: the trip's days
+  are written on the band (23.12) and the way there and back sits beside it
+  (section 24).
+  </details>
+
+- `23.2` Choosing a festival on the timeline sets the trip's dates to its run plus a day either side.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.2 -->
+
+  <details><summary>Notes</summary>
+
+  The trip is an address: `?from=<date>&to=<date>` is written to the URL
+  whenever the dates change, with `&festival=<id>` while a chosen festival
+  still leads it, so a trip can be linked, and the last trip is what the page
+  opens on next time. A link naming only a festival opens on that festival's
+  run and a day either side.
+  </details>
+
+- `23.4` A festival joins the pool only when it is in the same country (and state) as the festival that leads the trip and its city is within reach of it.
+
+  <table><thead><tr><th align="left">Focused on</th><th align="left">Other festival</th><th align="left">Distance</th><th align="left">Nights that join the pool</th></tr></thead><tbody><tr><td>Haifa, 25 Sep – 3 Oct</td><td>Acco, 27 Sep – 1 Oct</td><td>16 km</td><td>all: 27 Sep – 1 Oct</td></tr><tr><td>Haifa, 25 Sep – 3 Oct</td><td>Jerusalem, 18 – 22 Oct</td><td>116 km</td><td>all: 18 – 22 Oct</td></tr><tr><td>Brighton, 18 – 22 Oct</td><td>Edinburgh, 10 – 30 Oct</td><td>605 km</td><td>10 – 16 Oct and 24 – 30 Oct</td></tr><tr><td>Brighton, 18 – 22 Oct</td><td>Edinburgh, 19 – 21 Oct</td><td>605 km</td><td>none</td></tr><tr><td>Jerusalem, 18 – 22 Oct</td><td>Edinburgh, 10 – 30 Oct</td><td>4000 km</td><td>none: another country</td></tr></tbody></table> <!-- req-gallery:23.4 -->
+
+  <details><summary>Notes</summary>
+
+  `site/shared/feasibility.js`. A festival in another country, or in another
+  state where both name one, is never in, however near: its programme is not
+  even downloaded (23.35). A city a day-trip away is in whole; a city further
+  off is in only for the nights far enough from that festival's run to travel
+  between the two, so an event in Edinburgh during the Brighton festival is
+  never suggested, whatever the data holds.
+  </details>
+
+- `23.5` A festival left out for being out of reach, or in another country, is named in the festivals chip, with how far it is, never dropped silently.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.5 -->
+
+- `23.6` Below the site header, the page takes the theme of the festival that leads the trip: its name, and the palette of its genre: comedy, film, theatre or the fringe.
+
+  ![planng-theme.23.6](requirements/screen/cases/planng-theme.23.6.png) <!-- req-gallery:23.6 -->
+
+  <details><summary>Notes</summary>
+
+  `data-genre` on the page root, the festival's `kind` from its registry
+  entry, selects a palette block in the stylesheet; a genre with no block of
+  its own keeps the house palette, and two festivals of one genre share one.
+  The festival's own-language name is tagged with its language and direction.
+  </details>
+
+- `23.7` The Edinburgh Fringe is a festival like the others: chosen on the timeline, it plans its own programme in its own theme.
+
+  ![planng-edinburgh.23.7](requirements/screen/cases/planng-edinburgh.23.7.png) <!-- req-gallery:23.7 -->
+
+  <details><summary>Notes</summary>
+
+  The Fringe's programme is read from the same files the Fringe planner
+  reads, through the adapter every festival goes through
+  (`site/shared/festival-catalogue.js`), so nothing about it is copied. Its
+  kinds are the ten headline genres, with the Fringe planner's own pictures.
+  Rendered against the frozen 300-show fixture; section 26 holds the page to
+  the whole programme.
+  </details>
+
+- `23.8` The trip's first and last day are set on the timeline: drag either end of the band, and the calendar follows.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.8 -->
+
+  <details><summary>Notes</summary>
+
+  Each end of the band is a handle that also moves a day at a time with the
+  arrow keys, over any day of the twelve months shown. A trip is at most
+  `MAX_PERIOD_DAYS` long (`site/shared/limits.js`): moving one end past that
+  pulls the other along. Every change re-plans the calendar across the new
+  days, is written to the address, and is what the page reopens on.
+  </details>
+
+- `23.9` A trip that runs past a festival's own run plans every festival its dates reach, led by the festival chosen while the trip reaches it, else by the one it covers most.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.9 -->
+
+  <details><summary>Notes</summary>
+
+  Driven with a festival near Jerusalem added to the registry, starting three
+  days after Jerusalem's ends and running longer: choosing Jerusalem plans
+  Jerusalem alone; moving the trip's end on over the neighbour's run adds its
+  shows to the calendar, and the page keeps Jerusalem's theme though the
+  neighbour now has more of the trip's days, because Jerusalem was chosen.
+  Moving the start past Jerusalem's run hands the lead to the neighbour. With
+  nothing chosen, ties go to the edition that starts first; a trip over no
+  festival at all takes the nearest one's theme and plans an empty calendar.
+  </details>
+
+- `23.10` When another festival comes to lead the trip, the page's colours fade into its theme rather than jump, unless you ask your device for reduced motion.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.10 -->
+
+  <details><summary>Notes</summary>
+
+  The theme's colours are registered properties that the page root
+  transitions, so the fade runs while a date handle is still being dragged and
+  never stops the page responding. The header stays in the house colours
+  throughout (23.6). A behavior leaf because a golden is taken with every
+  transition frozen at its end: the case lifts that freeze and samples the
+  page's background part-way through the fade.
+  </details>
+
+- `23.11` On a wide screen the page spans the whole window: the timeline and the calendar stretch edge to edge rather than stopping at a content width.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.11 -->
+
+  <details><summary>Notes</summary>
+
+  Measured at 2560 pixels wide: the timeline and the calendar card each run
+  from the page's side gutter to the other, and the header's wordmark and
+  controls sit on the same edges. The other planner, `/plan/`, keeps its
+  content width.
+  </details>
+
+- `23.12` Each end of the trip is a line across the strip with a grip at its middle; under the rows the trip is measured like a drawing, its first and last day of the month at the ends of a line the band's width and its length in days between them, clear of the months and today's figure.
+
+  ![planng-trip-edges.23.12](requirements/screen/cases/planng-trip-edges.23.12.png) <!-- req-gallery:23.12 -->
+
+- `23.13` Today is a small figure standing on the months, holding up a sign that says so.
+
+  ![planng-today.23.13](requirements/screen/cases/planng-today.23.13.png) <!-- req-gallery:23.13 -->
+
+- `23.14` The figure moves a little while it stands, cheers whenever you make a choice on the page, and holds still if you ask your device for reduced motion.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.14 -->
+
+  <details><summary>Notes</summary>
+
+  A behavior leaf because goldens are taken with every animation frozen: the
+  case reads the animations the page asks for. A choice is any button,
+  option, date or festival picked; the cheer plays once and the figure goes
+  back to standing.
+  </details>
+
+- `23.15` Pointing at a festival on the strip shows its card: its full name, city and genre, its dates and length, and whether its programme is out yet.
+
+  ![planng-festival-card.23.15](requirements/screen/cases/planng-festival-card.23.15.png) <!-- req-gallery:23.15 -->
+
+  <details><summary>Notes</summary>
+
+  The card also opens when the festival is reached with the keyboard, and
+  closes when the pointer or focus leaves it.
+  </details>
+
+- `23.16` The calendar never scrolls sideways: every day of the trip fits the visible width, and no day's column grows wider than 260 pixels.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.16 -->
+
+  <details><summary>Notes</summary>
+
+  Measured on a phone with a week's trip and on a desk with the longest trip
+  allowed (31 days), where the columns squeeze, and at 2560 pixels with a
+  week, where each column stops at the cap and the calendar's card keeps its
+  full width (23.11). A squeezed column sheds what a show's block can't
+  afford, as the Fringe planner's does: under 78 pixels its times, under 56
+  its picture and venue, so the show's name keeps the space.
+  </details>
+
+- `23.17` Behind the top of the page is a faded photograph of the city hosting the festival that leads the trip.
+
+  ![planng-city-photo.23.17](requirements/screen/cases/planng-city-photo.23.17.png) <!-- req-gallery:23.17 -->
+
+  <details><summary>Notes</summary>
+
+  One photograph per host city, stored with the site and chosen by the city
+  the festival registry names (23.26 guards that every festival has one); a
+  festival out of town shows the country around it. Faint enough that the timeline and the page's own palette
+  read first, it fades out down the page before the calendar starts, so no
+  day or show is ever drawn over a picture. The picture is decoration and carries no
+  text for a screen reader.
+  </details>
+
+- `23.18` When another festival comes to lead the trip, its city's photograph fades in over the last one rather than jumping, unless you ask your device for reduced motion.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.18 -->
+
+  <details><summary>Notes</summary>
+
+  The same fade as the colours (23.10), over the same time. A behavior leaf
+  for the same reason: a golden freezes every transition at its end, so the
+  case lifts the freeze and samples both photographs' opacity part-way.
+  </details>
+
+- `23.19` The footer credits the photograph on show: its title, linked to its source, its photographer and its licence, linked to the licence.
+
+  ![planng-photo-credit.23.19](requirements/screen/cases/planng-photo-credit.23.19.png) <!-- req-gallery:23.19 -->
+
+- `23.23` Dragging the band moves the whole trip, keeping its length and the festival chosen; a press that doesn't move still chooses the festival under it.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.23 -->
+
+  <details><summary>Notes</summary>
+
+  A press becomes a drag once the pointer has moved a few pixels, and a drag
+  never also counts as a click on the festival it started over. The trip keeps
+  the festival chosen while the moved dates still reach it (23.9).
+  </details>
+
+- `23.24` The year sits between nine pictured festival types on its left and a desk globe on its right, both as tall as its rows and level with the first of them, and together they narrow the festivals it draws.
+
+  ![planng-strip-filter.23.24](requirements/screen/cases/planng-strip-filter.23.24.png) <!-- req-gallery:23.24 -->
+
+  <details><summary>Notes</summary>
+
+  A place is an area (the British Isles, Europe, the Middle East and so
+  on, `site/planNG/lib/areas.js`), a country or one of its cities, each chosen
+  on the globe; a type is one of nine: film, music, theatre, dance, comedy,
+  art & books (the registry's `art` and `literature`), mixed arts (`fringe`
+  and `multi`), sports and academic; a subtype is what sets one festival apart
+  within its type (`film-documentary`, `academic-biology`), a label on the
+  festival and never on its events. The globe is a desk globe: tan land on a
+  deep blue sea, shaded as a sphere, held in a brass ring on a wooden stand,
+  the countries with a festival in the page's colour. Each type's picture
+  carries how many festivals the chosen place holds of it, and a type with
+  none is drawn faded; its name is on its card (23.41). On a narrow screen the
+  types and the globe sit side by side above the year. Only the strip is
+  narrowed: the pool the calendar drafts from is the trip's, whatever the
+  filters say.
+  </details>
+
+- `23.25` The filters keep a festival only when it matches place, type and subtype, and the festival leading the trip is always kept.
+
+  <table><thead><tr><th align="left">Place</th><th align="left">Type</th><th align="left">Subtype</th><th align="left">Leading the trip</th><th align="left">Drawn</th></tr></thead><tbody><tr><td>anywhere</td><td>any</td><td>any</td><td>Jerusalem Comedy</td><td>all six</td></tr><tr><td>Middle East</td><td>any</td><td>any</td><td>none</td><td>haifa-iff, docaviv, jerusalem-comedy</td></tr><tr><td>British Isles</td><td>film</td><td>any</td><td>none</td><td>eiff</td></tr><tr><td>Israel</td><td>any</td><td>any</td><td>Jerusalem Comedy</td><td>haifa-iff, docaviv, jerusalem-comedy</td></tr><tr><td>Edinburgh</td><td>any</td><td>any</td><td>Jerusalem Comedy</td><td>jerusalem-comedy, eiff, edfringe, edbookfest</td></tr><tr><td>anywhere</td><td>film</td><td>any</td><td>none</td><td>haifa-iff, docaviv, eiff</td></tr><tr><td>anywhere</td><td>film</td><td>film-international</td><td>none</td><td>haifa-iff, eiff</td></tr><tr><td>Israel</td><td>film</td><td>film-documentary</td><td>none</td><td>docaviv</td></tr><tr><td>Tel Aviv</td><td>comedy</td><td>any</td><td>none</td><td>nothing</td></tr><tr><td>Tel Aviv</td><td>comedy</td><td>any</td><td>Jerusalem Comedy</td><td>jerusalem-comedy</td></tr><tr><td>anywhere</td><td>mixed arts</td><td>any</td><td>none</td><td>edfringe</td></tr><tr><td>anywhere</td><td>art &amp; books</td><td>any</td><td>none</td><td>edbookfest</td></tr><tr><td>Edinburgh</td><td>art &amp; books</td><td>literature-books</td><td>none</td><td>edbookfest</td></tr></tbody></table> <!-- req-gallery:23.25 -->
+
+- `23.26` Every festival the site lists has a photograph of its city, stored with the site and carrying the title, photographer, licence and source its credit needs.
+
+  🔧 _Logic leaf._ <!-- req-gallery:23.26 -->
+
+  <details><summary>Notes</summary>
+
+  Read against the live registry rather than the harness's frozen one, so a
+  festival added without a photograph turns the build red instead of
+  leaving a plain band where its city should be.
+  </details>
+
+- `23.29` Dragging the globe spins it, and let go while still moving it keeps spinning, slowing to a stop.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.29 -->
+
+  <details><summary>Notes</summary>
+
+  A press that barely moves is a click, not a drag. With reduced motion
+  asked for, the globe stops where it is let go.
+  </details>
+
+- `23.30` The globe offers areas first, each a badge with its count of festivals; choosing one narrows the year to it and turns and zooms the globe onto it, offering its countries, and a country its cities, while a capsule over the globe steps back out.
+
+  ![planng-globe-pick.23.30](requirements/screen/cases/planng-globe-pick.23.30.png) <!-- req-gallery:23.30 -->
+
+  <details><summary>Notes</summary>
+
+  An area holding a single festival country goes straight to that country,
+  and stepping out of it goes past the area too. A badge crowded off its
+  place stands beside it on a string to a pin, or shrinks to its count.
+  Choosing lit land chooses the badge it belongs to, and choosing the chosen
+  badge again steps out. The place menu under the globe follows, and choosing
+  from the menu moves the globe the same way.
+  </details>
+
+- `23.31` Choosing a type's picture narrows the year to that type: the picture grows into a header, the other eight shrink into a row under it and the type's subtypes are offered as capsules under them; choosing the header again shows every type.
+
+  ![planng-type-pick.23.31](requirements/screen/cases/planng-type-pick.23.31.png) <!-- req-gallery:23.31 -->
+
+  <details><summary>Notes</summary>
+
+  One type at a time: choosing another replaces it. A subtype the new type
+  or place no longer leaves is dropped. The subtypes are offered only while
+  the chosen place and type leave any.
+  </details>
+
+- `23.32` When the page knows which country the reader lives in, a little house stands on it on the globe.
+
+  ![planng-globe-home.23.32](requirements/screen/cases/planng-globe-home.23.32.png) <!-- req-gallery:23.32 -->
+
+  <details><summary>Notes</summary>
+
+  The country the reader named on the travel card, else the one their
+  connection comes from, as the holidays on the months read it (31.2).
+  </details>
+
+- `23.33` Choosing a type moves the pictures rather than swapping them: each glides from where it was to where it goes, the subtypes unfold one after another, and with reduced motion asked for they simply land.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.33 -->
+
+- `23.34` Opened with no festival chosen, the page downloads the year's overview and no programme, and asks the reader to choose a festival.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.34 -->
+
+  <details><summary>Notes</summary>
+
+  The overview is the registry, `site/data/festivals/index.json`: every
+  festival's names, place, type and subtypes, and each edition's dates and
+  number of events, enough to draw the year and its filters. A festival is
+  chosen by picking it on the year, by a link naming it or its dates, or by
+  the trip the page saved last time; any of those plans at once.
+  </details>
+
+- `23.35` Choosing a festival downloads the programmes of that festival and of the festivals in its country (and state) whose runs the trip overlaps, and no other.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.35 -->
+
+  <details><summary>Notes</summary>
+
+  Each edition's programme is its own file, so a pick never pays for another
+  country's festivals, nor for one in the same country running at another
+  time. A festival in another country running during the trip is still named
+  in the festivals chip (23.5).
+  </details>
+
+- `23.36` A festival's card on the strip says how many events its programme holds, once the overview counts them.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.36 -->
+
+- `23.37` The year's rows take the most searched festivals first: each goes on a row where it keeps clear of its neighbours, a festival of a week or more on the free row holding the fewest such, until the rows are 70% full.
+
+  <table><thead><tr><th align="left">Festivals (how searched)</th><th align="left">Rows</th><th align="left">Leading the trip</th><th align="left">Drawn on the rows</th></tr></thead><tbody><tr><td>Fringe 0–40 (900), Acco 10–20 (50), Haifa 50–55 (300)</td><td>2</td><td>none</td><td>1: Fringe, Haifa · 2: Acco</td></tr><tr><td>Fringe 0–30 (900), Haifa 40–70 (300), Acco 80–84 (50)</td><td>2</td><td>none</td><td>1: Fringe, Acco · 2: Haifa</td></tr><tr><td>Fringe 0–30 (900), Haifa 35–72 (300), Acco 75–80 (50)</td><td>1</td><td>none</td><td>1: Fringe, Haifa</td></tr><tr><td>Fringe 0–50 (900), Acco 20–30 (300), Haifa 60–65 (50)</td><td>1</td><td>none</td><td>1: Fringe, Haifa</td></tr><tr><td>Fringe 0–50 (900), Acco 20–30 (300), Haifa 60–65 (50)</td><td>1</td><td>Acco</td><td>1: Acco, Haifa</td></tr><tr><td>Fringe 0–10 (unknown), Acco 20–40 (unknown), Haifa 50–55 (40)</td><td>1</td><td>none</td><td>1: Haifa, Acco, Fringe</td></tr></tbody></table> <!-- req-gallery:23.37 -->
+
+  <details><summary>Notes</summary>
+
+  How searched a festival is comes from the registry: its `popularity` where
+  the festival finder has measured it, else the events its programme holds,
+  and a longer run first among equals. The festival leading the trip always
+  takes the first place. A festival that fits no row is passed over for the
+  next. Ranking and filling are redone inside whatever the filters leave.
+  </details>
+
+- `23.38` In a crowded year the rows carry bars without names, and every festival they leave out is drawn faintly behind them in its type's colour.
+
+  ![planng-year-crowd.23.38](requirements/screen/cases/planng-year-crowd.23.38.png) <!-- req-gallery:23.38 -->
+
+  <details><summary>Notes</summary>
+
+  The strip has as many rows as fit the height of the types and the globe,
+  and never scrolls; a faint festival is placed anywhere across that height,
+  at its own dates. No text sits under the rows.
+  </details>
+
+- `23.39` Changing a filter moves the festivals rather than redrawing them: a festival still drawn glides to its new place, one promoted from behind grows into its row, and the rest fade out or in.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.39 -->
+
+  <details><summary>Notes</summary>
+
+  With reduced motion asked for they simply land.
+  </details>
+
+- `23.40` Pointing along the year magnifies the weeks under the pointer, as a dock does, and a bar grown wide enough there shows its name.
+
+  ![planng-year-lens.23.40](requirements/screen/cases/planng-year-lens.23.40.png) <!-- req-gallery:23.40 -->
+
+- `23.41` Pointing at a type's picture shows its card: its name, how many festivals it holds, its subtypes and the next of its festivals.
+
+  ![planng-type-card.23.41](requirements/screen/cases/planng-type-card.23.41.png) <!-- req-gallery:23.41 -->
+
+## 24. How you are getting here
+
+The page asks, once, how the reader is getting to the festival, and only when
+the answer is needed: from the travel pictures beside either end of the trip on
+the strip. Until then the pictures keep changing between the ways there,
+inviting the click that settles them. The answer decides what the trip needs: a reader who lives in
+the festival's city needs no journey and no bed, one who drives or takes the
+train needs a bed, and one who flies needs the airport and a fare too. No fare
+is looked up before the reader has said they fly.
+
+- `24.1` Until you have said how you are getting here, a large travel picture sits beside each end of the trip, and clicking either asks beneath the strip where you live, starting from the country you connect from, or that you live in the festival's city.
+
+  ![planng-origin.24.1](requirements/screen/cases/planng-origin.24.1.png) <!-- req-gallery:24.1 -->
+
+- `24.6` While unsettled, the travel pictures take turns as a plane, a train, a car and a house; asked for reduced motion, they hold still.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:24.6 -->
+
+- `24.7` Each answer settles both travel pictures, and they stop changing: a house living there, a car driving in, a train by rail, and a plane flying in.
+
+  ![planng-arrival.24.7](requirements/screen/cases/planng-arrival.24.7.png) <!-- req-gallery:24.7 -->
+
+- `24.9` Living elsewhere, the next question is how you travel: fly, take the train or drive.
+
+  ![planng-way.24.9](requirements/screen/cases/planng-way.24.9.png) <!-- req-gallery:24.9 -->
+
+- `24.10` A travel picture with no room between its end of the trip and the strip's edge is left out, and the one at the other end still asks.
+
+- `24.11` The travel pictures and the trip's grips sit at the middle of the strip's rows, over the festivals beside the trip.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:24.11 -->
+
+  🚩 _Behavior leaf._ <!-- req-gallery:24.10 -->
+
+- `24.8` An answer saved before the page asked how you travel is read as one: a home in the festival's city as living there, abroad as flying, anything else as not yet said.
+
+  <table><thead><tr><th align="left">Saved answer</th><th align="left">Read as</th></tr></thead><tbody><tr><td>I live in the festival's city</td><td>living there</td></tr><tr><td>Coming from a country abroad</td><td>flying</td></tr><tr><td>Somewhere else abroad</td><td>flying</td></tr><tr><td>Elsewhere in the country</td><td>not yet said</td></tr><tr><td>The device's position</td><td>not yet said</td></tr><tr><td>Not now</td><td>not yet said</td></tr></tbody></table> <!-- req-gallery:24.8 -->
+
+- `24.2` The answer decides the trip links: the festival's own city needs no bed, the rest of the country a bed and a train, abroad the airport too.
+
+  🔧 _Logic leaf._ <!-- req-gallery:24.2 -->
+
+  <details><summary>Notes</summary>
+
+  Proved against the origin judgement in `site/shared/feasibility.js` and the
+  trip-link builder in `site/planNG/festivals.js`: the page shows no trip links
+  today, and where they will sit is still to be decided. Driving and the train
+  are stored as the festival's own country.
+  </details>
+
+- `24.5` The question is asked once per browser: the answer is stored, and the next festival chosen does not ask again.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:24.5 -->
+
+- `24.4` What a reader saved under `/planJerusalem/` is carried over to the festival planner, once.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:24.4 -->
+
+## 27. Getting there and back
+
+The trip's dates are where the journey is planned too. Clicking the travel
+picture at either end of the trip opens the travel card: the way out on the
+trip's first day, and the way home on its last. A reader who flies sees the
+cheapest flights for those days, fetched when the dates are set, each linking
+to the partner who sells it; how the other answers show is section 24.
+
+> ⚠️ **To be decided — live fares.** The fare service (`api/fares.js`) reads
+> the partner's cached one-way prices server-side and has only been exercised
+> against the partner's documented response shape: this sandbox cannot reach
+> the partner, and no account exists yet to capture a real answer. Until one
+> does, 27.5's sample is hand-written from the documentation, and with no token
+> configured the card shows the partner's search for the day instead of a
+> price.
+
+- `27.1` Flying in, the travel card shows a flight each way: out on the trip's first day, home on its last, each with the cheapest flight's time, length, stops and price.
+
+  ![planng-flights.27.1](requirements/screen/cases/planng-flights.27.1.png) <!-- req-gallery:27.1 -->
+
+  <details><summary>Notes</summary>
+
+  Rendered with the fare service answering from a fixture. The departure time
+  is the airport's own wall clock, as the partner gives it; the price is in the
+  reader's own currency where the origin names one.
+  </details>
+
+- `27.2` The fares are asked for when the trip's dates are set, for those days and that route, and a flight links to that fare on the partner's site.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:27.2 -->
+
+  <details><summary>Notes</summary>
+
+  One request per block, to the site's own `/api/fares`: from the reader's
+  airport to the destination festival's on the first day, and back on the
+  last. Moving a date asks again for that day. The link is asserted as a URL,
+  never followed; the partner's marker (`site/shared/affiliates.js`) tags it
+  once the programme is joined.
+  </details>
+
+- `27.3` With no fare to show, a flight offers the partner's search for that day and route instead of a price.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:27.3 -->
+
+  <details><summary>Notes</summary>
+
+  The fare service answering empty, failing, or not reachable at all are the
+  same state to the reader: nothing claims a price, and the search link is
+  still the day's and the route's.
+  </details>
+
+- `27.4` Flying in, the travel card asks for your airport, the country you live in filling in its main one, and can change how you are getting here.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:27.4 -->
+
+  <details><summary>Notes</summary>
+
+  The country the reader lives in fills in its main airport, which the reader
+  can overwrite with any airport or city code; "somewhere else" leaves it for
+  the reader to type. The card's "change" asks the question again (section 24).
+  </details>
+
+- `27.6` No fare is asked for until you have said you are flying: unsettled, at home, driving or by train, the fare service is never called.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:27.6 -->
+
+- `27.5` The fare service answers from the partner's cached one-way fares, and the partner's token never reaches the page.
+
+  🔧 _Logic leaf._ <!-- req-gallery:27.5 -->
+
+  <details><summary>Notes</summary>
+
+  **To be decided** (see the banner above): proved against the documented
+  response shape only. With no token configured the service answers an empty
+  list rather than an error, so the page shows the search link.
+  </details>
+
+## 28. Your days
+
+The trip's days are the reader's to shape before any show is drafted into
+them. A day can be kept for something other than the festival — a rest, an
+excursion, or a festival nearby — and it is drawn as one block across its
+column. Flights take the hours at either end of the trip, and meals and
+personal time are blocks the reader puts where they want them, day by day.
+The draft plans around all of it.
+
+- `28.1` A day kept for rest is one block across its column, with nothing drafted in it; a first draft keeps one day like this.
+
+  ![jerusalem-rest-day.28.1](requirements/screen/cases/jerusalem-rest-day.28.1.png) <!-- req-gallery:28.1 -->
+
+  <details><summary>Notes</summary>
+
+  Rendered with nothing stored: the Jerusalem trip reaches no other festival,
+  so the page's own guess is a rest day on the night that costs least (`28.3`).
+  The seeded day is there even when the reader asks for a packed day, so that
+  a day of the trip being the reader's own is discovered rather than
+  explained.
+  </details>
+
+- `28.2` A day given to a nearby festival drafts only that festival's shows, under its colour.
+
+  ![planng-festival-day.28.2](requirements/screen/cases/planng-festival-day.28.2.png) <!-- req-gallery:28.2 -->
+
+  <details><summary>Notes</summary>
+
+  The Haifa trip, which reaches Acco: a first draft gives one of its days to
+  Acco, and that column holds Acco's shows only, while the days around it
+  keep drafting from both.
+  </details>
+
+- `28.3` A first draft keeps one day for a festival nearby if the trip reaches one, and otherwise for rest, on the day that costs least.
+
+  <table><thead><tr><th align="left">The trip</th><th align="left">The day kept</th></tr></thead><tbody><tr><td>Reaches a festival nearby</td><td>that festival's, on the day it plays most</td></tr><tr><td>Reaches none</td><td>rest, on the day with fewest shows playing only that night</td></tr><tr><td>Two days tie</td><td>the earlier</td></tr><tr><td>The first or last day</td><td>never</td></tr><tr><td>Fewer than three days</td><td>none</td></tr></tbody></table> <!-- req-gallery:28.3 -->
+
+  <details><summary>Notes</summary>
+
+  A festival nearby is one the trip reaches other than the one that leads it;
+  its day is the trip's day with most of its performances. With none, the rest
+  day is the day holding fewest shows that play only that night, among the
+  days anything plays; ties go to the earlier day. The trip's first and last
+  days are never chosen, since the flights take them, and a trip of fewer than
+  three days keeps no day at all. Once the reader has chosen or cleared any
+  day, nothing is seeded for that trip again.
+  </details>
+
+- `28.4` Clicking a day's head offers what the day is for; clicking a kept day's block changes or clears it, and dragging it moves it to another day.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:28.4 -->
+
+  <details><summary>Notes</summary>
+
+  Driven on the Jerusalem trip: a day's head is clicked and made an excursion
+  day, the seeded rest day's block is dragged onto another day, and the
+  excursion is cleared from its block's menu. Each step re-drafts, and what
+  the reader chose comes back after a reload.
+  </details>
+
+- `28.5` Flying in and out takes the first day's hours until you have landed and got there, and the last day's from when you must leave for the airport.
+
+  ![jerusalem-flight-days.28.5](requirements/screen/cases/jerusalem-flight-days.28.5.png) <!-- req-gallery:28.5 -->
+
+  <details><summary>Notes</summary>
+
+  Coming from London, with the fare service answering from its fixture: the
+  cheapest flight out and home (section 27) bound the calendar's first and
+  last day, and nothing is drafted under either block. A reader who needs no
+  flight has whole days at both ends.
+  </details>
+
+- `28.6` A flight's block runs to its landing plus the trip from the airport, or from its departure less the time the airport asks for.
+
+  <table><thead><tr><th align="left">Flight</th><th align="left">Hours taken on the day</th></tr></thead><tbody><tr><td>Out, landing 14:30 local</td><td>until 16:00: landing plus 90 minutes from the airport</td></tr><tr><td>Out, landing after the day</td><td>the whole day</td></tr><tr><td>Out, landing the day before</td><td>none</td></tr><tr><td>Home, leaving 18:00 local</td><td>from 15:30: 150 minutes for the airport</td></tr><tr><td>Home, leaving the next morning</td><td>none</td></tr><tr><td>No flight</td><td>none</td></tr></tbody></table> <!-- req-gallery:28.6 -->
+
+  <details><summary>Notes</summary>
+
+  Times are the festival's own wall clock, whatever zone the flight's time
+  was given in. A flight landing after the first day is over takes the whole
+  day; one landing before it takes none.
+  </details>
+
+- `28.7` Clicking an empty hour offers a meal or personal time there; what is added is drafted around, and can be dragged, resized or removed.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:28.7 -->
+
+  <details><summary>Notes</summary>
+
+  Driven: an empty hour is clicked and lunch added there, the block is dragged
+  to another day and hour and stretched, and then removed; a show that the
+  block's hour held is dropped and comes back. Suggesting where to eat — open
+  places near the shows either side, with a table to book — needs a source of
+  restaurants and is not done yet.
+  </details>
+
+- `28.8` A meal added is named for the time of day, and for what that day already has.
+
+  <table><thead><tr><th align="left">Added at</th><th align="left">Called</th></tr></thead><tbody><tr><td>04:00 to 11:00</td><td>breakfast</td></tr><tr><td>11:00 to 16:00</td><td>lunch</td></tr><tr><td>16:00 to 22:00</td><td>dinner</td></tr><tr><td>22:00 to 04:00</td><td>a late bite</td></tr><tr><td>An hour whose meal the day already has</td><td>a snack</td></tr></tbody></table> <!-- req-gallery:28.8 -->
+
+  <details><summary>Notes</summary>
+
+  The hours are the table's; a day that already has that meal gets a snack
+  instead, so a second click at lunchtime does not make a second lunch.
+
+- `28.9` A flight's block in the calendar asks how you get between the airport and town: a taxi or transfer, the train, or a hire car, each with where to book it.
+
+  ![jerusalem-ground.28.9](requirements/screen/cases/jerusalem-ground.28.9.png) <!-- req-gallery:28.9 -->
+
+  <details><summary>Notes</summary>
+
+  The taxi and the train link to the same partners the trip's travel block
+  offers (section 27); a hire car opens a map search for car hire at the
+  airport, since no hire partner is signed up.
+  </details>
+
+- `28.10` The answer covers both ends of the trip: both flight blocks name it, and it is still there after a reload.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:28.10 -->
+
+- `28.11` What a car changes: driving becomes the suggested way between shows, and a festival up to 250 km away counts as a day trip instead of 160 km.
+
+  <table><thead><tr><th align="left">Getting here</th><th align="left">Between airport and town</th><th align="left">A car?</th><th align="left">Suggested between shows</th><th align="left">A day trip reaches</th></tr></thead><tbody><tr><td>Driving your own car</td><td>—</td><td>yes</td><td>driving</td><td>250 km</td></tr><tr><td>Flying</td><td>hire car</td><td>yes</td><td>driving</td><td>250 km</td></tr><tr><td>Flying</td><td>taxi or transfer</td><td>no</td><td>no change</td><td>160 km</td></tr><tr><td>Flying</td><td>train</td><td>no</td><td>no change</td><td>160 km</td></tr><tr><td>Flying</td><td>not said</td><td>no</td><td>no change</td><td>160 km</td></tr><tr><td>By train</td><td>—</td><td>no</td><td>no change</td><td>160 km</td></tr><tr><td>Living there</td><td>—</td><td>no</td><td>no change</td><td>160 km</td></tr></tbody></table> <!-- req-gallery:28.11 -->
+
+  <details><summary>Notes</summary>
+
+  A car is one you drove there yourself (section 24) or hire at the airport.
+  The table is the whole rule.
+  </details>
+
+- `28.12` Hiring a car suggests driving between shows, marked as suggested; a way of getting around you chose yourself stays yours.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:28.12 -->
+
+- `28.13` A kept day's title stays inside its own column, however narrow.
+
+  ![planng-festival-banner.28.13](requirements/screen/cases/planng-festival-banner.28.13.png) <!-- req-gallery:28.13 -->
+
+  <details><summary>Notes</summary>
+
+  A festival's name is longer than a narrow day is wide: the banner ends in
+  an ellipsis at its column's edge rather than running over the next day's
+  shows. The full name is in the menu the banner opens. A rest day or a day
+  out is held to its column the same way.
+  </details>
+
+- `28.14` Days in a row kept for the same thing join into one stretch under one title.
+
+  ![planng-kept-run.28.14](requirements/screen/cases/planng-kept-run.28.14.png) <!-- req-gallery:28.14 -->
+
+  <details><summary>Notes</summary>
+
+  Two days in a row given to Acco on the Haifa trip: their banners meet
+  across the column edge and the festival is named once across both. Each
+  day's part still opens that day's own menu, so either can be changed on
+  its own.
+  </details>
+
+## 31. Holidays at home
+
+The trip's dates are the reader's, and the days they can most easily take off
+are their own country's public holidays, and above all the breaks those make
+with a weekend. The year strip marks each break as a green orb on the months.
+Until the reader says how they are getting here (section 24), their country
+is guessed from their connection, and each orb's card says it is a guess.
+
+- `31.1` The year strip marks each break your public holidays make as a green orb on the months, big enough to see and wider the longer the break.
+
+  ![planng-holidays.31.1](requirements/screen/cases/planng-holidays.31.1.png) <!-- req-gallery:31.1 -->
+
+  <details><summary>Notes</summary>
+
+  One orb per break, centred on it. Its width grows with the square root of
+  the break's days, never with the strip's scale, so a one-day holiday is as
+  easy to see on a phone as on a desk; an orb may cover a month's name. The
+  breaks are 31.6's. The names come
+  from the committed per-country files in `site/holidays/`, generated from
+  the `holidays` Python package by `scripts/build-holidays.py`, in the page's
+  language where the package carries one and in English otherwise. A few
+  countries' files add the days most people take off beyond the statutory
+  ones, such as Israel's holiday weeks of Pesach and Sukkot.
+  </details>
+
+- `31.2` Until you have said how you are getting here, the holidays are those of the country you connect from, and their cards say so; your answer replaces the guess.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:31.2 -->
+
+- `31.5` Pointing at an orb explains it: the holidays in the break, its dates, how many days off it makes counting the weekend and any work day in the middle, and whose holidays they are.
+
+  ![planng-holiday-card.31.5](requirements/screen/cases/planng-holiday-card.31.5.png) <!-- req-gallery:31.5 -->
+
+- `31.6` A break is the run of days off around a holiday, its country's own weekend included, bridged over one work day between two runs of days off.
+
+  <table><thead><tr><th align="left">Holidays</th><th align="left">Weekend</th><th align="left">The break</th><th align="left">Days off</th><th align="left">Work days in the middle</th></tr></thead><tbody><tr><td>Wed 14 Oct</td><td>Sat and Sun</td><td>Wed 14</td><td>1</td><td>0</td></tr><tr><td>Fri 16 Oct</td><td>Sat and Sun</td><td>Fri 16 to Sun 18</td><td>3</td><td>0</td></tr><tr><td>Wed 7 and Thu 8 Oct</td><td>Sat and Sun</td><td>Wed 7 to Sun 11</td><td>5</td><td>1</td></tr><tr><td>Tue 13 Oct</td><td>Sat and Sun</td><td>Sat 10 to Tue 13</td><td>4</td><td>1</td></tr><tr><td>Thu 15 Oct</td><td>Fri and Sat</td><td>Thu 15 to Sat 17</td><td>3</td><td>0</td></tr><tr><td>Tue 13 and Thu 15 Oct</td><td>Sat and Sun</td><td>Sat 10 to Sun 18</td><td>9</td><td>3</td></tr></tbody></table> <!-- req-gallery:31.6 -->
+
+- `31.3` The site's own service tells the page the country a visitor connects from, and keeps nothing.
+
+  🔧 _Logic leaf._ <!-- req-gallery:31.3 -->
+
+  <details><summary>Notes</summary>
+
+  `/api/where` answers the two-letter country Cloudflare's edge already
+  attaches to the request, or null when it has none. Nothing is logged or
+  stored, and no other service is asked.
+  </details>
+
+- `31.4` The holiday files cover the whole year the strip shows, for at least another year.
+
+  🔧 _Logic leaf._ <!-- req-gallery:31.4 -->
+
+  <details><summary>Notes</summary>
+
+  Read against the real clock rather than the harness's fixed day, so the
+  build goes red a year before the files run out, which is when
+  `scripts/build-holidays.py` needs running again for later years.
+  </details>
+
+## 29. Who's coming
+
+Who is coming is asked before anything finer, because it answers most of the
+rest: how full a day should be, what to favour, when the evening ends and how
+to eat. Those answers are filled in from it for every question the reader has
+not answered themselves, and said to be suggestions; an answer the reader
+gives is theirs and is never overwritten.
+
+- `29.1` "Who's coming?" is the first chip: just me, a couple, family with the children's ages, or friends.
+
+  ![jerusalem-who.29.1](requirements/screen/cases/jerusalem-who.29.1.png) <!-- req-gallery:29.1 -->
+
+  <details><summary>Notes</summary>
+
+  Opened on a family with children of 5 and 9. The ages are the ones the
+  Plan2 page asks, and only a family is asked them.
+  </details>
+
+- `29.2` Who is coming suggests how full a day is, the kinds favoured, when the evening ends and how to eat.
+
+  <table><thead><tr><th align="left">Who's coming</th><th align="left">A day</th><th align="left">Favoured</th><th align="left">Evening ends</th><th align="left">Eating</th></tr></thead><tbody><tr><td>Just me</td><td>packed</td><td>nothing in particular</td><td>01:00</td><td>sorted out yourself</td></tr><tr><td>A couple</td><td>steady</td><td>nothing in particular</td><td>01:00</td><td>dinner</td></tr><tr><td>Friends</td><td>steady</td><td>nothing in particular</td><td>01:00</td><td>sorted out yourself</td></tr><tr><td>Family, youngest under 8</td><td>easy</td><td>family shows</td><td>21:00</td><td>three meals</td></tr><tr><td>Family, youngest 8 to 11</td><td>steady</td><td>family shows</td><td>22:00</td><td>three meals</td></tr><tr><td>Family, all 12 or over</td><td>steady</td><td>family shows</td><td>01:00</td><td>three meals</td></tr></tbody></table> <!-- req-gallery:29.2 -->
+
+  <details><summary>Notes</summary>
+
+  The table is the whole rule. A family with no ages given is treated as one
+  whose children are old enough to stay out.
+  </details>
+
+- `29.3` Choosing who's coming fills in every question not yet answered, marked as suggested; an answer you gave yourself stays yours.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:29.3 -->
+
+  <details><summary>Notes</summary>
+
+  Driven: a family with a five-year-old sets an easy pace, three meals, the
+  family kind and a 21:00 evening, each chip marked as suggested; the pace is
+  then answered by hand, and a switch to a couple changes the meals and the
+  evening but not the pace. After a reload the same answers come back, with
+  the same marks.
+  </details>
+
+## 30. How a show looks
+
+A block in the calendar says at a glance which festival a show belongs to and
+what kind of show it is, so a trip across several festivals reads without
+opening anything. Blocks that are the reader's own time (meals, rest,
+excursions, flights) carry no festival colour and are hatched instead (28).
+
+- `30.1` A show's block has its festival's colour at its edge and its kind's emoji before its name; a free show carries a small Free tag.
+
+  ![planng-block-look.30.1](requirements/screen/cases/planng-block-look.30.1.png) <!-- req-gallery:30.1 -->
+
+  <details><summary>Notes</summary>
+
+  The Haifa trip, which reaches Acco: the day given to Acco, where two shows
+  are free, beside the Haifa day before it. The kinds are the shared ones the
+  kinds chip offers (21), so a Haifa film and an Acco play carry different
+  emoji whatever each festival calls its own sections.
+  </details>
+
+- `30.2` Under the calendar, a legend names each festival with a show in view, in its colour.
+
+  ![planng-festival-legend.30.2](requirements/screen/cases/planng-festival-legend.30.2.png) <!-- req-gallery:30.2 -->
+
+  <details><summary>Notes</summary>
+
+  Only festivals with a drafted show are named, so a one-festival trip shows
+  one entry.
+  </details>
+
+## 32. Buying the tickets
+
+Every festival says how its tickets are sold, and the shows the reader locks
+are gathered under the calendar, ready to buy. The planner sells nothing
+itself: checking out opens the places that do.
+
+- `32.1` Every festival says how its tickets are sold, and each way decides what the checkout opens.
+
+  <table><thead><tr><th align="left">How the festival sells tickets</th><th align="left">Checkout opens</th></tr></thead><tbody><tr><td>One box office for every show</td><td>each show's own page on it</td></tr><tr><td>Each show through its own seller</td><td>each show's own seller</td></tr><tr><td>One pass for the whole festival</td><td>the pass, once</td></tr><tr><td>Everything is free</td><td>nothing</td></tr><tr><td>Some other way</td><td>the festival's ticketing page, once</td></tr><tr><td>Not said, or a way the page does not know</td><td>the festival's own site, once</td></tr><tr><td>Any way, for a show that is free</td><td>nothing for that show</td></tr></tbody></table> <!-- req-gallery:32.1 -->
+
+  <details><summary>Notes</summary>
+
+  The ways are a list a festival picks from in its `festival.toml`'s
+  `[ticketing] model`, and a way the page does not know yet is read as the
+  festival's own site, so adding one never breaks the page.
+  </details>
+
+- `32.2` Under the calendar, a checkout gathers every locked show by festival, each festival saying how its tickets are sold and each show linking where to buy it.
+
+  ![planng-checkout.32.2](requirements/screen/cases/planng-checkout.32.2.png) <!-- req-gallery:32.2 -->
+
+  <details><summary>Notes</summary>
+
+  The Haifa trip, which reaches Acco, with a show locked in each. Nothing
+  locked, no checkout. A free show needs no ticket and says so.
+  </details>
+
+- `32.3` Checkout opens the next place to buy in a new tab on each press, counting down what is left, since the planner cannot buy for you.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:32.3 -->
+
+  <details><summary>Notes</summary>
+
+  One tab per press, because a browser lets a page open one window for each
+  click and blocks the rest. Shows sold on the same page share one tab.
+  </details>
+
+## 33. Around the city
+
+A trip is days in a city, not only its shows. Under the calendar, a drawer
+named for the trip's city gathers a short list of where to stay and where to
+eat near the festival's venues, the city's best-known sights, and the day
+trips its travel guide suggests, each linking to where to find out more. The
+lists come from open sources — OpenStreetMap, Wikidata and Wikivoyage — and the
+footer credits them under their licences.
+
+- `33.1` Under the calendar, the city's drawer opens on four short lists: places to stay and to eat near the venues, sights, and day trips, each one linked.
+
+  ![jerusalem-city-guide.33.1](requirements/screen/cases/jerusalem-city-guide.33.1.png) <!-- req-gallery:33.1 -->
+
+  <details><summary>Notes</summary>
+
+  The Jerusalem trip. A place to stay or eat is offered where most of the
+  festival's venues are a walk (1 km) away, then where the reader can check
+  most before going (a website, mapped opening hours, stars or a cuisine),
+  then nearest a venue; each says how far its nearest venue is. Sights are the
+  city's best-known by how many Wikipedia editions describe them. Day trips
+  are the Wikivoyage guide's "Go next" destinations within 200 km, nearest
+  first, with the guide's own line about each. A place links to its own site
+  where OpenStreetMap maps one, and to its OpenStreetMap entry otherwise. The
+  lists are built by `scraper/cities/` (its README).
+  </details>
+
+- `33.2` While the city's lists are on the page, the footer credits OpenStreetMap's contributors under the ODbL and Wikivoyage under CC BY-SA, each linked.
+
+  ![jerusalem-guide-credit.33.2](requirements/screen/cases/jerusalem-guide-credit.33.2.png) <!-- req-gallery:33.2 -->
+
+- `33.3` A city with no lists yet shows no drawer and no credit for them.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:33.3 -->
+
+  <details><summary>Notes</summary>
+
+  Driven with the cities' registry failing to load: the calendar is drawn as
+  ever, and nothing on the page mentions the city's lists.
+  </details>
+
+- `33.4` On the real data, every city hosting a festival with a programme has its drawer, holding at most 8 places to stay, 8 to eat, 6 sights and 6 day trips.
+
+  <table><thead><tr><th align="left">List</th><th align="left">Holds at most</th></tr></thead><tbody><tr><td>Places to stay</td><td>8</td></tr><tr><td>Places to eat</td><td>8</td></tr><tr><td>Sights</td><td>6</td></tr><tr><td>Day trips</td><td>6</td></tr></tbody></table> <!-- req-gallery:33.4 -->
+
+  <details><summary>Notes</summary>
+
+  Every host city's lists are checked in the served data, since a festival
+  whose run is behind the year strip cannot be opened on the page but its
+  city still has lists; on the page, the drawer of each host city whose
+  festival the planner opens on is counted. Every city offers somewhere to
+  stay and to eat; a city whose Wikivoyage guide lists no destinations has
+  no day trips.
+  </details>
+
+## 25. Never a list of thousands
+
+A festival programme can hold hundreds of events and a period can pool several
+festivals. The page stays usable by never drawing more than it can show; the
+constants live in `site/shared/limits.js`.
+
+- `25.1` A list draws at most a page of rows, and above a threshold it asks for a search first.
+
+  <table><thead><tr><th align="left">Items</th><th align="left">Query</th><th align="left">Pages asked for</th><th align="left">Rows drawn</th><th align="left">Held back</th><th align="left">Asks for a search</th></tr></thead><tbody><tr><td>34</td><td>none</td><td>1</td><td>34</td><td>0</td><td>no</td></tr><tr><td>100</td><td>none</td><td>1</td><td>100</td><td>0</td><td>no</td></tr><tr><td>101</td><td>none</td><td>1</td><td>0</td><td>101</td><td>yes</td></tr><tr><td>3000</td><td>none</td><td>1</td><td>0</td><td>3000</td><td>yes</td></tr><tr><td>3000</td><td>typed</td><td>1</td><td>200</td><td>2800</td><td>no</td></tr><tr><td>3000</td><td>typed</td><td>2</td><td>400</td><td>2600</td><td>no</td></tr><tr><td>150</td><td>typed</td><td>1</td><td>150</td><td>0</td><td>no</td></tr></tbody></table> <!-- req-gallery:25.1 -->
+
+  <details><summary>Notes</summary>
+
+  A question's own answers need no cap: the kinds are the same eight whatever
+  the pool, and the festivals' own tags beneath them are capped like a search
+  filter's options (`25.3`), with a box to find the rest by name.
+  </details>
+
+- `25.2` The timeline draws one bar per edition, however many performances the edition has.
+
+  <table><thead><tr><th align="left">Festival</th><th align="left">Edition</th><th align="left">Runs</th><th align="left">Programme</th><th align="left">Bars on the timeline</th></tr></thead><tbody><tr><td>Jerusalem Comedy Festival</td><td>2026</td><td>18 – 22 Oct 2026</td><td>published</td><td>1</td></tr><tr><td>Haifa International Film Festival</td><td>2026</td><td>25 Sep – 3 Oct 2026</td><td>not yet</td><td>1</td></tr><tr><td>A Fringe-sized festival</td><td>2026</td><td>7 – 31 Aug 2026</td><td>published</td><td>1</td></tr><tr><td>A Fringe-sized festival</td><td>2025</td><td>1 – 25 Aug 2025</td><td>published</td><td>0 (before the year shown)</td></tr></tbody></table> <!-- req-gallery:25.2 -->
+
+- `25.3` A search filter lists at most a panel's worth of options, the busiest making the cut, and never hides one already chosen.
+
+  <table><thead><tr><th align="left">Options</th><th align="left">Chosen</th><th align="left">Listed</th><th align="left">Left for the search</th></tr></thead><tbody><tr><td>6</td><td>none</td><td>6</td><td>0</td></tr><tr><td>30</td><td>none</td><td>30</td><td>0</td></tr><tr><td>300</td><td>none</td><td>the busiest 30</td><td>270</td></tr><tr><td>300</td><td>the 250th</td><td>the busiest 30 and the 250th</td><td>269</td></tr></tbody></table> <!-- req-gallery:25.3 -->
+
+  <details><summary>Notes</summary>
+
+  `FACET_OPTIONS` in `site/shared/limits.js`. The Fringe plays in some three
+  hundred venues; the rest are one search away, since the query matches a
+  venue's name, and the panel says how many it left out. The same file caps
+  the shows a contested hour names as its rivals at `RIVAL_ROWS`, scarcest
+  first, with a line for how many more.
+  </details>
+
+- `25.4` Choosing Haifa, Acco or Jerusalem never downloads the Fringe's programme; choosing the Fringe does.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:25.4 -->
+
+  <details><summary>Notes</summary>
+
+  A festival's programme is fetched only once a period reaches its dates, so
+  the three Israeli festivals plan off their own small files and the Fringe's
+  catalogue waits until the reader asks for Edinburgh.
+  </details>
+
+## 26. The Fringe's size, on the real programme
+
+The page was built for festivals of a few dozen to a few hundred events; the
+Fringe is some four thousand shows and sixty thousand performances. These
+leaves hold the page to that size by loading the **real committed Fringe
+data** (`site/data/`) rather than the frozen fixture: a sample can only prove
+the page survives the sample. They are coded rather than pictured, because a
+bound is a number and a render of the whole programme would move with every
+data refresh. Their kind (`scale`) is its own lane for that reason: it is the
+one place a case reads live files, and it asserts bounds that stay true
+whatever the day's data holds.
+
+- `26.1` Focused on the whole Fringe, no list draws more than its cap.
+
+  <table><thead><tr><th align="left">List</th><th align="left">Draws at most</th></tr></thead><tbody><tr><td>The drawer's programme list</td><td>nothing: it asks for a search</td></tr><tr><td>A one-letter search's results</td><td>SEARCH_RESULT_ROWS (40)</td></tr><tr><td>The genres filter's options</td><td>the eight shared kinds</td></tr><tr><td>The sub-genres filter's options</td><td>FACET_OPTIONS (30)</td></tr><tr><td>The venues filter's options</td><td>FACET_OPTIONS (30), and a line for the rest</td></tr><tr><td>The kinds question's answers</td><td>the eight shared kinds</td></tr><tr><td>The kinds question's tags</td><td>FACET_OPTIONS (30)</td></tr><tr><td>The rivals of the most contested hour</td><td>RIVAL_ROWS (8), and a line for the rest</td></tr><tr><td>The drawer's grid</td><td>a lane per show ruled on: none yet</td></tr></tbody></table> <!-- req-gallery:26.1 -->
+
+  <details><summary>Notes</summary>
+
+  Every list the page can draw, measured on the page itself after the whole
+  programme has been drafted: the drawer's browse list, a one-letter search,
+  both filter panels, the kinds question, and the rivals of the most contested
+  hour. The caps are the constants of `site/shared/limits.js`, read from the
+  shipped module.
+  </details>
+
+- `26.2` Focused on the whole Fringe, the page draws within its time budgets and stays a bounded page.
+
+  <table><thead><tr><th align="left">Measured</th><th align="left">Budget</th></tr></thead><tbody><tr><td>The first calendar, from navigation</td><td>8 s</td></tr><tr><td>A re-draft of the whole programme after one answer</td><td>2 s</td></tr><tr><td>Elements on the page, the programme drafted</td><td>4,000</td></tr></tbody></table> <!-- req-gallery:26.2 -->
+
+  <details><summary>Notes</summary>
+
+  The first calendar is timed from navigation, which includes downloading and
+  joining the three catalogue files; a re-draft from one answer, which
+  re-drafts the whole programme; and the elements on the page, which would
+  run into the tens of thousands if any list drew the programme. The budgets
+  leave room for a slow CI machine: locally the first calendar takes under a
+  second and a re-draft about 0.2 s.
+  </details>
+
+---
+
 # Part VI — what the site tells a crawler
 
 A public website has to be findable, and findable is a thing the site states
@@ -1463,7 +2754,7 @@ page cannot be added to the site and forgotten here.
 
 - `22.1` The sitemap lists every page the site publishes for a reader.
 
-  <table><thead><tr><th align="left">URL</th><th align="left">Served from</th></tr></thead><tbody><tr><td>/</td><td>index.html</td></tr><tr><td>/accessibility.html</td><td>accessibility.html</td></tr><tr><td>/plan/</td><td>plan/index.html</td></tr><tr><td>/planJerusalem/</td><td>planJerusalem/index.html</td></tr><tr><td>/planJerusalem/he/</td><td>planJerusalem/he/index.html</td></tr><tr><td>/planJerusalem/ja/</td><td>planJerusalem/ja/index.html</td></tr><tr><td>/planJerusalem/ru/</td><td>planJerusalem/ru/index.html</td></tr><tr><td>/privacy.html</td><td>privacy.html</td></tr><tr><td>/terms.html</td><td>terms.html</td></tr></tbody></table> <!-- req-gallery:22.1 -->
+  <table><thead><tr><th align="left">URL</th><th align="left">Served from</th></tr></thead><tbody><tr><td>/</td><td>index.html</td></tr><tr><td>/accessibility.html</td><td>accessibility.html</td></tr><tr><td>/plan/</td><td>plan/index.html</td></tr><tr><td>/planNG/</td><td>planNG/index.html</td></tr><tr><td>/planNG/he/</td><td>planNG/he/index.html</td></tr><tr><td>/planNG/ja/</td><td>planNG/ja/index.html</td></tr><tr><td>/planNG/ru/</td><td>planNG/ru/index.html</td></tr><tr><td>/privacy.html</td><td>privacy.html</td></tr><tr><td>/terms.html</td><td>terms.html</td></tr></tbody></table> <!-- req-gallery:22.1 -->
 
   <details><summary>Notes</summary>
 
@@ -1512,3 +2803,7 @@ page cannot be added to the site and forgotten here.
   says so on the page itself (22.2), which keeps it out of results rather than
   merely out of a crawl.
   </details>
+
+- `22.5` Every `/planJerusalem/` address, in every language, moves permanently to the same place under `/planNG/`.
+
+  <table><thead><tr><th align="left">Old address</th><th align="left">Moves to</th><th align="left">Status</th></tr></thead><tbody><tr><td>/planJerusalem</td><td>/planNG/</td><td>301</td></tr><tr><td>/planJerusalem/</td><td>/planNG/</td><td>301</td></tr><tr><td>/planJerusalem/he/</td><td>/planNG/he/</td><td>301</td></tr><tr><td>/planJerusalem/ru/</td><td>/planNG/ru/</td><td>301</td></tr><tr><td>/planJerusalem/ja/</td><td>/planNG/ja/</td><td>301</td></tr></tbody></table> <!-- req-gallery:22.5 -->

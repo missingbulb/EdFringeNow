@@ -1,0 +1,408 @@
+{
+ "nearM": 1000,
+ "anchors": [
+  {
+   "festival": "haifa-iff",
+   "venue": "auditorium",
+   "lat": 32.787,
+   "lng": 34.987
+  },
+  {
+   "festival": "haifa-iff",
+   "venue": "kriger-carmel-zarfati",
+   "lat": 32.781,
+   "lng": 34.973
+  },
+  {
+   "festival": "haifa-iff",
+   "venue": "tikotin",
+   "lat": 32.8078,
+   "lng": 34.9888
+  }
+ ],
+ "places": [
+  {
+   "id": "node/13160848578",
+   "lat": 32.80638,
+   "lng": 34.986593,
+   "tags": {
+    "name": "Carmella Hotel",
+    "name:en": "Carmella Hotel",
+    "tourism": "hotel",
+    "wikidata": "Q130301377"
+   }
+  },
+  {
+   "id": "node/13551283201",
+   "lat": 32.786749,
+   "lng": 34.982587,
+   "tags": {
+    "name": "כרמל מלון יולדות",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/13551428801",
+   "lat": 32.786751,
+   "lng": 34.982688,
+   "tags": {
+    "name": "מרווה",
+    "name:en": "Marva",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/13798454002",
+   "lat": 32.808129,
+   "lng": 34.99928,
+   "tags": {
+    "name": "Ресторан - скрипач на крыше",
+    "amenity": "restaurant",
+    "addr:housenumber": "5",
+    "addr:street": "חיים ויצמן"
+   }
+  },
+  {
+   "id": "node/1387594255",
+   "lat": 32.804972,
+   "lng": 34.987597,
+   "tags": {
+    "name": "ג'פניקה",
+    "name:en": "Japanika",
+    "amenity": "restaurant",
+    "cuisine": "japanese"
+   }
+  },
+  {
+   "id": "node/1387626443",
+   "lat": 32.801613,
+   "lng": 34.983604,
+   "tags": {
+    "name": "פסטה בסטה",
+    "name:en": "Pasta Basta",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Su 11:30-22:00"
+   }
+  },
+  {
+   "id": "node/1387668381",
+   "lat": 32.804875,
+   "lng": 34.986841,
+   "tags": {
+    "name": "Sleek",
+    "name:en": "Sleek",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/1387673787",
+   "lat": 32.804941,
+   "lng": 34.987988,
+   "tags": {
+    "name": "הבנק",
+    "name:en": "HaBank",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/1387673792",
+   "lat": 32.80478,
+   "lng": 34.988244,
+   "tags": {
+    "name": "וואלה",
+    "name:en": "Voila",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/1387736522",
+   "lat": 32.803252,
+   "lng": 34.986927,
+   "tags": {
+    "name": "ג'ירף",
+    "name:en": "Giraffe",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "website": "https://en.giraffe.co.il/restaurant",
+    "opening_hours": "Mo-Sa 12:00-22:30; Su 12:00-23:00"
+   }
+  },
+  {
+   "id": "node/1387736525",
+   "lat": 32.803221,
+   "lng": 34.987184,
+   "tags": {
+    "name": "Meat",
+    "name:en": "Meat",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/1387736536",
+   "lat": 32.803228,
+   "lng": 34.986899,
+   "tags": {
+    "name": "רובנס",
+    "name:en": "Ruben",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/1387801851",
+   "lat": 32.801916,
+   "lng": 34.984042,
+   "tags": {
+    "name": "Pizza Hut",
+    "name:en": "Pizza Hut",
+    "amenity": "restaurant",
+    "cuisine": "pizza"
+   }
+  },
+  {
+   "id": "node/1496264066",
+   "lat": 32.799611,
+   "lng": 34.984966,
+   "tags": {
+    "name": "Brooklyn 17 pizza bar",
+    "amenity": "restaurant",
+    "opening_hours": "Su-We 12:30-23:00; Th-Sa 17:00-24:00"
+   }
+  },
+  {
+   "id": "node/2700025098",
+   "lat": 32.807553,
+   "lng": 34.994722,
+   "tags": {
+    "name": "האיטלקיה החמה",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "addr:housenumber": "80",
+    "addr:street": "ארלוזורוב"
+   }
+  },
+  {
+   "id": "node/3584056029",
+   "lat": 32.78499,
+   "lng": 34.985906,
+   "tags": {
+    "name": "פיצה דלאל",
+    "name:en": "Pizza Dalal",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "addr:housenumber": "16",
+    "addr:street": "חורב",
+    "addr:postcode": "3434120"
+   }
+  },
+  {
+   "id": "node/4386522956",
+   "lat": 32.809464,
+   "lng": 34.993513,
+   "tags": {
+    "name": "\"Inside Out\" סושי בר",
+    "amenity": "restaurant",
+    "cuisine": "sushi"
+   }
+  },
+  {
+   "id": "node/4859371921",
+   "lat": 32.808005,
+   "lng": 34.993073,
+   "tags": {
+    "name": "Mimino",
+    "name:en": "Mimino",
+    "amenity": "restaurant",
+    "cuisine": "georgian"
+   }
+  },
+  {
+   "id": "node/4960942121",
+   "lat": 32.813243,
+   "lng": 34.995471,
+   "tags": {
+    "name": "מסעדה של אמא",
+    "name:en": "HaMis'ada shel Ima",
+    "amenity": "restaurant",
+    "cuisine": "ethiopian",
+    "opening_hours": "Mo-Th,Su 12:00-19:00; Fr 11:00-16:00; PH closed",
+    "addr:housenumber": "20",
+    "addr:street": "הנביאים"
+   }
+  },
+  {
+   "id": "node/5018171924",
+   "lat": 32.802112,
+   "lng": 34.984282,
+   "tags": {
+    "name": "Rola levantine kitchen",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/5018171925",
+   "lat": 32.802834,
+   "lng": 34.98559,
+   "tags": {
+    "name": "Elkheir druze cuisines",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/5295451833",
+   "lat": 32.787905,
+   "lng": 34.986377,
+   "tags": {
+    "name": "סינטה בר",
+    "name:en": "Sinta Bar",
+    "amenity": "restaurant",
+    "cuisine": "burger;bar_and_grill;grill",
+    "addr:housenumber": "127",
+    "addr:street": "שדרות מוריה"
+   }
+  },
+  {
+   "id": "node/6259863935",
+   "lat": 32.7879,
+   "lng": 34.969017,
+   "tags": {
+    "name": "מינה טומיי",
+    "name:en": "Minna Tomei",
+    "amenity": "restaurant",
+    "cuisine": "asian;thai;vietnamese;korean;indian;japanese"
+   }
+  },
+  {
+   "id": "node/651512231",
+   "lat": 32.802043,
+   "lng": 34.983151,
+   "tags": {
+    "name": "אגאדיר",
+    "name:en": "Agadir",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/651514584",
+   "lat": 32.810004,
+   "lng": 34.984995,
+   "tags": {
+    "name": "דן כרמל",
+    "name:en": "Dan Carmel",
+    "tourism": "hotel",
+    "website": "https://www.danhotels.com/HaifaHotels/DanCarmelHaifaHotel/",
+    "wikidata": "Q111399961"
+   }
+  },
+  {
+   "id": "node/779115346",
+   "lat": 32.789767,
+   "lng": 34.986314,
+   "tags": {
+    "name": "Pasto",
+    "name:en": "Pasto",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/813000269",
+   "lat": 32.802667,
+   "lng": 34.99051,
+   "tags": {
+    "name": "Gane Dan Hotel",
+    "name:en": "Gane Dan Hotel",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/813005468",
+   "lat": 32.807288,
+   "lng": 34.986041,
+   "tags": {
+    "name": "Bet- Shalom",
+    "name:en": "Bet- Shalom",
+    "tourism": "hotel",
+    "website": "https://www.beth-shalom.co.il/",
+    "addr:housenumber": "110",
+    "addr:street": "שדרות הנשיא",
+    "addr:postcode": "31064"
+   }
+  },
+  {
+   "id": "node/9441720437",
+   "lat": 32.809865,
+   "lng": 34.998849,
+   "tags": {
+    "name": "אוזבקצה",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "way/124781184",
+   "lat": 32.803409,
+   "lng": 34.987414,
+   "tags": {
+    "name": "Mandarin",
+    "name:en": "Mandarin",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "way/136397333",
+   "lat": 32.803198,
+   "lng": 34.990228,
+   "tags": {
+    "name": "מלון גני דן חיפה",
+    "name:en": "Dan Gardens Haifa",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/189599250",
+   "lat": 32.813073,
+   "lng": 34.997383,
+   "tags": {
+    "name": "The New Eden Hotel Haifa",
+    "name:en": "The New Eden Hotel Haifa",
+    "tourism": "hotel",
+    "website": "https://www.edenhaifa.com/",
+    "addr:housenumber": "8",
+    "addr:street": "שמריהו לוין",
+    "addr:postcode": "33101",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/304988002",
+   "lat": 32.808064,
+   "lng": 34.986549,
+   "tags": {
+    "name": "נוף",
+    "name:en": "Nof",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/91057494",
+   "lat": 32.806046,
+   "lng": 34.987611,
+   "tags": {
+    "name": "מגדל פנורמה",
+    "name:en": "Panorama Tower",
+    "tourism": "hotel",
+    "addr:housenumber": "111",
+    "addr:street": "שדרות הנשיא"
+   }
+  },
+  {
+   "id": "way/91057496",
+   "lat": 32.806497,
+   "lng": 34.987471,
+   "tags": {
+    "name": "מלון דן פנורמה",
+    "name:en": "Dan Panorama Hotel",
+    "tourism": "hotel",
+    "website": "https://www.danhotels.com/HaifaHotels/DanPanoramaHaifaHotel/"
+   }
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "festival": "eiff",
+ "edition": "2026",
+ "source": "festival-site",
+ "fetchedAt": "2026-09-25T14:01:51Z",
+ "fetcher": "scraper/festivals/eiff/sources/festival-site/fetch.py",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://www.edfilmfest.org/whats-on/",
+  "https://www.edfilmfest.org/wp-json/wp/v2/film",
+  "https://www.edfilmfest.org/wp-json/wp/v2/festival",
+  "https://www.edfilmfest.org/wp-json/wp/v2/programme_type"
+ ],
+ "files": [
+  "programme.json"
+ ],
+ "notes": "Showings (time, venue label, price bands, seats left, sold out) are read from the What's On page's date grid; a sold-out showing prints only its time, so its venue and price are unknown. Film taxonomy is WP REST."
+}

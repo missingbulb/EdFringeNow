@@ -20,6 +20,8 @@ import {
   israelTravelLink,
   nextDayISO,
   stayLink,
+  flightFareLink,
+  flightSearchLink,
   travelLink,
 } from "../affiliates.js";
 
@@ -177,4 +179,23 @@ test("Israel's transport links: a paid transfer and the untagged train", () => {
     kiwitaxiClickTemplate: template,
   };
   assert.equal(israelRailLink(everyTemplateSet).url, "https://www.rail.co.il/en");
+});
+
+test("a day's flight search is the route and the day in Aviasales' one path segment", () => {
+  const { url, partner } = flightSearchLink({ from: "LON", to: "TLV", dateISO: "2026-10-07" });
+  assert.equal(url, "https://www.aviasales.com/search/LON0710TLV1");
+  assert.equal(partner, "Aviasales");
+});
+
+test("a found fare opens its own Aviasales page", () => {
+  assert.equal(flightFareLink("/search/LON0710TLV1?t=abc").url, "https://www.aviasales.com/search/LON0710TLV1?t=abc");
+});
+
+test("a filled-in Aviasales marker tags both flight links", () => {
+  const tagged = { ...AFFILIATES, aviasalesMarker: "12345" };
+  assert.equal(
+    flightSearchLink({ from: "LON", to: "TLV", dateISO: "2026-10-07" }, tagged).url,
+    "https://www.aviasales.com/search/LON0710TLV1?marker=12345"
+  );
+  assert.equal(flightFareLink("/search/LON0710TLV1?t=abc", tagged).url, "https://www.aviasales.com/search/LON0710TLV1?t=abc&marker=12345");
 });

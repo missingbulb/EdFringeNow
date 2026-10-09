@@ -1,0 +1,1109 @@
+{
+ "v": 1,
+ "festival": {
+  "id": "outshine-lgbtq-film-festival",
+  "edition": "2026",
+  "ordinal": null,
+  "name": "OUTshine LGBTQ+ Film Festival (Fall Edition)",
+  "nameLocal": null,
+  "city": "Fort Lauderdale",
+  "country": "US",
+  "lat": 26.1224,
+  "lng": -80.1373,
+  "timezone": "America/New_York",
+  "lang": "en",
+  "dir": "ltr",
+  "kind": "film",
+  "defaultGenre": "film",
+  "site": "https://outshinefilm.com",
+  "firstDate": "2026-10-15",
+  "lastDate": "2026-10-25",
+  "ticketing": {
+   "model": "central-box-office",
+   "url": "https://outshinefall2026.eventive.org",
+   "notes": "Sold on outshinefall2026.eventive.org, one ticket page per screening; the box office counts 46 editions over 28 years, which is not one ordinal, so none is served.",
+   "currency": "USD"
+  }
+ },
+ "categories": [],
+ "venues": [
+  {
+   "id": "6aa99726170f9b1e5e61a9ab",
+   "name": "Regal Dania Pointe",
+   "address": "Sunset Drive, Dania Pointe, Dania Beach, FL 33004",
+   "lat": 26.0522603,
+   "lng": -80.1609331,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": [
+    "https://www.openstreetmap.org/node/13078228076"
+   ]
+  },
+  {
+   "id": "6aa99726170f9b1e5e61a9ac",
+   "name": "Gateway Theatre Fort Lauderdale",
+   "address": "1820 E Sunrise Blvd., Fort Lauderdale FL, 33304",
+   "lat": 26.136815,
+   "lng": -80.121353,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aa99726170f9b1e5e61a9ae",
+   "name": "Silverspot Downtown Miami",
+   "address": "300 SE 3rd St #100, Miami, FL 33131",
+   "lat": 25.771645,
+   "lng": -80.188467,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aa99726170f9b1e5e61a9af",
+   "name": "Savor Cinema Fort Lauderdale",
+   "address": "503 SE 6th St, Fort Lauderdale, FL 33301",
+   "lat": 26.11512,
+   "lng": -80.138248,
+   "online": false,
+   "capacity": 220,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aa99726170f9b1e5e61a9b0",
+   "name": "O Cinema South Beach",
+   "address": "1130 Washington Ave, Miami Beach, FL 33139",
+   "lat": 25.782624,
+   "lng": -80.132643,
+   "online": false,
+   "capacity": 75,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aac92f46fa99450679bed7c",
+   "name": "Little Haiti Cultural Complex",
+   "address": "212 NE 59th Terrace, Miami, FL 33137",
+   "lat": 25.830186,
+   "lng": -80.19143,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  }
+ ],
+ "events": [
+  {
+   "id": "films-6aa9978706effac1272d8686",
+   "title": "OPENING NIGHT FILM & PARTY: La Bola Negra",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/films/6aa9978706effac1272d8686",
+   "genre": "film",
+   "categories": [],
+   "blurb": "OPENING NIGHT PARTY AT 14 NORTH DAIQUIRI BAR 🍹\n\nTICKET INCLUDES FILM & AFTER PARTY WITH OPEN BAR, DAIQUIRIS, LITE BITES & LIVE ENTERTAINMENT.",
+   "durationMin": 155,
+   "imageUrl": "https://static-a.eventive.org/cde6430534111bc3eb1b31d6eebbe911.jpg"
+  },
+  {
+   "id": "films-6aac31560b999be3c3d4e501",
+   "title": "The Mirror",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/films/6aac31560b999be3c3d4e501",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Argentinian filmmaker Marco Berger brings his signature directing style to the screen again. Unspoken feelings, slight facial expressions with long glances, and the weight of a single kiss all illustrate male sexual fluidity and the desire for intimacy among men. With a challenging narrative of a film within a film, and nuanced acting - including Berger himself in the lead role - the film confirms that art can mirror queer life.",
+   "durationMin": 103,
+   "imageUrl": "https://static-a.eventive.org/1789669864919temp-1789669864778-still.jpg"
+  },
+  {
+   "id": "films-6aa998321780ff3331775aab",
+   "title": "Tangles",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/films/6aa998321780ff3331775aab",
+   "genre": "film",
+   "categories": [],
+   "blurb": "A young lesbian artist's life is upended when her mother's Alzheimer's diagnosis forces her to choose between the future she's building with the woman she loves and the family she can't leave behind.",
+   "durationMin": 102,
+   "imageUrl": "https://static-a.eventive.org/9fc250197c2e7672359d017a038a0bbf.jpg"
+  },
+  {
+   "id": "films-6aac2fc770104429f2968d6d",
+   "title": "The Last Routine",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/films/6aac2fc770104429f2968d6d",
+   "genre": "film",
+   "categories": [],
+   "blurb": "During the final day of his life, Olympic figure skating champion Ondrej Nepela must confront the personal and political forces that have shaped his identity and threatened his freedom.",
+   "durationMin": 89,
+   "imageUrl": "https://static-a.eventive.org/1789669569012temp-1789669568965-still.jpg"
+  },
+  {
+   "id": "films-6aac2ce2e3fa7c96184182ae",
+   "title": "OUTSHINE AFTER DARK: The Boy with the Light Blue Eyes",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/films/6aac2ce2e3fa7c96184182ae",
+   "genre": "film",
+   "categories": [],
+   "blurb": "In a superstitious Greek mountain village, a teenager whose unusual blue eyes are believed to bring evil must confront fear, violence, and his own hidden desires when his secret is exposed and his forbidden relationship threatens to change everything.",
+   "durationMin": 99,
+   "imageUrl": "https://static-a.eventive.org/4c8bd21d1d7cb027c1a8a127d9fb0e81.jpg"
+  },
+  {
+   "id": "films-6aab8cdb544f2e2f87b9eaff",
+   "title": "Heals",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/films/6aab8cdb544f2e2f87b9eaff",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Asia's most celebrated drag queen confronts family trauma and personal struggles while transforming pain into power through the art of drag.",
+   "durationMin": 102,
+   "imageUrl": "https://static-a.eventive.org/1ced71e6cda5e25609dccfb9e88e8780.jpg"
+  },
+  {
+   "id": "films-6aab7f8a188db3ddc2e039b8",
+   "title": "A Good Child (好孩子)",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/films/6aab7f8a188db3ddc2e039b8",
+   "genre": "film",
+   "categories": [],
+   "blurb": "A drag queen's innocent deception becomes an unexpected path to healing when his mother with dementia mistakes him for the daughter she always believed she had, forcing them both to confront the past.",
+   "durationMin": 105,
+   "imageUrl": "https://static-a.eventive.org/6302b028750944f7ef005cb049ac18be.jpg"
+  },
+  {
+   "id": "films-6aac1c7273ee16b842814bfe",
+   "title": "I Come Home",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/films/6aac1c7273ee16b842814bfe",
+   "genre": "film",
+   "categories": [],
+   "blurb": "An unexpected pregnancy throws a polyamorous throuple into emotional turmoil as they confront family expectations and redefine what commitment, love, and home truly mean during a chaotic family wedding.",
+   "durationMin": 97,
+   "imageUrl": "https://static-a.eventive.org/1789664511439temp-1789664511385-still.jpg"
+  },
+  {
+   "id": "films-6aac2668564141ace0be1c8e-6aadef9a392634bb18f4ce8f",
+   "title": "Mineshaft: The Cruising Murders & Welcome To The Tool Shed",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/schedule/6aac47ef483f87030d9c0d64",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Mineshaft: The Cruising Murders: A documentary revisits the controversy surrounding Cruising while uncovering the real-life murder that inspired the film, illuminating a transformative era in queer history.\n\nWelcome To The Tool Shed: The documentary takes an in depth, searing dive into the colorful community of queer senior citizens who congregate at the Tool Shed, a long-standing gay bar and sanctuary for queer people in Palm Springs, CA.",
+   "durationMin": 107,
+   "imageUrl": "https://static-a.eventive.org/09788d38f27d344c8406bc663b23d9f3.jpg"
+  },
+  {
+   "id": "films-6aac26bbb51354e18cc263d5",
+   "title": "LADIES' SPOTLIGHT FILM & PARTY: Mouse",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/films/6aac26bbb51354e18cc263d5",
+   "genre": "film",
+   "categories": [],
+   "blurb": "AFTER PARTY AT J.MARKS RESTAURANT 🥂💃",
+   "durationMin": 120,
+   "imageUrl": "https://static-a.eventive.org/a9d6b9e48c06d5cdd10468464bc90010.jpg"
+  },
+  {
+   "id": "films-6aab8b7d61d88040a3d4badc",
+   "title": "MEN'S SPOTLIGHT FILM & PARTY: Flesh and Fuel",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/films/6aab8b7d61d88040a3d4badc",
+   "genre": "film",
+   "categories": [],
+   "blurb": "AFTER PARTY AT J.MARKS RESTAURANT 🥂💃",
+   "durationMin": 91,
+   "imageUrl": "https://static-a.eventive.org/1789627551592temp-1789627551365-still.jpg"
+  },
+  {
+   "id": "films-6aac1d3b544f2e2f87c77485",
+   "title": "Jim Queen and the Quest for Chloroqueer",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/films/6aac1d3b544f2e2f87c77485",
+   "genre": "film",
+   "categories": [],
+   "blurb": "When a mysterious virus threatens both his identity and the future of queer culture, a fallen gay influencer and his unlikely companion race across Paris in search of a cure.",
+   "durationMin": 85,
+   "imageUrl": "https://static-a.eventive.org/c2f7ee21cbdab4a5c6ca7968ff3dd07a.jpg"
+  },
+  {
+   "id": "films-6aab827613c2e625b8075ca3",
+   "title": "Ballroom",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/films/6aab827613c2e625b8075ca3",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Through the lives of its participants, this vibrant documentary celebrates ballroom culture as a powerful space of queer resistance, chosen family, and unapologetic self-expression.",
+   "durationMin": 150,
+   "imageUrl": "https://static-a.eventive.org/1789625312383temp-1789625312328-still.jpg"
+  },
+  {
+   "id": "films-6aaca3fc001115f149ea4c4b-6aaca41b3bf6d0abf623908d-6aaca44d3bf6d0abf6239446-6aaca4eb460173a2f41bc437-6aaca51bb9979042f23a1ccc-6aaca5eda406d1dda0a404d3-6ab1bd319373eb09ee3468e7",
+   "title": "It’s Ladies' Night: Ladies' Shorts Program",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/schedule/6aaca61ab82604c6f7578dc6",
+   "genre": "film",
+   "categories": [],
+   "blurb": "From around the world to South Florida enjoy this peek into sapphic shorts sure to tug at your heart strings AND funny bone.",
+   "durationMin": 96,
+   "imageUrl": "https://static-a.eventive.org/1789751424744temp-1789751424626-cover.jpg"
+  },
+  {
+   "id": "films-6aab8d4b69e86d246e4bc291",
+   "title": "Heir to Secrets",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/films/6aab8d4b69e86d246e4bc291",
+   "genre": "film",
+   "categories": [],
+   "blurb": "A successful Moroccan surgeon's world is upended when he discovers his long-lost father transitioned decades earlier, sending him on a journey to reconcile family, identity, and the truth.",
+   "durationMin": 109,
+   "imageUrl": "https://static-a.eventive.org/1789627885669temp-1789627885442-still.jpg"
+  },
+  {
+   "id": "films-6aac98a2f73cc5bb645e3376-6aac9ac6631559cc4530c45f-6aac9ae691d6e8e6861ea8fe-6aac9b02821eab088069a0e5-6aac9b48eb683ecfc12e4f07-6aac9b65a5287fecc52a213d-6aac9b79633a14b0cc677563",
+   "title": "Where The Men Are: Men's Shorts Program",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/schedule/6aac9e4091d6e8e6861f9595",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Geronto: GERONTO sheds a light on the often-taboo subject of gerontophilia, and challenges societal boundaries around age and desire.\n\nMethod Cowboy: When a struggling actor feigns being gay to land the role of a lifetime in an Oscar-bait Cowboy Western, he decides to transform himself for the role, blurring the lines between reality and performance.\n\nSomething Still: A heartbroken man returns to the home he shared with his ex-boyfriend, where visceral memories force him to confront the fissures that led to their parting: when the 'casual threesome' they planned evolved into something more.\n\nYellow Bucket: A gay teenager becomes concerned when he suspects his well-meaning parents may be attempting to influence his younger brother's sexual orientation through unconventional scientific methods.\n\nKiloran Bay: Starring Alan Cumming and Jack Wolfe, Kiloran Bay is a 13-minute musical short set amid the wild beauty of the Scottish Hebrides and the fierce joy of a wedding cèilidh. A moving story of queer joy and self-acceptance, it follows a man returning to his hometown, where he faces the forces that drove him away.\n\nOut of Checklist: Twelve-year-old, hyper-rational David pays an unannounced visit to his father's Prague apartment. Following a coming out and a subsequent divorce, his father lives alone and already has weekend plans. In a pinch, he convinces the only person available – a hook-up from Grindr – to look after David for the weekend. What could possibly go wrong?",
+   "durationMin": 119,
+   "imageUrl": "https://static-a.eventive.org/1789699947109temp-1789699947078-cover.jpg"
+  },
+  {
+   "id": "films-6aac2a1f5090fa81d75a4723",
+   "title": "The Arrangement",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/films/6aac2a1f5090fa81d75a4723",
+   "genre": "film",
+   "categories": [],
+   "blurb": "When a maid is forced into a family's devastating deception, an unlikely bond with her employer's wife threatens to unravel the patriarchal world that seeks to control them both.",
+   "durationMin": 103,
+   "imageUrl": "https://static-a.eventive.org/6ac1fce71906bbc49963399a04c6f7b0.jpg"
+  },
+  {
+   "id": "films-6aac238d61d88040a3e134f8",
+   "title": "Labrador — Autopsy of Silence",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/films/6aac238d61d88040a3e134f8",
+   "genre": "film",
+   "categories": [],
+   "blurb": "When a murder aboard a cargo ship casts suspicion on an Inuk mechanic, he must navigate grief, secrecy, and systemic injustice while protecting the truth about a forbidden love.",
+   "durationMin": 120,
+   "imageUrl": "https://static-a.eventive.org/11364ac55e25bf32729bf59c06203f4a.jpg"
+  },
+  {
+   "id": "films-6aab92fa161365de1def3aee",
+   "title": "Hijamat",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/films/6aab92fa161365de1def3aee",
+   "genre": "film",
+   "categories": [],
+   "blurb": "When his younger brother comes out, a devoted family man must choose between loyalty to his traditional Muslim family and protecting the sibling he loves.",
+   "durationMin": 104,
+   "imageUrl": "https://static-a.eventive.org/8186b6a15f7a828de6be86e5a1237ee7.jpg"
+  },
+  {
+   "id": "films-6aac31f85b3284f55c43be8e-6aac9c3c410438a4f509286a-6aac9d52eb683ecfc12ecd33-6aac9dc465dfd975fdf0b41f",
+   "title": "COCKTAILS & CINEMA™: Celebrating South Florida Films & Filmmakers: The Old Man And The Parrot, Duke, Brackish & Hogar",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/schedule/6aac8271a9680e4418477b15",
+   "genre": "film",
+   "categories": [],
+   "blurb": "South Florida has a small but mighty filmmaking community with plenty of interesting and compelling films. Some are students, or beginners while others are seasoned veterans of the industry who just happen to call South Florida HOME.",
+   "durationMin": 134,
+   "imageUrl": "https://static-a.eventive.org/796a668c35f5796d3345365175a35d99.jpg"
+  },
+  {
+   "id": "films-6aac25e2fd2c4bb92802d4fe",
+   "title": "COCKTAILS & CINEMA™: Loves Company",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/films/6aac25e2fd2c4bb92802d4fe",
+   "genre": "film",
+   "categories": [],
+   "blurb": "A fading television celebrity and his obsessive biggest fan form an unlikely bond after a crash strands him in the Florida Everglades, where loneliness, loss, and unexpected friendship collide.",
+   "durationMin": 95,
+   "imageUrl": "https://static-a.eventive.org/a55ac4a53a0dc61af58a8204a74a5f62.jpg"
+  },
+  {
+   "id": "films-6aab845585832c96073cd088",
+   "title": "COCKTAILS & CINEMA™: Bea Arthur: The Documentary \"I've Done Everything Except Porn\"",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/films/6aab845585832c96073cd088",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Through a never-before-seen interview and intimate conversations with those who knew her, the life and career of Bea Arthur are revisited, revealing the legendary actress, groundbreaking performer, and devoted LGBTQ+ ally behind some of television and theater’s most unforgettable characters.",
+   "durationMin": 90,
+   "imageUrl": "https://static-a.eventive.org/1789625643205temp-1789625642660-still.jpg"
+  },
+  {
+   "id": "films-6aac2d473515380996e15216",
+   "title": "COCKTAILS & CINEMA™: The Drive",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/films/6aac2d473515380996e15216",
+   "genre": "film",
+   "categories": [],
+   "blurb": "As Florida’s political climate grows increasingly hostile toward LGBTQ+ people, the vibrant community of Wilton Manors faces an uncertain future. Through personal stories, colorful characters, and life along Wilton Drive, The Drive celebrates a resilient queer community determined to protect its home and identity.",
+   "durationMin": 87,
+   "imageUrl": "https://static-a.eventive.org/1789669007556temp-1789669007242-still.jpg"
+  },
+  {
+   "id": "films-6aac28894a49571c6a2ab39e",
+   "title": "CENTERPIECE FILM & PARTY: No Rest for the Wicked",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/films/6aac28894a49571c6a2ab39e",
+   "genre": "film",
+   "categories": [],
+   "blurb": "HALLOWEEN THEMED AFTER PARTY ON THE PATIO AT SAVOR CINEMA 🩸",
+   "durationMin": 103,
+   "imageUrl": "https://static-a.eventive.org/1789667683489temp-1789667683111-still.jpg"
+  },
+  {
+   "id": "films-6aab8ad0954220bf84320443",
+   "title": "Downtown",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/films/6aab8ad0954220bf84320443",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Three friends who came of age in Amsterdam’s vibrant gay nightlife of the 1980s reunite decades later to confront the love, loss, and unspoken truths left in the wake of the AIDS crisis.",
+   "durationMin": 98,
+   "imageUrl": "https://static-a.eventive.org/1789627135483temp-1789627135214-still.jpg"
+  },
+  {
+   "id": "films-6aac32f7e2fa50f77f2e67fc",
+   "title": "Whispering Trees",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/films/6aac32f7e2fa50f77f2e67fc",
+   "genre": "film",
+   "categories": [],
+   "blurb": "A reluctant forester falls for a charismatic photographer, only to discover that the man he loves is also the key to the career-defining mission that could drive them apart.",
+   "durationMin": 89,
+   "imageUrl": "https://static-a.eventive.org/1789670304155temp-1789670303648-still.jpg"
+  },
+  {
+   "id": "films-6aab815673ee16b842765189",
+   "title": "Another Man (Un Altre Home)",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/films/6aab815673ee16b842765189",
+   "genre": "film",
+   "categories": [],
+   "blurb": "A man in a long-term relationship finds his carefully ordered life unraveling when a new neighbor awakens desires that challenge his sense of love, commitment, and identity.",
+   "durationMin": 91,
+   "imageUrl": "https://static-a.eventive.org/3bddb4edc0ef0f4425c9ebd1daa7be10.jpg"
+  },
+  {
+   "id": "films-6aab88ff32b87d4a59ed2f7f",
+   "title": "Chica Checa",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/films/6aab88ff32b87d4a59ed2f7f",
+   "genre": "film",
+   "categories": [],
+   "blurb": "A lonely village postwoman and her drag performer son reconnect as buried truths, family bonds, and the courage to embrace one's authentic self reshape both of their lives.",
+   "durationMin": 96,
+   "imageUrl": "https://static-a.eventive.org/1789626814941temp-1789626814785-still.jpg"
+  },
+  {
+   "id": "films-6aac24704e8638b47f4d51f7",
+   "title": "NOCHE CINEMUNDO LADIES' SPOTLIGHT: Love on a Tightrope",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/films/6aac24704e8638b47f4d51f7",
+   "genre": "film",
+   "categories": [],
+   "blurb": "IN PARTNERSHIP WITH MIAMI FILM FESTIVAL",
+   "durationMin": 116,
+   "imageUrl": "https://static-a.eventive.org/1789666643368temp-1789666642447-still.jpg"
+  },
+  {
+   "id": "films-6aac27e363ea961b539e7884",
+   "title": "NOCHE CINEMUNDO MEN'S SPOTLIGHT: Narciso",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/films/6aac27e363ea961b539e7884",
+   "genre": "film",
+   "categories": [],
+   "blurb": "IN PARTNERSHIP WITH MIAMI FILM FESTIVAL",
+   "durationMin": 101,
+   "imageUrl": "https://static-a.eventive.org/0efa22093a1c0020fe3fb1fd8d7c77a8.jpg"
+  },
+  {
+   "id": "films-6aab89f24f9be2ed75a32cb5",
+   "title": "OUTSHINE AFTER DARK: Corpus",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/films/6aab89f24f9be2ed75a32cb5",
+   "genre": "film",
+   "categories": [],
+   "blurb": "A young photographer follows the man he secretly loves to a remote estate, where an alluring invitation becomes a seductive nightmare of terror and survival.",
+   "durationMin": 102,
+   "imageUrl": "https://static-a.eventive.org/4c026878993e798906c03c7c1a9b7f74.jpg"
+  },
+  {
+   "id": "films-6aab936d5b3284f55c2f9af7",
+   "title": "I Am Mario",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/films/6aab936d5b3284f55c2f9af7",
+   "genre": "film",
+   "categories": [],
+   "blurb": "An unexpected pregnancy offers a forty-year-old trans man the chance to fulfill his lifelong dream of becoming a father, forcing him to redefine identity, masculinity, and family.",
+   "durationMin": 98,
+   "imageUrl": "https://static-a.eventive.org/5f57f0dc78c6957ac266234da3a23efd.jpg"
+  },
+  {
+   "id": "films-6aac2ea03515380996e192e7",
+   "title": "The Fixation",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/films/6aac2ea03515380996e192e7",
+   "genre": "film",
+   "categories": [],
+   "blurb": "A photographer reluctantly reunites with his famous former lover for an erotic project, reigniting a toxic relationship consumed by desire, jealousy, and obsession, forcing him to confront a dangerous past while struggling to survive the increasingly volatile assignment.",
+   "durationMin": 123,
+   "imageUrl": "https://static-a.eventive.org/1789669165971temp-1789669165722-still.jpg"
+  },
+  {
+   "id": "films-6aac2f44161365de1dfada0a",
+   "title": "The Golden Age",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/films/6aac2f44161365de1dfada0a",
+   "genre": "film",
+   "categories": [],
+   "blurb": "A butcher's daughter defies fate as she pursues her dream of becoming a countess, her extraordinary life unfolding alongside the defining events of the 20th century.",
+   "durationMin": 112,
+   "imageUrl": "https://static-a.eventive.org/9305b3b1a12ccfb7d6f20531c5a05397.jpg"
+  },
+  {
+   "id": "films-6aac296fc3cdd2ffdafeb23c",
+   "title": "Test",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/films/6aac296fc3cdd2ffdafeb23c",
+   "genre": "film",
+   "categories": [],
+   "blurb": "An aspiring bodybuilder from rural Ohio must reconcile faith, family, and ambition when an unexpected queer awakening threatens the carefully constructed life he has always known.",
+   "durationMin": 113,
+   "imageUrl": "https://static-a.eventive.org/18ea14b27fcad53e71520236e10b1c5b.jpg"
+  },
+  {
+   "id": "films-6aab885fc8f436f67ac561ea",
+   "title": "CLOSING NIGHT FILM & PARTY: Before I Do",
+   "titleLocal": null,
+   "url": "https://outshinefall2026.eventive.org/films/6aab885fc8f436f67ac561ea",
+   "genre": "film",
+   "categories": [],
+   "blurb": "A groom-to-be's bachelor weekend is thrown into disarray when unresolved feelings for his best man resurface, forcing everyone to reconsider what—and who—they're celebrating.",
+   "durationMin": 87,
+   "imageUrl": "https://static-a.eventive.org/3456f785ad80437498c5d0a583d9112d.jpg"
+  }
+ ],
+ "performances": [
+  {
+   "id": "6aaae19206142f8c29b04692",
+   "eventId": "films-6aa9978706effac1272d8686",
+   "venueId": "6aa99726170f9b1e5e61a9ab",
+   "roomId": null,
+   "date": "2026-10-15",
+   "start": "19:00",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aaae19206142f8c29b04692",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 75.0,
+   "priceMax": 75.0
+  },
+  {
+   "id": "6aac466c08595e1c71627623",
+   "eventId": "films-6aac31560b999be3c3d4e501",
+   "venueId": "6aa99726170f9b1e5e61a9ac",
+   "roomId": null,
+   "date": "2026-10-16",
+   "start": "19:00",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac466c08595e1c71627623",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6aac46bd08595e1c71629106",
+   "eventId": "films-6aa998321780ff3331775aab",
+   "venueId": "6aa99726170f9b1e5e61a9ac",
+   "roomId": null,
+   "date": "2026-10-16",
+   "start": "19:15",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac46bd08595e1c71629106",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6aac46f9564141ace0c0d1b1",
+   "eventId": "films-6aac2fc770104429f2968d6d",
+   "venueId": "6aa99726170f9b1e5e61a9ac",
+   "roomId": null,
+   "date": "2026-10-16",
+   "start": "21:30",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac46f9564141ace0c0d1b1",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6aac472e346601df5706093c",
+   "eventId": "films-6aac2ce2e3fa7c96184182ae",
+   "venueId": "6aa99726170f9b1e5e61a9ac",
+   "roomId": null,
+   "date": "2026-10-16",
+   "start": "21:45",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac472e346601df5706093c",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6aac47764a49571c6a2df19e",
+   "eventId": "films-6aab8cdb544f2e2f87b9eaff",
+   "venueId": "6aa99726170f9b1e5e61a9ac",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "13:45",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac47764a49571c6a2df19e",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6aac475a65992b667a5664cf",
+   "eventId": "films-6aab7f8a188db3ddc2e039b8",
+   "venueId": "6aa99726170f9b1e5e61a9ac",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "14:00",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac475a65992b667a5664cf",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6aac47c4544f2e2f87ca1659",
+   "eventId": "films-6aac1c7273ee16b842814bfe",
+   "venueId": "6aa99726170f9b1e5e61a9ac",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "16:30",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac47c4544f2e2f87ca1659",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6aac47ef483f87030d9c0d64",
+   "eventId": "films-6aac2668564141ace0be1c8e-6aadef9a392634bb18f4ce8f",
+   "venueId": "6aa99726170f9b1e5e61a9ac",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "16:45",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac47ef483f87030d9c0d64",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6aac5a9e7f4c608245ca5990",
+   "eventId": "films-6aac26bbb51354e18cc263d5",
+   "venueId": "6aa99726170f9b1e5e61a9ac",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "19:15",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac5a9e7f4c608245ca5990",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 40.0,
+   "priceMax": 40.0
+  },
+  {
+   "id": "6aac4df75b3284f55c472a3f",
+   "eventId": "films-6aab8b7d61d88040a3d4badc",
+   "venueId": "6aa99726170f9b1e5e61a9ac",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "19:30",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac4df75b3284f55c472a3f",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 40.0,
+   "priceMax": 40.0
+  },
+  {
+   "id": "6aac5b048d7a97d2e70ed872",
+   "eventId": "films-6aac1d3b544f2e2f87c77485",
+   "venueId": "6aa99726170f9b1e5e61a9ac",
+   "roomId": null,
+   "date": "2026-10-17",
+   "start": "21:45",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac5b048d7a97d2e70ed872",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6aac5b8899c51a7a440331c8",
+   "eventId": "films-6aab827613c2e625b8075ca3",
+   "venueId": "6aa99726170f9b1e5e61a9ac",
+   "roomId": null,
+   "date": "2026-10-18",
+   "start": "13:00",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac5b8899c51a7a440331c8",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6aaca61ab82604c6f7578dc6",
+   "eventId": "films-6aaca3fc001115f149ea4c4b-6aaca41b3bf6d0abf623908d-6aaca44d3bf6d0abf6239446-6aaca4eb460173a2f41bc437-6aaca51bb9979042f23a1ccc-6aaca5eda406d1dda0a404d3-6ab1bd319373eb09ee3468e7",
+   "venueId": "6aa99726170f9b1e5e61a9ac",
+   "roomId": null,
+   "date": "2026-10-18",
+   "start": "13:15",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aaca61ab82604c6f7578dc6",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6aac81a60b798e93c99d5758",
+   "eventId": "films-6aab8d4b69e86d246e4bc291",
+   "venueId": "6aa99726170f9b1e5e61a9ac",
+   "roomId": null,
+   "date": "2026-10-18",
+   "start": "16:15",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac81a60b798e93c99d5758",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6aac9e4091d6e8e6861f9595",
+   "eventId": "films-6aac98a2f73cc5bb645e3376-6aac9ac6631559cc4530c45f-6aac9ae691d6e8e6861ea8fe-6aac9b02821eab088069a0e5-6aac9b48eb683ecfc12e4f07-6aac9b65a5287fecc52a213d-6aac9b79633a14b0cc677563",
+   "venueId": "6aa99726170f9b1e5e61a9ac",
+   "roomId": null,
+   "date": "2026-10-18",
+   "start": "16:30",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac9e4091d6e8e6861f9595",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6aac821b2d8e0d91ee6f2fe1",
+   "eventId": "films-6aac2a1f5090fa81d75a4723",
+   "venueId": "6aa99726170f9b1e5e61a9ac",
+   "roomId": null,
+   "date": "2026-10-18",
+   "start": "19:00",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac821b2d8e0d91ee6f2fe1",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6aac81e9a5287fecc525436c",
+   "eventId": "films-6aac238d61d88040a3e134f8",
+   "venueId": "6aa99726170f9b1e5e61a9ac",
+   "roomId": null,
+   "date": "2026-10-18",
+   "start": "19:30",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac81e9a5287fecc525436c",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6aac824e15c5fe680dd10436",
+   "eventId": "films-6aab92fa161365de1def3aee",
+   "venueId": "6aa99726170f9b1e5e61a9ac",
+   "roomId": null,
+   "date": "2026-10-18",
+   "start": "21:30",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac824e15c5fe680dd10436",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6aac8271a9680e4418477b15",
+   "eventId": "films-6aac31f85b3284f55c43be8e-6aac9c3c410438a4f509286a-6aac9d52eb683ecfc12ecd33-6aac9dc465dfd975fdf0b41f",
+   "venueId": "6aa99726170f9b1e5e61a9b0",
+   "roomId": null,
+   "date": "2026-10-19",
+   "start": "19:00",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac8271a9680e4418477b15",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6aac8459a9b28bdef63c4c36",
+   "eventId": "films-6aac25e2fd2c4bb92802d4fe",
+   "venueId": "6aa99726170f9b1e5e61a9ac",
+   "roomId": null,
+   "date": "2026-10-19",
+   "start": "19:15",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac8459a9b28bdef63c4c36",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6aac84a983e0f7202fd03e70",
+   "eventId": "films-6aab845585832c96073cd088",
+   "venueId": "6aa99726170f9b1e5e61a9b0",
+   "roomId": null,
+   "date": "2026-10-20",
+   "start": "19:00",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac84a983e0f7202fd03e70",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6aac8518695b1b1e4f8b9b41",
+   "eventId": "films-6aac2d473515380996e15216",
+   "venueId": "6aa99726170f9b1e5e61a9ac",
+   "roomId": null,
+   "date": "2026-10-20",
+   "start": "19:15",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac8518695b1b1e4f8b9b41",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6aac8549e217f2d9c0406093",
+   "eventId": "films-6aac28894a49571c6a2ab39e",
+   "venueId": "6aa99726170f9b1e5e61a9af",
+   "roomId": null,
+   "date": "2026-10-21",
+   "start": "19:30",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac8549e217f2d9c0406093",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 40.0,
+   "priceMax": 40.0
+  },
+  {
+   "id": "6aac8804524f64ce929bebd9",
+   "eventId": "films-6aab8ad0954220bf84320443",
+   "venueId": "6aa99726170f9b1e5e61a9ae",
+   "roomId": null,
+   "date": "2026-10-22",
+   "start": "19:00",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac8804524f64ce929bebd9",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6aac883732a5ddd037c9360c",
+   "eventId": "films-6aac32f7e2fa50f77f2e67fc",
+   "venueId": "6aa99726170f9b1e5e61a9ac",
+   "roomId": null,
+   "date": "2026-10-22",
+   "start": "19:15",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac883732a5ddd037c9360c",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6aac88594c35151b886e260c",
+   "eventId": "films-6aab815673ee16b842765189",
+   "venueId": "6aa99726170f9b1e5e61a9ae",
+   "roomId": null,
+   "date": "2026-10-22",
+   "start": "21:30",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac88594c35151b886e260c",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6aac887f687e8724e6a00ae6",
+   "eventId": "films-6aab88ff32b87d4a59ed2f7f",
+   "venueId": "6aa99726170f9b1e5e61a9ac",
+   "roomId": null,
+   "date": "2026-10-22",
+   "start": "21:45",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac887f687e8724e6a00ae6",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6aac8fc17faf13f1bae81887",
+   "eventId": "films-6aac24704e8638b47f4d51f7",
+   "venueId": "6aa99726170f9b1e5e61a9ae",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "19:00",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac8fc17faf13f1bae81887",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 40.0,
+   "priceMax": 40.0
+  },
+  {
+   "id": "6aac88b3c0fdc5378f459068",
+   "eventId": "films-6aac27e363ea961b539e7884",
+   "venueId": "6aa99726170f9b1e5e61a9ae",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "19:25",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac88b3c0fdc5378f459068",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 40.0,
+   "priceMax": 40.0
+  },
+  {
+   "id": "6aac915dd0884f156ec3a1ef",
+   "eventId": "films-6aab89f24f9be2ed75a32cb5",
+   "venueId": "6aa99726170f9b1e5e61a9ae",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "21:30",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac915dd0884f156ec3a1ef",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6aac923048f4928cf45b8d0a",
+   "eventId": "films-6aab936d5b3284f55c2f9af7",
+   "venueId": "6aa99726170f9b1e5e61a9ae",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "16:00",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac923048f4928cf45b8d0a",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6aac9258360250e04923b7a5",
+   "eventId": "films-6aac2ea03515380996e192e7",
+   "venueId": "6aa99726170f9b1e5e61a9ae",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "18:45",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac9258360250e04923b7a5",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6aac9284dfe389a2b8f80b72",
+   "eventId": "films-6aac2f44161365de1dfada0a",
+   "venueId": "6aa99726170f9b1e5e61a9ae",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "19:00",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac9284dfe389a2b8f80b72",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6aac92a47de28aad2f501e69",
+   "eventId": "films-6aac296fc3cdd2ffdafeb23c",
+   "venueId": "6aa99726170f9b1e5e61a9ae",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "21:30",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac92a47de28aad2f501e69",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6aac92c6005e3715ca8cf6e9",
+   "eventId": "films-6aab885fc8f436f67ac561ea",
+   "venueId": "6aac92f46fa99450679bed7c",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "18:00",
+   "ticketUrl": "https://outshinefall2026.eventive.org/schedule/6aac92c6005e3715ca8cf6e9",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 40.0,
+   "priceMax": 40.0
+  }
+ ],
+ "sources": {
+  "festival": [
+   "festival.toml"
+  ],
+  "venues": [
+   "eventive",
+   "nominatim",
+   "venues-research"
+  ],
+  "events": [
+   "eventive"
+  ],
+  "performances": [
+   "eventive"
+  ],
+  "availability": [
+   "eventive"
+  ],
+  "prices": [
+   "eventive"
+  ]
+ },
+ "provenance": {
+  "sources": {
+   "eventive": {
+    "kind": "fetched",
+    "path": "data/festivals/outshine-lgbtq-film-festival/2026/eventive",
+    "fetchedAt": "2026-10-02T18:09:49Z",
+    "fetcher": "scraper/festivals/outshine_lgbtq_film_festival/sources/eventive/fetch.py",
+    "fetcherVersion": 1
+   },
+   "nominatim": {
+    "kind": "fetched",
+    "path": "data/festivals/outshine-lgbtq-film-festival/2026/nominatim",
+    "fetchedAt": "2026-10-02T18:34:40Z",
+    "fetcher": "scraper/festivals/outshine_lgbtq_film_festival/sources/nominatim/fetch.py",
+    "fetcherVersion": 3
+   },
+   "venues-research": {
+    "kind": "curated",
+    "path": "scraper/festivals/outshine_lgbtq_film_festival/curated/venues.json"
+   }
+  },
+  "absent": [],
+  "fields": {
+   "events.blurb": [
+    "eventive"
+   ],
+   "events.categories": [
+    "eventive"
+   ],
+   "events.durationMin": [
+    "eventive"
+   ],
+   "events.genre": [
+    "eventive"
+   ],
+   "events.imageUrl": [
+    "eventive"
+   ],
+   "events.title": [
+    "eventive"
+   ],
+   "events.url": [
+    "eventive"
+   ],
+   "performances.date": [
+    "eventive"
+   ],
+   "performances.eventId": [
+    "eventive"
+   ],
+   "performances.free": [
+    "eventive"
+   ],
+   "performances.priceMax": [
+    "eventive"
+   ],
+   "performances.priceMin": [
+    "eventive"
+   ],
+   "performances.start": [
+    "eventive"
+   ],
+   "performances.status": [
+    "eventive"
+   ],
+   "performances.ticketUrl": [
+    "eventive"
+   ],
+   "performances.venueId": [
+    "eventive"
+   ],
+   "venues.address": [
+    "eventive",
+    "venues-research"
+   ],
+   "venues.capacity": [
+    "eventive"
+   ],
+   "venues.lat": [
+    "nominatim",
+    "venues-research"
+   ],
+   "venues.lng": [
+    "nominatim",
+    "venues-research"
+   ],
+   "venues.name": [
+    "eventive",
+    "venues-research"
+   ],
+   "venues.notes": [
+    "venues-research"
+   ],
+   "venues.online": [
+    "eventive"
+   ],
+   "venues.refs": [
+    "venues-research"
+   ]
+  },
+  "skipped": {}
+ }
+}

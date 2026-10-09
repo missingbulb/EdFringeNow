@@ -1,0 +1,4081 @@
+{
+ "places": [
+  {
+   "id": "node/10156821819",
+   "lat": 37.977464,
+   "lng": 23.740387,
+   "tags": {
+    "name": "Kapopoulos",
+    "tourism": "gallery",
+    "addr:housenumber": "5-7"
+   }
+  },
+  {
+   "id": "node/10174041909",
+   "lat": 37.985365,
+   "lng": 23.740915,
+   "tags": {
+    "name": "Create art",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/10174056147",
+   "lat": 37.985672,
+   "lng": 23.741558,
+   "tags": {
+    "name": "Σκουμπρί",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/10178218453",
+   "lat": 38.000654,
+   "lng": 23.73336,
+   "tags": {
+    "name": "Ξυλότεχνο",
+    "tourism": "gallery",
+    "website": "Picture-on-wood.gr",
+    "addr:housenumber": "157",
+    "addr:street": "Πατησίων",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/10655452393",
+   "lat": 37.975021,
+   "lng": 23.724193,
+   "tags": {
+    "name": "Μουσείο Αρχαίας Αγοράς",
+    "name:en": "Museum of the Ancient Agora",
+    "tourism": "museum",
+    "opening_hours": "Nov-Mar Mo, Th-Su 08:00-17:00; Nov-Mar Tu 10:00-17:00; Apr-Oct Mo, Th-Su 08:00-20:00; Apr-Oct Tu 10:00-20:00",
+    "wikidata": "Q2383284",
+    "wikipedia": "en:Museum of the Ancient Agora",
+    "addr:housenumber": "24",
+    "addr:street": "Αδριανού",
+    "addr:postcode": "10555",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/10673342587",
+   "lat": 37.983146,
+   "lng": 23.722287,
+   "tags": {
+    "name": "Keramikos 23 art space",
+    "tourism": "gallery",
+    "opening_hours": "24/7",
+    "website": "https://www.keramikos23.com/",
+    "addr:housenumber": "23",
+    "addr:street": "Κεραμεικού",
+    "addr:postcode": "10437"
+   }
+  },
+  {
+   "id": "node/10706452483",
+   "lat": 38.004603,
+   "lng": 23.686661,
+   "tags": {
+    "name": "Ανδριάντας του Βενιζέλου Ελευθέριου",
+    "tourism": "artwork",
+    "historic": "memorial",
+    "wikidata": "Q114138985"
+   }
+  },
+  {
+   "id": "node/10706521825",
+   "lat": 38.015589,
+   "lng": 23.705781,
+   "tags": {
+    "name": "Προτομή του Δασκαλογίαννη",
+    "tourism": "artwork",
+    "historic": "memorial",
+    "wikidata": "Q114138977"
+   }
+  },
+  {
+   "id": "node/10785199592",
+   "lat": 37.974725,
+   "lng": 23.76573,
+   "tags": {
+    "name": "Άντα",
+    "tourism": "gallery",
+    "addr:housenumber": "82",
+    "addr:street": "Γρηγορίου Αυξεντίου",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/10832129355",
+   "lat": 37.975177,
+   "lng": 23.742691,
+   "tags": {
+    "name": "Μνημείο Πεσόντων Ιμίων",
+    "historic": "monument",
+    "wikidata": "Q111707920"
+   }
+  },
+  {
+   "id": "node/10992115218",
+   "lat": 37.981375,
+   "lng": 23.735311,
+   "tags": {
+    "name": "Μουσείο Μελέτης Ελληνικού Θεάτρου",
+    "name:en": "Museum and Study Centre of the Greek Theatre",
+    "tourism": "museum",
+    "wikidata": "Q1584857",
+    "wikipedia": "el:Θεατρικό Μουσείο - Κέντρο Μελέτης & Έρευνας Ελληνικού Θεάτρου"
+   }
+  },
+  {
+   "id": "node/11009463822",
+   "lat": 38.013806,
+   "lng": 23.780544,
+   "tags": {
+    "name": "Δημοτική Πινακοθήκη Ψυχικού",
+    "tourism": "gallery",
+    "addr:housenumber": "15",
+    "addr:street": "Κοκκώνη"
+   }
+  },
+  {
+   "id": "node/11210896979",
+   "lat": 37.988317,
+   "lng": 23.72462,
+   "tags": {
+    "name": "Μουσείο Σκίτσου",
+    "name:en": "Sketch Museum",
+    "tourism": "museum",
+    "opening_hours": "Nov-Mar 08:30-15:00",
+    "addr:housenumber": "8",
+    "addr:street": "Παλαιολόγου Κωνσταντίνου",
+    "addr:postcode": "10438",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/11377308267",
+   "lat": 37.977684,
+   "lng": 23.738217,
+   "tags": {
+    "name": "Μουσείο Αρχαίας Ελληνικής Τεχνολογίας Κοτσανά",
+    "name:en": "Museum of Ancient Greek Technology Kotsanas",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 10:00-18:00",
+    "website": "https://kotsanas.com/",
+    "addr:housenumber": "6",
+    "addr:street": "Πινδάρου",
+    "fee": "yes",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/11486548887",
+   "lat": 37.975524,
+   "lng": 23.730786,
+   "tags": {
+    "name": "Maria Callas Museum",
+    "tourism": "museum",
+    "website": "https://mariacallasmuseum.gr/en/",
+    "wikidata": "Q123193468",
+    "addr:housenumber": "44",
+    "addr:street": "Μητροπόλεως"
+   }
+  },
+  {
+   "id": "node/11582245009",
+   "lat": 37.972059,
+   "lng": 23.726258,
+   "tags": {
+    "name": "Πανδρόσειο",
+    "name:en": "Pandroseion",
+    "historic": "archaeological_site",
+    "wikidata": "Q2204137",
+    "wikipedia": "el:Πανδρόσειο"
+   }
+  },
+  {
+   "id": "node/11637690900",
+   "lat": 38.003264,
+   "lng": 23.745531,
+   "tags": {
+    "name": "Λόφος Art Project",
+    "tourism": "gallery",
+    "website": "https://www.lofosartproject.com/",
+    "addr:housenumber": "39",
+    "addr:street": "Βελβενδού"
+   }
+  },
+  {
+   "id": "node/12153276749",
+   "lat": 37.98134,
+   "lng": 23.791111,
+   "tags": {
+    "name": "Μνημείο του Πολέμου της Κορέας",
+    "name:en": "Korean War Memorial",
+    "historic": "memorial",
+    "wikidata": "Q113144770"
+   }
+  },
+  {
+   "id": "node/12369505074",
+   "lat": 37.97605,
+   "lng": 23.727909,
+   "tags": {
+    "name": "European Centre",
+    "tourism": "gallery",
+    "opening_hours": "We-Su 14:00-19:00",
+    "website": "https://www.contemporaryspaceathens.com/",
+    "addr:housenumber": "74",
+    "addr:street": "Μητροπόλεως"
+   }
+  },
+  {
+   "id": "node/12383490949",
+   "lat": 37.994175,
+   "lng": 23.730344,
+   "tags": {
+    "name": "Αννα Κυριακακη",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/12474394035",
+   "lat": 37.978014,
+   "lng": 23.735941,
+   "tags": {
+    "name": "Ινστιτούτο Σύγχρονης Ελληνικής Τέχνης (iset)",
+    "tourism": "gallery",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/12495699628",
+   "lat": 37.987664,
+   "lng": 23.737321,
+   "tags": {
+    "name": "Λαϊκή Αγορά Καλλιδρομίου",
+    "name:en": "Kallidromiou Farmers' Market",
+    "amenity": "marketplace",
+    "opening_hours": "Sa 08:00-14:00"
+   }
+  },
+  {
+   "id": "node/12609191254",
+   "lat": 37.987127,
+   "lng": 23.7744,
+   "tags": {
+    "name": "Badminton",
+    "leisure": "park",
+    "wikidata": "Q1224979"
+   }
+  },
+  {
+   "id": "node/12616017194",
+   "lat": 38.015747,
+   "lng": 23.758692,
+   "tags": {
+    "name": "Μασούτης",
+    "amenity": "marketplace"
+   }
+  },
+  {
+   "id": "node/12846799949",
+   "lat": 37.980204,
+   "lng": 23.715726,
+   "tags": {
+    "name": "Athens Street Hub",
+    "amenity": "marketplace"
+   }
+  },
+  {
+   "id": "node/12987375600",
+   "lat": 37.960897,
+   "lng": 23.752408,
+   "tags": {
+    "name": "Κώστας Μπανάσης",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/13087055286",
+   "lat": 37.968728,
+   "lng": 23.730303,
+   "tags": {
+    "name": "Makri St. peristyle (Athens)",
+    "historic": "archaeological_site",
+    "wikidata": "Q110808213"
+   }
+  },
+  {
+   "id": "node/13254217871",
+   "lat": 37.96993,
+   "lng": 23.730699,
+   "tags": {
+    "name": "Αρχείο Καβάφη",
+    "tourism": "museum",
+    "opening_hours": "Tu,Th,Sa 10:00-18:00",
+    "addr:housenumber": "16Β",
+    "addr:street": "Φρυνίχου",
+    "addr:postcode": "10558",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/13266014575",
+   "lat": 37.96028,
+   "lng": 23.731029,
+   "tags": {
+    "name": "Koren Art Space",
+    "tourism": "gallery",
+    "addr:housenumber": "55",
+    "addr:street": "Ιππάρχου"
+   }
+  },
+  {
+   "id": "node/13316508501",
+   "lat": 37.965683,
+   "lng": 23.743698,
+   "tags": {
+    "name": "Ruby Art",
+    "tourism": "gallery",
+    "addr:street": "Πλατεία Βαρνάβα"
+   }
+  },
+  {
+   "id": "node/13516652970",
+   "lat": 37.974914,
+   "lng": 23.726167,
+   "tags": {
+    "name": "Art In Gifts",
+    "tourism": "gallery",
+    "website": "https://www.instagram.com/reels/C7Dq6tONJSY/",
+    "addr:housenumber": "3",
+    "addr:street": "Δεξίππου"
+   }
+  },
+  {
+   "id": "node/13556107171",
+   "lat": 37.968873,
+   "lng": 23.728694,
+   "tags": {
+    "name": "Κέντρο Μελετών Ακροπόλεως",
+    "tourism": "museum",
+    "wikidata": "Q15260388",
+    "wikipedia": "el:Κέντρο Μελετών Ακροπόλεως"
+   }
+  },
+  {
+   "id": "node/13569941907",
+   "lat": 37.990718,
+   "lng": 23.722396,
+   "tags": {
+    "name": "Μουσείο Αλέκος Φασιανός",
+    "tourism": "museum",
+    "opening_hours": "We-Fr 11:00-16:00; Sa,Su 11:00-15:00",
+    "addr:postcode": "10439",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/13716229558",
+   "lat": 37.987063,
+   "lng": 23.727034,
+   "tags": {
+    "name": "Mini Greece Miniature Museum",
+    "tourism": "museum",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/13770447164",
+   "lat": 37.972442,
+   "lng": 23.744066,
+   "tags": {
+    "name": "Art Zone 42",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/13942313739",
+   "lat": 37.976273,
+   "lng": 23.725425,
+   "tags": {
+    "name": "Olivium Museum",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 10:00-22:00",
+    "addr:housenumber": "4",
+    "addr:street": "Ηφαίστου",
+    "addr:postcode": "10555"
+   }
+  },
+  {
+   "id": "node/14181091555",
+   "lat": 37.999951,
+   "lng": 23.737711,
+   "tags": {
+    "name": "Χώρος τέχνης \"ο\"",
+    "name:en": "\"o\" art space",
+    "tourism": "gallery",
+    "addr:housenumber": "36",
+    "addr:street": "Σποράδων",
+    "addr:postcode": "11361"
+   }
+  },
+  {
+   "id": "node/14197371713",
+   "lat": 37.977035,
+   "lng": 23.755852,
+   "tags": {
+    "name": "The Blind Eye",
+    "tourism": "gallery",
+    "opening_hours": "We 20:30-22:30; Fr 18:00-20:00; Sa,Su 13:00-21:00",
+    "website": "https://www.theblindeye.art/",
+    "addr:housenumber": "8",
+    "addr:street": "Ποταμιάνου Ηλ.",
+    "addr:postcode": "11528",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1584057565",
+   "lat": 37.971817,
+   "lng": 23.725665,
+   "tags": {
+    "name": "Άγαλμα Αθηνάς Προμάχου",
+    "name:en": "Athena Promachos statue place",
+    "historic": "monument",
+    "wikidata": "Q755221",
+    "wikipedia": "el:Άγαλμα της Προμάχου Αθηνάς"
+   }
+  },
+  {
+   "id": "node/1600503933",
+   "lat": 37.970157,
+   "lng": 23.732148,
+   "tags": {
+    "name": "Arch of Hadrian",
+    "tourism": "viewpoint",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/1635941903",
+   "lat": 37.972349,
+   "lng": 23.722569,
+   "tags": {
+    "name": "θέα Ακρόπολης",
+    "name:en": "Panoramic View of Acropolis",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/2096026721",
+   "lat": 37.978421,
+   "lng": 23.724942,
+   "tags": {
+    "name": "Ψυρρή",
+    "name:en": "Psiri",
+    "tourism": "attraction",
+    "wikidata": "Q2984834",
+    "wikipedia": "el:Ψυρή"
+   }
+  },
+  {
+   "id": "node/2131626015",
+   "lat": 38.021903,
+   "lng": 23.768178,
+   "tags": {
+    "name": "Ίδρυμα \"Κωνσταντίνος Γ. Καραμανλής\"",
+    "tourism": "museum",
+    "wikidata": "Q20750528"
+   }
+  },
+  {
+   "id": "node/2382892203",
+   "lat": 37.969856,
+   "lng": 23.731426,
+   "tags": {
+    "name": "Μελίνα Μερκούρη",
+    "name:en": "Melina Mercouri",
+    "historic": "memorial",
+    "wikidata": "Q111707862",
+    "wikipedia": "el:Μελίνα Μερκούρη"
+   }
+  },
+  {
+   "id": "node/3005463590",
+   "lat": 37.988769,
+   "lng": 23.732331,
+   "tags": {
+    "name": "Επιγραφικό μουσείο",
+    "name:en": "Epigraphical Museum",
+    "tourism": "museum",
+    "opening_hours": "We-Mo 08:30-15:30",
+    "wikidata": "Q2732854",
+    "wikipedia": "el:Επιγραφικό μουσείο",
+    "addr:housenumber": "1",
+    "addr:street": "Τοσίτσα",
+    "addr:postcode": "10682",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3203039511",
+   "lat": 37.946607,
+   "lng": 23.714788,
+   "tags": {
+    "name": "Ελευθέριος Βενιζέλος",
+    "historic": "memorial",
+    "wikidata": "Q114138986"
+   }
+  },
+  {
+   "id": "node/3234302316",
+   "lat": 37.987886,
+   "lng": 23.730677,
+   "tags": {
+    "name": "Μνημείο πεσόντων του Πολυτεχνείου",
+    "name:en": "Monument to the fallen of the Polytechnic University",
+    "historic": "memorial",
+    "wikidata": "Q2628742",
+    "wikipedia": "el:Εξέγερση του Πολυτεχνείου"
+   }
+  },
+  {
+   "id": "node/3259735697",
+   "lat": 37.969344,
+   "lng": 23.73928,
+   "tags": {
+    "name": "Γεώργιος Αβέρωφ",
+    "name:en": "Georgios Averof",
+    "historic": "memorial",
+    "wikidata": "Q111707915",
+    "wikipedia": "el:Γεώργιος Αβέρωφ"
+   }
+  },
+  {
+   "id": "node/3259746372",
+   "lat": 37.981047,
+   "lng": 23.73288,
+   "tags": {
+    "name": "Παναγής Βαλλιάνος",
+    "name:en": "Panagis Vallianos",
+    "historic": "memorial",
+    "wikidata": "Q52185169"
+   }
+  },
+  {
+   "id": "node/3259778472",
+   "lat": 37.98054,
+   "lng": 23.733151,
+   "tags": {
+    "name": "Γουλιέλμος Γλάδστων",
+    "name:en": "William Gladstone",
+    "historic": "memorial",
+    "wikidata": "Q52184689"
+   }
+  },
+  {
+   "id": "node/3259796205",
+   "lat": 37.9806,
+   "lng": 23.733601,
+   "tags": {
+    "name": "Αδαμάντιος Κοραής",
+    "name:en": "Adamantios Korais",
+    "historic": "memorial",
+    "wikidata": "Q111707916"
+   }
+  },
+  {
+   "id": "node/3259796206",
+   "lat": 37.980687,
+   "lng": 23.733523,
+   "tags": {
+    "name": "Ιωάννης Καποδίστριας",
+    "name:en": "Ioannis Kapodistrias",
+    "historic": "memorial",
+    "wikidata": "Q111707928"
+   }
+  },
+  {
+   "id": "node/3259813930",
+   "lat": 37.978867,
+   "lng": 23.741605,
+   "tags": {
+    "name": "Οδυσσέας Ελύτης",
+    "name:en": "Odysseas Elytis",
+    "historic": "memorial",
+    "wikidata": "Q111707881",
+    "wikipedia": "el:Οδυσσέας Ελύτης"
+   }
+  },
+  {
+   "id": "node/3263172500",
+   "lat": 37.974208,
+   "lng": 23.746747,
+   "tags": {
+    "name": "Αρμένικο Χατσκάρ",
+    "name:en": "Armenian Khachkar",
+    "historic": "memorial",
+    "wikidata": "Q114140356"
+   }
+  },
+  {
+   "id": "node/3263172502",
+   "lat": 37.985496,
+   "lng": 23.731251,
+   "tags": {
+    "name": "Τζωρτζ Κάνινγκ",
+    "name:en": "George Canning",
+    "historic": "memorial",
+    "wikidata": "Q111707890",
+    "wikipedia": "el:Τζωρτζ Κάνινγκ"
+   }
+  },
+  {
+   "id": "node/3263172503",
+   "lat": 37.97997,
+   "lng": 23.733815,
+   "tags": {
+    "name": "Πλάτων",
+    "name:en": "Plato",
+    "historic": "memorial",
+    "wikidata": "Q111707940",
+    "wikipedia": "el:Πλάτων"
+   }
+  },
+  {
+   "id": "node/3263172504",
+   "lat": 37.980907,
+   "lng": 23.733489,
+   "tags": {
+    "name": "Ρήγας Φεραίος",
+    "name:en": "Rigas Feraios",
+    "historic": "memorial",
+    "wikidata": "Q111707907"
+   }
+  },
+  {
+   "id": "node/3263172505",
+   "lat": 37.979928,
+   "lng": 23.733851,
+   "tags": {
+    "name": "Σωκράτης",
+    "name:en": "Socrates",
+    "historic": "memorial",
+    "wikidata": "Q111707942",
+    "wikipedia": "el:Σωκράτης"
+   }
+  },
+  {
+   "id": "node/3263189180",
+   "lat": 37.977984,
+   "lng": 23.733043,
+   "tags": {
+    "name": "Θεόδωρος Κολοκοτρώνης",
+    "name:en": "Theodoros Kolokotronis",
+    "historic": "memorial",
+    "wikidata": "Q4343385",
+    "wikipedia": "el:Θεόδωρος Κολοκοτρώνης"
+   }
+  },
+  {
+   "id": "node/3263303961",
+   "lat": 37.970834,
+   "lng": 23.733566,
+   "tags": {
+    "name": "Η Ελλάς τον Βύρωνα",
+    "name:en": "Greece crowning Lord Byron",
+    "historic": "memorial",
+    "wikidata": "Q111707937"
+   }
+  },
+  {
+   "id": "node/3263420237",
+   "lat": 37.979456,
+   "lng": 23.731412,
+   "tags": {
+    "name": "Μνημείο Εθνικής Συμφιλίωσης",
+    "name:en": "Memorial of National Reconciliation",
+    "historic": "memorial",
+    "wikidata": "Q111721850"
+   }
+  },
+  {
+   "id": "node/3263626151",
+   "lat": 37.982346,
+   "lng": 23.730894,
+   "tags": {
+    "name": "Αλέξανδρος Παναγούλης",
+    "name:en": "Alexandros Panagoulis",
+    "historic": "memorial",
+    "wikidata": "Q111707867",
+    "wikipedia": "el:Αλέξανδρος Παναγούλης"
+   }
+  },
+  {
+   "id": "node/3267064099",
+   "lat": 37.977583,
+   "lng": 23.706394,
+   "tags": {
+    "name": "Αλεξάντερ Φλέμινγκ",
+    "name:en": "Alexander Fleming",
+    "historic": "memorial",
+    "wikidata": "Q114139232",
+    "wikipedia": "el:Αλεξάντερ Φλέμινγκ"
+   }
+  },
+  {
+   "id": "node/3279145579",
+   "lat": 37.981782,
+   "lng": 23.728955,
+   "tags": {
+    "name": "Ιδιωτική Συλλογή Έργων Τέχνης Εθνικής Τραπέζης",
+    "name:en": "Art Collection of National Bank of Greece",
+    "tourism": "museum",
+    "opening_hours": "08:30-15:00",
+    "addr:housenumber": "86",
+    "addr:street": "Aiolou",
+    "addr:postcode": "10559",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/3343545896",
+   "lat": 37.991368,
+   "lng": 23.708381,
+   "tags": {
+    "name": "Αρχαιολογικός Χώρος Ακαδημίας Πλάτωνος",
+    "name:en": "Plato's Academy Archaeological Site",
+    "historic": "archaeological_site",
+    "wikidata": "Q193093",
+    "wikipedia": "en:Platonic Academy"
+   }
+  },
+  {
+   "id": "node/3369869106",
+   "lat": 37.951925,
+   "lng": 23.694587,
+   "tags": {
+    "name": "Φρεντερίκ Μιστράλ",
+    "name:en": "Frederic Mistral",
+    "historic": "memorial",
+    "wikidata": "Q114140595"
+   }
+  },
+  {
+   "id": "node/3731777476",
+   "lat": 37.956086,
+   "lng": 23.70299,
+   "tags": {
+    "name": "Ηρώον Ελλήνων του Πόντου",
+    "historic": "memorial",
+    "wikidata": "Q114140306"
+   }
+  },
+  {
+   "id": "node/3731777477",
+   "lat": 37.955754,
+   "lng": 23.702572,
+   "tags": {
+    "name": "Κ. Δαβάκης",
+    "name:en": "K. Davakis",
+    "historic": "memorial",
+    "wikidata": "Q114139993",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3800579734",
+   "lat": 37.973357,
+   "lng": 23.743433,
+   "tags": {
+    "name": "Παιδικό Μουσείο Αθηνών",
+    "name:en": "Hellenic Children's Museum",
+    "tourism": "museum",
+    "website": "https://www.hcm.gr/",
+    "addr:housenumber": "17-19",
+    "addr:street": "Βασιλέως Γεωργίου Β΄",
+    "addr:postcode": "10675",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/3828776141",
+   "lat": 37.97606,
+   "lng": 23.742712,
+   "tags": {
+    "name": "Περί Τεχνών Καρτέρης",
+    "name:en": "Peritechnon Karteris",
+    "tourism": "gallery",
+    "opening_hours": "Tu-Sa 11:00-14:30,17:00-20:00",
+    "website": "https://peri-technon.com/",
+    "addr:housenumber": "5",
+    "addr:street": "Ηροδότου",
+    "addr:postcode": "10674",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/3830993874",
+   "lat": 37.981896,
+   "lng": 23.743183,
+   "tags": {
+    "name": "Λυκαβηττός",
+    "name:en": "Lycabettus",
+    "tourism": "viewpoint",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/3844131091",
+   "lat": 37.977827,
+   "lng": 23.735385,
+   "tags": {
+    "name": "Νομισματικό Μουσείο",
+    "name:en": "Numismatic Museum",
+    "tourism": "museum",
+    "opening_hours": "Tu-Su 09:00-16:00; Mo off; PH off",
+    "wikidata": "Q658339",
+    "wikipedia": "el:Νομισματικό Μουσείο Αθηνών",
+    "addr:housenumber": "12",
+    "addr:street": "Πανεπιστημίου",
+    "addr:postcode": "10671",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3912027436",
+   "lat": 37.978244,
+   "lng": 23.713629,
+   "tags": {
+    "name": "Βιομηχανικό Μουσείο Φωταερίου",
+    "name:en": "Industrial Gas Museum",
+    "tourism": "museum",
+    "opening_hours": "Tu-Su 10:00-18:00",
+    "wikidata": "Q116246225",
+    "addr:housenumber": "100",
+    "addr:street": "Πειραιώς",
+    "addr:postcode": "11854",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3946247170",
+   "lat": 37.94934,
+   "lng": 23.709629,
+   "tags": {
+    "name": "Χρυσόστομος Σμύρνης",
+    "historic": "memorial",
+    "wikidata": "Q114140071"
+   }
+  },
+  {
+   "id": "node/3946386512",
+   "lat": 38.001691,
+   "lng": 23.736223,
+   "tags": {
+    "name": "Αγκάθι",
+    "tourism": "gallery",
+    "addr:housenumber": "12",
+    "addr:street": "Μηθύμνης",
+    "addr:postcode": "11257"
+   }
+  },
+  {
+   "id": "node/3960520131",
+   "lat": 37.973373,
+   "lng": 23.725784,
+   "tags": {
+    "name": "Εκθεση Άνθρωποι και Εργαλεία",
+    "name:en": "Man and Tools Exhibition",
+    "tourism": "museum",
+    "opening_hours": "Mo-Sa 08:00-15:00; Tu off",
+    "website": "https://www.mnep.gr/gr/episkepsi/to-mouseio-tis-odou-panos-22/",
+    "addr:housenumber": "22",
+    "addr:street": "Πανός"
+   }
+  },
+  {
+   "id": "node/4040706193",
+   "lat": 37.977092,
+   "lng": 23.736475,
+   "tags": {
+    "name": "Zoumpoulakis Galleries",
+    "tourism": "gallery",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4043279900",
+   "lat": 37.978118,
+   "lng": 23.740139,
+   "tags": {
+    "name": "Evripides",
+    "tourism": "gallery",
+    "addr:housenumber": "10",
+    "addr:street": "Ηράκλειτου",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/4043279911",
+   "lat": 37.977482,
+   "lng": 23.740541,
+   "tags": {
+    "name": "Skoufa",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/4050357095",
+   "lat": 37.976275,
+   "lng": 23.741212,
+   "tags": {
+    "name": "ΑΕΝΑΟΝ Αίθουσα Τέχνης",
+    "tourism": "gallery",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/4262198430",
+   "lat": 37.974961,
+   "lng": 23.719558,
+   "tags": {
+    "name": "Μουσείο Ηρακλειδών (Παράρτημα)",
+    "name:en": "Herakleidon Museum (Annex - Now closed)",
+    "tourism": "museum",
+    "opening_hours": "10:00-18:00",
+    "website": "https://herakleidon-art.gr/",
+    "addr:housenumber": "37",
+    "addr:street": "Αποστόλου Παύλου",
+    "addr:postcode": "11851",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/4324847490",
+   "lat": 37.98254,
+   "lng": 23.737118,
+   "tags": {
+    "name": "Έλλη Λαμπέτη",
+    "historic": "memorial",
+    "wikidata": "Q111707875",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4350322458",
+   "lat": 38.008176,
+   "lng": 23.698079,
+   "tags": {
+    "name": "Μνημείο Εθνικής Αντίστασης",
+    "historic": "memorial",
+    "wikidata": "Q114119400"
+   }
+  },
+  {
+   "id": "node/4362134281",
+   "lat": 37.939993,
+   "lng": 23.690361,
+   "tags": {
+    "name": "Θέα προς Φαληρικό Δέλτα",
+    "tourism": "viewpoint",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4384294344",
+   "lat": 37.989459,
+   "lng": 23.770977,
+   "tags": {
+    "name": "Νίκος Μπελογιάννης",
+    "historic": "memorial",
+    "wikidata": "Q114140263"
+   }
+  },
+  {
+   "id": "node/4418472291",
+   "lat": 37.967626,
+   "lng": 23.721171,
+   "tags": {
+    "name": "Ηρώο του Μουσαίου",
+    "name:en": "Heroon of Mousaios",
+    "tourism": "attraction",
+    "historic": "tomb",
+    "wikidata": "Q116312237"
+   }
+  },
+  {
+   "id": "node/4454686383",
+   "lat": 37.955993,
+   "lng": 23.70167,
+   "tags": {
+    "name": "Ελ. Βενιζέλος",
+    "historic": "memorial",
+    "wikidata": "Q114139176"
+   }
+  },
+  {
+   "id": "node/4538208563",
+   "lat": 37.984439,
+   "lng": 23.766195,
+   "tags": {
+    "name": "Ηρώον",
+    "historic": "memorial",
+    "wikidata": "Q113442977"
+   }
+  },
+  {
+   "id": "node/4568351771",
+   "lat": 37.96613,
+   "lng": 23.734421,
+   "tags": {
+    "name": "Μουσείο Γλυπτών & Ομοιωμάτων",
+    "name:en": "Museum Sculptures and Effigies",
+    "tourism": "museum",
+    "wikidata": "Q98609805",
+    "addr:housenumber": "2",
+    "addr:street": "Τιμολέοντος",
+    "addr:postcode": "11636"
+   }
+  },
+  {
+   "id": "node/4678765921",
+   "lat": 37.994913,
+   "lng": 23.730824,
+   "tags": {
+    "name": "ΑΒΥΣΣΟΣ",
+    "tourism": "aquarium",
+    "website": "https://abyssos.gr/",
+    "addr:housenumber": "118",
+    "addr:street": "3ης Σεπτεμβρίου",
+    "addr:postcode": "10434",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/4686010702",
+   "lat": 37.972249,
+   "lng": 23.72702,
+   "tags": {
+    "name": "Ιερό Έρωτα και Αφροδίτης",
+    "name:en": "Sanctuary of Eros and Aphrodite",
+    "historic": "archaeological_site",
+    "wikidata": "Q24204702",
+    "wikipedia": "el:Ιερό Αφροδίτης και Έρωτα",
+    "addr:street": "Peripatos"
+   }
+  },
+  {
+   "id": "node/4773049839",
+   "lat": 38.004731,
+   "lng": 23.755953,
+   "tags": {
+    "name": "Πάρκο Ελευθερίας",
+    "name:en": "Athens Municipality Arts Center, Parko Eleftherias",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "node/4773051728",
+   "lat": 38.001724,
+   "lng": 23.730479,
+   "tags": {
+    "name": "Διατηρητέο Σταυροπούλου 15",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "node/4777483721",
+   "lat": 37.976937,
+   "lng": 23.717843,
+   "tags": {
+    "name": "Bernier Eliades",
+    "tourism": "gallery",
+    "opening_hours": "Tu-Fr 10:30-18:30; Sa 12:00-16:00",
+    "website": "https://bernier-eliades.com/",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/4782297723",
+   "lat": 37.964309,
+   "lng": 23.724751,
+   "tags": {
+    "name": "State of Concept",
+    "tourism": "gallery",
+    "opening_hours": "We-Fr 16:30-20:30; Sa 13:00-17:00 || \"by appointment\"",
+    "website": "https://www.stateofconcept.org/",
+    "addr:housenumber": "19",
+    "addr:street": "Τούσα Μπότσαρη",
+    "addr:postcode": "11741"
+   }
+  },
+  {
+   "id": "node/4785564674",
+   "lat": 37.935274,
+   "lng": 23.7161,
+   "tags": {
+    "name": "Επιτροπή Ποντιακών Μελετών",
+    "tourism": "museum",
+    "opening_hours": "Mo-Fr 10:00-16:00",
+    "website": "http://epm.gr",
+    "wikidata": "Q12877246",
+    "wikipedia": "el:Επιτροπή Ποντιακών Μελετών",
+    "addr:housenumber": "73",
+    "addr:street": "Αγνώστων Μαρτύρων",
+    "addr:postcode": "17123"
+   }
+  },
+  {
+   "id": "node/4840589548",
+   "lat": 37.994455,
+   "lng": 23.707293,
+   "tags": {
+    "name": "Ψηφιακό Μουσείο της Ακαδημίας Πλάτωνος",
+    "tourism": "museum",
+    "opening_hours": "Tu-Su 09:00-16:00; PH off",
+    "website": "https://www.plato-academy.gr/museum",
+    "wikidata": "Q25535844",
+    "wikipedia": "el:Ψηφιακό Μουσείο της Ακαδημίας Πλάτωνος"
+   }
+  },
+  {
+   "id": "node/4881298374",
+   "lat": 37.984698,
+   "lng": 23.734699,
+   "tags": {
+    "name": "Μνημείο Αλέξανδρου Γρηγορόπουλου",
+    "historic": "memorial",
+    "wikidata": "Q108828162",
+    "addr:street": "Μεσολογγίου",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4935560123",
+   "lat": 37.974781,
+   "lng": 23.727548,
+   "tags": {
+    "name": "Pandora",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/4970330021",
+   "lat": 37.984693,
+   "lng": 23.720067,
+   "tags": {
+    "name": "The Breeder Gallery",
+    "name:en": "The Breeder Gallery",
+    "tourism": "gallery",
+    "opening_hours": "Tu-Fr 11:00-19:00, Sa 11:00-17:00",
+    "website": "https://thebreedersystem.com",
+    "addr:housenumber": "45",
+    "addr:street": "Ιάσονος",
+    "addr:postcode": "10436"
+   }
+  },
+  {
+   "id": "node/5034411110",
+   "lat": 37.971118,
+   "lng": 23.727632,
+   "tags": {
+    "name": "Χορηγικό μνημείο Θρασσύλου",
+    "name:en": "Choregic Monument of Thrasyllos",
+    "tourism": "attraction",
+    "historic": "monument",
+    "wikidata": "Q2290491"
+   }
+  },
+  {
+   "id": "node/5131893206",
+   "lat": 37.987576,
+   "lng": 23.762759,
+   "tags": {
+    "name": "Roy",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/5303551622",
+   "lat": 38.016785,
+   "lng": 23.739595,
+   "tags": {
+    "name": "Κωνσταντίνος Νικολόπουλος",
+    "historic": "memorial",
+    "wikidata": "Q111707873"
+   }
+  },
+  {
+   "id": "node/5403604482",
+   "lat": 37.979661,
+   "lng": 23.723483,
+   "tags": {
+    "name": "Alibi Gallery",
+    "tourism": "gallery",
+    "addr:housenumber": "12",
+    "addr:street": "Σαρρή"
+   }
+  },
+  {
+   "id": "node/5561180621",
+   "lat": 37.975142,
+   "lng": 23.722512,
+   "tags": {
+    "name": "Βωμός Διός Αγοραίου",
+    "name:en": "Altar of Zeus Agoraios",
+    "tourism": "attraction",
+    "historic": "altar",
+    "wikidata": "Q2891038",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/5561338921",
+   "lat": 37.97007,
+   "lng": 23.727708,
+   "tags": {
+    "name": "Αρχαϊκός ναός Διονύσου",
+    "name:en": "Archaic Temple of Dionysios",
+    "tourism": "attraction",
+    "historic": "archaeological_site",
+    "wikidata": "Q2032467"
+   }
+  },
+  {
+   "id": "node/5561338922",
+   "lat": 37.970239,
+   "lng": 23.726959,
+   "tags": {
+    "name": "Χορηγικό μνημείο Νικία",
+    "name:en": "Choregic Monument of Nikias",
+    "tourism": "attraction",
+    "wikidata": "Q3323331"
+   }
+  },
+  {
+   "id": "node/5570525857",
+   "lat": 37.982798,
+   "lng": 23.756529,
+   "tags": {
+    "name": "Λορέντζος Μαβίλης",
+    "historic": "memorial",
+    "wikidata": "Q111356844"
+   }
+  },
+  {
+   "id": "node/5605331222",
+   "lat": 37.976179,
+   "lng": 23.724748,
+   "tags": {
+    "name": "Υπαίθρια αγορά Μοναστηρακίου",
+    "name:en": "Monastiraki Flea Market",
+    "amenity": "marketplace",
+    "addr:street": "Ηφαίστου",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/5657745357",
+   "lat": 37.97743,
+   "lng": 23.737943,
+   "tags": {
+    "name": "Allouche-Benias Gallery",
+    "tourism": "gallery",
+    "addr:housenumber": "1",
+    "addr:street": "Κανάρη",
+    "addr:postcode": "10671"
+   }
+  },
+  {
+   "id": "node/5980812063",
+   "lat": 37.979197,
+   "lng": 23.719943,
+   "tags": {
+    "name": "Μουσείο Μακρονήσου",
+    "name:en": "Makronisos Museum",
+    "tourism": "museum",
+    "opening_hours": "Tu-Fr 10:00-13:00; Sa-Su 11:00-14:00",
+    "website": "http://www.pekam.org.gr/mouseio-makronhsou.html",
+    "addr:housenumber": "31",
+    "addr:street": "Αγίων Ασωμάτων",
+    "addr:postcode": "10553"
+   }
+  },
+  {
+   "id": "node/5980812064",
+   "lat": 37.979161,
+   "lng": 23.719852,
+   "tags": {
+    "name": "Μουσείο Πολιτικών Εξορίστων Άη Στράτη",
+    "name:en": "Exile Museum",
+    "tourism": "museum",
+    "website": "http://www.exilemuseum.gr",
+    "addr:housenumber": "31",
+    "addr:street": "Αγίων Ασωμάτων",
+    "addr:postcode": "10553"
+   }
+  },
+  {
+   "id": "node/5984988434",
+   "lat": 37.984715,
+   "lng": 23.725762,
+   "tags": {
+    "name": "Μουσείο Παξινού-Μινωτή",
+    "tourism": "museum",
+    "opening_hours": "\"on appointment\"",
+    "addr:housenumber": "20",
+    "addr:street": "Αγίου Κωνσταντίνου"
+   }
+  },
+  {
+   "id": "node/6002397492",
+   "lat": 37.993565,
+   "lng": 23.727428,
+   "tags": {
+    "name": "Louvre",
+    "tourism": "gallery",
+    "addr:housenumber": "38",
+    "addr:street": "Χέυδεν",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/6066170498",
+   "lat": 37.978236,
+   "lng": 23.740341,
+   "tags": {
+    "name": "Galerie Lefakis",
+    "tourism": "gallery",
+    "addr:housenumber": "12",
+    "addr:street": "Ηράκλειτου"
+   }
+  },
+  {
+   "id": "node/6078091721",
+   "lat": 37.978126,
+   "lng": 23.742861,
+   "tags": {
+    "name": "Kaftayan Galleries",
+    "tourism": "gallery",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/6222942407",
+   "lat": 37.978536,
+   "lng": 23.718983,
+   "tags": {
+    "name": "Δίπυλον",
+    "name:en": "Dipylon",
+    "historic": "archaeological_site",
+    "wikidata": "Q3708916",
+    "wikipedia": "en:Dipylon"
+   }
+  },
+  {
+   "id": "node/6534260972",
+   "lat": 37.97682,
+   "lng": 23.722763,
+   "tags": {
+    "name": "Μουσείο των ψευδαισθήσεων",
+    "name:en": "Museum of Illusions",
+    "tourism": "museum",
+    "opening_hours": "10:00-22:00",
+    "wikidata": "Q108674606",
+    "addr:housenumber": "12",
+    "addr:street": "Άστιγγος",
+    "addr:postcode": "10555",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/6538479486",
+   "lat": 37.979727,
+   "lng": 23.710856,
+   "tags": {
+    "name": "Noise of art",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/6540927365",
+   "lat": 37.980494,
+   "lng": 23.733842,
+   "tags": {
+    "name": "Πατριάρχης Γρηγόριος Ε΄",
+    "historic": "memorial",
+    "wikidata": "Q52185679",
+    "wikipedia": "el:Ανδριάντας Πατριάρχη Γρηγορίου Ε΄"
+   }
+  },
+  {
+   "id": "node/6593865157",
+   "lat": 37.982071,
+   "lng": 23.733124,
+   "tags": {
+    "name": "iFocus",
+    "tourism": "gallery",
+    "opening_hours": "Mo-Fr 09:00-17:00",
+    "website": "https://ifocus.gr/magazine/editors-choice/1516-ifocus-gallery",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/6602464587",
+   "lat": 37.954482,
+   "lng": 23.729725,
+   "tags": {
+    "name": "Θέα Δάφνης",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/6606589077",
+   "lat": 37.961706,
+   "lng": 23.722317,
+   "tags": {
+    "name": "Μνημείο Εθνικής Αντίστασης",
+    "historic": "memorial",
+    "wikidata": "Q114140338"
+   }
+  },
+  {
+   "id": "node/6614268646",
+   "lat": 37.988285,
+   "lng": 23.732731,
+   "tags": {
+    "name": "Λέλα Καραγιάννη",
+    "historic": "memorial",
+    "wikidata": "Q111698504"
+   }
+  },
+  {
+   "id": "node/6739124187",
+   "lat": 38.018732,
+   "lng": 23.735318,
+   "tags": {
+    "name": "321gallery",
+    "tourism": "gallery",
+    "addr:housenumber": "321",
+    "addr:street": "Πατησίων",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/6932670810",
+   "lat": 37.962367,
+   "lng": 23.702615,
+   "tags": {
+    "name": "Τμήμα του Νοτίου σκέλους των Μακρών Τειχών επί των οδών Τέω και Βρυούλων",
+    "historic": "archaeological_site",
+    "wikidata": "Q1163616"
+   }
+  },
+  {
+   "id": "node/7040039863",
+   "lat": 37.967298,
+   "lng": 23.727417,
+   "tags": {
+    "name": "Luminous Eye",
+    "tourism": "gallery",
+    "addr:housenumber": "2",
+    "addr:street": "Μητσαίων"
+   }
+  },
+  {
+   "id": "node/7328943632",
+   "lat": 38.023596,
+   "lng": 23.767838,
+   "tags": {
+    "name": "Τσιμέντο με θέα",
+    "name:en": "View from old cement building",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/7518713430",
+   "lat": 37.986955,
+   "lng": 23.752146,
+   "tags": {
+    "name": "Κέντρο Σύγχρονης Τέχνης Ιλεάνα Τούντα",
+    "name:en": "Ileana Tounta Contemporary Art Center",
+    "tourism": "museum",
+    "opening_hours": "Tu,Th 15:00-20:00; We,Fr 12:00-20:00; Sa 12:00-16:00",
+    "website": "https://art-tounta.gr/",
+    "addr:housenumber": "48",
+    "addr:street": "Αρματωλών και Κλεφτών",
+    "addr:postcode": "11471"
+   }
+  },
+  {
+   "id": "node/7575743175",
+   "lat": 37.998536,
+   "lng": 23.784311,
+   "tags": {
+    "name": "Αλέξανδρος Παπάγος",
+    "historic": "memorial",
+    "wikidata": "Q111762615"
+   }
+  },
+  {
+   "id": "node/778533784",
+   "lat": 37.969375,
+   "lng": 23.72081,
+   "tags": {
+    "name": "Φυλακή του Σωκράτη",
+    "name:en": "Prison of Socrates",
+    "tourism": "attraction",
+    "historic": "yes",
+    "opening_hours": "24/7",
+    "wikidata": "Q47524277"
+   }
+  },
+  {
+   "id": "node/7786947209",
+   "lat": 37.960929,
+   "lng": 23.752559,
+   "tags": {
+    "name": "Μνημείο Πεσόντων",
+    "historic": "memorial",
+    "wikidata": "Q114139225"
+   }
+  },
+  {
+   "id": "node/7813656989",
+   "lat": 37.972429,
+   "lng": 23.738986,
+   "tags": {
+    "name": "Διονύσιος Σολωμός",
+    "historic": "memorial",
+    "wikidata": "Q111702733"
+   }
+  },
+  {
+   "id": "node/7813657427",
+   "lat": 37.972283,
+   "lng": 23.737689,
+   "tags": {
+    "name": "Ζαν Μορεάς",
+    "historic": "memorial",
+    "wikidata": "Q67191656"
+   }
+  },
+  {
+   "id": "node/7813657499",
+   "lat": 37.972897,
+   "lng": 23.735887,
+   "tags": {
+    "name": "Σπυρίδων Σαμάρας",
+    "historic": "memorial",
+    "wikidata": "Q111698522"
+   }
+  },
+  {
+   "id": "node/7813657521",
+   "lat": 37.973489,
+   "lng": 23.736766,
+   "tags": {
+    "name": "Αριστοτέλης Βαλαωρίτης",
+    "historic": "memorial",
+    "wikidata": "Q111698464"
+   }
+  },
+  {
+   "id": "node/7899630085",
+   "lat": 38.001927,
+   "lng": 23.739775,
+   "tags": {
+    "name": "Blank Wall Gallery",
+    "name:en": "Blank Wall Gallery",
+    "tourism": "museum",
+    "opening_hours": "Mo-Fr 18:00-21:30",
+    "website": "https://www.blankwallgallery.com/",
+    "addr:housenumber": "55",
+    "addr:street": "Φωκίωνος Νέγρη"
+   }
+  },
+  {
+   "id": "node/7935312381",
+   "lat": 37.977751,
+   "lng": 23.719515,
+   "tags": {
+    "name": "ΜνημεΙο Ολοκαυτώματος",
+    "historic": "memorial",
+    "wikidata": "Q16132695"
+   }
+  },
+  {
+   "id": "node/8119012631",
+   "lat": 37.972963,
+   "lng": 23.692917,
+   "tags": {
+    "name": "weekend.Athens",
+    "tourism": "gallery",
+    "website": "https://www.instagram.com/weekend.athens/",
+    "addr:housenumber": "15",
+    "addr:street": "Δήμητρος",
+    "addr:postcode": "17778"
+   }
+  },
+  {
+   "id": "node/8262155401",
+   "lat": 37.976414,
+   "lng": 23.722617,
+   "tags": {
+    "name": "Ποικίλη Στοά",
+    "historic": "archaeological_site",
+    "wikidata": "Q936234",
+    "wikipedia": "en:Stoa Poikile"
+   }
+  },
+  {
+   "id": "node/8488344096",
+   "lat": 38.015206,
+   "lng": 23.693059,
+   "tags": {
+    "name": "Προτομή Του Κωστή Παλαμά",
+    "historic": "memorial",
+    "wikidata": "Q114139125"
+   }
+  },
+  {
+   "id": "node/8569610384",
+   "lat": 37.99309,
+   "lng": 23.734589,
+   "tags": {
+    "name": "Δόμνα Βισβίζη",
+    "historic": "memorial",
+    "wikidata": "Q111707847"
+   }
+  },
+  {
+   "id": "node/8569617877",
+   "lat": 37.992829,
+   "lng": 23.734123,
+   "tags": {
+    "name": "Λασκαρίνα Μπουμπουλίνα",
+    "historic": "memorial",
+    "wikidata": "Q111698503"
+   }
+  },
+  {
+   "id": "node/8569627384",
+   "lat": 37.993067,
+   "lng": 23.734826,
+   "tags": {
+    "name": "Μάρκος Μπότσαρης",
+    "historic": "memorial",
+    "wikidata": "Q111707846"
+   }
+  },
+  {
+   "id": "node/8569629064",
+   "lat": 37.993025,
+   "lng": 23.73526,
+   "tags": {
+    "name": "Νικηταράς",
+    "historic": "memorial",
+    "wikidata": "Q111698507"
+   }
+  },
+  {
+   "id": "node/8569637119",
+   "lat": 37.992756,
+   "lng": 23.734945,
+   "tags": {
+    "name": "Αθανάσιος Διάκος",
+    "historic": "memorial",
+    "wikidata": "Q111698466"
+   }
+  },
+  {
+   "id": "node/8569638420",
+   "lat": 37.993054,
+   "lng": 23.734971,
+   "tags": {
+    "name": "Γεώργιος Καραϊσκάκης",
+    "historic": "memorial",
+    "wikidata": "Q111698486"
+   }
+  },
+  {
+   "id": "node/8569653969",
+   "lat": 37.9931,
+   "lng": 23.734458,
+   "tags": {
+    "name": "Κωνσταντίνος Κανάρης",
+    "historic": "memorial",
+    "wikidata": "Q111698500"
+   }
+  },
+  {
+   "id": "node/8656512676",
+   "lat": 37.98284,
+   "lng": 23.756802,
+   "tags": {
+    "name": "Αλίκη Βουγιουκλάκη",
+    "historic": "memorial",
+    "wikidata": "Q111357006"
+   }
+  },
+  {
+   "id": "node/8718593957",
+   "lat": 38.001065,
+   "lng": 23.735638,
+   "tags": {
+    "name": "Koraka",
+    "tourism": "gallery",
+    "addr:housenumber": "21",
+    "addr:street": "Φωκίωνος Νέγρη",
+    "addr:postcode": "11257"
+   }
+  },
+  {
+   "id": "node/8933445709",
+   "lat": 38.02363,
+   "lng": 23.735031,
+   "tags": {
+    "name": "Αίθουσα Τέχνης Κελεσάκου",
+    "tourism": "gallery",
+    "fee": "no",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/9060072714",
+   "lat": 37.955975,
+   "lng": 23.702382,
+   "tags": {
+    "name": "Προτομή ΓΙΑΝΝΗ ΓΑΛΛΟΥ",
+    "tourism": "artwork",
+    "historic": "memorial",
+    "wikidata": "Q114140249"
+   }
+  },
+  {
+   "id": "node/9062001207",
+   "lat": 37.973931,
+   "lng": 23.727035,
+   "tags": {
+    "name": "Shaded view of a Roman agora",
+    "tourism": "viewpoint",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/9144924853",
+   "lat": 37.954619,
+   "lng": 23.677233,
+   "tags": {
+    "name": "Ελληνικό Μουσείο Πληροφορικής",
+    "tourism": "museum",
+    "opening_hours": "Mo 09:00-15:00; Tu-Fr 09:00-17:00; Sa-Su 12:00-17:00",
+    "website": "https://elmp.gr",
+    "wikidata": "Q16737588",
+    "wikipedia": "el:Ελληνικό Μουσείο Πληροφορικής",
+    "addr:housenumber": "2",
+    "addr:street": "Πέτρου Σπυρόπουλου",
+    "addr:postcode": "18346",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/9166221049",
+   "lat": 37.961254,
+   "lng": 23.705382,
+   "tags": {
+    "name": "Κάστρο Οδού Μπιζανίου (Μάχης 23ης - 24ης Ιουλίου 1944)",
+    "name:en": "Bizaniou Street Fort (of July 23 - 24, 1944 Battle)",
+    "tourism": "museum",
+    "addr:housenumber": "10",
+    "addr:street": "Μπιζανίου",
+    "addr:postcode": "17676"
+   }
+  },
+  {
+   "id": "node/9192582530",
+   "lat": 37.978616,
+   "lng": 23.738918,
+   "tags": {
+    "name": "ROMA GALLERY",
+    "tourism": "gallery",
+    "website": "https://www.roma-gallery.com/",
+    "addr:housenumber": "5",
+    "addr:street": "Ρώμα",
+    "addr:postcode": "10673"
+   }
+  },
+  {
+   "id": "node/9517221231",
+   "lat": 37.968312,
+   "lng": 23.736239,
+   "tags": {
+    "name": "Βασιλική του Ιλισσού-Μαρτύριον Αγίου Λεωνίδη",
+    "historic": "archaeological_site",
+    "wikidata": "Q57016121"
+   }
+  },
+  {
+   "id": "node/9517245642",
+   "lat": 37.967537,
+   "lng": 23.735674,
+   "tags": {
+    "name": "Ναός του Μειλιχίου Διός",
+    "historic": "archaeological_site",
+    "wikidata": "Q110833611"
+   }
+  },
+  {
+   "id": "node/9882733254",
+   "lat": 37.972396,
+   "lng": 23.723139,
+   "tags": {
+    "name": "City View",
+    "tourism": "viewpoint",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/9976465941",
+   "lat": 38.018734,
+   "lng": 23.732742,
+   "tags": {
+    "name": "Ελληνικό Μουσείο Μετεωριτών",
+    "tourism": "museum",
+    "website": "https://www.meteoritemuseum.gr/",
+    "addr:housenumber": "27",
+    "addr:street": "Ιακωβίδου"
+   }
+  },
+  {
+   "id": "relation/11197557",
+   "lat": 37.9743,
+   "lng": 23.726355,
+   "tags": {
+    "name": "Ρωμαϊκή Αγορά Αθηνών",
+    "name:en": "Roman Agora of Athens",
+    "tourism": "attraction",
+    "historic": "archaeological_site",
+    "wikidata": "Q1435551",
+    "wikipedia": "el:Ρωμαϊκή Αγορά της Αθήνας",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "relation/11199493",
+   "lat": 37.974196,
+   "lng": 23.727028,
+   "tags": {
+    "name": "Αέρηδες",
+    "name:en": "Tower of the Winds",
+    "tourism": "attraction",
+    "historic": "monument",
+    "building": "yes",
+    "wikidata": "Q372717",
+    "wikipedia": "el:Αέρηδες (μνημείο)"
+   }
+  },
+  {
+   "id": "relation/11268149",
+   "lat": 37.970909,
+   "lng": 23.727267,
+   "tags": {
+    "name": "Αρχαιολογικός χώρος Ακρόπολης",
+    "name:en": "Archaeological site of the Acropolis",
+    "tourism": "attraction",
+    "historic": "archaeological_site",
+    "opening_hours": "Mo-Su 08:00-20:00",
+    "wikidata": "Q131013",
+    "wikipedia": "en:Acropolis of Athens"
+   }
+  },
+  {
+   "id": "relation/11505127",
+   "lat": 37.973415,
+   "lng": 23.739307,
+   "tags": {
+    "name": "Συλλογή Ζώων - Φυτών",
+    "name:en": "Animal - Bird Collection",
+    "tourism": "zoo"
+   }
+  },
+  {
+   "id": "relation/11505131",
+   "lat": 37.974056,
+   "lng": 23.738903,
+   "tags": {
+    "name": "Βοτανικό Μουσείο",
+    "name:en": "Botanical Museum",
+    "tourism": "museum",
+    "building": "yes"
+   }
+  },
+  {
+   "id": "relation/11505137",
+   "lat": 37.973576,
+   "lng": 23.737467,
+   "tags": {
+    "name": "Εθνικός Κήπος",
+    "name:en": "National Garden",
+    "leisure": "park",
+    "wikidata": "Q646284",
+    "wikipedia": "el:Εθνικός Κήπος"
+   }
+  },
+  {
+   "id": "relation/12352554",
+   "lat": 37.971529,
+   "lng": 23.724888,
+   "tags": {
+    "name": "Ναός Αθηνάς Νίκης",
+    "name:en": "Athena Nike Temple",
+    "tourism": "attraction",
+    "historic": "ruins",
+    "building": "yes",
+    "wikidata": "Q384813",
+    "wikipedia": "el:Ναός Αθηνάς Νίκης"
+   }
+  },
+  {
+   "id": "relation/12352555",
+   "lat": 37.971735,
+   "lng": 23.725104,
+   "tags": {
+    "name": "Προπύλαια",
+    "name:en": "Propylaea",
+    "tourism": "attraction",
+    "historic": "ruins",
+    "building": "yes",
+    "wikidata": "Q3407649",
+    "wikipedia": "el:Προπύλαια (Ακρόπολη Αθηνών)",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "relation/13139942",
+   "lat": 37.974714,
+   "lng": 23.722804,
+   "tags": {
+    "name": "Αρχαία Αγορά",
+    "name:en": "Ancient Agora of Athens",
+    "tourism": "attraction",
+    "historic": "archaeological_site",
+    "opening_hours": "Mo-Su 08:00-20:00",
+    "wikidata": "Q395367",
+    "wikipedia": "el:Αρχαία Αγορά της Αθήνας"
+   }
+  },
+  {
+   "id": "relation/13249184",
+   "lat": 37.970818,
+   "lng": 23.724544,
+   "tags": {
+    "name": "Ωδείο Ηρώδου Αττικού",
+    "name:en": "Odeon of Herodes Atticus",
+    "tourism": "attraction",
+    "amenity": "theatre",
+    "historic": "odeon",
+    "building": "yes",
+    "wikidata": "Q1328165",
+    "wikipedia": "el:Ωδείο Ηρώδου του Αττικού",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "relation/14333294",
+   "lat": 37.966441,
+   "lng": 23.785656,
+   "tags": {
+    "name": "Museum of Zoology",
+    "tourism": "museum",
+    "building": "yes"
+   }
+  },
+  {
+   "id": "relation/16363966",
+   "lat": 37.975528,
+   "lng": 23.734856,
+   "tags": {
+    "name": "Πλατεία Συντάγματος",
+    "name:en": "Syntagma Square",
+    "tourism": "attraction",
+    "wikidata": "Q1137997",
+    "wikipedia": "el:Πλατεία Συντάγματος",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "relation/1741088",
+   "lat": 38.004125,
+   "lng": 23.75762,
+   "tags": {
+    "name": "Αττικό Άλσος",
+    "name:en": "Attiko Alsos park",
+    "leisure": "park",
+    "wikidata": "Q25163821"
+   }
+  },
+  {
+   "id": "relation/18178715",
+   "lat": 37.98326,
+   "lng": 23.719221,
+   "tags": {
+    "name": "Νέα Πινακοθήκη Δήμου Αθηναίων",
+    "name:en": "New Athens Municipal Gallery",
+    "tourism": "museum",
+    "opening_hours": "Tu 10:00-21:00; We-Sa 10:00-19:00; Su 10:00-15:00",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "relation/19023844",
+   "lat": 37.968338,
+   "lng": 23.740963,
+   "tags": {
+    "name": "Παναθηναϊκό Στάδιο",
+    "name:en": "Panathenaic Stadium",
+    "tourism": "attraction",
+    "leisure": "stadium",
+    "historic": "archaeological_site",
+    "opening_hours": "Mar-Oct: 08:00-19:00, Nov-Feb: 08:00-17:00",
+    "wikidata": "Q208811",
+    "wikipedia": "en:Panathenaic Stadium"
+   }
+  },
+  {
+   "id": "relation/19040143",
+   "lat": 37.977631,
+   "lng": 23.732831,
+   "tags": {
+    "name": "Εθνικό Ιστορικό Μουσείο",
+    "name:en": "National Historic Museum",
+    "tourism": "museum",
+    "building": "government",
+    "opening_hours": "Tu-Su 08:30-14:30",
+    "wikidata": "Q19363322",
+    "wikipedia": "el:Εθνικό Ιστορικό Μουσείο",
+    "addr:housenumber": "13",
+    "addr:street": "Κολοκοτρώνη",
+    "addr:postcode": "10561",
+    "fee": "yes",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "relation/21281178",
+   "lat": 37.980866,
+   "lng": 23.751964,
+   "tags": {
+    "name": "Κέντρο Τεχνών",
+    "name:en": "The Arts Center",
+    "tourism": "gallery",
+    "opening_hours": "Tu-Fr 11:00-19:00; Sa,Su 10:00-15:00",
+    "addr:street": "Βασιλίσσης Σοφίας",
+    "addr:postcode": "11521"
+   }
+  },
+  {
+   "id": "relation/2150086",
+   "lat": 37.975266,
+   "lng": 23.736995,
+   "tags": {
+    "name": "Βουλή των Ελλήνων",
+    "name:en": "Greek Parliament",
+    "tourism": "attraction",
+    "building": "palace",
+    "wikidata": "Q7084890",
+    "wikipedia": "el:Παλαιά Ανάκτορα"
+   }
+  },
+  {
+   "id": "relation/2429041",
+   "lat": 37.974472,
+   "lng": 23.708275,
+   "tags": {
+    "name": "Μουσείο Μπενάκη (Κτήριο Οδού Πειραιώς)",
+    "name:en": "Benaki Museum (Pireos St. Annexe)",
+    "tourism": "museum",
+    "building": "civic",
+    "opening_hours": "Su, Th 10:00-18:00; Fr-Sa 10:00-22:00; Mo-We off",
+    "website": "https://www.benaki.gr/",
+    "wikidata": "Q816669",
+    "wikipedia": "el:Μουσείο Μπενάκη",
+    "addr:housenumber": "138",
+    "addr:street": "Πειραιώς",
+    "addr:postcode": "11854"
+   }
+  },
+  {
+   "id": "relation/2828",
+   "lat": 37.989002,
+   "lng": 23.732652,
+   "tags": {
+    "name": "Εθνικό Αρχαιολογικό Μουσείο",
+    "name:en": "National Archaeological Museum",
+    "tourism": "museum",
+    "building": "museum",
+    "opening_hours": "Nov 01-Mar 31 08:30-15:30; Nov 01-Mar 31,Apr 01-May 13,May 14-Oct 31 Tu 13:00-20:00; Apr 01-May 13 09:00-16:00; May 14-Oct 31 08:00-20:00; Jan 01 off; Mar 25 off; May 01 off; Dec 25-26 off \"Orthodox Easter off\"",
+    "wikidata": "Q637187",
+    "wikipedia": "el:Εθνικό Αρχαιολογικό Μουσείο",
+    "addr:housenumber": "44",
+    "addr:street": "Πατησίων",
+    "addr:postcode": "10682",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "relation/2903266",
+   "lat": 37.978621,
+   "lng": 23.718184,
+   "tags": {
+    "name": "Αρχαιολογικός Χώρος Κεραμεικού",
+    "name:en": "Archaeological site of Kerameikos",
+    "tourism": "attraction",
+    "leisure": "park",
+    "historic": "archaeological_site",
+    "website": "http://odysseus.culture.gr/h/3/eh352.jsp?obj_id=2392",
+    "wikidata": "Q630974"
+   }
+  },
+  {
+   "id": "relation/4423249",
+   "lat": 37.971705,
+   "lng": 23.726429,
+   "tags": {
+    "name": "Ακρόπολη",
+    "name:en": "Acropolis",
+    "tourism": "attraction",
+    "historic": "castle",
+    "wikidata": "Q131013",
+    "wikipedia": "el:Ακρόπολη Αθηνών",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "relation/5688115",
+   "lat": 37.9696,
+   "lng": 23.724545,
+   "tags": {
+    "name": "Αθήνα",
+    "name:en": "Classical Athens",
+    "historic": "archaeological_site",
+    "wikidata": "Q844930",
+    "wikipedia": "el:Αρχαία Αθήνα"
+   }
+  },
+  {
+   "id": "relation/6693233",
+   "lat": 37.940092,
+   "lng": 23.696482,
+   "tags": {
+    "name": "Νέο Ψηφιακό Πλανητάριο Ιδρύματος Ευγενίδου",
+    "name:en": "Eugenides Foundation New Digital Planetarium",
+    "tourism": "museum",
+    "amenity": "planetarium",
+    "building": "yes",
+    "opening_hours": "Mo-Th 08:30-20:00, Fr-Sa 08:30-15:30",
+    "website": "https://www.eef.edu.gr",
+    "wikidata": "Q12877355",
+    "wikipedia": "el:Ίδρυμα Ευγενίδου",
+    "addr:housenumber": "387",
+    "addr:street": "Ανδρέα Συγγρού",
+    "addr:postcode": "17564",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/101926654",
+   "lat": 38.03341,
+   "lng": 23.730093,
+   "tags": {
+    "name": "Πάρκο Κυκλοφοριακής Αγωγής",
+    "tourism": "theme_park",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "way/10973697",
+   "lat": 37.970588,
+   "lng": 23.727715,
+   "tags": {
+    "name": "Θέατρο του Διονύσου",
+    "name:en": "Theatre of Dionysus",
+    "tourism": "attraction",
+    "historic": "ruins",
+    "opening_hours": "Mo-Su 08:00-19:00",
+    "wikidata": "Q1227044",
+    "wikipedia": "el:Θέατρο του Διονύσου"
+   }
+  },
+  {
+   "id": "way/1292151643",
+   "lat": 37.977567,
+   "lng": 23.733132,
+   "tags": {
+    "name": "Χαρίλαος Τρικούπης",
+    "name:en": "Charilaos Trikoupis",
+    "tourism": "artwork",
+    "historic": "memorial",
+    "wikidata": "Q111707923",
+    "wikipedia": "el:Χαρίλαος Τρικούπης"
+   }
+  },
+  {
+   "id": "way/132626748",
+   "lat": 37.976738,
+   "lng": 23.749445,
+   "tags": {
+    "name": "Πλατεία Μεγάλης του Γένους Σχολής",
+    "leisure": "park",
+    "wikidata": "Q81033801",
+    "wikipedia": "el:Πλατεία Μεγάλης του Γένους Σχολής"
+   }
+  },
+  {
+   "id": "way/132639888",
+   "lat": 37.981088,
+   "lng": 23.752074,
+   "tags": {
+    "name": "Μουσείο Αντιδικτατορικής και Εθνικής Αντίστασης",
+    "name:en": "Museum of Anti-Dictatorship and National Resistance",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q112332552"
+   }
+  },
+  {
+   "id": "way/132639902",
+   "lat": 37.980704,
+   "lng": 23.751863,
+   "tags": {
+    "name": "Μουσείο \"Ελευθέριος Βενιζέλος\"",
+    "name:en": "\"Eleftherios Venizelos\" Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q5358633"
+   }
+  },
+  {
+   "id": "way/132656096",
+   "lat": 37.975045,
+   "lng": 23.75092,
+   "tags": {
+    "name": "Πλατεία Μαδρίτης",
+    "leisure": "park",
+    "wikidata": "Q111595436"
+   }
+  },
+  {
+   "id": "way/144928413",
+   "lat": 37.971628,
+   "lng": 23.727309,
+   "tags": {
+    "name": "Ναός της Ρώμης και του Αυγούστου",
+    "name:en": "Temple of Rome and Augustus",
+    "historic": "ruins",
+    "wikidata": "Q2145005",
+    "wikipedia": "el:Ναός της Ρώμης και του Αυγούστου"
+   }
+  },
+  {
+   "id": "way/144928414",
+   "lat": 37.97152,
+   "lng": 23.727895,
+   "tags": {
+    "name": "Πάνδιον",
+    "name:en": "Pandion",
+    "historic": "ruins",
+    "wikidata": "Q3818592",
+    "wikipedia": "es:Santuario de Pandión"
+   }
+  },
+  {
+   "id": "way/144928418",
+   "lat": 37.972195,
+   "lng": 23.725898,
+   "tags": {
+    "name": "Αρρηφόριον",
+    "name:en": "Arriforion",
+    "historic": "ruins",
+    "wikidata": "Q699480",
+    "wikipedia": "el:Αρρηφόριον"
+   }
+  },
+  {
+   "id": "way/144928419",
+   "lat": 37.970528,
+   "lng": 23.725994,
+   "tags": {
+    "name": "Στοά Ευμένους",
+    "name:en": "Stoa of Eumenes",
+    "historic": "archaeological_site",
+    "wikidata": "Q1905296",
+    "wikipedia": "el:Στοά Ευμένους"
+   }
+  },
+  {
+   "id": "way/1451670959",
+   "lat": 37.987867,
+   "lng": 23.730671,
+   "tags": {
+    "name": "Κατεστραμμένη πύλη του Πολυτεχνείου",
+    "name:en": "Damaged gate of the Polytechnic University",
+    "historic": "memorial",
+    "wikidata": "Q2628742",
+    "wikipedia": "el:Εξέγερση του Πολυτεχνείου"
+   }
+  },
+  {
+   "id": "way/145662885",
+   "lat": 37.975075,
+   "lng": 23.722392,
+   "tags": {
+    "name": "Μνημείο επωνύμων ηρώων",
+    "name:en": "Monument of the Eponymous Heroes",
+    "tourism": "attraction",
+    "historic": "ruins",
+    "wikidata": "Q2094507",
+    "wikipedia": "en:Monument of the Eponymous Heroes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/145662887",
+   "lat": 37.976119,
+   "lng": 23.722345,
+   "tags": {
+    "name": "Βασίλειος Στοά",
+    "name:en": "Royal Stoa",
+    "historic": "ruins",
+    "wikidata": "Q1670679",
+    "wikipedia": "el:Βασίλειος Στοά"
+   }
+  },
+  {
+   "id": "way/145662889",
+   "lat": 37.975717,
+   "lng": 23.722733,
+   "tags": {
+    "name": "Βωμός 12 θεών",
+    "name:en": "Altar of the 12 Gods",
+    "historic": "ruins",
+    "wikidata": "Q2872376"
+   }
+  },
+  {
+   "id": "way/145662891",
+   "lat": 37.974253,
+   "lng": 23.722455,
+   "tags": {
+    "name": "Ηλιαία",
+    "historic": "ruins",
+    "wikidata": "Q1129527"
+   }
+  },
+  {
+   "id": "way/145662892",
+   "lat": 37.974872,
+   "lng": 23.721939,
+   "tags": {
+    "name": "Θόλος",
+    "historic": "ruins",
+    "wikidata": "Q9087412"
+   }
+  },
+  {
+   "id": "way/145662894",
+   "lat": 37.97514,
+   "lng": 23.721822,
+   "tags": {
+    "name": "Νέον Βουλευτήριον",
+    "name:en": "New Bouleuterion",
+    "historic": "ruins",
+    "wikidata": "Q751024"
+   }
+  },
+  {
+   "id": "way/145662897",
+   "lat": 37.975557,
+   "lng": 23.722124,
+   "tags": {
+    "name": "Ναός του Απόλλωνος Πατρώου",
+    "name:en": "Temple of Apollo Patroos",
+    "historic": "ruins",
+    "wikidata": "Q3142437",
+    "wikipedia": "en:Temple of Apollo Patroos"
+   }
+  },
+  {
+   "id": "way/145662898",
+   "lat": 37.975531,
+   "lng": 23.722749,
+   "tags": {
+    "name": "Ναός τού Άρη",
+    "name:en": "Temple of Mars",
+    "historic": "ruins",
+    "wikidata": "Q2405583"
+   }
+  },
+  {
+   "id": "way/145662899",
+   "lat": 37.973942,
+   "lng": 23.723996,
+   "tags": {
+    "name": "Νομισματοκοπείον",
+    "name:en": "Mint",
+    "historic": "ruins",
+    "wikidata": "Q3321024"
+   }
+  },
+  {
+   "id": "way/145662909",
+   "lat": 37.975214,
+   "lng": 23.722084,
+   "tags": {
+    "name": "Παλαιό Βουλευτήριον και Μητρώον",
+    "name:en": "Metroon",
+    "historic": "ruins",
+    "wikidata": "Q739798"
+   }
+  },
+  {
+   "id": "way/145662912",
+   "lat": 37.975836,
+   "lng": 23.722112,
+   "tags": {
+    "name": "Στοά του Ελευθερίου Διός",
+    "name:en": "Stoa of Zeus Eleftherios",
+    "historic": "ruins",
+    "wikidata": "Q331355",
+    "wikipedia": "el:Στοά Ελευθερίου Διός"
+   }
+  },
+  {
+   "id": "way/145662915",
+   "lat": 37.97465,
+   "lng": 23.721476,
+   "tags": {
+    "name": "Στρατηγείον",
+    "historic": "ruins",
+    "wikidata": "Q3082673"
+   }
+  },
+  {
+   "id": "way/145662934",
+   "lat": 37.973314,
+   "lng": 23.724909,
+   "tags": {
+    "name": "Ἐλευσίνιον",
+    "name:en": "Eleusinion",
+    "historic": "ruins",
+    "wikidata": "Q1349784",
+    "wikipedia": "el:Ελευσίνιον"
+   }
+  },
+  {
+   "id": "way/146815833",
+   "lat": 37.968571,
+   "lng": 23.732986,
+   "tags": {
+    "name": "Δελφίνιον",
+    "name:en": "Temple of Apollo Delphinios",
+    "historic": "ruins",
+    "building": "yes",
+    "wikidata": "Q97206898",
+    "wikipedia": "el:Δελφίνιον"
+   }
+  },
+  {
+   "id": "way/1473619530",
+   "lat": 37.98182,
+   "lng": 23.728601,
+   "tags": {
+    "name": "Αχαρνική οδός και τάφοι",
+    "name:en": "Acharnian road and tombs",
+    "historic": "archaeological_site",
+    "wikidata": "Q38279577"
+   }
+  },
+  {
+   "id": "way/1473619559",
+   "lat": 37.975351,
+   "lng": 23.736366,
+   "tags": {
+    "name": "Μνημείο Αγνώστου Στρατιώτου",
+    "name:en": "Tomb of Unknown Soldier",
+    "tourism": "attraction",
+    "historic": "memorial",
+    "building": "yes",
+    "wikidata": "Q3531128",
+    "wikipedia": "el:Μνημείο του άγνωστου στρατιώτη (Ελλάδα)",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/152257802",
+   "lat": 37.980376,
+   "lng": 23.727626,
+   "tags": {
+    "name": "Βαρβάκειος Αγορά",
+    "name:en": "Varvakios Market",
+    "amenity": "marketplace",
+    "building": "retail",
+    "opening_hours": "Mo-Sa 07:00-18:00",
+    "wikidata": "Q755345",
+    "addr:street": "Αθηνάς"
+   }
+  },
+  {
+   "id": "way/1553268578",
+   "lat": 37.975386,
+   "lng": 23.725081,
+   "tags": {
+    "name": "Μουσείο Νεότερου Ελληνικού Πολιτισμού",
+    "name:en": "Museum of Modern Greek Culture",
+    "tourism": "museum",
+    "opening_hours": "Mo-Fr 09:30-16:30; Tu off; We-Su 08:00-20:00",
+    "website": "https://www.mnep.gr",
+    "addr:housenumber": "10",
+    "addr:street": "Άρεως"
+   }
+  },
+  {
+   "id": "way/157180174",
+   "lat": 37.97108,
+   "lng": 23.729938,
+   "tags": {
+    "name": "Μνημείο Λυσικράτους",
+    "name:en": "Choragic Monument of Lysicrates",
+    "tourism": "attraction",
+    "historic": "monument",
+    "building": "yes",
+    "wikidata": "Q1160691",
+    "wikipedia": "el:Μνημείο του Λυσικράτη",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/175107932",
+   "lat": 37.970187,
+   "lng": 23.732013,
+   "tags": {
+    "name": "Πύλη του Αδριανού",
+    "name:en": "Arch of Hadrian",
+    "tourism": "attraction",
+    "historic": "yes",
+    "building": "yes",
+    "wikidata": "Q1567576",
+    "wikipedia": "el:Πύλη του Αδριανού",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/175877498",
+   "lat": 37.975268,
+   "lng": 23.718625,
+   "tags": {
+    "name": "Μουσείο Ηρακλειδών",
+    "name:en": "Herakleidon Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "We-Su 10:00-17:15; Jan 1 off; Easter off; Aug 15 off; Dec 25-26 off",
+    "wikidata": "Q16252571",
+    "addr:housenumber": "16",
+    "addr:street": "Ηρακλειδών",
+    "addr:postcode": "11851"
+   }
+  },
+  {
+   "id": "way/177282540",
+   "lat": 37.972055,
+   "lng": 23.732572,
+   "tags": {
+    "name": "Μουσείο Φρυσίρα",
+    "name:en": "Frissiras Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "website": "https://frissirasmuseum.gr",
+    "wikidata": "Q5504730",
+    "wikipedia": "el:Μουσείο Φρυσίρα",
+    "addr:housenumber": "7",
+    "addr:street": "Μονής Αστερίου",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/193395906",
+   "lat": 37.974139,
+   "lng": 23.730038,
+   "tags": {
+    "name": "Μουσείο Χαρακτικής και Γραφικών Τεχνών",
+    "name:en": "Museum of Engravings and Graphic Arts",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Mo-Su 08:30-15:00",
+    "addr:housenumber": "10",
+    "addr:street": "Αγίας Φιλοθέης",
+    "addr:postcode": "10558",
+    "fee": "unknown"
+   }
+  },
+  {
+   "id": "way/193403370",
+   "lat": 37.971614,
+   "lng": 23.732754,
+   "tags": {
+    "name": "Ιστορικό Υφαντουργείο ΣΕΝ",
+    "tourism": "museum",
+    "building": "yes",
+    "addr:housenumber": "38",
+    "addr:street": "Λεωφόρος Βασιλίσσης Αμαλίας"
+   }
+  },
+  {
+   "id": "way/193403372",
+   "lat": 37.971529,
+   "lng": 23.732619,
+   "tags": {
+    "name": "Ιστορικό Υφαντουργείο ΣΕΝ",
+    "tourism": "museum",
+    "building": "yes",
+    "addr:housenumber": "38",
+    "addr:street": "Λεωφόρος Βασιλίσσης Αμαλίας"
+   }
+  },
+  {
+   "id": "way/193403374",
+   "lat": 37.971714,
+   "lng": 23.732609,
+   "tags": {
+    "name": "Ιστορικό Υφαντουργείο ΣΕΝ",
+    "tourism": "museum",
+    "building": "yes",
+    "addr:housenumber": "38",
+    "addr:street": "Λεωφόρος Βασιλίσσης Αμαλίας"
+   }
+  },
+  {
+   "id": "way/193403375",
+   "lat": 37.971381,
+   "lng": 23.73274,
+   "tags": {
+    "name": "Ιστορικό Υφαντουργείο ΣΕΝ",
+    "tourism": "museum",
+    "building": "yes",
+    "addr:housenumber": "38",
+    "addr:street": "Λεωφόρος Βασιλίσσης Αμαλίας"
+   }
+  },
+  {
+   "id": "way/195162372",
+   "lat": 37.972921,
+   "lng": 23.733196,
+   "tags": {
+    "name": "Εβραϊκό Μουσείο Ελλάδος",
+    "name:en": "The Jewish Museum of Greece",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Mo-Fr 09:00-16:00; Su 10:00-16:00; Sa,PH off",
+    "website": "https://www.jewishmuseum.gr/",
+    "wikidata": "Q930891",
+    "addr:housenumber": "39",
+    "addr:street": "Νίκης",
+    "addr:postcode": "10557",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/195310549",
+   "lat": 37.977951,
+   "lng": 23.734139,
+   "tags": {
+    "name": "Μουσείο της Τράπεζας της Ελλάδος",
+    "name:en": "Museum of the Bank of Greece",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q111245509"
+   }
+  },
+  {
+   "id": "way/197644358",
+   "lat": 37.979828,
+   "lng": 23.769615,
+   "tags": {
+    "name": "Μουσείο Μαρίκας Κοτοπούλη",
+    "name:en": "Marika Kotopouli Museum",
+    "tourism": "museum",
+    "opening_hours": "08:30-15:00",
+    "wikidata": "Q6763409",
+    "wikipedia": "el:Μουσείο Μαρίκας Κοτοπούλη",
+    "addr:housenumber": "17",
+    "addr:street": "Αλέξανδρου Παναγούλη",
+    "addr:postcode": "15773",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/208068229",
+   "lat": 37.974499,
+   "lng": 23.726572,
+   "tags": {
+    "name": "Φετιχιέ Τζαμί",
+    "name:en": "Fethiye Mosque",
+    "historic": "monument",
+    "building": "mosque",
+    "wikidata": "Q5445954",
+    "wikipedia": "el:Φετιχιέ τζαμί Αθηνών"
+   }
+  },
+  {
+   "id": "way/217268333",
+   "lat": 37.977989,
+   "lng": 23.716766,
+   "tags": {
+    "name": "Αρχαιολογικό Μουσείο Κεραμεικού",
+    "name:en": "Kerameikos Archaeological Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Nov-Mar Mo, Th-Su 08:00-17:00; Nov-Mar Tu 10:00-17:00; Apr-Oct Mo, Th-Su 08:00-20:00; Apr-Oct Tu 10:00-20:00",
+    "wikidata": "Q2574469",
+    "wikipedia": "el:Αρχαιολογικό Μουσείο Κεραμεικού",
+    "addr:housenumber": "148",
+    "addr:street": "Ερμού",
+    "addr:postcode": "10553",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/217342425",
+   "lat": 37.983214,
+   "lng": 23.702037,
+   "tags": {
+    "name": "Γεωργικό Μουσείο",
+    "tourism": "museum",
+    "building": "civic"
+   }
+  },
+  {
+   "id": "way/219467101",
+   "lat": 37.978515,
+   "lng": 23.72018,
+   "tags": {
+    "name": "Μουσείο Νεώτερης Κεραμεικής",
+    "name:en": "Museum of Traditional Pottery",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q5062634",
+    "addr:housenumber": "4-6",
+    "addr:street": "Μελιδώνη",
+    "addr:postcode": "10553"
+   }
+  },
+  {
+   "id": "way/219472242",
+   "lat": 37.980864,
+   "lng": 23.7214,
+   "tags": {
+    "name": "Παλιά Πινακοθήκη Δήμου Αθηναίων",
+    "name:en": "Municipal Gallery of Athens",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "\"Λειτουργεί μόνον όταν υπάρχει έκθεση\"",
+    "wikidata": "Q1576793",
+    "addr:housenumber": "51",
+    "addr:street": "Παναγή Τσαλδάρη (Πειραιώς)",
+    "addr:postcode": "10553",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/220890927",
+   "lat": 37.97571,
+   "lng": 23.742307,
+   "tags": {
+    "name": "Μουσείο Κυκλαδικής Τέχνης",
+    "name:en": "Museum of Cycladic Art",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Mo,We,Fr,Sa 10:00-17:00; Th 10:00-20:00; Su 11:00-17:00; Tu off",
+    "wikidata": "Q1230253",
+    "wikipedia": "el:Μουσείο Κυκλαδικής Τέχνης",
+    "addr:housenumber": "4",
+    "addr:street": "Νεοφύτου Δούκα",
+    "addr:postcode": "10674",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/220890939",
+   "lat": 37.975672,
+   "lng": 23.742776,
+   "tags": {
+    "name": "Μέγαρο Σταθάτου",
+    "name:en": "Stathatos Mansion",
+    "tourism": "museum",
+    "building": "house",
+    "wikidata": "Q3195477",
+    "wikipedia": "el:Μέγαρο Σταθάτου",
+    "addr:housenumber": "31",
+    "addr:street": "Βασιλίσσης Σοφίας",
+    "addr:postcode": "10674",
+    "fee": "yes",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/220926060",
+   "lat": 37.976229,
+   "lng": 23.738358,
+   "tags": {
+    "name": "Ίδρυμα Εικαστικών Τεχνών και Μουσικής Β&Μ Θεοχαράκη",
+    "name:en": "B&M Theocharakis Foundation for the Fine Arts and Music",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Fr-We 10:00-18:00, Th 10:00-20:00",
+    "wikidata": "Q104527429",
+    "addr:housenumber": "9",
+    "addr:street": "Βασιλίσσης Σοφίας",
+    "addr:postcode": "10671",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/220948825",
+   "lat": 37.977257,
+   "lng": 23.736367,
+   "tags": {
+    "name": "Πινακοθήκη Νίκου Χατζηκυριάκου - Γκίκα",
+    "name:en": "Nikos Hadjikyriakos - Ghika Gallery",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Fr-Sa 10:00-18:00; Aug off; Mar 25 off; May 1 off; Aug 15 off; Oct 28 off; Dec 25-26 off; Jan 1 off; Jan 6 off; PH off",
+    "addr:housenumber": "3",
+    "addr:street": "Κριεζώτου",
+    "addr:postcode": "10671"
+   }
+  },
+  {
+   "id": "way/223018298",
+   "lat": 37.973914,
+   "lng": 23.72776,
+   "tags": {
+    "name": "Λουτρό των Αέρηδων",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q38284122",
+    "wikipedia": "en:Aerides Bath",
+    "addr:housenumber": "8",
+    "addr:street": "Κυρρήστου"
+   }
+  },
+  {
+   "id": "way/223175510",
+   "lat": 37.974478,
+   "lng": 23.727551,
+   "tags": {
+    "name": "Μουσείο Ελληνικών Λαϊκών Οργάνων",
+    "name:en": "Museum of Greek Folk Musical Instruments",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "We-Mo 08:30-15:30",
+    "wikidata": "Q4306254",
+    "addr:housenumber": "1-3",
+    "addr:street": "Διογένους",
+    "addr:postcode": "10556",
+    "fee": "yes",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/223325133",
+   "lat": 37.978247,
+   "lng": 23.732174,
+   "tags": {
+    "name": "MΟΥΣΕΙΟΝ - ΒΙΒΛΙΟΘΗΚΗ ΙΣΤΟΡΙΚΗΣ ΜΝΗΜΗΣ ΕΛ. ΒΕΝΙΧΕΛΟΥ",
+    "tourism": "museum",
+    "building": "yes",
+    "addr:housenumber": "2",
+    "addr:street": "Χρήστου Λαδά",
+    "addr:postcode": "10561"
+   }
+  },
+  {
+   "id": "way/223874917",
+   "lat": 37.978802,
+   "lng": 23.737521,
+   "tags": {
+    "name": "Μουσείο Ιστορίας της Ελληνικής Ενδυμασίας",
+    "name:en": "Museum of the History of the Greek Costume",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Jan 1 off; Jan Mo-Fr 10:00-14:00; Aug off; Mar 25 off; Jan 1 off; Jan 6 off; Dec 25-26 off; May 1 off; Oct 25 off; PH off",
+    "wikidata": "Q6941089",
+    "addr:housenumber": "7",
+    "addr:street": "Δημοκρίτου",
+    "addr:postcode": "10671",
+    "fee": "no",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/226947348",
+   "lat": 37.965519,
+   "lng": 23.759142,
+   "tags": {
+    "name": "Μουσείο ΕΑΜικής Εθνικής Αντίστασης",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q98273271",
+    "wikipedia": "el:Μουσείο ΕΑΜικής Εθνικής Αντίστασης Καισαριανής",
+    "addr:postcode": "16121"
+   }
+  },
+  {
+   "id": "way/23183030",
+   "lat": 37.976016,
+   "lng": 23.740343,
+   "tags": {
+    "name": "Μουσείο Μπενάκη",
+    "name:en": "Benaki Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Tu off; Mo,We,Fr,Sa 10:00-18:00; Th 10:00-24:00; Su 10:00-16:00",
+    "wikidata": "Q816669",
+    "wikipedia": "el:Μουσείο Μπενάκη",
+    "addr:housenumber": "1",
+    "addr:street": "Κουμπάρη",
+    "addr:postcode": "10674",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/23213374",
+   "lat": 37.948876,
+   "lng": 23.710132,
+   "tags": {
+    "name": "Πλατεία Χρυσοστόμου Σμύρνης",
+    "leisure": "park",
+    "wikidata": "Q15966790"
+   }
+  },
+  {
+   "id": "way/232666775",
+   "lat": 38.01047,
+   "lng": 23.770535,
+   "tags": {
+    "name": "Υπαίθρια Γλυπτοθήκη Ψυχικού",
+    "name:en": "Open Air Glyptotheque",
+    "tourism": "gallery",
+    "wikidata": "Q18123329"
+   }
+  },
+  {
+   "id": "way/241550163",
+   "lat": 37.963041,
+   "lng": 23.725299,
+   "tags": {
+    "name": "Εθνικό Μουσείο Σύγχρονης Τέχνης",
+    "name:en": "National Museum of Contemporary Art",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Tu-We,Fr-Su 11:00-19:00; Th 11:00-22:00",
+    "website": "https://www.emst.gr/",
+    "wikipedia": "el:Εθνικό Μουσείο Σύγχρονης Τέχνης",
+    "addr:street": "Καλλιρόης",
+    "addr:postcode": "11743",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/24220649",
+   "lat": 37.998418,
+   "lng": 23.676663,
+   "tags": {
+    "name": "Μπαρουτάδικο",
+    "leisure": "park",
+    "wikidata": "Q75091187"
+   }
+  },
+  {
+   "id": "way/25111549",
+   "lat": 37.969051,
+   "lng": 23.74636,
+   "tags": {
+    "name": "Άλσος Παγκρατίου",
+    "name:en": "Alsos Pagkratiou",
+    "leisure": "park",
+    "wikidata": "Q119844201"
+   }
+  },
+  {
+   "id": "way/265733746",
+   "lat": 37.940975,
+   "lng": 23.693074,
+   "tags": {
+    "name": "Κέντρο Πολιτισμού Ίδρυμα Σταύρος Νιάρχος",
+    "name:en": "Stavros Niarchos Foundation Cultural Center",
+    "leisure": "park",
+    "opening_hours": "06:00-24:00",
+    "website": "https://www.snfcc.org/",
+    "wikidata": "Q17511186",
+    "addr:housenumber": "364",
+    "addr:street": "Συγγρού",
+    "addr:postcode": "17674"
+   }
+  },
+  {
+   "id": "way/265859156",
+   "lat": 37.971477,
+   "lng": 23.732917,
+   "tags": {
+    "name": "Ιστορικό Υφαντουργείο ΣΕΝ",
+    "tourism": "museum",
+    "building": "yes",
+    "addr:housenumber": "38",
+    "addr:street": "Λεωφόρος Βασιλίσσης Αμαλίας"
+   }
+  },
+  {
+   "id": "way/267551016",
+   "lat": 37.96932,
+   "lng": 23.726666,
+   "tags": {
+    "name": "Μουσείο Κοσμήματος Ηλία Λαλαούνη",
+    "name:en": "Ilias Lalaounis Jewelry Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Tu-Fr 09:00-15:00; We,Sa 10:00-18:00; PH off",
+    "website": "https://www.lalaounis-jewelrymuseum.gr/",
+    "wikidata": "Q15051919",
+    "addr:housenumber": "12",
+    "addr:street": "Καλλισπέρη",
+    "addr:postcode": "11742"
+   }
+  },
+  {
+   "id": "way/27790074",
+   "lat": 37.99373,
+   "lng": 23.740445,
+   "tags": {
+    "name": "Πεδίον Άρεως",
+    "name:en": "Pedion Areos",
+    "leisure": "park",
+    "website": "https://pediontouareostoparkomas.gr/",
+    "wikidata": "Q932606"
+   }
+  },
+  {
+   "id": "way/27917370",
+   "lat": 37.975604,
+   "lng": 23.721412,
+   "tags": {
+    "name": "Ναός Ηφαίστου",
+    "name:en": "Temple of Hephaestus",
+    "tourism": "attraction",
+    "historic": "ruins",
+    "building": "yes",
+    "wikidata": "Q756824",
+    "wikipedia": "el:Ναός Ηφαίστου",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/285129067",
+   "lat": 37.978876,
+   "lng": 23.73157,
+   "tags": {
+    "name": "Μουσείον της Πόλεως των Αθηνών",
+    "name:en": "Museum of the City of Athens",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Mo-Fr 09:00-16:00; Tu off; Sa,Su 10:00-15:00",
+    "wikidata": "Q6941076",
+    "addr:housenumber": "7",
+    "addr:street": "Παπαρηγοπούλου",
+    "addr:postcode": "10561",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/286012226",
+   "lat": 37.980111,
+   "lng": 23.753165,
+   "tags": {
+    "name": "Άγαλμα Ελευθερίου Βενιζέλου",
+    "name:en": "Statue of Eleftherios Venizelos",
+    "historic": "memorial",
+    "wikidata": "Q111707879",
+    "wikipedia": "el:Ελευθέριος Βενιζέλος"
+   }
+  },
+  {
+   "id": "way/302592510",
+   "lat": 37.945456,
+   "lng": 23.700021,
+   "tags": {
+    "name": "Μουσείο Αφής",
+    "name:en": "Tactual Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "website": "https://www.tactualmuseum.gr/",
+    "wikidata": "Q7674145",
+    "wikipedia": "en:Tactual Museum of Athens",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/316768543",
+   "lat": 37.991176,
+   "lng": 23.730243,
+   "tags": {
+    "name": "Ελληνικό Μουσείο Αυτοκινήτου",
+    "name:en": "Hellenic Motor Museum",
+    "tourism": "museum",
+    "building": "museum",
+    "opening_hours": "Mo-Fr 10:00-17:00, Sa,Su 11:00-18:00",
+    "wikidata": "Q1163632",
+    "wikipedia": "el:Ελληνικό Μουσείο Αυτοκινήτου",
+    "addr:housenumber": "33-35",
+    "addr:street": "Ιουλιανού",
+    "addr:postcode": "10433",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/317013390",
+   "lat": 37.975962,
+   "lng": 23.769613,
+   "tags": {
+    "name": "Εργαστήριο Γιάννη Παππά",
+    "name:en": "Yannis Pappas Studio",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Tu-Su 10:00-14:00; We off; Th off; Sa off; PH off",
+    "wikidata": "Q93213417",
+    "addr:housenumber": "38",
+    "addr:street": "Ανακρέοντος"
+   }
+  },
+  {
+   "id": "way/317915132",
+   "lat": 37.971465,
+   "lng": 23.719452,
+   "tags": {
+    "name": "Πνύκα",
+    "name:en": "Pnyx",
+    "tourism": "attraction",
+    "historic": "archaeological_site",
+    "wikidata": "Q1125096",
+    "wikipedia": "el:Πνύκα"
+   }
+  },
+  {
+   "id": "way/318587297",
+   "lat": 37.975011,
+   "lng": 23.744691,
+   "tags": {
+    "name": "Βυζαντινό και Χριστιανικό Μουσείο",
+    "name:en": "Byzantine and Christian Museum",
+    "tourism": "museum",
+    "opening_hours": "Mo,We-Su 09:00-16:00",
+    "wikidata": "Q1018775",
+    "wikipedia": "el:Βυζαντινό και Χριστιανικό Μουσείο",
+    "addr:housenumber": "22",
+    "addr:street": "Λεωφόρος Βασιλίσσης Σοφίας",
+    "addr:postcode": "10675",
+    "fee": "yes",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/318587299",
+   "lat": 37.975426,
+   "lng": 23.745335,
+   "tags": {
+    "name": "Πολεμικό Μουσείο",
+    "name:en": "War Museum",
+    "tourism": "museum",
+    "opening_hours": "Nov-Mar Mo-Sa 09:00-17:00; Apr-Oct Mo-Sa 09:00-19:00; Su 09:00-15:00; PH 09:00-15:00",
+    "wikidata": "Q1788831",
+    "wikipedia": "el:Πολεμικό Μουσείο (Αθήνα)",
+    "addr:housenumber": "2",
+    "addr:street": "Ριζάρη",
+    "addr:postcode": "10675",
+    "fee": "yes",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/32039668",
+   "lat": 37.97406,
+   "lng": 23.756396,
+   "tags": {
+    "name": "Άλσος Ιλισίων",
+    "leisure": "park",
+    "wikidata": "Q127869355",
+    "addr:street": "Ούλωφ Πάλμε"
+   }
+  },
+  {
+   "id": "way/320750537",
+   "lat": 37.981457,
+   "lng": 23.716368,
+   "tags": {
+    "name": "Δημόσιο Σήμα",
+    "historic": "archaeological_site",
+    "wikidata": "Q116312064"
+   }
+  },
+  {
+   "id": "way/320782652",
+   "lat": 37.974942,
+   "lng": 23.761755,
+   "tags": {
+    "name": "Μουσείο Γιώργου Γουναρόπουλου",
+    "name:en": "Museum of George Gounaropoulos",
+    "tourism": "museum",
+    "building": "apartments",
+    "opening_hours": "Tu-We 09:00-13:30,17:00-20:00; Th-Sa 09:00-15:00; Jun-Aug Tu-We 09:00-13:30,18:00-21:00; Mo off; Su off",
+    "website": "https://www.gounaropoulos.gr/",
+    "addr:housenumber": "6",
+    "addr:street": "Γουναροπούλου",
+    "addr:postcode": "15771",
+    "fee": "no",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/321104684",
+   "lat": 37.972947,
+   "lng": 23.726097,
+   "tags": {
+    "name": "Ίδρυμα Παύλου και Αλεξάνδρας Κανελλοπούλου",
+    "name:en": "Museum of Pavlos and Alexandra Kanellopoulou",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Tu-Su 08:00-15:00; Mo off",
+    "website": "http://www.pacanellopoulosfoundation.org",
+    "addr:housenumber": "12",
+    "addr:street": "Θεωρίας",
+    "addr:postcode": "10555",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/321114256",
+   "lat": 37.979228,
+   "lng": 23.720341,
+   "tags": {
+    "name": "Μουσείο Μπενάκη Ισλαμικής Τέχνης",
+    "name:en": "Benaki's Museum of Islamic Art",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Th-Su 10:00-18:00",
+    "website": "https://www.benaki.gr/",
+    "wikidata": "Q59165188",
+    "addr:housenumber": "22",
+    "addr:street": "Αγίων Ασωμάτων",
+    "addr:postcode": "10553",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/321376940",
+   "lat": 37.982985,
+   "lng": 23.719355,
+   "tags": {
+    "name": "Πινακοθήκη Δήμου Αθηναίων",
+    "name:en": "Municipal Gallery of Athens",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q1576793",
+    "addr:street": "Λεωνίδου",
+    "addr:postcode": "10436"
+   }
+  },
+  {
+   "id": "way/32225209",
+   "lat": 38.042376,
+   "lng": 23.74487,
+   "tags": {
+    "name": "Άλσος Νέας Φιλαδέλφειας",
+    "leisure": "park",
+    "wikidata": "Q110276814"
+   }
+  },
+  {
+   "id": "way/32226940",
+   "lat": 37.98182,
+   "lng": 23.728601,
+   "tags": {
+    "name": "Αχαρνική οδός και τάφοι",
+    "name:en": "Acharnian road and tombs",
+    "historic": "archaeological_site",
+    "wikidata": "Q38279577"
+   }
+  },
+  {
+   "id": "way/32297021",
+   "lat": 37.980352,
+   "lng": 23.752591,
+   "tags": {
+    "name": "Πάρκο Ελευθερίας",
+    "name:en": "Parko Eleftherias",
+    "leisure": "park",
+    "wikidata": "Q112323831"
+   }
+  },
+  {
+   "id": "way/352100412",
+   "lat": 37.970824,
+   "lng": 23.726388,
+   "tags": {
+    "name": "Ασκληπιείο Αθηνών",
+    "historic": "archaeological_site",
+    "wikidata": "Q2278514"
+   }
+  },
+  {
+   "id": "way/363624623",
+   "lat": 37.962665,
+   "lng": 23.690912,
+   "tags": {
+    "name": "Ελληνικός Κόσμος",
+    "tourism": "museum",
+    "wikidata": "Q5707194",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/369405009",
+   "lat": 37.954829,
+   "lng": 23.702452,
+   "tags": {
+    "name": "Σκεπαστή Αγορά Καλλιθέας",
+    "name:en": "Market Hall of Kallithea",
+    "amenity": "marketplace",
+    "building": "yes"
+   }
+  },
+  {
+   "id": "way/382365831",
+   "lat": 37.9696,
+   "lng": 23.719203,
+   "tags": {
+    "name": "Δυτικοί λόφοι Αθηνών",
+    "name:en": "Western hills of Athens",
+    "tourism": "attraction",
+    "historic": "archaeological_site",
+    "wikidata": "Q38279507"
+   }
+  },
+  {
+   "id": "way/383407579",
+   "lat": 37.98099,
+   "lng": 23.712668,
+   "tags": {
+    "name": "Ταινιοθήκη Της Ελλάδος",
+    "tourism": "museum",
+    "amenity": "cinema",
+    "building": "yes",
+    "website": "http://www.tainiothiki.gr",
+    "wikidata": "Q2973241",
+    "wikipedia": "en:Greek Film Archive",
+    "addr:housenumber": "48",
+    "addr:street": "Ιερά Οδός",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/383426704",
+   "lat": 37.974228,
+   "lng": 23.722176,
+   "tags": {
+    "name": "South west Fountain House",
+    "historic": "ruins",
+    "wikidata": "Q3076015"
+   }
+  },
+  {
+   "id": "way/383426705",
+   "lat": 37.975077,
+   "lng": 23.723153,
+   "tags": {
+    "name": "Ωδείο τού Αγρίππα",
+    "name:en": "Odeon of Agrippa",
+    "historic": "archaeological_site",
+    "wikidata": "Q745797",
+    "wikipedia": "en:Odeon of Agrippa",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/387701704",
+   "lat": 38.022286,
+   "lng": 23.699888,
+   "tags": {
+    "name": "Λαϊκή Αγορά",
+    "amenity": "marketplace",
+    "opening_hours": "Mo 08:00-15:00"
+   }
+  },
+  {
+   "id": "way/400456875",
+   "lat": 37.969798,
+   "lng": 23.742791,
+   "tags": {
+    "name": "Ίδρυμα Βασίλη & Ελίζας Γουλανδρή",
+    "name:en": "Basil & Elise Goulandris Foundation",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "We-Th, Sa-Mo 10:00-18:00; Fr 10:00-20:00",
+    "website": "https://goulandris.gr/",
+    "wikidata": "Q33119180",
+    "addr:housenumber": "13",
+    "addr:street": "Ερατοσθένους",
+    "addr:postcode": "11635"
+   }
+  },
+  {
+   "id": "way/423467472",
+   "lat": 37.969007,
+   "lng": 23.720253,
+   "tags": {
+    "name": "Άνδηρο",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "way/426887028",
+   "lat": 37.971778,
+   "lng": 23.724841,
+   "tags": {
+    "name": "Μνημείο του Αγρίππα",
+    "name:en": "Monument of Agrippa",
+    "historic": "ruins",
+    "building": "yes",
+    "wikidata": "Q16327864"
+   }
+  },
+  {
+   "id": "way/442128059",
+   "lat": 37.967363,
+   "lng": 23.721368,
+   "tags": {
+    "name": "Μνημείο Φιλοπάππου",
+    "name:en": "Philopappos Monument",
+    "tourism": "attraction",
+    "historic": "archaeological_site",
+    "building": "yes",
+    "wikidata": "Q1760491",
+    "wikipedia": "el:Μνημείο Φιλοπάππου",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/448520748",
+   "lat": 37.986602,
+   "lng": 23.757707,
+   "tags": {
+    "name": "Πνευματικό Κέντρο Κωνσταντινοπολιτών",
+    "tourism": "museum",
+    "building": "yes",
+    "addr:housenumber": "46",
+    "addr:street": "Δημητρίου Σούτσου"
+   }
+  },
+  {
+   "id": "way/449650393",
+   "lat": 37.977741,
+   "lng": 23.721587,
+   "tags": {
+    "name": "Άλεξ Μυλωνά",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q78033066",
+    "addr:housenumber": "5",
+    "addr:street": "Πλατεία Αγίων Ασωμάτων",
+    "addr:postcode": "10554",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/450305803",
+   "lat": 37.966169,
+   "lng": 23.722937,
+   "tags": {
+    "name": "Μουσείο συναισθημάτων",
+    "tourism": "museum",
+    "building": "yes",
+    "website": "https://mce.gr/",
+    "addr:housenumber": "56",
+    "addr:street": "Τσάμη Καρατάσου",
+    "addr:postcode": "11741"
+   }
+  },
+  {
+   "id": "way/451699264",
+   "lat": 37.970083,
+   "lng": 23.720347,
+   "tags": {
+    "name": "Άγιος Δημήτριος Λουμπαρδιάρης",
+    "name:en": "Church of Agios Dimitrios Loumbardiaris",
+    "amenity": "place_of_worship",
+    "historic": "church",
+    "building": "church",
+    "wikidata": "Q104473775"
+   }
+  },
+  {
+   "id": "way/453815510",
+   "lat": 37.987256,
+   "lng": 23.726295,
+   "tags": {
+    "name": "Πλατεία Βάθης",
+    "leisure": "park",
+    "wikidata": "Q16327851",
+    "wikipedia": "el:Πλατεία Βάθης"
+   }
+  },
+  {
+   "id": "way/455686511",
+   "lat": 37.983689,
+   "lng": 23.722026,
+   "tags": {
+    "name": "Ίδρυμα Μουσείο Εθνικής Αντιστάσεως ΝΑΠΟΛΕΩΝ ΖΕΡΒΑΣ",
+    "tourism": "museum",
+    "building": "yes",
+    "addr:housenumber": "9",
+    "addr:street": "Λεωνίδου",
+    "addr:postcode": "10437"
+   }
+  },
+  {
+   "id": "way/456123292",
+   "lat": 37.983498,
+   "lng": 23.71911,
+   "tags": {
+    "name": "Πινακοθήκη Δήμου Αθηναίων",
+    "name:en": "Municipal Gallery of Athens",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q1576793",
+    "addr:street": "Μυλλέρου",
+    "addr:postcode": "10436"
+   }
+  },
+  {
+   "id": "way/460963404",
+   "lat": 37.961255,
+   "lng": 23.705392,
+   "tags": {
+    "name": "Κάστρο Οδού Μπιζανίου (Μάχης 23ης - 24ης Ιουλίου 1944)",
+    "name:en": "Bizaniou Street Fort (of July 23 - 24, 1944 Battle)",
+    "tourism": "museum",
+    "building": "yes",
+    "addr:housenumber": "10",
+    "addr:street": "Μπιζανίου",
+    "addr:postcode": "17676"
+   }
+  },
+  {
+   "id": "way/463120316",
+   "lat": 37.956808,
+   "lng": 23.699039,
+   "tags": {
+    "name": "Δημοτική Πινακοθήκη «Σοφία Λασκαρίδου»",
+    "tourism": "gallery",
+    "building": "yes",
+    "wikidata": "Q56396808",
+    "addr:housenumber": "120",
+    "addr:street": "Λασκαρίδου"
+   }
+  },
+  {
+   "id": "way/463505941",
+   "lat": 37.970256,
+   "lng": 23.727776,
+   "tags": {
+    "name": "Βήμα του Φαίδρου",
+    "name:en": "Bema of Phaedrus",
+    "tourism": "attraction",
+    "historic": "ruins",
+    "wikidata": "Q85746507",
+    "wikipedia": "en:Bema of Phaidros"
+   }
+  },
+  {
+   "id": "way/475536286",
+   "lat": 37.94278,
+   "lng": 23.714216,
+   "tags": {
+    "name": "Ψηφιακό Μουσείο Σμύρνης και Νέας Σμύρνης",
+    "tourism": "museum",
+    "building": "residential",
+    "opening_hours": "Mo,Tu 09:30-15:30,18:00-21:00; We-Fr 09:30-15:30; Sa 10:00-14:00",
+    "website": "https://www.smyrnimuseum.gr/",
+    "addr:housenumber": "87",
+    "addr:street": "Λεωφόρος Ελευθερίου Βενιζέλου",
+    "addr:postcode": "17123"
+   }
+  },
+  {
+   "id": "way/475536287",
+   "lat": 37.94262,
+   "lng": 23.714212,
+   "tags": {
+    "name": "Ψηφιακό Μουσείο Νέας Σμύρνης",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Mo-Fr 09:30-15:00, Mo-Tu 18:00-21:00, Sa 10:00-14:00",
+    "website": "https://www.smyrnimuseum.gr/",
+    "wikidata": "Q135561258",
+    "addr:housenumber": "87",
+    "addr:street": "Ελευθερίου Βενιζέλου",
+    "addr:postcode": "17123"
+   }
+  },
+  {
+   "id": "way/479255983",
+   "lat": 37.96753,
+   "lng": 23.735474,
+   "tags": {
+    "name": "Ναός Αγροτέρας Αρτέμιδος",
+    "name:en": "Temple of Artemis Agrotera",
+    "historic": "archaeological_site",
+    "website": "https://www.artemisagrotera.org",
+    "wikidata": "Q20084335"
+   }
+  },
+  {
+   "id": "way/489448988",
+   "lat": 37.986337,
+   "lng": 23.778262,
+   "tags": {
+    "name": "Χώρος Εθνικής Γλυπτοθήκης",
+    "tourism": "gallery",
+    "leisure": "park",
+    "wikidata": "Q6972907"
+   }
+  },
+  {
+   "id": "way/536021909",
+   "lat": 37.956844,
+   "lng": 23.745275,
+   "tags": {
+    "name": "Το Κάστρο του Υμηττού",
+    "tourism": "museum",
+    "building": "house",
+    "addr:housenumber": "47",
+    "addr:street": "Αγραίων"
+   }
+  },
+  {
+   "id": "way/561695431",
+   "lat": 37.939722,
+   "lng": 23.754786,
+   "tags": {
+    "name": "Ilioupolis Fun Park",
+    "tourism": "theme_park"
+   }
+  },
+  {
+   "id": "way/59870652",
+   "lat": 37.986567,
+   "lng": 23.778457,
+   "tags": {
+    "name": "Εθνική Γλυπτοθήκη",
+    "tourism": "museum",
+    "building": "yes"
+   }
+  },
+  {
+   "id": "way/59870653",
+   "lat": 37.987099,
+   "lng": 23.777954,
+   "tags": {
+    "name": "Εθνική Γλυπτοθήκη",
+    "tourism": "museum",
+    "building": "yes",
+    "wikipedia": "en:National Glyptotheque"
+   }
+  },
+  {
+   "id": "way/60438321",
+   "lat": 37.975619,
+   "lng": 23.749373,
+   "tags": {
+    "name": "Εθνική Πινακοθήκη - Μουσείο Αλέξανδρου Σούτσου",
+    "name:en": "National Gallery - Alexandros Soutsos Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Th-Mo 10:00-18:00; We 10:00-20:00",
+    "website": "https://www.nationalgallery.gr/",
+    "addr:housenumber": "50",
+    "addr:street": "Βασιλέως Κωνσταντίνου",
+    "addr:postcode": "11634",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/63765671",
+   "lat": 37.969369,
+   "lng": 23.733094,
+   "tags": {
+    "name": "Ναός του Ολυμπίου Διός",
+    "name:en": "Temple of Olympian Zeus",
+    "tourism": "attraction",
+    "historic": "ruins",
+    "opening_hours": "Mo-Su 08:00-18:30",
+    "wikidata": "Q1123019",
+    "wikipedia": "el:Ναός του Ολυμπίου Διός",
+    "fee": "regular 2 euros, reduced 1 euro",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/664834192",
+   "lat": 37.978205,
+   "lng": 23.718931,
+   "tags": {
+    "name": "Πομπείον",
+    "historic": "archaeological_site",
+    "wikidata": "Q2372311",
+    "wikipedia": "el:Πομπείον"
+   }
+  },
+  {
+   "id": "way/70241707",
+   "lat": 37.982692,
+   "lng": 23.756609,
+   "tags": {
+    "name": "Πλατεία Μαβίλη",
+    "name:en": "Mavili Square",
+    "leisure": "park",
+    "wikidata": "Q16332817",
+    "wikipedia": "el:Πλατεία Μαβίλη (Αθήνα)"
+   }
+  },
+  {
+   "id": "way/713354220",
+   "lat": 37.97531,
+   "lng": 23.730074,
+   "tags": {
+    "name": "Μητροπολιτικός Ναός Αθηνών",
+    "name:en": "Metropolitan Cathedral of Athens",
+    "tourism": "attraction",
+    "amenity": "place_of_worship",
+    "building": "cathedral",
+    "wikidata": "Q981372",
+    "wikipedia": "el:Μητροπολιτικός Ναός Αθηνών",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/729674865",
+   "lat": 37.9754,
+   "lng": 23.72655,
+   "tags": {
+    "name": "Βιβλιοθήκη του Αδριανού",
+    "name:en": "Hadrian's Library",
+    "historic": "archaeological_site",
+    "wikidata": "Q1455447"
+   }
+  },
+  {
+   "id": "way/729674900",
+   "lat": 37.975966,
+   "lng": 23.726024,
+   "tags": {
+    "name": "Τζαμί Τζισταράκη",
+    "name:en": "Tzistarakis Mosque",
+    "historic": "monument",
+    "building": "mosque",
+    "wikidata": "Q15958739",
+    "wikipedia": "el:Τζαμί Τζισταράκη"
+   }
+  },
+  {
+   "id": "way/791538931",
+   "lat": 37.949597,
+   "lng": 23.71633,
+   "tags": {
+    "name": "Άλσος Νεας Σμύρνης",
+    "leisure": "park",
+    "wikidata": "Q12872246"
+   }
+  },
+  {
+   "id": "way/815455437",
+   "lat": 37.974529,
+   "lng": 23.72557,
+   "tags": {
+    "name": "Πύλη Αρχηγέτιδος Αθηνάς",
+    "name:en": "Gate of Athena Archegetis",
+    "historic": "monument",
+    "building": "gate",
+    "wikidata": "Q5527012",
+    "wikipedia": "en:Gate of Athena Archegetis"
+   }
+  },
+  {
+   "id": "way/815929555",
+   "lat": 37.970766,
+   "lng": 23.739383,
+   "tags": {
+    "name": "Γεώργιος Καραϊσκάκης",
+    "name:en": "Georgios Karaiskakis",
+    "historic": "memorial",
+    "wikidata": "Q111698485",
+    "wikipedia": "el:Γεώργιος Καραϊσκάκης"
+   }
+  },
+  {
+   "id": "way/82150737",
+   "lat": 37.974027,
+   "lng": 23.7434,
+   "tags": {
+    "name": "Λύκειο Αριστοτέλη",
+    "name:en": "Aristotle's Lyceum",
+    "historic": "archaeological_site",
+    "wikidata": "Q1160664",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/82619458",
+   "lat": 37.991345,
+   "lng": 23.73182,
+   "tags": {
+    "name": "Πλατεία Αιγύπτου",
+    "leisure": "park",
+    "wikidata": "Q19725037",
+    "wikipedia": "el:Πλατεία Αιγύπτου (Αθήνα)"
+   }
+  },
+  {
+   "id": "way/834539464",
+   "lat": 37.972653,
+   "lng": 23.731193,
+   "tags": {
+    "name": "Μουσείο Λαϊκής Τέχνης και Παράδοσης",
+    "name:en": "Museum of Folk Art and Tradition",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q12882149",
+    "addr:housenumber": "6",
+    "addr:street": "Αγγελικής Χατζημιχάλη",
+    "addr:postcode": "10558"
+   }
+  },
+  {
+   "id": "way/835011156",
+   "lat": 37.975686,
+   "lng": 23.751813,
+   "tags": {
+    "name": "Πλατεία Ουρουγουάης",
+    "leisure": "park",
+    "wikidata": "Q58069726",
+    "wikipedia": "el:Πλατεία Ουρουγουάης"
+   }
+  },
+  {
+   "id": "way/844542083",
+   "lat": 37.975351,
+   "lng": 23.736366,
+   "tags": {
+    "name": "Μνημείο Αγνώστου Στρατιώτου",
+    "name:en": "Tomb of Unknown Soldier",
+    "tourism": "attraction",
+    "historic": "memorial",
+    "building": "yes",
+    "wikidata": "Q3531128",
+    "wikipedia": "el:Μνημείο του άγνωστου στρατιώτη (Ελλάδα)",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/844542139",
+   "lat": 37.974806,
+   "lng": 23.736343,
+   "tags": {
+    "name": "Χαρίλαος Τρικούπης",
+    "historic": "memorial",
+    "wikidata": "Q114139875"
+   }
+  },
+  {
+   "id": "way/844542140",
+   "lat": 37.975912,
+   "lng": 23.73661,
+   "tags": {
+    "name": "Ελευθέριος Βενιζέλος",
+    "historic": "memorial",
+    "wikidata": "Q111707882"
+   }
+  },
+  {
+   "id": "way/849794330",
+   "lat": 37.973022,
+   "lng": 23.732521,
+   "tags": {
+    "name": "Μουσείο Ελληνικής Παιδικής Τέχνης",
+    "name:en": "Museum of Greek Children’s Art",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Tu-Sa 10:00-14:00; Su 11:00-14:00; Mo off",
+    "wikidata": "Q108651215",
+    "addr:housenumber": "9",
+    "addr:street": "Κόδρου",
+    "addr:postcode": "10558",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/851609464",
+   "lat": 37.97315,
+   "lng": 23.72692,
+   "tags": {
+    "name": "Μουσείο Ιστορίας Πανεπιστημίου Αθηνών",
+    "name:en": "Athens University History Museum",
+    "tourism": "museum",
+    "historic": "building",
+    "building": "yes",
+    "opening_hours": "Mo-Fr 09:30-14:30",
+    "wikidata": "Q3555557",
+    "wikipedia": "el:Οικία Κλεάνθη - Σάουμπερτ",
+    "addr:housenumber": "5",
+    "addr:street": "Θόλου",
+    "addr:postcode": "10556",
+    "fee": "yes",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/86320053",
+   "lat": 37.974578,
+   "lng": 23.727361,
+   "tags": {
+    "name": "Μεντρεσές Αθηνών",
+    "historic": "ruins",
+    "wikidata": "Q12880880"
+   }
+  },
+  {
+   "id": "way/89943258",
+   "lat": 38.0275,
+   "lng": 23.765386,
+   "tags": {
+    "name": "Άλσος Βεΐκου",
+    "leisure": "park",
+    "wikidata": "Q3559333",
+    "wikipedia": "el:Άλσος Βεΐκου"
+   }
+  },
+  {
+   "id": "way/909793331",
+   "lat": 37.97457,
+   "lng": 23.727941,
+   "tags": {
+    "name": "Πάνθεον",
+    "name:en": "Pantheon",
+    "historic": "archaeological_site",
+    "wikidata": "Q24204370",
+    "wikipedia": "el:Πάνθεον (Αθήνα)"
+   }
+  },
+  {
+   "id": "way/910010334",
+   "lat": 37.972101,
+   "lng": 23.726454,
+   "tags": {
+    "name": "Ερέχθειο",
+    "name:en": "Erechtheum",
+    "tourism": "attraction",
+    "historic": "ruins",
+    "building": "yes",
+    "wikidata": "Q242741",
+    "wikipedia": "el:Ερέχθειο",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/910010406",
+   "lat": 37.971503,
+   "lng": 23.726618,
+   "tags": {
+    "name": "Παρθενών",
+    "name:en": "Parthenon",
+    "tourism": "attraction",
+    "historic": "temple",
+    "building": "yes",
+    "wikidata": "Q10288",
+    "wikipedia": "el:Παρθενώνας",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/914492222",
+   "lat": 37.974132,
+   "lng": 23.729049,
+   "tags": {
+    "name": "Αρχοντικό Μπενιζέλων",
+    "name:en": "Benizelos Mansion",
+    "tourism": "museum",
+    "building": "yes",
+    "website": "https://archontiko-mpenizelon.gr/",
+    "wikidata": "Q12874094",
+    "addr:housenumber": "96",
+    "addr:street": "Αδριανού"
+   }
+  },
+  {
+   "id": "way/929917397",
+   "lat": 37.974114,
+   "lng": 23.725254,
+   "tags": {
+    "name": "Το Σπίτι του Ελύτη",
+    "tourism": "museum",
+    "building": "yes",
+    "website": "https://www.elytishousemuseum.gr/",
+    "addr:housenumber": "4",
+    "addr:street": "Διοσκούρων",
+    "addr:postcode": "10555"
+   }
+  },
+  {
+   "id": "way/983921252",
+   "lat": 37.968523,
+   "lng": 23.728488,
+   "tags": {
+    "name": "Μουσείο Ακρόπολης",
+    "name:en": "Acropolis Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Mo 08:00-16:00; Tu-Th, Sa-Su 08:00-20:00; Fr 08:00-22:00",
+    "website": "https://www.theacropolismuseum.gr/",
+    "wikidata": "Q421084",
+    "wikipedia": "el:Μουσείο Ακρόπολης",
+    "addr:housenumber": "15",
+    "addr:street": "Διονυσίου Αρεοπαγίτου",
+    "addr:postcode": "11742",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  }
+ ]
+}

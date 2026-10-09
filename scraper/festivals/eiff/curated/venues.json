@@ -1,0 +1,106 @@
+{
+ "about": "Hand-curated venue research for the Edinburgh International Film Festival, keyed by our own venue code (the festival_site adapter maps the site's venue labels onto these). Not edition-specific. Every figure carries the URL it was read from; a figure nobody could cite is null, never estimated.",
+ "researchedAt": "2026-09-25",
+ "venues": {
+  "cameo": {
+   "name": "Cameo Picturehouse",
+   "address": {
+    "value": "38 Home Street, Edinburgh EH3 9LZ",
+    "source": "https://www.edfilmfest.org/venue/cameo-cinema/"
+   },
+   "lat": {
+    "value": 55.9427844,
+    "source": "https://www.openstreetmap.org/node/33178929"
+   },
+   "lng": {
+    "value": -3.2039269,
+    "source": "https://www.openstreetmap.org/node/33178929"
+   },
+   "notes": "Listed by the festival as \"EIFF @ The Cameo\".",
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null
+  },
+  "central-hall": {
+   "name": "Central Hall",
+   "address": {
+    "value": "2 West Tollcross, Edinburgh EH3 9BP",
+    "source": "https://www.edfilmfest.org/venue/tollcross-central-hall/"
+   },
+   "lat": {
+    "value": 55.9438491,
+    "source": "https://www.openstreetmap.org/node/1782966647"
+   },
+   "lng": {
+    "value": -3.2042181,
+    "source": "https://www.openstreetmap.org/node/1782966647"
+   },
+   "notes": "The festival's In Conversation venue; no film screenings there.",
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null
+  },
+  "cineworld": {
+   "name": "Cineworld Edinburgh",
+   "address": {
+    "value": "130/3 Dundee Street, Fountain Park, Edinburgh",
+    "source": "https://www.openstreetmap.org/node/33184984"
+   },
+   "lat": {
+    "value": 55.9412502,
+    "source": "https://www.openstreetmap.org/node/33184984"
+   },
+   "lng": {
+    "value": -3.2182349,
+    "source": "https://www.openstreetmap.org/node/33184984"
+   },
+   "notes": "The festival's venue page carries no address; the address is OpenStreetMap's.",
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null
+  },
+  "filmhouse": {
+   "name": "Filmhouse",
+   "address": {
+    "value": "88 Lothian Road, Edinburgh EH3 9BZ",
+    "source": "https://www.edfilmfest.org/venue/filmhouse/"
+   },
+   "lat": {
+    "value": 55.9464558,
+    "source": "https://www.openstreetmap.org/node/33179122"
+   },
+   "lng": {
+    "value": -3.2061597,
+    "source": "https://www.openstreetmap.org/node/33179122"
+   },
+   "notes": null,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null
+  },
+  "monkey-barrel-3": {
+   "name": "Monkey Barrel Comedy 3",
+   "address": {
+    "value": "12 Blair Street, Edinburgh EH1 1QR",
+    "source": "https://www.edfilmfest.org/venue/monkey-barrel-3/"
+   },
+   "lat": {
+    "value": 55.9491515,
+    "source": "https://www.openstreetmap.org/way/2956309"
+   },
+   "lng": {
+    "value": -3.1875766,
+    "source": "https://www.openstreetmap.org/way/2956309"
+   },
+   "notes": "Coordinates are Blair Street's (no OpenStreetMap feature for MB3 itself).",
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null
+  }
+ }
+}

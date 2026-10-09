@@ -1,0 +1,2870 @@
+{
+ "site": "https://events.ortra.com/isra2026/ScientificVProgram",
+ "eventId": 38706,
+ "agendaId": 14935,
+ "activities": [
+  {
+   "id": 70911,
+   "title": "Gathering and Registration",
+   "type": 2,
+   "date": "2026-10-18",
+   "start": "10:30",
+   "end": "11:30",
+   "halls": [
+    "Hall A",
+    "Hall B",
+    "Hall C"
+   ],
+   "description": null,
+   "session": {
+    "note": null,
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209082,
+      "start": "10:30",
+      "end": "11:30",
+      "title": "Gathering and Registration",
+      "notes": null,
+      "speakers": []
+     }
+    ],
+    "image": null
+   }
+  },
+  {
+   "id": 70912,
+   "title": "Plenary: Opening Session 1 - Hot Topics",
+   "type": 12,
+   "date": "2026-10-18",
+   "start": "11:30",
+   "end": "13:20",
+   "halls": [
+    "Hall A"
+   ],
+   "description": null,
+   "session": {
+    "note": null,
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209239,
+      "start": "11:30",
+      "end": "11:40",
+      "title": "Opening",
+      "notes": null,
+      "speakers": []
+     },
+     {
+      "id": 209240,
+      "start": "11:40",
+      "end": "11:55",
+      "title": "Top 20 Papers in Radiology 2026",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Dr. Anat Ilvitzky",
+        "institute": "Rambam Healthcare Campus",
+        "portrait": "https://files-cdn.eventact.com/FileView/36c4388d8cbefa32a0585c4fb4ae321f6e79fe842dc4267843bd8d9b56652735400917_.png?v=189FB4A"
+       }
+      ]
+     },
+     {
+      "id": 209241,
+      "start": "11:55",
+      "end": "12:20",
+      "title": "The Earliest Stroke: Insights from Fetal MRI",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Prof. Orit Glenn",
+        "institute": "UCSF Benioff Children's Hospitals",
+        "portrait": "https://files-cdn.eventact.com/FileView/28e5ed250bb2404e1a7445d51bfd0543528ce10a41c8ec4eba7f563e68576f96399927_.png?v=C35F9B"
+       }
+      ]
+     },
+     {
+      "id": 209242,
+      "start": "12:20",
+      "end": "12:45",
+      "title": "Histotripsy Update: Indications and Results",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Prof. Jonathan Susman",
+        "institute": "Columbia University",
+        "portrait": "https://files-cdn.eventact.com/FileView/b6ccd313eb97f99aff6d81fa4dcde151f6e96c67b4e30a422171c2cea1d243d9399921_.png?v=C324BE"
+       }
+      ]
+     },
+     {
+      "id": 209243,
+      "start": "12:45",
+      "end": "13:00",
+      "title": "Teranoscis in Reality",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Dr. Michal Eifer",
+        "institute": null,
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209244,
+      "start": "13:00",
+      "end": "13:20",
+      "title": "IBMRS Guidelines for Safe Remote MR Scanning: 2026 (International Board of MR Safety)",
+      "notes": "Sponsored by: Mor Institute",
+      "speakers": [
+       {
+        "name": "Prof. Emanuel Kanal",
+        "institute": "University of Pittsburgh",
+        "portrait": "https://files-cdn.eventact.com/FileView/9062f72d10ad3cf0dc61d4f0a0ab602f3a5085feac435b44ed6c0640e519d0da400950_.png?v=18CEEF4"
+       }
+      ]
+     }
+    ],
+    "image": "https://files-cdn.eventact.com/FileView/36c4388d8cbefa32a0585c4fb4ae321f6e79fe842dc4267843bd8d9b56652735400917_.png?v=189FB4A"
+   }
+  },
+  {
+   "id": 71025,
+   "title": "Lunch, E-Poster Viewing & Professional Exhibition",
+   "type": 2,
+   "date": "2026-10-18",
+   "start": "13:20",
+   "end": "14:20",
+   "halls": [
+    "Hall A",
+    "Hall B",
+    "Hall C"
+   ],
+   "description": null,
+   "session": {
+    "note": null,
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209247,
+      "start": "13:20",
+      "end": "14:20",
+      "title": "Lunch, E-Poster Viewing & Professional Exhibition",
+      "notes": null,
+      "speakers": []
+     }
+    ],
+    "image": null
+   }
+  },
+  {
+   "id": 71043,
+   "title": "Plenary: Session 2 - Hot Topics 2",
+   "type": 12,
+   "date": "2026-10-18",
+   "start": "14:20",
+   "end": "15:30",
+   "halls": [
+    "Hall A"
+   ],
+   "description": null,
+   "session": {
+    "note": null,
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209289,
+      "start": "14:20",
+      "end": "14:50",
+      "title": "CT in Pulmonary Hypertension & Chronic ThromboEmbolism",
+      "notes": "Sponsored by: Bayer",
+      "speakers": [
+       {
+        "name": "Prof. Galit Aviram",
+        "institute": "Tel Aviv Sourasky Medical Center (Ichilov)",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209290,
+      "start": "14:50",
+      "end": "15:30",
+      "title": "PCCT and Other Beasts. Beyond Conventional CT: A Clinical Journey from Dual-Energy to Photon-Counting Imaging",
+      "notes": "Sponsored by: Siemens Healthineers AG",
+      "speakers": [
+       {
+        "name": "Dr. Ofer Benjaminov",
+        "institute": "Shaare Zedek Medical Center",
+        "portrait": null
+       },
+       {
+        "name": "Naama Bogot",
+        "institute": "Shaare Zedek Medical Center",
+        "portrait": null
+       },
+       {
+        "name": "Dr. Eliel Ben-David",
+        "institute": "Shaare Zedek Medical Center",
+        "portrait": null
+       },
+       {
+        "name": "Dr. Yigal Frank",
+        "institute": null,
+        "portrait": null
+       },
+       {
+        "name": "Dr. Ruth Cytter Kuint",
+        "institute": "Shaare Zedek Medical Center",
+        "portrait": null
+       },
+       {
+        "name": "Viacheslav Alexandrov",
+        "institute": "Shaare Zedek Medical Center",
+        "portrait": null
+       }
+      ]
+     }
+    ],
+    "image": null
+   }
+  },
+  {
+   "id": 70917,
+   "title": "Prima Volta - Session 3",
+   "type": 12,
+   "date": "2026-10-18",
+   "start": "15:35",
+   "end": "16:10",
+   "halls": [
+    "Hall A"
+   ],
+   "description": null,
+   "session": {
+    "note": null,
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209092,
+      "start": "15:35",
+      "end": "15:40",
+      "title": "Venous Connection Between IMV and Left Gonadal Veins",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Tamara Topchiashvili",
+        "institute": "Radiology, Tel Aviv Sourasky Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209371,
+      "start": "15:40",
+      "end": "15:45",
+      "title": "Connecting the Dots - A Pulmonary Mystery",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Gal Malka Harari",
+        "institute": "Thoracic Imaging Unit, Department of Diagnostic Imaging, Sheba Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209372,
+      "start": "15:45",
+      "end": "15:50",
+      "title": "A New Hepatic Lesion During Immunotherapy: an Unexpected Diagnosis",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Yana Gaskin",
+        "institute": "Diagnostic Imaging, Meir Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209373,
+      "start": "15:50",
+      "end": "15:55",
+      "title": "Hepatic Ectopic Pregnancy: Multimodality Imaging of a Rare Cause of Hemoperitoneum",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "khaled Saeed",
+        "institute": "Department of Radiology, Wolfson Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209374,
+      "start": "15:55",
+      "end": "16:00",
+      "title": "A 17 cm Hepatic Mass: Multimodality Work-Up of an Indeterminate Liver Lesion",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Avital Mushailov",
+        "institute": "Department of Radiology, Tel Aviv Sourasky Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209375,
+      "start": "16:00",
+      "end": "16:05",
+      "title": "Right-Sided Abdominal Pain in a Child With Situs Inversus and Left-Sided Acute Appendicitis: A Diagnostic Imaging Pitfall",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Michael Yarovoy",
+        "institute": "radiology department, Soroka Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209475,
+      "start": "16:05",
+      "end": "16:10",
+      "title": "Ultra-High-Resolution Photon-Counting CT Excludes a Bilateral Carotid Web Mimic",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Muhammad Idris",
+        "institute": "Radiology, Shaare tzedek medical center, Israel",
+        "portrait": null
+       }
+      ]
+     }
+    ],
+    "image": null
+   }
+  },
+  {
+   "id": 70918,
+   "title": "Prima Volta - Session 4",
+   "type": 12,
+   "date": "2026-10-18",
+   "start": "15:35",
+   "end": "16:10",
+   "halls": [
+    "Hall B"
+   ],
+   "description": null,
+   "session": {
+    "note": null,
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209093,
+      "start": "15:35",
+      "end": "15:40",
+      "title": "The Chemotherapy Trap: Catastrophic Imaging and Benign Reality of Pneumatosis Intestinalis Following Neoadjuvant Treatment",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Reut Biton",
+        "institute": "diagnostic radiology, Belinson, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209376,
+      "start": "15:40",
+      "end": "15:45",
+      "title": "Extensive Pneumomediastinum Associated with Extreme Anorexia Nervosa",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Daniel Barchana",
+        "institute": "Diagnostic Radiology, Rabin Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209377,
+      "start": "15:45",
+      "end": "15:50",
+      "title": "Testicular Rupture Missed on Whole-Body Trauma CT: Scrotal Ultrasound Is Mandatory in Blunt Scrotal Trauma",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Amir Rimon",
+        "institute": "Radiology department, Tel-Aviv Sourasky Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209378,
+      "start": "15:50",
+      "end": "15:55",
+      "title": "Brucellar Ovarian Abscess Presenting as a Complex Ovarian Cystic Lesion",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Mohammad Assadi",
+        "institute": "radiology, Soroka Medical University, israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209379,
+      "start": "15:55",
+      "end": "16:00",
+      "title": "Renal Fungal Ball Mimicking Recurrent Urothelial Carcinoma in a Patient Following Radical Cystectomy: an Imaging Challenge",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Mor Berejick",
+        "institute": "Radiology department, Tel-Aviv Sourasky Medical Center,, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209380,
+      "start": "16:00",
+      "end": "16:05",
+      "title": "Diagnosis and management of pancreatic trauma, from the radiologist`s screen to multidisciplinary management",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Pierre Jarrous",
+        "institute": "Radiology, ziv medical center, israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209476,
+      "start": "16:05",
+      "end": "16:10",
+      "title": "Endovascular Treatment of Complex Superior Vena Cava Syndrome",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Abed Dabbah",
+        "institute": "Radiology, Soroka University Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     }
+    ],
+    "image": null
+   }
+  },
+  {
+   "id": 70919,
+   "title": "Prima Volta - Session 5",
+   "type": 12,
+   "date": "2026-10-18",
+   "start": "15:35",
+   "end": "16:10",
+   "halls": [
+    "Hall C"
+   ],
+   "description": null,
+   "session": {
+    "note": null,
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209094,
+      "start": "15:35",
+      "end": "15:40",
+      "title": "Delayed Diagnisis of a Duodenal Web and Concurrent Heterotaxy Syndrome",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Anna Parail",
+        "institute": "Diagnostic Radiology, Tel Aviv Sourasky Medical Center - Ichilov, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209381,
+      "start": "15:40",
+      "end": "15:45",
+      "title": "Seeing Beyond Stenosis: Vessel Wall MRI in VZV Associated Vasculopathy",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Areen Othman",
+        "institute": "Diagnostic radiology, Rambam health care campus, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209382,
+      "start": "15:45",
+      "end": "15:50",
+      "title": "Brain and Spine, and Nowhere Else: An Unusual Presentation of Scedosporium Infection",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Fatima Edrees",
+        "institute": "Diagnostic Radiology, Rambam Medical Health Care Campus, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209383,
+      "start": "15:50",
+      "end": "15:55",
+      "title": "A Complex Pediatric Renal Abscess Mimicking a Neoplastic Process: A Diagnostic and Imaging Challenge",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Yousra Abou Amara",
+        "institute": "Radiology, Tel Aviv Sourasky Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209384,
+      "start": "15:55",
+      "end": "16:00",
+      "title": "Two Years of Vomiting: Multimodality Imaging of a Delayed-Diagnosis Duodenal Web",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Polina Rozov",
+        "institute": "Imaging, Hillel Yaffe Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209385,
+      "start": "16:00",
+      "end": "16:05",
+      "title": "Systemic-to-Pulmonary Arterial Shunts Simulating Chronic Pulmonary embolism",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Emil Minz",
+        "institute": "Radiology department, Shaare Tzedek medical center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209500,
+      "start": "16:05",
+      "end": "16:10",
+      "title": "Internal Jugular Vein Compression: An Underrecognized Contributor to Cerebral Venous Outflow Obstruction in Idiopathic Intracranial Hypertension",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Ahmad Abbas",
+        "institute": "Neuroradiology, Soroka Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     }
+    ],
+    "image": null
+   }
+  },
+  {
+   "id": 71026,
+   "title": "Coffee Break, E-Poster Viewing & Professional Exhibition",
+   "type": 2,
+   "date": "2026-10-18",
+   "start": "16:10",
+   "end": "16:25",
+   "halls": [
+    "Hall A",
+    "Hall B",
+    "Hall C"
+   ],
+   "description": null,
+   "session": {
+    "note": null,
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209248,
+      "start": "16:10",
+      "end": "16:25",
+      "title": "Coffee Break, E-Poster Viewing & Professional Exhibition",
+      "notes": null,
+      "speakers": []
+     }
+    ],
+    "image": null
+   }
+  },
+  {
+   "id": 70914,
+   "title": "Parallel Session: Pediatric Imaging - Session 6",
+   "type": 12,
+   "date": "2026-10-18",
+   "start": "16:25",
+   "end": "18:00",
+   "halls": [
+    "Hall A"
+   ],
+   "description": null,
+   "session": {
+    "note": null,
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209249,
+      "start": "16:25",
+      "end": "16:40",
+      "title": "Fetal Brain Imaging",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Dr. Dan Halevi",
+        "institute": null,
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209250,
+      "start": "16:40",
+      "end": "16:55",
+      "title": "Fetal Abdominal MRI",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Ben Taragin",
+        "institute": "Assuta Ashdod University Hospital",
+        "portrait": "https://files-cdn.eventact.com/FileView/c81304e759d204393ff9688c76ed8f160942bec1f2550bbe330258ebe6f97e84401025_.png?v=1A31385"
+       }
+      ]
+     },
+     {
+      "id": 209354,
+      "start": "16:55",
+      "end": "17:04",
+      "title": "PCD-CT vs. Dual-Energy CT in Pediatric Body Imaging: A Single-Center Experience",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Anna Volkova",
+        "institute": "Radiology, Shaare Zedek Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209355,
+      "start": "17:04",
+      "end": "17:13",
+      "title": "When an Endobronchial Mass Is Not a Tumor: An Occult Foreign Body Causing Lobar Collapse in an Adolescent",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Rafail Danilov",
+        "institute": "Radiology Department, Soroka Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209356,
+      "start": "17:13",
+      "end": "17:22",
+      "title": "Diagnostic Yield of Whole-Body Fetal MRI in Fetuses Referred for Suspected Brain Abnormalities",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "George Naser",
+        "institute": "Radiology, Rambam Health Care Campus, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209357,
+      "start": "17:22",
+      "end": "17:31",
+      "title": "Preoperative Computed Tomography Predictors of Airway Narrowing in Infants with Truncus Arteriosus",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Noa Grinberg",
+        "institute": "Diagnostic Imaging, Wolfson Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209358,
+      "start": "17:31",
+      "end": "17:40",
+      "title": "Torsion of an Inguinal Hernia Sac in a Child: An Exceptionally Rare Cause of Acute Scrotum",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Olga Prud",
+        "institute": "Diagnostic Radiology, Wolfson Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209359,
+      "start": "17:40",
+      "end": "17:49",
+      "title": "MRI-Based Fetal Weight Estimation for Predicting Neonatal Morbidity and Severe Smallness in Small for Gestational Age Pregnancies",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Jonathan Gross",
+        "institute": "Radiology, Tel Aviv Sourasky University Medical Center (Ichilov), Israel",
+        "portrait": null
+       }
+      ]
+     }
+    ],
+    "image": "https://files-cdn.eventact.com/FileView/c81304e759d204393ff9688c76ed8f160942bec1f2550bbe330258ebe6f97e84401025_.png?v=1A31385"
+   }
+  },
+  {
+   "id": 70915,
+   "title": "Parallel Session: Cardiothoracic Imaging - Session 7",
+   "type": 12,
+   "date": "2026-10-18",
+   "start": "16:25",
+   "end": "18:00",
+   "halls": [
+    "Hall B"
+   ],
+   "description": null,
+   "session": {
+    "note": null,
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209251,
+      "start": "16:25",
+      "end": "16:40",
+      "title": "HRCT Technique - What , Why and How",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Naama Bogot",
+        "institute": "Shaare Zedek Medical Center",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209300,
+      "start": "16:40",
+      "end": "16:55",
+      "title": "ILD in Focus: The Radiologist’s Role in Early Recognition",
+      "notes": "Sponsored by: AstraZeneca",
+      "speakers": [
+       {
+        "name": "Dr. Opher Globus",
+        "institute": null,
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209301,
+      "start": "16:55",
+      "end": "17:10",
+      "title": "Incidental Pulmonary Nodules: An Additional Opportunity for Early Lung Cancer Detection",
+      "notes": "Sponsored by: AstraZeneca",
+      "speakers": [
+       {
+        "name": "Dr. Yochai Adir",
+        "institute": null,
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209361,
+      "start": "17:10",
+      "end": "17:19",
+      "title": "Left Atrioventricular Coupling Index (LACI) in Breast Cancer Patients Receiving trastuzumab",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Dana Stav",
+        "institute": "Medical Imaging, St. Michael's Hospital, Canada",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209363,
+      "start": "17:19",
+      "end": "17:28",
+      "title": "Quantitative Measurement of Pulmonary Iodine Deposition on DECT as a Novel Marker of Amiodarone-Induced Pulmonary Toxicity",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Talia Rosner",
+        "institute": "Medical School, Hebrew University, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209364,
+      "start": "17:28",
+      "end": "17:37",
+      "title": "Who Needs MRI in Suspected Endometriosis? A Retrospective Observational Diagnostic Study of Added Value Beyond TVUS",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Shaden Ghrayeb",
+        "institute": "Radiology, Hadassah Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209365,
+      "start": "17:37",
+      "end": "17:46",
+      "title": "When Cryoablation Goes Beyond the Target: A Rare Vascular Complication",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Shlomit Maymon Shtamfater",
+        "institute": "Radiology, Tel Aviv Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     }
+    ],
+    "image": null
+   }
+  },
+  {
+   "id": 70916,
+   "title": "Parallel Session: Muskoloskeletal Imaging - Session 8",
+   "type": 12,
+   "date": "2026-10-18",
+   "start": "16:25",
+   "end": "18:00",
+   "halls": [
+    "Hall C"
+   ],
+   "description": null,
+   "session": {
+    "note": null,
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209252,
+      "start": "16:25",
+      "end": "16:45",
+      "title": "Chromosomal Shattering – Chromothripsis: Understanding the Genetic Diversity of Osteosarcoma",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Prof. Nogah Haramati",
+        "institute": "Department of Radiology, USA",
+        "portrait": "https://files-cdn.eventact.com/FileView/c0a9c89ddbeb1595edd26617cbe5544975db626e9c80cbce16dfb763fe796c15399928_.png?v=C36171"
+       }
+      ]
+     },
+     {
+      "id": 209366,
+      "start": "16:45",
+      "end": "16:54",
+      "title": "Non-Diagnostic Display Size: Effects on Head Rotation and Electronic Medical Record Access",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Raz Rotman",
+        "institute": "Department of Radiology, Chaim Sheba Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209367,
+      "start": "16:54",
+      "end": "17:04",
+      "title": "Advanced 3D Segmentation-Assisted Planning for CT-Guided Cryoablation of Osteoid Osteoma",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Olena Kotova",
+        "institute": "Wolfson Medical Center, Wolfson Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209368,
+      "start": "17:04",
+      "end": "17:13",
+      "title": "Anterior Bony Bridges of the Sacroiliac Joints Are Associated with Male Sex but Not with the Development of DISH",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Rachel Komisarchik",
+        "institute": "Gray Faculty of Medical and Health Sciences, Tel Aviv University, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209369,
+      "start": "17:13",
+      "end": "17:22",
+      "title": "Added value of photon-counting CT for the detection of calcium pyrophosphate deposition disease in the wrist",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Gali Eshed",
+        "institute": "Diagnostic Radiology, Sheba medical center, Tel Hashomer, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209370,
+      "start": "17:22",
+      "end": "17:31",
+      "title": "CT Characterization of Sacroiliac Joint Calcium Pyrophosphate Deposition Disease: Association with Structural Imaging Features and Multifocal Pelvic Joint Chondrocalcinosis",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Reut Protis",
+        "institute": "Sackler Faculty of Medicine, Tel Aviv University, ISRAEL",
+        "portrait": null
+       }
+      ]
+     }
+    ],
+    "image": "https://files-cdn.eventact.com/FileView/c0a9c89ddbeb1595edd26617cbe5544975db626e9c80cbce16dfb763fe796c15399928_.png?v=C36171"
+   }
+  },
+  {
+   "id": 70920,
+   "title": "Plenary: Refresher Ultrasound Crash Course - Session 9",
+   "type": 12,
+   "date": "2026-10-18",
+   "start": "18:00",
+   "end": "18:40",
+   "halls": [
+    "Hall A"
+   ],
+   "description": null,
+   "session": {
+    "note": null,
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209284,
+      "start": "18:00",
+      "end": "18:40",
+      "title": "US Boot Camp",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Dr. Muriel Webb",
+        "institute": null,
+        "portrait": null
+       }
+      ]
+     }
+    ],
+    "image": null
+   }
+  },
+  {
+   "id": 70921,
+   "title": "Mingling - Music, Wine and Friends",
+   "type": 29,
+   "date": "2026-10-18",
+   "start": "20:40",
+   "end": "22:30",
+   "halls": [
+    "Hall A",
+    "Hall B",
+    "Hall C"
+   ],
+   "description": null,
+   "session": {
+    "note": null,
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209095,
+      "start": "20:40",
+      "end": "22:30",
+      "title": "Mingling - Music, Wine and Friends",
+      "notes": null,
+      "speakers": []
+     }
+    ],
+    "image": null
+   }
+  },
+  {
+   "id": 70922,
+   "title": "Registration",
+   "type": 2,
+   "date": "2026-10-19",
+   "start": "07:30",
+   "end": "08:00",
+   "halls": [
+    "Hall A",
+    "Hall B",
+    "Hall C"
+   ],
+   "description": null,
+   "session": {
+    "note": null,
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209096,
+      "start": "07:30",
+      "end": "08:00",
+      "title": "Registration",
+      "notes": null,
+      "speakers": []
+     }
+    ],
+    "image": null
+   }
+  },
+  {
+   "id": 70923,
+   "title": "Plenary Session: AI beyond detection - Session 10",
+   "type": 12,
+   "date": "2026-10-19",
+   "start": "08:00",
+   "end": "09:40",
+   "halls": [
+    "Hall A"
+   ],
+   "description": null,
+   "session": {
+    "note": null,
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209097,
+      "start": "08:00",
+      "end": "08:10",
+      "title": "Opening",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Prof. Orly Goitein",
+        "institute": "Diagnostic Imaging, Sheba Medical Center, Tel-Hashomer; Gray Faculty of Medical and Health Sciences,",
+        "portrait": "https://files-cdn.eventact.com/FileView/0db58b83d949beed706ffb3dd65146b30200867f1b971f4277dbaa0b6199bc2b400040_.png?v=D9FA76"
+       },
+       {
+        "name": "Prof. Ilan Shelef",
+        "institute": "Chairman of Israel Radiological Association",
+        "portrait": "https://files-cdn.eventact.com/FileView/a199952e86729bd35624748a093f96f2b210afab04f2ee70316fde95473bc78a396634_.png?v=17904D0"
+       }
+      ]
+     },
+     {
+      "id": 209098,
+      "start": "08:10",
+      "end": "08:30",
+      "title": "Creating the Cutting Edge in Medical Innovation: The Samueli Institute Blueprint",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Prof. Gal Merkel",
+        "institute": "Director, Davidoff Comprehensive Cancer Center; Chairman & Founder, Samueli Integrative Cancer Pione",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209099,
+      "start": "08:30",
+      "end": "08:50",
+      "title": "Choosing Responsibly: A Strategic Framework for AI Adoption in Medicine",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Dr. Lilach Zoller",
+        "institute": "MD, MBA Director of Technology and Digital Health, Hospital Division, Clalit",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209100,
+      "start": "08:50",
+      "end": "09:00",
+      "title": "Does It Work for Our Patients? Local Validation of Medical AI",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Dr. Alina Vodonos Zilberg",
+        "institute": "PhD - RWE (Real World Evidence) Research Team Lead, Clalit Innovation by Clalit Health Services",
+        "portrait": "https://files-cdn.eventact.com/FileView/073a76a12e07b21b54f4c0a8337fc7d4dc11ca65f85b0eb79182f66bf670f9ce400703_.png?v=134B2DB"
+       }
+      ]
+     },
+     {
+      "id": 209101,
+      "start": "09:00",
+      "end": "09:10",
+      "title": "Beyond Implementation: Monitoring AI Performance in Clinical Practice",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Dr. Lihi Eisen",
+        "institute": null,
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209102,
+      "start": "09:10",
+      "end": "09:25",
+      "title": "AI in Radiology – Law, Regulation and Ethics",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Adv. Efrat Shapira-Orren",
+        "institute": "Assuta Medical Center",
+        "portrait": "https://files-cdn.eventact.com/FileView/265a630e7b954e86aeacd0cdb076c5a7a9f5448e5e8570cfad8f0aec88096617400593_.png?v=129252B"
+       }
+      ]
+     },
+     {
+      "id": 209103,
+      "start": "09:25",
+      "end": "09:40",
+      "title": "The AI Revolution in the Screening and Diadnosis of Breast Disease",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Prof. Miri Sklair-Levy",
+        "institute": null,
+        "portrait": null
+       }
+      ]
+     }
+    ],
+    "image": "https://files-cdn.eventact.com/FileView/0db58b83d949beed706ffb3dd65146b30200867f1b971f4277dbaa0b6199bc2b400040_.png?v=D9FA76"
+   }
+  },
+  {
+   "id": 70924,
+   "title": "Coffee Break, E-Poster Viewing & Professional Exhibition",
+   "type": 2,
+   "date": "2026-10-19",
+   "start": "09:40",
+   "end": "10:00",
+   "halls": [
+    "Hall A",
+    "Hall B",
+    "Hall C"
+   ],
+   "description": null,
+   "session": {
+    "note": null,
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209104,
+      "start": "09:40",
+      "end": "10:00",
+      "title": "Coffee Break, E-Poster Viewing & Professional Exhibition",
+      "notes": null,
+      "speakers": []
+     }
+    ],
+    "image": null
+   }
+  },
+  {
+   "id": 71044,
+   "title": "Plenary Session: Hot Topics 3 - Session 11",
+   "type": 12,
+   "date": "2026-10-19",
+   "start": "10:00",
+   "end": "11:00",
+   "halls": [
+    "Hall A"
+   ],
+   "description": null,
+   "session": {
+    "note": null,
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209291,
+      "start": "10:00",
+      "end": "10:30",
+      "title": "Hidden in Plain Sight: Incidental Interstitial Lung Disease and Its Progression on Routine Chest CT",
+      "notes": "Sponsored by: Boehringer Ingelheim Israel Ltd.",
+      "speakers": [
+       {
+        "name": "Prof. Edith Marom",
+        "institute": null,
+        "portrait": "https://files-cdn.eventact.com/FileView/9393b9bf1dd6c15e7a18cc97fe0913636970d14ad41092c5c8644110f38d65bf400913_.png?v=1888968"
+       }
+      ]
+     },
+     {
+      "id": 209292,
+      "start": "10:30",
+      "end": "11:00",
+      "title": "Ahead in Photon-counting CT: From Concept to Clinical Impact",
+      "notes": "Sponsored by: Siemens Healthineers AG",
+      "speakers": [
+       {
+        "name": "Angelos Giapitzakis, PhD, MBA",
+        "institute": "Siemens Healthineers AG",
+        "portrait": null
+       }
+      ]
+     }
+    ],
+    "image": "https://files-cdn.eventact.com/FileView/9393b9bf1dd6c15e7a18cc97fe0913636970d14ad41092c5c8644110f38d65bf400913_.png?v=1888968"
+   }
+  },
+  {
+   "id": 71027,
+   "title": "Coffee Break, E-Poster Viewing & Professional Exhibition",
+   "type": 2,
+   "date": "2026-10-19",
+   "start": "11:00",
+   "end": "11:15",
+   "halls": [
+    "Hall A",
+    "Hall B",
+    "Hall C"
+   ],
+   "description": null,
+   "session": {
+    "note": null,
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209253,
+      "start": "11:00",
+      "end": "11:15",
+      "title": "Coffee Break, E-Poster Viewing & Professional Exhibition",
+      "notes": null,
+      "speakers": []
+     }
+    ],
+    "image": null
+   }
+  },
+  {
+   "id": 70928,
+   "title": "Plenary Session: The Great Debates - Session 12",
+   "type": 12,
+   "date": "2026-10-19",
+   "start": "11:15",
+   "end": "12:15",
+   "halls": [
+    "Hall A"
+   ],
+   "description": null,
+   "session": {
+    "note": "The session will be held in Hebrew.",
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209108,
+      "start": "11:15",
+      "end": "11:22",
+      "title": "Radiology from Home: Why It Works (Pro)",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Dr. Ofer Benjaminov",
+        "institute": "Shaare Zedek Medical Center",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209109,
+      "start": "11:22",
+      "end": "11:29",
+      "title": "Radiology from Home: Why It cannot Works (Con)",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Prof. Ilan Shelef",
+        "institute": "Chairman of Israel Radiological Association",
+        "portrait": "https://files-cdn.eventact.com/FileView/a199952e86729bd35624748a093f96f2b210afab04f2ee70316fde95473bc78a396634_.png?v=17904D0"
+       }
+      ]
+     },
+     {
+      "id": 209110,
+      "start": "11:29",
+      "end": "11:44",
+      "title": "Discussion",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Dr. Natalia Goldberg",
+        "institute": null,
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209111,
+      "start": "11:44",
+      "end": "11:51",
+      "title": "AI Trasnparency to Patients (Pro)",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Dr. Ahuva Grubstein",
+        "institute": "Vice Chair of the Conference",
+        "portrait": "https://files-cdn.eventact.com/FileView/9e1667664eaf0984309bb6cc5e0bb72723f4ef9958a3d688f8582452edbb5912396638_.png?v=179254A"
+       }
+      ]
+     },
+     {
+      "id": 209112,
+      "start": "11:51",
+      "end": "11:58",
+      "title": "AI Trasnparency to Patients (Con)",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Dr. Gal Ben Arie",
+        "institute": null,
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209113,
+      "start": "11:58",
+      "end": "12:15",
+      "title": "Discussion",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Dr. Shlomit Tamir",
+        "institute": "Rabin Medical Center",
+        "portrait": null
+       }
+      ]
+     }
+    ],
+    "image": "https://files-cdn.eventact.com/FileView/a199952e86729bd35624748a093f96f2b210afab04f2ee70316fde95473bc78a396634_.png?v=17904D0"
+   }
+  },
+  {
+   "id": 70930,
+   "title": "Plenary Session: ISRA Annual Meeting - Session 13",
+   "type": 12,
+   "date": "2026-10-19",
+   "start": "12:15",
+   "end": "13:15",
+   "halls": [
+    "Hall A"
+   ],
+   "description": null,
+   "session": {
+    "note": "The Session will be held in Hebrew.\nThis session is intended for new committee members and chairmen.",
+    "chairs": [],
+    "lectures": [],
+    "image": null
+   }
+  },
+  {
+   "id": 71036,
+   "title": "Lunch, E-Poster Viewing & Professional Exhibition",
+   "type": 2,
+   "date": "2026-10-19",
+   "start": "13:15",
+   "end": "14:00",
+   "halls": [
+    "Hall A",
+    "Hall B",
+    "Hall C"
+   ],
+   "description": null,
+   "session": {
+    "note": null,
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209285,
+      "start": "13:15",
+      "end": "14:00",
+      "title": "Lunch, E-Poster Viewing & Professional Exhibition",
+      "notes": null,
+      "speakers": []
+     }
+    ],
+    "image": null
+   }
+  },
+  {
+   "id": 71028,
+   "title": "Awards & Annual ISRA Members Meeting - Session 14",
+   "type": 12,
+   "date": "2026-10-19",
+   "start": "14:00",
+   "end": "15:20",
+   "halls": [
+    "Hall A"
+   ],
+   "description": null,
+   "session": {
+    "note": "The session will be held in Hebrew.",
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209254,
+      "start": "14:00",
+      "end": "14:15",
+      "title": "Outstanding Clinician Award: Assaf Harofe Medical Center",
+      "notes": "Recipient: Dr. Margarita Vasserman",
+      "speakers": [
+       {
+        "name": "Prof. Sigal Tal",
+        "institute": null,
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209255,
+      "start": "14:15",
+      "end": "14:30",
+      "title": "Outstanding Clinician Award: Belinson Medical Center",
+      "notes": "Recipient: Dr. Edan Inbar",
+      "speakers": [
+       {
+        "name": "Prof. Eli Atar",
+        "institute": "Rabin Medical Center (Beilinson campus)",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209256,
+      "start": "14:30",
+      "end": "14:45",
+      "title": "Outstanding Clinician Award: Rambam Medical Center",
+      "notes": "Recipient: Dr. Daniela Militainu",
+      "speakers": [
+       {
+        "name": "Dr. Anat Ilvitzky",
+        "institute": "Rambam Healthcare Campus",
+        "portrait": "https://files-cdn.eventact.com/FileView/36c4388d8cbefa32a0585c4fb4ae321f6e79fe842dc4267843bd8d9b56652735400917_.png?v=189FB4A"
+       }
+      ]
+     },
+     {
+      "id": 209257,
+      "start": "14:45",
+      "end": "15:00",
+      "title": "Outstanding Clinician Award: Hadassah Medical Center",
+      "notes": "Recipient: Dr. Yehonatan Bar-Moshe",
+      "speakers": [
+       {
+        "name": "Prof. Nurith Hiller",
+        "institute": null,
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209258,
+      "start": "15:00",
+      "end": "15:10",
+      "title": "Honorary Member Award",
+      "notes": "Recipient: Dr. Tamar Gaspar",
+      "speakers": []
+     },
+     {
+      "id": 209259,
+      "start": "15:10",
+      "end": "15:20",
+      "title": "Outstanding Teacher ISRA Award",
+      "notes": "Recipient: Dr. Ofer Benjaminov",
+      "speakers": []
+     }
+    ],
+    "image": "https://files-cdn.eventact.com/FileView/36c4388d8cbefa32a0585c4fb4ae321f6e79fe842dc4267843bd8d9b56652735400917_.png?v=189FB4A"
+   }
+  },
+  {
+   "id": 70931,
+   "title": "Coffee Break, E-Poster Viewing & Professional Exhibition",
+   "type": 2,
+   "date": "2026-10-19",
+   "start": "15:20",
+   "end": "15:35",
+   "halls": [
+    "Hall A",
+    "Hall B",
+    "Hall C"
+   ],
+   "description": null,
+   "session": {
+    "note": null,
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209118,
+      "start": "15:20",
+      "end": "15:35",
+      "title": "Coffee Break, E-Poster Viewing & Professional Exhibition",
+      "notes": null,
+      "speakers": []
+     }
+    ],
+    "image": null
+   }
+  },
+  {
+   "id": 70932,
+   "title": "Parallel Session: Body Imaging and Innovation - Session 15",
+   "type": 12,
+   "date": "2026-10-19",
+   "start": "15:35",
+   "end": "17:30",
+   "halls": [
+    "Hall A"
+   ],
+   "description": null,
+   "session": {
+    "note": null,
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209260,
+      "start": "15:35",
+      "end": "15:55",
+      "title": "CT New era- SIRIUX versus uCT 960+",
+      "notes": "Sponsored by: Tzamal",
+      "speakers": [
+       {
+        "name": "Stefan Ulzheimer",
+        "institute": null,
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209262,
+      "start": "15:55",
+      "end": "16:10",
+      "title": "Contrast-Enhanced Ultrasound for Renal Applications",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Dr. Sophie Barnes",
+        "institute": null,
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209332,
+      "start": "16:10",
+      "end": "16:19",
+      "title": "Peer Review in Diagnostic Imaging: Modality-Adjusted Analysis of Disagreement and Reviewer Variability",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Arnon Makori",
+        "institute": "Department of Medical Imaging, Assuta Medical Centers, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209333,
+      "start": "16:19",
+      "end": "16:28",
+      "title": "The Double Edged Impact of AI-Assisted PE Detection on Junior and Senior Radiology Residents",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Izhak Berebi",
+        "institute": "Radiology, Hadassah Medical Center, ISRAEL",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209334,
+      "start": "16:28",
+      "end": "16:37",
+      "title": "Attitudes and Readiness of Imaging Professionals Towards Artificial Intelligence: A Baseline Pre-Implementation Survey",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Royi Barnea",
+        "institute": "Assuta Health Services Research Institute, Assuta Medical Cener, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209335,
+      "start": "16:37",
+      "end": "16:46",
+      "title": "Socioeconomic Status Is Associated with Muscle Quality but Not Muscle Quantity: A CT-Based Body Composition Study",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Dr. Shlomit Tamir",
+        "institute": "Department of Imaging, Rabin Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209336,
+      "start": "16:46",
+      "end": "16:55",
+      "title": "Unified CT–MR Foundation Model for Automated Crohn Disease Phenotyping and Prediction of Surgery: Results from the Nationwide EPI-IIRN Study",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Moti Freiman",
+        "institute": "Faculty of Biomedical Engineering, Technion Israel Institute of Technology",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209337,
+      "start": "16:55",
+      "end": "17:04",
+      "title": "Automated Opportunistic Detection of Abdominal Aortic Aneurysm on Noncontrast Lumbar Spine CT",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Gal Ben Arie",
+        "institute": "Imaging Department, Soroka University Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209338,
+      "start": "17:04",
+      "end": "17:13",
+      "title": "Accuracy of Large Language Model Chatbots in Retrieving MRI Safety Conditions for Medical Implants",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Shir Tal",
+        "institute": "Department of Radiology, Chaim Sheba Medical Center, Tel Hashomer,, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209339,
+      "start": "17:13",
+      "end": "17:22",
+      "title": "Evaluation of a Reduced-Radiation and Reduced-Contrast Photon-Counting CT Angiography Protocol for Preoperative Abdominal Wall Artery Mapping",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Amit Arbel",
+        "institute": "Gray School of Medicine, Tel Aviv University",
+        "portrait": null
+       }
+      ]
+     }
+    ],
+    "image": null
+   }
+  },
+  {
+   "id": 71029,
+   "title": "Parallel Session: Interventional Radiology - Session 16",
+   "type": 12,
+   "date": "2026-10-19",
+   "start": "15:35",
+   "end": "17:30",
+   "halls": [
+    "Hall B"
+   ],
+   "description": null,
+   "session": {
+    "note": null,
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209263,
+      "start": "15:35",
+      "end": "15:50",
+      "title": "Liver Transplant and IR: Saving the Graft",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Prof. Jonathan Susman",
+        "institute": "Columbia University",
+        "portrait": "https://files-cdn.eventact.com/FileView/b6ccd313eb97f99aff6d81fa4dcde151f6e96c67b4e30a422171c2cea1d243d9399921_.png?v=C324BE"
+       }
+      ]
+     },
+     {
+      "id": 209340,
+      "start": "15:50",
+      "end": "15:59",
+      "title": "Near-Infrared Tissue Oxygenation Provides Incremental Prognostic Value Beyond the Ankle-Brachial Index Following Lower-Extremity Endovascular Revascularization in Patients with Peripheral Artery Disease and Chronic Limb-Threatening Ischemia",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Roie Feinsod",
+        "institute": "Grey Faculty of Medicine, Tel Aviv University, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209341,
+      "start": "15:59",
+      "end": "16:08",
+      "title": "Chemical Cholecystectomy: A Novel Percutaneous Ablation Strategy for Acute Calculous Cholecystitis in Poor Surgical Candidates",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Nabeih Mazarieb",
+        "institute": "Radiology Department, RABIN MEDICAL CENTRE - HaSharon Hospital, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209342,
+      "start": "16:08",
+      "end": "16:17",
+      "title": "Transosseous Arterial Embolization during Percutaneous Sclerotherapy of a Sacral Aneurysmal Bone Cyst in a Pediatric Patient",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Artyom Khaes",
+        "institute": "Department of Interventional Radiology, Shaare Zedek Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209343,
+      "start": "16:17",
+      "end": "16:26",
+      "title": "Percutaneous Liver Biopsy in Children: Comparing Complication Rates and Diagnostic Adequacy of 18G and 20G Needles",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Lior Fusman",
+        "institute": "Department of Diagnostic Radiology, Units of Vascular and Interventional Radiology, Rabin Medical Center, Hasharon and Beilinson Hospitals, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209344,
+      "start": "16:26",
+      "end": "16:35",
+      "title": "Use of Coronary Covered Stent Grafts in the Management of Atherosclerotic Renal Artery Stenosis",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Tom Sonin",
+        "institute": "Interventional Radiology Unit, Sheba Medical Center",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209345,
+      "start": "16:35",
+      "end": "16:44",
+      "title": "Indocyanine Green-Soaked Microcoil Localization of Pulmonary Nodules Prior to Video-Assisted Thoracoscopic Surgery: A Feasibility Study",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Uriel Wachsman",
+        "institute": "Joint Department of Medical Imaging, Toronto General Hospital, University Health Network, Canada",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209472,
+      "start": "16:44",
+      "end": "16:53",
+      "title": "NOT ALL ANEURYSMS ARE CREATED EQUAL",
+      "notes": "Not all Aneurysms are Created Equal",
+      "speakers": [
+       {
+        "name": "Adam Farkas",
+        "institute": "Radiology - Interventional Radiology, Shaare Zedek Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209473,
+      "start": "16:53",
+      "end": "17:02",
+      "title": "Live Birth Rates after Varicocele Embolization in Patients after Failed in Vitro Fertilization with Intracytoplasmic Sperm Injection",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Ahmad Farhoud",
+        "institute": "Diagnostic Imaging, Shaare Zedek Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     }
+    ],
+    "image": "https://files-cdn.eventact.com/FileView/b6ccd313eb97f99aff6d81fa4dcde151f6e96c67b4e30a422171c2cea1d243d9399921_.png?v=C324BE"
+   }
+  },
+  {
+   "id": 71030,
+   "title": "Parallel Session: Breast Imaging - Session 17",
+   "type": 12,
+   "date": "2026-10-19",
+   "start": "15:35",
+   "end": "17:30",
+   "halls": [
+    "Hall C"
+   ],
+   "description": null,
+   "session": {
+    "note": null,
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209264,
+      "start": "15:35",
+      "end": "15:50",
+      "title": "The Utility of Contrast Enhanced Mammography as Supplementary screening modality for Breast Cancer",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Prof. Anat Kornecki",
+        "institute": "Department of Medical Imaging, Western University, Canada",
+        "portrait": "https://files-cdn.eventact.com/FileView/9213bf5afdc75dca9cc9785947783921def9ce2d056263deae8a33adf6fdbfac399932_.png?v=C373EA"
+       }
+      ]
+     },
+     {
+      "id": 209265,
+      "start": "15:50",
+      "end": "16:05",
+      "title": "Breast MRI During Pregnancy and Lactation Clinical Challenges and Technical Advances",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Dr. Noam Nissan",
+        "institute": null,
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209266,
+      "start": "16:05",
+      "end": "16:20",
+      "title": "Will ABUS Become the Best Option for Women At Risk for Breast Ca and are Not Eligible for MRI in the Israeli Basket",
+      "notes": "Sponsored by: Mor Institute",
+      "speakers": [
+       {
+        "name": "Dr. Nicky Liberman",
+        "institute": null,
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209346,
+      "start": "16:20",
+      "end": "16:29",
+      "title": "Background Parenchymal Enhancement during Active Lactation: A Longitudinal Intra-Individual Breast MRI Study",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Raz Rotman",
+        "institute": "Department of Radiology, Chaim Sheba Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209347,
+      "start": "16:29",
+      "end": "16:38",
+      "title": "Performance of Artificial Intelligence in Breast Ultrasound for Non-Mass Lesions",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Dana Brin",
+        "institute": "Diagnostic Radiology, Sheba Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209348,
+      "start": "16:38",
+      "end": "16:47",
+      "title": "The Impact of Preoperative MRI on Surgical Management and Disease-Free Survival in Ductal Carcinoma in Situ: A Propensity Score-Matched Study",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Shirley Shechter",
+        "institute": "Radiology, Tel Aviv Sourasky Medical Center (Ichilov), Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209349,
+      "start": "16:47",
+      "end": "16:56",
+      "title": "Dynamic Contrast-Enhanced Mammography for Differentiating Benign and Malignant Breast Lesions",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Gazal Mahameed",
+        "institute": "Division of Diagnostic Imaging, Sheba Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209350,
+      "start": "16:56",
+      "end": "17:05",
+      "title": "Impact of Hormone-Secreting Intrauterine Device on Background\nParenchymal Enhancement in Contrast-Enhanced Mammography",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Gal Malka Harari",
+        "institute": "Diagnostic imagine, Sheba medical center",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209351,
+      "start": "17:05",
+      "end": "17:14",
+      "title": "AI for Evaluating Residual Calcifications in Post-Lumpectomy Pre-Radiation Mammography",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Olga Gordon Rapana",
+        "institute": "Radiology, sheba, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209352,
+      "start": "17:14",
+      "end": "17:23",
+      "title": "Ultrafast versus Standard DCE-MRI in Breast Lesion and Background Parenchymal Enhancement Differentiation",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Shahar Zachariah-Levert",
+        "institute": "Division of Diagnostic Imaging, Sheba Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209353,
+      "start": "17:23",
+      "end": "17:30",
+      "title": "Revisiting the Milk Rejection Sign: Infant`s Refusal to Feed from One Breast as the Presenting Symptom of Pregnancy-Associated Breast Cancer",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Efi Moss",
+        "institute": "Radiology Institute, Rabin Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     }
+    ],
+    "image": "https://files-cdn.eventact.com/FileView/9213bf5afdc75dca9cc9785947783921def9ce2d056263deae8a33adf6fdbfac399932_.png?v=C373EA"
+   }
+  },
+  {
+   "id": 71031,
+   "title": "Plenary: The Last Imager Standing - Session 18",
+   "type": 12,
+   "date": "2026-10-19",
+   "start": "17:30",
+   "end": "18:45",
+   "halls": [
+    "Hall A"
+   ],
+   "description": null,
+   "session": {
+    "note": "The Last Imager Standing: A Fun Competition: Radiology Departments Face Off (The sesion will be held in Hebrew)",
+    "chairs": [],
+    "lectures": [],
+    "image": null
+   }
+  },
+  {
+   "id": 70937,
+   "title": "Stand-up Comedy",
+   "type": 29,
+   "date": "2026-10-19",
+   "start": "21:00",
+   "end": "23:00",
+   "halls": [
+    "Hall A",
+    "Hall B",
+    "Hall C"
+   ],
+   "description": null,
+   "session": {
+    "note": "נגה דיאנג'לי (בעברית)",
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209121,
+      "start": "21:00",
+      "end": "23:00",
+      "title": "Stand-up Comedy",
+      "notes": null,
+      "speakers": []
+     }
+    ],
+    "image": null
+   }
+  },
+  {
+   "id": 70938,
+   "title": "Plenary: Multiple Myeloma Imaging: Current Standards and Emerging Frontiers - Session 19",
+   "type": 12,
+   "date": "2026-10-20",
+   "start": "08:00",
+   "end": "09:30",
+   "halls": [
+    "Hall A"
+   ],
+   "description": null,
+   "session": {
+    "note": null,
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209122,
+      "start": "08:00",
+      "end": "08:15",
+      "title": "Multiple Myeloma: State-of-the-Art Clinical Updates",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Dr. Noa Lavi",
+        "institute": null,
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209123,
+      "start": "08:15",
+      "end": "08:30",
+      "title": "Photon-counting CT in Multiple Myeloma",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Dr. Natalia Goldberg",
+        "institute": null,
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209124,
+      "start": "08:30",
+      "end": "08:45",
+      "title": "Multiple Myeloma: Why Imaging Matters (Hematology-Oncology)",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Dr. Noa Lavi",
+        "institute": null,
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209125,
+      "start": "08:45",
+      "end": "09:15",
+      "title": "State-of-the-Art Multiple Myeloma Imaging Beyond CT",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Dr. Konstantin Kenigsberg",
+        "institute": "Carmel Medical Center",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209126,
+      "start": "09:15",
+      "end": "09:30",
+      "title": "Discussion, Q&A",
+      "notes": null,
+      "speakers": []
+     }
+    ],
+    "image": null
+   }
+  },
+  {
+   "id": 71033,
+   "title": "Coffee Break, E-Poster Viewing & Professional Exhibition",
+   "type": 2,
+   "date": "2026-10-20",
+   "start": "09:30",
+   "end": "09:45",
+   "halls": [
+    "Hall A",
+    "Hall B",
+    "Hall C"
+   ],
+   "description": null,
+   "session": {
+    "note": null,
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209280,
+      "start": "09:30",
+      "end": "09:45",
+      "title": "Coffee Break, E-Poster Viewing & Professional Exhibition",
+      "notes": null,
+      "speakers": []
+     }
+    ],
+    "image": null
+   }
+  },
+  {
+   "id": 71032,
+   "title": "Plenary: Hot Topics 4 - Session 20",
+   "type": 12,
+   "date": "2026-10-20",
+   "start": "09:45",
+   "end": "11:10",
+   "halls": [
+    "Hall A"
+   ],
+   "description": null,
+   "session": {
+    "note": null,
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209275,
+      "start": "09:45",
+      "end": "10:00",
+      "title": "Organizing Pneumonia - A Challenge for Interpreters",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Osnat Moreh-Rahav",
+        "institute": "Rabin Medical Center (Beilinson campus)",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209276,
+      "start": "10:00",
+      "end": "10:20",
+      "title": "MSK Quiz",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Prof. Nogah Haramati",
+        "institute": "Department of Radiology",
+        "portrait": "https://files-cdn.eventact.com/FileView/c0a9c89ddbeb1595edd26617cbe5544975db626e9c80cbce16dfb763fe796c15399928_.png?v=C36171"
+       }
+      ]
+     },
+     {
+      "id": 209277,
+      "start": "10:20",
+      "end": "10:35",
+      "title": "Portable Ultra Low Field MRI at the Point of Care: Early Clinicl Experience with Hyperfine System",
+      "notes": "Sponsored by: Tzamal",
+      "speakers": [
+       {
+        "name": "Dr. Eliel Ben-David",
+        "institute": "Shaare Zedek Medical Center",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209278,
+      "start": "10:35",
+      "end": "10:55",
+      "title": "Advanced Diffusion MRI for Women's Cancer Imaging",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Prof. Rebecca Rakow-Penner",
+        "institute": "University of California San Diego",
+        "portrait": "https://files-cdn.eventact.com/FileView/090ea331d40c2b4cd603f4f6e4e1cb63149e750e7dd60ecbd692cc20bf3159e5400182_.png?v=E8D863"
+       }
+      ]
+     },
+     {
+      "id": 209279,
+      "start": "10:55",
+      "end": "11:10",
+      "title": "Beyond Adenoma: Re-evaluating the Imaging Approach to Adrenal Lesions",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Dr. Rivka Kessner",
+        "institute": null,
+        "portrait": null
+       }
+      ]
+     }
+    ],
+    "image": "https://files-cdn.eventact.com/FileView/c0a9c89ddbeb1595edd26617cbe5544975db626e9c80cbce16dfb763fe796c15399928_.png?v=C36171"
+   }
+  },
+  {
+   "id": 70946,
+   "title": "Parallel Session: Innovation Imaging - Session 21",
+   "type": 12,
+   "date": "2026-10-20",
+   "start": "11:25",
+   "end": "14:10",
+   "halls": [
+    "Hall A"
+   ],
+   "description": null,
+   "session": {
+    "note": null,
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209283,
+      "start": "11:25",
+      "end": "11:40",
+      "title": "Beyond the Algorithm - From Organizational Readiness to Measurable Impact in AI-Enabled Medical Imaging",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Royi Barnea",
+        "institute": "Assuta Medical Center",
+        "portrait": null
+       },
+       {
+        "name": "Dr. Arnon Makori",
+        "institute": null,
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209386,
+      "start": "11:40",
+      "end": "11:49",
+      "title": "Impact of Large Language Model–Assisted Reporting Tools on Radiology Reporting Efficiency and User Experience",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Jonathan Tihanyi",
+        "institute": "Radiology, Sheba Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209387,
+      "start": "11:49",
+      "end": "11:58",
+      "title": "CT-Derived Body Composition and Perioperative Outcomes in Living Kidney Donors",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Dr. Shlomit Tamir",
+        "institute": "Diagnostic Imaging Department, Rabin Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209388,
+      "start": "11:58",
+      "end": "12:07",
+      "title": "Improving Cross-Plane Consistency in Accelerated MRI Using Sequential 2D Expert Networks",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Alexander Nazarov",
+        "institute": "School of Electrical and Computer Engineering, Tel-Aviv University, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209389,
+      "start": "12:07",
+      "end": "12:16",
+      "title": "First in Human Use of Novel 4-Threshold-Mode PCD-CT: Non-Inferiority of Image Quality and Radiation Exposure",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Yael Eshet",
+        "institute": "Nuclear Medicine, Sheba Medical Center",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209390,
+      "start": "12:16",
+      "end": "12:25",
+      "title": "Preserving Diagnostic Integrity in Ultra-Low-Dose Lung CT via Domain-Specific Perceptual Guidance",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Hod Fluger",
+        "institute": "Electrical Engineering, Tel Aviv University, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209391,
+      "start": "12:25",
+      "end": "12:34",
+      "title": "Comparison of LLMs Interpretation of Medical Imaging versus Radiology Residents with Regards to Accuracy of Diagnostic Skills.",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Aikaterini Megapanou",
+        "institute": "Department of Radiology, Meir Medical Center",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209392,
+      "start": "12:34",
+      "end": "12:43",
+      "title": "From AI-Based Segmentation to Clinical Biomarkers: An Interactive Framework for MRI Quantification of Residual Breast Tissue after Mastectomy and Silicone Implant Reconstruction",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Gilad Yerushalmi",
+        "institute": "Division of Diagnostic Imaging, Sheba Medical Center, Tel-Hashomer, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209393,
+      "start": "12:43",
+      "end": "12:52",
+      "title": "Deep Learning for Tumor Localization in Residual Breast Tissue after Mastectomy and Reconstruction",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Kfir Cohen",
+        "institute": "Division of Diagnostic Imaging, Sheba Medical Center, Tel-HaShomer, Israel",
+        "portrait": null
+       }
+      ]
+     }
+    ],
+    "image": null
+   }
+  },
+  {
+   "id": 70947,
+   "title": "Parallel Session: Abdominal Imaging - Session 22",
+   "type": 12,
+   "date": "2026-10-20",
+   "start": "11:25",
+   "end": "14:10",
+   "halls": [
+    "Hall B"
+   ],
+   "description": null,
+   "session": {
+    "note": null,
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209394,
+      "start": "11:25",
+      "end": "11:34",
+      "title": "Can a Structured ATLS-Based Physical Examination Reduce CT Utilization After FallsFrom Height?",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Alisa Barbarash",
+        "institute": "Department of Imaging, Shaare Zedek Medical Center",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209395,
+      "start": "11:34",
+      "end": "11:43",
+      "title": "Renal Fat Accumulation Assessed by MRI or CT and Its Association with Clinical and Metabolic Disorders: A Systematic Imaging Review",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Hadar Raphael",
+        "institute": "Department of Imaging, The Chaim Sheba Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209396,
+      "start": "11:43",
+      "end": "11:52",
+      "title": "Estimated C-Reactive Protein Velocity and CT-Defined Complicated Appendicitis",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Nadav Schellekes",
+        "institute": "Department of Radiology, Tel Aviv Sourasky Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209397,
+      "start": "11:52",
+      "end": "12:01",
+      "title": "Imaging Utilization, Findings, and Report Quality Post Gender-Affirming Genital Surgery: An 18-Year Single-Center Retrospective Study",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Olga Gordon Rapana",
+        "institute": "Diagnostic Radiology, Sheba medical center, Isreal",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209398,
+      "start": "12:01",
+      "end": "12:10",
+      "title": "Who Needs MRI in Suspected Endometriosis? A Retrospective Observational Diagnostic Study of Added Value Beyond TVUS",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Shaden Ghrayeb",
+        "institute": "Radiology, Hadassah Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209399,
+      "start": "12:10",
+      "end": "12:19",
+      "title": "Biliary Malignancy Mimicking Cholecystitis: A Multimodality Imaging Case Series",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Miri Priss",
+        "institute": "Diagnostic imaging, Soroka Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209400,
+      "start": "12:19",
+      "end": "12:28",
+      "title": "Inter-reader Agreement and Diagnostic Accuracy of Imaging in Hepatic Cystic Lesions",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Revital Nassimov",
+        "institute": "Radiology Department, Rabin Medical Center",
+        "portrait": null
+       }
+      ]
+     }
+    ],
+    "image": null
+   }
+  },
+  {
+   "id": 70948,
+   "title": "Parallel Session: Neuro-Imaging - Session 23",
+   "type": 12,
+   "date": "2026-10-20",
+   "start": "11:25",
+   "end": "14:10",
+   "halls": [
+    "Hall C"
+   ],
+   "description": null,
+   "session": {
+    "note": null,
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209271,
+      "start": "11:25",
+      "end": "11:40",
+      "title": "Common Epileptogenic Brain Malformations",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Prof. Orit Glenn",
+        "institute": "UCSF Benioff Children's Hospitals",
+        "portrait": "https://files-cdn.eventact.com/FileView/28e5ed250bb2404e1a7445d51bfd0543528ce10a41c8ec4eba7f563e68576f96399927_.png?v=C35F9B"
+       }
+      ]
+     },
+     {
+      "id": 209272,
+      "start": "11:40",
+      "end": "11:55",
+      "title": "Neuro Radiology \"Red Flags\" in Supposedly Normal MRI",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Dr. Goni Merhav",
+        "institute": null,
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209273,
+      "start": "11:55",
+      "end": "12:10",
+      "title": "Why do I Like Being a Neuroradiologist",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Dr. Ayelet Eran",
+        "institute": "Rambam Health Care Center",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209274,
+      "start": "12:10",
+      "end": "12:25",
+      "title": "When Treatment Takes it's Toll: Neuroimaging in the Oncologic Patient",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Anat Yahav",
+        "institute": "Rambam Health Care Center",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209402,
+      "start": "12:25",
+      "end": "12:34",
+      "title": "Read between the Veins: Keep DAVF in Mind",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Ruth Eliahou",
+        "institute": "Radiology, Rabin Medical Center",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209403,
+      "start": "12:34",
+      "end": "12:43",
+      "title": "Task-Adapted Brain MRI Foundation Models for Focal Cortical Dysplasia Detection and Localization",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Roy Kadosh",
+        "institute": "Diagnostic Radiology, Sheba Medical Center",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209404,
+      "start": "12:43",
+      "end": "12:52",
+      "title": "TRAUMATIC CEREBRAL VENOUS SINUS THROMBOSIS IN SKULL FRACTURES CROSSING THE DURAL VENOUS SINUSES: PREVALENCE, RISK FACTORS, AND TIMING OF DETECTION",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Lutof Zreik",
+        "institute": "Radiology, Rambam Health Care Campus, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209406,
+      "start": "12:52",
+      "end": "13:01",
+      "title": "Intrathecal Administration of Iodinated Contrast Above the Labeled 300 mg/mL Ceiling: A 14-Year Retrospective Series of CT Myelograms",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Mahdi Bwirat",
+        "institute": "Diagnostic Radiology, Sheba Medical Center Tel Hashomer, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209407,
+      "start": "13:01",
+      "end": "13:10",
+      "title": "Prospective Evaluation of Theoretical Time Savings in Brain MRI Using AI-Guided Identification of Examinations Potentially Not Requiring Contrast",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Anatoly Budylev",
+        "institute": "Medical Imaging, Assuta Health Services, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209408,
+      "start": "13:10",
+      "end": "13:19",
+      "title": "Can Functional Language Areas Be Mapped without Functional MRI?",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Omri Leshem",
+        "institute": "Diagnostic Imaging, Sheba Medical Center, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209409,
+      "start": "13:19",
+      "end": "13:28",
+      "title": "Tectal Plate Morphometric Measurements as Biomarker for Differentiating Progressive Supranuclear Palsy, Multiple System Atrophy and Parkinson`s Disease",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Avner Merdler",
+        "institute": "Department of medical imaging, Rambam",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209410,
+      "start": "13:28",
+      "end": "13:37",
+      "title": "Evaluating the Effect of Expanding Clinical Services and Departments at a Tertiary Medical Center on the Neuroradiology Section",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Viacheslav Alexandrov",
+        "institute": "Diagnostic Radiology, SZMC, Israel",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209411,
+      "start": "13:37",
+      "end": "13:46",
+      "title": "When Pathology, Imaging, and Clinical Findings Disagree: A Diagnostic Challenge",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Lutof Zreik",
+        "institute": "Radiology, Rambam Health Care Campus, Israel",
+        "portrait": null
+       }
+      ]
+     }
+    ],
+    "image": "https://files-cdn.eventact.com/FileView/28e5ed250bb2404e1a7445d51bfd0543528ce10a41c8ec4eba7f563e68576f96399927_.png?v=C35F9B"
+   }
+  },
+  {
+   "id": 71035,
+   "title": "Coffee Break, E-Poster Viewing & Professional Exhibition",
+   "type": 2,
+   "date": "2026-10-20",
+   "start": "11:55",
+   "end": "12:10",
+   "halls": [
+    "Hall A",
+    "Hall B",
+    "Hall C"
+   ],
+   "description": null,
+   "session": {
+    "note": null,
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209282,
+      "start": "11:55",
+      "end": "12:10",
+      "title": "Coffee Break, E-Poster Viewing & Professional Exhibition",
+      "notes": null,
+      "speakers": []
+     }
+    ],
+    "image": null
+   }
+  },
+  {
+   "id": 70949,
+   "title": "Plenary: Closing Session - Session 24",
+   "type": 12,
+   "date": "2026-10-20",
+   "start": "14:10",
+   "end": "14:40",
+   "halls": [
+    "Hall A"
+   ],
+   "description": null,
+   "session": {
+    "note": null,
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209267,
+      "start": "14:10",
+      "end": "14:20",
+      "title": "Michal Meidan Award",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Dr. Rama Katz",
+        "institute": "Shamir Medical center",
+        "portrait": null
+       }
+      ]
+     },
+     {
+      "id": 209268,
+      "start": "14:20",
+      "end": "14:30",
+      "title": "Prima Volta Award",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Prof. Ahuva Grubstein",
+        "institute": "Vice Chair of the Conference",
+        "portrait": "https://files-cdn.eventact.com/FileView/848c6f5605be8cbbaefa2daff66e99cbfef38622b082c6fc935bca1609842e09400772_.png?v=140E623"
+       }
+      ]
+     },
+     {
+      "id": 209269,
+      "start": "14:30",
+      "end": "14:40",
+      "title": "Closing Remarks",
+      "notes": null,
+      "speakers": [
+       {
+        "name": "Prof. Ilan Shelef",
+        "institute": "Chairman of Israel Radiological Association",
+        "portrait": "https://files-cdn.eventact.com/FileView/a199952e86729bd35624748a093f96f2b210afab04f2ee70316fde95473bc78a396634_.png?v=17904D0"
+       },
+       {
+        "name": "Prof. Orly Goitein",
+        "institute": "Sheba Medical Center (Tel HaShomer)",
+        "portrait": "https://files-cdn.eventact.com/FileView/5ce22157dd02b19c275aab299883907e427883d2ed367d737052108a1a176c97400178_.png?v=E8B704"
+       }
+      ]
+     }
+    ],
+    "image": "https://files-cdn.eventact.com/FileView/848c6f5605be8cbbaefa2daff66e99cbfef38622b082c6fc935bca1609842e09400772_.png?v=140E623"
+   }
+  },
+  {
+   "id": 70950,
+   "title": "Light Lunch",
+   "type": 39,
+   "date": "2026-10-20",
+   "start": "14:40",
+   "end": "15:00",
+   "halls": [
+    "Hall A",
+    "Hall B",
+    "Hall C"
+   ],
+   "description": null,
+   "session": {
+    "note": null,
+    "chairs": [],
+    "lectures": [
+     {
+      "id": 209135,
+      "start": "14:40",
+      "end": "15:00",
+      "title": "Light Lunch",
+      "notes": null,
+      "speakers": []
+     }
+    ],
+    "image": null
+   }
+  }
+ ]
+}

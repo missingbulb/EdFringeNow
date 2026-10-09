@@ -1,0 +1,826 @@
+{
+ "places": [
+  {
+   "id": "node/10926461949",
+   "lat": 50.840748,
+   "lng": -0.131679,
+   "tags": {
+    "name": "Hollingdean Wholefoods",
+    "amenity": "marketplace",
+    "building": "yes",
+    "opening_hours": "Mo-Sa 10:00-17:00",
+    "website": "https://linktr.ee/hollingdeanwholefoods",
+    "addr:housenumber": "19a",
+    "addr:street": "Hollingdean Terrace",
+    "addr:postcode": "BN1 7HB"
+   }
+  },
+  {
+   "id": "node/11447332744",
+   "lat": 50.838084,
+   "lng": -0.135795,
+   "tags": {
+    "name": "Florence Road Market",
+    "amenity": "marketplace",
+    "opening_hours": "Sa 09:30-13:30",
+    "website": "https://www.florenceroadmarket.com/",
+    "addr:street": "Florence Road"
+   }
+  },
+  {
+   "id": "node/12546579959",
+   "lat": 50.820783,
+   "lng": -0.140199,
+   "tags": {
+    "name": "Old Police Cells Museum",
+    "tourism": "museum",
+    "website": "Q113370209"
+   }
+  },
+  {
+   "id": "node/13120919625",
+   "lat": 50.805822,
+   "lng": -0.057359,
+   "tags": {
+    "name": "Rottingdean Museum",
+    "tourism": "museum",
+    "opening_hours": "We-Sa 10:00-16:00; Su 13:00-16:00",
+    "website": "https://www.rottingdeanheritage.org.uk/the-grange-museum/",
+    "addr:street": "The Green"
+   }
+  },
+  {
+   "id": "node/13676286793",
+   "lat": 50.831484,
+   "lng": -0.176193,
+   "tags": {
+    "name": "Department Flea Market",
+    "amenity": "marketplace",
+    "addr:housenumber": "24-26",
+    "addr:street": "Blatchington Road"
+   }
+  },
+  {
+   "id": "node/13831971636",
+   "lat": 50.833855,
+   "lng": -0.190739,
+   "tags": {
+    "name": "Paraquatics",
+    "tourism": "aquarium",
+    "addr:housenumber": "254",
+    "addr:street": "Portland Road",
+    "addr:postcode": "BN3 5QU",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/14134762874",
+   "lat": 50.821717,
+   "lng": -0.14041,
+   "tags": {
+    "name": "Liberatuon Art Gallery",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/1510317776",
+   "lat": 50.821819,
+   "lng": -0.150706,
+   "tags": {
+    "name": "South African War Memorial",
+    "historic": "monument",
+    "wikidata": "Q26660978"
+   }
+  },
+  {
+   "id": "node/1747683834",
+   "lat": 50.826288,
+   "lng": -0.138701,
+   "tags": {
+    "name": "Snoopers Paradise",
+    "amenity": "marketplace",
+    "opening_hours": "Mo-Sa 10:00-18:00; PH,Su 11:00-16:00",
+    "website": "https://snoopersparadise.co.uk/",
+    "addr:housenumber": "7-8",
+    "addr:street": "Kensington Gardens",
+    "addr:postcode": "BN1 4AL"
+   }
+  },
+  {
+   "id": "node/21429524",
+   "lat": 50.827287,
+   "lng": -0.124812,
+   "tags": {
+    "name": "Pepper Pot",
+    "historic": "monument",
+    "wikidata": "Q7166370",
+    "wikipedia": "en:Pepper Pot, Brighton"
+   }
+  },
+  {
+   "id": "node/2282612239",
+   "lat": 50.8237,
+   "lng": -0.143604,
+   "tags": {
+    "name": "Jubilee Clock Tower",
+    "historic": "memorial",
+    "wikidata": "Q5134787",
+    "wikipedia": "en:Clock Tower, Brighton"
+   }
+  },
+  {
+   "id": "node/24343327",
+   "lat": 50.82463,
+   "lng": -0.169259,
+   "tags": {
+    "name": "Queen Victoria Statue",
+    "tourism": "artwork",
+    "historic": "memorial",
+    "wikidata": "Q26482744"
+   }
+  },
+  {
+   "id": "node/26241484",
+   "lat": 50.823204,
+   "lng": -0.12678,
+   "tags": {
+    "name": "Park Street Gate",
+    "historic": "monument",
+    "wikidata": "Q26660878"
+   }
+  },
+  {
+   "id": "node/4319037890",
+   "lat": 50.827042,
+   "lng": -0.139849,
+   "tags": {
+    "name": "Gallery40",
+    "tourism": "gallery",
+    "addr:housenumber": "40",
+    "addr:street": "Gloucester Road"
+   }
+  },
+  {
+   "id": "node/5310273056",
+   "lat": 50.806521,
+   "lng": -0.058243,
+   "tags": {
+    "name": "Rottingdean War Memorial",
+    "historic": "memorial",
+    "wikidata": "Q83191273"
+   }
+  },
+  {
+   "id": "node/5581301821",
+   "lat": 50.824364,
+   "lng": -0.116165,
+   "tags": {
+    "name": "Tom's Place",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/559471342",
+   "lat": 50.837089,
+   "lng": -0.153052,
+   "tags": {
+    "name": "Booth Museum of Natural History",
+    "tourism": "museum",
+    "website": "https://brightonmuseums.org.uk/booth-museum-of-natural-history/",
+    "wikidata": "Q11854506",
+    "wikipedia": "en:Booth Museum of Natural History",
+    "addr:housenumber": "194",
+    "addr:street": "Dyke Road",
+    "addr:postcode": "BN1 5AA",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/6567793522",
+   "lat": 50.82178,
+   "lng": -0.139222,
+   "tags": {
+    "name": "Labyrinth",
+    "tourism": "gallery",
+    "addr:housenumber": "56",
+    "addr:street": "Market Street",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/6610830092",
+   "lat": 50.814713,
+   "lng": -0.137653,
+   "tags": {
+    "name": "Pier Viewpoint",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/6614845889",
+   "lat": 50.823772,
+   "lng": -0.1366,
+   "tags": {
+    "name": "Queen Victoria",
+    "historic": "monument",
+    "wikidata": "Q26660859"
+   }
+  },
+  {
+   "id": "node/6717873385",
+   "lat": 50.82361,
+   "lng": -0.115181,
+   "tags": {
+    "name": "The Lookout",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/735081861",
+   "lat": 50.825467,
+   "lng": -0.138271,
+   "tags": {
+    "name": "Helm",
+    "tourism": "gallery",
+    "opening_hours": "Mo-We,Su 10:00-18:00; Th-Sa 10:00-23:00",
+    "website": "https://helm-gallery.com/",
+    "addr:housenumber": "15",
+    "addr:street": "North Road",
+    "addr:postcode": "BN1 1YA"
+   }
+  },
+  {
+   "id": "node/7822137422",
+   "lat": 50.8417,
+   "lng": -0.141456,
+   "tags": {
+    "name": "Starling Studio",
+    "tourism": "gallery",
+    "addr:housenumber": "107",
+    "addr:street": "Havelock Road",
+    "addr:postcode": "BN1 6GL",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/8596837920",
+   "lat": 50.817384,
+   "lng": -0.117241,
+   "tags": {
+    "name": "Safe",
+    "tourism": "gallery",
+    "addr:housenumber": "65",
+    "addr:street": "St Georges Road",
+    "addr:postcode": "BN2 1EF"
+   }
+  },
+  {
+   "id": "node/90615739",
+   "lat": 50.819949,
+   "lng": -0.142045,
+   "tags": {
+    "name": "Brighton Fishing Museum",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 10:00-18:15",
+    "website": "https://www.fishingquarter.co.uk/fishing-museum",
+    "wikidata": "Q4967641",
+    "wikipedia": "en:Brighton Fishing Museum",
+    "addr:postcode": "BN1 1NB",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/90634730",
+   "lat": 50.819597,
+   "lng": -0.135973,
+   "tags": {
+    "name": "Sea Life Centre",
+    "tourism": "aquarium",
+    "website": "https://www.sealife.co.uk/Brighton",
+    "wikidata": "Q72769631",
+    "addr:street": "Marine Parade",
+    "addr:postcode": "BN2 1TB",
+    "fee": "yes",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "relation/2049042",
+   "lat": 50.85669,
+   "lng": -0.159738,
+   "tags": {
+    "name": "Withdean Woods",
+    "leisure": "nature_reserve",
+    "website": "https://www.brighton-hove.gov.uk/content/leisure-and-libraries/parks-and-green-spaces/nature-reserves",
+    "wikidata": "Q65077619"
+   }
+  },
+  {
+   "id": "relation/6168019",
+   "lat": 50.816707,
+   "lng": -0.121882,
+   "tags": {
+    "name": "Volks Electric Railway",
+    "tourism": "attraction",
+    "website": "https://volksrailway.org.uk/",
+    "wikidata": "Q378512",
+    "wikipedia": "en:Volk's Electric Railway"
+   }
+  },
+  {
+   "id": "way/104520966",
+   "lat": 50.823443,
+   "lng": -0.137839,
+   "tags": {
+    "name": "Brighton Museum & Art Gallery",
+    "tourism": "museum",
+    "building": "public",
+    "opening_hours": "Tu-Su 10:00-17:00; Mo off",
+    "website": "https://www.brighton-hove-rpml.org.uk/Museums/brightonmuseum/",
+    "wikidata": "Q2790574",
+    "wikipedia": "en:Brighton Museum & Art Gallery",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/1102280728",
+   "lat": 50.826358,
+   "lng": -0.139197,
+   "tags": {
+    "name": "Upper Gardner Street Saturday Market",
+    "amenity": "marketplace",
+    "opening_hours": "Sa 07:00-17:00",
+    "addr:street": "Upper Gardner Street"
+   }
+  },
+  {
+   "id": "way/111607316",
+   "lat": 50.844355,
+   "lng": -0.175553,
+   "tags": {
+    "name": "British Engineerium",
+    "tourism": "museum",
+    "historic": "heritage",
+    "website": "https://www.thebritishengineerium.com/",
+    "wikidata": "Q4969933",
+    "wikipedia": "en:British Engineerium",
+    "addr:street": "The Droveway",
+    "addr:postcode": "BN3 7QA"
+   }
+  },
+  {
+   "id": "way/1156572631",
+   "lat": 50.82153,
+   "lng": -0.152116,
+   "tags": {
+    "name": "Upside Down House",
+    "tourism": "attraction",
+    "building": "yes",
+    "wikidata": "Q121030569",
+    "addr:housenumber": "42-43",
+    "addr:street": "Kings Road Arches",
+    "addr:postcode": "BN1 2LN"
+   }
+  },
+  {
+   "id": "way/1172868955",
+   "lat": 50.869307,
+   "lng": -0.103497,
+   "tags": {
+    "name": "Stanmer Craft Museum",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "way/1185788909",
+   "lat": 50.823615,
+   "lng": -0.128278,
+   "tags": {
+    "name": "Egremont Gate",
+    "historic": "monument",
+    "building": "yes",
+    "website": "https://historicengland.org.uk/listing/the-list/list-entry/1380496",
+    "wikidata": "Q26660692",
+    "addr:street": "West Drive",
+    "addr:postcode": "BN2 0GD"
+   }
+  },
+  {
+   "id": "way/1286164915",
+   "lat": 50.807121,
+   "lng": -0.058862,
+   "tags": {
+    "name": "Kiplings Gardens",
+    "leisure": "garden",
+    "wikidata": "Q62022538"
+   }
+  },
+  {
+   "id": "way/1365280107",
+   "lat": 50.826831,
+   "lng": -0.168684,
+   "tags": {
+    "name": "Hove War Memorial",
+    "historic": "memorial",
+    "wikidata": "Q26482745"
+   }
+  },
+  {
+   "id": "way/137526152",
+   "lat": 50.822752,
+   "lng": -0.142009,
+   "tags": {
+    "name": "Fabrica",
+    "tourism": "gallery",
+    "amenity": "arts_centre",
+    "building": "church",
+    "website": "https://www.fabrica.org.uk/",
+    "wikidata": "Q133253954",
+    "wikipedia": "en:Holy Trinity Church, Brighton",
+    "addr:housenumber": "40",
+    "addr:street": "Duke Street",
+    "addr:postcode": "BN1 1AG"
+   }
+  },
+  {
+   "id": "way/150255646",
+   "lat": 50.867783,
+   "lng": -0.131067,
+   "tags": {
+    "name": "Ladies Mile Local Nature Reserve",
+    "leisure": "nature_reserve",
+    "wikidata": "Q65121401",
+    "wikipedia": "en:Ladies Mile, Brighton"
+   }
+  },
+  {
+   "id": "way/162572146",
+   "lat": 50.855346,
+   "lng": -0.123146,
+   "tags": {
+    "name": "Hollingbury Hill Fort",
+    "historic": "archaeological_site",
+    "wikidata": "Q31117838"
+   }
+  },
+  {
+   "id": "way/178538465",
+   "lat": 50.842577,
+   "lng": -0.150243,
+   "tags": {
+    "name": "Preston Manor",
+    "tourism": "museum",
+    "addr:street": "Preston Drove",
+    "addr:postcode": "BN1 6SD",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/181524079",
+   "lat": 50.867988,
+   "lng": -0.122313,
+   "tags": {
+    "name": "Phileas Foggs World of Adventures",
+    "tourism": "theme_park",
+    "building": "yes",
+    "addr:street": "Crowhurst Road",
+    "addr:postcode": "BN1 8AF"
+   }
+  },
+  {
+   "id": "way/232461283",
+   "lat": 50.828706,
+   "lng": -0.140946,
+   "tags": {
+    "name": "Brighton Toy and Model Museum",
+    "tourism": "museum",
+    "website": "https://www.brightontoymuseum.co.uk/",
+    "wikidata": "Q4967734",
+    "wikipedia": "en:Brighton Toy and Model Museum",
+    "addr:housenumber": "52-55",
+    "addr:street": "Trafalgar Street",
+    "addr:postcode": "BN1 4EB",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/237087421",
+   "lat": 50.829706,
+   "lng": -0.181178,
+   "tags": {
+    "name": "Hove Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Mo,Th-Sa 10:00-17:00; Su 13:00-16:00",
+    "wikidata": "Q5917016",
+    "wikipedia": "en:Hove Museum of Creativity",
+    "addr:postcode": "BN3 4AB",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/338139685",
+   "lat": 50.822393,
+   "lng": -0.137625,
+   "tags": {
+    "name": "Royal Pavilion",
+    "tourism": "attraction",
+    "building": "yes",
+    "wikidata": "Q62364",
+    "wikipedia": "en:Royal Pavilion",
+    "addr:housenumber": "4-5",
+    "addr:street": "Pavilion Buildings",
+    "addr:postcode": "BN1 1EE",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/338140802",
+   "lat": 50.823392,
+   "lng": -0.136844,
+   "tags": {
+    "name": "George IV",
+    "historic": "monument",
+    "wikidata": "Q26660598"
+   }
+  },
+  {
+   "id": "way/3451897",
+   "lat": 50.816812,
+   "lng": -0.137042,
+   "tags": {
+    "name": "Brighton Pier",
+    "tourism": "attraction",
+    "historic": "building",
+    "building": "yes",
+    "wikidata": "Q2745160",
+    "wikipedia": "en:Brighton Palace Pier",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/3809718",
+   "lat": 50.822459,
+   "lng": -0.150426,
+   "tags": {
+    "name": "Regency Square",
+    "leisure": "park",
+    "wikidata": "Q7308019",
+    "wikipedia": "en:Regency Square, Brighton"
+   }
+  },
+  {
+   "id": "way/3991960",
+   "lat": 50.820684,
+   "lng": -0.137411,
+   "tags": {
+    "name": "Old Steine Gardens",
+    "leisure": "park",
+    "wikidata": "Q7085095",
+    "wikipedia": "en:Old Steine Gardens"
+   }
+  },
+  {
+   "id": "way/3996497",
+   "lat": 50.840243,
+   "lng": -0.146876,
+   "tags": {
+    "name": "Preston Park",
+    "leisure": "park",
+    "wikidata": "Q7241959"
+   }
+  },
+  {
+   "id": "way/4000213",
+   "lat": 50.829698,
+   "lng": -0.155669,
+   "tags": {
+    "name": "St Ann's Well Gardens",
+    "leisure": "park",
+    "wikidata": "Q7586979",
+    "wikipedia": "en:St. Ann's Well Gardens, Hove"
+   }
+  },
+  {
+   "id": "way/4040699",
+   "lat": 50.830487,
+   "lng": -0.132761,
+   "tags": {
+    "name": "The Level",
+    "leisure": "park",
+    "wikidata": "Q88484826"
+   }
+  },
+  {
+   "id": "way/4164779",
+   "lat": 50.825806,
+   "lng": -0.163602,
+   "tags": {
+    "name": "Palmeira Square",
+    "leisure": "park",
+    "wikidata": "Q7128179",
+    "wikipedia": "en:Palmeira Square"
+   }
+  },
+  {
+   "id": "way/4164782",
+   "lat": 50.824469,
+   "lng": -0.164145,
+   "tags": {
+    "name": "Adelaide Crescent",
+    "leisure": "park",
+    "wikidata": "Q15056398",
+    "wikipedia": "en:Adelaide Crescent"
+   }
+  },
+  {
+   "id": "way/42130315",
+   "lat": 50.831463,
+   "lng": -0.135149,
+   "tags": {
+    "name": "The Open Market",
+    "amenity": "marketplace",
+    "building": "retail",
+    "opening_hours": "Mo-Fr 07:00-19:00; Sa 07:00-17:00; Su 10:00-17:00",
+    "website": "https://brightonopenmarket.co.uk/",
+    "wikidata": "Q115663105",
+    "addr:street": "Marshalls Row",
+    "addr:postcode": "BN1 4JU"
+   }
+  },
+  {
+   "id": "way/4321540",
+   "lat": 50.824772,
+   "lng": -0.125618,
+   "tags": {
+    "name": "Queen's Park",
+    "leisure": "park",
+    "website": "https://www.brighton-hove.gov.uk/libraries-leisure-and-arts/parks-and-green-spaces/queens-park",
+    "wikidata": "Q7270059",
+    "addr:postcode": "BN2 0QU"
+   }
+  },
+  {
+   "id": "way/4400078",
+   "lat": 50.842693,
+   "lng": -0.173149,
+   "tags": {
+    "name": "Hove Park",
+    "leisure": "park",
+    "wikidata": "Q5917025",
+    "wikipedia": "en:Hove Park"
+   }
+  },
+  {
+   "id": "way/5021004",
+   "lat": 50.85357,
+   "lng": -0.112764,
+   "tags": {
+    "name": "Moulsecoomb Wild Park",
+    "leisure": "park",
+    "wikidata": "Q8000751",
+    "wikipedia": "en:Wild Park"
+   }
+  },
+  {
+   "id": "way/5021742",
+   "lat": 50.866498,
+   "lng": -0.097288,
+   "tags": {
+    "name": "Stanmer Park",
+    "leisure": "park",
+    "wikidata": "Q7600097",
+    "wikipedia": "en:Stanmer Park"
+   }
+  },
+  {
+   "id": "way/516865069",
+   "lat": 50.846584,
+   "lng": -0.185151,
+   "tags": {
+    "name": "West Blatchington Windmill",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "May-Sep Su 14:30-17:00",
+    "website": "https://www.westblatchingtonwindmill.org/",
+    "wikidata": "Q17549494",
+    "addr:street": "Holmes Avenue",
+    "addr:postcode": "BN3 7LE",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/559477925",
+   "lat": 50.840686,
+   "lng": -0.131681,
+   "tags": {
+    "name": "19a",
+    "tourism": "gallery",
+    "building": "yes",
+    "opening_hours": "Mo-Sa 10:00-17:00",
+    "website": "https://19a.org/",
+    "addr:housenumber": "19a",
+    "addr:street": "Hollingdean Terrace",
+    "addr:postcode": "BN1 7HB",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/562347564",
+   "lat": 50.82138,
+   "lng": -0.136961,
+   "tags": {
+    "name": "Brighton War Memorial",
+    "historic": "monument",
+    "building": "yes",
+    "wikidata": "Q26660856",
+    "addr:postcode": "BN1 1EJ"
+   }
+  },
+  {
+   "id": "way/607374756",
+   "lat": 50.834654,
+   "lng": -0.081822,
+   "tags": {
+    "name": "Woodingdean Water Well",
+    "tourism": "attraction",
+    "wikidata": "Q42851541"
+   }
+  },
+  {
+   "id": "way/878885045",
+   "lat": 50.829767,
+   "lng": -0.109192,
+   "tags": {
+    "name": "Whitehawk Hill Local Nature Reserve",
+    "leisure": "nature_reserve",
+    "wikidata": "Q16897643"
+   }
+  },
+  {
+   "id": "way/948986833",
+   "lat": 50.828812,
+   "lng": -0.133788,
+   "tags": {
+    "name": "Phoenix Art Space",
+    "tourism": "gallery",
+    "amenity": "arts_centre",
+    "building": "yes",
+    "website": "https://www.phoenixbrighton.org/",
+    "addr:housenumber": "10–14",
+    "addr:street": "Waterloo Place",
+    "addr:postcode": "BN2 9NB",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/965366311",
+   "lat": 50.817545,
+   "lng": -0.108203,
+   "tags": {
+    "name": "Secret Garden",
+    "leisure": "garden",
+    "website": "https://www.secretgardenkemptown.co.uk/",
+    "wikidata": "Q26676469"
+   }
+  },
+  {
+   "id": "way/96651243",
+   "lat": 50.819001,
+   "lng": -0.152003,
+   "tags": {
+    "name": "West Pier",
+    "tourism": "attraction",
+    "historic": "ruins",
+    "wikidata": "Q3081510",
+    "wikipedia": "en:West Pier"
+   }
+  },
+  {
+   "id": "way/96656343",
+   "lat": 50.822509,
+   "lng": -0.156927,
+   "tags": {
+    "name": "Peace Statue",
+    "historic": "monument",
+    "wikidata": "Q26661748"
+   }
+  },
+  {
+   "id": "way/97743233",
+   "lat": 50.81951,
+   "lng": -0.134209,
+   "tags": {
+    "name": "Brighton Aquarium",
+    "tourism": "aquarium",
+    "historic": "building",
+    "building": "yes",
+    "website": "https://www.visitsealife.com/brighton/",
+    "wikidata": "Q72769631",
+    "wikipedia": "en:Sea Life Brighton"
+   }
+  }
+ ]
+}

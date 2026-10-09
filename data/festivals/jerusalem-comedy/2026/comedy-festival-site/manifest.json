@@ -1,0 +1,24 @@
+{
+ "festival": "jerusalem-comedy",
+ "edition": "2026",
+ "source": "comedy-festival-site",
+ "fetchedAt": null,
+ "fetcher": "pre-registry Jerusalem scrape @ f47d749",
+ "fetcherVersion": null,
+ "urls": [
+  "https://comedy-festival.co.il/wp-json/wp/v2/events",
+  "https://comedy-festival.co.il/wp-json/wp/v2/dates",
+  "https://comedy-festival.co.il/wp-json/wp/v2/eventlocation",
+  "https://comedy-festival.co.il/wp-json/wp/v2/event-type",
+  "https://comedy-festival.co.il/wp-json/wp/v2/event-year",
+  "https://comedy-festival.co.il/events/<slug>/"
+ ],
+ "files": [
+  "programme.json"
+ ],
+ "notes": "Re-homed, not re-fetched: comedy-festival.co.il was unreachable from the session that moved this festival onto the registry. The bytes are site/data/jerusalem/shows.json as committed at 340544a, first written in f47d749 by the pre-registry Jerusalem scrape, the fetch.py this source's fetcher grew from (committed 2026-09-16); that run's fetch time was not recorded, so fetchedAt is null. programme.json is that file minus its festival block (identity now lives in festival.toml) and minus venue coordinates (now the nominatim source); every other value is unchanged.",
+ "rehomedFrom": {
+  "path": "site/data/jerusalem/shows.json",
+  "commit": "340544a"
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "festival": "edinburgh-tattoo",
+ "edition": "2027",
+ "source": "ticketing-api",
+ "fetchedAt": "2026-09-25T14:04:41Z",
+ "fetcher": "scraper/festivals/edinburgh_tattoo/sources/ticketing-api/fetch.py",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://api.book.edintattoo.co.uk/catalog",
+  "https://api.book.edintattoo.co.uk/event/<productId>/availability"
+ ],
+ "files": [
+  "programme.json"
+ ],
+ "notes": "Performances and seat-category prices from the catalogue; seats left, availability level and the cheapest and dearest price on sale per performance from the availability call. Amounts are thousandths of a pound, as the API writes them."
+}

@@ -1,0 +1,19 @@
+{
+ "festival": "abu-gosh",
+ "edition": "2026",
+ "source": "abugosh-site",
+ "fetchedAt": "2026-09-27T09:23:11Z",
+ "fetcher": "scraper/festivals/abu_gosh/sources/abugosh-site/fetch.py",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://abugoshfestival.co.il/en/%D7%9C%D7%95%D7%97-%D7%A7%D7%95%D7%A0%D7%A6%D7%A8%D7%98%D7%99%D7%9D/",
+  "https://abugoshfestival.co.il/%D7%9C%D7%95%D7%97-%D7%A7%D7%95%D7%A0%D7%A6%D7%A8%D7%98%D7%99%D7%9D/",
+  "https://abugoshfestival.co.il/en/outside/",
+  "https://abugoshfestival.co.il/outside/",
+  "https://abugoshfestival.co.il/en/<listing>/<card slug>/"
+ ],
+ "files": [
+  "programme.json"
+ ],
+ "notes": "The English Concert Schedule and Outdoor Performances pages give every card (post id, picture, label, day/month, times, place, title, blurb); their Hebrew twins give Hebrew titles and places by URL slug; each card's own page gives the price, Smarticket link, running time and description (parse.py). The year is the schedule heading's, checked against the edition id."
+}

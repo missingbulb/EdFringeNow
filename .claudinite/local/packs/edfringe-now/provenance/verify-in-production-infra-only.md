@@ -16,3 +16,8 @@
 - **Retire when:** a feature/UI change lands whose effect genuinely cannot be seen before the merge
   — a render that only appears once the site is deployed — so the class stops having one answer.
 - **Landed:** #819
+
+## 2026-09-24 · reworded · trimmed to trigger and action
+- **Reason:** the owner asked to trim rule prose to zero story ("Trim to zero, unless crucial to
+  understand severity"); the incident history lives on this file.
+- **Actor:** @missingbulb (owner).

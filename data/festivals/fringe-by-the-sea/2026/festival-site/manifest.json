@@ -1,0 +1,18 @@
+{
+ "festival": "fringe-by-the-sea",
+ "edition": "2026",
+ "source": "festival-site",
+ "fetchedAt": "2026-09-25T14:12:39Z",
+ "fetcher": "scraper/festivals/fringe_by_the_sea/sources/festival-site/fetch.py",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://www.fringebythesea.com/wp-json/wp/v2/posts",
+  "https://www.fringebythesea.com/wp-json/wp/v2/categories",
+  "https://www.fringebythesea.com/<post-slug>/",
+  "https://www.fringebythesea.com/venues-and-map/"
+ ],
+ "files": [
+  "programme.json"
+ ],
+ "notes": "WP REST gives identity, sections, description and the CitizenTicket link; date, venue, time and price are read from each post page's details box (parse.py), whose lines are kept as written; `place` names the venue each box's text is, and the Lodge Grounds' address is read from the venues page. Prices are free text; no availability."
+}

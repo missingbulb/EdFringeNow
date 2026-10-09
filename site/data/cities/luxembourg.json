@@ -1,0 +1,2351 @@
+{
+ "v": 1,
+ "city": {
+  "id": "luxembourg",
+  "name": "Luxembourg",
+  "country": "LU",
+  "lat": 49.6116,
+  "lng": 6.1319,
+  "timezone": "Europe/Luxembourg"
+ },
+ "places": [
+  {
+   "id": "osm:way/26424184",
+   "name": "Fort Thüngen",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 49.616486,
+   "lng": 6.139428,
+   "address": "5 Park Dräi Eechelen, 1499",
+   "website": null,
+   "wikidata": "Q585990",
+   "wikipedia": "en:Fort Thüngen",
+   "description": "fort within the larger Luxembourg Fortess",
+   "image": "Fuerte Thüngen, ciudad de Luxemburgo, Luxemburgo, 2023-12-16, DD 148.jpg",
+   "notability": 21,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/9653074",
+   "name": "Palais Grand Ducal",
+   "nameEn": "Grand Ducal Palace",
+   "kind": "landmark",
+   "lat": 49.610988,
+   "lng": 6.132913,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1205254",
+   "wikipedia": "lb:Groussherzogleche Palais",
+   "description": "official residence of the Grand Duke of Luxembourg",
+   "image": "Palacio Gran Ducal de Luxemburgo.jpg",
+   "notability": 21,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/48994767",
+   "name": "Musée national d'histore et d'art Luxembourg",
+   "nameEn": "National Museum of History and Art",
+   "kind": "museum",
+   "lat": 49.611717,
+   "lng": 6.13372,
+   "address": "1 Marché-aux-Poissons, 2345",
+   "website": "https://www.nationalmusee.lu/",
+   "wikidata": "Q2585886",
+   "wikipedia": "en:National Museum of History and Art",
+   "description": "museum in Luxembourg City, Luxembourg",
+   "image": "Luxembourg, MNAHA 2023 (101).jpg",
+   "notability": 16,
+   "highlight": true,
+   "openingHours": "Fr-We 10:00-18:00; Th 10:00-20:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "fr",
+      "sa",
+      "su",
+      "mo",
+      "tu",
+      "we"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "18:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "th"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "20:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/945070573",
+   "name": "Luxembourg American Cemetery and Memorial",
+   "nameEn": null,
+   "kind": "attraction",
+   "lat": 49.611728,
+   "lng": 6.185747,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1552790",
+   "wikipedia": "lb:Amerikaneschen Zaldotekierfecht zu Hamm",
+   "description": "American military cemetery",
+   "image": "Luxembourg American Cemetery.jpg",
+   "notability": 15,
+   "highlight": true,
+   "openingHours": "Mo-Su 09:00-17:00; Jan 1 off; Dec 25 off",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "01-01",
+       "01-01"
+      ]
+     ],
+     "days": null,
+     "spans": []
+    },
+    {
+     "dates": [
+      [
+       "12-25",
+       "12-25"
+      ]
+     ],
+     "days": null,
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:way/9042342",
+   "name": "MUDAM",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 49.616819,
+   "lng": 6.140025,
+   "address": "3 Park Dräi Eechelen, 1499",
+   "website": "https://www.mudam.lu/",
+   "wikidata": "Q1955758",
+   "wikipedia": "en:MUDAM",
+   "description": "museum of modern art in Luxembourg City, Luxembourg",
+   "image": "Mudam 04 jnl.jpg",
+   "notability": 15,
+   "highlight": true,
+   "openingHours": "Tu, Th-Su 10:00-18:00; We 10:00-21:00",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/245572376",
+   "name": "Monument du souvenir",
+   "nameEn": "Monument of Remembrance (Gëlle Fra)",
+   "kind": "landmark",
+   "lat": 49.609301,
+   "lng": 6.12937,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1102519",
+   "wikipedia": "lb:Gëlle Fra",
+   "description": "historic site in Luxembourg",
+   "image": "Gëlle Fra War Memorial Luxembourg 01 - Illustration with lacking Freedom of Panorama.jpg",
+   "notability": 14,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/510260718",
+   "name": "Luxembourg City: Old Quarters & Fortifications",
+   "nameEn": null,
+   "kind": "attraction",
+   "lat": 49.609744,
+   "lng": 6.135239,
+   "address": null,
+   "website": "https://luxembourg.public.lu/fr/visiter/que-faire/art-et-culture/forteresse",
+   "wikidata": "Q278386",
+   "wikipedia": "en:Fortress of Luxembourg",
+   "description": "fortifications in and around Luxembourg City, Luxembourg, largely dismantled in 1867",
+   "image": "Bockfelsen Luxemburg.jpg",
+   "notability": 10,
+   "highlight": true,
+   "openingHours": "24/7",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "00:00",
+       "24:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/48994765",
+   "name": "Lëtzebuerg City Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 49.609966,
+   "lng": 6.133629,
+   "address": "14 Rue du Saint-Esprit, 1475",
+   "website": "https://citymuseum.lu",
+   "wikidata": "Q2555232",
+   "wikipedia": "lb:Lëtzebuerg City Museum",
+   "description": "museum in Luxembourg City",
+   "image": "Historisches Museum der Stadt Luxemburg 8325-026.jpg",
+   "notability": 10,
+   "highlight": true,
+   "openingHours": "Tu, We, Fr-Su 10:00-18:00; Th 10:00-20:00",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:way/53087984",
+   "name": "Villa Vauban",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 49.613107,
+   "lng": 6.122488,
+   "address": "18 Avenue Émile Reuter, 2090",
+   "website": null,
+   "wikidata": "Q2223322",
+   "wikipedia": "en:Villa Vauban",
+   "description": "art museum in Luxembourg City",
+   "image": "Villa Vauban Luxembourg 01.jpg",
+   "notability": 10,
+   "highlight": true,
+   "openingHours": "We-Mo 10:00-18:00, Fr 10:00-21:00",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/621867608",
+   "name": "Bock",
+   "nameEn": "The Bock",
+   "kind": "viewpoint",
+   "lat": 49.611413,
+   "lng": 6.136201,
+   "address": null,
+   "website": null,
+   "wikidata": "Q2714250",
+   "wikipedia": "lb:Bockfiels",
+   "description": "promontory in Luxembourg City",
+   "image": "Luxembourg City Bock4 fromCorniche.jpg",
+   "notability": 9,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/33767420",
+   "name": "Musée national d'histoire naturelle",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 49.609699,
+   "lng": 6.135605,
+   "address": "25 Rue Munster, 2160",
+   "website": null,
+   "wikidata": "Q6974489",
+   "wikipedia": "en:National Museum of Natural History, Luxembourg",
+   "description": "natural history museum in Luxembourg City, Luxembourg",
+   "image": "MNHNL 01 Luxembourg.jpg",
+   "notability": 8,
+   "highlight": true,
+   "openingHours": "We-Su 10:00-18:00; Tu 10:00-20:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "18:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "tu"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "20:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/161863480",
+   "name": "Ambassade de Russie",
+   "nameEn": "Embassy of Russia",
+   "kind": "landmark",
+   "lat": 49.64337,
+   "lng": 6.13776,
+   "address": "116A Rue Cyprien Merjai, 2145",
+   "website": "https://ambruslu.mid.ru",
+   "wikidata": "Q5369844",
+   "wikipedia": "fr:Ambassade de Russie au Luxembourg",
+   "description": "diplomatic mission",
+   "image": "EmbassyRU LUX.jpg",
+   "notability": 7,
+   "highlight": true,
+   "openingHours": "Mo-Fr 08:30-12:30,14:00-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "08:30",
+       "12:30"
+      ],
+      [
+       "14:00",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/48995150",
+   "name": "Cercle municipal",
+   "nameEn": null,
+   "kind": "attraction",
+   "lat": 49.611365,
+   "lng": 6.130179,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1054819",
+   "wikipedia": "lb:Cercle municipal",
+   "description": "convention center",
+   "image": "Cercle municipal in Luxembourg City 02.jpg",
+   "notability": 6,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/107444901",
+   "name": "Château de Septfontaines",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 49.625718,
+   "lng": 6.105077,
+   "address": "326 Rue de Rollingergrund, 2441",
+   "website": "http://www.chateaudeseptfontaines.com/",
+   "wikidata": "Q2970684",
+   "wikipedia": "en:Château de Septfontaines",
+   "description": "Buildings and structures in Luxembourg City",
+   "image": "Septfontaines Rollingergrund.JPG",
+   "notability": 6,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3012367349",
+   "name": "Musée Dräi Eechelen",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 49.616395,
+   "lng": 6.139297,
+   "address": "5 Park Dräi Eechelen, 1499",
+   "website": "https://m3e.public.lu/fr.html",
+   "wikidata": "Q15107302",
+   "wikipedia": "lb:Musée Dräi Eechelen - forteresse, histoire, identités",
+   "description": "museum in the Kirchberg district of Luxembourg City",
+   "image": "Fort thüngen Dräi Eechelen 01.jpg",
+   "notability": 6,
+   "highlight": true,
+   "openingHours": "Tu,Th-Su,PH 10:00-18:00; We 10:00-20:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "18:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "we"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "20:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/122763202",
+   "name": "Parc municipal Edouard André",
+   "nameEn": "Edouard André Municipal Park",
+   "kind": "park",
+   "lat": 49.613336,
+   "lng": 6.12544,
+   "address": null,
+   "website": null,
+   "wikidata": "Q6936260",
+   "wikipedia": "en:Municipal Park (Luxembourg City)",
+   "description": "park in Luxembourg",
+   "image": "Kinnekswiss02.jpg",
+   "notability": 6,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4750603426",
+   "name": "Casino Luxembourg - Forum d'art contemporain",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 49.609782,
+   "lng": 6.127167,
+   "address": "41 Rue Notre-Dame, 2345",
+   "website": null,
+   "wikidata": "Q3019728",
+   "wikipedia": "en:Casino Luxembourg",
+   "description": "Contemporary art museum in Luxembourg",
+   "image": "Casino Luxembourg 2.jpg",
+   "notability": 5,
+   "highlight": true,
+   "openingHours": "Mo, We, Fr-Su 11:00-19:00; Th 11:00-21:00",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:way/1284253707",
+   "name": "Chapelle Saint-Quirin",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 49.605667,
+   "lng": 6.135101,
+   "address": null,
+   "website": null,
+   "wikidata": "Q13102879",
+   "wikipedia": "lb:Gräinskapell",
+   "description": null,
+   "image": "Greinskapell 01.jpg",
+   "notability": 5,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/7704516791",
+   "name": "Kaddish",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 49.608971,
+   "lng": 6.13173,
+   "address": null,
+   "website": null,
+   "wikidata": "Q55521088",
+   "wikipedia": null,
+   "description": "Holocaust memorial in Luxembourg",
+   "image": null,
+   "notability": 5,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/55432249",
+   "name": "Musée de Tramways et de Bus",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 49.599069,
+   "lng": 6.102746,
+   "address": "63 Rue de Bouillon, 1248",
+   "website": null,
+   "wikidata": "Q4306482",
+   "wikipedia": "fr:Musée des tramways et de bus de la ville de Luxembourg",
+   "description": null,
+   "image": "LuxembourgTramMuseum.JPG",
+   "notability": 5,
+   "highlight": true,
+   "openingHours": "Th 13:30-17:30; Sa-Su,PH 10:00-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "th"
+     ],
+     "spans": [
+      [
+       "13:30",
+       "17:30"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/164179103",
+   "name": "Schlass La Fontaine",
+   "nameEn": "\"La Fontaine\" Castle",
+   "kind": "landmark",
+   "lat": 49.615241,
+   "lng": 6.1443,
+   "address": null,
+   "website": null,
+   "wikidata": "Q13104967",
+   "wikipedia": "lb:Schlass La Fontaine",
+   "description": "Luxembourgish castle",
+   "image": "SchlossLaFontaine16Jh.jpg",
+   "notability": 5,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4315424507",
+   "name": "Panorama-Aufzug Pfaffenthal",
+   "nameEn": "Pfaffenthal panorama elevator",
+   "kind": "viewpoint",
+   "lat": 49.615592,
+   "lng": 6.130647,
+   "address": null,
+   "website": null,
+   "wikidata": "Q25583505",
+   "wikipedia": "en:Pfaffenthal Panoramic Elevator",
+   "description": "public elevator in Luxembourg City, Luxembourg",
+   "image": "Lift Pafendall-Uewerstad 3017-04.jpg",
+   "notability": 4,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/9653953",
+   "name": "Parc de Merl",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 49.606034,
+   "lng": 6.112186,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7136378",
+   "wikipedia": "en:Parc Merl",
+   "description": "urban park in Luxembourg City",
+   "image": "Luxemb City Parc de Merl 01.jpg",
+   "notability": 4,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/1966583",
+   "name": "Postgebai Stad Lëtzebuerg",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 49.611038,
+   "lng": 6.127467,
+   "address": null,
+   "website": "https://hoteldespostes.lu/",
+   "wikidata": "Q58484385",
+   "wikipedia": "lb:Postgebai Stad Lëtzebuerg",
+   "description": "building in Luxembourg",
+   "image": "Luxembourg, Hôtel des Postes 2020 (101).jpg",
+   "notability": 3,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/370138978",
+   "name": "Grande-Duchesse Charlotte",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 49.609847,
+   "lng": 6.132449,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1187974",
+   "wikipedia": "lb:Groussherzogin-Charlotte-Monument (Stad Lëtzebuerg)",
+   "description": "monument",
+   "image": null,
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/647570347",
+   "name": "Edmond de la Fontaine & Michel Lentz",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 49.611289,
+   "lng": 6.128603,
+   "address": null,
+   "website": null,
+   "wikidata": "Q16763432",
+   "wikipedia": null,
+   "description": "monument in Luxembourg, Luxembourg",
+   "image": "Luxembourg, Dicks-Lentz-Monument (1).jpg",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/219168168",
+   "name": "Monument Robert Schuman",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 49.617173,
+   "lng": 6.129065,
+   "address": null,
+   "website": null,
+   "wikidata": "Q13104803",
+   "wikipedia": "lb:Robert-Schuman Monument",
+   "description": "monument in Luxembourg, Luxembourg",
+   "image": null,
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/847566789",
+   "name": "Pierre dite de Goethe",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 49.611601,
+   "lng": 6.135508,
+   "address": null,
+   "website": null,
+   "wikidata": "Q81695322",
+   "wikipedia": null,
+   "description": null,
+   "image": "Luxembourg-Bock, plaque commémorative en mémoire de J.W. von Goethe (102).jpg",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/163103029",
+   "name": "Trois Tours",
+   "nameEn": null,
+   "kind": "attraction",
+   "lat": 49.612531,
+   "lng": 6.133358,
+   "address": null,
+   "website": null,
+   "wikidata": "Q13102363",
+   "wikipedia": "lb:Dräi Tierm",
+   "description": null,
+   "image": "Luxembourg, Dräi Tierm (02).jpg",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/12586189",
+   "name": "Bastion du fort Lambert",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 49.610001,
+   "lng": 6.123456,
+   "address": null,
+   "website": null,
+   "wikidata": "Q28227879",
+   "wikipedia": null,
+   "description": "part of the fortress of Luxembourg",
+   "image": "Luxembourg, parc Edmond Klein(105).jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/546346007",
+   "name": "Dent Creuse",
+   "nameEn": null,
+   "kind": "attraction",
+   "lat": 49.612018,
+   "lng": 6.137665,
+   "address": null,
+   "website": null,
+   "wikidata": "Q16763718",
+   "wikipedia": "lb:Huelen Zant",
+   "description": "Ruins in Luxemburg",
+   "image": "Huelen Zant tower, Luxembourg City.JPG",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2049071241",
+   "name": "Fort Dumoulin",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 49.613166,
+   "lng": 6.150797,
+   "address": null,
+   "website": null,
+   "wikidata": "Q13102628",
+   "wikipedia": "lb:Fort Dumoulin",
+   "description": null,
+   "image": "Fort-Dumoulin-Enveloppe.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/52345116",
+   "name": "Fort Niedergrünewald",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 49.616302,
+   "lng": 6.133855,
+   "address": null,
+   "website": null,
+   "wikidata": "Q13102621",
+   "wikipedia": "lb:Fort Niedergrünewald",
+   "description": null,
+   "image": "Fort Niedergrünewald pic1.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5459427573",
+   "name": "Fort Olizy",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 49.618734,
+   "lng": 6.136778,
+   "address": null,
+   "website": null,
+   "wikidata": "Q13102620",
+   "wikipedia": "lb:Fort Olizy",
+   "description": null,
+   "image": "Luxembourg, accès casemates Fort Olizy (1).jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5459427547",
+   "name": "Fort Parkhöhe",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 49.616795,
+   "lng": 6.146439,
+   "address": null,
+   "website": null,
+   "wikidata": "Q13102619",
+   "wikipedia": "lb:Fort Parkhöhe",
+   "description": null,
+   "image": "Luxembourg, Seminairesbierg (105).jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5459427556",
+   "name": "Fort Rheinsheim",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 49.60693,
+   "lng": 6.121804,
+   "address": null,
+   "website": null,
+   "wikidata": "Q25583742",
+   "wikipedia": "lb:Fort Rheinsheim",
+   "description": "fort in Luxembourg",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/94661982",
+   "name": "Fort Rubamprez",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 49.610606,
+   "lng": 6.143118,
+   "address": null,
+   "website": null,
+   "wikidata": "Q13102623",
+   "wikipedia": "lb:Fort Rubamprez",
+   "description": null,
+   "image": "Luxembourg City Gun powder magazine Rubamprez 2013-08 --2.JPG",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/94661928",
+   "name": "Fort Rumigny",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 49.611154,
+   "lng": 6.145647,
+   "address": null,
+   "website": null,
+   "wikidata": "Q13102622",
+   "wikipedia": "lb:Fort Rumigny",
+   "description": null,
+   "image": "Fort-Rumigny-Front.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6869893409",
+   "name": "John of Bohemia plaque",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 49.611782,
+   "lng": 6.137252,
+   "address": null,
+   "website": null,
+   "wikidata": "Q81655252",
+   "wikipedia": null,
+   "description": null,
+   "image": "Luxembourg-Bock, plaque commémorative en mémoire de Jean l Aveugle.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2308226011",
+   "name": "Joseph Kutter",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 49.614982,
+   "lng": 6.128279,
+   "address": null,
+   "website": null,
+   "wikidata": "Q16763779",
+   "wikipedia": "lb:Joseph-Kutter-Stèle",
+   "description": null,
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2269863399",
+   "name": "Mahatma Gandhi",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 49.610217,
+   "lng": 6.121809,
+   "address": null,
+   "website": null,
+   "wikidata": "Q16762811",
+   "wikipedia": "lb:Buste vum Mahatma Gandhi am Stadpark zu Lëtzebuerg",
+   "description": "monument in Luxembourg, Luxembourg",
+   "image": "Buste vum Mahatma Gandhi am Stadpark zu Lëtzebuerg.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/651352911",
+   "name": "Monument National de la Solidarité Luxembourgeoise",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 49.60704,
+   "lng": 6.13408,
+   "address": null,
+   "website": null,
+   "wikidata": "Q13104205",
+   "wikipedia": null,
+   "description": "monument in Luxembourg, Luxembourg",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/653147723",
+   "name": "Monument national de la résistance et de la déportation",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 49.615131,
+   "lng": 6.119565,
+   "address": null,
+   "website": null,
+   "wikidata": "Q13103031",
+   "wikipedia": "lb:Hinzerter Kräiz",
+   "description": null,
+   "image": "Journée de la commémoration nationale 2016-301.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/1303641442",
+   "name": "Monuments aux morts 1939-1945",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 49.600264,
+   "lng": 6.118411,
+   "address": null,
+   "website": null,
+   "wikidata": "Q13104197",
+   "wikipedia": "lb:Monument aux morts Hollerech",
+   "description": "monument in Luxembourg, Luxembourg",
+   "image": "Monument aux morts, Hollerich.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/1428388942",
+   "name": "Mémorial de la déportation",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 49.595399,
+   "lng": 6.12119,
+   "address": null,
+   "website": null,
+   "wikidata": "Q13104204",
+   "wikipedia": "lb:Monument de la déportation civile et militaire",
+   "description": "monument in Luxembourg, Luxembourg",
+   "image": "HollerechDeportatiounsmemorial02.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/526461841",
+   "name": "Parc Heintz",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 49.60268,
+   "lng": 6.121767,
+   "address": null,
+   "website": null,
+   "wikidata": "Q13104473",
+   "wikipedia": "lb:Parc Heintz (Escher Strooss)",
+   "description": "park in Luxembourg",
+   "image": "Luxembourg, route d'Esch, Parc Heintz (101).jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/40525702",
+   "name": "Parc Tony Neuman",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 49.620706,
+   "lng": 6.110852,
+   "address": null,
+   "website": null,
+   "wikidata": "Q13104470",
+   "wikipedia": "lb:Parc Tony-Neuman",
+   "description": null,
+   "image": "Cornus mas Parc Neuman Luxembourg 01.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/50041968",
+   "name": "Place de Gand",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 49.608086,
+   "lng": 6.106695,
+   "address": null,
+   "website": null,
+   "wikidata": "Q25583805",
+   "wikipedia": "lb:Place de Gand",
+   "description": null,
+   "image": "Luxembourg, place de Gand (1).jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/647495779",
+   "name": "Pétrusse Casemates",
+   "nameEn": null,
+   "kind": "attraction",
+   "lat": 49.609429,
+   "lng": 6.129932,
+   "address": null,
+   "website": null,
+   "wikidata": "Q13101673",
+   "wikipedia": "lb:Bastioun Beck",
+   "description": null,
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5896033554",
+   "name": "Victor Hugo",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 49.610688,
+   "lng": 6.12379,
+   "address": null,
+   "website": null,
+   "wikidata": "Q13101851",
+   "wikipedia": "lb:Buste vum Victor Hugo am Stadpark zu Lëtzebuerg",
+   "description": null,
+   "image": "Luxembourg, parc Louvigny (104).jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/20986707",
+   "name": "Écluse du Grund",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 49.607783,
+   "lng": 6.136815,
+   "address": null,
+   "website": null,
+   "wikidata": "Q16763637",
+   "wikipedia": null,
+   "description": "part of the Luxembourg Fortress",
+   "image": "Luxembourg, Écluse du Grund, rive gauche.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13624818349",
+   "name": "1:1",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 49.600452,
+   "lng": 6.128882,
+   "address": "31 Rue de Strasbourg, 2561",
+   "website": "https://gallery1to1.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Sa 13:00-18:00, open \"by appointment\"",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/8080240552",
+   "name": "Casemates du Bock",
+   "nameEn": "Bock Casemates",
+   "kind": "museum",
+   "lat": 49.611663,
+   "lng": 6.136689,
+   "address": null,
+   "website": "https://www.luxembourg-city.com/en/tours-activities/underground/bock-casemates",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Su, PH 09:45-17:00; Jan 1, Dec 24 off",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:way/557327264",
+   "name": "Casino Luxembourg",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 49.609655,
+   "lng": 6.127153,
+   "address": "41 Rue Notre-Dame, 2345",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13395436992",
+   "name": "ClausenArt",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 49.6148,
+   "lng": 6.146061,
+   "address": "32 Rue de Clausen, 1342",
+   "website": "https://clausenart.lu/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6845177495",
+   "name": "Deportation Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 49.595394,
+   "lng": 6.120819,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/12148492456",
+   "name": "Europa Experience Luxembourg",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 49.621385,
+   "lng": 6.149082,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Sa 10:00-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/1591592081",
+   "name": "Fausse braie Beck-Jost",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 49.609253,
+   "lng": 6.128092,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/164340780",
+   "name": "Fondation de l'Architecture et de l'ingénierie Luxembourg",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 49.597556,
+   "lng": 6.124658,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5459427569",
+   "name": "Fort Charles",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 49.617218,
+   "lng": 6.127743,
+   "address": null,
+   "website": null,
+   "wikidata": "Q84089576",
+   "wikipedia": null,
+   "description": "part of the Luxembourg Fortress",
+   "image": "Michel Engels - 21 Le fort Charles.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5459427565",
+   "name": "Fort Louvigny",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 49.611396,
+   "lng": 6.122931,
+   "address": null,
+   "website": null,
+   "wikidata": "Q83816364",
+   "wikipedia": null,
+   "description": "part of the Luxembourg Fortress",
+   "image": "Fort Louvigny Luxembourg City 2012-04.JPG",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/49908579",
+   "name": "Fort Obergrünewald",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 49.615351,
+   "lng": 6.137615,
+   "address": null,
+   "website": null,
+   "wikidata": "Q83788027",
+   "wikipedia": null,
+   "description": "part of the Luxembourg Fortress",
+   "image": "Luxembourg Fort Obergruental 14.JPG",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5459427549",
+   "name": "Fort Wallis",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 49.604048,
+   "lng": 6.134458,
+   "address": null,
+   "website": null,
+   "wikidata": "Q84089625",
+   "wikipedia": null,
+   "description": "part of the Luxembourg Fortress",
+   "image": "Fort Wallis casemate entrance Luxembourg City 2012-04.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/12864916169",
+   "name": "Galerie K",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 49.612552,
+   "lng": 6.130556,
+   "address": null,
+   "website": "https://www.galerie-k.lu/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Fr, Sa 11:00-18:00",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/7067936475",
+   "name": "Galerie d’art contemporain ‘Am Tunnel’",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 49.605474,
+   "lng": 6.127811,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/8841437139",
+   "name": "Glacismaart",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 49.617402,
+   "lng": 6.125099,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Sep-Jul Su[3] 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/765763891",
+   "name": "Hammer Dällchen",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 49.60868,
+   "lng": 6.151538,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/170042243",
+   "name": "In Joy fine art",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 49.613152,
+   "lng": 6.128547,
+   "address": "26 Rue Beaumont, 1219",
+   "website": "https://www.injoygallery.com/en",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-We \"Sur Rendez-Vous\", Th-Sa 10:30-18:00",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/1820831951",
+   "name": "Marché hebdomadaire",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 49.603511,
+   "lng": 6.130748,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Th 07:30-14:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "th"
+     ],
+     "spans": [
+      [
+       "07:30",
+       "14:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/5574033228",
+   "name": "Marché hebdomadaire",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 49.59692,
+   "lng": 6.137902,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu 16:00-19:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu"
+     ],
+     "spans": [
+      [
+       "16:00",
+       "19:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/7203688295",
+   "name": "Musee de la Banque",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 49.607289,
+   "lng": 6.128535,
+   "address": "1 Place de Metz, 1930",
+   "website": "https://www.bcee.lu/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Fr 09:00-17:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "17:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/3397343495",
+   "name": "Musée de la Police Grand-Ducale",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 49.60612,
+   "lng": 6.139211,
+   "address": "21A",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/512532696",
+   "name": "Parc Mansfeld",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 49.614677,
+   "lng": 6.144329,
+   "address": null,
+   "website": null,
+   "wikidata": "Q104805127",
+   "wikipedia": null,
+   "description": "park in Clausen, Luxembourg",
+   "image": "Entrance Park Mansfeld Luxembourg Grund 13-01-2020.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": "Mar 01-Mar 31 07:30-20:00, Apr 01-Sep 30 07:00-22:00, Oct 01-Oct 31 07:30-20:00, Nov 10-Feb 28 07:30-18:00",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/1591592059",
+   "name": "Priedegtstull",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 49.608784,
+   "lng": 6.128234,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2331847204",
+   "name": "Ratskeller",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 49.611264,
+   "lng": 6.130388,
+   "address": null,
+   "website": "https://cerclecite.lu/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Su 11:00-19:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "19:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/1591592011",
+   "name": "Ravelin Pâté",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 49.608956,
+   "lng": 6.128173,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/8237181599",
+   "name": "Stater Maart",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 49.610959,
+   "lng": 6.126716,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "We 07:30-14:00; Sa 07:30-14:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we"
+     ],
+     "spans": [
+      [
+       "07:30",
+       "14:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "07:30",
+       "14:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/13281370048",
+   "name": "YellowKorner",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 49.611645,
+   "lng": 6.127412,
+   "address": "6 Rue Beck, 1222",
+   "website": "https://www.yellowkorner.com",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo off; Tu-Fr 11:00-18:00; Sa 10:00-18:00; Su off; PH off",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo"
+     ],
+     "spans": []
+    },
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "18:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "18:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": []
+    }
+   ]
+  }
+ ],
+ "near": "venues",
+ "stay": [
+  {
+   "id": "osm:way/45245290",
+   "name": "DoubleTree by Hilton Hotel Luxembourg",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": 4.0,
+   "cuisine": null,
+   "lat": 49.640217,
+   "lng": 6.147727,
+   "address": "12 Rue Jean Engling, 1466",
+   "website": "https://www.hilton.com/en/hotels/lxmhidi-doubletree-luxembourg/",
+   "wikidata": "Q5764652",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 446,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/32394372",
+   "name": "Parc Hotel Alvisse",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": 4.0,
+   "cuisine": null,
+   "lat": 49.639618,
+   "lng": 6.154271,
+   "address": "120 Route d'Echternach, 1453",
+   "website": "https://alvisse-parc-hotel-luxembourg.hotel-ds.com/en/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 34,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/8088918336",
+   "name": "Hostellerie du Grünewald",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 49.633217,
+   "lng": 6.138387,
+   "address": "10-14 Route d'Echternach, 1453",
+   "website": "https://hdg.lu/",
+   "wikidata": "Q112015653",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 1314,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:way/162294038",
+   "name": "Hôtel Le Lavandin",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 49.627151,
+   "lng": 6.146918,
+   "address": "23 Rue de la Lavande, 1923",
+   "website": "http://www.lelavandin.lu",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 1462,
+   "venuesNear": 0
+  }
+ ],
+ "eat": [
+  {
+   "id": "osm:way/696724292",
+   "name": "La Veranda",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": null,
+   "lat": 49.639893,
+   "lng": 6.154139,
+   "address": null,
+   "website": "https://www.parc-hotel.lu/en/restaurant-la-veranda/",
+   "wikidata": null,
+   "openingHours": "Mo-Su,PH 12:00-14:00,19:00-22:30",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "14:00"
+      ],
+      [
+       "19:00",
+       "22:30"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 47,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/1219808181",
+   "name": "Brasserie Kirchberg",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "regional"
+   ],
+   "lat": 49.62916,
+   "lng": 6.146698,
+   "address": "193 Rue de Kirchberg, 1858",
+   "website": "http://www.brasseriekirchberg.lu/",
+   "wikidata": null,
+   "openingHours": "Mo-Fr 10:00-24:00,00:00-01:00; PH closed",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "24:00"
+      ],
+      [
+       "00:00",
+       "01:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 1261,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/12631409201",
+   "name": "Shirafù Kirchberg",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "japanese",
+    "sushi"
+   ],
+   "lat": 49.634037,
+   "lng": 6.169566,
+   "address": null,
+   "website": "https://shirafu-auchan.lu/",
+   "wikidata": null,
+   "openingHours": "Mo-Sa 11:30-21:30",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "21:30"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 1287,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/9580209751",
+   "name": "Beirão",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "portuguese"
+   ],
+   "lat": 49.634528,
+   "lng": 6.137575,
+   "address": null,
+   "website": "http://restaurantbeirao.lu/",
+   "wikidata": null,
+   "openingHours": "Mo-Su 11:30-14:00, 18:30-22:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "14:00"
+      ],
+      [
+       "18:30",
+       "22:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 1295,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:way/162076983",
+   "name": "Akami",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "asian"
+   ],
+   "lat": 49.633491,
+   "lng": 6.138026,
+   "address": "11 Route d'Echternach, 1453",
+   "website": "https://akami.lu",
+   "wikidata": null,
+   "openingHours": "Tu-Su 11:00-14:30, 17:30-22:30",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "14:30"
+      ],
+      [
+       "17:30",
+       "22:30"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 1320,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/2060843258",
+   "name": "Ela",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "greek"
+   ],
+   "lat": 49.628654,
+   "lng": 6.164811,
+   "address": "37B Avenue John F. Kennedy, 1855",
+   "website": "https://www.ela.lu/en/",
+   "wikidata": null,
+   "openingHours": "Mo-Th 11:30-14:00,18:00-24:00; Fr-Sa 11:30-14:00,18:00-01:00; Su 11:30-21:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "14:00"
+      ],
+      [
+       "18:00",
+       "24:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "14:00"
+      ],
+      [
+       "18:00",
+       "01:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "21:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 1444,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/6435513240",
+   "name": "Qosqo",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "latin_american",
+    "grill",
+    "burger",
+    "tapas"
+   ],
+   "lat": 49.633216,
+   "lng": 6.17196,
+   "address": "45 Avenue John F. Kennedy, 1855",
+   "website": "https://qosqo.lu/",
+   "wikidata": null,
+   "openingHours": "Mo-Th 11:30-21:30; Fr-Sa 11:30-22:30; Su 11:30-21:30",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "21:30"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "22:30"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "21:30"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 1483,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/621666917",
+   "name": "Beefbar",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "steak_house"
+   ],
+   "lat": 49.634081,
+   "lng": 6.169666,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": "Mo-Sa 12:00-14:30, Mo-Th 20:00-23:00, Fr,Sa 20:00-24:00",
+   "hours": null,
+   "toVenueM": 1291,
+   "venuesNear": 0
+  }
+ ],
+ "trips": [
+  {
+   "name": "Arlon",
+   "page": "Arlon",
+   "url": "https://en.wikivoyage.org/wiki/Arlon",
+   "description": "(Belgium)",
+   "lat": 49.683611,
+   "lng": 5.815833,
+   "km": 24
+  },
+  {
+   "name": "Mullerthal",
+   "page": "Mullerthal",
+   "url": "https://en.wikivoyage.org/wiki/Mullerthal",
+   "description": null,
+   "lat": 49.795,
+   "lng": 6.406,
+   "km": 28
+  },
+  {
+   "name": "Echternach",
+   "page": "Echternach",
+   "url": "https://en.wikivoyage.org/wiki/Echternach",
+   "description": null,
+   "lat": 49.8117,
+   "lng": 6.4217,
+   "km": 30
+  },
+  {
+   "name": "Vianden",
+   "page": "Vianden",
+   "url": "https://en.wikivoyage.org/wiki/Vianden",
+   "description": null,
+   "lat": 49.9333,
+   "lng": 6.2167,
+   "km": 36
+  },
+  {
+   "name": "Trier",
+   "page": "Trier",
+   "url": "https://en.wikivoyage.org/wiki/Trier",
+   "description": "(Germany)",
+   "lat": 49.756667,
+   "lng": 6.641389,
+   "km": 40
+  },
+  {
+   "name": "Metz",
+   "page": "Metz",
+   "url": "https://en.wikivoyage.org/wiki/Metz",
+   "description": "(France) - By train is €16.50.",
+   "lat": 49.120278,
+   "lng": 6.177778,
+   "km": 55
+  }
+ ],
+ "guide": {
+  "page": "Luxembourg (city)",
+  "url": "https://en.wikivoyage.org/wiki/Luxembourg_%28city%29"
+ },
+ "licences": {
+  "osm": {
+   "name": "ODbL",
+   "url": "https://opendatacommons.org/licenses/odbl/",
+   "attribution": "© OpenStreetMap contributors",
+   "credit": "https://www.openstreetmap.org/copyright"
+  },
+  "wikidata": {
+   "name": "CC0",
+   "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "attribution": "Wikidata"
+  },
+  "wikivoyage": {
+   "name": "CC BY-SA 4.0",
+   "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "attribution": "Wikivoyage contributors"
+  }
+ },
+ "provenance": {
+  "osm": {
+   "fetchedAt": "2026-10-02T19:58:46Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikidata": {
+   "fetchedAt": "2026-10-02T19:59:01Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "amenities": {
+   "fetchedAt": "2026-10-02T20:00:16Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikivoyage": {
+   "fetchedAt": "2026-10-02T20:00:25Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  }
+ }
+}

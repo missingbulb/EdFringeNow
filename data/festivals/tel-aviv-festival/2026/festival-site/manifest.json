@@ -1,0 +1,15 @@
+{
+ "festival": "tel-aviv-festival",
+ "edition": "2026",
+ "source": "festival-site",
+ "fetchedAt": "2026-09-27T09:21:05Z",
+ "fetcher": "scraper/festivals/tel_aviv_festival/sources/festival-site/fetch.py",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://telavivfestival.co.il/program"
+ ],
+ "files": [
+  "programme.json"
+ ],
+ "notes": "The page's settings, days and shows as its RSC payload carries them; each day gains isoDate."
+}

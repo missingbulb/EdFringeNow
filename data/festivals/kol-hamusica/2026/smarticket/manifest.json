@@ -1,0 +1,16 @@
+{
+ "festival": "kol-hamusica",
+ "edition": "2026",
+ "source": "smarticket",
+ "fetchedAt": "2026-10-02T18:12:25Z",
+ "fetcher": "scraper/festivals/kol_hamusica/sources/smarticket/fetch.py",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://galil-elion.smarticket.co.il/%D7%A4%D7%A1%D7%98%D7%99%D7%91%D7%9C_%D7%A7%D7%95%D7%9C_%D7%94%D7%9E%D7%95%D7%A1%D7%99%D7%A7%D7%94",
+  "https://galil-elion.smarticket.co.il/<show slug>/?id=<performance id>"
+ ],
+ "files": [
+  "programme.json"
+ ],
+ "notes": "The listing's performance cards, then each performance's own page: its JSON-LD Event (start, place, running time, price on sale, availability, picture) and description (scraper/festivals/platforms/smarticket.py)."
+}

@@ -1,0 +1,982 @@
+{
+ "v": 1,
+ "festival": {
+  "id": "viet-film-fest",
+  "edition": "2026",
+  "ordinal": null,
+  "name": "Viet Film Fest",
+  "nameLocal": null,
+  "city": "Santa Ana",
+  "country": "US",
+  "lat": 33.7455,
+  "lng": -117.8677,
+  "timezone": "America/Los_Angeles",
+  "lang": "en",
+  "dir": "ltr",
+  "kind": "film",
+  "defaultGenre": "film",
+  "site": "https://www.vietfilmfest.com",
+  "firstDate": "2026-10-08",
+  "lastDate": "2026-10-23",
+  "ticketing": {
+   "model": "central-box-office",
+   "url": "https://vietfilmfest2026.eventive.org",
+   "notes": "Sold on vietfilmfest2026.eventive.org, one ticket page per screening.",
+   "currency": "USD"
+  }
+ },
+ "categories": [
+  {
+   "id": "6a29d6aa4de75c8c0f7890c0",
+   "name": "Special Events"
+  },
+  {
+   "id": "6a29d6aa4de75c8c0f7890c3",
+   "name": "Special Screenings"
+  }
+ ],
+ "venues": [
+  {
+   "id": "6a29d6aa4de75c8c0f7890b2",
+   "name": "Frida Cinema - Theater 1",
+   "address": "305 E 4th St #100, Santa Ana, CA 92701",
+   "lat": 33.748114,
+   "lng": -117.865252,
+   "online": false,
+   "capacity": 205,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6a29d6aa4de75c8c0f7890b3",
+   "name": "Frida Cinema - Theater 2",
+   "address": "305 E 4th St #100, Santa Ana, CA 92701",
+   "lat": 33.748114,
+   "lng": -117.865252,
+   "online": false,
+   "capacity": 215,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6a29d6aa4de75c8c0f7890b5",
+   "name": "Bowers Museum",
+   "address": "2002 N Main St, Santa Ana, CA 92706, United States",
+   "lat": 33.763371,
+   "lng": -117.868229,
+   "online": false,
+   "capacity": 300,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  }
+ ],
+ "events": [
+  {
+   "id": "films-6a8bd1f216df6fa26b2356a9-6a8bd8dd32f3db16a2ce279f-6a8e708b09b1fbd1a0057516-6a8e7972e7c329b6363acc70-6a8fcb0d62cb25450b4357b0-6a8fcb0d62cb25450b4357c0",
+   "title": "When You See Me (HS Students' Day)",
+   "titleLocal": null,
+   "url": "https://vietfilmfest2026.eventive.org/schedule/6a911165e3f794ecd038b417",
+   "genre": "film",
+   "categories": [],
+   "blurb": "This short film set contains mature themes and strong language. Viewer discretion is advised.\n\nThis short film set – screening for free to high school students during VFF’s opening in-person hours – explores the often incomplete ways in which we view each other, featuring characters whose views towards others are challenged and reformed.\n\nThe opener, Wedding Flowers, tracks a mother-daughter relationship as the proximity of returning home forces a reevaluation of resentment, loneliness, and love. No Barriers follows with the story of a hard-of-hearing girl who decides to learn American Sign Language as an adult after years of isolation from the hearing world. Together, these two films show a paradox of space – exemplifying how closeness can force new understanding of others, or how distance can force new understanding of the self.\n\nEntering the set’s second half, Dasher depicts a delivery driver on Christmas Eve as a former high school classmate spontaneously joins for the deliveries. Their initial impressions of each other are shallow and droll, but eventually they find unexpected connection in dreams of uncertain futures. The penultimate film, Sea Song, takes a twist on this idea of challenging perspectives as it follows a group of South Vietnamese Naval officers through what may be their last reunion. Through its unique lens of a scarcely-covered topic, the viewers ultimately receive the changed perspective through the veterans’ joy – nevertheless shaped out of trauma.\n\nIn conclusion, Forever is a Delicate Thing features a young boy and his grandfather faced with losing custody as the sudden change forces what may be a final goodbye.\n\nBy Tai Nguyen",
+   "durationMin": 91,
+   "imageUrl": "https://static-a.eventive.org/7648661e7f7f3a9a9b6087537cf99fab.jpg"
+  },
+  {
+   "id": "films-6a8a4661a63dc2fdc2454da7",
+   "title": "A Little Dream of Me",
+   "titleLocal": null,
+   "url": "https://vietfilmfest2026.eventive.org/films/6a8a4661a63dc2fdc2454da7",
+   "genre": "film",
+   "categories": [
+    "6a29d6aa4de75c8c0f7890c3"
+   ],
+   "blurb": "An emotional journey of young people searching for the meaning of their dreams, only to discover that adulthood asks a deeper question: who they want to pursue those dreams with.",
+   "durationMin": 137,
+   "imageUrl": "https://static-a.eventive.org/1787970802863temp-1787970802717-still.jpg"
+  },
+  {
+   "id": "films-6a8e75fee54f22e1d41da227-6a8fcb0d62cb25450b4357b2-6a8fcb0d62cb25450b4357b6-6a8fcb0d62cb25450b4357b8-6a8fcb0d62cb25450b4357cb-6a8fcb0d62cb25450b4357d9",
+   "title": "Practice Makes Imperfect",
+   "titleLocal": null,
+   "url": "https://vietfilmfest2026.eventive.org/schedule/6a911165e3f794ecd038b42b",
+   "genre": "film",
+   "categories": [],
+   "blurb": "This short film set contains mature themes and some sexuality. Viewer discretion is advised.\n\nTo put art into the world is to find oneself. Art is something one must keep striving towards. The shorts in this series are a kaleidoscope of the creative processes and how informative they are to one’s relationship with themselves.\n\nUp first is Lindsay Nyman’s They Call Me the Tattoo Witch as it reveals how healing and fulfilling art can be in making art for others, for community through tattoos. Continuing this illustrative session is Goodbye and Hello to My Dad from Kathleen Hoang, who explores art and mixed media as a way to remember and love those dear to us. Then, Zen’s Echoes of the Phoenix concerns itself with one’s inhibitions about their place in the world along with keeping alive the practice of folk opera. Similarly, Unperforming by Cristian Trout navigates the experience of queer identity through social media and dance.\n\nAs our series adds its final touches to the canvas, Quan Luong’s Portraits is a portrait (no pun intended) on the life of a sketch artist, reiterating the value of art through human connection, especially during a time in which the integrity of art is being challenged by technology (Luong is a past Spotlight Award co-winner for VFF 2022’s Container). To conclude, Entropy grapples with staying true to oneself in the face of one’s art and culture being dismissed and disregarded.\n\n“Practice Makes Imperfect” is an open discussion on what it means to commit oneself to the arts despite a myriad of social, cultural, and personal challenges.\n\nBy Katy Nguyen",
+   "durationMin": 91,
+   "imageUrl": "https://static-a.eventive.org/6c99f316ffc38cd72696cf28f97e51a2.jpg"
+  },
+  {
+   "id": "films-6a8fcb0d62cb25450b4357c5-6a8fcb0d62cb25450b4357c7-6a922c914f1207429ab6e308",
+   "title": "Made in Germany",
+   "titleLocal": null,
+   "url": "https://vietfilmfest2026.eventive.org/schedule/6a9263f7aa7b3d2c00ed5679",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Made in Germany: Forced home to her reserved father's Vietnamese restaurant in East Berlin, a young woman finds that her limited Vietnamese and his limited German leave little room to meet in the middle.",
+   "durationMin": 64,
+   "imageUrl": "https://static-a.eventive.org/1787965106254temp-1787965106122-still.jpg"
+  },
+  {
+   "id": "films-6a8fcb0d62cb25450b4357d7",
+   "title": "Unerasable! (Diary of a Hidden Fate)",
+   "titleLocal": null,
+   "url": "https://vietfilmfest2026.eventive.org/films/6a8fcb0d62cb25450b4357d7",
+   "genre": "film",
+   "categories": [],
+   "blurb": "The life story of a filmmaker opens window onto state violence, in a film that reimagines cinema as a fragile site of exile, survival, memory and resistance.",
+   "durationMin": 97,
+   "imageUrl": "https://static-a.eventive.org/1787964392274temp-1787964392098-still.jpg"
+  },
+  {
+   "id": "films-6a8fcb0d62cb25450b4357ac",
+   "title": "Amongst the Disquiet",
+   "titleLocal": null,
+   "url": "https://vietfilmfest2026.eventive.org/films/6a8fcb0d62cb25450b4357ac",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Made in collaboration with THAO and Marion Hoàng Ngọc Hill, Nguyen's film Amongst the Disquiet, 2024, speaks to the ties that bind within a multigenerational Vietnamese family based in New Orleans. Through interwoven vignettes told through dialogue and songs, the film winds through the challenges, longings, and affections between family members.",
+   "durationMin": 52,
+   "imageUrl": "https://static-a.eventive.org/1787962530107temp-1787962529858-still.jpg"
+  },
+  {
+   "id": "films-6a8bd29d20263b1e457de7af-6a8bd4c52386a7cb4dd334b7-6a8bd8241f936b88cb68d718-6a8e86d8cf98bb1603a47828-6a8fcb0d62cb25450b4357b8-6a8fcb0d62cb25450b4357be",
+   "title": "Don't Forget to Remember Me",
+   "titleLocal": null,
+   "url": "https://vietfilmfest2026.eventive.org/schedule/6a911165e3f794ecd038b430",
+   "genre": "film",
+   "categories": [],
+   "blurb": "This short film set contains strong language and thematic material including death, grief, and suicide. Viewer discretion is advised.\n\nThe proof of a life lived in full or continuing to do so lies within the memory and act of recollection. The moments we get to sit down and reflect on ourselves can be specific and arbitrary all at once. The more one reminisces, the more they realize how these memories shaped and informed who they are, their personhood. Still, what’s in a memory? What is worth remembering? How and why should one remember? These are the questions in which this series of short films aims to answer.\n\nTo begin our journey down memory lane, Grandma’s Four Color Cards offers us insight on what it means to remember someone and take care of them as the years go by. As we go along, My Sister’s Everlasting Garden and Happy Thoughts reflect and ruminate on life and death, on the present and the future as the heart and mind grow weary of things they cannot control. To transition into the second half of this set, with a more experimental approach, Goodbye and Hello to My Dad is a remembrance and lingering of a loved one. Finally, 100 Days and Huong invite us to consider the efforts of grief and memory as they work in tandem to bring us closer to each other better than before.\n\n“Don’t Forget to Remember Me” shares a deeply personal and thoughtful perspective on why we should remember to reconcile with the past, embrace the present, and look forward to the future.\n\nBy Katy Nguyen",
+   "durationMin": 93,
+   "imageUrl": "https://static-a.eventive.org/1787973039459temp-1787973039140-still.jpg"
+  },
+  {
+   "id": "films-6a8bd1011e3947af36bcd2d4-6a92139a30ed6b28f0e1bc7a",
+   "title": "Hair, Paper, Water...",
+   "titleLocal": null,
+   "url": "https://vietfilmfest2026.eventive.org/schedule/6a9263f7aa7b3d2c00ed5688",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Hair, Paper, Water...: She was born in a cave, more than 60 years ago. Now she lives in a village, with many children and grandchildren to look after. Sometimes, she dreams of her dead mother calling her home – to the cave.",
+   "durationMin": 97,
+   "imageUrl": "https://static-a.eventive.org/4c242ff679ef39e413170b68558481e9.jpg"
+  },
+  {
+   "id": "films-6a8a4748003b89d6c31ab4aa-6a8bd01a44fa0ebb2e432c57",
+   "title": "Antithesis of Gemini",
+   "titleLocal": null,
+   "url": "https://vietfilmfest2026.eventive.org/schedule/6a90786de66ebd7f3db73d3f",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Antithesis of Gemini: Nhơn, a successful businessman who rose to power through deceit and manipulation, turns to a dark ritual known as “Thai Chiêu Tài” to preserve his fortune — only to awaken haunting memories from the past and the weight of generational trauma.",
+   "durationMin": 111,
+   "imageUrl": "https://static-a.eventive.org/fd7003dd2f95b48eeb73a508d10ec424.jpg"
+  },
+  {
+   "id": "films-6a8e727979a52d726d9d6893",
+   "title": "Strangers and Their Babies",
+   "titleLocal": null,
+   "url": "https://vietfilmfest2026.eventive.org/films/6a8e727979a52d726d9d6893",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Four people of Vietnamese descent retrace their families' flight across open water to Taiwan, uncovering two Penghu Island refugee camps left out of UN records — where 106 babies were born, many without papers.",
+   "durationMin": 89,
+   "imageUrl": "https://static-a.eventive.org/1787963867572temp-1787963867439-still.jpg"
+  },
+  {
+   "id": "6a8fcdb2571b5cbc1e2e3820",
+   "title": "Viet Film Fest Trống Đồng Awards Gala",
+   "titleLocal": null,
+   "url": "https://vietfilmfest2026.eventive.org/schedule/6a8fcdb2571b5cbc1e2e3820",
+   "genre": "other",
+   "categories": [
+    "6a29d6aa4de75c8c0f7890c0"
+   ],
+   "blurb": "Join us in an evening of celebrating the achievements of Viet Film Fest 2026 filmmakers at the Trống Đồng Awards Gala at the Bowers Museum, featuring the Taste of Kei Concepts, a comedy act by Theresa (Tree) Vo, and songs from Han Holiday.\n\nAlongside honors for Best Cinematography, Best Actor, Best Actress, Spotlight Award, and the Grand Jury Trống Đồng Award for Best Short and Best Feature, we are honoring Vietnamese American Actor Dustin Nguyen from 1980s 21 Jump Street and Viet Film Fest 2023 Best Feature: The Accidental Getaway Driver with the Inspiration Award.\n\nProceeds from the live and silent auction directly support the Vietnamese American Arts & Letters Association (VAALA), the hosting organization of Viet Film Fest.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1787809304432temp-1787809304365-cover.jpg"
+  },
+  {
+   "id": "films-6a8e754aebb53729d4b8eeab",
+   "title": "The Fatal Dealz",
+   "titleLocal": null,
+   "url": "https://vietfilmfest2026.eventive.org/films/6a8e754aebb53729d4b8eeab",
+   "genre": "film",
+   "categories": [],
+   "blurb": "When a phone scam unexpectedly strikes, Dang Thuc — who once thought he had a stable life — is drawn into a dangerous spiral of money, family, and trust, where every choice comes at a cost not only of wealth, but of the people he loves most.",
+   "durationMin": 113,
+   "imageUrl": "https://static-a.eventive.org/2fd6e5ae2ac7bbc4c983c63f88504345.jpg"
+  },
+  {
+   "id": "films-6a8fcb0d62cb25450b4357d3",
+   "title": "She",
+   "titleLocal": null,
+   "url": "https://vietfilmfest2026.eventive.org/films/6a8fcb0d62cb25450b4357d3",
+   "genre": "film",
+   "categories": [],
+   "blurb": "In northern Vietnam's electronics factories, women who left their children behind to support families that rice farming can no longer sustain testify to lives ground down by punishing work and a hierarchy that places every burden on them.",
+   "durationMin": 77,
+   "imageUrl": "https://static-a.eventive.org/1787966206856temp-1787966206809-still.jpg"
+  },
+  {
+   "id": "films-6a8bd4c52386a7cb4dd334b7-6a8bd8dd32f3db16a2ce279f-6a8fcb0d62cb25450b4357b6-6a8fcb0d62cb25450b4357cd-6a9240676360abc7a671be97-6a9241a3425caaac2b926c94",
+   "title": "Best Short Film Nominees",
+   "titleLocal": null,
+   "url": "https://vietfilmfest2026.eventive.org/schedule/6a9263f7aa7b3d2c00ed568d",
+   "genre": "film",
+   "categories": [],
+   "blurb": "This short film set contains bloody imagery, nudity, strong language, and mature themes. Not intended for younger audiences.\n\nThis set of films includes the nominees for the Grand Jury Trống Đồng Award for Best Short at Viet Film Fest 2026. Together, they invoke the richness of Vietnamese and Vietnamese diasporic storytelling, and its tendency to illuminate oft-ignored, marginalized perspectives.\n\nAs the set opens with No Barriers, we find a deaf adult looking to rise above her societal isolation in a hearing world, searching for connection and understanding on her own terms. Platonic love and laughter triumph. Not so much in Ripe (Chín) and Entropy (Entropia), which follow the opener. These two introduce young women who must navigate social expectations alongside what they believe love to be. In Ripe, the protagonist reconsiders an arranged marriage she had previously spurned; in Entropy, an aspiring professional classical pianist grapples with the cultural norms of her diaspora and her homeland (“love doesn’t always win,” one of the film’s characters intones).\n\nBetween Ripe and Entropy is the animated short, Water Girl (Fille d’eau) – a dialogue-free remembrance of lost love amid freedive fishing, juxtaposing the bright sands and dark ocean floor across the passage of time. Closing out this year’s set are The Dream is a Snail (Giấc mơ là ốc sên) and Huong. The former, a dark absurdist comedy of economic stratification and class desperation, stands in stark contrast to the latter – a personal documentary uncovering a love story forgotten by all, save one.\n\nThrough Vietnamese and Vietnamese diasporic voices, these films uncover personal truths both heartbreaking and life-affirming.\n\nBy Eric Nong",
+   "durationMin": 109,
+   "imageUrl": "https://static-a.eventive.org/1788010410645temp-1788010410616-still.jpg"
+  },
+  {
+   "id": "films-6a8bd1011e3947af36bcd2d4-6a8bd7613fa0270842c03fe0-6a8fcb0d62cb25450b4357bc-6a8fcb0d62cb25450b4357be-6a8fcb0d62cb25450b4357d5-6a8fcb0d62cb25450b4357d9",
+   "title": "Old School, New School",
+   "titleLocal": null,
+   "url": "https://vietfilmfest2026.eventive.org/schedule/6a911165e3f794ecd038b435",
+   "genre": "film",
+   "categories": [],
+   "blurb": "This short film set contains strong language and thematic material including suicide. Not intended for younger audiences.\n\nAmid the rapid technological, sociocultural changes of our present, these films tackle perennial problems framed through contemporary settings, reminding us of the timelessness of these universal issues.\n\nStarting with Mother’s Spring (Mùa xuân của mẹ), we follow a transmasculine child as their mom wants them to wear a feminine áo dài dress, speaking to age-old themes of acceptance and understanding. Next follows Happy Pizza, following two friends as they hallucinate on drugs, sparking verbal and literal fighting as their differing economic backgrounds clash. The following film Happy Thoughts traces a high school speech and debate champion as he enters his final competition. However, when an unexpected tragedy strikes, his Gen Z drive and spirit is tested by the weight of grief and expectation. The Stand parallels this Gen Z hustle as a young immigrant girl and her little brother struggle to make enough money to give their mom a break.\n\nShifting the tone, Dream of Emptiness follows a thirteen-year-old grandson as he searches for his grandmother following her unexplained disappearance – and, in his search, the film suggests the ways of rural Vietnam receding to time. Finally, Unperforming ends this set with similar notions of digitizing relationships and online perception and persona, following a man as he struggles with an obsession to measure up as he chases the attention of his crush.\n\nThese films take themes that have been around since the beginning of time and use contemporary settings to give fresh nuance to these topics and how they manifest in this modern age.\n\nBy Tai Nguyen",
+   "durationMin": 83,
+   "imageUrl": "https://static-a.eventive.org/1788009767047temp-1788009766776-still.jpg"
+  },
+  {
+   "id": "films-6a8e7476b8a6c43d41801d7d-6a8fcb0d62cb25450b4357d9",
+   "title": "The Dao of Thao",
+   "titleLocal": null,
+   "url": "https://vietfilmfest2026.eventive.org/schedule/6a90786de66ebd7f3db73d21",
+   "genre": "film",
+   "categories": [],
+   "blurb": "The Dao of Thao: Performer Thao P. Nguyen prepares for her next comedy show while struggling to remain true to herself as a queer Asian American mother in the face of constraining social, cultural, and familial expectations.",
+   "durationMin": 75,
+   "imageUrl": "https://static-a.eventive.org/1787964106009temp-1787964105719-still.jpg"
+  },
+  {
+   "id": "films-6a8e73f2577ecc984c3dae44-6a8e75a397da9e8e89431ed7",
+   "title": "The Cricket and The Muddy Adventure",
+   "titleLocal": null,
+   "url": "https://vietfilmfest2026.eventive.org/schedule/6a90786de66ebd7f3db73d26",
+   "genre": "film",
+   "categories": [],
+   "blurb": "The Cricket and The Muddy Adventure: Inspired by Tô Hoài’s classic children’s novel “Diary of a Cricket,” the story follows Cricket and friends on a journey through modern-day Hanoi to save Muddy Hamlet—a once lush land now overrun by waste.",
+   "durationMin": 87,
+   "imageUrl": "https://static-a.eventive.org/544c20fd2373fd9a7dd84c931996eb12.jpg"
+  },
+  {
+   "id": "films-6a922f1b5137c9046aff2632",
+   "title": "Mr. Hero",
+   "titleLocal": null,
+   "url": "https://vietfilmfest2026.eventive.org/films/6a922f1b5137c9046aff2632",
+   "genre": "film",
+   "categories": [],
+   "blurb": "A single father orchestrates an elaborate hoax to become a hero, in order to con the public and raise money for his daughter's life-saving surgery -- finds himself thrust into the national spotlight and learns what it means to be a hero.",
+   "durationMin": 122,
+   "imageUrl": "https://static-a.eventive.org/1787978887427temp-1787978887313-still.jpg"
+  },
+  {
+   "id": "films-6a8a47c1925fb5e5828aec62-6a8bcee8890ed7a86ebc339f-6a8bd7613fa0270842c03fe0-6a8e7371b87cf70a023323d2-6a923e2b011fb525f3796cf8-6a9262c9c00450e8ff8b61be",
+   "title": "Free to Love",
+   "titleLocal": null,
+   "url": "https://vietfilmfest2026.eventive.org/schedule/6a9263f7aa7b3d2c00ed5692",
+   "genre": "film",
+   "categories": [],
+   "blurb": "This set contains mature themes and nudity. Viewer discretion is advised.\n\nA special panel follows this screening.\n\n“Free to Love” gathers a slate of short films that stretch and challenge not only gender expressions, but genre expectations – putting queer love in focus, a little off-centered, with family and longing in the foreground.\n\nIn Before the Sea Forgets, we join the journey of two men looking for a burial site in Đà Nẵng, in parallel with a seemingly random group of skateboarders who find themselves reciting poetry. From there we zoom into the intimate space of a bathroom for the first scene of Mother’s Spring (Mùa xuân của mẹ), where a daughter literally and figuratively struggles in their áo dài, not realizing that a first generation mother also needs grace. Just as you get a chance to come up for air, you will find yourself tossed into a genre-bending roller coaster. There, you must Close the Eye to See the unspeakable truth that a mourned lover must face as he is haunted by horror and spirituality.\n\nWe then round out the set with our final two unscripted films which give voice to Intergenerational Stories, and explore various viewpoints of all ages where love is really love and acceptance means truly accepting not only others but yourself. Between Us gives a rare glimpse into older lesbians who paved the way, supportive parents who raise signs along with their children, and the community forms and uplifts as a result. As Auntie Hanh says, “I know the truth can be painful to others. But the truth must be the truth.”\n\nBy Jenni Trang Le",
+   "durationMin": 101,
+   "imageUrl": "https://static-a.eventive.org/1eec069b4f4cba1af21a49b0ff835f25.jpg"
+  },
+  {
+   "id": "films-6a8e79e6c67f8bd06abb1631",
+   "title": "Y Vân: The Lost Sounds of Saigon",
+   "titleLocal": null,
+   "url": "https://vietfilmfest2026.eventive.org/films/6a8e79e6c67f8bd06abb1631",
+   "genre": "film",
+   "categories": [
+    "6a29d6aa4de75c8c0f7890c3"
+   ],
+   "blurb": "While exploring her grandfather's musical legacy, a filmmaker reveals a forgotten chapter of Vietnam's past.",
+   "durationMin": 93,
+   "imageUrl": "https://static-a.eventive.org/1787964508446temp-1787964508383-still.jpg"
+  },
+  {
+   "id": "films-6a8fcb0d62cb25450b4357c9-6a8fcb0d62cb25450b4357cf",
+   "title": "Saigon Jazz Revival Presents Carol Kim",
+   "titleLocal": null,
+   "url": "https://vietfilmfest2026.eventive.org/schedule/6a90786de66ebd7f3db73d35",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Saigon Jazz Revival Presents Carol Kim: More than fifty years after leaving Saigon, Vietnam's legendary \"Queen of Soul,\" Carol Kim, returns to the repertoire that defined a generation. Filmed live in New Orleans, this concert film documents a once-in-a-lifetime collaboration that revives the lost sounds of Vietnamese jazz through a contemporary New Orleans ensemble.",
+   "durationMin": 61,
+   "imageUrl": "https://static-a.eventive.org/1787963657140temp-1787963656915-still.jpg"
+  },
+  {
+   "id": "films-6a8bd362211c8c59364eb58b-6a8fcb0d62cb25450b4357ae-6a8fcb0d62cb25450b4357ba-6a8fcb0d62cb25450b4357d1-6a8fcb0d62cb25450b4357db-6a92331e873792f869d39c41",
+   "title": "VFF Underground, Volume II",
+   "titleLocal": null,
+   "url": "https://vietfilmfest2026.eventive.org/schedule/6a9263f7aa7b3d2c00ed569c",
+   "genre": "film",
+   "categories": [],
+   "blurb": "This short film set contains intense violence, rude humor, and sexual themes. Not intended for children.\n\nIt’s what you think it is, or is it? Buckle up and get ready for some off-the-wall, creepy, twisty-and-turny, quirky, ballsy, oh-they-really-just-did-that films in this second edition of late night shorts.\n\nSleep Call puts us up close and a little too personal as we get sucked into the world of a lonely young man yearning for real connection, even if the face staring back is not real in any way. Meanwhile, in Hands Off!, the last thing that playboy Mason wants is a real connection. He’d rather hit and quit it but this time, transported into another realm, he literally cannot. UV*TV hits you with offbeat humor and is drizzled with improv-style comedy that makes you wonder, “what did I just watch?”\n\nThen as you’re left with questions, you will be transported into Vietnam at the beginning of a zombie outbreak where students must choose between friendship and humanity in How an Apocalypse Ends. After, Book Madness brings you back into one room, one man, surrounded by books, with a thirst for reading that may inflate his ego. And finally rounding out our rousing set of shorts is the suspenseful Serial K, set in The City That Never Sleeps, especially when a serial killer is targeting Asian men – particularly the paranoid, low-achieving ones.\n\nCome for laughs and scares, and leave befuddled, with more questions.\n\nBy Jenni Trang Le",
+   "durationMin": 81,
+   "imageUrl": "https://static-a.eventive.org/1787966621012temp-1787966620979-still.jpg"
+  },
+  {
+   "id": "films-6a8a4865b11e77fe17b20e46-6a8fcb0d62cb25450b4357c2",
+   "title": "Blood Moon Rite 8",
+   "titleLocal": null,
+   "url": "https://vietfilmfest2026.eventive.org/schedule/6a90786de66ebd7f3db73d3a",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Blood Moon Rite 8 (Tiệc trăng máu 8): On the set of a shoestring horror film in an abandoned amusement park, a washed-up director performs a Blood Moon ritual to wring real terror from his cast — and gets it.",
+   "durationMin": 133,
+   "imageUrl": "https://static-a.eventive.org/938039d25faf812cf4de5ffc37fd415f.jpg"
+  },
+  {
+   "id": "films-6a8e708b09b1fbd1a0057516-6a8e7245c67f8bd06aba8492",
+   "title": "Southeast Asian American Journeys",
+   "titleLocal": null,
+   "url": "https://vietfilmfest2026.eventive.org/schedule/6a90786de66ebd7f3db73d44",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Southeast Asian American Journeys: This documentary follows different refugee communities across the US, from Montagnard in North Carolina to the Mien in Oregon. Interviews with California Vietnamese mamas with queer kids, a collective of Southeast Asian vendors at FDR Park, canvassing youth, and Hmong farmers who trade crops with their neighbors, unearth untold unique refugee stories.",
+   "durationMin": 88,
+   "imageUrl": "https://static-a.eventive.org/1787969054719temp-1787969054588-still.jpg"
+  },
+  {
+   "id": "films-6a8bd59db7a0c6bf8b12913c-6a8cab8ed45d828b4563f6e0-6a8fcb0d62cb25450b4357cd-6a9240676360abc7a671be97-6a9242261f4f6b8f7cdd19d9",
+   "title": "On Such a Full Sea Are We Now Afloat",
+   "titleLocal": null,
+   "url": "https://vietfilmfest2026.eventive.org/schedule/6a9263f7aa7b3d2c00ed56a1",
+   "genre": "film",
+   "categories": [],
+   "blurb": "This set contains strong language and violent imagery. Viewer discretion is advised.\n\nThere is a tide in the affairs of each of the main characters in these films. In this set, the protagonist must decide whether to seize an opportunity that, by accident or deliberate posturing, they can now take advantage of. Some succeed, some fail, and, in the last film, there is a fateful reconsideration.\n\nThe bookends of this set center on familial love from returning VFF alumni. This set opens with When Everything Would Be Fine (directed by Mathieu Lam of VFF 2022’s La passion), where a French Vietnamese brother and sister must keep their family’s restaurant operating after the unexpected death of their mother. It then closes with Ripe (Chín), directed by Solara Thanh-Binh Dang (VFF 2023’s Her Name is Like a Sigh). There, a daughter – long dismissive of her father’s attempts to persuade her into an arranged marriage – begins reconsidering after he suffers a grievous injury.\n\nOur lineup’s body turns the screws of intensity as it progresses. 5011 depicts a Vietnamese high schooler unsure how to cope with and behave towards his crush. Talking about love’s nature with his friend only produces less clarity. The Dream Is a Snail, which premiered at the 2026 Cannes Film Festival, depicts an absurd scenario defined by financial precarity and inequality. And the title says it all in I Think About Killing You, when an aspiring professional rower speculates about homicide.\n\nAs they chart a course, will our characters reach their intended destination or be lost to the sea?\n\nBy Eric Nong",
+   "durationMin": 83,
+   "imageUrl": "https://static-a.eventive.org/1787970161209temp-1787970160941-still.jpg"
+  },
+  {
+   "id": "films-6a8bd6a3dc167db82443468e",
+   "title": "Meet Me at the Eclipse",
+   "titleLocal": null,
+   "url": "https://vietfilmfest2026.eventive.org/films/6a8bd6a3dc167db82443468e",
+   "genre": "film",
+   "categories": [],
+   "blurb": "In 1995, a young Catholic woman at the end of noviciate finds herself shaken by the flashbacks of a long gone first love.",
+   "durationMin": 118,
+   "imageUrl": "https://static-a.eventive.org/ee58ff30d2b9bc766c251f58b3332c25.jpg"
+  },
+  {
+   "id": "films-6a8cab8ed45d828b4563f6e0-6a8e76b3604b08fcba6495ff-6a8fcb0d62cb25450b4357b4-6a9241a3425caaac2b926c94",
+   "title": "The Very Thought of You",
+   "titleLocal": null,
+   "url": "https://vietfilmfest2026.eventive.org/schedule/6a9263f7aa7b3d2c00ed56a6",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Contains sexual themes and nudity. Viewer discretion is advised.\n\nLove – present or not – makes people act in peculiar ways to those who may not understand that love. Or, it can make people forget to do the things they ought to do. These four films look at love (or one’s idea of what love is) at different stages: its beginnings, the point of betrayal, and in death and separation.\n\nWe open with budding beginnings in Nguyễn Năng Hải An’s 5011 (which helped the director earn a spot at USC’s School of Cinematic Arts). There, a Vietnamese high school boy, unsure how to act or speak around his crush, seeks advice from a friend who might not be of much help. Empty (Trống), directed by Mai Hoài Nguyễn Tuấn Anh (or “Luey”) follows. Loosely adapted from Haruki Murakami’s short story “Kino”, the protagonist returns home to find his wife having an affair. He flees the scene, headed for anywhere but home – his ultimate destination will feature curious moments symbolizing unresolved feelings.\n\nA lack of emotional resolution carries over into the closing half of this set. The animated short Water Girl (Fille d’eau), directed by Sandra Desmazières (VFF 2023’s Flowing Home), finds an elderly freedive fisher reminiscing about loved ones now far away. As a reversal of Orpheus and Eurydice, Nghiêm Quỳnh Trang’s Visiting Heaven Gate sees a daughter and mother make an ascending pilgrimage in hopes of seeing their father and husband, respectively, one last time. Together, our final two films close on the idea that love abides.\n\nBy Eric Nong",
+   "durationMin": 83,
+   "imageUrl": "https://static-a.eventive.org/1787610248955temp-1787610248678-still.jpg"
+  },
+  {
+   "id": "films-6a8bd628afe89c12d3052632",
+   "title": "Ky Nam Inn",
+   "titleLocal": null,
+   "url": "https://vietfilmfest2026.eventive.org/films/6a8bd628afe89c12d3052632",
+   "genre": "film",
+   "categories": [
+    "6a29d6aa4de75c8c0f7890c3"
+   ],
+   "blurb": "Set in 1985 post-war Vietnam, Khang moves to Saigon after securing a position to translate \"The Little Prince.\" Due to his family connections, Khang's life under the new regime is secure. But everything changes when he meets Ky Nam, a reserved older widow who lives in Khang's new community.",
+   "durationMin": 140,
+   "imageUrl": "https://static-a.eventive.org/ae695da674c7a0e55818ef2c297b023e.jpg"
+  },
+  {
+   "id": "films-6a9214a987b19be64bd15125",
+   "title": "VFF Encore: In Waves",
+   "titleLocal": null,
+   "url": "https://vietfilmfest2026.eventive.org/films/6a9214a987b19be64bd15125",
+   "genre": "film",
+   "categories": [
+    "6a29d6aa4de75c8c0f7890c3"
+   ],
+   "blurb": "A shy Los Angeles teenager who lives to skate and draw falls for a fearless young surfer, and when a sudden illness upends her life, he has to find the courage to meet her in the water.** Leaner alternate if you need it to fit a tight character count: **When a sudden illness threatens the surfer he loves, a shy L.A. skateboarder finds his courage in the ocean.",
+   "durationMin": 91,
+   "imageUrl": "https://static-a.eventive.org/064c3a8fbdb30e5cc8f314e0b9906a4c.jpg"
+  }
+ ],
+ "performances": [
+  {
+   "id": "6a911165e3f794ecd038b417",
+   "eventId": "films-6a8bd1f216df6fa26b2356a9-6a8bd8dd32f3db16a2ce279f-6a8e708b09b1fbd1a0057516-6a8e7972e7c329b6363acc70-6a8fcb0d62cb25450b4357b0-6a8fcb0d62cb25450b4357c0",
+   "venueId": "6a29d6aa4de75c8c0f7890b2",
+   "roomId": null,
+   "date": "2026-10-08",
+   "start": "09:30",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a911165e3f794ecd038b417",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6a911165e3f794ecd038b41c",
+   "eventId": "films-6a8bd1f216df6fa26b2356a9-6a8bd8dd32f3db16a2ce279f-6a8e708b09b1fbd1a0057516-6a8e7972e7c329b6363acc70-6a8fcb0d62cb25450b4357b0-6a8fcb0d62cb25450b4357c0",
+   "venueId": "6a29d6aa4de75c8c0f7890b3",
+   "roomId": null,
+   "date": "2026-10-08",
+   "start": "09:30",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a911165e3f794ecd038b41c",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6a911165e3f794ecd038b421",
+   "eventId": "films-6a8bd1f216df6fa26b2356a9-6a8bd8dd32f3db16a2ce279f-6a8e708b09b1fbd1a0057516-6a8e7972e7c329b6363acc70-6a8fcb0d62cb25450b4357b0-6a8fcb0d62cb25450b4357c0",
+   "venueId": "6a29d6aa4de75c8c0f7890b2",
+   "roomId": null,
+   "date": "2026-10-08",
+   "start": "12:30",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a911165e3f794ecd038b421",
+   "free": false,
+   "status": "unknown",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6a911165e3f794ecd038b426",
+   "eventId": "films-6a8bd1f216df6fa26b2356a9-6a8bd8dd32f3db16a2ce279f-6a8e708b09b1fbd1a0057516-6a8e7972e7c329b6363acc70-6a8fcb0d62cb25450b4357b0-6a8fcb0d62cb25450b4357c0",
+   "venueId": "6a29d6aa4de75c8c0f7890b3",
+   "roomId": null,
+   "date": "2026-10-08",
+   "start": "12:30",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a911165e3f794ecd038b426",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6a8e7aa4dcf8428ced5f3ad3",
+   "eventId": "films-6a8a4661a63dc2fdc2454da7",
+   "venueId": "6a29d6aa4de75c8c0f7890b2",
+   "roomId": null,
+   "date": "2026-10-08",
+   "start": "19:00",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a8e7aa4dcf8428ced5f3ad3",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6a8e7d5fe8778ba289ea0b9d",
+   "eventId": "films-6a8a4661a63dc2fdc2454da7",
+   "venueId": "6a29d6aa4de75c8c0f7890b3",
+   "roomId": null,
+   "date": "2026-10-08",
+   "start": "19:00",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a8e7d5fe8778ba289ea0b9d",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6a911165e3f794ecd038b42b",
+   "eventId": "films-6a8e75fee54f22e1d41da227-6a8fcb0d62cb25450b4357b2-6a8fcb0d62cb25450b4357b6-6a8fcb0d62cb25450b4357b8-6a8fcb0d62cb25450b4357cb-6a8fcb0d62cb25450b4357d9",
+   "venueId": "6a29d6aa4de75c8c0f7890b3",
+   "roomId": null,
+   "date": "2026-10-08",
+   "start": "22:00",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a911165e3f794ecd038b42b",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6a9263f7aa7b3d2c00ed5679",
+   "eventId": "films-6a8fcb0d62cb25450b4357c5-6a8fcb0d62cb25450b4357c7-6a922c914f1207429ab6e308",
+   "venueId": "6a29d6aa4de75c8c0f7890b2",
+   "roomId": null,
+   "date": "2026-10-08",
+   "start": "22:30",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a9263f7aa7b3d2c00ed5679",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6a90786de66ebd7f3db73d03",
+   "eventId": "films-6a8fcb0d62cb25450b4357d7",
+   "venueId": "6a29d6aa4de75c8c0f7890b2",
+   "roomId": null,
+   "date": "2026-10-09",
+   "start": "10:30",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a90786de66ebd7f3db73d03",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6a90786de66ebd7f3db73d08",
+   "eventId": "films-6a8fcb0d62cb25450b4357ac",
+   "venueId": "6a29d6aa4de75c8c0f7890b3",
+   "roomId": null,
+   "date": "2026-10-09",
+   "start": "11:00",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a90786de66ebd7f3db73d08",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6a911165e3f794ecd038b430",
+   "eventId": "films-6a8bd29d20263b1e457de7af-6a8bd4c52386a7cb4dd334b7-6a8bd8241f936b88cb68d718-6a8e86d8cf98bb1603a47828-6a8fcb0d62cb25450b4357b8-6a8fcb0d62cb25450b4357be",
+   "venueId": "6a29d6aa4de75c8c0f7890b2",
+   "roomId": null,
+   "date": "2026-10-09",
+   "start": "13:00",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a911165e3f794ecd038b430",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6a9263f7aa7b3d2c00ed5688",
+   "eventId": "films-6a8bd1011e3947af36bcd2d4-6a92139a30ed6b28f0e1bc7a",
+   "venueId": "6a29d6aa4de75c8c0f7890b3",
+   "roomId": null,
+   "date": "2026-10-09",
+   "start": "13:00",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a9263f7aa7b3d2c00ed5688",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6a90786de66ebd7f3db73d3f",
+   "eventId": "films-6a8a4748003b89d6c31ab4aa-6a8bd01a44fa0ebb2e432c57",
+   "venueId": "6a29d6aa4de75c8c0f7890b2",
+   "roomId": null,
+   "date": "2026-10-09",
+   "start": "16:00",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a90786de66ebd7f3db73d3f",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6a90786de66ebd7f3db73d12",
+   "eventId": "films-6a8e727979a52d726d9d6893",
+   "venueId": "6a29d6aa4de75c8c0f7890b3",
+   "roomId": null,
+   "date": "2026-10-09",
+   "start": "16:30",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a90786de66ebd7f3db73d12",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6a8fcdb2571b5cbc1e2e3820",
+   "eventId": "6a8fcdb2571b5cbc1e2e3820",
+   "venueId": "6a29d6aa4de75c8c0f7890b5",
+   "roomId": null,
+   "date": "2026-10-09",
+   "start": "19:00",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a8fcdb2571b5cbc1e2e3820",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 125.0,
+   "priceMax": 125.0
+  },
+  {
+   "id": "6a90786de66ebd7f3db73d17",
+   "eventId": "films-6a8e754aebb53729d4b8eeab",
+   "venueId": "6a29d6aa4de75c8c0f7890b2",
+   "roomId": null,
+   "date": "2026-10-09",
+   "start": "19:15",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a90786de66ebd7f3db73d17",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6a90786de66ebd7f3db73d1c",
+   "eventId": "films-6a8fcb0d62cb25450b4357d3",
+   "venueId": "6a29d6aa4de75c8c0f7890b3",
+   "roomId": null,
+   "date": "2026-10-09",
+   "start": "19:30",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a90786de66ebd7f3db73d1c",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6a9263f7aa7b3d2c00ed568d",
+   "eventId": "films-6a8bd4c52386a7cb4dd334b7-6a8bd8dd32f3db16a2ce279f-6a8fcb0d62cb25450b4357b6-6a8fcb0d62cb25450b4357cd-6a9240676360abc7a671be97-6a9241a3425caaac2b926c94",
+   "venueId": "6a29d6aa4de75c8c0f7890b2",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "09:00",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a9263f7aa7b3d2c00ed568d",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6a911165e3f794ecd038b435",
+   "eventId": "films-6a8bd1011e3947af36bcd2d4-6a8bd7613fa0270842c03fe0-6a8fcb0d62cb25450b4357bc-6a8fcb0d62cb25450b4357be-6a8fcb0d62cb25450b4357d5-6a8fcb0d62cb25450b4357d9",
+   "venueId": "6a29d6aa4de75c8c0f7890b3",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "09:15",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a911165e3f794ecd038b435",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6a90786de66ebd7f3db73d21",
+   "eventId": "films-6a8e7476b8a6c43d41801d7d-6a8fcb0d62cb25450b4357d9",
+   "venueId": "6a29d6aa4de75c8c0f7890b2",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "11:45",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a90786de66ebd7f3db73d21",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6a90786de66ebd7f3db73d26",
+   "eventId": "films-6a8e73f2577ecc984c3dae44-6a8e75a397da9e8e89431ed7",
+   "venueId": "6a29d6aa4de75c8c0f7890b3",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "12:00",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a90786de66ebd7f3db73d26",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6a9263f7aa7b3d2c00ed5697",
+   "eventId": "films-6a922f1b5137c9046aff2632",
+   "venueId": "6a29d6aa4de75c8c0f7890b3",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "14:00",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a9263f7aa7b3d2c00ed5697",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6a9263f7aa7b3d2c00ed5692",
+   "eventId": "films-6a8a47c1925fb5e5828aec62-6a8bcee8890ed7a86ebc339f-6a8bd7613fa0270842c03fe0-6a8e7371b87cf70a023323d2-6a923e2b011fb525f3796cf8-6a9262c9c00450e8ff8b61be",
+   "venueId": "6a29d6aa4de75c8c0f7890b2",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "14:15",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a9263f7aa7b3d2c00ed5692",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6a90786de66ebd7f3db73d2b",
+   "eventId": "films-6a8e79e6c67f8bd06abb1631",
+   "venueId": "6a29d6aa4de75c8c0f7890b2",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "18:00",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a90786de66ebd7f3db73d2b",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 18.0,
+   "priceMax": 18.0
+  },
+  {
+   "id": "6a90786de66ebd7f3db73d30",
+   "eventId": "films-6a8e79e6c67f8bd06abb1631",
+   "venueId": "6a29d6aa4de75c8c0f7890b3",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "18:00",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a90786de66ebd7f3db73d30",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6a90786de66ebd7f3db73d35",
+   "eventId": "films-6a8fcb0d62cb25450b4357c9-6a8fcb0d62cb25450b4357cf",
+   "venueId": "6a29d6aa4de75c8c0f7890b2",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "20:30",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a90786de66ebd7f3db73d35",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6a9263f7aa7b3d2c00ed569c",
+   "eventId": "films-6a8bd362211c8c59364eb58b-6a8fcb0d62cb25450b4357ae-6a8fcb0d62cb25450b4357ba-6a8fcb0d62cb25450b4357d1-6a8fcb0d62cb25450b4357db-6a92331e873792f869d39c41",
+   "venueId": "6a29d6aa4de75c8c0f7890b3",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "21:00",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a9263f7aa7b3d2c00ed569c",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6a90786de66ebd7f3db73d3a",
+   "eventId": "films-6a8a4865b11e77fe17b20e46-6a8fcb0d62cb25450b4357c2",
+   "venueId": "6a29d6aa4de75c8c0f7890b2",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "22:30",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a90786de66ebd7f3db73d3a",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6a90786de66ebd7f3db73d44",
+   "eventId": "films-6a8e708b09b1fbd1a0057516-6a8e7245c67f8bd06aba8492",
+   "venueId": "6a29d6aa4de75c8c0f7890b2",
+   "roomId": null,
+   "date": "2026-10-11",
+   "start": "09:30",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a90786de66ebd7f3db73d44",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6a9263f7aa7b3d2c00ed56a1",
+   "eventId": "films-6a8bd59db7a0c6bf8b12913c-6a8cab8ed45d828b4563f6e0-6a8fcb0d62cb25450b4357cd-6a9240676360abc7a671be97-6a9242261f4f6b8f7cdd19d9",
+   "venueId": "6a29d6aa4de75c8c0f7890b3",
+   "roomId": null,
+   "date": "2026-10-11",
+   "start": "10:00",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a9263f7aa7b3d2c00ed56a1",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6a90786de66ebd7f3db73d49",
+   "eventId": "films-6a8bd6a3dc167db82443468e",
+   "venueId": "6a29d6aa4de75c8c0f7890b3",
+   "roomId": null,
+   "date": "2026-10-11",
+   "start": "12:30",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a90786de66ebd7f3db73d49",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6a9263f7aa7b3d2c00ed56a6",
+   "eventId": "films-6a8cab8ed45d828b4563f6e0-6a8e76b3604b08fcba6495ff-6a8fcb0d62cb25450b4357b4-6a9241a3425caaac2b926c94",
+   "venueId": "6a29d6aa4de75c8c0f7890b2",
+   "roomId": null,
+   "date": "2026-10-11",
+   "start": "13:00",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a9263f7aa7b3d2c00ed56a6",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 17.0,
+   "priceMax": 17.0
+  },
+  {
+   "id": "6a90786de66ebd7f3db73d4e",
+   "eventId": "films-6a8bd628afe89c12d3052632",
+   "venueId": "6a29d6aa4de75c8c0f7890b2",
+   "roomId": null,
+   "date": "2026-10-11",
+   "start": "16:00",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a90786de66ebd7f3db73d4e",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6a90786de66ebd7f3db73d53",
+   "eventId": "films-6a8bd628afe89c12d3052632",
+   "venueId": "6a29d6aa4de75c8c0f7890b3",
+   "roomId": null,
+   "date": "2026-10-11",
+   "start": "16:00",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a90786de66ebd7f3db73d53",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6a9267337dd42cf5dc7b0819",
+   "eventId": "films-6a9214a987b19be64bd15125",
+   "venueId": "6a29d6aa4de75c8c0f7890b2",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "19:00",
+   "ticketUrl": "https://vietfilmfest2026.eventive.org/schedule/6a9267337dd42cf5dc7b0819",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  }
+ ],
+ "sources": {
+  "festival": [
+   "festival.toml"
+  ],
+  "venues": [
+   "eventive",
+   "nominatim"
+  ],
+  "events": [
+   "eventive"
+  ],
+  "performances": [
+   "eventive"
+  ],
+  "availability": [
+   "eventive"
+  ],
+  "prices": [
+   "eventive"
+  ]
+ },
+ "provenance": {
+  "sources": {
+   "eventive": {
+    "kind": "fetched",
+    "path": "data/festivals/viet-film-fest/2026/eventive",
+    "fetchedAt": "2026-10-02T18:08:49Z",
+    "fetcher": "scraper/festivals/viet_film_fest/sources/eventive/fetch.py",
+    "fetcherVersion": 1
+   },
+   "nominatim": {
+    "kind": "fetched",
+    "path": "data/festivals/viet-film-fest/2026/nominatim",
+    "fetchedAt": "2026-10-02T18:33:48Z",
+    "fetcher": "scraper/festivals/viet_film_fest/sources/nominatim/fetch.py",
+    "fetcherVersion": 3
+   }
+  },
+  "absent": [],
+  "fields": {
+   "categories.name": [
+    "eventive"
+   ],
+   "events.blurb": [
+    "eventive"
+   ],
+   "events.categories": [
+    "eventive"
+   ],
+   "events.durationMin": [
+    "eventive"
+   ],
+   "events.genre": [
+    "eventive"
+   ],
+   "events.imageUrl": [
+    "eventive"
+   ],
+   "events.title": [
+    "eventive"
+   ],
+   "events.url": [
+    "eventive"
+   ],
+   "performances.date": [
+    "eventive"
+   ],
+   "performances.eventId": [
+    "eventive"
+   ],
+   "performances.free": [
+    "eventive"
+   ],
+   "performances.priceMax": [
+    "eventive"
+   ],
+   "performances.priceMin": [
+    "eventive"
+   ],
+   "performances.start": [
+    "eventive"
+   ],
+   "performances.status": [
+    "eventive"
+   ],
+   "performances.ticketUrl": [
+    "eventive"
+   ],
+   "performances.venueId": [
+    "eventive"
+   ],
+   "venues.address": [
+    "eventive"
+   ],
+   "venues.capacity": [
+    "eventive"
+   ],
+   "venues.lat": [
+    "nominatim"
+   ],
+   "venues.lng": [
+    "nominatim"
+   ],
+   "venues.name": [
+    "eventive"
+   ],
+   "venues.online": [
+    "eventive"
+   ]
+  },
+  "skipped": {}
+ }
+}

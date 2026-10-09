@@ -1,0 +1,14 @@
+{
+ "city": "santa-ana",
+ "source": "wikivoyage",
+ "fetchedAt": "2026-10-02T20:39:05Z",
+ "fetcher": "scraper/cities/fetch.py",
+ "fetcherVersion": 2,
+ "urls": [
+  "https://en.wikivoyage.org/wiki/Santa_Ana_%28California%29"
+ ],
+ "files": [
+  "gonext.json"
+ ],
+ "notes": "The guide's Go next section (action=raw), and each destination it links for its {{geo}}. Wikivoyage text is CC BY-SA 4.0."
+}

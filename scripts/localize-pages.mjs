@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 //
-// Derives one served page per language from the festival planner's own
-// index.html, so a language is an address rather than a runtime decision.
+// Derives one served page per language from a multilingual page's own
+// index.html (the festival planner's, by default), so a language is an address
+// rather than a runtime decision.
 //
 // What that buys, and why the strings are baked in rather than left to the
 // page's own applyTranslations(): a browser decides whether to offer a
@@ -11,8 +12,11 @@
 // for four languages. Both are answered by shipping each language as its own
 // document, already in that language.
 //
-//   node scripts/localize-pages.mjs            write the pages
-//   node scripts/localize-pages.mjs --check    re-derive and compare, exit 1 on drift
+//   node scripts/localize-pages.mjs [--page <dir>]            write the pages
+//   node scripts/localize-pages.mjs [--page <dir>] --check    re-derive and compare, exit 1 on drift
+//
+// <dir> is the page's directory under site/ (default: planNG). It must carry
+// i18n/translations.js and i18n/i18n.js, and is served at /<dir>/.
 //
 // The source page IS the default language's page: this writes each other
 // language beside it, and maintains the `localization:` block — canonical and
@@ -24,14 +28,20 @@ import { dirname, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 const REPO = join(dirname(fileURLToPath(import.meta.url)), "..");
-const PAGE_DIR = join(REPO, "site", "planJerusalem");
+const RUN_DIRECTLY = Boolean(process.argv[1]) && import.meta.url === pathToFileURL(process.argv[1]).href;
+const pageArg = RUN_DIRECTLY ? process.argv.indexOf("--page") : -1;
+/** The page this localizes, as its directory under site/. */
+export const PAGE = pageArg > -1 ? process.argv[pageArg + 1] : "planNG";
+const PAGE_DIR = join(REPO, "site", PAGE);
 const SOURCE = join(PAGE_DIR, "index.html");
+/* The path the page is served at: its directory, since wrangler serves a
+   directory's index.html at the directory with its trailing slash. */
+const PAGE_ROOT = `/${PAGE}/`;
 
 const { DEFAULT_LOCALE, LOCALES, STRINGS } = await import(
-  join(PAGE_DIR, "i18n", "translations.js")
+  pathToFileURL(join(PAGE_DIR, "i18n", "translations.js")).href
 );
-const { localeHref } = await import(join(PAGE_DIR, "i18n", "i18n.js"));
-const { FESTIVAL } = await import(join(PAGE_DIR, "festival.js"));
+const { localeHref } = await import(pathToFileURL(join(PAGE_DIR, "i18n", "i18n.js")).href);
 
 // The one hostname the site answers on, and so the one a canonical and an
 // hreflang may name: an alternate that named a host the site does not serve
@@ -47,7 +57,7 @@ export const ORIGIN = "https://www.edfringenow.com";
  */
 export const PAGES = LOCALES.map((locale) => ({
   ...locale,
-  url: localeHref(locale.code, FESTIVAL.pageRoot),
+  url: localeHref(locale.code, PAGE_ROOT),
   file:
     locale.code === DEFAULT_LOCALE ? SOURCE : join(PAGE_DIR, locale.code, "index.html"),
 }));
@@ -80,11 +90,11 @@ function t(key, code) {
  */
 function localizationBlock(code, indent) {
   const lines = [
-    `<link rel="canonical" href="${ORIGIN}${localeHref(code, FESTIVAL.pageRoot)}" />`,
+    `<link rel="canonical" href="${ORIGIN}${localeHref(code, PAGE_ROOT)}" />`,
     ...LOCALES.map(
-      (l) => `<link rel="alternate" hreflang="${l.code}" href="${ORIGIN}${localeHref(l.code, FESTIVAL.pageRoot)}" />`
+      (l) => `<link rel="alternate" hreflang="${l.code}" href="${ORIGIN}${localeHref(l.code, PAGE_ROOT)}" />`
     ),
-    `<link rel="alternate" hreflang="x-default" href="${ORIGIN}${localeHref(DEFAULT_LOCALE, FESTIVAL.pageRoot)}" />`,
+    `<link rel="alternate" hreflang="x-default" href="${ORIGIN}${localeHref(DEFAULT_LOCALE, PAGE_ROOT)}" />`,
   ];
   return lines.map((l) => indent + l).join("\n");
 }
@@ -193,7 +203,7 @@ export function buildPages(source = readFileSync(SOURCE, "utf8")) {
 // Run only when run: the requirements harness imports buildPages() to compare
 // the committed pages against what this would write, and an import must not
 // write anything.
-if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+if (RUN_DIRECTLY) {
   const pages = buildPages();
   if (process.argv.includes("--check")) {
     const drifted = Object.keys(pages).filter((path) => {

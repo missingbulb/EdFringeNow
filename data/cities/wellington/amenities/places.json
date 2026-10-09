@@ -1,0 +1,2594 @@
+{
+ "nearM": 1000,
+ "anchors": [
+  {
+   "festival": null,
+   "venue": null,
+   "lat": -41.2865,
+   "lng": 174.7762
+  }
+ ],
+ "places": [
+  {
+   "id": "node/10041118236",
+   "lat": -41.278035,
+   "lng": 174.775137,
+   "tags": {
+    "name": "Huxley's",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/10136670963",
+   "lat": -41.291794,
+   "lng": 174.777046,
+   "tags": {
+    "name": "Chongqing Kitchen",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "42",
+    "addr:street": "Dixon Street",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/10136670964",
+   "lat": -41.291821,
+   "lng": 174.777149,
+   "tags": {
+    "name": "Pho Viet",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "website": "https://www.vietstreetfood.co.nz/",
+    "opening_hours": "Su-We 11:30-21:00; Th-Sa 11:30-22:00",
+    "addr:housenumber": "40",
+    "addr:street": "Dixon Street",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/10136670965",
+   "lat": -41.29182,
+   "lng": 174.777354,
+   "tags": {
+    "name": "Heartbraker Nashville Style Hot Chicken",
+    "amenity": "restaurant",
+    "cuisine": "american;chicken",
+    "opening_hours": "Tu,We 17:00-22:00; Th 16:30-24:00; Fr,Sa 16:30-02:00,16:30-22:30",
+    "addr:housenumber": "38",
+    "addr:street": "Dixon Street",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/10226905710",
+   "lat": -41.292428,
+   "lng": 174.775114,
+   "tags": {
+    "name": "Mother of Coffee",
+    "amenity": "restaurant",
+    "cuisine": "ethiopian",
+    "website": "https://motherofcoffee.co.nz/",
+    "opening_hours": "We 12:00-21:45, Th 12:00-22:30, Fr 12:00-22:15, Sa 12:00-21:45",
+    "addr:housenumber": "210A",
+    "addr:street": "Left Bank",
+    "addr:postcode": "6011",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/10296143331",
+   "lat": -41.291292,
+   "lng": 174.777215,
+   "tags": {
+    "name": "Aura Hotel",
+    "tourism": "hotel",
+    "opening_hours": "09:00-19:00",
+    "wikidata": "Q112010215"
+   }
+  },
+  {
+   "id": "node/10580674611",
+   "lat": -41.294727,
+   "lng": 174.775117,
+   "tags": {
+    "name": "Kisa",
+    "amenity": "restaurant",
+    "cuisine": "turkish",
+    "website": "https://kisarestaurant.co.nz/kitchen/",
+    "opening_hours": "Mo-Tu 16:00+; We-Fr 12:00+; Sa-Su 11:30+",
+    "addr:housenumber": "195",
+    "addr:street": "Cuba Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/10580674617",
+   "lat": -41.294091,
+   "lng": 174.775438,
+   "tags": {
+    "name": "Rams",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "https://www.ramsrestaurant.co.nz/",
+    "opening_hours": "Mo-Th 11:00-21:30; Fr-Sa 11:00-22:30; Su 17:00-21:30",
+    "addr:housenumber": "171A",
+    "addr:street": "Cuba Street",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/10580674619",
+   "lat": -41.294934,
+   "lng": 174.775798,
+   "tags": {
+    "name": "Mekong Cafe",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "website": "https://www.mekongcafewellington.com/",
+    "opening_hours": "Mo,Sa-Su 11:00-21:00; Tu off; We-Fr 11:00-20:00",
+    "addr:housenumber": "138",
+    "addr:street": "Vivian Street",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/10580674626",
+   "lat": -41.292169,
+   "lng": 174.77478,
+   "tags": {
+    "name": "Little Penang",
+    "amenity": "restaurant",
+    "cuisine": "malaysian",
+    "website": "https://www.facebook.com/LittlePenang/",
+    "opening_hours": "Mo-Fr 11:00-15:00,17:00-21:00; Sa 11:00-21:00; Su,PH off",
+    "addr:housenumber": "175",
+    "addr:street": "Victoria Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/10580674632",
+   "lat": -41.291379,
+   "lng": 174.777299,
+   "tags": {
+    "name": "Spizzico",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "addr:housenumber": "99",
+    "addr:street": "Manners Street"
+   }
+  },
+  {
+   "id": "node/10605112893",
+   "lat": -41.282538,
+   "lng": 174.777248,
+   "tags": {
+    "name": "Where's Charlie",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "addr:housenumber": "130A",
+    "addr:street": "Featherston Street",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/10661210052",
+   "lat": -41.29363,
+   "lng": 174.781206,
+   "tags": {
+    "name": "KCB",
+    "amenity": "restaurant",
+    "cuisine": "korean;chicken",
+    "addr:housenumber": "55",
+    "addr:street": "Courtenay Place",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/10701363205",
+   "lat": -41.293133,
+   "lng": 174.78391,
+   "tags": {
+    "name": "Haka House Hostel",
+    "tourism": "hostel",
+    "website": "https://hakahouse.com",
+    "addr:housenumber": "292",
+    "addr:street": "Wakefield Street",
+    "addr:postcode": "6011",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/10727340633",
+   "lat": -41.281085,
+   "lng": 174.778571,
+   "tags": {
+    "name": "Portlander",
+    "amenity": "restaurant",
+    "website": "https://www.portlander.co.nz/"
+   }
+  },
+  {
+   "id": "node/10915897185",
+   "lat": -41.291626,
+   "lng": 174.777278,
+   "tags": {
+    "name": "September Vegan Food",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "opening_hours": "Tu-Th 11:30-20:30; Fr-Sa 11:30-21:00; Su 12:00-16:00",
+    "addr:housenumber": "108",
+    "addr:street": "Manners Street",
+    "addr:postcode": "6011",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/11101343870",
+   "lat": -41.294435,
+   "lng": 174.780493,
+   "tags": {
+    "name": "Apachè",
+    "amenity": "restaurant",
+    "opening_hours": "We-Sa 12:00-14:00, Mo-Sa 17:00-19:00+",
+    "addr:housenumber": "66",
+    "addr:street": "Tory Street",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/11332559556",
+   "lat": -41.29057,
+   "lng": 174.77614,
+   "tags": {
+    "name": "Koko",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "opening_hours": "Mo-Fr 10:00-21:00; Sa-Su 12:00-21:00",
+    "addr:housenumber": "55",
+    "addr:street": "Manners Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/11411781511",
+   "lat": -41.294959,
+   "lng": 174.780119,
+   "tags": {
+    "name": "JinWeiDe Beef Noodles",
+    "name:en": "JinWeiDe Beef Noodles",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "opening_hours": "Mo,Tu 11:00-20:30; We-Su 11:00-21:00",
+    "addr:housenumber": "82",
+    "addr:street": "Tory Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/11471605169",
+   "lat": -41.293123,
+   "lng": 174.775942,
+   "tags": {
+    "name": "Loosies",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "website": "https://www.loosiessuprette.co.nz/",
+    "opening_hours": "Mo-Su 12:00-00:00",
+    "addr:housenumber": "135",
+    "addr:street": "Cuba Street",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/11499852331",
+   "lat": -41.292167,
+   "lng": 174.777567,
+   "tags": {
+    "name": "El Barrio",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://www.elbarrio.nz/",
+    "opening_hours": "Mo-Th 16:00-21:30+; Fr-Su 17:00-03:00, 15:00-21:30+",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/11499852337",
+   "lat": -41.293423,
+   "lng": 174.780611,
+   "tags": {
+    "name": "Rajdhani",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "opening_hours": "Su-We 11:30-14:30, 17:30-21:30; Th-Sa 11:30-14:30, 17:30-22:00",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/11499852350",
+   "lat": -41.293309,
+   "lng": 174.783375,
+   "tags": {
+    "name": "Los Banditos",
+    "amenity": "restaurant",
+    "cuisine": "mexican;pizza",
+    "opening_hours": "17:00-19:00",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/11499852351",
+   "lat": -41.293118,
+   "lng": 174.783474,
+   "tags": {
+    "name": "Nicolini's",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.nicolinis.co.nz",
+    "opening_hours": "Tu-We 17:30+; Th-Sa 17:00+",
+    "addr:housenumber": "9",
+    "addr:street": "Blair Street",
+    "addr:postcode": "6001",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/11506958525",
+   "lat": -41.290467,
+   "lng": 174.773829,
+   "tags": {
+    "name": "Home Taste Restaurant and Bar",
+    "name:en": "Home Taste Restaurant and Bar",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "https://hometastewellington.tuckerfox.co.nz/",
+    "opening_hours": "10:00-22:00",
+    "addr:housenumber": "160",
+    "addr:street": "Willis Street",
+    "addr:postcode": "6011",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/11507287963",
+   "lat": -41.284914,
+   "lng": 174.776512,
+   "tags": {
+    "name": "Ernesto's",
+    "amenity": "restaurant",
+    "website": "https://www.ernesto.co.nz/"
+   }
+  },
+  {
+   "id": "node/11530131481",
+   "lat": -41.290637,
+   "lng": 174.785071,
+   "tags": {
+    "name": "Flavours of Rajasthan",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "contact:website": "https://flavoursofrajasthan.co.nz/",
+    "opening_hours": "Mo 11:00-14:30,17:00-21:00; We-Fr 11:00-14:30,17:00-21:00; Sa-Su 11:00-14:30,17:00-22:00",
+    "addr:housenumber": "22",
+    "addr:street": "Herd Street",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/1163043003",
+   "lat": -41.293729,
+   "lng": 174.781135,
+   "tags": {
+    "name": "Chow",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "opening_hours": "Mo-Su 12:00-24:00",
+    "addr:housenumber": "45",
+    "addr:street": "Tory Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1166098693",
+   "lat": -41.291741,
+   "lng": 174.778989,
+   "tags": {
+    "name": "Fujiyama Teppanyaki",
+    "amenity": "restaurant",
+    "cuisine": "japanese"
+   }
+  },
+  {
+   "id": "node/1166098702",
+   "lat": -41.29124,
+   "lng": 174.779327,
+   "tags": {
+    "name": "Green Parrot Cafe",
+    "amenity": "restaurant",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/12284574274",
+   "lat": -41.292924,
+   "lng": 174.776061,
+   "tags": {
+    "name": "Top Kitchen",
+    "name:en": "Top Kitchen",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "opening_hours": "Mo-Su 11:00-22:00",
+    "addr:housenumber": "127a",
+    "addr:street": "Cuba Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12403390679",
+   "lat": -41.292343,
+   "lng": 174.776375,
+   "tags": {
+    "name": "Aroy Thai Eatery",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "website": "https://aroy.co.nz/",
+    "addr:housenumber": "101",
+    "addr:street": "Cuba Street",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/12599993601",
+   "lat": -41.291192,
+   "lng": 174.771081,
+   "tags": {
+    "name": "Worldwide Backpackers",
+    "tourism": "hostel",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/12674455501",
+   "lat": -41.289918,
+   "lng": 174.779867,
+   "tags": {
+    "name": "Shed22",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/12964833110",
+   "lat": -41.294252,
+   "lng": 174.780551,
+   "tags": {
+    "name": "Wildfire",
+    "amenity": "restaurant",
+    "website": "https://wildfirerestaurant.co.nz",
+    "opening_hours": "Mo off; Tu-Th,Su 17:00-23:00; Fr-Sa 17:00-24:00",
+    "addr:housenumber": "60",
+    "addr:street": "Tory Street"
+   }
+  },
+  {
+   "id": "node/13124105614",
+   "lat": -41.294316,
+   "lng": 174.780913,
+   "tags": {
+    "name": "Where's Charlie?",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese"
+   }
+  },
+  {
+   "id": "node/13203309101",
+   "lat": -41.292951,
+   "lng": 174.775736,
+   "tags": {
+    "name": "Somtum Thai",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "addr:housenumber": "124",
+    "addr:street": "Cuba Mall",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/13313058796",
+   "lat": -41.293486,
+   "lng": 174.781813,
+   "tags": {
+    "name": "Pizza Hut",
+    "amenity": "restaurant",
+    "cuisine": "pizza"
+   }
+  },
+  {
+   "id": "node/13315469907",
+   "lat": -41.280726,
+   "lng": 174.775651,
+   "tags": {
+    "name": "Where's Charlie",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese"
+   }
+  },
+  {
+   "id": "node/13315486981",
+   "lat": -41.282171,
+   "lng": 174.779025,
+   "tags": {
+    "name": "Bambina Pizzeria",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www.bambinapizzeria.co.nz",
+    "opening_hours": "Mo-Tu 11:30-15:00; We-Sa 11:30-21:00"
+   }
+  },
+  {
+   "id": "node/13315633289",
+   "lat": -41.291003,
+   "lng": 174.773872,
+   "tags": {
+    "name": "Chaat Street",
+    "amenity": "restaurant",
+    "cuisine": "indian"
+   }
+  },
+  {
+   "id": "node/13315633578",
+   "lat": -41.294975,
+   "lng": 174.774907,
+   "tags": {
+    "name": "Yor yak",
+    "amenity": "restaurant",
+    "cuisine": "thai"
+   }
+  },
+  {
+   "id": "node/13315646276",
+   "lat": -41.294653,
+   "lng": 174.771462,
+   "tags": {
+    "name": "Jano Bistro",
+    "amenity": "restaurant",
+    "cuisine": "fine_dining",
+    "opening_hours": "We-Sa 17:30+"
+   }
+  },
+  {
+   "id": "node/13358675514",
+   "lat": -41.293746,
+   "lng": 174.781636,
+   "tags": {
+    "name": "Kazu Yakitori & Sake Bar",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "addr:housenumber": "43",
+    "addr:street": "Courtenay Place"
+   }
+  },
+  {
+   "id": "node/13728743483",
+   "lat": -41.2929,
+   "lng": 174.77403,
+   "tags": {
+    "name": "Apapacho",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "contact:website": "https://www.instagram.com/apapacho.nz",
+    "opening_hours": "Mo 08:00-15:00; Th-Su 08:00-15:00",
+    "addr:housenumber": "89",
+    "addr:street": "Ghuznee Street"
+   }
+  },
+  {
+   "id": "node/13800676101",
+   "lat": -41.290642,
+   "lng": 174.77701,
+   "tags": {
+    "name": "Teddy’s Tacos",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://www.teddystacos.nz/",
+    "opening_hours": "Tu-Th 11:30-21:00; Fr-Sa 11:30-22:00; Su 11:30-17:00",
+    "addr:housenumber": "50",
+    "addr:street": "Cuba Street"
+   }
+  },
+  {
+   "id": "node/14047928334",
+   "lat": -41.289172,
+   "lng": 174.776269,
+   "tags": {
+    "name": "Saigon Delights",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "contact:website": "www.saigondelights.co.nz",
+    "opening_hours": "Mo-Su 11:30-14:30,17:00-22:00",
+    "addr:housenumber": "81",
+    "addr:street": "Victoria Street"
+   }
+  },
+  {
+   "id": "node/1791351219",
+   "lat": -41.293031,
+   "lng": 174.779373,
+   "tags": {
+    "name": "Oaks",
+    "tourism": "hotel",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1791447841",
+   "lat": -41.292592,
+   "lng": 174.779572,
+   "tags": {
+    "name": "Nando's",
+    "amenity": "restaurant",
+    "cuisine": "chicken;portuguese",
+    "website": "https://www.nandos.co.nz/",
+    "opening_hours": "11:00-22:00",
+    "addr:housenumber": "120",
+    "addr:street": "Courtenay Place",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1793908759",
+   "lat": -41.291231,
+   "lng": 174.774648,
+   "tags": {
+    "name": "Newkor Korean BBQ Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "website": "https://www.newkorwellington.co.nz",
+    "opening_hours": "16:00-21:00",
+    "addr:housenumber": "97",
+    "addr:street": "Dixon Street",
+    "addr:postcode": "6011",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1793949808",
+   "lat": -41.29116,
+   "lng": 174.77444,
+   "tags": {
+    "name": "Siem Reap Cambodian Restaurant",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Tu,Su off; We-Sa 17:00-21:00",
+    "addr:housenumber": "101",
+    "addr:street": "Dixon Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2063998207",
+   "lat": -41.293107,
+   "lng": 174.78061,
+   "tags": {
+    "name": "Dragonfly",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "website": "http://www.dragon-fly.co.nz/",
+    "opening_hours": "Mo-Sa 16:30-23:00",
+    "addr:housenumber": "70",
+    "addr:street": "Courtenay Place",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/2187836534",
+   "lat": -41.294218,
+   "lng": 174.779922,
+   "tags": {
+    "name": "Tiger Restaurant & KTV",
+    "amenity": "restaurant",
+    "cuisine": "chinese"
+   }
+  },
+  {
+   "id": "node/2189457827",
+   "lat": -41.293441,
+   "lng": 174.781651,
+   "tags": {
+    "name": "The Catch Sushi Bar",
+    "amenity": "restaurant",
+    "cuisine": "japanese"
+   }
+  },
+  {
+   "id": "node/2189483807",
+   "lat": -41.292926,
+   "lng": 174.783605,
+   "tags": {
+    "name": "Thai Chefs Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "website": "https://thaichef.co.nz/wellington/",
+    "opening_hours": "Mo 17:00-23:00; Tu-Fr 12:00-14:00,17:00-23:00; Sa 17:00-23:00; Su 12:00-14:00,22:00-23:00",
+    "addr:housenumber": "1",
+    "addr:street": "Blair Street",
+    "addr:postcode": "6011",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/2189483812",
+   "lat": -41.293261,
+   "lng": 174.78344,
+   "tags": {
+    "name": "Fratelli",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.fratelli.net.nz/",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2189501714",
+   "lat": -41.293003,
+   "lng": 174.78318,
+   "tags": {
+    "name": "Monsoon Poon",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "website": "https://www.monsoonpoon.co.nz/wellington-about/",
+    "opening_hours": "Mo-Fr 12:00-23:00; Sa-Su 17:00-23:00",
+    "addr:housenumber": "12",
+    "addr:street": "Blair Street",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/2189501718",
+   "lat": -41.293144,
+   "lng": 174.783097,
+   "tags": {
+    "name": "Little India",
+    "amenity": "restaurant",
+    "cuisine": "indian"
+   }
+  },
+  {
+   "id": "node/2189566949",
+   "lat": -41.294833,
+   "lng": 174.77469,
+   "tags": {
+    "name": "Logan Brown",
+    "amenity": "restaurant",
+    "website": "https://www.loganbrown.co.nz/",
+    "wikidata": "Q5470104"
+   }
+  },
+  {
+   "id": "node/2189566950",
+   "lat": -41.294655,
+   "lng": 174.774762,
+   "tags": {
+    "name": "The Flying Burrito Brothers",
+    "amenity": "restaurant",
+    "website": "https://www.flyingburritobrothers.co.nz/",
+    "opening_hours": "Tu-Su 17:00-00:00",
+    "addr:housenumber": "182",
+    "addr:street": "Cuba Street",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/2195230825",
+   "lat": -41.292767,
+   "lng": 174.782394,
+   "tags": {
+    "name": "Masala",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://masala.gen.nz",
+    "opening_hours": "Mo-Th 11:15-14:30,17:00-21:30; Fr 11:15-14:30,17:00-22:30; Sa 16:30-22:30; Su 16:30-21:00",
+    "addr:housenumber": "12",
+    "addr:street": "Allen Street"
+   }
+  },
+  {
+   "id": "node/2195230831",
+   "lat": -41.2928,
+   "lng": 174.782708,
+   "tags": {
+    "name": "Big Thumb",
+    "amenity": "restaurant",
+    "cuisine": "chinese"
+   }
+  },
+  {
+   "id": "node/2195230854",
+   "lat": -41.293003,
+   "lng": 174.782256,
+   "tags": {
+    "name": "Rock Yard",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "opening_hours": "Su-Th 17:00-22:00; Fr-Sa 17:00-23:30",
+    "addr:housenumber": "18",
+    "addr:street": "Allen Street"
+   }
+  },
+  {
+   "id": "node/2195230857",
+   "lat": -41.293079,
+   "lng": 174.7822,
+   "tags": {
+    "name": "Blue Nile",
+    "amenity": "restaurant",
+    "cuisine": "ethiopian",
+    "website": "http://bluenilewellington.com/"
+   }
+  },
+  {
+   "id": "node/2195231153",
+   "lat": -41.292672,
+   "lng": 174.782791,
+   "tags": {
+    "name": "Istana Malaysia",
+    "amenity": "restaurant",
+    "cuisine": "malaysian"
+   }
+  },
+  {
+   "id": "node/2586034177",
+   "lat": -41.293906,
+   "lng": 174.775556,
+   "tags": {
+    "name": "Floriditas",
+    "amenity": "restaurant",
+    "website": "https://floriditas.co.nz z",
+    "opening_hours": "Mo 07:00-15:00; Tu-Sa 07:00-15:00,17:30-22:00; Su 07:00-15:00",
+    "addr:housenumber": "161",
+    "addr:street": "Cuba Street",
+    "addr:postcode": "6011",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2586034178",
+   "lat": -41.29394,
+   "lng": 174.775235,
+   "tags": {
+    "name": "R&S Satay Noodle House",
+    "amenity": "restaurant",
+    "website": "https://randsnoodlehouse.co.nz/",
+    "opening_hours": "Mo-We,Su 11:00-21:00; Th-Sa 11:00-22:00",
+    "addr:housenumber": "152",
+    "addr:street": "Cuba Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2589999323",
+   "lat": -41.293407,
+   "lng": 174.775831,
+   "tags": {
+    "name": "Scopa",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www.scopa.co.nz/",
+    "opening_hours": "Tu 11:30-15:00,17:00+; We-Su 11:30-24:00+; Mo off",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2605687515",
+   "lat": -41.29399,
+   "lng": 174.775823,
+   "tags": {
+    "name": "Noble Rot",
+    "amenity": "restaurant",
+    "website": "https://noblerot.co.nz/",
+    "opening_hours": "Tu-Sa 16:00-23:00",
+    "addr:housenumber": "6",
+    "addr:street": "Swan Lane",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/2607183033",
+   "lat": -41.294895,
+   "lng": 174.774971,
+   "tags": {
+    "name": "Ombra",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.ombra.co.nz/",
+    "opening_hours": "Mo-Tu 16:00-21:00; We-Th 12:00-21:30; Fr-Sa 12:00-22:30; Su 12:00-21:30",
+    "addr:housenumber": "199",
+    "addr:street": "Cuba Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2607183038",
+   "lat": -41.294964,
+   "lng": 174.77464,
+   "tags": {
+    "name": "El Matador",
+    "amenity": "restaurant",
+    "contact:website": "https://www.elmatador.co.nz",
+    "opening_hours": "Mo-Su 17:00-00:00",
+    "addr:housenumber": "196",
+    "addr:street": "Cuba Street",
+    "addr:postcode": "6011",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2607183039",
+   "lat": -41.295037,
+   "lng": 174.774594,
+   "tags": {
+    "name": "Rasa",
+    "amenity": "restaurant",
+    "cuisine": "malaysian",
+    "website": "https://www.rasamalaysiarestaurant.co.nz/",
+    "opening_hours": "Mo-Fr 12:00-14:00,17:30-21:30; Sa-Su 17:30-21:30",
+    "addr:housenumber": "200",
+    "addr:street": "Cuba Street",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/2607183046",
+   "lat": -41.29506,
+   "lng": 174.774905,
+   "tags": {
+    "name": "Nolita",
+    "amenity": "restaurant",
+    "cuisine": "pizza;pasta",
+    "website": "https://nolita.co.nz/",
+    "opening_hours": "Mo-Fr 12:00-21:00; Sa-Su 10:00-21:00",
+    "addr:housenumber": "203",
+    "addr:street": "Cuba Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2620544265",
+   "lat": -41.291401,
+   "lng": 174.775834,
+   "tags": {
+    "name": "Seoul House",
+    "amenity": "restaurant",
+    "cuisine": "korea;asia",
+    "opening_hours": "Mo-Sa 11:30-14:30, 17:00-22:00",
+    "addr:housenumber": "68a"
+   }
+  },
+  {
+   "id": "node/2624301361",
+   "lat": -41.28186,
+   "lng": 174.776325,
+   "tags": {
+    "name": "Midland Sushi",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2633068755",
+   "lat": -41.294037,
+   "lng": 174.771804,
+   "tags": {
+    "name": "Mughlai Mer-curries",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://mughlaimercurry.co.nz",
+    "opening_hours": "Mo-We 18:00-22:00; Th-Su 18:00-22:00",
+    "addr:housenumber": "2/248"
+   }
+  },
+  {
+   "id": "node/2633068756",
+   "lat": -41.293995,
+   "lng": 174.771848,
+   "tags": {
+    "name": "Il Piccolo",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "opening_hours": "17:00-22:00",
+    "addr:housenumber": "248",
+    "addr:street": "Willis Street",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/2634526517",
+   "lat": -41.292262,
+   "lng": 174.781666,
+   "tags": {
+    "name": "Mama Brown",
+    "name:en": "Mama Brown",
+    "amenity": "restaurant",
+    "opening_hours": "We-Fr 11:00-21:30; Sa-Su 09:00-21:30; Mo-Tu off",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/2640326058",
+   "lat": -41.283067,
+   "lng": 174.77921,
+   "tags": {
+    "name": "Master Kong",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/2640330222",
+   "lat": -41.290181,
+   "lng": 174.780605,
+   "tags": {
+    "name": "Encore",
+    "amenity": "restaurant",
+    "website": "http://encoreatcirca.co.nz/"
+   }
+  },
+  {
+   "id": "node/2667786068",
+   "lat": -41.28935,
+   "lng": 174.774459,
+   "tags": {
+    "name": "Saigon Restaurant & Bar",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "website": "https://www.saigon.nz",
+    "opening_hours": "11:00-22:00",
+    "addr:housenumber": "126",
+    "addr:street": "Willis Street",
+    "addr:postcode": "6011",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2667786121",
+   "lat": -41.28973,
+   "lng": 174.773891,
+   "tags": {
+    "name": "TK BBQ buffet",
+    "amenity": "restaurant",
+    "cuisine": "korean"
+   }
+  },
+  {
+   "id": "node/267031278",
+   "lat": -41.290813,
+   "lng": 174.774111,
+   "tags": {
+    "name": "Mercure Wellington Abel Tasman Hotel",
+    "tourism": "hotel",
+    "website": "https://www.abeltasmanhotel.co.nz/",
+    "addr:housenumber": "169",
+    "addr:street": "Willis Street",
+    "addr:postcode": "6011",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/267031545",
+   "lat": -41.290665,
+   "lng": 174.773646,
+   "tags": {
+    "name": "Trinity Hotel",
+    "tourism": "hotel",
+    "website": "https://trinityhotel.co.nz/",
+    "addr:housenumber": "166",
+    "addr:street": "Willis Street",
+    "addr:postcode": "6011",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/267032311",
+   "lat": -41.2893,
+   "lng": 174.774376,
+   "tags": {
+    "name": "Hotel St. George",
+    "tourism": "hotel",
+    "website": "https://www.stgeorgewellington.co.nz/",
+    "wikidata": "Q5911993",
+    "addr:housenumber": "124",
+    "addr:street": "Willis Street",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/267314224",
+   "lat": -41.295271,
+   "lng": 174.774956,
+   "tags": {
+    "name": "Naumi Hotel",
+    "tourism": "hotel",
+    "addr:housenumber": "213",
+    "addr:street": "Cuba Street"
+   }
+  },
+  {
+   "id": "node/267843129",
+   "lat": -41.292665,
+   "lng": 174.77298,
+   "tags": {
+    "name": "Quest on Willis",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/279677719",
+   "lat": -41.284743,
+   "lng": 174.773823,
+   "tags": {
+    "name": "Quest Atrium",
+    "tourism": "hotel",
+    "addr:housenumber": "154",
+    "addr:street": "The Terrace"
+   }
+  },
+  {
+   "id": "node/280666551",
+   "lat": -41.28583,
+   "lng": 174.775263,
+   "tags": {
+    "name": "Travelodge",
+    "tourism": "hotel",
+    "wikidata": "Q111408148"
+   }
+  },
+  {
+   "id": "node/283277850",
+   "lat": -41.28945,
+   "lng": 174.774008,
+   "tags": {
+    "name": "Flagstaff Village",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/283277923",
+   "lat": -41.289909,
+   "lng": 174.774012,
+   "tags": {
+    "name": "Willis Village Urban Garden Apartments",
+    "tourism": "hotel",
+    "website": "https://www.villagegroup.co.nz/accommodation/willis-village-wellington.htm"
+   }
+  },
+  {
+   "id": "node/2921380723",
+   "lat": -41.284601,
+   "lng": 174.779163,
+   "tags": {
+    "name": "Crab Shack",
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "website": "https://www.crabshack.co.nz",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/307349592",
+   "lat": -41.287371,
+   "lng": 174.772519,
+   "tags": {
+    "name": "Kia Maia International Student Christian Hostel",
+    "tourism": "hostel"
+   }
+  },
+  {
+   "id": "node/3232279487",
+   "lat": -41.293989,
+   "lng": 174.775465,
+   "tags": {
+    "name": "Satay Palace",
+    "amenity": "restaurant",
+    "cuisine": "malaysian",
+    "website": "https://www.sataypalace.co.nz",
+    "opening_hours": "Mo-Sa 11:30-21:00",
+    "addr:housenumber": "165",
+    "addr:street": "Cuba Street",
+    "addr:postcode": "6011",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3232283068",
+   "lat": -41.294041,
+   "lng": 174.775455,
+   "tags": {
+    "name": "Aunty Mena's Vegetarian Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "chinese;malaysian",
+    "opening_hours": "Mo-Sa 12:00-21:00",
+    "addr:housenumber": "167",
+    "addr:street": "Cuba Street",
+    "addr:postcode": "6011",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3233695154",
+   "lat": -41.292643,
+   "lng": 174.776214,
+   "tags": {
+    "name": "Little India",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://www.littleindia.co.nz/",
+    "opening_hours": "Mo-Su 11:30-14:00, 17:00-22:00",
+    "addr:housenumber": "115",
+    "addr:street": "Cuba Mall"
+   }
+  },
+  {
+   "id": "node/3429643641",
+   "lat": -41.284138,
+   "lng": 174.775162,
+   "tags": {
+    "name": "Concrete",
+    "amenity": "restaurant",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/3429643644",
+   "lat": -41.293096,
+   "lng": 174.775507,
+   "tags": {
+    "name": "KK Malaysian Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "malaysian",
+    "website": "http://www.kkmalaysian.co.nz",
+    "opening_hours": "Mo-Sa 11:30-21:30; Su 17:00-21:30",
+    "addr:housenumber": "54",
+    "addr:street": "Ghuznee Street"
+   }
+  },
+  {
+   "id": "node/356515443",
+   "lat": -41.28453,
+   "lng": 174.7768,
+   "tags": {
+    "name": "Intercontinental",
+    "tourism": "hotel",
+    "wikidata": "Q111408156"
+   }
+  },
+  {
+   "id": "node/356515969",
+   "lat": -41.285543,
+   "lng": 174.776079,
+   "tags": {
+    "name": "Quest Wellington",
+    "tourism": "hotel",
+    "website": "https://www.questapartments.co.nz/properties/north-island/wellington/quest-wellington",
+    "wikidata": "Q112010214",
+    "addr:housenumber": "33",
+    "addr:street": "Hunter Street",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/3571432962",
+   "lat": -41.292335,
+   "lng": 174.778093,
+   "tags": {
+    "name": "The Setup Hostel",
+    "tourism": "hostel",
+    "addr:housenumber": "15",
+    "addr:street": "Dixon Street",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/4211941185",
+   "lat": -41.294339,
+   "lng": 174.775303,
+   "tags": {
+    "name": "Loretta",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "addr:housenumber": "181",
+    "addr:street": "Cuba Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4301827603",
+   "lat": -41.284655,
+   "lng": 174.778835,
+   "tags": {
+    "name": "Bin 44",
+    "amenity": "restaurant",
+    "cuisine": "Craft_Beer",
+    "website": "https://bin44.co.nz",
+    "opening_hours": "Mo-Fr 10:30-23:00; Sa-Su 10:00-23:00",
+    "addr:housenumber": "3",
+    "addr:street": "Queens Wharf Queens Wharf",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/4305411508",
+   "lat": -41.283568,
+   "lng": 174.778808,
+   "tags": {
+    "name": "One Red Dog",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/4331764789",
+   "lat": -41.286702,
+   "lng": 174.77282,
+   "tags": {
+    "name": "Terrace Villas",
+    "tourism": "hotel",
+    "website": "https://www.terracevillas.co.nz/",
+    "opening_hours": "24/7",
+    "addr:housenumber": "202",
+    "addr:street": "The Terrace",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/4362125590",
+   "lat": -41.283782,
+   "lng": 174.775207,
+   "tags": {
+    "name": "Verve",
+    "amenity": "restaurant",
+    "cuisine": "cake;coffee_shop",
+    "website": "http://www.vervecafe.co.nz",
+    "opening_hours": "Mo-Fr 07:00-04:30; Sa 09:00-04:30; Su 10:00-04:00",
+    "addr:housenumber": "250",
+    "addr:street": "Lambton Quay",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4424409886",
+   "lat": -41.282808,
+   "lng": 174.776406,
+   "tags": {
+    "name": "Quest on Johnston",
+    "tourism": "hotel",
+    "website": "https://www.questapartments.co.nz/Accommodation/155/New_Zealand/Wellington/Quest_On_Johnston/Welcome.aspx",
+    "wikidata": "Q111869982",
+    "addr:housenumber": "35",
+    "addr:street": "Johnston Street",
+    "addr:postcode": "6011",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4428303996",
+   "lat": -41.28741,
+   "lng": 174.776024,
+   "tags": {
+    "name": "Thanh Giong Pho",
+    "name:en": "Thanh Giong Pho",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "opening_hours": "Mo-Fr 09:00-21:00; Sa,Su 10:00-21:00",
+    "addr:street": "Chews Lane"
+   }
+  },
+  {
+   "id": "node/4442760002",
+   "lat": -41.289038,
+   "lng": 174.773483,
+   "tags": {
+    "name": "Trek global backpacker",
+    "tourism": "hostel",
+    "website": "https://www.trekglobal.net/",
+    "addr:housenumber": "9",
+    "addr:street": "O'Reilly"
+   }
+  },
+  {
+   "id": "node/4513147589",
+   "lat": -41.29098,
+   "lng": 174.77455,
+   "tags": {
+    "name": "Longxiang",
+    "name:en": "Longxiang",
+    "amenity": "restaurant",
+    "addr:housenumber": "96",
+    "addr:street": "Dixon Street"
+   }
+  },
+  {
+   "id": "node/4516541593",
+   "lat": -41.292525,
+   "lng": 174.775379,
+   "tags": {
+    "name": "Satay Kingdom",
+    "name:en": "Satay Kingdom",
+    "amenity": "restaurant",
+    "cuisine": "malaysian"
+   }
+  },
+  {
+   "id": "node/4531456345",
+   "lat": -41.292439,
+   "lng": 174.775501,
+   "tags": {
+    "name": "Macha, Jom Tapau",
+    "amenity": "restaurant",
+    "cuisine": "malaysian",
+    "website": "https://www.machajomtapau.co.nz",
+    "opening_hours": "11:30-20:30",
+    "addr:housenumber": "206",
+    "addr:street": "Left Bank",
+    "addr:postcode": "6011",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4531457465",
+   "lat": -41.292428,
+   "lng": 174.775471,
+   "tags": {
+    "name": "Petra",
+    "amenity": "restaurant",
+    "addr:housenumber": "207",
+    "addr:street": "Left Bank",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/4531457467",
+   "lat": -41.292488,
+   "lng": 174.775184,
+   "tags": {
+    "name": "Viva México",
+    "name:en": "Viva México",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "opening_hours": "Tu-Su 17:00-21:00",
+    "addr:street": "Left Bank",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/4613541903",
+   "lat": -41.284279,
+   "lng": 174.779086,
+   "tags": {
+    "name": "Shed 5",
+    "amenity": "restaurant",
+    "website": "https://www.shed5.co.nz/",
+    "opening_hours": "Mo-Su 12:00-15:00, 17:30-21:30",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4613544008",
+   "lat": -41.283332,
+   "lng": 174.779086,
+   "tags": {
+    "name": "Portofino",
+    "amenity": "restaurant",
+    "cuisine": "fish;seafood",
+    "opening_hours": "Mo-Su 11:00-23:00",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4733704822",
+   "lat": -41.289907,
+   "lng": 174.77447,
+   "tags": {
+    "name": "Burger Liquor",
+    "amenity": "restaurant",
+    "cuisine": "burger",
+    "website": "https://www.burgerliquor.co.nz/",
+    "opening_hours": "Mo-Th 11:30-21:00; Fr-Sa 11:30-22:00; Su 11:30-21:00",
+    "addr:housenumber": "129",
+    "addr:street": "Willis Street",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/4733958829",
+   "lat": -41.2925,
+   "lng": 174.777028,
+   "tags": {
+    "name": "Baar Baar",
+    "amenity": "restaurant",
+    "cuisine": "indian"
+   }
+  },
+  {
+   "id": "node/4740861731",
+   "lat": -41.292496,
+   "lng": 174.781885,
+   "tags": {
+    "name": "Joe's Garage",
+    "name:en": "Joe's Garage",
+    "amenity": "restaurant",
+    "addr:housenumber": "5",
+    "addr:street": "Tory Street"
+   }
+  },
+  {
+   "id": "node/4751955821",
+   "lat": -41.29173,
+   "lng": 174.782508,
+   "tags": {
+    "name": "Hippopotamus",
+    "name:en": "Hippopotamus",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/4751956122",
+   "lat": -41.293043,
+   "lng": 174.781557,
+   "tags": {
+    "name": "Dragons",
+    "amenity": "restaurant",
+    "cuisine": "chinese"
+   }
+  },
+  {
+   "id": "node/4757467921",
+   "lat": -41.289112,
+   "lng": 174.775421,
+   "tags": {
+    "name": "Fisherman's Plate",
+    "name:en": "Fisherman's Plate",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "website": "https://m.facebook.com/pages/Fishermans-Plate/172072822839933",
+    "opening_hours": "Mo-Sa 11:00-15:00,17:00-21:00; Su,PH off",
+    "addr:housenumber": "12",
+    "addr:street": "Bond Street",
+    "addr:postcode": "6011",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4829819721",
+   "lat": -41.289777,
+   "lng": 174.777078,
+   "tags": {
+    "name": "A High Dining",
+    "amenity": "restaurant",
+    "website": "https://ahigh.kiwi.nz/",
+    "opening_hours": "Tu-Fr 12:00-14:30,17:00-21:30; Sa 11:30-14:30,17:00-21:30; Su 11:30-14:30",
+    "addr:housenumber": "122",
+    "addr:street": "Wakefield Street",
+    "addr:postcode": "6011",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/4866034321",
+   "lat": -41.294088,
+   "lng": 174.77743,
+   "tags": {
+    "name": "The Pohoutakawa Room",
+    "name:en": "The Pohoutakawa Room",
+    "tourism": "hotel",
+    "website": "https://www.airbnb.co.nz/rooms/18656066",
+    "addr:housenumber": "11d",
+    "addr:street": "Ghuznee Street"
+   }
+  },
+  {
+   "id": "node/5114990145",
+   "lat": -41.286236,
+   "lng": 174.773902,
+   "tags": {
+    "name": "Boulcott Street Bistro",
+    "amenity": "restaurant",
+    "website": "https://boulcottstreetbistro.co.nz/",
+    "opening_hours": "Mo-Fr 12:00-14:00,17:30-00:00; Sa 17:30-00:00",
+    "addr:housenumber": "99",
+    "addr:street": "Boulcott Street",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/5114990146",
+   "lat": -41.285112,
+   "lng": 174.777544,
+   "tags": {
+    "name": "Charley Noble Eatery & Bar",
+    "amenity": "restaurant",
+    "website": "https://www.charleynoble.co.nz/",
+    "opening_hours": "Mo-Fr 11:30-23:00; Sa-Su 17:00-23:00",
+    "addr:housenumber": "1",
+    "addr:street": "Post office Square",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/5203087378",
+   "lat": -41.281174,
+   "lng": 174.775272,
+   "tags": {
+    "name": "Bethel Woods",
+    "amenity": "restaurant",
+    "website": "https://bethelwoods.co.nz/",
+    "opening_hours": "Mo-Fr 09:00-21:00",
+    "addr:housenumber": "73",
+    "addr:street": "The Terrace"
+   }
+  },
+  {
+   "id": "node/5322859621",
+   "lat": -41.29041,
+   "lng": 174.775016,
+   "tags": {
+    "name": "Tatsushi",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "website": "https://www.tatsushi.co.nz/",
+    "opening_hours": "Tu-Sa 11:30-14:00, 17:30-22:00",
+    "addr:housenumber": "19",
+    "addr:street": "Edward Street"
+   }
+  },
+  {
+   "id": "node/5324850426",
+   "lat": -41.291036,
+   "lng": 174.776454,
+   "tags": {
+    "name": "TJ Katsu",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "website": "https://tjkatsu.co.nz",
+    "opening_hours": "Mo-Sa 09:30-19:00; Su 09:30-18:30",
+    "addr:housenumber": "88",
+    "addr:street": "Manners Street",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/5428910175",
+   "lat": -41.291993,
+   "lng": 174.777027,
+   "tags": {
+    "name": "Mexico",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "addr:housenumber": "41",
+    "addr:street": "Dixon Street",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/5428969825",
+   "lat": -41.291523,
+   "lng": 174.77686,
+   "tags": {
+    "name": "The Oaks Satay Noodle House",
+    "amenity": "restaurant",
+    "website": "https://the-oaks-satay-noodle-house.business.site/",
+    "opening_hours": "Mo-Th,Sa 11:00-21:00; Fr 11:00-21:30; Su off",
+    "addr:housenumber": "73",
+    "addr:street": "Cuba Street",
+    "addr:postcode": "6011",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/5428969833",
+   "lat": -41.294507,
+   "lng": 174.775163,
+   "tags": {
+    "name": "St Pierre's Sushi",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "website": "https://stpierres.co.nz/",
+    "opening_hours": "08:00-20:00",
+    "addr:housenumber": "189",
+    "addr:street": "Cuba Street",
+    "addr:postcode": "6011",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/5544107817",
+   "lat": -41.294146,
+   "lng": 174.775374,
+   "tags": {
+    "name": "Kazu Sushi-Go-Round",
+    "amenity": "restaurant",
+    "cuisine": "japanese;sushi",
+    "opening_hours": "Mo-Fr 11:30-21:00; Sa-Su 11:00-21:00",
+    "addr:housenumber": "173A",
+    "addr:street": "Cuba Street",
+    "addr:postcode": "6011",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/5544109756",
+   "lat": -41.29513,
+   "lng": 174.776386,
+   "tags": {
+    "name": "Taste of Home",
+    "amenity": "restaurant",
+    "cuisine": "chinese;asian",
+    "website": "https://www.facebook.com/atasteofchina17/",
+    "opening_hours": "Mo,Su off; Tu-Sa 11:30-14:30,17:00-20:00",
+    "addr:housenumber": "128",
+    "addr:street": "Vivian Street",
+    "addr:postcode": "6011",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/5650775420",
+   "lat": -41.280208,
+   "lng": 174.779069,
+   "tags": {
+    "name": "Sakura",
+    "amenity": "restaurant",
+    "addr:housenumber": "59B",
+    "addr:street": "Featherston Street"
+   }
+  },
+  {
+   "id": "node/5729456523",
+   "lat": -41.294223,
+   "lng": 174.776611,
+   "tags": {
+    "name": "The Marion",
+    "tourism": "hostel",
+    "website": "https://www.themarionhostel.com",
+    "opening_hours": "Mo-Su 14:00-21:30",
+    "wikidata": "Q111117159",
+    "addr:housenumber": "13-15",
+    "addr:street": "Marion Street"
+   }
+  },
+  {
+   "id": "node/5732557821",
+   "lat": -41.282706,
+   "lng": 174.777172,
+   "tags": {
+    "name": "Madama Butterfly",
+    "amenity": "restaurant",
+    "addr:housenumber": "132",
+    "addr:street": "Featherston Street"
+   }
+  },
+  {
+   "id": "node/583471968",
+   "lat": -41.283126,
+   "lng": 174.777359,
+   "tags": {
+    "name": "Contra",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/5898266462",
+   "lat": -41.280813,
+   "lng": 174.775684,
+   "tags": {
+    "name": "Fujiyama Cafe",
+    "amenity": "restaurant",
+    "cuisine": "asian;sushi",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/5898266463",
+   "lat": -41.280834,
+   "lng": 174.775679,
+   "tags": {
+    "name": "Higher Taste Hare Krishna",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://www.highertasteharekrishna.com/",
+    "opening_hours": "Mo 10:00-15:00; Tu-Sa 10:00-19:00; Su,PH off",
+    "addr:housenumber": "138a",
+    "addr:street": "Lambton Quay",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/5898266486",
+   "lat": -41.284632,
+   "lng": 174.774927,
+   "tags": {
+    "name": "Daruma Sushi",
+    "amenity": "restaurant",
+    "cuisine": "japanese;sushi",
+    "opening_hours": "Mo-Fr 09:00-18:00",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/5906608085",
+   "lat": -41.288683,
+   "lng": 174.774808,
+   "tags": {
+    "name": "Hey Ramen",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Fr 11:00-20:00; Sa 11:00-17:00; Su 11:30-17:00",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/5906608088",
+   "lat": -41.288469,
+   "lng": 174.774925,
+   "tags": {
+    "name": "St Pierre's Sushi",
+    "amenity": "restaurant",
+    "cuisine": "sushi"
+   }
+  },
+  {
+   "id": "node/5906608107",
+   "lat": -41.289805,
+   "lng": 174.775935,
+   "tags": {
+    "name": "Asian Kitchen",
+    "amenity": "restaurant",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/5915588382",
+   "lat": -41.283235,
+   "lng": 174.776445,
+   "tags": {
+    "name": "The Long Bar",
+    "amenity": "restaurant",
+    "cuisine": "malaysian",
+    "opening_hours": "Mo-Sa 11:30-14:00"
+   }
+  },
+  {
+   "id": "node/5915590187",
+   "lat": -41.283039,
+   "lng": 174.776983,
+   "tags": {
+    "name": "TJ Katsu",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "website": "https://www.tjkatsu.co.nz/locations/"
+   }
+  },
+  {
+   "id": "node/5915590189",
+   "lat": -41.284518,
+   "lng": 174.777132,
+   "tags": {
+    "name": "GPO Restaurant",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/5919899476",
+   "lat": -41.291951,
+   "lng": 174.776876,
+   "tags": {
+    "name": "Babaili Hot Pot",
+    "name:en": "Babaili Hot Pot",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "https://www.babaili.co.nz/babaili-hot-pot",
+    "opening_hours": "11:00-14:30,17:00-22:00",
+    "addr:housenumber": "45",
+    "addr:street": "Dixon Street"
+   }
+  },
+  {
+   "id": "node/5919899477",
+   "lat": -41.292021,
+   "lng": 174.777134,
+   "tags": {
+    "name": "The Old Quarter",
+    "amenity": "restaurant",
+    "website": "https://theoldquarter.co.nz/"
+   }
+  },
+  {
+   "id": "node/5919899478",
+   "lat": -41.293312,
+   "lng": 174.775554,
+   "tags": {
+    "name": "Eleven Fifty Four",
+    "amenity": "restaurant",
+    "cuisine": "pasta",
+    "website": "https://1154.co.nz/",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/5919900535",
+   "lat": -41.291545,
+   "lng": 174.77621,
+   "tags": {
+    "name": "Pho Mo",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "website": "https://www.pho-mo.co.nz/"
+   }
+  },
+  {
+   "id": "node/5927909902",
+   "lat": -41.289058,
+   "lng": 174.774408,
+   "tags": {
+    "name": "Dumpling'd",
+    "amenity": "restaurant",
+    "cuisine": "chinese;dumplings",
+    "website": "https://dumplingd.co.nz/"
+   }
+  },
+  {
+   "id": "node/5927909916",
+   "lat": -41.289693,
+   "lng": 174.776907,
+   "tags": {
+    "name": "Nomads Capital Hostel Wellington",
+    "tourism": "hostel",
+    "website": "https://nomadsworld.com/new-zealand/nomads-wellington/",
+    "addr:housenumber": "118-120",
+    "addr:street": "Wakefield Street"
+   }
+  },
+  {
+   "id": "node/5928017577",
+   "lat": -41.290014,
+   "lng": 174.774116,
+   "tags": {
+    "name": "PizzaExpress",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www.wellingtonpizzaexpress.com/",
+    "opening_hours": "Mo-Th 11:00-22:00; Fr-Sa 11:00-22:00+; Su 11:30-22:00",
+    "addr:housenumber": "148",
+    "addr:street": "Willis Street",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/5956244668",
+   "lat": -41.291809,
+   "lng": 174.778127,
+   "tags": {
+    "name": "Shanghai Restaurant",
+    "amenity": "restaurant",
+    "website": "http://www.shanghairestaurant.co.nz/",
+    "opening_hours": "Mo-Fr 11:30-14:00, 17:00-23:00; Sa-Su 17:00-23:00"
+   }
+  },
+  {
+   "id": "node/5956244671",
+   "lat": -41.292085,
+   "lng": 174.77859,
+   "tags": {
+    "name": "Great India",
+    "amenity": "restaurant",
+    "website": "https://www.greatindia.co.nz/",
+    "opening_hours": "Mo-Fr 12:00-14:00; Sa-Su 12:00-15:00"
+   }
+  },
+  {
+   "id": "node/5956244672",
+   "lat": -41.291673,
+   "lng": 174.778131,
+   "tags": {
+    "name": "Redhill",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "https://www.redhillrestaurant.co.nz/"
+   }
+  },
+  {
+   "id": "node/5956244673",
+   "lat": -41.291766,
+   "lng": 174.778047,
+   "tags": {
+    "name": "Cinta Malaysian Kitchen",
+    "amenity": "restaurant",
+    "website": "https://cintawellington.co.nz/"
+   }
+  },
+  {
+   "id": "node/6003803137",
+   "lat": -41.28043,
+   "lng": 174.775118,
+   "tags": {
+    "name": "Sri Penang",
+    "amenity": "restaurant",
+    "cuisine": "malaysian",
+    "opening_hours": "Mo-Fr 11:00-15:00,16:30-20:30; Sa 11:00-20:30"
+   }
+  },
+  {
+   "id": "node/6003803139",
+   "lat": -41.280641,
+   "lng": 174.775098,
+   "tags": {
+    "name": "Udon & More",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "opening_hours": "Mo-Fr 10:30-20:00"
+   }
+  },
+  {
+   "id": "node/6003803141",
+   "lat": -41.280902,
+   "lng": 174.77532,
+   "tags": {
+    "name": "Aroy Thai Express",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/6003803142",
+   "lat": -41.285399,
+   "lng": 174.774017,
+   "tags": {
+    "name": "Jeff Cafe",
+    "amenity": "restaurant",
+    "cuisine": "chinese"
+   }
+  },
+  {
+   "id": "node/6081333297",
+   "lat": -41.293752,
+   "lng": 174.781673,
+   "tags": {
+    "name": "Arashi Japanese Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "japanese"
+   }
+  },
+  {
+   "id": "node/6081333298",
+   "lat": -41.293778,
+   "lng": 174.781739,
+   "tags": {
+    "name": "KC Cafe",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "opening_hours": "Mo-Th,Su 11:00-23:30; Fr-Sa 11:00-01:30",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/6081333299",
+   "lat": -41.293892,
+   "lng": 174.782228,
+   "tags": {
+    "name": "Kerā-la-Carte",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "opening_hours": "Mo off; Tu-Th 12:00-14:30, 17:30-22:00; Fr-Sa 14:00-14:30, 17:30-22:30; Su 12:00-14:30, 17:30-22:00",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/6087578581",
+   "lat": -41.280462,
+   "lng": 174.776125,
+   "tags": {
+    "name": "Mama Kitchen",
+    "amenity": "restaurant",
+    "cuisine": "malaysian",
+    "opening_hours": "Mo-Fr 11:00-20:00; Sa 12:00-15:00"
+   }
+  },
+  {
+   "id": "node/610646678",
+   "lat": -41.289781,
+   "lng": 174.774045,
+   "tags": {
+    "name": "Miyabi Sushi",
+    "amenity": "restaurant",
+    "cuisine": "japanese;sushi",
+    "website": "https://miyabisushi.co.nz/",
+    "opening_hours": "Mo-Fr 11:30-14:30,17:30-23:00; Sa 12:00-14:30,17:30-23:00",
+    "addr:housenumber": "142",
+    "addr:street": "Willis Street"
+   }
+  },
+  {
+   "id": "node/610646680",
+   "lat": -41.291643,
+   "lng": 174.779585,
+   "tags": {
+    "name": "Bitters & Love",
+    "amenity": "restaurant",
+    "cuisine": "british",
+    "addr:housenumber": "25",
+    "addr:street": "Taranaki Street"
+   }
+  },
+  {
+   "id": "node/6363590885",
+   "lat": -41.293067,
+   "lng": 174.775717,
+   "tags": {
+    "name": "Hei",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Sa 11:30-15:00,17:00+"
+   }
+  },
+  {
+   "id": "node/6583736476",
+   "lat": -41.29016,
+   "lng": 174.774295,
+   "tags": {
+    "name": "Seoul Salon",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "website": "https://www.facebook.com/seoulsalonnz/",
+    "opening_hours": "Tu-Sa 11:00-14:30,17:30-21:00",
+    "addr:housenumber": "145",
+    "addr:street": "Willis Street",
+    "addr:postcode": "6011",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/6583968364",
+   "lat": -41.290547,
+   "lng": 174.774071,
+   "tags": {
+    "name": "A+ Sushi",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "opening_hours": "Mo-Fr 08:30-17:30",
+    "addr:housenumber": "161A",
+    "addr:street": "Willis Street",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/7118715685",
+   "lat": -41.295454,
+   "lng": 174.776551,
+   "tags": {
+    "name": "Yor Yak Thai Eatery",
+    "amenity": "restaurant",
+    "website": "https://yoryak.nz/",
+    "opening_hours": "Mo,Su 17:00-21:30; Tu-Th 12:00-14:30,17:00-21:30; Fr 12:00-14:30,17:00-23:00; Sa 17:00-23:00",
+    "addr:housenumber": "111",
+    "addr:street": "Vivian Street",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/7393864793",
+   "lat": -41.282111,
+   "lng": 174.775567,
+   "tags": {
+    "name": "Angkor Express",
+    "amenity": "restaurant",
+    "cuisine": "cambodian",
+    "addr:housenumber": "7",
+    "addr:street": "Woodward Street"
+   }
+  },
+  {
+   "id": "node/8250539489",
+   "lat": -41.29411,
+   "lng": 174.775122,
+   "tags": {
+    "name": "Origami",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "website": "https://www.origami-nz.com/",
+    "opening_hours": "Mo-Th,Su 11:30-21:00; Fr-Sa 11:30-21:30",
+    "addr:housenumber": "158",
+    "addr:street": "Cuba Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/8253985929",
+   "lat": -41.280315,
+   "lng": 174.780048,
+   "tags": {
+    "name": "Hotel Waterloo & Backpackers",
+    "tourism": "hotel",
+    "website": "https://www.hotelwaterloo.co.nz/",
+    "wikidata": "Q111117158",
+    "addr:housenumber": "1",
+    "addr:street": "Bunny Street"
+   }
+  },
+  {
+   "id": "node/8340177733",
+   "lat": -41.289295,
+   "lng": 174.76843,
+   "tags": {
+    "name": "Where's Charlie",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "website": "https://wherescharlie.co.nz",
+    "opening_hours": "Mo-Fr 11:00-15:00; Sa-Su off",
+    "addr:street": "Kelburn Parade",
+    "addr:postcode": "6011",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/9602025920",
+   "lat": -41.290743,
+   "lng": 174.776939,
+   "tags": {
+    "name": "Highwater",
+    "amenity": "restaurant",
+    "website": "https://www.highwatereatery.co.nz/",
+    "opening_hours": "Tu-Th 17:00-21:30+; Fr 12:00-21:30+; Sa 11:00-21:30+",
+    "addr:housenumber": "54",
+    "addr:street": "Cuba Street",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/9602029070",
+   "lat": -41.290445,
+   "lng": 174.77629,
+   "tags": {
+    "name": "Korean Country House",
+    "amenity": "restaurant",
+    "cuisine": "asian;korean",
+    "addr:housenumber": "57",
+    "addr:street": "Manners Street",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "node/9928304317",
+   "lat": -41.283219,
+   "lng": 174.77692,
+   "tags": {
+    "name": "Le Saigon",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "website": "https://www.lesaigon.co.nz/",
+    "opening_hours": "Mo-Su 11:30-14:30, 17:00-21:00",
+    "addr:housenumber": "146-150",
+    "addr:street": "Featherston Street"
+   }
+  },
+  {
+   "id": "relation/9531256",
+   "lat": -41.2905,
+   "lng": 174.774387,
+   "tags": {
+    "name": "Capital Market",
+    "amenity": "restaurant",
+    "website": "http://capitalmarket.co.nz/",
+    "opening_hours": "10:30-21:00",
+    "addr:housenumber": "151",
+    "addr:street": "Willis Street",
+    "addr:postcode": "6011",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/1026245386",
+   "lat": -41.285169,
+   "lng": 174.778916,
+   "tags": {
+    "name": "Rosie' s Red Hot Cantina",
+    "amenity": "restaurant",
+    "website": "https://rosiescantina.co.nz",
+    "opening_hours": "Su-We 11:30-22:00; Th 11:30-23:00; Fr-Sa 11:30-24:00",
+    "addr:housenumber": "4",
+    "addr:street": "Queens Wharf",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "way/1055929888",
+   "lat": -41.27989,
+   "lng": 174.774586,
+   "tags": {
+    "name": "Jardin Grill",
+    "amenity": "restaurant",
+    "website": "https://www.sofitel-wellington.com/restaurant-and-bar/jardin-grill-wellington/",
+    "addr:housenumber": "11",
+    "addr:street": "Bolton Street",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "way/1150364163",
+   "lat": -41.29291,
+   "lng": 174.781787,
+   "tags": {
+    "name": "TRYP by Wyndham Wellington",
+    "tourism": "hotel",
+    "website": "https://trypwellington.co.nz/",
+    "addr:housenumber": "15",
+    "addr:street": "Tory Street",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "way/1167483936",
+   "lat": -41.28386,
+   "lng": 174.775217,
+   "tags": {
+    "name": "Quest 256 Lambton",
+    "tourism": "hotel",
+    "website": "https://www.quest256lambton.co.nz/",
+    "addr:housenumber": "256",
+    "addr:street": "Lambton Quay",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "way/1167896114",
+   "lat": -41.28242,
+   "lng": 174.77543,
+   "tags": {
+    "name": "Park Hotel",
+    "tourism": "hotel",
+    "addr:housenumber": "101",
+    "addr:street": "The Terrace",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "way/250854853",
+   "lat": -41.29184,
+   "lng": 174.782652,
+   "tags": {
+    "name": "Qt Wellington",
+    "tourism": "hotel",
+    "wikidata": "Q111650523",
+    "addr:housenumber": "90",
+    "addr:street": "Cable Street"
+   }
+  },
+  {
+   "id": "way/251557195",
+   "lat": -41.293802,
+   "lng": 174.769746,
+   "tags": {
+    "name": "Mövenpick Hotel Wellington",
+    "tourism": "hotel",
+    "addr:housenumber": "345",
+    "addr:street": "The Terrace",
+    "addr:postcode": "6011",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/256795376",
+   "lat": -41.279322,
+   "lng": 174.77473,
+   "tags": {
+    "name": "Bolton Hotel",
+    "tourism": "hotel",
+    "addr:housenumber": "12",
+    "addr:street": "Bolton Street"
+   }
+  },
+  {
+   "id": "way/256795378",
+   "lat": -41.279743,
+   "lng": 174.774709,
+   "tags": {
+    "name": "Sofitel Wellington",
+    "tourism": "hotel",
+    "wikidata": "Q111408155",
+    "addr:housenumber": "11",
+    "addr:street": "Bolton Street",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "way/256795594",
+   "lat": -41.281428,
+   "lng": 174.777244,
+   "tags": {
+    "name": "Wellesley Boutique Hotel",
+    "tourism": "hotel",
+    "website": "https://www.wellesleyboutiquehotel.co.nz/",
+    "wikidata": "Q111408164"
+   }
+  },
+  {
+   "id": "way/256928900",
+   "lat": -41.289704,
+   "lng": 174.776627,
+   "tags": {
+    "name": "West Plaza Hotel",
+    "tourism": "hotel",
+    "wikidata": "Q111408154",
+    "addr:housenumber": "110",
+    "addr:street": "Wakefield Street"
+   }
+  },
+  {
+   "id": "way/257845941",
+   "lat": -41.293626,
+   "lng": 174.773891,
+   "tags": {
+    "name": "Victoria Court Motor Lodge",
+    "tourism": "motel",
+    "wikidata": "Q111869973",
+    "addr:housenumber": "201",
+    "addr:street": "Victoria Street",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "way/258708588",
+   "lat": -41.280826,
+   "lng": 174.778768,
+   "tags": {
+    "name": "Rydges Hotel",
+    "tourism": "hotel",
+    "wikidata": "Q111408167",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/258708592",
+   "lat": -41.284589,
+   "lng": 174.779525,
+   "tags": {
+    "name": "Dockside",
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "website": "https://dockside.co.nz/",
+    "opening_hours": "Mo-Fr 12:00-21:00; Sa 11:00-21:00; Su 11:00-21:00",
+    "addr:housenumber": "7",
+    "addr:street": "Queens Wharf"
+   }
+  },
+  {
+   "id": "way/260864052",
+   "lat": -41.290289,
+   "lng": 174.773748,
+   "tags": {
+    "name": "Astelia Apartment Hotel",
+    "tourism": "hotel",
+    "website": "https://www.villagegroup.co.nz/accommodation/astelia-apartment-hotel-wellington.htm",
+    "wikidata": "Q111869974",
+    "addr:housenumber": "156",
+    "addr:street": "Willis Street",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "way/293480638",
+   "lat": -41.284551,
+   "lng": 174.774582,
+   "tags": {
+    "name": "James Cook Hotel",
+    "tourism": "hotel",
+    "website": "https://www.grandchancellorhotels.com/james-cook-hotel-grand-chancellor",
+    "addr:housenumber": "147",
+    "addr:street": "The Terrace",
+    "addr:postcode": "6011",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/293480947",
+   "lat": -41.283842,
+   "lng": 174.774717,
+   "tags": {
+    "name": "Novotel",
+    "tourism": "hotel",
+    "wikidata": "Q111408151"
+   }
+  },
+  {
+   "id": "way/430925462",
+   "lat": -41.285529,
+   "lng": 174.77482,
+   "tags": {
+    "name": "Gilmer Apartment Hotel",
+    "tourism": "hotel",
+    "wikidata": "Q111408150",
+    "addr:housenumber": "10",
+    "addr:street": "Gilmer Terrace"
+   }
+  },
+  {
+   "id": "way/431335277",
+   "lat": -41.290798,
+   "lng": 174.77527,
+   "tags": {
+    "name": "Central City Apartment Hotel",
+    "tourism": "hotel",
+    "addr:housenumber": "130",
+    "addr:street": "Victoria Street",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "way/638665198",
+   "lat": -41.28429,
+   "lng": 174.775746,
+   "tags": {
+    "name": "DoubleTree by Hilton Wellington",
+    "tourism": "hotel",
+    "stars": "4.5",
+    "website": "https://www.hilton.com/en/hotels/wlgntdi-doubletree-wellington/?WT.mc_id=zDA0NZ1DT2DMH3LocalSearch4DGGeneric_May56WLGNTDI7EN8i1",
+    "addr:housenumber": "28",
+    "addr:street": "Grey Street",
+    "addr:postcode": "6011",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/666620309",
+   "lat": -41.292915,
+   "lng": 174.775273,
+   "tags": {
+    "name": "The Intrepid Hotel",
+    "tourism": "hotel",
+    "website": "https://www.theintrepidhotel.com/",
+    "addr:housenumber": "60",
+    "addr:street": "Ghuznee Street",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "way/841524019",
+   "lat": -41.283913,
+   "lng": 174.776909,
+   "tags": {
+    "name": "ibis Wellington",
+    "tourism": "hotel",
+    "wikidata": "Q111408157",
+    "addr:housenumber": "153",
+    "addr:street": "Featherston Street",
+    "addr:postcode": "6011"
+   }
+  },
+  {
+   "id": "way/918604125",
+   "lat": -41.282925,
+   "lng": 174.776661,
+   "tags": {
+    "name": "Quest Hotel",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/927162997",
+   "lat": -41.284772,
+   "lng": 174.775216,
+   "tags": {
+    "name": "City Life Hotel",
+    "tourism": "hotel",
+    "wikidata": "Q111408152"
+   }
+  },
+  {
+   "id": "way/953677905",
+   "lat": -41.289122,
+   "lng": 174.773893,
+   "tags": {
+    "name": "Boulcott Suites",
+    "tourism": "hotel",
+    "website": "https://villagegroup.nz/stay/boulcott-suites",
+    "addr:housenumber": "5",
+    "addr:street": "O'Reily Avenue",
+    "addr:postcode": "6011"
+   }
+  }
+ ]
+}

@@ -1,0 +1,1063 @@
+{
+ "v": 1,
+ "city": {
+  "id": "wichita",
+  "name": "Wichita",
+  "country": "US",
+  "lat": 37.6872,
+  "lng": -97.3301,
+  "timezone": "America/Chicago"
+ },
+ "places": [
+  {
+   "id": "osm:way/678315643",
+   "name": "Aley Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.66149,
+   "lng": -97.355089,
+   "address": "1803 South Seneca Street, 67213",
+   "website": "https://www.wichita.gov/Facilities/Facility/Details/Aley-Park-50",
+   "wikidata": "Q34809266",
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/358627732",
+   "name": "Beulah Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.650848,
+   "lng": -97.340045,
+   "address": null,
+   "website": null,
+   "wikidata": "Q34843320",
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/41888583",
+   "name": "Central Riverside Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.697481,
+   "lng": -97.348534,
+   "address": "720 Nims Street, 67203",
+   "website": "https://www.wichita.gov/Facilities/Facility/Details/Central-Riverside-Park-43",
+   "wikidata": "Q34919618",
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13306240230",
+   "name": "CityArts",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.690788,
+   "lng": -97.328688,
+   "address": "334 North Mead Street",
+   "website": "https://www.wichita.gov/cityarts",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/146321248",
+   "name": "Clapp Memorial Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.660953,
+   "lng": -97.285053,
+   "address": null,
+   "website": "https://www.wichita.gov/Facilities/Facility/Details/LW-Clapp-Memorial-Park-162",
+   "wikidata": "Q34927379",
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/403436047",
+   "name": "Delano Antiques",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 37.684282,
+   "lng": -97.359888,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/133195442",
+   "name": "Exploration Place - Science and Discovery Center",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.689385,
+   "lng": -97.347404,
+   "address": "300 McLean Boulevard, 67203",
+   "website": "https://exploration.org/",
+   "wikidata": "Q5421320",
+   "wikipedia": "en:Exploration Place",
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/398996852",
+   "name": "Fairmount Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.712859,
+   "lng": -97.292878,
+   "address": "1647 North Yale, 67218",
+   "website": "https://www.wichita.gov/Facilities/Facility/Details/Fairmount-Park-37",
+   "wikidata": "Q49488062",
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/1502720217",
+   "name": "Frank Lloyd Wright's Allen House",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.689771,
+   "lng": -97.292446,
+   "address": null,
+   "website": null,
+   "wikidata": "Q4731481",
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/366765998",
+   "name": "Great Plains Transportation Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.686327,
+   "lng": -97.329563,
+   "address": "700 East Douglas Avenue, 67202",
+   "website": "https://www.gptm.us/",
+   "wikidata": "Q5599787",
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/205002857",
+   "name": "Indian Center Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.692158,
+   "lng": -97.351804,
+   "address": "650 North Seneca Street",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/366765969",
+   "name": "Kansas African American Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.694939,
+   "lng": -97.339785,
+   "address": null,
+   "website": "https://www.tkaamuseum.org/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/462137681",
+   "name": "Kansas African American Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.694958,
+   "lng": -97.339821,
+   "address": "601 North Water Street, 67203",
+   "website": null,
+   "wikidata": "Q5024144",
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Fr 09:00-17:00; Sa 12:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/366765966",
+   "name": "Kansas Firefighters Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.6697,
+   "lng": -97.335251,
+   "address": "1300 South Broadway Avenue, 67211",
+   "website": "https://kansasfirefightersmuseum.com",
+   "wikidata": "Q123616088",
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Sa 11:00-15:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "15:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/366765811",
+   "name": "Kansas Sports Hall of Fame",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.68075,
+   "lng": -97.341433,
+   "address": null,
+   "website": "https://www.kshof.org/",
+   "wikidata": "Q6365057",
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/984831116",
+   "name": "Keeper of the Plains",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.691384,
+   "lng": -97.349683,
+   "address": null,
+   "website": "https://www.visitwichita.com/listing/keeper-of-the-plains/28029/",
+   "wikidata": "Q7744058",
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/121739093",
+   "name": "McAdams Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.711729,
+   "lng": -97.323072,
+   "address": "1329 East 16th Street North",
+   "website": "https://www.wichita.gov/Facilities/Facility/Details/McAdams-Park-46",
+   "wikidata": "Q6799861",
+   "wikipedia": "en:McAdams Park",
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Su 06:00-24:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "06:00",
+       "24:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/13812248656",
+   "name": "Mopig's Collectibles and Custom Paint",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.699209,
+   "lng": -97.390071,
+   "address": "833 North West Street, Wichita, Kansas, 67203",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/366765994",
+   "name": "Museum of World Treasures",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.687053,
+   "lng": -97.327886,
+   "address": "835 East 1st Street North",
+   "website": "https://www.worldtreasures.org/worldtreasures",
+   "wikidata": "Q15260386",
+   "wikipedia": "en:Museum of World Treasures",
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/677202882",
+   "name": "Nomar International Market",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 37.722861,
+   "lng": -97.336389,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/366766028",
+   "name": "Old Cowtown Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.693791,
+   "lng": -97.362251,
+   "address": "1865 West Museum Boulevard, 67203",
+   "website": "https://www.oldcowtown.org/Pages/default.aspx",
+   "wikidata": "Q7083791",
+   "wikipedia": "en:Old Cowtown Museum",
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11484350089",
+   "name": "Old Town Farm & Art Market",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 37.687558,
+   "lng": -97.327894,
+   "address": "835 East 1st Street North, 67202",
+   "website": "https://oldtownfarmandartmarket.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Apr-Oct Sa 08:00-13:00; Nov-Dec Sa 10:00-13:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": [
+      [
+       "04-01",
+       "10-31"
+      ]
+     ],
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "08:00",
+       "13:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "11-01",
+       "12-31"
+      ]
+     ],
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "13:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/1430533321",
+   "name": "The Original Pizza Hut Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.721032,
+   "lng": -97.28654,
+   "address": null,
+   "website": "https://www.wichita.edu/museums/pizzahutmuseum/index.php",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Fr 08:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "08:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/468764219",
+   "name": "The Wichita Botanica Gardens",
+   "nameEn": null,
+   "kind": "garden",
+   "lat": 37.695961,
+   "lng": -97.364674,
+   "address": "701 Amidon Street, 67203",
+   "website": null,
+   "wikidata": "Q8251228",
+   "wikipedia": "en:Botanica, The Wichita Gardens",
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/541095411",
+   "name": "Ulrich Museum of Art",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.717038,
+   "lng": -97.29661,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/853985411",
+   "name": "Wichita - Sedgwick County Historical Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.684725,
+   "lng": -97.337857,
+   "address": "204 South Main Street",
+   "website": "https://www.wichitahistory.org/",
+   "wikidata": "Q115202562;Q7998110",
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Fr 11:00-16:00; Sa,Su 13:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "16:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "13:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/366765999",
+   "name": "Wichita Art Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.69494,
+   "lng": -97.356372,
+   "address": "1400 West Museum Boulevard, 67203-3200",
+   "website": "https://wichitaartmuseum.org/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Sa 10:00-17:00; Su 12:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/366766031",
+   "name": "Wichita State University - Lowell D Holmes Museum of Anthropology",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.718011,
+   "lng": -97.292891,
+   "address": null,
+   "website": "https://www.wichita.edu/museums/holmes/index.php",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13158358204",
+   "name": "Wichita Toy Train Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.685166,
+   "lng": -97.323433,
+   "address": "130 Laura Street",
+   "website": "http://www.wichitatoytrainmuseum.org",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  }
+ ],
+ "near": "venues",
+ "stay": [
+  {
+   "id": "osm:way/189069147",
+   "name": "Courtyard by Marriott Wichita at Old Town",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 37.690219,
+   "lng": -97.327912,
+   "address": "820 East 2nd Street North, 67202",
+   "website": "https://www.marriott.com/hotels/travel/ictdt-courtyard-wichita-at-old-town/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 93,
+   "venuesNear": 4
+  },
+  {
+   "id": "osm:way/399152923",
+   "name": "AC Hotel Wichita Downtown",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 37.685696,
+   "lng": -97.335796,
+   "address": "105 South Broadway Avenue, 67202",
+   "website": "https://www.marriott.com/en-us/hotels/ictad-ac-hotel-wichita-downtown/overview/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 265,
+   "venuesNear": 4
+  },
+  {
+   "id": "osm:node/10683315560",
+   "name": "Hilton Garden Inn Wichita Downtown",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 37.685834,
+   "lng": -97.333985,
+   "address": "401 East Douglas Avenue, 67202",
+   "website": "https://www.hilton.com/en/hotels/ictdtgi-hilton-garden-inn-wichita-downtown/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 279,
+   "venuesNear": 4
+  },
+  {
+   "id": "osm:node/4644239719",
+   "name": "Guild Plaza Hotel",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 37.687072,
+   "lng": -97.337065,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 179,
+   "venuesNear": 4
+  },
+  {
+   "id": "osm:way/399152901",
+   "name": "Guild Plaza Hotel",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 37.687217,
+   "lng": -97.337247,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 183,
+   "venuesNear": 4
+  },
+  {
+   "id": "osm:way/399152854",
+   "name": "Ambassador Hotel Wichita, Autograph Collection",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 37.685705,
+   "lng": -97.33532,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 262,
+   "venuesNear": 4
+  },
+  {
+   "id": "osm:node/1734899691",
+   "name": "Hotel at Old Town",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 37.688258,
+   "lng": -97.327791,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 292,
+   "venuesNear": 4
+  },
+  {
+   "id": "osm:node/4644239718",
+   "name": "Hyatt Regency Wichita",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 37.682766,
+   "lng": -97.34136,
+   "address": "400 West Waterman, 67202",
+   "website": "https://www.hyatt.com/en-us/hotel/kansas/hyatt-regency-wichita/wicrw",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 785,
+   "venuesNear": 2
+  }
+ ],
+ "eat": [
+  {
+   "id": "osm:node/4301266460",
+   "name": "Old Chicago",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "pizza"
+   ],
+   "lat": 37.689943,
+   "lng": -97.328684,
+   "address": "300 North Mead Street, 67202",
+   "website": "https://oldchicago.com/locations/wichita-old-town",
+   "wikidata": null,
+   "openingHours": "Su-Th 11:00-25:00; Fr-Sa 11:00-25:00",
+   "hours": null,
+   "toVenueM": 94,
+   "venuesNear": 4
+  },
+  {
+   "id": "osm:node/13306240232",
+   "name": "Sushiya",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "sushi"
+   ],
+   "lat": 37.690486,
+   "lng": -97.329597,
+   "address": "325 North Mead Street",
+   "website": "https://www.sushiyawichita.com/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 76,
+   "venuesNear": 4
+  },
+  {
+   "id": "osm:node/1997192228",
+   "name": "Sabor Latin Bar & Grille",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "latin_american"
+   ],
+   "lat": 37.690086,
+   "lng": -97.329584,
+   "address": "309 North Mead Street, 67202",
+   "website": "https://saborgrillwichita.com/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 111,
+   "venuesNear": 4
+  },
+  {
+   "id": "osm:node/13301876568",
+   "name": "HomeGrown",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "breakfast",
+    "brunch"
+   ],
+   "lat": 37.685734,
+   "lng": -97.330889,
+   "address": "645 East Douglas Avenue, 67202",
+   "website": "https://www.homegrownwichita.com/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 478,
+   "venuesNear": 4
+  },
+  {
+   "id": "osm:node/2716535007",
+   "name": "Beacon Restaurant",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "breakfast"
+   ],
+   "lat": 37.685861,
+   "lng": -97.327023,
+   "address": "900 East Douglas Avenue, 67202",
+   "website": "https://beaconrestaurant.restaurantwebexpert.com/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 567,
+   "venuesNear": 4
+  },
+  {
+   "id": "osm:way/678082275",
+   "name": "Prost",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "german"
+   ],
+   "lat": 37.6872,
+   "lng": -97.331281,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 380,
+   "venuesNear": 4
+  },
+  {
+   "id": "osm:way/678082274",
+   "name": "Bite Me BBQ",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "barbecue"
+   ],
+   "lat": 37.687098,
+   "lng": -97.331279,
+   "address": "123 North Saint Francis Street, 67202",
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 383,
+   "venuesNear": 4
+  },
+  {
+   "id": "osm:way/399133612",
+   "name": "Old Mill Tasty Shop",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "american"
+   ],
+   "lat": 37.686382,
+   "lng": -97.331301,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 411,
+   "venuesNear": 4
+  }
+ ],
+ "trips": [],
+ "guide": {
+  "page": "Wichita",
+  "url": "https://en.wikivoyage.org/wiki/Wichita"
+ },
+ "licences": {
+  "osm": {
+   "name": "ODbL",
+   "url": "https://opendatacommons.org/licenses/odbl/",
+   "attribution": "© OpenStreetMap contributors",
+   "credit": "https://www.openstreetmap.org/copyright"
+  }
+ },
+ "provenance": {
+  "osm": {
+   "fetchedAt": "2026-10-02T20:24:54Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikidata": {
+   "fetchedAt": "2026-10-02T20:25:05Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "amenities": {
+   "fetchedAt": "2026-10-02T20:28:21Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikivoyage": {
+   "fetchedAt": "2026-10-02T20:28:22Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  }
+ }
+}

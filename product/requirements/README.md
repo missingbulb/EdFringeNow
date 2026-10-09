@@ -22,6 +22,8 @@ product/
       screen.test.js cases/<slug>.<id>.case.js + <slug>.<id>.png (the goldens)
     behavior/                  kind: driven gestures, coded      (test:ui lane)
       behavior.test.js cases/<slug>.<id>.case.js
+    scale/                     kind: bounds on the REAL data     (test:ui lane)
+      scale.test.js  cases/<slug>.<id>.case.js
     shared/
       requirements-doc.js kinds.js cases.js     spec parsing + registries
       reference-now.js                          THE pinned instant + fakes
@@ -52,7 +54,7 @@ product/
 | lane | command | runs | where |
 |---|---|---|---|
 | default | `npm test` / `bash scripts/verify.sh` | coverage gate, gallery gate, logic cases | everywhere (no browser) |
-| UI | `npm run test:ui` | screen (pixel-exact) + behavior cases | pinned Playwright Chromium; CI's `ui-requirements` job |
+| UI | `npm run test:ui` | screen (pixel-exact) + behavior cases, and scale cases against `site/data/` | pinned Playwright Chromium; CI's `ui-requirements` job |
 | refresh | `npm run refresh:ui [filter]` | regenerates goldens + the gallery together | after an INTENDED UI change only |
 
 The UI lane runs its cases **concurrently** — `shared/case-concurrency.js`
@@ -116,3 +118,9 @@ committed data (provenance + the two documented adjustments:
 [`build-fixtures.js`](shared/fixtures/build-fixtures.js)). It never tracks the
 nightly data refresh. Re-running the builder re-casts every golden — that is a
 deliberate re-baselining and follows the approval procedure above.
+
+The one exception is the `scale` kind, whose runner points the data routes at
+`site/data/` itself: what it proves is that a page survives the real
+programme's size, which no sample can show. It asserts only bounds (a list's
+cap, a time budget, an element count), so it stays green whatever a day's
+data refresh brings, and it never renders a golden.

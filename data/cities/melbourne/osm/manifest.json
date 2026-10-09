@@ -1,0 +1,14 @@
+{
+ "city": "melbourne",
+ "source": "osm",
+ "fetchedAt": "2026-09-25T14:10:06Z",
+ "fetcher": "scraper/cities/fetch.py",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://overpass-api.de/api/interpreter"
+ ],
+ "files": [
+  "places.json"
+ ],
+ "notes": "One Overpass query: [out:json][timeout:180];(nwr(around:8000,-37.815,144.9668)[\"tourism\"~\"^(museum|gallery|zoo|aquarium|theme_park|viewpoint)$\"][\"name\"];nwr(around:8000,-37.815,144.9668)[\"tourism\"=\"attraction\"][\"name\"][\"wikidata\"];nwr(around:8000,-37.815,144.9668)[\"leisure\"=\"garden\"][\"name\"][\"wikidata\"];nwr(around:8000,-37.815,144.9668)[\"leisure\"=\"garden\"][\"name\"][\"opening_hours\"];nwr(around:8000,-37.815,144.9668)[\"leisure\"~\"^(park|nature_reserve)$\"][\"name\"][\"wikidata\"];nwr(around:8000,-37.815,144.9668)[\"amenity\"=\"marketplace\"][\"name\"];nwr(around:8000,-37.815,144.9668)[\"historic\"~\"^(castle|palace|monument|memorial|ruins|church|cathedral|fort|city_gate|archaeological_site)$\"][\"name\"][\"wikidata\"];nwr(around:8000,-37.815,144.9668)[\"building\"~\"^(cathedral|church)$\"][\"name\"][\"wikidata\"][\"tourism\"];);out center tags;"
+}

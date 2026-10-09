@@ -1,0 +1,17 @@
+{
+ "festival": "edinburgh-deaf-festival",
+ "edition": "2026",
+ "source": "festival-site",
+ "fetchedAt": "2026-09-25T13:59:33Z",
+ "fetcher": "scraper/festivals/edinburgh_deaf_festival/sources/festival-site/fetch.py",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://edinburghdeaffestival.com/wp-json/wp/v2/mec-events",
+  "https://edinburghdeaffestival.com/wp-json/wp/v2/mec_category",
+  "https://edinburghdeaffestival.com/mec-events/<slug>/"
+ ],
+ "files": [
+  "programme.json"
+ ],
+ "notes": "WP REST gives identity, categories, description, the Duration/Price lines and the booking link; date range, venue and address come from each page's schema.org JSON-LD and the clock time from its Time box (parse.py). No availability; prices are free text."
+}

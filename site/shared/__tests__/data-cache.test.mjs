@@ -17,7 +17,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 
-import { cachedFetchJson, fetchJson, fetchManifest, dataRelativeKey } from "../data-cache.js";
+import { cachedFetchJson, fetchJson, fetchManifest, dataRelativeKey, manifestUrlFor } from "../data-cache.js";
 
 // --- Stubs ----------------------------------------------------------------
 
@@ -127,6 +127,20 @@ test("dataRelativeKey resolves both pages' spellings to the same manifest key", 
 test("dataRelativeKey returns null for a url with no data segment", () => {
   assert.equal(dataRelativeKey("favicon.ico"), null);
   assert.equal(dataRelativeKey("../shared/geo.js"), null);
+});
+
+// --- manifestUrlFor ---------------------------------------------------------
+
+test("manifestUrlFor names the manifest at the data root of any page's spelling", () => {
+  // plan/plan.js climbs one directory; planNG reads the registry's
+  // root-absolute urls. Both must find the one manifest beside site/data/.
+  assert.equal(manifestUrlFor("../data/normalized/shows.min.json"), "../data/manifest.json");
+  assert.equal(manifestUrlFor("/data/normalized/shows.min.json"), "/data/manifest.json");
+  assert.equal(manifestUrlFor("data/venues.json"), "data/manifest.json");
+});
+
+test("manifestUrlFor returns null for a url with no data segment", () => {
+  assert.equal(manifestUrlFor("../shared/geo.js"), null);
 });
 
 // --- fetchManifest -----------------------------------------------------------

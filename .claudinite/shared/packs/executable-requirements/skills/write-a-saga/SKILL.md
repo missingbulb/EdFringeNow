@@ -1,8 +1,10 @@
 ---
 name: write-a-saga
-description: How a saga case is written — a multi-step story captured as a golden storyboard or one animated APNG golden — steps, captions, frame budget, the real entry point, delay stripping and gesture marking. Use when authoring or changing a case under the saga kind.
+description: How a saga case is written: a multi-step story captured as a golden storyboard or animated APNG. Use when authoring or changing a saga case.
 metadata:
   body: workflow
+  usage:
+    expect: triggered
   force-load-on-file-edits-paths:
     - "dev/requirements/saga/**"
 ---

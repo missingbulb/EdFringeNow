@@ -1,0 +1,58 @@
+{
+ "about": "Hand-curated venue research for the Acco festival, keyed by our venue id (the programme pages name no venue ids). Not edition-specific: a hall outlives a programme. Every figure is {value, source} with the URL it was read from; a figure nobody could cite is null, never estimated. Names are the festival's own Hebrew; the street zones take theirs from the street programme's section headings instead.",
+ "researchedAt": "2026-09-24",
+ "venues": {
+  "acco-theatre-centre": {
+   "name": "המרכז לתיאטרון עכו",
+   "address": "רח' וייצמן 1, עכו",
+   "coordinates": {
+    "value": {"lat": 32.9235839, "lng": 35.0705307},
+    "source": "https://www.akko.org.il/event/the-international-fringe-theatre-festival/"
+   },
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {"id": "white-hall", "name": "האולם הלבן", "capacity": {"value": 120, "source": "https://www.acco-tc.com/location-and-architecture/"}, "layout": null},
+    {"id": "diwan-hall", "name": "אולם הדיוואן", "capacity": {"value": 50, "source": "https://www.acco-tc.com/location-and-architecture/"}, "layout": null},
+    {"id": "studio", "name": "הסטודיו", "capacity": {"value": 50, "source": "https://www.acco-tc.com/location-and-architecture/"}, "layout": null},
+    {"id": "red-hall", "name": "האולם האדום", "capacity": {"value": 50, "source": "https://www.acco-tc.com/location-and-architecture/"}, "layout": {"value": "flat", "source": "https://www.acco-tc.com/location-and-architecture/"}},
+    {"id": "foyer", "name": "הפואייה", "capacity": {"value": 70, "source": "https://www.acco-tc.com/location-and-architecture/"}, "layout": null}
+   ],
+   "accessibility": null,
+   "notes": "Inside the Knights' Halls complex, so it shares that building's pin: the place pin of the Google Maps link on the municipality's festival page. The theatre's own page gives each hall's size as approximate (\"כ-120 איש\"), and describes the red hall as having no raised seating (\"ללא יציעים\"). The programme page does not say which hall a ticketed show plays; only the free foyer concerts name theirs."
+  },
+  "knights-halls": {
+   "name": "אולמות האבירים",
+   "address": null,
+   "coordinates": {
+    "value": {"lat": 32.9235839, "lng": 35.0705307},
+    "source": "https://www.akko.org.il/event/the-international-fringe-theatre-festival/"
+   },
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "The Hospitaller citadel. The pin is the place pin of the Google Maps link on the municipality's festival page (read through a fetch summary, not the page bytes). It hosts the paid night light-and-sound show."
+  },
+  "weizmann-st": {
+   "layout": {"value": "outdoor", "source": "https://akko-festival-shows.vercel.app"},
+   "notes": "A street zone of the free programme, outside the Knights' Halls. No citable coordinate."
+  },
+  "well-compound": {
+   "layout": {"value": "outdoor", "source": "https://akko-festival-shows.vercel.app"},
+   "notes": "A street zone of the free programme. No citable coordinate or address."
+  },
+  "knights-halls-car-park": {
+   "layout": {"value": "outdoor", "source": "https://akko-festival-shows.vercel.app"},
+   "notes": "A street zone of the free programme, the car park beside the Knights' Halls. No citable coordinate."
+  },
+  "lower-moat": {
+   "layout": {"value": "outdoor", "source": "https://akko-festival-shows.vercel.app"},
+   "notes": "A street zone of the free programme, in the moat of the Old City walls. No citable coordinate."
+  },
+  "night-stage": {
+   "layout": {"value": "outdoor", "source": "https://akko-festival-shows.vercel.app"},
+   "notes": "The street programme's late-evening band stage, listed beside the lower moat. No citable coordinate."
+  }
+ }
+}

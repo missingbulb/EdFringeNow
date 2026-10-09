@@ -56,6 +56,7 @@ Usage:
     python3 scraper/fetch_prices.py --slug alfie-brown-the-entertainer
     python3 scraper/fetch_prices.py --all                # every paid show (slow)
     python3 scraper/fetch_prices.py --all --limit 200    # resumable chunk
+    python3 scraper/fetch_prices.py --all --time-budget 2400  # chunk by time
     python3 scraper/fetch_prices.py --all --batch-size 10 # smaller requests
     python3 scraper/fetch_prices.py --selftest           # offline transform test
 """
@@ -594,6 +595,9 @@ def price_one_show(token: str, event: dict, batch_size: int,
     return entry, note
 
 
+TIME_BUDGET_REACHED = "time budget reached"
+
+
 def run(args) -> int:
     delay = (args.min_delay, args.max_delay)
     out_path = Path(args.out)
@@ -615,6 +619,7 @@ def run(args) -> int:
               f"({len(listing) - len(events)} free, skipped)")
 
     priced = skipped = empty = failed = 0
+    started = time.monotonic()
     for i, event in enumerate(events, 1):
         key = show_key(event)
         # Already priced per performance -> nothing to do. An entry left by the
@@ -625,6 +630,11 @@ def run(args) -> int:
             continue
         if args.limit and priced + empty + failed >= args.limit:
             print(f"[{elapsed()}] --limit {args.limit} reached; stopping "
+                  f"(re-run to continue)")
+            break
+        if args.time_budget and time.monotonic() - started >= args.time_budget:
+            # The caller greps this exact line to know shows remain.
+            print(f"[{elapsed()}] {TIME_BUDGET_REACHED}; stopping "
                   f"(re-run to continue)")
             break
         try:
@@ -843,6 +853,9 @@ def main() -> int:
                              "requests for document size, never accuracy")
     parser.add_argument("--limit", type=int, default=None,
                         help="stop after N newly priced shows (resumable chunk)")
+    parser.add_argument("--time-budget", type=float, default=None,
+                        help="stop pricing new shows after this many seconds "
+                             "(resumable chunk)")
     parser.add_argument("--force", action="store_true",
                         help="re-price shows already in the cache")
     parser.add_argument("--print-raw", action="store_true",

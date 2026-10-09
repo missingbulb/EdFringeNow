@@ -1,0 +1,514 @@
+{
+ "places": [
+  {
+   "id": "node/12546426569",
+   "lat": 52.631766,
+   "lng": -1.138899,
+   "tags": {
+    "name": "Museum of the Royal Leicestershire Regiment",
+    "tourism": "museum",
+    "website": "https://royalleicestershireregiment.org.uk/the-regimental-museum",
+    "wikidata": "Q113369764"
+   }
+  },
+  {
+   "id": "node/13615732514",
+   "lat": 52.634281,
+   "lng": -1.13381,
+   "tags": {
+    "name": "Leicester Market",
+    "amenity": "marketplace",
+    "wikidata": "Q6519199",
+    "wikipedia": "en:Leicester Market"
+   }
+  },
+  {
+   "id": "node/20834051",
+   "lat": 52.65945,
+   "lng": -1.12508,
+   "tags": {
+    "name": "Belgrave Hall Museum",
+    "tourism": "museum",
+    "wikidata": "Q4882681",
+    "wikipedia": "en:Belgrave Hall"
+   }
+  },
+  {
+   "id": "node/2141462574",
+   "lat": 52.634013,
+   "lng": -1.136357,
+   "tags": {
+    "name": "Greyfriars Church",
+    "historic": "archaeological_site",
+    "wikidata": "Q5608365",
+    "wikipedia": "en:Greyfriars, Leicester"
+   }
+  },
+  {
+   "id": "node/2699773743",
+   "lat": 52.621498,
+   "lng": -1.073347,
+   "tags": {
+    "name": "Evington War Memorial",
+    "historic": "memorial",
+    "website": "https://www.leicester.gov.uk/your-council-services/lc/growth-and-history/war-memorials/evington-village/",
+    "wikidata": "Q26677907"
+   }
+  },
+  {
+   "id": "node/30889327",
+   "lat": 52.648691,
+   "lng": -1.136995,
+   "tags": {
+    "name": "Leicester Abbey",
+    "tourism": "attraction",
+    "historic": "ruins",
+    "wikidata": "Q1980614",
+    "wikipedia": "en:Leicester Abbey",
+    "addr:street": "Abbey Park Road",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/3258121169",
+   "lat": 52.634207,
+   "lng": -1.136103,
+   "tags": {
+    "name": "King Richard III Visitor Centre",
+    "tourism": "museum",
+    "opening_hours": "Mo-Fr,Su 10:00-16:00; Sa 10:00-17:00",
+    "website": "https://www.kriii.com/",
+    "addr:housenumber": "4A",
+    "addr:street": "St Martins",
+    "addr:postcode": "LE1 5DB",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4163124589",
+   "lat": 52.628146,
+   "lng": -1.125082,
+   "tags": {
+    "name": "Robert Hall",
+    "historic": "memorial",
+    "wikidata": "Q26478728",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4930684933",
+   "lat": 52.674225,
+   "lng": -1.1187,
+   "tags": {
+    "name": "Birstall War Memorial",
+    "historic": "memorial",
+    "wikidata": "Q26676139"
+   }
+  },
+  {
+   "id": "relation/17835861",
+   "lat": 52.625064,
+   "lng": -1.174851,
+   "tags": {
+    "name": "Braunstone Park",
+    "leisure": "park",
+    "wikidata": "Q56599005",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "relation/21243108",
+   "lat": 52.607302,
+   "lng": -1.091787,
+   "tags": {
+    "name": "Harold Martin Botanic Garden",
+    "tourism": "attraction",
+    "leisure": "garden",
+    "opening_hours": "Mo-Fr 10:00-15:00",
+    "fee": "no (excepti events, membership available small fee)",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/1095946531",
+   "lat": 52.623429,
+   "lng": -1.121505,
+   "tags": {
+    "name": "Arch of Remembrance",
+    "historic": "monument",
+    "wikidata": "Q17528573",
+    "wikipedia": "en:Arch of Remembrance"
+   }
+  },
+  {
+   "id": "way/117060069",
+   "lat": 52.631662,
+   "lng": -1.139115,
+   "tags": {
+    "name": "Newarke Houses Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Mo-Sa 10:00-16:00; Su 11:00-16:00",
+    "website": "https://www.leicestermuseums.org/newarke-houses/",
+    "wikidata": "Q4328344",
+    "wikipedia": "en:Newarke Houses Museum",
+    "addr:street": "The Newarke",
+    "addr:postcode": "LE2 7BY",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/118693289",
+   "lat": 52.662197,
+   "lng": -1.09992,
+   "tags": {
+    "name": "Appleton Park",
+    "leisure": "park",
+    "wikidata": "Q20972009"
+   }
+  },
+  {
+   "id": "way/1187545727",
+   "lat": 52.614234,
+   "lng": -1.070969,
+   "tags": {
+    "name": "Stoughton Grange Farm Park",
+    "tourism": "zoo"
+   }
+  },
+  {
+   "id": "way/1371843969",
+   "lat": 52.657999,
+   "lng": -1.078668,
+   "tags": {
+    "name": "The Humber Stone",
+    "tourism": "attraction",
+    "historic": "yes",
+    "wikidata": "Q133539234"
+   }
+  },
+  {
+   "id": "way/13871458",
+   "lat": 52.628937,
+   "lng": -1.145073,
+   "tags": {
+    "name": "Bede Park",
+    "leisure": "park",
+    "wikidata": "Q20972010"
+   }
+  },
+  {
+   "id": "way/152597818",
+   "lat": 52.635067,
+   "lng": -1.141082,
+   "tags": {
+    "name": "Jewry Wall",
+    "historic": "archaeological_site",
+    "wikidata": "Q6190177",
+    "wikipedia": "en:Jewry Wall"
+   }
+  },
+  {
+   "id": "way/152646250",
+   "lat": 52.601691,
+   "lng": -1.107125,
+   "tags": {
+    "name": "Knighton Spinney",
+    "leisure": "nature_reserve",
+    "wikidata": "Q48805012",
+    "wikipedia": "en:Knighton Spinney"
+   }
+  },
+  {
+   "id": "way/173697306",
+   "lat": 52.670976,
+   "lng": -1.185381,
+   "tags": {
+    "name": "Packhorse Bridge",
+    "tourism": "attraction",
+    "wikidata": "Q17534232"
+   }
+  },
+  {
+   "id": "way/18164380",
+   "lat": 52.681918,
+   "lng": -1.109167,
+   "tags": {
+    "name": "Watermead Country Park",
+    "leisure": "park",
+    "wikidata": "Q7974352"
+   }
+  },
+  {
+   "id": "way/210140560",
+   "lat": 52.653744,
+   "lng": -1.132284,
+   "tags": {
+    "name": "National Space Centre",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 10:00-17:00",
+    "website": "https://www.spacecentre.co.uk/",
+    "wikidata": "Q3873189",
+    "wikipedia": "en:National Space Centre",
+    "addr:street": "Exploration Drive",
+    "addr:postcode": "LE4 5NS",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/231328754",
+   "lat": 52.616533,
+   "lng": -1.141883,
+   "tags": {
+    "name": "National Gas Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Th-Mo off; Tu-We 09:30-15:00",
+    "addr:housenumber": "195",
+    "addr:street": "Aylestone Road",
+    "addr:postcode": "LE2 7QJ"
+   }
+  },
+  {
+   "id": "way/233818601",
+   "lat": 52.636231,
+   "lng": -1.133064,
+   "tags": {
+    "name": "Clock Tower",
+    "tourism": "attraction",
+    "amenity": "clock",
+    "historic": "monument",
+    "building": "tower",
+    "wikidata": "Q5686993",
+    "wikipedia": "en:Haymarket Memorial Clock Tower",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/296525801",
+   "lat": 52.634698,
+   "lng": -1.133622,
+   "tags": {
+    "name": "Leicester Market Food Hall",
+    "amenity": "marketplace",
+    "building": "retail",
+    "opening_hours": "Mo-Sa 09:00-17:00; Su off",
+    "addr:housenumber": "33",
+    "addr:street": "Market Place",
+    "addr:postcode": "LE1 5GG",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/302717390",
+   "lat": 52.654764,
+   "lng": -1.130777,
+   "tags": {
+    "name": "Abbey Pumping Station",
+    "tourism": "museum",
+    "opening_hours": "Feb-Oct 11:00-16:30",
+    "website": "https://www.leicestermuseums.org/abbey-pumping-station/",
+    "wikidata": "Q4664048",
+    "addr:street": "Corporation Road",
+    "addr:postcode": "LE4 5PX",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/3073927",
+   "lat": 52.622661,
+   "lng": -1.119196,
+   "tags": {
+    "name": "Victoria Park",
+    "leisure": "park",
+    "wikidata": "Q7926914",
+    "wikipedia": "en:Victoria Park, Leicester"
+   }
+  },
+  {
+   "id": "way/315070039",
+   "lat": 52.634937,
+   "lng": -1.141587,
+   "tags": {
+    "name": "Jewry Wall Museum",
+    "tourism": "museum",
+    "wikidata": "Q6190175",
+    "wikipedia": "en:Jewry Wall Museum",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/389759228",
+   "lat": 52.636627,
+   "lng": -1.15496,
+   "tags": {
+    "name": "Fosse Recreation Ground",
+    "leisure": "park",
+    "wikidata": "Q20979068"
+   }
+  },
+  {
+   "id": "way/4374290",
+   "lat": 52.625806,
+   "lng": -1.131066,
+   "tags": {
+    "name": "Nelson Mandela Park",
+    "leisure": "park",
+    "wikidata": "Q6990627",
+    "wikipedia": "en:Nelson Mandela Park"
+   }
+  },
+  {
+   "id": "way/4406183",
+   "lat": 52.646505,
+   "lng": -1.134751,
+   "tags": {
+    "name": "Abbey Park",
+    "leisure": "park",
+    "wikidata": "Q4664047",
+    "wikipedia": "en:Abbey Park, Leicester"
+   }
+  },
+  {
+   "id": "way/4406185",
+   "lat": 52.639963,
+   "lng": -1.084069,
+   "tags": {
+    "name": "Humberstone Park",
+    "leisure": "park",
+    "wikidata": "Q42851190",
+    "wikipedia": "en:Humberstone Park LNR"
+   }
+  },
+  {
+   "id": "way/4406194",
+   "lat": 52.637334,
+   "lng": -1.179616,
+   "tags": {
+    "name": "Western Park",
+    "leisure": "park",
+    "website": "https://www.leicester.gov.uk/leisure-and-culture/parks-and-open-spaces/our-parks/western-park",
+    "wikidata": "Q7988147",
+    "wikipedia": "en:Western Park, Leicester",
+    "addr:postcode": "LE3 6HX"
+   }
+  },
+  {
+   "id": "way/4426419",
+   "lat": 52.633692,
+   "lng": -1.132202,
+   "tags": {
+    "name": "Town Hall Square",
+    "leisure": "park",
+    "wikidata": "Q20979621",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/451113856",
+   "lat": 52.64972,
+   "lng": -1.138909,
+   "tags": {
+    "name": "Pets Corner",
+    "tourism": "zoo",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/490173063",
+   "lat": 52.61807,
+   "lng": -1.139352,
+   "tags": {
+    "name": "Raw Dykes",
+    "historic": "monument",
+    "wikidata": "Q7296861",
+    "wikipedia": "en:Raw Dykes"
+   }
+  },
+  {
+   "id": "way/507417892",
+   "lat": 52.635517,
+   "lng": -1.202294,
+   "tags": {
+    "name": "Kirby Firth Nature Park",
+    "leisure": "nature_reserve",
+    "wikidata": "Q48802505",
+    "wikipedia": "en:Kirby Frith Nature Reserve"
+   }
+  },
+  {
+   "id": "way/52161324",
+   "lat": 52.631742,
+   "lng": -1.137909,
+   "tags": {
+    "name": "Magazine Gateway",
+    "tourism": "attraction",
+    "historic": "monument",
+    "building": "yes",
+    "wikidata": "Q6729752",
+    "wikipedia": "en:Magazine Gateway",
+    "addr:street": "Southgates",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/534254291",
+   "lat": 52.675444,
+   "lng": -1.17851,
+   "tags": {
+    "name": "King William's Bridge",
+    "tourism": "attraction",
+    "wikidata": "Q17645629"
+   }
+  },
+  {
+   "id": "way/705792562",
+   "lat": 52.663884,
+   "lng": -1.090568,
+   "tags": {
+    "name": "Retro Computer Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Sa-Su 10:00-15:00",
+    "website": "https://retrocomputermuseum.co.uk",
+    "addr:housenumber": "Unit Q",
+    "addr:street": "Humberstone Lane",
+    "addr:postcode": "LE4 9HA",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/73813781",
+   "lat": 52.592247,
+   "lng": -1.084699,
+   "tags": {
+    "name": "Lucas Marsh",
+    "leisure": "nature_reserve",
+    "wikidata": "Q42314971"
+   }
+  },
+  {
+   "id": "way/89673799",
+   "lat": 52.628948,
+   "lng": -1.127924,
+   "tags": {
+    "name": "Leicester Museum and Art Gallery",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Mo-Fr 11:00-16:30; Sa,Su 11:00-17:00",
+    "website": "https://www.leicestermuseums.org/museum-art-gallery/",
+    "wikidata": "Q7012302",
+    "wikipedia": "en:Leicester Museum & Art Gallery",
+    "addr:housenumber": "53",
+    "addr:street": "New Walk",
+    "addr:postcode": "LE1 7EA",
+    "fee": "no",
+    "wheelchair": "limited"
+   }
+  }
+ ]
+}

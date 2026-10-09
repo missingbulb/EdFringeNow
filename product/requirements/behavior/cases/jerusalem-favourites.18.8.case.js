@@ -1,23 +1,24 @@
 "use strict";
-const { jerusalemReady, openDrawer } = require("../../shared/case-helpers");
+const { jerusalemReady, openDrawer, openShowSearch } = require("../../shared/case-helpers");
 
 const EDINBURGH_KEYS = ["edfringe.plan.favourites.v1", "edfringe.plan.prefs.v1"];
 
 module.exports = {
   description: "starred shows survive a reload, and the Edinburgh planner's stored list is never touched",
-  page: "/planJerusalem/",
+  page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   async verify(page, { origin, assert }) {
-    await page.goto(`${origin}/planJerusalem/`, { waitUntil: "load" });
+    await page.goto(`${origin}/planNG/?festival=jerusalem-comedy`, { waitUntil: "load" });
     await jerusalemReady(page);
     await openDrawer(page);
 
     // Star two shows off the browse list. The first one switches the board to
-    // the grid, so the second is starred from the search bar — which is the
+    // the grid, so the second is starred from the show search — which is the
     // page's own answer to "how do I keep adding".
     const first = await page.locator("#browseList .ss-row").first().getAttribute("data-slug");
     await page.locator("#browseList .ss-star").first().click();
     await page.waitForSelector(".lane");
+    await openShowSearch(page);
     await page.click("#ssInput");
     await page.waitForSelector("#ssResults .ss-row");
     const rows = page.locator("#ssResults .ss-row:not(.is-on)");
@@ -39,7 +40,7 @@ module.exports = {
     assert.deepEqual(leaked, [], "the Fringe planner's keys must stay untouched");
     const owned = await page.evaluate(() => Object.keys(localStorage));
     assert.deepEqual(
-      owned.filter((k) => !k.startsWith("jerusalemPlan.")),
+      owned.filter((k) => !k.startsWith("planNG.")),
       [],
       "this page writes nothing outside its own prefix"
     );

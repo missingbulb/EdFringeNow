@@ -1,0 +1,15 @@
+{
+ "festival": "iaem",
+ "edition": "2026",
+ "source": "forms-wizard",
+ "fetchedAt": "2026-10-02T18:53:45Z",
+ "fetcher": "scraper/festivals/iaem/sources/forms-wizard/fetch.py",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://emergencymedicine-2026.forms-wizard.biz/"
+ ],
+ "files": [
+  "programme.json"
+ ],
+ "notes": "The agenda section's items on the edition's days, each with its icon, title, time, people, place and description as the site prints them; a description's tables are rows of cells of lines (scraper/festivals/platforms/forms_wizard.py)."
+}

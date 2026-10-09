@@ -1,0 +1,55 @@
+{
+ "entities": {
+  "Q1685139": {
+   "sitelinks": 6,
+   "description": "art museum in Fort Lauderdale, Florida, USA",
+   "image": "Fort Laud FL MoA01.jpg",
+   "instanceOf": [
+    "Q207694"
+   ]
+  },
+  "Q3364064": {
+   "sitelinks": 5,
+   "description": "Florida state park",
+   "image": "Hugh Taylor Birch State Park.jpg",
+   "instanceOf": [
+    "Q37989229"
+   ]
+  },
+  "Q4942208": {
+   "sitelinks": 1,
+   "description": "historic house in Fort Lauderdale, Florida, U.S.A.",
+   "image": "Bonnet-house-gate.jpg",
+   "instanceOf": [
+    "Q3947"
+   ]
+  },
+  "Q5471478": {
+   "sitelinks": 1,
+   "description": "drive-in movie theater and flea market in Fort Lauderdale, Florida",
+   "image": null,
+   "instanceOf": [
+    "Q385870",
+    "Q41253",
+    "Q786922"
+   ]
+  },
+  "Q6940839": {
+   "sitelinks": 2,
+   "description": "non-profit organization in the USA",
+   "image": "Fort Laud FL MoDaS01.jpg",
+   "instanceOf": [
+    "Q163740",
+    "Q33506"
+   ]
+  },
+  "Q744713": {
+   "sitelinks": 19,
+   "description": "hall of fame for swimmers, divers and water polo players in Fort Lauderdale, Florida",
+   "image": "USA.FL.FtLauderdale.ISHOF.01.jpg",
+   "instanceOf": [
+    "Q42245028"
+   ]
+  }
+ }
+}

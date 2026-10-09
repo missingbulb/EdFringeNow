@@ -1,0 +1,29 @@
+{
+ "about": "Hand-curated venue research for the Royal Edinburgh Military Tattoo, keyed by our own venue code. Not edition-specific. Every figure carries the URL it was read from; a figure nobody could cite is null, never estimated.",
+ "researchedAt": "2026-09-25",
+ "venues": {
+  "castle-esplanade": {
+   "name": "Edinburgh Castle Esplanade",
+   "address": {
+    "value": "Castlehill, Edinburgh EH1 2NG",
+    "source": "https://www.edintattoo.co.uk/the-show/the-venue"
+   },
+   "lat": {
+    "value": 55.948772,
+    "source": "https://www.openstreetmap.org/way/1358374738"
+   },
+   "lng": {
+    "value": -3.1964881,
+    "source": "https://www.openstreetmap.org/way/1358374738"
+   },
+   "capacity": null,
+   "layout": {
+    "value": "outdoor",
+    "source": "https://www.edintattoo.co.uk/the-show/the-venue"
+   },
+   "rooms": [],
+   "accessibility": null,
+   "notes": "Open-air arena of temporary grandstands in front of the castle; seated by price band (A+ to D, Premier, Royal Gallery)."
+  }
+ }
+}
