@@ -47,5 +47,20 @@
         "fix": "use the matching mcp__github__* tool instead of the gh CLI"
       }
     ]
+  },
+  {
+    "id": "edfringe-no-networkidle-in-requirements",
+    "on_fail": "block",
+    "since": "2026-10-11",
+    "failureMessage": "the requirements harness decides a page is ready from the observable state it settles into, never from network quiet",
+    "scanFiles": "/^product\\/requirements\\/.*\\.(?:m?js|cjs)$/",
+    "scanTracked": true,
+    "checkEachFile": [
+      {
+        "forbid": "/networkidle/",
+        "what": "waits on `networkidle` for the page to be ready",
+        "fix": "wait on the observable state the page settles into plus `document.fonts.ready`, as the ready helpers in product/requirements/shared/case-helpers.js do"
+      }
+    ]
   }
 ]
