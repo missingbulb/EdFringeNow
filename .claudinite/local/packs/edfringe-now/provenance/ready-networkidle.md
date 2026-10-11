@@ -19,3 +19,12 @@
 - **Actor:** @missingbulb (owner).
 - **Mechanism:** a guideline of the requirements-harness skill, force-loaded on edits to
   product/requirements.md and product/requirements/.
+
+## 2026-10-11 · converted · the never-networkidle half became a check (item #1099)
+- **Reason:** the "never `networkidle`" half of the rule has a static signature in the harness
+  sources; the deletion test keeps the bullet, since it still carries the positive remedy (which
+  observable states to wait on) that the finding's fix names only in brief.
+- **Actor:** the prose-to-checks-sweep run, item #1099.
+- **Model:** Claude Sonnet 5
+- **Mechanism:** the declared world check `edfringe-no-networkidle-in-requirements` (a `forbid` over
+  product/requirements scripts), coded as a declaration because the rule is one pattern over files.
