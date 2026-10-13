@@ -33,6 +33,8 @@ packs:
         store: "missingbulb/Shepherd"
     - "cloudflare-site"
     - "public-website"
+  sources:
+    - "missingbulb/Shepherd"
 tasks:
   disabled:
     - "edfringe-now/refresh-shows"
