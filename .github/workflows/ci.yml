@@ -84,9 +84,8 @@ jobs:
   # headless Chromium and compares pixel-exact against the committed goldens
   # (product/requirements/).
   #
-  # The Playwright version installed here must match the harness's pin
-  # (product/requirements/shared/harness/browser.js) or the run refuses to
-  # compare.
+  # The Playwright version installed here is read from the harness's pin, which
+  # refuses to compare under any other.
   ui-requirements:
     runs-on: ubuntu-latest
     steps:
@@ -163,10 +162,31 @@ jobs:
         with:
           node-version: 22
 
-      - name: Install pinned Playwright + Chromium
+      # The harness's pin, read rather than copied, so the cache key and the
+      # install below can never name a different Playwright than it compares with.
+      - name: Read the harness's Playwright pin
+        id: pin
         if: steps.scope.outputs.run == 'true'
         run: |
-          npm i --no-save playwright@1.56.1
+          version=$(sed -n 's/^const PINNED_PLAYWRIGHT = "\(.*\)";$/\1/p' product/requirements/shared/harness/browser.js)
+          [ -n "$version" ] || { echo "::error::no PINNED_PLAYWRIGHT in the harness"; exit 1; }
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      # The browser download is the cacheable half of the install; the system
+      # libraries `--with-deps` adds still install on every run.
+      - name: Restore the pinned Chromium
+        if: steps.scope.outputs.run == 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-chromium-${{ runner.os }}-${{ steps.pin.outputs.version }}
+
+      - name: Install pinned Playwright + Chromium
+        if: steps.scope.outputs.run == 'true'
+        env:
+          PLAYWRIGHT_VERSION: ${{ steps.pin.outputs.version }}
+        run: |
+          npm i --no-save "playwright@$PLAYWRIGHT_VERSION"
           npx playwright install --with-deps chromium
 
       - name: UI requirements (screen + behavior)
