@@ -267,11 +267,11 @@ function noteCache(err, url) {
  * retry button.
  *
  * The boot load is the reason this is factored out. It has no upload to report
- * through, so its rejection used to land in a no-op catch and leave the page
- * sitting in its empty "drop your favourites" state — indistinguishable from a
- * first-time visitor, while the real story was that we couldn't say what was
- * bookable (#309). Not knowing is worth saying out loud; it's the half-loaded
- * board that lies.
+ * through, so a rejection swallowed there would leave the page sitting in its
+ * empty "drop your favourites" state — indistinguishable from a first-time
+ * visitor, while the real story is that we couldn't say what was bookable
+ * (#309). Not knowing is worth saying out loud; it's the half-loaded board that
+ * lies.
  */
 function showLoadError(err) {
   console.error("Fringe Planner: failed to load show data", err);
@@ -400,9 +400,9 @@ function saveDismissedNags() {
 }
 
 /* The colour key opens as a popup over the grid's top-right corner, from the
- * button above the Status column. It used to be a column beside the grid, which
- * meant every open and close resized the calendar under the pointer; as a popup
- * it costs the grid nothing, so it can simply appear and be dismissed. It is
+ * button above the Status column. A column beside the grid would resize the
+ * calendar under the pointer on every open and close; a popup costs the grid
+ * nothing, so it can simply appear and be dismissed. It is
  * transient like the optimizer popover — closed on every load, and closed again
  * by a click elsewhere or Escape — so there is no stored state to restore. */
 let legendOpen = false;
@@ -623,10 +623,10 @@ function clearFavourites() {
 
 // --- Favourites intake ----------------------------------------------------
 
-// The edfringe.com export is a CSV, and it's the only thing this box takes: a
-// PDF or a screenshot used to be run through the slug parser, which happily
-// invented "favourites" out of any word-ish line it found and then reported them
-// as loaded. Anything else is refused before it's read.
+// The edfringe.com export is a CSV, and it's the only thing this box takes: the
+// slug parser happily invents "favourites" out of any word-ish line, so a PDF
+// or a screenshot run through it would be reported as loaded. Anything else is
+// refused before it's read.
 const CSV_RE = /\.csv$/i;
 
 /** Could this dragged item plausibly be a CSV? Filenames aren't exposed during

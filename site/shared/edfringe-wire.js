@@ -93,8 +93,8 @@ function joinIsSound(wire, availability, catalogue) {
  * The three files, joined — refetched once from source if the copies we were
  * given don't agree with each other.
  *
- * All three are required. Availability used to be allowed to fail on the theory
- * that status-unknown is a state the grid already draws — it isn't. An empty
+ * All three are required. One might let availability fail on the theory that
+ * status-unknown is a state the grid already draws — it isn't. An empty
  * status reads as not-bookable everywhere downstream (isAvailable, segClass,
  * laneStatus), so continuing without the sidecar doesn't degrade the planner, it
  * inverts it: every performance turns red and every show reports "No dates", for
