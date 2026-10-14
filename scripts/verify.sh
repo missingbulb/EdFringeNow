@@ -6,17 +6,19 @@
 # (.github/workflows/ci.yml) run *this* script, and nothing else — so passing
 # locally and passing on GitHub now mean the same thing.
 #
-# The conformance sweep is part of it so that a commit passing `npm run verify`
-# cannot still go red on GitHub for a blocking Claudinite finding. It is the
-# slowest step by an order of magnitude, so it runs last — a syntax error should
-# still fail in a second.
+# The conformance sweep is here because it was the one CI step this script did
+# not cover, and the gap was not theoretical: a commit that passed `npm run
+# verify` went red on GitHub for a blocking `claudinite-isolation` finding, and
+# cost an extra round trip to notice and a third commit to fix. A gate you can
+# pass and still break CI is not a gate. It is the slowest step by an order of
+# magnitude, so it runs last — a syntax error should still fail in a second.
 #
 # Still NOT the whole of CI: `npm run test:ui` — the ui-requirements job, real
 # Chromium against the committed goldens — runs beside this script rather than
 # inside it. Green here means the fast lane is green.
 #
-# Needs only the node / python already needed to work on the project, plus the
-# pinned cn that the conformance step fetches.
+# A few seconds and dependency-free — everything uses the node / python already
+# needed to work on the project.
 set -euo pipefail
 cd "$(git rev-parse --show-toplevel)"
 
@@ -41,8 +43,9 @@ step "JavaScript syntax — node --check"
 # tooling, the requirements harness and the design concepts. Never the vendored
 # .claudinite mount (not our code) or the plan/design/ mock (HTML).
 js_files=$(git ls-files 'site' 'api' 'scripts' 'product' 'design-concepts' | { grep -E '\.m?js$' || true; } | { grep -v '^site/plan/design/' || true; })
-# `node --check` takes one file per process, so xargs -P fans the startups
-# across the cores; -n 1 because the flag genuinely accepts only one path.
+# `node --check` takes one file per process, and ~170 sequential node startups
+# was the bulk of this script's runtime (4.5s of 7s). xargs -P fans them across
+# the cores instead; -n 1 because the flag genuinely accepts only one path.
 # xargs exits 123 if any invocation failed, which `set -e` turns into a failure.
 if [ -n "$js_files" ]; then
   printf '%s\n' "$js_files" | xargs -P "$(getconf _NPROCESSORS_ONLN 2>/dev/null || echo 4)" -n 1 node --check
