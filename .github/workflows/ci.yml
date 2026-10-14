@@ -7,10 +7,13 @@ name: CI
 # scripts/verify.sh.
 #
 # `ci` runs one thing, because scripts/verify.sh is one thing: the unit tests,
-# the JS and Python parse checks, the normalizer self-tests, and the Claudinite
-# conformance sweep — the same script the pre-commit hook runs, so passing
-# locally and passing here mean the same. `ui-requirements` is the browser-driven
-# golden lane, renders the real pages and compares them pixel-exact.
+# the JS and Python parse checks and the normalizer self-tests — the same script
+# the pre-commit hook runs, so passing locally and passing here mean the same.
+# The one part it leaves out here is the Claudinite conformance sweep, which
+# claudinite-ci's `check` job already runs on every PR and push, with the PR
+# guard and a cached checks build this job would lack. `ui-requirements` is the
+# browser-driven golden lane, renders the real pages and compares them
+# pixel-exact.
 #
 # They are two JOBS rather than two workflows (#787): jobs run on their own
 # runners at the same time, and each reports as its own check with its own
@@ -29,7 +32,7 @@ name: CI
 # site-release task is the one path to production, and `no-second-publisher`
 # refuses a `wrangler … deploy` line in any workflow — it cannot tell a dry run
 # from a real one, and that is the right trade. The wrangler config is validated
-# here anyway: `cloudflare-site/publishes-a-site-directory` runs inside the
+# anyway: `cloudflare-site/publishes-a-site-directory` runs inside the
 # conformance sweep and fails on a config that names no published directory, a
 # directory that holds nothing, or a missing compatibility date.
 #
@@ -69,6 +72,8 @@ jobs:
           node-version: 22
 
       - name: Verify
+        env:
+          VERIFY_SKIP_CONFORMANCE: "1"
         run: bash scripts/verify.sh
 
   # The executable-requirements UI lane: renders the real pages in the pinned
