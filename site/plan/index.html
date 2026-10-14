@@ -50,9 +50,8 @@
 
   <main class="container">
 
-    <!-- The title stays put in both states. Everything that used to appear and
-         vanish around it (intro copy, a grid heading, provenance lines) is gone:
-         adding the first show must not shunt the page around. -->
+    <!-- The title stays put in both states, with nothing appearing or vanishing
+         around it: adding the first show must not shunt the page around. -->
     <div class="page-head">
       <h1 class="page-title">Plan your Fringe!</h1>
       <!-- The running count, on the title's line rather than over the board:
@@ -102,7 +101,7 @@
           <span class="dz-line1">Drag EdFringe favourites file here</span>
           <span class="btn">Upload favourites</span>
           <!-- CSV only: the edfringe.com export is a CSV, and anything else
-               dropped here used to be "parsed" into nonsense slugs. -->
+               would be "parsed" into nonsense slugs. -->
           <input type="file" id="csvInput" accept=".csv" hidden />
         </label>
 
@@ -559,8 +558,8 @@
     <div class="container footer-inner">
       <a href="../" class="logo">EdFringe<span class="logo-now">Now</span></a>
       <!-- The site version rides in the copyright's tooltip (plan.js fills the
-           title from the page's own stamp) — the debug pill that used to carry it is
-           hidden for most visitors. -->
+           title from the page's own stamp), since the debug pill is hidden for most
+           visitors. -->
       <span class="footer-copy">Fringe Planner · <span id="footerVersion" class="footer-version" title="version 1.11009.34">© 2026 Missing Bulb</span>
         <!-- Disclosure for the schedule board's partner links (the "need a place
              to sleep?" / "transportation sorted?" suggestions). -->

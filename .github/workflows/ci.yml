@@ -87,7 +87,7 @@ jobs:
           # goldens are compared against what `npm run test:ui` renders locally.
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
           # The scope step below diffs against a base, which needs the history
-          # and the remote branches. The whole repo is ~14 MiB packed.
+          # and the remote branches.
           fetch-depth: 0
 
       # Rendering is the bulk of this job, and it is spent in full on every
