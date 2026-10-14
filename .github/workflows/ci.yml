@@ -65,7 +65,11 @@ jobs:
           # what the session's own Stop hook evaluated.
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
           # The festival finder's growth check reads origin/main's history.
+          # Blobless: the full history's trees and commits without its file
+          # contents, which git fetches on demand for the few old files that
+          # check reads — a full fetch spent ~15s on contents nothing opens.
           fetch-depth: 0
+          filter: blob:none
 
       - uses: actions/setup-node@v5
         with:
@@ -92,8 +96,10 @@ jobs:
           # goldens are compared against what `npm run test:ui` renders locally.
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
           # The scope step below diffs against a base, which needs the history
-          # and the remote branches. The whole repo is ~14 MiB packed.
+          # and the remote branches; a name-only diff reads trees, never file
+          # contents, so the history comes blobless.
           fetch-depth: 0
+          filter: blob:none
 
       # Rendering is the bulk of this job, and it is spent in full on every
       # maintenance PR that cannot move a pixel. A `paths:` filter on the
