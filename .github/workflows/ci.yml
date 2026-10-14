@@ -7,10 +7,13 @@ name: CI
 # scripts/verify.sh.
 #
 # `ci` runs one thing, because scripts/verify.sh is one thing: the unit tests,
-# the JS and Python parse checks, the normalizer self-tests, and the Claudinite
-# conformance sweep — the same script the pre-commit hook runs, so passing
-# locally and passing here mean the same. `ui-requirements` is the browser-driven
-# golden lane, renders the real pages and compares them pixel-exact.
+# the JS and Python parse checks and the normalizer self-tests — the same script
+# the pre-commit hook runs, so passing locally and passing here mean the same.
+# The one part it leaves out here is the Claudinite conformance sweep, which
+# claudinite-ci's `check` job already runs on every PR and push, with the PR
+# guard and a cached checks build this job would lack. `ui-requirements` is the
+# browser-driven golden lane, renders the real pages and compares them
+# pixel-exact.
 #
 # They are two JOBS rather than two workflows (#787): jobs run on their own
 # runners at the same time, and each reports as its own check with its own
@@ -29,7 +32,7 @@ name: CI
 # site-release task is the one path to production, and `no-second-publisher`
 # refuses a `wrangler … deploy` line in any workflow — it cannot tell a dry run
 # from a real one, and that is the right trade. The wrangler config is validated
-# here anyway: `cloudflare-site/publishes-a-site-directory` runs inside the
+# anyway: `cloudflare-site/publishes-a-site-directory` runs inside the
 # conformance sweep and fails on a config that names no published directory, a
 # directory that holds nothing, or a missing compatibility date.
 #
@@ -62,22 +65,27 @@ jobs:
           # what the session's own Stop hook evaluated.
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
           # The festival finder's growth check reads origin/main's history.
+          # Blobless: the full history's trees and commits without its file
+          # contents, which git fetches on demand for the few old files that
+          # check reads — a full fetch spent ~15s on contents nothing opens.
           fetch-depth: 0
+          filter: blob:none
 
       - uses: actions/setup-node@v5
         with:
           node-version: 22
 
       - name: Verify
+        env:
+          VERIFY_SKIP_CONFORMANCE: "1"
         run: bash scripts/verify.sh
 
   # The executable-requirements UI lane: renders the real pages in the pinned
   # headless Chromium and compares pixel-exact against the committed goldens
   # (product/requirements/).
   #
-  # The Playwright version installed here must match the harness's pin
-  # (product/requirements/shared/harness/browser.js) or the run refuses to
-  # compare.
+  # The Playwright version installed here is read from the harness's pin, which
+  # refuses to compare under any other.
   ui-requirements:
     runs-on: ubuntu-latest
     steps:
@@ -87,8 +95,10 @@ jobs:
           # goldens are compared against what `npm run test:ui` renders locally.
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
           # The scope step below diffs against a base, which needs the history
-          # and the remote branches. The whole repo is ~14 MiB packed.
+          # and the remote branches; a name-only diff reads trees, never file
+          # contents, so the history comes blobless.
           fetch-depth: 0
+          filter: blob:none
 
       # Rendering is the bulk of this job, and it is spent in full on every
       # maintenance PR that cannot move a pixel. A `paths:` filter on the
@@ -152,10 +162,31 @@ jobs:
         with:
           node-version: 22
 
-      - name: Install pinned Playwright + Chromium
+      # The harness's pin, read rather than copied, so the cache key and the
+      # install below can never name a different Playwright than it compares with.
+      - name: Read the harness's Playwright pin
+        id: pin
         if: steps.scope.outputs.run == 'true'
         run: |
-          npm i --no-save playwright@1.56.1
+          version=$(sed -n 's/^const PINNED_PLAYWRIGHT = "\(.*\)";$/\1/p' product/requirements/shared/harness/browser.js)
+          [ -n "$version" ] || { echo "::error::no PINNED_PLAYWRIGHT in the harness"; exit 1; }
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      # The browser download is the cacheable half of the install; the system
+      # libraries `--with-deps` adds still install on every run.
+      - name: Restore the pinned Chromium
+        if: steps.scope.outputs.run == 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-chromium-${{ runner.os }}-${{ steps.pin.outputs.version }}
+
+      - name: Install pinned Playwright + Chromium
+        if: steps.scope.outputs.run == 'true'
+        env:
+          PLAYWRIGHT_VERSION: ${{ steps.pin.outputs.version }}
+        run: |
+          npm i --no-save "playwright@$PLAYWRIGHT_VERSION"
           npx playwright install --with-deps chromium
 
       - name: UI requirements (screen + behavior)

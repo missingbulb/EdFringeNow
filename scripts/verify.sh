@@ -4,7 +4,8 @@
 # Python byte-compilation, and the Claudinite conformance sweep. Both the
 # pre-commit hook (.githooks/pre-commit) and the pull-request gate
 # (.github/workflows/ci.yml) run *this* script, and nothing else — so passing
-# locally and passing on GitHub now mean the same thing.
+# locally and passing on GitHub now mean the same thing. On GitHub the sweep
+# itself is claudinite-ci's job, which runs beside this one.
 #
 # The conformance sweep is here because it was the one CI step this script did
 # not cover, and the gap was not theoretical: a commit that passed `npm run
@@ -130,12 +131,19 @@ else
   echo "python3 not installed — skipping (CI always has it)" >&2
 fi
 
-step "Claudinite conformance — cn check world"
 # The same sweep CI's claudinite-ci workflow runs, without its pull-request
 # guard. World scope: the rules that audit repo state as it is now (the
 # work-scope half runs from the Stop hook). Blocking findings exit non-zero
-# and fail this script; advisories print and pass.
-sh .claudinite/launch check world
+# and fail this script; advisories print and pass. CI's own `ci` job sets
+# VERIFY_SKIP_CONFORMANCE, since claudinite-ci already runs it beside that job;
+# the pinned cn is still installed, because the Go checks below need its SDK.
+if [ "${VERIFY_SKIP_CONFORMANCE:-}" = 1 ]; then
+  step "Claudinite conformance — skipped here, claudinite-ci runs it"
+  sh .claudinite/launch version
+else
+  step "Claudinite conformance — cn check world"
+  sh .claudinite/launch check world
+fi
 
 step "Local pack checks — go vet and go test"
 # The pack's Go checks, against the SDK of the pinned cn the sweep above
